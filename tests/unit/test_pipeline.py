@@ -70,16 +70,20 @@ async def test_happy_path_writes_facts_to_all_routed_bubbles():
     it = item()
     res = await pipe.process(it, source())
     assert res.status == "ingested"
-    assert res.item_hash == content_hash(it.url, f"{it.text}")
+    assert res.item_hash == content_hash(it.url, it.text)
     assert res.bubble_ids == ["news", "finance"]
     assert res.facts_created == 2
     assert res.dropped_ungrounded == 0
-    assert len(await store.list_facts("news")) == 1
-    assert len(await store.list_facts("finance")) == 1
+    facts_news = await store.list_facts("news")
+    facts_finance = await store.list_facts("finance")
+    assert len(facts_news) == 1
+    assert len(facts_finance) == 1
+    assert facts_news[0].subject_id == facts_finance[0].subject_id
+    assert facts_news[0].object_id == facts_finance[0].object_id
     assert await store.has_seen(res.item_hash)
 
 
-async def test_second_process_is_duplicate_without_llm_calls():
+async def test_duplicate_item_skipped_before_llm():
     _, fake, pipe = await setup()
     await pipe.process(item(), source())
     n = len(fake.calls)
@@ -88,7 +92,7 @@ async def test_second_process_is_duplicate_without_llm_calls():
     assert len(fake.calls) == n
 
 
-async def test_concurrent_identical_items_processed_once():
+async def test_concurrent_duplicate_items_processed_once():
     _, fake, pipe = await setup(delay=0.01)
     r = await asyncio.gather(
         pipe.process(item(), source()), pipe.process(item(), source())
@@ -97,7 +101,7 @@ async def test_concurrent_identical_items_processed_once():
     assert len(fake.calls) == 2  # one route + one extract
 
 
-async def test_empty_text_is_empty_and_not_marked_seen():
+async def test_empty_text_returns_empty():
     store, fake, pipe = await setup()
     it = item(text="  \n ")
     res = await pipe.process(it, source())
@@ -127,7 +131,7 @@ async def test_ungrounded_triples_are_dropped_and_counted():
     assert len(await store.list_facts("news")) == 1
 
 
-async def test_zero_facts_still_marks_seen():
+async def test_item_with_no_triples_is_marked_seen():
     store, _, pipe = await setup(Extraction(triples=[]))
     res = await pipe.process(item(), source())
     assert res.status == "ingested"
