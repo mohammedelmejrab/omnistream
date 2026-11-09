@@ -31,7 +31,7 @@ def normalize_url(url: str) -> str:
         netloc = f"{userinfo}@{netloc}"
     path = parts.path or "/"
     if path != "/":
-        path = path.rstrip("/")
+        path = path.rstrip("/") or "/"
     params = sorted(
         (k, v)
         for k, v in parse_qsl(parts.query, keep_blank_values=True)

@@ -7,7 +7,7 @@ from omnistream.ingest.normalize import (
 
 
 def test_hash_ignores_whitespace_and_case():
-    assert content_hash("https://a.com/x", "Hello World\n") == content_hash(
+    assert content_hash("https://a.com/x", "Hello  World\n") == content_hash(
         "https://a.com/x", "hello world"
     )
 
@@ -41,6 +41,7 @@ def test_doc_scheme_keeps_fragment():
 
 
 def test_url_params_ports_and_root():
+    assert normalize_url("https://a.com//") == "https://a.com/"
     assert (
         normalize_url("HTTP://A.com:80/p/?b=2&a=1&gclid=x&fbclid=y&utm_medium=z")
         == "http://a.com/p?a=1&b=2"
