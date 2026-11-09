@@ -71,6 +71,8 @@ class InMemoryStore:
     async def search_entities(
         self, embedding: list[float], type: str, k: int
     ) -> list[tuple[Entity, float]]:
+        if k <= 0:
+            return []
         scored = [
             (e.model_copy(deep=True), _cosine(embedding, e.embedding))
             for e in self._entities.values()

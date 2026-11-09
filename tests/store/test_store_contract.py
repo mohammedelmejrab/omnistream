@@ -147,3 +147,17 @@ async def test_entities_shared_across_bubbles(store):
     for b in ("news", "finance"):
         [f] = await store.list_facts(b)
         assert (await store.get_entity(f.subject_id)).id == "e1"
+
+
+async def test_vector_search_type_filter_applies_before_k(store):
+    # 6 closer PRODUCTs saturate Neo4j's k*5 oversample for k=1.
+    for i in range(6):
+        await store.create_entity(
+            entity(f"p{i}", "PRODUCT", emb=[1.0, 0.01 * i] + [0.0] * (DIM - 2))
+        )
+    org_emb = [1.0, 1.0] + [0.0] * (DIM - 2)
+    await store.create_entity(entity("org", "ORG", emb=org_emb))
+    res = await store.search_entities(vec(0), "ORG", 1)
+    assert [e.id for e, _ in res] == ["org"]
+    assert res[0][1] == pytest.approx(2**-0.5, abs=1e-3)
+    assert await store.search_entities(vec(0), "ORG", 0) == []

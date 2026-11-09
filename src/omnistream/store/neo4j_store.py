@@ -193,12 +193,30 @@ class Neo4jStore:
     async def search_entities(
         self, embedding: list[float], type: str, k: int
     ) -> list[tuple[Entity, float]]:
+        if k <= 0:
+            return []
+        k_oversample = k * 5
         recs = await self._run(
             "CALL db.index.vector.queryNodes('entity_embedding', $k_oversample, $emb) "
             "YIELD node, score WHERE node.type = $type "
             "RETURN node, score ORDER BY score DESC LIMIT $k",
-            k_oversample=k * 5, emb=embedding, type=type, k=k,
+            k_oversample=k_oversample, emb=embedding, type=type, k=k,
         )
+        if len(recs) < k:
+            # Did the index saturate? If it returned a full k*5 other-typed hits
+            # the type filter may have hidden matches: fall back to an exact scan.
+            raw = await self._run(
+                "CALL db.index.vector.queryNodes('entity_embedding', $n, $emb) "
+                "YIELD node RETURN count(node) AS c",
+                n=k_oversample, emb=embedding,
+            )
+            if raw[0]["c"] >= k_oversample:
+                recs = await self._run(
+                    "MATCH (n:Entity {type: $type}) WHERE n.embedding IS NOT NULL "
+                    "WITH n, vector.similarity.cosine(n.embedding, $emb) AS score "
+                    "RETURN n AS node, score ORDER BY score DESC LIMIT $k",
+                    type=type, emb=embedding, k=k,
+                )
         # Neo4j scores are (1 + cos) / 2; convert back to raw cosine.
         return [
             (_entity(r["node"]), max(-1.0, min(1.0, 2 * r["score"] - 1)))
