@@ -111,7 +111,7 @@ async def test_empty_text_returns_empty():
     assert fake.calls == []
 
 
-async def test_unrouted_when_no_bubbles_and_not_marked_seen():
+async def test_unrouted_item_not_marked_seen():
     store, fake, pipe = await setup(bubbles=())
     res = await pipe.process(item(), source())
     assert res.status == "unrouted"
@@ -119,7 +119,7 @@ async def test_unrouted_when_no_bubbles_and_not_marked_seen():
     assert fake.calls == []
 
 
-async def test_ungrounded_triples_are_dropped_and_counted():
+async def test_ungrounded_triples_counted_and_not_written():
     ext = Extraction(
         triples=[triple(), triple(subject="Zorblax Quux", object="Globex Inc")]
     )
