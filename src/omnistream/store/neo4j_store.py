@@ -1,6 +1,5 @@
 """Neo4j-backed GraphStore. One database; bubbles are namespaces on FACT edges."""
 
-import json
 from datetime import UTC, datetime
 from importlib import resources
 from typing import Any
