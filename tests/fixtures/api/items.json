@@ -1,0 +1,9 @@
+{
+  "data": {
+    "articles": [
+      {"id": "a1", "meta": {"url": "https://api.example.com/a1"}, "headline": "Solar farm opens", "body": "A 40 MW solar farm opened near Riverton.", "published": "2026-11-03T10:00:00Z"},
+      {"id": "a2", "meta": {"url": "https://api.example.com/a2"}, "headline": "Bridge repairs finish", "published": "2026-11-04T08:30:00+00:00"},
+      {"id": "a3", "meta": {"url": "https://api.example.com/a3"}, "headline": "Library extends hours", "body": "The central library now opens until 10 pm.", "published": "not a date"}
+    ]
+  }
+}

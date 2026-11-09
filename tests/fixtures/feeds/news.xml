@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Harbor Gazette</title>
+    <link>https://gazette.example.com/</link>
+    <description>Fictional local news</description>
+    <item>
+      <title>Harbor council approves new ferry terminal</title>
+      <link>https://gazette.example.com/ferry-terminal</link>
+      <guid>https://gazette.example.com/ferry-terminal</guid>
+      <pubDate>Mon, 03 Nov 2026 09:30:00 GMT</pubDate>
+      <description>Short summary of the ferry decision.</description>
+      <content:encoded><![CDATA[<p>The Harbor council voted <b>7 to 2</b> on Monday to approve a new ferry terminal.</p><p>Construction is expected to begin in spring.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Lighthouse museum names new director</title>
+      <guid isPermaLink="false">gazette-1042</guid>
+      <pubDate>Tue, 04 Nov 2026 14:00:00 GMT</pubDate>
+      <description>Marta Okafor has been named director of the Lighthouse Museum, replacing Ingrid Solberg.</description>
+    </item>
+    <item>
+      <title>Fish market moves to Pier 4</title>
+      <link>https://gazette.example.com/fish-market</link>
+      <pubDate>Wed, 05 Nov 2026 07:15:00 GMT</pubDate>
+      <description>The weekly fish market relocates to Pier 4 starting next week.</description>
+    </item>
+  </channel>
+</rss>
