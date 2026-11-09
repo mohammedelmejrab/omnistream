@@ -88,7 +88,9 @@ def create_app(
         try:
             source = Source(id=uuid.uuid4().hex, **body.model_dump())
         except ValidationError as exc:
-            raise HTTPException(422, exc.errors(include_url=False, include_context=False))
+            raise HTTPException(
+                422, exc.errors(include_url=False, include_context=False)
+            ) from exc
         if missing := await unknown_bubbles(source.bubble_ids):
             raise HTTPException(422, f"unknown bubble ids: {missing}")
         await store.upsert_source(source)
@@ -136,9 +138,9 @@ def create_app(
                 ids,
             )
         except UnsupportedDocumentError as exc:
-            raise HTTPException(415, str(exc))
-        except Exception as exc:
-            raise HTTPException(422, f"could not parse document: {exc}")
+            raise HTTPException(415, str(exc)) from exc
+        except Exception as exc:  # noqa: BLE001 - any parser failure is a 422
+            raise HTTPException(422, f"could not parse document: {exc}") from exc
         await store.upsert_source(source)
         return await pipeline.process_many(items, source)
 

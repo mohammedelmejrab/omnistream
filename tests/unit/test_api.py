@@ -176,7 +176,9 @@ async def test_poll_unknown_source_404(env):
 @respx.mock
 async def test_poll_source_200(env):
     client, _, _ = env
-    sid = (await client.post("/sources", json={"type": "rss", "url": FEED})).json()["id"]
+    sid = (await client.post("/sources", json={"type": "rss", "url": FEED})).json()[
+        "id"
+    ]
     respx.get(FEED).respond(200, content=NEWS_XML)
     r = await client.post(f"/sources/{sid}/poll")
     assert r.status_code == 200
