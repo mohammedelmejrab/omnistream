@@ -137,19 +137,21 @@ async def test_golden_extraction():
     by_id = store._entities
     facts = [f for b in ("news", "finance") for f in await store.list_facts(b)]
 
-    def ceo_fact(person: str):
-        for f in facts:
-            names = [n for i in (f.subject_id, f.object_id) for n in _names(by_id[i])]
-            if any("acme" in n.casefold() for n in names) and any(
-                person in n for n in names
-            ):
-                return f
-        return None
+    def ceo_facts(person: str):
+        return [
+            f
+            for f in facts
+            if by_id[f.subject_id].type == "ORG"
+            and any("acme" in n.casefold() for n in _names(by_id[f.subject_id]))
+            and "CEO" in f.relation
+            and any(person in n for n in _names(by_id[f.object_id]))
+        ]
 
-    newer, older = ceo_fact("Whitfield"), ceo_fact("Patel")
-    assert newer is not None and older is not None
-    assert newer.status == "VERIFIED"
-    assert older.status == "HISTORICAL"
+    newer, older = ceo_facts("Whitfield"), ceo_facts("Patel")
+    assert len(newer) == 1, newer
+    assert len(older) == 1, older
+    assert newer[0].status == "VERIFIED"
+    assert older[0].status == "HISTORICAL"
 
     apples = [
         e for e in by_id.values()

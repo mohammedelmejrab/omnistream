@@ -85,8 +85,21 @@ def _extract(user: str) -> Extraction:
 @pytest.fixture(scope="session")
 def real_embedder():
     # Load before any respx mock is active so HuggingFace is never intercepted.
-    os.environ.setdefault("HF_HUB_OFFLINE", "1")
-    return SentenceTransformerEmbedder("all-MiniLM-L6-v2")
+    prior = os.environ.get("HF_HUB_OFFLINE")
+    cached = (
+        Path(os.environ.get("HF_HOME", Path.home() / ".cache" / "huggingface"))
+        / "hub"
+        / "models--sentence-transformers--all-MiniLM-L6-v2"
+    ).exists()
+    if cached:
+        os.environ["HF_HUB_OFFLINE"] = "1"
+    try:
+        yield SentenceTransformerEmbedder("all-MiniLM-L6-v2")
+    finally:
+        if prior is None:
+            os.environ.pop("HF_HUB_OFFLINE", None)
+        else:
+            os.environ["HF_HUB_OFFLINE"] = prior
 
 
 async def _fresh_store(container) -> Neo4jStore:

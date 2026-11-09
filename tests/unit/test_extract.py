@@ -91,3 +91,12 @@ async def test_extract_propagates_llm_error():
     ex = Extractor(FakeLLM({Extraction: boom}), "m")
     with pytest.raises(LLMError):
         await ex.extract(item())
+
+
+def test_extraction_prompt_puts_constrained_entity_as_subject_for_exclusive_relations():
+    from omnistream.ingest.extract import EXTRACTION_SYSTEM
+
+    assert "HAS_CEO" in EXTRACTION_SYSTEM
+    # CEO_OF may only appear as the explicit counter-example.
+    assert 'Never "Dana Whitfield CEO_OF Acme Corp"' in EXTRACTION_SYSTEM
+    assert EXTRACTION_SYSTEM.count("CEO_OF") == 1

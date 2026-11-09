@@ -20,9 +20,13 @@ Rules:
 form, not a canonicalized name). This is what makes grounding work.
 - subject_type and object_type must be one of: PERSON | ORG | LOCATION | PRODUCT | \
 EVENT | CONCEPT | MONEY | OTHER.
-- relation is a short verb phrase, for example CEO_OF or HEADQUARTERED_IN.
+- relation is a short verb phrase, for example HAS_CEO or HEADQUARTERED_IN.
 - Set exclusive=true only when the relation can have exactly one object at a time \
-(for example CEO_OF, HEADQUARTERED_IN, PRICE_IS). Otherwise exclusive=false.
+(for example HAS_CEO, HEADQUARTERED_IN, PRICE_IS). Otherwise exclusive=false.
+- For such single-valued relations the constrained entity, the one that can have only \
+one value at a time, is the SUBJECT, and the relation is phrased from its side: \
+"Acme Corp HAS_CEO Dana Whitfield", "Acme Corp HEADQUARTERED_IN Berlin", \
+"Widget X PRICE_IS $10". Never "Dana Whitfield CEO_OF Acme Corp".
 - Set valid_from to the date the fact became true only if the text states it; \
 otherwise null.
 """
