@@ -39,7 +39,7 @@ def _source(n: Any) -> Source:
     return Source(
         id=n["id"], type=n["type"], url=n.get("url"),
         credibility=n["credibility"], poll_interval=n["poll_interval"],
-        bubble_ids=json.loads(n["bubble_ids"]), auto_route=n["auto_route"],
+        bubble_ids=list(n["bubble_ids"]), auto_route=n["auto_route"],
         api_config=ApiFeedConfig.model_validate_json(cfg) if cfg else None,
         last_polled_at=_dt(n.get("last_polled_at")), last_error=n.get("last_error"),
     )
@@ -140,7 +140,7 @@ class Neo4jStore:
             "n.api_config = $api_config, n.last_polled_at = $last_polled_at, "
             "n.last_error = $last_error",
             id=s.id, type=s.type, url=s.url, credibility=s.credibility,
-            poll_interval=s.poll_interval, bubble_ids=json.dumps(s.bubble_ids),
+            poll_interval=s.poll_interval, bubble_ids=s.bubble_ids,
             auto_route=s.auto_route,
             api_config=s.api_config.model_dump_json() if s.api_config else None,
             last_polled_at=s.last_polled_at, last_error=s.last_error,
