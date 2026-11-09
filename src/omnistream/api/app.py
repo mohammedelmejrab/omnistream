@@ -139,7 +139,7 @@ def create_app(
             )
         except UnsupportedDocumentError as exc:
             raise HTTPException(415, str(exc)) from exc
-        except Exception as exc:  # noqa: BLE001 - any parser failure is a 422
+        except Exception as exc:
             raise HTTPException(422, f"could not parse document: {exc}") from exc
         await store.upsert_source(source)
         return await pipeline.process_many(items, source)
