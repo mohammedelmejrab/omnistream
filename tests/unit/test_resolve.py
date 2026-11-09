@@ -109,3 +109,26 @@ async def test_cross_bubble_entity_shared():
     r.new_batch()
     second = await r.resolve("NewCo", "ORG")  # item from bubble B
     assert first.id == second.id
+
+
+LOW_TABLE = {**TABLE, "Apple": _at_cosine(0.70), "Apple Inc.": _e(0)}
+
+
+def _low_resolver(store: InMemoryStore) -> EntityResolver:
+    return EntityResolver(store, FakeEmbedder(LOW_TABLE), embed_threshold=0.9, fuzzy_threshold=90)
+
+
+async def test_org_legal_suffix_ignored_in_fuzzy_match():
+    store = InMemoryStore()
+    apple = await _seed(store, "Apple Inc.", "ORG")
+    got = await _low_resolver(store).resolve("Apple", "ORG")
+    assert got.id == apple.id
+    assert "Apple" in (await store.get_entity(apple.id)).aliases
+
+
+async def test_legal_suffix_not_stripped_for_non_org():
+    store = InMemoryStore()
+    apple = await _seed(store, "Apple Inc.", "PRODUCT")
+    got = await _low_resolver(store).resolve("Apple", "PRODUCT")
+    assert got.id != apple.id
+    assert len(store._entities) == 2
