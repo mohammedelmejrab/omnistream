@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Harbor Ledger</title>
+    <link>https://ledger.example.com/</link>
+    <description>Fictional finance news</description>
+    <item>
+      <title>Apple Inc. expands Harbor City campus</title>
+      <link>https://ledger.example.com/apple-campus</link>
+      <pubDate>Thu, 06 Nov 2026 08:00:00 GMT</pubDate>
+      <description>Apple Inc. announced a large investment in a new campus in Harbor City.</description>
+    </item>
+    <item>
+      <title>Fjord Components posts record profit</title>
+      <link>https://ledger.example.com/fjord-profit</link>
+      <pubDate>Thu, 06 Nov 2026 10:00:00 GMT</pubDate>
+      <description>Fjord Components reported record quarterly profit. Apple remains the largest customer of Fjord Components.</description>
+    </item>
+    <item>
+      <title>Orchard Bank lifts dividend</title>
+      <link>https://ledger.example.com/orchard-dividend</link>
+      <pubDate>Fri, 07 Nov 2026 09:00:00 GMT</pubDate>
+      <description>Orchard Bank raised its quarterly dividend after strong lending results.</description>
+    </item>
+  </channel>
+</rss>
