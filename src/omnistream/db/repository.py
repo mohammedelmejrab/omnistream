@@ -9,7 +9,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any, TypeVar
 
-from sqlalchemy import Engine, event, func
+from sqlalchemy import Engine, event, func, update
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine, select
@@ -262,21 +262,44 @@ class Repository:
         return await self._run(fn)
 
     async def claim_job(self, now: datetime | None = None) -> JobRow | None:
-        """Atomically move the oldest available queued job to running."""
+        """Atomically move the oldest available queued job to running.
+
+        The state flip is a conditional UPDATE, so two concurrent claimers can
+        never receive the same job.
+        """
         now = now or datetime.now(UTC)
 
         def fn(s: Session) -> JobRow | None:
-            job = s.exec(
-                select(JobRow)
-                .where(JobRow.state == "queued", JobRow.available_at <= now)
-                .order_by(JobRow.available_at, JobRow.id)
-            ).first()
-            if job is None:
-                return None
-            job.state = "running"
-            job.attempts += 1
-            s.add(job)
-            return job
+            while True:
+                job = s.exec(
+                    select(JobRow)
+                    .where(JobRow.state == "queued", JobRow.available_at <= now)
+                    .order_by(JobRow.available_at, JobRow.id)
+                ).first()
+                if job is None:
+                    return None
+                res = s.execute(
+                    update(JobRow)
+                    .where(JobRow.id == job.id, JobRow.state == "queued")
+                    .values(state="running", attempts=JobRow.attempts + 1)
+                )
+                s.commit()
+                if res.rowcount == 1:
+                    s.refresh(job)
+                    return job
+
+        return await self._run(fn)
+
+    async def requeue_running_jobs(self) -> int:
+        """Crash recovery: jobs left 'running' go back to the queue."""
+
+        def fn(s: Session) -> int:
+            res = s.execute(
+                update(JobRow)
+                .where(JobRow.state == "running")
+                .values(state="queued", available_at=datetime.now(UTC))
+            )
+            return int(res.rowcount)
 
         return await self._run(fn)
 

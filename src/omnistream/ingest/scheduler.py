@@ -34,6 +34,7 @@ class IngestScheduler:
         self._pipeline = pipeline
         self._http = http
         self._scheduler = scheduler or AsyncIOScheduler()
+        self._failures: dict[str, int] = {}
 
     async def start(self) -> None:
         for source in await self._repo.list_sources():
@@ -76,12 +77,33 @@ class IngestScheduler:
             source.last_error = repr(exc)
             source.status = "error"
             await self._record(source)
+            self._set_backoff(source, self._failures.get(source_id, 0) + 1)
             return []
+        if self._failures.get(source_id):
+            self._set_backoff(source, 0)
         source.last_polled_at = datetime.now(UTC)
         source.last_error = None
         source.status = "ok"
         await self._record(source)
         return results
+
+    def current_interval(self, source_id: str, base: int) -> int:
+        """Poll interval after backoff: doubles per failure, capped at 4x."""
+        return base * min(2 ** self._failures.get(source_id, 0), 4)
+
+    def _set_backoff(self, source: Source, failures: int) -> None:
+        if failures:
+            self._failures[source.id] = failures
+        else:
+            self._failures.pop(source.id, None)
+        job_id = f"poll:{source.id}"
+        if self._scheduler.get_job(job_id) is not None:
+            self._scheduler.reschedule_job(
+                job_id,
+                trigger=IntervalTrigger(
+                    seconds=self.current_interval(source.id, source.poll_interval)
+                ),
+            )
 
     async def _accept_all(
         self, items: list[RawItem], source: Source

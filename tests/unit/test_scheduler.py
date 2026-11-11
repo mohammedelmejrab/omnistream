@@ -184,3 +184,23 @@ async def test_poll_disabled_source_does_nothing(env):
     await repo.upsert_source(s)
     assert await sched.poll_source("a") == []
     assert (await repo.get_source("a")).last_polled_at is None
+
+
+@respx.mock
+async def test_poll_failure_backs_off_to_4x_and_resets(env):
+    repo, sched, _ = env
+    s = rss("a", URL_A)
+    await repo.upsert_source(s)
+    sched.schedule_source(s)
+    respx.get(URL_A).respond(500)
+    for expected in (2, 4, 4):
+        await sched.poll_source("a")
+        assert (
+            sched.current_interval("a", s.poll_interval) == s.poll_interval * expected
+        )
+    stored = await repo.get_source("a")
+    assert stored.status == "error" and stored.last_error
+    respx.get(URL_A).respond(200, content=NEWS_XML)
+    await sched.poll_source("a")
+    assert sched.current_interval("a", s.poll_interval) == s.poll_interval
+    assert (await repo.get_source("a")).status == "ok"
