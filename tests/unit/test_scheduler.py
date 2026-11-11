@@ -13,7 +13,8 @@ from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import Bubble, Extraction, Source
-from omnistream.router.route import BubbleChoice, Router
+from omnistream.router.bubbles import BubbleService
+from omnistream.router.router import BubbleChoice, Router
 from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 
@@ -33,18 +34,18 @@ def rss(id: str, url: str, poll_interval: int = 300) -> Source:
 async def env():
     store = InMemoryStore()
     repo = Repository()
-    await repo.create_bubble(
+    await BubbleService(repo, FakeEmbedder()).create(
         Bubble(id="news", name="news", description="news topics", updated_at=NOW)
     )
     fake = FakeLLM(
         {
-            BubbleChoice: BubbleChoice(bubble_ids=["news"]),
+            BubbleChoice: BubbleChoice(bubble_ids=["news"], confidence=0.9),
             Extraction: Extraction(triples=[]),
         }
     )
     pipe = IngestPipeline(
         repo,
-        Router(fake, "m"),
+        Router(fake, "m", FakeEmbedder()),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
         FactWriter(store, clock=lambda: NOW),

@@ -40,7 +40,6 @@ class Source(BaseModel):
     credibility: float = Field(default=0.5, ge=0.0, le=1.0)
     poll_interval: int = Field(default=900, ge=60)
     bubble_ids: list[str] = Field(default_factory=list)
-    auto_route: bool = True
     api_mapping: ApiMapping | None = None
     max_items_per_hour: int = Field(default=30, ge=1)
     store_full_text: bool = True

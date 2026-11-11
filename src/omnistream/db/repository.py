@@ -251,6 +251,26 @@ class Repository:
 
         return await self._run(fn)
 
+    async def assign_unsorted(self, item_id: str, bubble_ids: list[str]) -> ItemRow:
+        """Manually assign an unsorted item: explicit bubbles, status queued,
+        and a fresh job so the workers process it (spec C3)."""
+        if not bubble_ids:
+            raise ValueError("bubble_ids must not be empty")
+
+        def fn(s: Session) -> ItemRow:
+            row = s.get(ItemRow, item_id)
+            if row is None:
+                raise KeyError(item_id)
+            if row.status != "unsorted":
+                raise ValueError(f"item {item_id} is {row.status}, not unsorted")
+            row.bubble_ids = list(dict.fromkeys(bubble_ids))
+            row.status = "queued"
+            s.add(row)
+            s.add(JobRow(item_id=item_id))
+            return row
+
+        return await self._run(fn)
+
     # --- jobs ---
     async def enqueue_job(self, item_id: str) -> JobRow:
         def fn(s: Session) -> JobRow:

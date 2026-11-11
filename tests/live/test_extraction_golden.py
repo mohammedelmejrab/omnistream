@@ -22,7 +22,8 @@ from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.llm import build_llm_client
 from omnistream.models import Bubble, RawItem, Source
-from omnistream.router.route import Router
+from omnistream.router.bubbles import BubbleService
+from omnistream.router.router import Router
 from omnistream.store.memory import InMemoryStore
 
 pytestmark = [
@@ -67,14 +68,20 @@ async def test_golden_extraction():
         ("news", "General world, local and breaking news"),
         ("finance", "Companies, markets, banks, earnings and executive changes"),
     ):
-        await repo.create_bubble(
+        await BubbleService(repo, embedder).create(
             Bubble(id=bid, name=bid, description=desc, updated_at=now)
         )
     source = Source(id="golden", type="rss", url="https://golden.test/feed")
     await repo.upsert_source(source)
     pipeline = IngestPipeline(
         repo,
-        Router(llm, settings.llm_model),
+        Router(
+            llm,
+            settings.llm_model,
+            embedder,
+            settings.router_threshold,
+            settings.router_top_k,
+        ),
         Extractor(llm, settings.llm_model),
         EntityResolver(
             store,

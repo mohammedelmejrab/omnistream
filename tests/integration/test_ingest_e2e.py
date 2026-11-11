@@ -24,7 +24,8 @@ from omnistream.models import (
     Extraction,
     Source,
 )
-from omnistream.router.route import BubbleChoice, Router
+from omnistream.router.bubbles import BubbleService
+from omnistream.router.router import BubbleChoice, Router
 from omnistream.store.neo4j_store import Neo4jStore
 from tests.conftest import FakeLLM
 
@@ -82,7 +83,7 @@ def _title(user: str) -> str:
 
 
 def _route(user: str) -> BubbleChoice:
-    return BubbleChoice(bubble_ids=SCRIPT[_title(user)][0])
+    return BubbleChoice(bubble_ids=SCRIPT[_title(user)][0], confidence=0.9)
 
 
 def _extract(user: str) -> Extraction:
@@ -129,7 +130,7 @@ async def env(neo4j_container, real_embedder, tmp_path):
     db_path = str(tmp_path / "app.db")
     repo = Repository.from_path(db_path)
     for bid in ("news", "finance"):
-        await repo.create_bubble(
+        await BubbleService(repo, real_embedder).create(
             Bubble(id=bid, name=bid, description=f"{bid} topics", updated_at=NOW)
         )
     await repo.upsert_source(
@@ -143,7 +144,7 @@ async def env(neo4j_container, real_embedder, tmp_path):
         llm = FakeLLM({BubbleChoice: _route, Extraction: _extract})
         pipe = IngestPipeline(
             rp,
-            Router(llm, "m"),
+            Router(llm, "m", real_embedder),
             Extractor(llm, "m"),
             EntityResolver(st, real_embedder, 0.88, 90),
             FactWriter(st),

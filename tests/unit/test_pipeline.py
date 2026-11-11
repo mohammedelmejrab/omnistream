@@ -15,7 +15,8 @@ from omnistream.models import (
     RawItem,
     Source,
 )
-from omnistream.router.route import BubbleChoice, Router
+from omnistream.router.bubbles import BubbleService
+from omnistream.router.router import BubbleChoice, Router
 from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 
@@ -46,19 +47,19 @@ async def setup(extraction=None, bubbles=("news", "finance"), delay=0.0):
     store = InMemoryStore()
     repo = Repository()
     for b in bubbles:
-        await repo.create_bubble(
+        await BubbleService(repo, FakeEmbedder()).create(
             Bubble(id=b, name=b, description=f"{b} topics", updated_at=NOW)
         )
     fake = FakeLLM(
         {
-            BubbleChoice: BubbleChoice(bubble_ids=list(bubbles)),
+            BubbleChoice: BubbleChoice(bubble_ids=list(bubbles), confidence=0.9),
             Extraction: extraction or Extraction(triples=[triple()]),
         },
         delay=delay,
     )
     pipe = IngestPipeline(
         repo,
-        Router(fake, "m"),
+        Router(fake, "m", FakeEmbedder()),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
         FactWriter(store, clock=lambda: NOW),

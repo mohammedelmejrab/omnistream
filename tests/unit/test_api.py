@@ -16,7 +16,8 @@ from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import Bubble, ExtractedTriple, Extraction
-from omnistream.router.route import BubbleChoice, Router
+from omnistream.router.bubbles import BubbleService
+from omnistream.router.router import BubbleChoice, Router
 from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 
@@ -33,7 +34,7 @@ def make_env(settings: Settings | None = None):
     repo = Repository()
     fake = FakeLLM(
         {
-            BubbleChoice: BubbleChoice(bubble_ids=["news"]),
+            BubbleChoice: BubbleChoice(bubble_ids=["news"], confidence=0.9),
             Extraction: Extraction(
                 triples=[
                     ExtractedTriple(
@@ -49,7 +50,7 @@ def make_env(settings: Settings | None = None):
     )
     pipe = IngestPipeline(
         repo,
-        Router(fake, "m"),
+        Router(fake, "m", FakeEmbedder()),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
         FactWriter(store, clock=lambda: NOW),
@@ -63,7 +64,7 @@ def make_env(settings: Settings | None = None):
 @pytest.fixture
 async def env():
     store, pipe, aps = make_env()
-    await store.create_bubble(
+    await BubbleService(store, FakeEmbedder()).create(
         Bubble(id="news", name="News", description="news topics", updated_at=NOW)
     )
     async with httpx.AsyncClient() as http:
@@ -131,7 +132,7 @@ async def test_create_source_201_and_scheduled(env):
     client, store, aps = env
     r = await client.post(
         "/sources",
-        json={"type": "rss", "url": FEED, "bubble_ids": ["news"], "auto_route": False},
+        json={"type": "rss", "url": FEED, "bubble_ids": ["news"]},
     )
     assert r.status_code == 201
     sid = r.json()["id"]
@@ -203,14 +204,13 @@ async def test_upload_document_200(env):
     assert src.type == "document"
     assert src.credibility == 0.9
     assert src.bubble_ids == ["news"]
-    assert src.auto_route is False
 
 
-async def test_upload_without_bubbles_auto_routes(env):
+async def test_upload_without_bubbles_leaves_router_to_decide(env):
     client, store, _ = env
     assert (await upload(client)).status_code == 200
     (src,) = await store.list_sources()
-    assert src.auto_route is True and src.bubble_ids == []
+    assert src.bubble_ids == []
 
 
 async def test_upload_same_document_twice_second_all_duplicate(env):

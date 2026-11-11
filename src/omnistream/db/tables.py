@@ -61,7 +61,6 @@ class SourceRow(SQLModel, table=True):
     credibility: float = 0.5
     poll_interval: int = 900
     bubble_ids: list[str] = Field(default_factory=list, sa_column=json_col())
-    auto_route: bool = True
     api_mapping: dict[str, Any] | None = Field(
         default=None, sa_column=json_col(nullable=True)
     )

@@ -16,6 +16,7 @@ from omnistream.ingest.normalize import content_hash
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import ApiMapping, Bubble, IngestResult, Source
+from omnistream.router.bubbles import BubbleService
 from omnistream.sources import UnsupportedDocumentError
 from omnistream.sources.documents import document_ext, load_document
 
@@ -39,7 +40,6 @@ class SourceIn(BaseModel):
     credibility: float = 0.5
     poll_interval: int = 900
     bubble_ids: list[str] = Field(default_factory=list)
-    auto_route: bool = True
     api_mapping: ApiMapping | None = None
     max_items_per_hour: int = 30
     store_full_text: bool = True
@@ -62,6 +62,8 @@ def create_app(
     settings = settings or Settings()
     app = FastAPI(title="OmniStream ingestion", lifespan=lifespan)
 
+    bubble_service = BubbleService(repo, embedder)
+
     async def unknown_bubbles(ids: list[str]) -> list[str]:
         return [i for i in ids if await repo.get_bubble(i) is None]
 
@@ -75,13 +77,11 @@ def create_app(
         bubble_id, n = base, 2
         while bubble_id in taken:
             bubble_id, n = f"{base}-{n}", n + 1
-        vec = (await embedder.embed([f"{body.name}: {body.description}"]))[0]
-        return await repo.create_bubble(
+        return await bubble_service.create(
             Bubble(
                 id=bubble_id,
                 name=body.name,
                 description=body.description,
-                description_embedding=vec,
                 updated_at=datetime.now(UTC),
             )
         )
@@ -132,7 +132,6 @@ def create_app(
             url=None,
             credibility=credibility,
             bubble_ids=ids or [],
-            auto_route=ids is None,
         )
         # Parse before persisting the source so a bad file leaves no orphan.
         try:
@@ -174,7 +173,7 @@ def main_app() -> FastAPI:
     from omnistream.graph.resolve import EntityResolver
     from omnistream.graph.write import FactWriter
     from omnistream.llm import build_llm_client
-    from omnistream.router.route import Router
+    from omnistream.router.router import Router
     from omnistream.sources.replay import SnapshotRecorder
     from omnistream.store.neo4j_store import Neo4jStore
 
@@ -190,7 +189,13 @@ def main_app() -> FastAPI:
     llm = build_llm_client(settings)
     pipeline = IngestPipeline(
         repo,
-        Router(llm, settings.llm_model),
+        Router(
+            llm,
+            settings.llm_model,
+            embedder,
+            settings.router_threshold,
+            settings.router_top_k,
+        ),
         Extractor(llm, settings.llm_model),
         EntityResolver(
             store,

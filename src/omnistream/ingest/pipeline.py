@@ -9,7 +9,7 @@ from omnistream.graph.resolve import EntityResolver
 from omnistream.graph.write import FactWriter
 from omnistream.ingest.normalize import content_hash, normalize_text
 from omnistream.models import IngestResult, RawItem, Source
-from omnistream.router.route import Router
+from omnistream.router.router import Router
 
 logger = logging.getLogger(__name__)
 
@@ -54,10 +54,11 @@ class IngestPipeline:
             self._inflight.discard(h)
 
     async def _run(self, item: RawItem, source: Source, h: str) -> IngestResult:
-        bubbles = await self._router.route(
+        decision = await self._router.route(
             item, source, await self._repo.list_bubbles()
         )
-        if not bubbles:
+        bubbles = decision.bubble_ids
+        if decision.unsorted or not bubbles:
             return IngestResult(status="unrouted", item_hash=h)
 
         extraction = await self._extractor.extract(item)
