@@ -120,22 +120,24 @@ class GraphWriter:
         ref_time = item.published_at or datetime.now(UTC)
         started = utc_now()
         # 1. Graphiti episode, tagged with item provenance.
-        res = await self._graphiti.add_episode(
-            name=item.title or item.url or item.id,
-            episode_body=text,
-            source=EpisodeType.text,
-            source_description=json.dumps(
-                {
-                    "item_id": item.id,
-                    "url": item.url,
-                    "credibility": source.credibility,
-                    "source_id": source.id,
-                }
-            ),
-            reference_time=ref_time,
-            group_id=bubble_id,
-            entity_types=ENTITY_TYPES,
-        )
+        res = await self._ops.recover_episode(item.id, bubble_id)
+        if res is None:
+            res = await self._graphiti.add_episode(
+                name=item.title or item.url or item.id,
+                episode_body=text,
+                source=EpisodeType.text,
+                source_description=json.dumps(
+                    {
+                        "item_id": item.id,
+                        "url": item.url,
+                        "credibility": source.credibility,
+                        "source_id": source.id,
+                    }
+                ),
+                reference_time=ref_time,
+                group_id=bubble_id,
+                entity_types=ENTITY_TYPES,
+            )
         episode_uuid = res.episode.uuid
         result.episode_uuids.append(episode_uuid)
         await self._ops.tag_episode(
@@ -145,7 +147,8 @@ class GraphWriter:
         # 2. Grounding of newly created entities (flag, never delete).
         grounding_text = f"{item.title}\n{text}"
         ungrounded: set[str] = set()
-        new_nodes = [n for n in res.nodes if n.created_at >= started]
+        episode_started = getattr(res.episode, "created_at", started)
+        new_nodes = [n for n in res.nodes if n.created_at >= episode_started]
         for node in new_nodes:
             aliases = node.attributes.get("aliases") or []
             ok = any(
@@ -239,7 +242,7 @@ async def build_graph_writer(
 
     graphiti = build_graphiti(settings, embedder)
     await graphiti.build_indices_and_constraints()
-    ops = Neo4jGraphOps(graphiti.driver, settings.embed_dim)
+    ops = Neo4jGraphOps(graphiti.driver, settings.embed_dim, settings.entity_index_name)
     await ops.ensure_schema()
     return GraphWriter(
         graphiti,

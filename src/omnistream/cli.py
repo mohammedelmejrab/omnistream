@@ -67,7 +67,7 @@ async def seed(
     settings: Settings, repo: Repository | None = None, embedder=None
 ) -> int:
     """Create the starter bubbles and sources; idempotent."""
-    repo = repo or Repository.from_path(_db_path(settings))
+    repo = repo or Repository.from_path(_db_path(settings), settings=settings)
     if embedder is None:
         from omnistream.embed import SentenceTransformerEmbedder
 
@@ -131,7 +131,7 @@ async def serve(settings: Settings, host: str, port: int) -> int:
 
 async def replay(name: str, settings: Settings) -> int:
     """Re-inject a recorded snapshot through intake, in polled order."""
-    repo = Repository.from_path(_db_path(settings))
+    repo = Repository.from_path(_db_path(settings), settings=settings)
     intake = Intake(repo, settings.data_dir, settings.prefilter_min_chars)
     accepted = 0
     try:

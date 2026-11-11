@@ -168,11 +168,14 @@ def test_from_settings_uses_injected_factory(monkeypatch):
     monkeypatch.setattr("neo4j.GraphDatabase.driver", factory)
     settings = Settings(
         _env_file=None,
+        entity_index_name="custom_entities",
         neo4j_uri="bolt://offline",
         neo4j_user="test",
         neo4j_password="fake",
     )
-    assert Neo4jGraphStore.from_settings(settings).driver is driver
+    store = Neo4jGraphStore.from_settings(settings)
+    assert store.driver is driver
+    assert store.entity_index_name == "custom_entities"
     assert calls == [("bolt://offline", {"auth": ("test", "fake")})]
 
 
@@ -202,3 +205,35 @@ def test_reader_index_dimension_check(dimension):
         with pytest.raises(ValueError, match="expected 384"):
             Neo4jGraphStore(driver).ensure_schema(384)
     assert "SHOW INDEXES" in driver.calls[1][0]
+
+
+def test_custom_index_name_is_quoted_and_checked_consistently():
+    name = "custom`index"
+    driver = Driver([], [{"options": {"indexConfig": {"vector.dimensions": 384}}}], [])
+    Neo4jGraphStore(driver, entity_index_name=name).ensure_schema(384)
+    assert "CREATE VECTOR INDEX `custom``index` IF NOT EXISTS" in driver.calls[0][0]
+    assert driver.calls[1][1]["name"] == name
+    assert driver.calls[2][1]["name"] == name
+
+
+def test_read_only_schema_check_never_provisions_or_waits():
+    driver = Driver([{"options": {"indexConfig": {"vector.dimensions": 384}}}])
+    Neo4jGraphStore(driver).check_schema(384)
+    assert len(driver.calls) == 1 and driver.calls[0][0].startswith("SHOW INDEXES")
+
+
+def test_expand_freezes_now_across_hops(monkeypatch):
+    from omnistream.graph import neo4j_store
+
+    calls = []
+    original = neo4j_store._scope_parameters
+
+    def scope(value):
+        calls.append(value)
+        return original(value)
+
+    monkeypatch.setattr(neo4j_store, "_scope_parameters", scope)
+    driver = Driver([{"entities": [NODE, OTHER]}], [])
+    Neo4jGraphStore(driver).expand(["a"], bubbles=["news"], time_scope=None)
+    assert len(calls) == 1
+    assert driver.calls[0][1]["now"] is driver.calls[1][1]["now"]

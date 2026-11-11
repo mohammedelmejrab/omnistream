@@ -9,6 +9,9 @@ class FakeGlobalStore:
         self.aliases: list[tuple] = []
         self.links: list[tuple] = []
 
+    async def existing_global_entity(self, entity_uuid):
+        return next((g for e, g in self.links if e == entity_uuid), None)
+
     async def nearest_global_entities(self, embedding, type, k):
         return [c for c in self.candidates if c.type == type][:k]
 
@@ -76,3 +79,10 @@ async def test_no_alias_when_disabled_or_known():
     await linker(store).link("e1", "Hallucinated", "Person", add_alias=False)
     await linker(store).link("e2", "tc", "Person")
     assert store.aliases == []
+
+
+async def test_retry_reuses_existing_link_even_without_search_candidates():
+    store = FakeGlobalStore()
+    first = await linker(store).link("e1", "Alice Smith", "Person")
+    assert await linker(store).link("e1", "Alice Smith", "Person") == first
+    assert len(store.created) == len(store.links) == 1

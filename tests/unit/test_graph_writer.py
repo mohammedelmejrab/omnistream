@@ -68,6 +68,9 @@ class FakeOps:
         self.status_calls: list[list[str]] = []
         self.facts = ["Alice leads Acme"]
 
+    async def recover_episode(self, item_id, group_id):
+        return None
+
     async def tag_episode(self, uuid, item_id, source_url, credibility, source_id):
         self.episodes[uuid] = (item_id, source_url, credibility, source_id)
 
@@ -304,3 +307,36 @@ async def test_corroboration_keeps_newest_primary_provenance(tmp_path, dates):
     finally:
         await repo.close()
         w.chunks._client.close()
+
+
+async def test_retry_resumes_committed_episode_and_reprocesses_original_new_nodes(
+    tmp_path,
+):
+    from unittest.mock import AsyncMock
+
+    a, b = node("Alice Smith"), node("Acme Corp", ("Entity", "Organization"))
+    g = FakeGraphiti([a, b], [edge("e1", a.uuid, b.uuid, ["ep1"])])
+    writer, ops, store, repo = await build(tmp_path, g)
+    original_link = writer._linker.link
+    writer._linker.link = AsyncMock(side_effect=RuntimeError("linker unavailable"))
+    with pytest.raises(RuntimeError, match="linker unavailable"):
+        await writer.write(make_item(), TEXT, ["news"], make_source())
+    committed = SimpleNamespace(
+        episode=SimpleNamespace(uuid="ep1", created_at=NOW),
+        nodes=g.nodes,
+        edges=g.edges,
+    )
+    # Simulate a retry long after extraction; these nodes still need linking.
+    for n in g.nodes:
+        n.created_at = NOW + timedelta(seconds=1)
+    ops.recover_episode = AsyncMock(return_value=committed)
+    writer._linker.link = original_link
+    result = await writer.write(make_item(), TEXT, ["news"], make_source())
+    assert len(g.calls) == 1
+    assert result.entities_new == 2
+    assert ops.edges["e1"]["item_id"] == "item1"
+    assert ops.edges["e1"]["published_at"] == NOW
+    assert ops.edges["e1"]["grounded"] is True
+    assert {entity for entity, _ in store.links} == {a.uuid, b.uuid}
+    assert await writer.chunks.count("news") > 0
+    await repo.close()

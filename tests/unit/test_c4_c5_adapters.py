@@ -196,7 +196,8 @@ async def test_runtime_factory_uses_shared_dependencies_and_closes(
     rt = runtime.build_query_runtime(
         settings, repo, embeddings=SimpleNamespace(service=embedder)
     )
-    graph.ensure_schema.assert_called_once_with(settings.embed_dim)
+    graph.ensure_schema.assert_not_called()
+    graph.check_schema.assert_not_called()
     assert rt.embeddings is embedder
     assert rt.dispatcher.retrievers["classic"].embedder is embedder
     build_graphiti.assert_called_once_with(settings, embeddings=embedder)
@@ -207,6 +208,7 @@ async def test_runtime_factory_uses_shared_dependencies_and_closes(
         )
         == "qa-result"
     )
+    graph.check_schema.assert_called_once_with(settings.embed_dim)
     assert answer.call_args.kwargs["pins"] == ["news"]
     await rt.close()
     await rt.close()
@@ -311,12 +313,72 @@ async def test_c4_ensure_schema_creates_entity_index_with_settings_dimension():
                     None,
                 ),
                 ([], None, None),
+                (
+                    [
+                        {
+                            "name": "existing_global",
+                            "options": {"indexConfig": {"vector.dimensions": 384}},
+                        }
+                    ],
+                    None,
+                    None,
+                ),
+                ([], None, None),
                 ([], None, None),
             ]
         )
     )
-    await Neo4jGraphOps(driver, 384).ensure_schema()
+    await Neo4jGraphOps(driver, 384, "custom`entities").ensure_schema()
     (query,) = driver.execute_query.call_args_list[0].args
-    assert "entity_name_embedding IF NOT EXISTS" in query
+    assert "`custom``entities` IF NOT EXISTS" in query
+    assert driver.execute_query.call_args_list[1].kwargs["name"] == "custom`entities"
     assert "(e:Entity) ON (e.name_embedding)" in query
     assert driver.execute_query.call_args_list[0].kwargs["dim"] == 384
+
+
+async def test_global_linker_uses_existing_equivalent_index():
+    from omnistream.graph.ops import Neo4jGraphOps
+
+    driver = SimpleNamespace(
+        execute_query=AsyncMock(
+            side_effect=[
+                ([], None, None),
+                (
+                    [{"options": {"indexConfig": {"vector.dimensions": 384}}}],
+                    None,
+                    None,
+                ),
+                ([], None, None),
+                (
+                    [
+                        {
+                            "name": "existing`global",
+                            "options": {"indexConfig": {"vector.dimensions": 384}},
+                        }
+                    ],
+                    None,
+                    None,
+                ),
+                ([], None, None),
+                ([], None, None),
+                ([], None, None),
+            ]
+        )
+    )
+    ops = Neo4jGraphOps(driver, 384)
+    await ops.ensure_schema()
+    await ops.nearest_global_entities([1.0] * 384, "Organization", 5)
+    query = driver.execute_query.call_args.args[0]
+    assert "queryNodes($index," in query
+    assert driver.execute_query.call_args.kwargs["index"] == "existing`global"
+    assert "existing`global" not in query
+
+
+async def test_recovery_only_collects_edges_from_the_requested_episode():
+    from omnistream.graph.ops import Neo4jGraphOps
+
+    driver = SimpleNamespace(execute_query=AsyncMock(return_value=([], None, None)))
+    assert await Neo4jGraphOps(driver, 384).recover_episode("item", "group") is None
+    query = driver.execute_query.call_args.args[0]
+    assert "ep.uuid IN coalesce(r.episodes, [])" in query
+    assert "r.expired_at >=" not in query

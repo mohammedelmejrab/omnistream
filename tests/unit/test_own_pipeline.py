@@ -93,3 +93,33 @@ def test_empty_and_validation():
         retriever.retrieve("none", bubbles=[], top_k=-1)
     with pytest.raises(ValueError):
         OwnRetriever(retriever.store, service, k=-1)
+
+
+def test_shared_identity_seeds_preserve_cross_bubble_bridge():
+    from omnistream.retrieval.models import Entity
+
+    service, _ = embedder()
+    entities = [
+        Entity("a", "Pelvoria Institute", "Organization", "finance", "global-p"),
+        Entity("b", "Pelvoria Institute", "Organization", "research", "global-p"),
+        Entity("c", "Zorvanta Labs", "Organization", "finance"),
+        Entity("d", "Nuvex Prism", "Product", "research"),
+    ]
+    graph = InMemoryGraphStore(
+        entities,
+        [
+            replace(fact("funds", "c", "a"), bubble="finance"),
+            replace(fact("developed", "b", "d"), bubble="research"),
+        ],
+        same_as=[("a", "b")],
+    )
+    result = OwnRetriever(graph, service, now=lambda: NOW).retrieve(
+        "Pelvoria Institute", bubbles=["finance", "research"]
+    )
+    assert len(result.seeds) == 1
+    assert {f.fact.id for f in result.facts} == {"funds", "developed"}
+    assert any(
+        frozenset((a, b)) == {"a", "b"}
+        for f in result.facts
+        for a, b in zip(f.path, f.path[1:])
+    )

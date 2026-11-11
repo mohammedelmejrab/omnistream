@@ -38,6 +38,8 @@ class GlobalCandidate:
 
 
 class GlobalEntityStore(Protocol):
+    async def existing_global_entity(self, entity_uuid: str) -> str | None: ...
+
     async def nearest_global_entities(
         self, embedding: list[float], type: str, k: int
     ) -> list[GlobalCandidate]:
@@ -77,6 +79,9 @@ class GlobalEntityLinker:
         add_alias: bool = True,
     ) -> str:
         """Link an Entity node to its GlobalEntity (creating one); returns its uuid."""
+        existing = await self._store.existing_global_entity(entity_uuid)
+        if existing is not None:
+            return existing
         name = name.strip()
         if embedding is None:
             [embedding] = await self._embedder.embed([name])

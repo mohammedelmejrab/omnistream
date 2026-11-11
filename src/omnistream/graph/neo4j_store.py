@@ -2,7 +2,7 @@
 
 Graphiti entities use uuid/group_id/name, fact relationships RELATES_TO use
 uuid/fact and the provenance fields in section 7. Identity edges are SAME_AS.
-All query values, including index names and limits, are parameters.
+Query values and limits are parameters; DDL index identifiers are backtick-escaped.
 """
 
 from __future__ import annotations
@@ -168,7 +168,8 @@ class Neo4jGraphStore:
             GraphDatabase.driver(
                 settings.neo4j_uri,
                 auth=(settings.neo4j_user, settings.neo4j_password.get_secret_value()),
-            )
+            ),
+            entity_index_name=settings.entity_index_name,
         )
 
     def _run(self, query: str, **parameters: Any) -> list[Any]:
@@ -178,12 +179,17 @@ class Neo4jGraphStore:
     def ensure_schema(self, embed_dim: int) -> None:
         """Provision the reader's vector index and reject incompatible schemas."""
         self._run(
-            "CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS "
+            f"CREATE VECTOR INDEX `{self.entity_index_name.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
             "FOR (e:Entity) ON (e.name_embedding) "
             "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
             "`vector.similarity_function`: 'cosine'}}",
             dim=embed_dim,
         )
+        self.check_schema(embed_dim)
+        self._run("CALL db.awaitIndex($name)", name=self.entity_index_name)
+
+    def check_schema(self, embed_dim: int) -> None:
+        """Read-only existence and dimension check; never create or await an index."""
         rows = self._run(
             "SHOW INDEXES YIELD name, options WHERE name = $name RETURN options",
             name=self.entity_index_name,
@@ -197,7 +203,6 @@ class Neo4jGraphStore:
             raise ValueError(
                 f"Neo4j index {self.entity_index_name!r} dimension is {actual}; expected {embed_dim}"
             )
-        self._run("CALL db.awaitIndex($name)", name=self.entity_index_name)
 
     def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
         records = self._run(
@@ -254,6 +259,7 @@ RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:Glo
         entities, facts, links = {}, {}, set()
         frontier = sorted(set(seed_ids))
         visited = set()
+        scope_parameters = _scope_parameters(time_scope)
         for _ in range(max_hops):
             if not frontier:
                 break
@@ -263,7 +269,7 @@ RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:Glo
                 max_edges=max_edges - len(facts),
                 known_fact_ids=sorted(facts),
                 excluded_bubbles=list(excluded_bubbles),
-                **_scope_parameters(time_scope),
+                **scope_parameters,
             )
             visited.update(frontier)
             reached = set()

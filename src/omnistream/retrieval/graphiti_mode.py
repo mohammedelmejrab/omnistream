@@ -84,7 +84,10 @@ class GraphitiCoreSearcher:
             ) from exc
         try:
             graphiti = build_graphiti(
-                settings, embeddings, max_tokens=GRAPHITI_MAX_OUTPUT_TOKENS
+                settings,
+                embeddings,
+                read_only=True,
+                max_tokens=GRAPHITI_MAX_OUTPUT_TOKENS,
             )
         except ImportError as exc:
             raise ImportError(

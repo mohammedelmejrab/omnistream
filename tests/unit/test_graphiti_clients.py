@@ -293,6 +293,7 @@ def faked_graphiti_clients(monkeypatch):
 
     class FakeGraphiti:
         def __init__(self, uri, user, password, **kwargs):
+            self.driver = None
             graphiti_kwargs.update(
                 {"uri": uri, "user": user, "password": password, **kwargs}
             )

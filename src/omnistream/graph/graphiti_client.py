@@ -121,6 +121,7 @@ def build_graphiti(
     settings: Settings,
     embeddings: EmbeddingService | Embedder | None = None,
     *,
+    read_only: bool = False,
     max_tokens: int = 8192,  # DeepSeek caps output at 8192; graphiti defaults to 16384
 ) -> Graphiti:
     """Build Graphiti with the hardened clients; never OpenAI defaults.
@@ -155,7 +156,7 @@ def build_graphiti(
         # Spec: JSON mode (works on providers without json_schema, e.g. DeepSeek).
         structured_output_mode="json_object",
     )
-    return GraphitiClass(
+    graphiti = GraphitiClass(
         settings.neo4j_uri,
         settings.neo4j_user,
         settings.neo4j_password.get_secret_value(),
@@ -163,3 +164,12 @@ def build_graphiti(
         embedder=embedder_client,
         cross_encoder=cross_encoder,
     )
+
+    if read_only:
+        # graphiti-core 0.31 schedules schema writes in Neo4jDriver.__init__.
+        # Cancel synchronously before the owning loop can run the task. C4
+        # provisions schema explicitly; query-only users need no DDL privilege.
+        task = getattr(graphiti.driver, "_init_task", None)
+        if task is not None:
+            task.cancel()
+    return graphiti

@@ -62,16 +62,33 @@ class QueryRuntime:
             },
             "own",
         )
+        self._schema_lock = asyncio.Lock()
+        self._schema_checked = False
         self._closed = False
         self._answers = set()
         self._close_task = None
         self.close_timeout = 30.0
 
+    async def initialize(self, *, create_schema=False):
+        """Check C4's index in a worker thread; provisioning is explicit opt-in."""
+        async with self._schema_lock:
+            if create_schema:
+                await asyncio.to_thread(
+                    self.graph.ensure_schema, self.settings.embed_dim
+                )
+            elif not self._schema_checked:
+                await asyncio.to_thread(
+                    self.graph.check_schema, self.settings.embed_dim
+                )
+            self._schema_checked = True
+
     async def answer(self, question, *, mode=None, subagents=None, pin=(), exclude=()):
         if self._closed:
             raise RuntimeError("query runtime is closed")
-        task = asyncio.create_task(
-            answer_question(
+
+        async def run():
+            await self.initialize()
+            return await answer_question(
                 question,
                 router=self.router,
                 dispatcher=self.dispatcher,
@@ -85,7 +102,8 @@ class QueryRuntime:
                 pins=pin,
                 exclude=exclude,
             )
-        )
+
+        task = asyncio.create_task(run())
         self._answers.add(task)
         try:
             return await task
@@ -135,7 +153,12 @@ class QueryRuntime:
 
 
 def build_query_runtime(settings, repo, *, embeddings=None):
-    """Synchronous construction; no model load or LLM call is performed."""
+    """Build lazy clients without Neo4j I/O, model loading, or LLM calls.
+
+    Await runtime.initialize() for a read-only index check (also done on the
+    first answer). C4 provisions indexes; explicit initialize(create_schema=True)
+    is available for standalone setup. Blocking checks run in worker threads.
+    """
     service = (
         getattr(embeddings, "service", embeddings)
         if embeddings is not None
@@ -144,7 +167,6 @@ def build_query_runtime(settings, repo, *, embeddings=None):
     graph = Neo4jGraphStore.from_settings(settings)
     chroma = graphiti = llm = async_llm = None
     try:
-        graph.ensure_schema(settings.embed_dim)
         chroma = make_chroma_client(Path(settings.data_dir) / "chroma")
         graphiti = GraphitiRetriever.from_settings(settings, embeddings=service)
         llm = LLMClient(settings)

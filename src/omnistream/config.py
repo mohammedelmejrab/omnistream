@@ -63,6 +63,8 @@ class Settings(BaseSettings):
     embedding_batch_size: int = 32
     embedding_device: str | None = None
 
+    entity_index_name: str = Field(default="entity_name_embedding", min_length=1)
+
     # Retrieval defaults (C5).
     rrf_k: int = Field(default=60, ge=1)
     subagent_max_tool_calls: int = Field(default=6, ge=1)

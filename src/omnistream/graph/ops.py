@@ -19,6 +19,8 @@ class EdgeState:
 
 
 class GraphOps(Protocol):
+    async def recover_episode(self, item_id: str, group_id: str): ...
+
     async def tag_episode(
         self, episode_uuid: str, item_id: str, source_url: str, credibility: float,
         source_id: str,
@@ -49,9 +51,16 @@ class GraphOps(Protocol):
 class Neo4jGraphOps:
     """Implements GraphOps and the linker's GlobalEntityStore over Graphiti's driver."""
 
-    def __init__(self, driver: Any, embed_dim: int) -> None:
+    def __init__(
+        self,
+        driver: Any,
+        embed_dim: int,
+        entity_index_name: str = "entity_name_embedding",
+    ) -> None:
         self._driver = driver
         self._dim = embed_dim
+        self._entity_index = entity_index_name
+        self._global_index = GLOBAL_INDEX
 
     async def _q(self, query: str, **params: Any) -> list[dict[str, Any]]:
         records, _, _ = await self._driver.execute_query(query, **params)
@@ -59,14 +68,15 @@ class Neo4jGraphOps:
 
     async def ensure_schema(self) -> None:
         await self._q(
-            "CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS "
+            f"CREATE VECTOR INDEX `{self._entity_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
             "FOR (e:Entity) ON (e.name_embedding) "
             "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
             "`vector.similarity_function`: 'cosine'}}",
             dim=self._dim,
         )
         rows = await self._q(
-            "SHOW INDEXES YIELD name, options WHERE name = 'entity_name_embedding' RETURN options"
+            "SHOW INDEXES YIELD name, options WHERE name = $name RETURN options",
+            name=self._entity_index,
         )
         actual = (
             rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
@@ -75,7 +85,7 @@ class Neo4jGraphOps:
         )
         if actual != self._dim:
             raise ValueError(
-                f"Neo4j index 'entity_name_embedding' dimension is {actual}; expected {self._dim}"
+                f"Neo4j index {self._entity_index!r} dimension is {actual}; expected {self._dim}"
             )
         await self._q(
             f"CREATE VECTOR INDEX {GLOBAL_INDEX} IF NOT EXISTS "
@@ -84,6 +94,21 @@ class Neo4jGraphOps:
             "`vector.similarity_function`: 'cosine'}}",
             dim=self._dim,
         )
+        rows = await self._q(
+            "SHOW INDEXES YIELD name, type, labelsOrTypes, properties, options "
+            "WHERE type = 'VECTOR' AND labelsOrTypes = ['GlobalEntity'] "
+            "AND properties = ['name_embedding'] RETURN name, options"
+        )
+        if (
+            not rows
+            or rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
+            != self._dim
+        ):
+            raise ValueError(
+                "GlobalEntity vector index missing or incompatible dimensions"
+            )
+        self._global_index = rows[0]["name"]
+        await self._q("CALL db.awaitIndex($name)", name=self._global_index)
         await self._q(
             "CREATE CONSTRAINT global_entity_uuid IF NOT EXISTS "
             "FOR (g:GlobalEntity) REQUIRE g.uuid IS UNIQUE"
@@ -102,6 +127,34 @@ class Neo4jGraphOps:
             url=source_url,
             cred=credibility,
             sid=source_id,
+        )
+
+    async def recover_episode(self, item_id: str, group_id: str):
+        """Resume C4 postprocessing after Graphiti committed but a later step failed."""
+        from types import SimpleNamespace
+
+        from graphiti_core.edges import EntityEdge
+        from graphiti_core.nodes import EntityNode, EpisodicNode
+
+        rows = await self._q(
+            "MATCH (ep:Episodic {group_id: $group}) "
+            "WHERE ep.item_id = $item OR ep.source_description CONTAINS $item "
+            "OPTIONAL MATCH (ep)-[:MENTIONS]->(n:Entity) "
+            "WITH ep, collect(DISTINCT n.uuid) AS nodes "
+            "OPTIONAL MATCH ()-[r:RELATES_TO]->() WHERE r.group_id = $group "
+            "AND ep.uuid IN coalesce(r.episodes, []) "
+            "RETURN ep.uuid AS episode, ep.created_at AS created_at, nodes, collect(DISTINCT r.uuid) AS edges "
+            "ORDER BY created_at DESC LIMIT 1",
+            item=item_id,
+            group=group_id,
+        )
+        if not rows:
+            return None
+        row = rows[0]
+        return SimpleNamespace(
+            episode=await EpisodicNode.get_by_uuid(self._driver, row["episode"]),
+            nodes=await EntityNode.get_by_uuids(self._driver, row["nodes"]),
+            edges=await EntityEdge.get_by_uuids(self._driver, row["edges"]),
         )
 
     async def get_edge_states(self, uuids: list[str]) -> dict[str, EdgeState]:
@@ -174,15 +227,24 @@ class Neo4jGraphOps:
         )
 
     # --- GlobalEntityStore ---
+    async def existing_global_entity(self, entity_uuid: str) -> str | None:
+        rows = await self._q(
+            "MATCH (:Entity {uuid: $uuid})-[:SAME_AS]->(g:GlobalEntity) "
+            "RETURN g.uuid AS uuid ORDER BY uuid LIMIT 1",
+            uuid=entity_uuid,
+        )
+        return rows[0]["uuid"] if rows else None
+
     async def nearest_global_entities(
         self, embedding: list[float], type: str, k: int
     ) -> list[GlobalCandidate]:
         # Over-fetch: the type filter is applied after the ANN search.
         rows = await self._q(
-            f"CALL db.index.vector.queryNodes('{GLOBAL_INDEX}', $k, $emb) "
+            "CALL db.index.vector.queryNodes($index, $k, $emb) "
             "YIELD node, score WHERE node.type = $type "
             "RETURN node.uuid AS uuid, node.name AS name, node.type AS type, "
             "node.aliases AS aliases, score ORDER BY score DESC",
+            index=self._global_index,
             k=k * 5,
             emb=embedding,
             type=type,

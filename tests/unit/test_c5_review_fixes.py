@@ -78,7 +78,7 @@ async def test_tools_and_own_retriever_respect_exclusions(embedder):
         assert all(e["bubble"] != "finance" for e in result.get("entities", []))
 
 
-@pytest.mark.parametrize("fail_at", ["async_llm", "runtime", "schema"])
+@pytest.mark.parametrize("fail_at", ["async_llm", "runtime"])
 async def test_runtime_construction_cleans_every_created_resource(
     settings, embedder, monkeypatch, fail_at
 ):
@@ -93,9 +93,7 @@ async def test_runtime_construction_cleans_every_created_resource(
     )
     monkeypatch.setattr(runtime, "LLMClient", Mock(return_value=llm))
     monkeypatch.setattr(runtime, "AsyncLLMClient", Mock(return_value=async_llm))
-    if fail_at == "schema":
-        graph.ensure_schema.side_effect = ValueError("failure")
-    elif fail_at == "async_llm":
+    if fail_at == "async_llm":
         monkeypatch.setattr(
             runtime, "AsyncLLMClient", Mock(side_effect=ValueError("failure"))
         )
@@ -106,10 +104,9 @@ async def test_runtime_construction_cleans_every_created_resource(
     with pytest.raises(ValueError, match="failure"):
         runtime.build_query_runtime(settings, Mock(), embeddings=embedder)
     graph.driver.close.assert_called_once()
-    if fail_at != "schema":
-        graphiti.close.assert_called_once()
-        chroma.close.assert_called_once()
-        llm._client.close.assert_called_once()
+    graphiti.close.assert_called_once()
+    chroma.close.assert_called_once()
+    llm._client.close.assert_called_once()
     if fail_at == "runtime":
         async_llm._client.close.assert_awaited_once()
 
@@ -156,3 +153,61 @@ async def test_runtime_close_waits_or_cancels_inflight(
     await closing
     graph.driver.close.assert_called_once()
     await rt.close()
+
+
+async def test_from_path_preserves_half_life_settings(tmp_path):
+    repo = Repository.from_path(
+        str(tmp_path / "state.db"),
+        settings=Settings(_env_file=None, half_life_news_days=19),
+    )
+    try:
+        await repo.create_bubble(Bubble(id="n", name="News", description="news"))
+        assert (await repo.get_bubble("n")).half_life_days == 19
+    finally:
+        await repo.close()
+
+
+async def test_runtime_schema_initialization_is_read_only_and_off_loop(settings):
+    import threading
+
+    graph = Mock()
+    loop_thread = threading.get_ident()
+
+    def check(dim):
+        assert threading.get_ident() != loop_thread
+        assert dim == settings.embed_dim
+
+    graph.check_schema.side_effect = check
+    graph.ensure_schema.side_effect = check
+    repo = Mock()
+    repo.read_bubbles.return_value = []
+    rt = runtime.QueryRuntime(
+        settings, repo, Mock(), graph, Mock(), Mock(), Mock(), Mock()
+    )
+    await asyncio.gather(rt.initialize(), rt.initialize())
+    graph.check_schema.assert_called_once_with(settings.embed_dim)
+    graph.ensure_schema.assert_not_called()
+    await rt.initialize(create_schema=True)
+    graph.ensure_schema.assert_called_once_with(settings.embed_dim)
+
+
+async def test_query_graphiti_never_runs_constructor_schema_task(
+    settings, embedder, monkeypatch
+):
+    from graphiti_core.driver.neo4j_driver import Neo4jDriver
+
+    from omnistream.graph.graphiti_client import build_graphiti
+
+    calls = []
+
+    async def provision(self):
+        calls.append("DDL")
+
+    monkeypatch.setattr(Neo4jDriver, "build_indices_and_constraints", provision)
+    graphiti = build_graphiti(settings, embedder, read_only=True)
+    try:
+        await asyncio.sleep(0)
+        assert calls == []
+        assert graphiti.driver._init_task.cancelled()
+    finally:
+        await graphiti.close()

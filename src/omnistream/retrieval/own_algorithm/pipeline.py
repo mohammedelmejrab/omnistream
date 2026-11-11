@@ -57,6 +57,16 @@ class OwnRetriever:
         seeds = seed_entities(question, query, self.store, bubbles=bubbles)
         if not seeds:
             return RetrievalResult(mode="own")
+        # One seed per real-world identity: seeding both bubble-local copies
+        # hides the SAME_AS path and spends the seed budget on duplicates.
+        identities = set()
+        unique_seeds = []
+        for seed in seeds:
+            identity = seed.entity.global_id or seed.entity.id
+            if identity not in identities:
+                identities.add(identity)
+                unique_seeds.append(seed)
+        seeds = unique_seeds
         ids = [s.entity.id for s in seeds]
         graph = self.store.expand(
             ids,

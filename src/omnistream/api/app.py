@@ -275,7 +275,9 @@ async def build_components(
 ) -> Components:
     """Wire the whole ingestion stack. Every heavy part is injectable so unit
     tests pass fakes; anything left None is built for real."""
-    repo = repo or Repository.from_path(str(Path(settings.data_dir) / "omnistream.db"))
+    repo = repo or Repository.from_path(
+        str(Path(settings.data_dir) / "omnistream.db"), settings=settings
+    )
     if embedder is None:
         from omnistream.embed import SentenceTransformerEmbedder
 

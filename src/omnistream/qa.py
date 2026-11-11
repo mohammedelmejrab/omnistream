@@ -189,8 +189,16 @@ async def answer_question(
     if specific not in {entry.fact.item_id for entry in result.facts}:
         specific = None
     canonical_ids = None
+    entities = []
     if graph_store is not None:
-        entities = await asyncio.to_thread(graph_store.entities_in, routing.bubbles)
+        entities = await asyncio.to_thread(
+            graph_store.entities_in,
+            tuple(
+                dict.fromkeys(
+                    [*routing.bubbles, *(f.fact.bubble for f in result.facts)]
+                )
+            ),
+        )
         canonical_ids = {
             entity.id: entity.global_id or entity.id for entity in entities
         }
@@ -199,6 +207,8 @@ async def answer_question(
         result,
         item_store=item_store,
         canonical_ids=canonical_ids,
+        span_llm=llm,
+        entities={entity.id: entity for entity in entities},
         include_item_text_for=specific,
     )
     specific = context.expanded_item_id

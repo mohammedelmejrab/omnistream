@@ -82,6 +82,8 @@ def test_provider_error_propagates(settings, embedder):
         ([], False),
         ({"extra": 1}, False),
         ({}, False),
+        ({"start": None, "end": None}, False),
+        ({"start": None}, False),
     ],
 )
 def test_time_scope(scope, valid, settings, embedder, mock_openai):

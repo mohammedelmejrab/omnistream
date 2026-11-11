@@ -74,8 +74,8 @@ def test_whitespace_normalised_match_span():
     [
         (
             "quick brown fox leaps over the lazy dog",
-            ((4, 43),),
-        ),  # fuzzy score 92.3 >= 90
+            (),
+        ),  # A lexical substitution is not evidence of entailment
         ("quick brown fox jumps over a sleepy dog", ()),  # fuzzy score 87.2 < 90
     ],
 )
@@ -300,3 +300,190 @@ def test_unavailable_expansion_fetched_once_and_omitted(error):
     assert context.text == "[1] evidence"
     assert context.citations[0].spans == ()
     assert context.expanded_item_id is None
+
+
+@pytest.mark.parametrize(
+    "source,claim",
+    [
+        (
+            "On April 1, 2026, Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs.",
+            "Mira Velquin is the CEO of Zorvanta Labs",
+        ),
+        (
+            "On April 1, 2026, Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs.",
+            "Mira Velquin replaced Taren Vosquil as CEO of Zorvanta Labs",
+        ),
+        (
+            "Beta Corp acquired the startup founded by Alice Smith",
+            "Alice Smith acquired Beta Corp",
+        ),
+        (
+            "Shares of Acme fell 5 percent in March. Rivals rose 10 percent.",
+            "Acme shares rose 10 percent in March",
+        ),
+    ],
+)
+def test_contradicted_or_reversed_claim_has_no_span(source, claim):
+    from omnistream.retrieval.citations import _locate
+
+    assert _locate(source, claim) is None
+
+
+def test_supported_source_sentence_has_span():
+    from omnistream.retrieval.citations import _locate
+
+    claim = "Taren Vosquil is now the CEO of Zorvanta Labs."
+    original = "Earlier bulletin. " + claim
+    start, end = _locate(original, claim)
+    assert original[start:end] == claim
+
+
+def test_fuzzy_formatting_difference_preserves_ordered_words():
+    from omnistream.retrieval.citations import _locate
+
+    assert _locate("Alice Smith leads Acme Corp.", "Alice Smith leads Acme Corp!") == (
+        0,
+        27,
+    )
+
+
+@pytest.mark.parametrize(
+    "source,claim",
+    [
+        (
+            "On April 1, 2026, Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs.",
+            "Mira Velquin is the CEO of Zorvanta Labs",
+        ),
+        (
+            "On April 1, 2026, Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs.",
+            "Mira Velquin replaced Taren Vosquil as CEO of Zorvanta Labs",
+        ),
+        (
+            "Beta Corp acquired the startup founded by Alice Smith",
+            "Alice Smith acquired Beta Corp",
+        ),
+        (
+            "Shares of Acme fell 5 percent in March. Rivals rose 10 percent.",
+            "Acme shares rose 10 percent in March",
+        ),
+    ],
+)
+def test_entailment_rejection_never_creates_span(source, claim):
+    from unittest.mock import Mock
+
+    from omnistream.retrieval.citations import _entailed_span
+    from omnistream.retrieval.models import Entity
+
+    names = (
+        ("Mira Velquin", "Zorvanta Labs")
+        if "Velquin" in claim
+        else (("Alice Smith", "Beta Corp") if "Alice" in claim else ("Acme", "shares"))
+    )
+    entities = {
+        k: Entity(k, name, "Entity", "news") for k, name in zip(("s", "o"), names)
+    }
+    llm = Mock()
+    llm.chat_json.return_value = {"supported": False, "sentence": 0}
+    from dataclasses import replace
+
+    relation = (
+        "REPLACED"
+        if "replaced" in claim
+        else (
+            "CEO_OF"
+            if "CEO" in claim
+            else ("ACQUIRED" if "acquired" in claim else "ROSE")
+        )
+    )
+    fact = replace(_fact(claim, "i").fact, relation=relation)
+    assert _entailed_span(source, fact, entities, llm) is None
+    assert llm.chat_json.call_count == (0 if "Acme" in claim else 1)
+
+
+def test_entailment_acceptance_and_pair_cache():
+    from dataclasses import replace
+    from unittest.mock import Mock
+
+    from omnistream.retrieval.models import Entity
+
+    original = "Pelvoria Institute developed the Nuvex Prism."
+    fact = replace(
+        _fact(
+            "The experimental Nuvex Prism was developed by Pelvoria Institute", "i"
+        ).fact,
+        relation="DEVELOPED",
+    )
+    entities = {
+        "s": Entity("s", "Pelvoria Institute", "Organization", "news"),
+        "o": Entity("o", "Nuvex Prism", "Product", "news"),
+    }
+    llm = Mock()
+    llm.chat_json.return_value = {"supported": True, "sentence": 0}
+    result = RetrievalResult(
+        "own", (ScoredFact(fact, 1), ScoredFact(replace(fact, id="duplicate"), 1))
+    )
+    context = build_context(
+        result, item_store=Store({"i": original}), entities=entities, span_llm=llm
+    )
+    assert context.citations[0].spans == ((0, len(original)),)
+    llm.chat_json.assert_called_once()
+    llm.chat_json.return_value = {"supported": True, "sentence": True}
+    assert (
+        not build_context(
+            result, item_store=Store({"i": original}), entities=entities, span_llm=llm
+        )
+        .citations[0]
+        .spans
+    )
+
+
+def test_malformed_entailment_json_leaves_span_unverified():
+    import json
+    from dataclasses import replace
+    from unittest.mock import Mock
+
+    from omnistream.llm import LLMError
+    from omnistream.retrieval.citations import _entailed_span
+    from omnistream.retrieval.models import Entity
+
+    llm = Mock()
+    error = LLMError("invalid JSON")
+    error.__cause__ = json.JSONDecodeError("invalid", "x", 0)
+    llm.chat_json.side_effect = error
+    entities = {
+        "s": Entity("s", "Alice Smith", "Person", "news"),
+        "o": Entity("o", "Acme Corp", "Organization", "news"),
+    }
+    fact = replace(_fact("Alice Smith leads Acme Corp", "i").fact, relation="LEADS")
+    assert _entailed_span("Alice Smith leads Acme Corp.", fact, entities, llm) is None
+    llm.chat_json.side_effect = LLMError("transport failed")
+    with pytest.raises(LLMError, match="transport failed"):
+        _entailed_span("Alice Smith leads Acme Corp.", fact, entities, llm)
+
+
+def test_abstract_graph_relation_uses_claim_predicate_before_entailment():
+    from dataclasses import replace
+    from unittest.mock import Mock
+
+    from omnistream.retrieval.citations import _entailed_span
+    from omnistream.retrieval.models import Entity
+
+    source = (
+        "On April 1, 2026, Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs."
+    )
+    fact = replace(
+        _fact(
+            "Taren Vosquil replaced Mira Velquin as CEO of Zorvanta Labs effective April 1, 2026",
+            "i",
+        ).fact,
+        relation="WORKS_AT",
+    )
+    entities = {
+        "s": Entity("s", "Taren Vosquil", "Person", "news"),
+        "o": Entity("o", "Zorvanta Labs", "Organization", "news"),
+    }
+    llm = Mock()
+    llm.chat_json.return_value = {"supported": True, "sentence": 0}
+    assert _entailed_span(source, fact, entities, llm) == (0, len(source))
+    llm.chat_json.return_value = {"supported": False, "sentence": 0}
+    assert _entailed_span(source, fact, entities, llm) is None

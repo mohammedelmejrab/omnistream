@@ -327,3 +327,64 @@ async def test_bubble_delete_removes_all_derived_data(env):
     assert names == {"bubble_finance"}
     # The other bubble is untouched.
     assert (await life.counts("finance"))["episodes"] == 1
+
+
+async def test_retry_recovers_committed_episode_without_reextracting(env, monkeypatch):
+    from unittest.mock import AsyncMock
+
+    writer, graphiti, _ = env
+    link = writer._linker.link
+    monkeypatch.setattr(
+        writer._linker, "link", AsyncMock(side_effect=RuntimeError("link unavailable"))
+    )
+    with pytest.raises(RuntimeError, match="link unavailable"):
+        await writer.write(
+            item("retry-item", "Alice at Acme"), TEXT_1, ["news"], src("s1", 0.5)
+        )
+    # Also recover the crash window between Graphiti commit and provenance tagging.
+    await q(graphiti, "MATCH (ep:Episodic) REMOVE ep.item_id")
+    monkeypatch.setattr(writer._linker, "link", link)
+    monkeypatch.setattr(
+        graphiti, "add_episode", AsyncMock(side_effect=AssertionError("must resume"))
+    )
+    restarted = GraphWriter(
+        graphiti,
+        writer.ops,
+        writer._linker,
+        writer.chunks,
+        writer._repo,
+        writer._settings,
+    )
+    await restarted.write(
+        item("retry-item", "Alice at Acme"), TEXT_1, ["news"], src("s1", 0.5)
+    )
+    records = await q(
+        graphiti,
+        "MATCH ()-[r:RELATES_TO]->() RETURN r.item_id AS item, r.grounded AS grounded",
+    )
+    assert records and all(
+        r["item"] == "retry-item" and isinstance(r["grounded"], bool) for r in records
+    )
+    unlinked = await q(
+        graphiti,
+        "MATCH (n:Entity) WHERE NOT (n)-[:SAME_AS]->(:GlobalEntity) RETURN n.uuid AS id",
+    )
+    assert not unlinked
+    assert await writer.chunks.count("news") > 0
+
+    # A later unrelated expiration in this group must not be recovered or retagged.
+    await q(
+        graphiti,
+        "CREATE (a:Entity {uuid: 'unrelated-a', group_id: 'news'}), "
+        "(b:Entity {uuid: 'unrelated-b', group_id: 'news'}), "
+        "(a)-[:RELATES_TO {uuid: 'unrelated-edge', group_id: 'news', "
+        "episodes: ['another-episode'], expired_at: datetime() + duration('P1D')}]->(b)",
+    )
+    recovered = await writer.ops.recover_episode("retry-item", "news")
+    assert "unrelated-edge" not in {edge.uuid for edge in recovered.edges}
+    before = await q(graphiti, "MATCH (g:GlobalEntity) RETURN count(g) AS count")
+    for node in recovered.nodes:
+        await writer._linker.link(node.uuid, node.name, "Entity", embedding=[0.0] * DIM)
+    assert (
+        await q(graphiti, "MATCH (g:GlobalEntity) RETURN count(g) AS count") == before
+    )

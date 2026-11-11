@@ -73,9 +73,9 @@ class Repository:
                 )
 
     @classmethod
-    def from_path(cls, path: str) -> "Repository":
+    def from_path(cls, path: str, *, settings: Settings | None = None) -> "Repository":
         Path(path).parent.mkdir(parents=True, exist_ok=True)
-        return cls(f"sqlite:///{path}")
+        return cls(f"sqlite:///{path}", settings=settings)
 
     async def close(self) -> None:
         await asyncio.to_thread(self._engine.dispose)
