@@ -11,12 +11,9 @@ import logging
 from collections.abc import Awaitable, Callable
 from datetime import timedelta
 
-from omnistream.config import Settings
 from omnistream.db import Repository
 
 logger = logging.getLogger(__name__)
-
-_settings = Settings()
 
 
 class WorkerPool:
@@ -24,7 +21,7 @@ class WorkerPool:
         self,
         repo: Repository,
         process_item: Callable[[str], Awaitable[None]],
-        workers: int = _settings.queue_workers,
+        workers: int = 2,
         max_attempts: int = 5,
         backoff_base: float = 30.0,
         idle_sleep: float = 0.5,

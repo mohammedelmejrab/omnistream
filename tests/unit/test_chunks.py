@@ -39,3 +39,13 @@ async def test_rewrite_is_idempotent_and_collections_are_separate(tmp_path):
 async def test_empty_text_adds_nothing(tmp_path):
     store = ChunkStore(str(tmp_path), FakeEmbedder(), chunk_tokens=300)
     assert await store.add("news", "i1", "  ", "u", None) == 0
+
+
+async def test_count_and_drop(tmp_path):
+    store = ChunkStore(str(tmp_path), FakeEmbedder(), chunk_tokens=300)
+    assert await store.count("news") == 0
+    await store.drop("news")  # missing collection is fine
+    await store.add("news", "item1", TEXT, "u", None)
+    assert await store.count("news") == 2
+    await store.drop("news")
+    assert await store.count("news") == 0

@@ -86,6 +86,14 @@ class GraphWriter:
         # Graphiti's dedup/invalidation is not safe under concurrent episodes.
         self._lock = asyncio.Lock()
 
+    @property
+    def ops(self) -> GraphOps:
+        return self._ops
+
+    @property
+    def chunks(self) -> ChunkStore:
+        return self._chunks
+
     async def write(
         self, item: ItemRow, text: str, bubble_ids: list[str], source: Source
     ) -> WriteResult:

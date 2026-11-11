@@ -12,7 +12,6 @@ from typing import Protocol, TypeVar
 from pydantic import BaseModel, Field
 
 from omnistream.embed import Embedder
-from omnistream.llm import LLMError
 from omnistream.models import Bubble, RawItem, Source
 
 T = TypeVar("T", bound=BaseModel)
@@ -97,12 +96,8 @@ class Router:
             for b in candidates
         )
         user = f"{lines}\n\nTitle: {item.title}\nText: {item.text[:TEXT_LIMIT]}"
-        try:
-            choice = await self._llm.parse(
-                self._model, ROUTING_SYSTEM, user, BubbleChoice
-            )
-        except LLMError:
-            return RouteDecision(bubble_ids=[], confidence=0.0, unsorted=True)
+        # LLMError propagates so the worker pool retries the job (never unsorted).
+        choice = await self._llm.parse(self._model, ROUTING_SYSTEM, user, BubbleChoice)
         ids = _clean(choice.bubble_ids, {b.id for b in candidates})
         if not ids or choice.confidence < self._threshold:
             return RouteDecision(

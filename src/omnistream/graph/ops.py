@@ -34,6 +34,15 @@ class GraphOps(Protocol):
 
     async def recent_facts(self, group_id: str, limit: int) -> list[str]: ...
 
+    async def group_counts(self, group_id: str) -> dict[str, int]:
+        """{"episodes", "entities", "facts"} stored for a Graphiti group."""
+        ...
+
+    async def delete_group(self, group_id: str) -> None:
+        """Delete the group's nodes and edges (incl. SAME_AS), then any
+        GlobalEntity left without incoming SAME_AS."""
+        ...
+
 
 class Neo4jGraphOps:
     """Implements GraphOps and the linker's GlobalEntityStore over Graphiti's driver."""
@@ -120,6 +129,25 @@ class Neo4jGraphOps:
             limit=limit,
         )
         return [r["fact"] for r in rows]
+
+    async def group_counts(self, group_id: str) -> dict[str, int]:
+        rows = await self._q(
+            "CALL { MATCH (e:Episodic {group_id: $g}) RETURN count(e) AS episodes } "
+            "CALL { MATCH (n:Entity {group_id: $g}) RETURN count(n) AS entities } "
+            "CALL { MATCH ()-[r:RELATES_TO {group_id: $g}]->() "
+            "RETURN count(r) AS facts } "
+            "RETURN episodes, entities, facts",
+            g=group_id,
+        )
+        r = rows[0]
+        return {k: int(r[k]) for k in ("episodes", "entities", "facts")}
+
+    async def delete_group(self, group_id: str) -> None:
+        # DETACH removes MENTIONS/RELATES_TO/HAS_MEMBER and SAME_AS relationships.
+        await self._q("MATCH (n {group_id: $g}) DETACH DELETE n", g=group_id)
+        await self._q(
+            "MATCH (g:GlobalEntity) WHERE NOT ()-[:SAME_AS]->(g) DETACH DELETE g"
+        )
 
     # --- GlobalEntityStore ---
     async def nearest_global_entities(

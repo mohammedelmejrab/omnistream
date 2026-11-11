@@ -57,3 +57,29 @@ class FakeLLM:
         if isinstance(resp, BaseModel):
             return resp
         return resp(user)
+
+
+class FakeLifecycleOps:
+    """GraphOps stand-in for bubble counts/delete."""
+
+    def __init__(self):
+        self.counts = {"episodes": 2, "entities": 3, "facts": 4}
+        self.deleted: list[str] = []
+
+    async def group_counts(self, group_id):
+        return dict(self.counts)
+
+    async def delete_group(self, group_id):
+        self.deleted.append(group_id)
+
+
+class FakeChunks:
+    def __init__(self):
+        self.n = 5
+        self.dropped: list[str] = []
+
+    async def count(self, bubble_id):
+        return self.n
+
+    async def drop(self, bubble_id):
+        self.dropped.append(bubble_id)

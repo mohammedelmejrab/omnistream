@@ -287,3 +287,33 @@ async def test_episode_write_provenance_grounding_links_and_confidence(env):
         "bubble_finance",
     }
     assert "ExtractedEntities" in stub.titles
+
+
+async def test_bubble_delete_removes_all_derived_data(env):
+    from omnistream.router.bubbles import BubbleLifecycle
+
+    writer, graphiti, _ = env
+    await writer.write(item("it1", "Alice at Acme"), TEXT_1, ["news"], src("s1", 0.5))
+    await writer.write(
+        item("it3", "Acme earnings"), TEXT_3, ["finance"], src("s3", 0.7)
+    )
+    life = BubbleLifecycle(
+        writer._repo, FakeEmbedder(dim=DIM), None, writer.ops, writer.chunks
+    )
+    counts = await life.counts("news")
+    assert counts["episodes"] == 1 and counts["entities"] > 0 and counts["chunks"] > 0
+    await life.delete("news")
+
+    assert await life.counts("news") == {
+        "episodes": 0, "entities": 0, "facts": 0, "chunks": 0, "sources": 0,
+    }  # fmt: skip
+    assert await q(graphiti, "MATCH (n {group_id: 'news'}) RETURN n") == []
+    # SAME_AS from the deleted group's entities is gone and no GlobalEntity is orphaned.
+    assert (
+        await q(
+            graphiti, "MATCH (g:GlobalEntity) WHERE NOT ()-[:SAME_AS]->(g) RETURN g"
+        )
+        == []
+    )
+    # The other bubble is untouched.
+    assert (await life.counts("finance"))["episodes"] == 1

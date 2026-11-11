@@ -7,12 +7,11 @@ import respx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from omnistream.db import Repository
-from omnistream.ingest.pipeline import IngestPipeline
+from omnistream.ingest.intake import Intake
 from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import Bubble, Source
 from omnistream.router.bubbles import BubbleService
-from omnistream.router.router import BubbleChoice, Router
-from tests.conftest import FakeEmbedder, FakeLLM
+from tests.conftest import FakeEmbedder
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
 NEWS_XML = (
@@ -27,24 +26,16 @@ def rss(id: str, url: str, poll_interval: int = 300) -> Source:
 
 
 @pytest.fixture
-async def env():
+async def env(tmp_path):
     repo = Repository()
     await BubbleService(repo, FakeEmbedder()).create(
         Bubble(id="news", name="news", description="news topics", updated_at=NOW)
     )
-    fake = FakeLLM(
-        {
-            BubbleChoice: BubbleChoice(bubble_ids=["news"], confidence=0.9),
-        }
-    )
-    pipe = IngestPipeline(
-        repo,
-        Router(fake, "m", FakeEmbedder()),
-    )
     aps = AsyncIOScheduler()
     aps.start(paused=True)
     async with httpx.AsyncClient() as http:
-        yield repo, IngestScheduler(repo, pipe, http, scheduler=aps), aps
+        intake = Intake(repo, str(tmp_path), prefilter_min_chars=0)
+        yield repo, IngestScheduler(repo, http, intake, scheduler=aps), aps
     if aps.running:
         aps.shutdown(wait=False)
 
@@ -56,7 +47,7 @@ async def test_poll_rss_source_ingests_items(env):
     respx.get(URL_A).respond(200, content=NEWS_XML)
     results = await sched.poll_source("a")
     assert len(results) == 3
-    assert all(r.status == "ingested" for r in results)
+    assert all(r.status == "queued" for r in results)
     src = await store.get_source("a")
     assert src.last_polled_at is not None
     assert src.last_error is None
@@ -68,9 +59,8 @@ async def test_second_poll_reports_duplicates(env):
     await store.upsert_source(rss("a", URL_A))
     respx.get(URL_A).respond(200, content=NEWS_XML)
     await sched.poll_source("a")
-    results = await sched.poll_source("a")
-    assert len(results) == 3
-    assert all(r.status == "duplicate" for r in results)
+    assert await sched.poll_source("a") == []
+    assert len(await store.list_items()) == 3
 
 
 @respx.mock
@@ -83,7 +73,7 @@ async def test_failing_source_does_not_block_others(env):
     assert await sched.poll_source("a") == []
     results_b = await sched.poll_source("b")
     assert len(results_b) == 3
-    assert all(r.status == "ingested" for r in results_b)
+    assert all(r.status == "queued" for r in results_b)
     assert (await store.get_source("a")).last_error
     assert (await store.get_source("b")).last_error is None
 
@@ -157,7 +147,7 @@ async def test_poll_with_intake_queues_items_and_repoll_adds_none(tmp_path):
     aps = AsyncIOScheduler()
     async with httpx.AsyncClient() as http:
         sched = IngestScheduler(
-            repo, None, http, scheduler=aps, intake=Intake(repo, str(tmp_path), 1)
+            repo, http, Intake(repo, str(tmp_path), 1), scheduler=aps
         )
         first = await sched.poll_source("a")
         second = await sched.poll_source("a")

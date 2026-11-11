@@ -107,12 +107,13 @@ async def test_threshold_boundary_is_inclusive():
     assert not (await r.route(item(), source(), await bubbles())).unsorted
 
 
-async def test_llm_error_is_unsorted():
+async def test_llm_error_propagates_for_retry():
     def boom(user: str):
         raise LLMError("down")
 
     r, _ = router(boom)
-    assert (await r.route(item(), source(), await bubbles())).unsorted
+    with pytest.raises(LLMError):
+        await r.route(item(), source(), await bubbles())
 
 
 async def test_no_bubbles_is_unsorted_without_llm_call():

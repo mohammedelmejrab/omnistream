@@ -7,7 +7,6 @@ from apscheduler.triggers.interval import IntervalTrigger
 
 from omnistream.db import Repository
 from omnistream.ingest.intake import Intake
-from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.models import IngestResult, RawItem, Source
 from omnistream.sources.api import fetch_api
 from omnistream.sources.replay import SnapshotRecorder
@@ -20,18 +19,15 @@ class IngestScheduler:
     def __init__(
         self,
         repo: Repository,
-        pipeline: IngestPipeline,
         http: httpx.AsyncClient,
+        intake: Intake,
         scheduler: AsyncIOScheduler | None = None,
-        intake: Intake | None = None,
         recorder: SnapshotRecorder | None = None,
     ) -> None:
-        # With `intake`, polling stores + queues items (spec §4.1); without it
-        # the legacy direct pipeline path runs (Task 7 removes it).
+        # Polling stores + queues items via intake (spec §4.1).
         self._intake = intake
         self._recorder = recorder
         self._repo = repo
-        self._pipeline = pipeline
         self._http = http
         self._scheduler = scheduler or AsyncIOScheduler()
         self._failures: dict[str, int] = {}
@@ -60,6 +56,11 @@ class IngestScheduler:
             coalesce=True,
         )
 
+    def unschedule_source(self, source_id: str) -> None:
+        job_id = f"poll:{source_id}"
+        if self._scheduler.get_job(job_id) is not None:
+            self._scheduler.remove_job(job_id)
+
     async def poll_source(self, source_id: str) -> list[IngestResult]:
         source = await self._repo.get_source(source_id)
         if source is None or not source.enabled:
@@ -68,10 +69,7 @@ class IngestScheduler:
             items = await self._fetch(source)
             if self._recorder is not None:
                 self._recorder.record(items)
-            if self._intake is not None:
-                results = await self._accept_all(items, source)
-            else:
-                results = await self._pipeline.process_many(items, source)
+            results = await self._accept_all(items, source)
         except Exception as exc:
             logger.exception("polling source %s failed", source_id)
             source.last_error = repr(exc)

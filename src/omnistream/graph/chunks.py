@@ -52,3 +52,24 @@ class ChunkStore:
 
         await asyncio.to_thread(upsert)
         return len(chunks)
+
+    async def count(self, bubble_id: str) -> int:
+        def run() -> int:
+            try:
+                col = self._client.get_collection(collection_name(bubble_id))
+            except Exception:  # noqa: BLE001 - chroma raises varying not-found types
+                return 0
+            return col.count()
+
+        return await asyncio.to_thread(run)
+
+    async def drop(self, bubble_id: str) -> None:
+        """Delete the bubble's collection; a missing collection is fine."""
+
+        def run() -> None:
+            try:
+                self._client.delete_collection(collection_name(bubble_id))
+            except Exception:  # noqa: BLE001, S110 - missing collection is fine
+                pass
+
+        await asyncio.to_thread(run)

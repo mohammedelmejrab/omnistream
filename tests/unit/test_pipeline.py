@@ -1,60 +1,144 @@
-"""Legacy direct path (dedup + routing only); the queue pipeline arrives in Task 7."""
+from datetime import UTC, datetime, timedelta
 
-from datetime import UTC, datetime
+import pytest
 
 from omnistream.db import Repository
-from omnistream.ingest.normalize import content_hash
-from omnistream.ingest.pipeline import IngestPipeline
-from omnistream.models import Bubble, RawItem, Source
-from omnistream.router.bubbles import BubbleService
+from omnistream.db.tables import ItemRow
+from omnistream.ingest.pipeline import ItemProcessor
+from omnistream.llm import LLMError
+from omnistream.models import Bubble, Source
+from omnistream.router.bubbles import BubbleLifecycle, BubbleService
 from omnistream.router.router import BubbleChoice, Router
-from tests.conftest import FakeEmbedder, FakeLLM
+from tests.conftest import FakeChunks, FakeEmbedder, FakeLifecycleOps, FakeLLM
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
-TEXT = "Alice became CEO of Acme Corp this week. " * 3
 
 
-def item(text=TEXT, url="https://x.test/a") -> RawItem:
-    return RawItem(source_id="s1", url=url, title="Headline", text=text)
+class FakeWriter:
+    def __init__(self):
+        self.calls = []
+
+    async def write(self, item, text, bubble_ids, source):
+        self.calls.append((item.id, text, bubble_ids, source.id))
 
 
-def source() -> Source:
-    return Source(id="s1", type="rss", url="https://x.test/feed")
-
-
-async def setup(choice: BubbleChoice | None = None):
+async def setup(tmp_path, response, source_bubbles=(), item_bubbles=()):
     repo = Repository()
-    for b in ("news", "finance"):
-        await BubbleService(repo, FakeEmbedder()).create(
-            Bubble(id=b, name=b, description=f"{b} topics", updated_at=NOW)
-        )
-    fake = FakeLLM(
-        {BubbleChoice: choice or BubbleChoice(bubble_ids=["news"], confidence=0.9)}
+    svc = BubbleService(repo, FakeEmbedder())
+    await svc.create(Bubble(id="news", name="News", description="n"))
+    await repo.upsert_source(
+        Source(id="s", type="rss", url="u", bubble_ids=list(source_bubbles))
     )
-    return repo, IngestPipeline(repo, Router(fake, "m", FakeEmbedder()))
+    p = tmp_path / "t.txt"
+    p.write_text("Body of the article", encoding="utf-8")
+    await repo.create_item(
+        ItemRow(
+            id="i1",
+            source_id="s",
+            url="https://x/1",
+            title="T",
+            text_path=str(p),
+            bubble_ids=list(item_bubbles),
+            published_at=NOW,
+        )
+    )
+    llm = FakeLLM({BubbleChoice: response})
+    writer = FakeWriter()
+    router = Router(llm, "m", FakeEmbedder())
+    return repo, ItemProcessor(repo, router, writer), writer, router, llm
 
 
-async def test_routed_item_is_ingested_and_marked_seen():
-    repo, pipe = await setup()
-    it = item()
-    res = await pipe.process(it, source())
-    assert res.status == "ingested"
-    assert res.item_hash == content_hash(it.url, it.text)
-    assert res.bubble_ids == ["news"]
-    assert await repo.has_seen(res.item_hash)
+async def test_routed_item_is_written_with_stamps(tmp_path):
+    repo, proc, writer, _, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=["news"], confidence=0.9)
+    )
+    await proc.process_item("i1")
+    item = await repo.get_item("i1")
+    assert item.status == "written" and item.route_confidence == 0.9
+    assert item.bubble_ids == ["news"]
+    assert item.routed_at and item.extracted_at and item.written_at
+    assert writer.calls == [("i1", "Body of the article", ["news"], "s")]
 
 
-async def test_duplicate_is_skipped():
-    _, pipe = await setup()
-    await pipe.process(item(), source())
-    assert (await pipe.process(item(), source())).status == "duplicate"
+async def test_low_confidence_is_unsorted_and_not_written(tmp_path):
+    repo, proc, writer, _, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=["news"], confidence=0.2)
+    )
+    await proc.process_item("i1")
+    item = await repo.get_item("i1")
+    assert item.status == "unsorted" and item.routed_at and item.written_at is None
+    assert writer.calls == []
 
 
-async def test_empty_text():
-    _, pipe = await setup()
-    assert (await pipe.process(item(text="  "), source())).status == "empty"
+async def test_explicit_item_bubbles_bypass_router(tmp_path):
+    repo, proc, writer, _, llm = await setup(
+        tmp_path,
+        BubbleChoice(bubble_ids=[], confidence=0.0),
+        item_bubbles=["news"],
+    )
+    await proc.process_item("i1")
+    assert llm.calls == []
+    assert writer.calls[0][2] == ["news"]
+    assert (await repo.get_item("i1")).route_confidence == 1.0
 
 
-async def test_low_confidence_is_unrouted():
-    _, pipe = await setup(BubbleChoice(bubble_ids=["news"], confidence=0.1))
-    assert (await pipe.process(item(), source())).status == "unrouted"
+async def test_llm_error_propagates_for_retry(tmp_path):
+    def boom(user):
+        raise LLMError("down")
+
+    repo, proc, writer, _, _ = await setup(tmp_path, boom)
+    with pytest.raises(LLMError):
+        await proc.process_item("i1")
+    assert writer.calls == []
+    assert (await repo.get_item("i1")).status != "unsorted"
+
+
+async def test_unknown_item_is_ignored(tmp_path):
+    _, proc, writer, _, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=[], confidence=0)
+    )
+    await proc.process_item("nope")
+    assert writer.calls == []
+
+
+async def test_backfill_requeues_only_recent_items_routed_to_new_bubble(tmp_path):
+    repo, _, _, router, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=["sci"], confidence=0.9)
+    )
+    old = tmp_path / "old.txt"
+    old.write_text("old body")
+    await repo.create_item(
+        ItemRow(
+            id="old",
+            source_id="s",
+            text_path=str(old),
+            status="written",
+            published_at=datetime.now(UTC) - timedelta(days=60),
+        )
+    )
+    await repo.update_item(
+        "i1", status="unsorted", published_at=datetime.now(UTC) - timedelta(days=2)
+    )
+    life = BubbleLifecycle(
+        repo, FakeEmbedder(), router, FakeLifecycleOps(), FakeChunks()
+    )
+    created = await life.create(
+        Bubble(id="sci", name="Sci", description="science"), backfill_days=30
+    )
+    assert created.id == "sci"
+    i1 = await repo.get_item("i1")
+    assert i1.status == "queued" and i1.bubble_ids == ["sci"]
+    assert (await repo.get_item("old")).status == "written"
+    assert [j.item_id for j in await repo.list_jobs("queued")] == ["i1"]
+
+
+async def test_no_backfill_by_default(tmp_path):
+    repo, _, _, router, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=["sci"], confidence=0.9)
+    )
+    await repo.update_item("i1", status="unsorted")
+    life = BubbleLifecycle(
+        repo, FakeEmbedder(), router, FakeLifecycleOps(), FakeChunks()
+    )
+    await life.create(Bubble(id="sci", name="Sci", description="s"))
+    assert (await repo.get_item("i1")).status == "unsorted"

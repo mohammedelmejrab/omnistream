@@ -1,4 +1,6 @@
 import json
+import os
+import re
 from datetime import UTC, datetime
 from typing import Any
 
@@ -25,7 +27,21 @@ def _text_value(item: Any, path: str) -> str | None:
     return text or None
 
 
+_ENV = re.compile(r"\$\{([A-Za-z_][A-Za-z0-9_]*)\}")
+
+
+def expand_env(text: str) -> str:
+    """Substitute ${VAR} from the environment at fetch time, so secrets such as
+    API tokens are never stored in SQLite (D20)."""
+    return _ENV.sub(lambda m: os.environ.get(m.group(1), ""), text)
+
+
 def _parse_date(value: Any) -> datetime | None:
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        try:
+            return datetime.fromtimestamp(value, UTC)  # epoch seconds (Finnhub)
+        except (OverflowError, OSError, ValueError):
+            return None
     if not isinstance(value, str):
         return None
     try:
@@ -38,7 +54,11 @@ def _parse_date(value: Any) -> datetime | None:
 async def fetch_api(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
     assert source.url is not None and source.api_mapping is not None
     cfg = source.api_mapping
-    response = await http.get(source.url, headers=cfg.headers, timeout=20.0)
+    response = await http.get(
+        expand_env(source.url),
+        headers={k: expand_env(v) for k, v in cfg.headers.items()},
+        timeout=20.0,
+    )
     try:
         response.raise_for_status()
     except httpx.HTTPStatusError as e:
