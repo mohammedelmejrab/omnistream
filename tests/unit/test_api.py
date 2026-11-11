@@ -10,15 +10,11 @@ from httpx import ASGITransport
 from omnistream.api.app import create_app
 from omnistream.config import Settings
 from omnistream.db import Repository
-from omnistream.graph.extract import Extractor
-from omnistream.graph.resolve import EntityResolver
-from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
-from omnistream.models import Bubble, ExtractedTriple, Extraction
+from omnistream.models import Bubble
 from omnistream.router.bubbles import BubbleService
 from omnistream.router.router import BubbleChoice, Router
-from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -30,31 +26,15 @@ DOC_TEXT = b"Alice became CEO of Acme Corp this week."
 
 
 def make_env(settings: Settings | None = None):
-    store = InMemoryStore()
     repo = Repository()
     fake = FakeLLM(
         {
             BubbleChoice: BubbleChoice(bubble_ids=["news"], confidence=0.9),
-            Extraction: Extraction(
-                triples=[
-                    ExtractedTriple(
-                        subject="Alice",
-                        subject_type="Person",
-                        relation="CEO_OF",
-                        object="Acme Corp",
-                        object_type="Organization",
-                    )
-                ]
-            ),
         }
     )
     pipe = IngestPipeline(
         repo,
         Router(fake, "m", FakeEmbedder()),
-        Extractor(fake, "m"),
-        EntityResolver(store, FakeEmbedder(), 0.9, 90),
-        FactWriter(store, clock=lambda: NOW),
-        grounding_threshold=85,
     )
     aps = AsyncIOScheduler()
     aps.start(paused=True)

@@ -169,21 +169,11 @@ def main_app() -> FastAPI:
     """Build the app with real components. Heavy imports and connections are
     deferred so importing this module has no side effects."""
     from omnistream.embed import SentenceTransformerEmbedder
-    from omnistream.graph.extract import Extractor
-    from omnistream.graph.resolve import EntityResolver
-    from omnistream.graph.write import FactWriter
     from omnistream.llm import build_llm_client
     from omnistream.router.router import Router
     from omnistream.sources.replay import SnapshotRecorder
-    from omnistream.store.neo4j_store import Neo4jStore
 
     settings = Settings()
-    store = Neo4jStore(
-        settings.neo4j_uri,
-        settings.neo4j_user,
-        settings.neo4j_password,
-        settings.embed_dim,
-    )
     repo = Repository.from_path(str(Path(settings.data_dir) / "omnistream.db"))
     embedder = SentenceTransformerEmbedder(settings.embed_model)
     llm = build_llm_client(settings)
@@ -196,15 +186,6 @@ def main_app() -> FastAPI:
             settings.router_threshold,
             settings.router_top_k,
         ),
-        Extractor(llm, settings.llm_model),
-        EntityResolver(
-            store,
-            embedder,
-            settings.embed_match_threshold,
-            settings.fuzzy_match_threshold,
-        ),
-        FactWriter(store),
-        grounding_threshold=settings.grounding_threshold,
     )
     http = httpx.AsyncClient()
     intake = Intake(repo, settings.data_dir, settings.prefilter_min_chars)
@@ -217,14 +198,12 @@ def main_app() -> FastAPI:
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
-        await store.init_schema()
         await scheduler.start()
         try:
             yield
         finally:
             await scheduler.shutdown()
             await http.aclose()
-            await store.close()
             await repo.close()
 
     return create_app(

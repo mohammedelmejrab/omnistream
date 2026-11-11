@@ -55,4 +55,7 @@ markers = [
     "integration: needs Docker/Neo4j",
     "live: needs LLM_API_KEY",
 ]
+filterwarnings = [
+    "ignore:Support for class-based `config`:DeprecationWarning",
+]
 addopts = '-m "not integration and not live"'

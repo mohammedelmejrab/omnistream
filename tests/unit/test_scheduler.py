@@ -7,15 +7,11 @@ import respx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from omnistream.db import Repository
-from omnistream.graph.extract import Extractor
-from omnistream.graph.resolve import EntityResolver
-from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
-from omnistream.models import Bubble, Extraction, Source
+from omnistream.models import Bubble, Source
 from omnistream.router.bubbles import BubbleService
 from omnistream.router.router import BubbleChoice, Router
-from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -32,7 +28,6 @@ def rss(id: str, url: str, poll_interval: int = 300) -> Source:
 
 @pytest.fixture
 async def env():
-    store = InMemoryStore()
     repo = Repository()
     await BubbleService(repo, FakeEmbedder()).create(
         Bubble(id="news", name="news", description="news topics", updated_at=NOW)
@@ -40,16 +35,11 @@ async def env():
     fake = FakeLLM(
         {
             BubbleChoice: BubbleChoice(bubble_ids=["news"], confidence=0.9),
-            Extraction: Extraction(triples=[]),
         }
     )
     pipe = IngestPipeline(
         repo,
         Router(fake, "m", FakeEmbedder()),
-        Extractor(fake, "m"),
-        EntityResolver(store, FakeEmbedder(), 0.9, 90),
-        FactWriter(store, clock=lambda: NOW),
-        grounding_threshold=85,
     )
     aps = AsyncIOScheduler()
     aps.start(paused=True)
