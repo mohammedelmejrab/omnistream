@@ -10,18 +10,18 @@ import respx
 from neo4j import AsyncGraphDatabase
 
 from omnistream.embed import SentenceTransformerEmbedder
-from omnistream.ingest.extract import Extractor
+from omnistream.graph.extract import Extractor
+from omnistream.graph.resolve import EntityResolver
+from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
-from omnistream.ingest.resolve import EntityResolver
-from omnistream.ingest.route import BubbleChoice, Router
 from omnistream.ingest.scheduler import IngestScheduler
-from omnistream.ingest.write import FactWriter
 from omnistream.models import (
     Bubble,
     ExtractedTriple,
     Extraction,
     Source,
 )
+from omnistream.router.route import BubbleChoice, Router
 from omnistream.store.neo4j_store import Neo4jStore
 from tests.conftest import FakeLLM
 
@@ -36,7 +36,11 @@ NOW = datetime(2026, 11, 10, tzinfo=UTC)
 
 def _t(s, st, r, o, ot, exclusive=False):
     return ExtractedTriple(
-        subject=s, subject_type=st, relation=r, object=o, object_type=ot,
+        subject=s,
+        subject_type=st,
+        relation=r,
+        object=o,
+        object_type=ot,
         exclusive=exclusive,
     )
 
@@ -104,7 +108,9 @@ def real_embedder():
 
 async def _fresh_store(container) -> Neo4jStore:
     s = Neo4jStore(
-        container.get_connection_url(), container.username, container.password,
+        container.get_connection_url(),
+        container.username,
+        container.password,
         embed_dim=DIM,
     )
     # The vector index dimension is fixed at creation; other suites use dim 8.
@@ -145,8 +151,10 @@ async def env(neo4j_container, real_embedder):
     await store.close()
     # Leave no 384-dim index behind for the dim-8 contract tests.
     cleanup = Neo4jStore(
-        neo4j_container.get_connection_url(), neo4j_container.username,
-        neo4j_container.password, embed_dim=DIM,
+        neo4j_container.get_connection_url(),
+        neo4j_container.username,
+        neo4j_container.password,
+        embed_dim=DIM,
     )
     await cleanup._run("DROP INDEX entity_embedding IF EXISTS")
     await cleanup._run("MATCH (n) DETACH DELETE n")
@@ -215,7 +223,8 @@ async def test_e2e_cross_bubble_entity_shared(env):
     # Subject and object of the dual-routed ferry fact, one node each.
     assert len(shared) == 2
     names = await _cypher(
-        c, "MATCH (e:Entity) WHERE e.id IN $ids RETURN e.canonical_name AS n",
+        c,
+        "MATCH (e:Entity) WHERE e.id IN $ids RETURN e.canonical_name AS n",
         ids=[r["id"] for r in shared],
     )
     assert {r["n"] for r in names} == {"Harbor council", "new ferry terminal"}

@@ -6,9 +6,9 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 
 from omnistream.ingest.pipeline import IngestPipeline
-from omnistream.ingest.sources.api import fetch_api
-from omnistream.ingest.sources.rss import fetch_rss
 from omnistream.models import IngestResult, RawItem, Source
+from omnistream.sources.api import fetch_api
+from omnistream.sources.rss import fetch_rss
 from omnistream.store.base import GraphStore
 
 logger = logging.getLogger(__name__)

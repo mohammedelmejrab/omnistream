@@ -1,4 +1,4 @@
-from omnistream.ingest.grounding import ground_extraction, is_grounded
+from omnistream.graph.grounding import ground_extraction, is_grounded
 from omnistream.models import ExtractedTriple, Extraction
 
 THRESHOLD = 85

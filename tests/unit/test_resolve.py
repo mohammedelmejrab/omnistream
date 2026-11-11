@@ -1,7 +1,7 @@
 import math
 import uuid
 
-from omnistream.ingest.resolve import EntityResolver
+from omnistream.graph.resolve import EntityResolver
 from omnistream.models import Entity
 from omnistream.store.memory import InMemoryStore
 from tests.conftest import DIM, FakeEmbedder
@@ -33,12 +33,20 @@ TABLE = {
 async def _seed(store: InMemoryStore, name: str, type_: str) -> Entity:
     emb = (await FakeEmbedder(TABLE).embed([name]))[0]
     return await store.create_entity(
-        Entity(id=uuid.uuid4().hex, canonical_name=name, type=type_, aliases=[], embedding=emb)
+        Entity(
+            id=uuid.uuid4().hex,
+            canonical_name=name,
+            type=type_,
+            aliases=[],
+            embedding=emb,
+        )
     )
 
 
 def _resolver(store: InMemoryStore) -> EntityResolver:
-    return EntityResolver(store, FakeEmbedder(TABLE), embed_threshold=0.9, fuzzy_threshold=90)
+    return EntityResolver(
+        store, FakeEmbedder(TABLE), embed_threshold=0.9, fuzzy_threshold=90
+    )
 
 
 async def test_embedding_match_reuses_entity_and_adds_alias():
@@ -115,7 +123,9 @@ LOW_TABLE = {**TABLE, "Apple": _at_cosine(0.70), "Apple Inc.": _e(0)}
 
 
 def _low_resolver(store: InMemoryStore) -> EntityResolver:
-    return EntityResolver(store, FakeEmbedder(LOW_TABLE), embed_threshold=0.9, fuzzy_threshold=90)
+    return EntityResolver(
+        store, FakeEmbedder(LOW_TABLE), embed_threshold=0.9, fuzzy_threshold=90
+    )
 
 
 async def test_org_legal_suffix_ignored_in_fuzzy_match():

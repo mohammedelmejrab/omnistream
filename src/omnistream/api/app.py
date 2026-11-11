@@ -11,9 +11,9 @@ from pydantic import BaseModel, Field, ValidationError, field_validator
 from omnistream.config import Settings
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
-from omnistream.ingest.sources import UnsupportedDocumentError
-from omnistream.ingest.sources.documents import load_document
 from omnistream.models import ApiFeedConfig, Bubble, IngestResult, Source
+from omnistream.sources import UnsupportedDocumentError
+from omnistream.sources.documents import load_document
 from omnistream.store.base import GraphStore
 
 
@@ -151,11 +151,11 @@ def main_app() -> FastAPI:
     """Build the app with real components. Heavy imports and connections are
     deferred so importing this module has no side effects."""
     from omnistream.embed import SentenceTransformerEmbedder
-    from omnistream.ingest.extract import Extractor
-    from omnistream.ingest.resolve import EntityResolver
-    from omnistream.ingest.route import Router
-    from omnistream.ingest.write import FactWriter
+    from omnistream.graph.extract import Extractor
+    from omnistream.graph.resolve import EntityResolver
+    from omnistream.graph.write import FactWriter
     from omnistream.llm import build_llm_client
+    from omnistream.router.route import Router
     from omnistream.store.neo4j_store import Neo4jStore
 
     settings = Settings()
@@ -169,8 +169,8 @@ def main_app() -> FastAPI:
     llm = build_llm_client(settings)
     pipeline = IngestPipeline(
         store,
-        Router(llm, settings.anthropic_model_route),
-        Extractor(llm, settings.anthropic_model_extract),
+        Router(llm, settings.llm_model),
+        Extractor(llm, settings.llm_model),
         EntityResolver(
             store,
             embedder,

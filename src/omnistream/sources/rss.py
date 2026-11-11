@@ -5,8 +5,8 @@ import feedparser
 import httpx
 from bs4 import BeautifulSoup
 
-from omnistream.ingest.sources import SourceFetchError
 from omnistream.models import RawItem, Source
+from omnistream.sources import SourceFetchError
 
 
 def _strip_html(html: str) -> str:

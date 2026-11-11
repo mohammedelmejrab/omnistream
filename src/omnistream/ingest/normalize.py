@@ -25,7 +25,9 @@ def normalize_url(url: str) -> str:
     if ":" in host:  # IPv6 literal
         host = f"[{host}]"
     port = parts.port
-    netloc = host if port is None or port == _DEFAULT_PORTS[scheme] else f"{host}:{port}"
+    netloc = (
+        host if port is None or port == _DEFAULT_PORTS[scheme] else f"{host}:{port}"
+    )
     if parts.username:
         userinfo = parts.username + (f":{parts.password}" if parts.password else "")
         netloc = f"{userinfo}@{netloc}"

@@ -7,11 +7,11 @@ import pytest
 import respx
 from fpdf import FPDF
 
-from omnistream.ingest.sources import SourceFetchError, UnsupportedDocumentError
-from omnistream.ingest.sources.api import fetch_api
-from omnistream.ingest.sources.documents import chunk_text, load_document
-from omnistream.ingest.sources.rss import fetch_rss
 from omnistream.models import ApiFeedConfig, Source
+from omnistream.sources import SourceFetchError, UnsupportedDocumentError
+from omnistream.sources.api import fetch_api
+from omnistream.sources.documents import chunk_text, load_document
+from omnistream.sources.rss import fetch_rss
 
 FIXTURES = Path(__file__).parent.parent / "fixtures"
 FEED_URL = "https://gazette.example.com/feed.xml"

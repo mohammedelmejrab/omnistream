@@ -2,13 +2,13 @@
 
 import logging
 
-from omnistream.ingest.extract import Extractor
-from omnistream.ingest.grounding import ground_extraction
+from omnistream.graph.extract import Extractor
+from omnistream.graph.grounding import ground_extraction
+from omnistream.graph.resolve import EntityResolver
+from omnistream.graph.write import FactWriter
 from omnistream.ingest.normalize import content_hash, normalize_text
-from omnistream.ingest.resolve import EntityResolver
-from omnistream.ingest.route import Router
-from omnistream.ingest.write import FactWriter
 from omnistream.models import IngestResult, RawItem, Source
+from omnistream.router.route import Router
 from omnistream.store.base import GraphStore
 
 logger = logging.getLogger(__name__)

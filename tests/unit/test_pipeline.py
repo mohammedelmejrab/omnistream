@@ -1,12 +1,11 @@
 import asyncio
 from datetime import UTC, datetime
 
-from omnistream.ingest.extract import Extractor
+from omnistream.graph.extract import Extractor
+from omnistream.graph.resolve import EntityResolver
+from omnistream.graph.write import FactWriter
 from omnistream.ingest.normalize import content_hash
 from omnistream.ingest.pipeline import IngestPipeline
-from omnistream.ingest.resolve import EntityResolver
-from omnistream.ingest.route import BubbleChoice, Router
-from omnistream.ingest.write import FactWriter
 from omnistream.llm import LLMError
 from omnistream.models import (
     Bubble,
@@ -15,6 +14,7 @@ from omnistream.models import (
     RawItem,
     Source,
 )
+from omnistream.router.route import BubbleChoice, Router
 from omnistream.store.memory import InMemoryStore
 from tests.conftest import FakeEmbedder, FakeLLM
 

@@ -2,7 +2,7 @@ from datetime import UTC, datetime
 
 import pytest
 
-from omnistream.ingest.extract import Extractor
+from omnistream.graph.extract import Extractor
 from omnistream.llm import LLMError
 from omnistream.models import ExtractedTriple, Extraction, RawItem
 from tests.conftest import FakeLLM
@@ -94,7 +94,7 @@ async def test_extract_propagates_llm_error():
 
 
 def test_extraction_prompt_puts_constrained_entity_as_subject_for_exclusive_relations():
-    from omnistream.ingest.extract import EXTRACTION_SYSTEM
+    from omnistream.graph.extract import EXTRACTION_SYSTEM
 
     assert "HAS_CEO" in EXTRACTION_SYSTEM
     # CEO_OF may only appear as the explicit counter-example.

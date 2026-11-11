@@ -9,8 +9,17 @@ from neo4j import AsyncGraphDatabase
 from omnistream.models import ApiFeedConfig, Bubble, Entity, Fact, Source
 
 _FACT_PROPS = (
-    "id", "relation", "bubble_id", "source_id", "source_url", "credibility",
-    "source_count", "evidence_hashes", "valid_from", "valid_to", "status",
+    "id",
+    "relation",
+    "bubble_id",
+    "source_id",
+    "source_url",
+    "credibility",
+    "source_count",
+    "evidence_hashes",
+    "valid_from",
+    "valid_to",
+    "status",
     "ingested_at",
 )
 
@@ -27,33 +36,45 @@ def _dt(value: Any) -> datetime | None:
 
 def _bubble(n: Any) -> Bubble:
     return Bubble(
-        id=n["id"], name=n["name"], description=n["description"],
+        id=n["id"],
+        name=n["name"],
+        description=n["description"],
         description_embedding=n.get("description_embedding"),
-        auto_summary=n.get("auto_summary"), updated_at=_dt(n["updated_at"]),
+        auto_summary=n.get("auto_summary"),
+        updated_at=_dt(n["updated_at"]),
     )
 
 
 def _source(n: Any) -> Source:
     cfg = n.get("api_config")
     return Source(
-        id=n["id"], type=n["type"], url=n.get("url"),
-        credibility=n["credibility"], poll_interval=n["poll_interval"],
-        bubble_ids=list(n["bubble_ids"]), auto_route=n["auto_route"],
+        id=n["id"],
+        type=n["type"],
+        url=n.get("url"),
+        credibility=n["credibility"],
+        poll_interval=n["poll_interval"],
+        bubble_ids=list(n["bubble_ids"]),
+        auto_route=n["auto_route"],
         api_config=ApiFeedConfig.model_validate_json(cfg) if cfg else None,
-        last_polled_at=_dt(n.get("last_polled_at")), last_error=n.get("last_error"),
+        last_polled_at=_dt(n.get("last_polled_at")),
+        last_error=n.get("last_error"),
     )
 
 
 def _entity(n: Any) -> Entity:
     return Entity(
-        id=n["id"], canonical_name=n["canonical_name"], type=n["type"],
-        aliases=list(n["aliases"]), embedding=list(n["embedding"]),
+        id=n["id"],
+        canonical_name=n["canonical_name"],
+        type=n["type"],
+        aliases=list(n["aliases"]),
+        embedding=list(n["embedding"]),
     )
 
 
 def _fact(rel: Any, subject_id: str, object_id: str) -> Fact:
     return Fact(
-        subject_id=subject_id, object_id=object_id,
+        subject_id=subject_id,
+        object_id=object_id,
         **{
             **{k: rel[k] for k in _FACT_PROPS},
             "valid_from": _dt(rel["valid_from"]),
@@ -109,7 +130,8 @@ class Neo4jStore:
         await self._run(
             "MERGE (s:SeenItem {hash: $h}) "
             "ON CREATE SET s.source_id = $sid, s.seen_at = datetime()",
-            h=item_hash, sid=source_id,
+            h=item_hash,
+            sid=source_id,
         )
 
     # --- bubbles ---
@@ -138,11 +160,16 @@ class Neo4jStore:
             "n.bubble_ids = $bubble_ids, n.auto_route = $auto_route, "
             "n.api_config = $api_config, n.last_polled_at = $last_polled_at, "
             "n.last_error = $last_error",
-            id=s.id, type=s.type, url=s.url, credibility=s.credibility,
-            poll_interval=s.poll_interval, bubble_ids=s.bubble_ids,
+            id=s.id,
+            type=s.type,
+            url=s.url,
+            credibility=s.credibility,
+            poll_interval=s.poll_interval,
+            bubble_ids=s.bubble_ids,
             auto_route=s.auto_route,
             api_config=s.api_config.model_dump_json() if s.api_config else None,
-            last_polled_at=s.last_polled_at, last_error=s.last_error,
+            last_polled_at=s.last_polled_at,
+            last_error=s.last_error,
         )
         return s.model_copy(deep=True)
 
@@ -177,7 +204,8 @@ class Neo4jStore:
             if alias.casefold() not in known:
                 await tx.run(
                     "MATCH (n:Entity {id: $id}) SET n.aliases = n.aliases + $alias",
-                    id=entity_id, alias=alias,
+                    id=entity_id,
+                    alias=alias,
                 )
 
         async with self._driver.session() as session:
@@ -200,7 +228,10 @@ class Neo4jStore:
             "CALL db.index.vector.queryNodes('entity_embedding', $k_oversample, $emb) "
             "YIELD node, score WHERE node.type = $type "
             "RETURN node, score ORDER BY score DESC LIMIT $k",
-            k_oversample=k_oversample, emb=embedding, type=type, k=k,
+            k_oversample=k_oversample,
+            emb=embedding,
+            type=type,
+            k=k,
         )
         if len(recs) < k:
             # Did the index saturate? If it returned a full k*5 other-typed hits
@@ -208,19 +239,21 @@ class Neo4jStore:
             raw = await self._run(
                 "CALL db.index.vector.queryNodes('entity_embedding', $n, $emb) "
                 "YIELD node RETURN count(node) AS c",
-                n=k_oversample, emb=embedding,
+                n=k_oversample,
+                emb=embedding,
             )
             if raw[0]["c"] >= k_oversample:
                 recs = await self._run(
                     "MATCH (n:Entity {type: $type}) WHERE n.embedding IS NOT NULL "
                     "WITH n, vector.similarity.cosine(n.embedding, $emb) AS score "
                     "RETURN n AS node, score ORDER BY score DESC LIMIT $k",
-                    type=type, emb=embedding, k=k,
+                    type=type,
+                    emb=embedding,
+                    k=k,
                 )
         # Neo4j scores are (1 + cos) / 2; convert back to raw cosine.
         return [
-            (_entity(r["node"]), max(-1.0, min(1.0, 2 * r["score"] - 1)))
-            for r in recs
+            (_entity(r["node"]), max(-1.0, min(1.0, 2 * r["score"] - 1))) for r in recs
         ]
 
     # --- facts ---
@@ -228,14 +261,17 @@ class Neo4jStore:
         await self._run(
             "MERGE (s:Entity {id: $subject_id}) MERGE (o:Entity {id: $object_id}) "
             "CREATE (s)-[r:FACT]->(o) SET r = $props",
-            subject_id=f.subject_id, object_id=f.object_id, props=_fact_params(f),
+            subject_id=f.subject_id,
+            object_id=f.object_id,
+            props=_fact_params(f),
         )
         return f.model_copy(deep=True)
 
     async def update_fact(self, f: Fact) -> Fact:
         recs = await self._run(
             "MATCH ()-[r:FACT {id: $id}]->() SET r = $props RETURN count(r) AS c",
-            id=f.id, props=_fact_params(f),
+            id=f.id,
+            props=_fact_params(f),
         )
         if recs[0]["c"] == 0:
             raise KeyError(f.id)
@@ -247,7 +283,9 @@ class Neo4jStore:
         recs = await self._run(
             "MATCH (s:Entity {id: $sid})-[r:FACT {bubble_id: $b, relation: $rel}]->(o) "
             "WHERE r.status = 'VERIFIED' RETURN r, s.id AS sid, o.id AS oid ORDER BY r.id",
-            sid=subject_id, b=bubble_id, rel=relation,
+            sid=subject_id,
+            b=bubble_id,
+            rel=relation,
         )
         return [_fact(r["r"], r["sid"], r["oid"]) for r in recs]
 

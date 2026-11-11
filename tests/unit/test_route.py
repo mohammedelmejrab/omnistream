@@ -1,8 +1,8 @@
 from datetime import UTC, datetime
 
-from omnistream.ingest.route import BubbleChoice, Router
 from omnistream.llm import LLMError
 from omnistream.models import Bubble, RawItem, Source
+from omnistream.router.route import BubbleChoice, Router
 from tests.conftest import FakeLLM
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -47,7 +47,9 @@ async def test_unknown_only_override_falls_through():
 
 async def test_manual_source_skips_llm():
     r, fake = router(BubbleChoice(bubble_ids=["tech"]))
-    out = await r.route(item(), source(auto_route=False, bubble_ids=["news", "x"]), BUBBLES)
+    out = await r.route(
+        item(), source(auto_route=False, bubble_ids=["news", "x"]), BUBBLES
+    )
     assert out == ["news"]
     assert fake.calls == []
 
@@ -101,6 +103,8 @@ async def test_unrouted_returns_empty():
 
 async def test_no_bubbles_returns_empty_without_llm_call():
     r, fake = router(BubbleChoice(bubble_ids=["tech"]))
-    out = await r.route(item(bubble_ids_override=["tech"]), source(bubble_ids=["tech"]), [])
+    out = await r.route(
+        item(bubble_ids_override=["tech"]), source(bubble_ids=["tech"]), []
+    )
     assert out == []
     assert fake.calls == []

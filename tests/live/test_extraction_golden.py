@@ -1,6 +1,6 @@
-"""Golden eval against the real model. Costs money: needs ANTHROPIC_API_KEY.
+"""Golden eval against the real model. Costs money: needs LLM_API_KEY.
 
-Run: ANTHROPIC_API_KEY=... uv run pytest -m live -v -s
+Run: LLM_API_KEY=... uv run pytest -m live -v -s
 If recall is low, tune EXTRACTION_SYSTEM, never the thresholds below.
 """
 
@@ -14,21 +14,19 @@ from rapidfuzz import fuzz, utils
 
 from omnistream.config import Settings
 from omnistream.embed import SentenceTransformerEmbedder
-from omnistream.ingest.extract import Extractor
-from omnistream.ingest.grounding import is_grounded
+from omnistream.graph.extract import Extractor
+from omnistream.graph.grounding import is_grounded
+from omnistream.graph.resolve import EntityResolver
+from omnistream.graph.write import FactWriter
 from omnistream.ingest.pipeline import IngestPipeline
-from omnistream.ingest.resolve import EntityResolver
-from omnistream.ingest.route import Router
-from omnistream.ingest.write import FactWriter
 from omnistream.llm import build_llm_client
 from omnistream.models import Bubble, RawItem, Source
+from omnistream.router.route import Router
 from omnistream.store.memory import InMemoryStore
 
 pytestmark = [
     pytest.mark.live,
-    pytest.mark.skipif(
-        not os.environ.get("ANTHROPIC_API_KEY"), reason="ANTHROPIC_API_KEY not set"
-    ),
+    pytest.mark.skipif(not os.environ.get("LLM_API_KEY"), reason="LLM_API_KEY not set"),
 ]
 
 ARTICLES = Path(__file__).parent.parent / "fixtures" / "golden" / "articles.jsonl"
@@ -74,10 +72,12 @@ async def test_golden_extraction():
     await store.upsert_source(source)
     pipeline = IngestPipeline(
         store,
-        Router(llm, settings.anthropic_model_route),
-        Extractor(llm, settings.anthropic_model_extract),
+        Router(llm, settings.llm_model),
+        Extractor(llm, settings.llm_model),
         EntityResolver(
-            store, embedder, settings.embed_match_threshold,
+            store,
+            embedder,
+            settings.embed_match_threshold,
             settings.fuzzy_match_threshold,
         ),
         FactWriter(store),
@@ -104,12 +104,11 @@ async def test_golden_extraction():
         route_match = set(result.bubble_ids) == set(a["expected_bubbles"])
         routing_ok += route_match
         found = [
-            e["name"] for e in a["expected_entities"]
+            e["name"]
+            for e in a["expected_entities"]
             if _found(store, e["name"], e["type"])
         ]
-        missed = [
-            e["name"] for e in a["expected_entities"] if e["name"] not in found
-        ]
+        missed = [e["name"] for e in a["expected_entities"] if e["name"] not in found]
         expected_total += len(a["expected_entities"])
         found_total += len(found)
         print(
@@ -154,7 +153,8 @@ async def test_golden_extraction():
     assert older[0].status == "HISTORICAL"
 
     apples = [
-        e for e in by_id.values()
+        e
+        for e in by_id.values()
         if e.type == "ORG" and any(n.casefold().startswith("apple") for n in _names(e))
     ]
     assert len(apples) == 1

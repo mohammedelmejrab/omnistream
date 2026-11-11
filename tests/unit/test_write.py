@@ -1,6 +1,6 @@
 from datetime import UTC, datetime, timedelta
 
-from omnistream.ingest.write import FactWriter
+from omnistream.graph.write import FactWriter
 from omnistream.models import RawItem, Source
 from omnistream.store.memory import InMemoryStore
 

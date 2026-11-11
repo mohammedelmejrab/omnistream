@@ -16,16 +16,26 @@ def vec(i: int) -> list[float]:
 
 def entity(id: str, type: str = "ORG", emb: list[float] | None = None, **kw) -> Entity:
     return Entity(
-        id=id, canonical_name=kw.pop("canonical_name", id), type=type,
-        embedding=emb or vec(0), **kw,
+        id=id,
+        canonical_name=kw.pop("canonical_name", id),
+        type=type,
+        embedding=emb or vec(0),
+        **kw,
     )
 
 
 def fact(id: str, bubble: str = "news", subject: str = "e1", **kw) -> Fact:
     base = {
-        "id": id, "subject_id": subject, "relation": "CEO_OF", "object_id": "e2",
-        "bubble_id": bubble, "source_id": "s1", "source_url": "http://x",
-        "credibility": 0.5, "evidence_hashes": ["h"], "valid_from": NOW,
+        "id": id,
+        "subject_id": subject,
+        "relation": "CEO_OF",
+        "object_id": "e2",
+        "bubble_id": bubble,
+        "source_id": "s1",
+        "source_url": "http://x",
+        "credibility": 0.5,
+        "evidence_hashes": ["h"],
+        "valid_from": NOW,
         "ingested_at": NOW,
     }
     base.update(kw)
@@ -88,7 +98,9 @@ async def test_vector_search_filters_by_type(store):
 
 
 async def test_add_alias_deduplicates_case_insensitive(store):
-    await store.create_entity(entity("a", canonical_name="Acme Corp", aliases=["Apple"]))
+    await store.create_entity(
+        entity("a", canonical_name="Acme Corp", aliases=["Apple"])
+    )
     await store.add_alias("a", "apple")
     await store.add_alias("a", "APPLE")
     await store.add_alias("a", "acme corp")

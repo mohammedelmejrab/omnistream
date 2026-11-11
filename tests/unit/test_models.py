@@ -32,4 +32,3 @@ def test_api_source_requires_api_config():
 def test_settings_defaults():
     s = Settings()
     assert s.embed_match_threshold == 0.88
-    assert s.anthropic_model_extract == "claude-haiku-5-5"

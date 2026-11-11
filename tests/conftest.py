@@ -35,9 +35,7 @@ async def store(request):
         from omnistream.store.neo4j_store import Neo4jStore
 
         c = request.getfixturevalue("neo4j_container")
-        s = Neo4jStore(
-            c.get_connection_url(), c.username, c.password, embed_dim=DIM
-        )
+        s = Neo4jStore(c.get_connection_url(), c.username, c.password, embed_dim=DIM)
         await s.init_schema()
         await s._run("MATCH (n) DETACH DELETE n")
         try:

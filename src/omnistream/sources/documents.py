@@ -4,8 +4,8 @@ from pathlib import PurePath
 
 from pypdf import PdfReader
 
-from omnistream.ingest.sources import UnsupportedDocumentError
 from omnistream.models import RawItem
+from omnistream.sources import UnsupportedDocumentError
 
 
 def _snap_forward(text: str, pos: int, limit: int) -> int:
