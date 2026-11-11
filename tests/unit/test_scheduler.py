@@ -6,6 +6,7 @@ import pytest
 import respx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
+from omnistream.db import Repository
 from omnistream.graph.extract import Extractor
 from omnistream.graph.resolve import EntityResolver
 from omnistream.graph.write import FactWriter
@@ -31,7 +32,8 @@ def rss(id: str, url: str, poll_interval: int = 300) -> Source:
 @pytest.fixture
 async def env():
     store = InMemoryStore()
-    await store.create_bubble(
+    repo = Repository()
+    await repo.create_bubble(
         Bubble(id="news", name="news", description="news topics", updated_at=NOW)
     )
     fake = FakeLLM(
@@ -41,7 +43,7 @@ async def env():
         }
     )
     pipe = IngestPipeline(
-        store,
+        repo,
         Router(fake, "m"),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
@@ -51,7 +53,7 @@ async def env():
     aps = AsyncIOScheduler()
     aps.start(paused=True)
     async with httpx.AsyncClient() as http:
-        yield store, IngestScheduler(store, pipe, http, scheduler=aps), aps
+        yield repo, IngestScheduler(repo, pipe, http, scheduler=aps), aps
     if aps.running:
         aps.shutdown(wait=False)
 

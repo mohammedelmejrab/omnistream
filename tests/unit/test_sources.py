@@ -7,7 +7,7 @@ import pytest
 import respx
 from fpdf import FPDF
 
-from omnistream.models import ApiFeedConfig, Source
+from omnistream.models import ApiMapping, Source
 from omnistream.sources import SourceFetchError, UnsupportedDocumentError
 from omnistream.sources.api import fetch_api
 from omnistream.sources.documents import chunk_text, load_document
@@ -22,17 +22,17 @@ def _rss_source() -> Source:
     return Source(id="gazette", type="rss", url=FEED_URL)
 
 
-def _api_source(items_path: str = "data.articles") -> Source:
+def _api_source(items_path: str = "$.data.articles") -> Source:
     return Source(
         id="api1",
         type="api",
         url=API_URL,
-        api_config=ApiFeedConfig(
-            items_path=items_path,
-            text_field="body",
-            url_field="meta.url",
-            title_field="headline",
-            published_field="published",
+        api_mapping=ApiMapping(
+            items=items_path,
+            body="$.body",
+            url="$.meta.url",
+            title="$.headline",
+            date="$.published",
             headers={"X-Key": "secret"},
         ),
     )
@@ -101,7 +101,7 @@ async def test_rss_http_404_raises_source_fetch_error():
 
 
 @respx.mock
-async def test_api_extracts_dotted_paths_and_skips_incomplete_items():
+async def test_api_extracts_jsonpaths_and_skips_incomplete_items():
     payload = json.loads((FIXTURES / "api" / "items.json").read_text())
     route = respx.get(API_URL).mock(return_value=httpx.Response(200, json=payload))
     async with httpx.AsyncClient() as http:
@@ -137,6 +137,15 @@ async def test_api_missing_items_path_raises():
 
 
 @respx.mock
+async def test_api_wildcard_items_path():
+    payload = json.loads((FIXTURES / "api" / "items.json").read_text())
+    respx.get(API_URL).mock(return_value=httpx.Response(200, json=payload))
+    async with httpx.AsyncClient() as http:
+        items = await fetch_api(_api_source(items_path="$.data.articles[*]"), http)
+    assert len(items) == 2
+
+
+@respx.mock
 async def test_api_invalid_json_raises():
     respx.get(API_URL).mock(return_value=httpx.Response(200, content=b"<html>"))
     async with httpx.AsyncClient() as http:
@@ -149,7 +158,7 @@ async def test_api_root_list_with_empty_items_path():
     payload = [{"body": "hello there", "meta": {"url": "https://x.example.com/1"}}]
     respx.get(API_URL).mock(return_value=httpx.Response(200, json=payload))
     async with httpx.AsyncClient() as http:
-        items = await fetch_api(_api_source(items_path=""), http)
+        items = await fetch_api(_api_source(items_path="$"), http)
     assert len(items) == 1 and items[0].title == ""
 
 

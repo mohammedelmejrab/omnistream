@@ -13,6 +13,7 @@ import pytest
 from rapidfuzz import fuzz, utils
 
 from omnistream.config import Settings
+from omnistream.db import Repository
 from omnistream.embed import SentenceTransformerEmbedder
 from omnistream.graph.extract import Extractor
 from omnistream.graph.grounding import is_grounded
@@ -58,6 +59,7 @@ def _found(store: InMemoryStore, name: str, type_: str) -> bool:
 async def test_golden_extraction():
     settings = Settings()
     store = InMemoryStore()
+    repo = Repository()
     embedder = SentenceTransformerEmbedder(settings.embed_model)
     llm = build_llm_client(settings)
     now = datetime(2026, 4, 1).astimezone()
@@ -65,13 +67,13 @@ async def test_golden_extraction():
         ("news", "General world, local and breaking news"),
         ("finance", "Companies, markets, banks, earnings and executive changes"),
     ):
-        await store.create_bubble(
+        await repo.create_bubble(
             Bubble(id=bid, name=bid, description=desc, updated_at=now)
         )
     source = Source(id="golden", type="rss", url="https://golden.test/feed")
-    await store.upsert_source(source)
+    await repo.upsert_source(source)
     pipeline = IngestPipeline(
-        store,
+        repo,
         Router(llm, settings.llm_model),
         Extractor(llm, settings.llm_model),
         EntityResolver(

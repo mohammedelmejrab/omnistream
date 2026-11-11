@@ -8,7 +8,10 @@ import httpx
 import pytest
 import respx
 from neo4j import AsyncGraphDatabase
+from sqlmodel import select
 
+from omnistream.db import Repository
+from omnistream.db.tables import SeenItemRow
 from omnistream.embed import SentenceTransformerEmbedder
 from omnistream.graph.extract import Extractor
 from omnistream.graph.resolve import EntityResolver
@@ -121,32 +124,36 @@ async def _fresh_store(container) -> Neo4jStore:
 
 
 @pytest.fixture
-async def env(neo4j_container, real_embedder):
+async def env(neo4j_container, real_embedder, tmp_path):
     store = await _fresh_store(neo4j_container)
+    db_path = str(tmp_path / "app.db")
+    repo = Repository.from_path(db_path)
     for bid in ("news", "finance"):
-        await store.create_bubble(
+        await repo.create_bubble(
             Bubble(id=bid, name=bid, description=f"{bid} topics", updated_at=NOW)
         )
-    await store.upsert_source(
+    await repo.upsert_source(
         Source(id="news-src", type="rss", url=NEWS_URL, credibility=0.7)
     )
-    await store.upsert_source(
+    await repo.upsert_source(
         Source(id="fin-src", type="rss", url=FINANCE_URL, credibility=0.9)
     )
 
-    def build(st: Neo4jStore) -> IngestScheduler:
+    def build(st: Neo4jStore, rp: Repository = repo) -> IngestScheduler:
         llm = FakeLLM({BubbleChoice: _route, Extraction: _extract})
         pipe = IngestPipeline(
-            st,
+            rp,
             Router(llm, "m"),
             Extractor(llm, "m"),
             EntityResolver(st, real_embedder, 0.88, 90),
             FactWriter(st),
             grounding_threshold=85,
         )
-        return IngestScheduler(st, pipe, http)
+        return IngestScheduler(rp, pipe, http)
 
     async with httpx.AsyncClient() as http:
+        build.db_path = db_path
+        build.repo = repo
         yield store, build, neo4j_container
     await store.close()
     # Leave no 384-dim index behind for the dim-8 contract tests.
@@ -205,8 +212,10 @@ async def test_e2e_feed_to_neo4j(env):
         "RETURN count(f) AS n",
     )
     assert bad[0]["n"] == 0
+    # Seen-state lives in SQLite now, not Neo4j.
     seen = await _cypher(c, "MATCH (s:SeenItem) RETURN count(s) AS n")
-    assert seen[0]["n"] == 3
+    assert seen[0]["n"] == 0
+    assert len(await build.repo._run(lambda s: list(s.exec(select(SeenItemRow))))) == 3
 
 
 @respx.mock
@@ -261,7 +270,9 @@ async def test_e2e_restart_preserves_dedup(env):
     )
     try:
         await restarted.init_schema()
-        again = await build(restarted).poll_source("news-src")
+        again = await build(restarted, Repository.from_path(build.db_path)).poll_source(
+            "news-src"
+        )
         assert [r.status for r in again] == ["duplicate"] * 3
     finally:
         await restarted.close()

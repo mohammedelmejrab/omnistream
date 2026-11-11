@@ -2,11 +2,11 @@ import pytest
 from pydantic import ValidationError
 
 from omnistream.config import Settings
-from omnistream.models import ApiFeedConfig, Source
+from omnistream.models import ApiMapping, Source
 
 
 def make_source(**kw):
-    base = dict(id="s1", type="rss", url="http://example.com/feed")
+    base = {"id": "s1", "type": "rss", "url": "http://example.com/feed"}
     base.update(kw)
     return Source(**base)
 
@@ -22,11 +22,11 @@ def test_source_rejects_poll_interval_below_60():
         make_source(poll_interval=59)
 
 
-def test_api_source_requires_api_config():
+def test_api_source_requires_api_mapping():
     with pytest.raises(ValidationError):
-        make_source(type="api", api_config=None)
-    cfg = ApiFeedConfig(items_path="items", text_field="t", url_field="u")
-    assert make_source(type="api", api_config=cfg).api_config is cfg
+        make_source(type="api", api_mapping=None)
+    cfg = ApiMapping(items="$.items", body="$.t", url="$.u")
+    assert make_source(type="api", api_mapping=cfg).api_mapping is cfg
 
 
 def test_settings_defaults():

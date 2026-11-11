@@ -5,11 +5,11 @@ import httpx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 
+from omnistream.db import Repository
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.models import IngestResult, RawItem, Source
 from omnistream.sources.api import fetch_api
 from omnistream.sources.rss import fetch_rss
-from omnistream.store.base import GraphStore
 
 logger = logging.getLogger(__name__)
 
@@ -17,24 +17,24 @@ logger = logging.getLogger(__name__)
 class IngestScheduler:
     def __init__(
         self,
-        store: GraphStore,
+        repo: Repository,
         pipeline: IngestPipeline,
         http: httpx.AsyncClient,
         scheduler: AsyncIOScheduler | None = None,
     ) -> None:
-        self._store = store
+        self._repo = repo
         self._pipeline = pipeline
         self._http = http
         self._scheduler = scheduler or AsyncIOScheduler()
 
     async def start(self) -> None:
-        for source in await self._store.list_sources():
+        for source in await self._repo.list_sources():
             self.schedule_source(source)
         if not self._scheduler.running:
             self._scheduler.start()
 
     def schedule_source(self, source: Source) -> None:
-        if source.type == "document":
+        if source.type in ("document", "log") or not source.enabled:
             return
         job_id = f"poll:{source.id}"
         # Jobs added to an unstarted scheduler stay pending and
@@ -52,7 +52,7 @@ class IngestScheduler:
         )
 
     async def poll_source(self, source_id: str) -> list[IngestResult]:
-        source = await self._store.get_source(source_id)
+        source = await self._repo.get_source(source_id)
         if source is None:
             return []
         try:
@@ -61,10 +61,12 @@ class IngestScheduler:
         except Exception as exc:
             logger.exception("polling source %s failed", source_id)
             source.last_error = repr(exc)
+            source.status = "error"
             await self._record(source)
             return []
         source.last_polled_at = datetime.now(UTC)
         source.last_error = None
+        source.status = "ok"
         await self._record(source)
         return results
 
@@ -81,6 +83,6 @@ class IngestScheduler:
 
     async def _record(self, source: Source) -> None:
         try:
-            await self._store.upsert_source(source)
+            await self._repo.upsert_source(source)
         except Exception:
             logger.exception("could not record poll state for %s", source.id)

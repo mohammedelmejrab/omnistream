@@ -2,7 +2,7 @@ from datetime import UTC, datetime
 
 import pytest
 
-from omnistream.models import Bubble, Entity, Fact, Source
+from omnistream.models import Entity, Fact
 from tests.conftest import DIM
 
 NOW = datetime(2026, 1, 1, tzinfo=UTC)
@@ -40,37 +40,6 @@ def fact(id: str, bubble: str = "news", subject: str = "e1", **kw) -> Fact:
     }
     base.update(kw)
     return Fact(**base)
-
-
-async def test_mark_seen_then_has_seen(store):
-    assert not await store.has_seen("h1")
-    await store.mark_seen("h1", "s1")
-    assert await store.has_seen("h1")
-
-
-async def test_mark_seen_idempotent(store):
-    await store.mark_seen("h1", "s1")
-    await store.mark_seen("h1", "s1")
-    assert await store.has_seen("h1")
-
-
-async def test_bubble_round_trip(store):
-    b = Bubble(id="news", name="News", description="d", updated_at=NOW)
-    await store.create_bubble(b)
-    assert await store.get_bubble("news") == b
-    assert await store.get_bubble("nope") is None
-    assert await store.list_bubbles() == [b]
-
-
-async def test_source_upsert_round_trip_and_overwrite(store):
-    s = Source(id="s1", type="rss", url="http://feed", bubble_ids=["news"])
-    await store.upsert_source(s)
-    assert await store.get_source("s1") == s
-    assert await store.get_source("nope") is None
-    s2 = s.model_copy(update={"credibility": 0.9, "last_error": "boom"})
-    await store.upsert_source(s2)
-    assert await store.get_source("s1") == s2
-    assert await store.list_sources() == [s2]
 
 
 async def test_vector_search_returns_raw_cosine(store):

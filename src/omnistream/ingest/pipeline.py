@@ -2,6 +2,7 @@
 
 import logging
 
+from omnistream.db import Repository
 from omnistream.graph.extract import Extractor
 from omnistream.graph.grounding import ground_extraction
 from omnistream.graph.resolve import EntityResolver
@@ -9,7 +10,6 @@ from omnistream.graph.write import FactWriter
 from omnistream.ingest.normalize import content_hash, normalize_text
 from omnistream.models import IngestResult, RawItem, Source
 from omnistream.router.route import Router
-from omnistream.store.base import GraphStore
 
 logger = logging.getLogger(__name__)
 
@@ -17,14 +17,14 @@ logger = logging.getLogger(__name__)
 class IngestPipeline:
     def __init__(
         self,
-        store: GraphStore,
+        repo: Repository,
         router: Router,
         extractor: Extractor,
         resolver: EntityResolver,
         writer: FactWriter,
         grounding_threshold: int,
     ) -> None:
-        self._store = store
+        self._repo = repo
         self._router = router
         self._extractor = extractor
         self._resolver = resolver
@@ -43,7 +43,7 @@ class IngestPipeline:
             return IngestResult(status="duplicate", item_hash=h)
         self._inflight.add(h)
         try:
-            if await self._store.has_seen(h):
+            if await self._repo.has_seen(h):
                 return IngestResult(status="duplicate", item_hash=h)
             try:
                 return await self._run(item, source, h)
@@ -55,7 +55,7 @@ class IngestPipeline:
 
     async def _run(self, item: RawItem, source: Source, h: str) -> IngestResult:
         bubbles = await self._router.route(
-            item, source, await self._store.list_bubbles()
+            item, source, await self._repo.list_bubbles()
         )
         if not bubbles:
             return IngestResult(status="unrouted", item_hash=h)
@@ -89,7 +89,7 @@ class IngestPipeline:
                     if outcome == "superseded":
                         superseded += 1
 
-        await self._store.mark_seen(h, source.id)
+        await self._repo.mark_seen(h, source.id, item.url)
         return IngestResult(
             status="ingested",
             item_hash=h,

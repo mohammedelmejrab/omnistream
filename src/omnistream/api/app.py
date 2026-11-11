@@ -2,6 +2,7 @@ import re
 import uuid
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Annotated, Literal
 
 import httpx
@@ -9,12 +10,12 @@ from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
 from omnistream.config import Settings
+from omnistream.db import Repository
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
-from omnistream.models import ApiFeedConfig, Bubble, IngestResult, Source
+from omnistream.models import ApiMapping, Bubble, IngestResult, Source
 from omnistream.sources import UnsupportedDocumentError
 from omnistream.sources.documents import load_document
-from omnistream.store.base import GraphStore
 
 
 class BubbleIn(BaseModel):
@@ -37,7 +38,10 @@ class SourceIn(BaseModel):
     poll_interval: int = 900
     bubble_ids: list[str] = Field(default_factory=list)
     auto_route: bool = True
-    api_config: ApiFeedConfig | None = None
+    api_mapping: ApiMapping | None = None
+    max_items_per_hour: int = 30
+    store_full_text: bool = True
+    enabled: bool = True
 
 
 def _slug(name: str) -> str:
@@ -45,7 +49,7 @@ def _slug(name: str) -> str:
 
 
 def create_app(
-    store: GraphStore,
+    repo: Repository,
     pipeline: IngestPipeline,
     scheduler: IngestScheduler,
     embedder,
@@ -56,11 +60,11 @@ def create_app(
     app = FastAPI(title="OmniStream ingestion", lifespan=lifespan)
 
     async def unknown_bubbles(ids: list[str]) -> list[str]:
-        return [i for i in ids if await store.get_bubble(i) is None]
+        return [i for i in ids if await repo.get_bubble(i) is None]
 
     @app.post("/bubbles", status_code=201, response_model=Bubble)
     async def create_bubble(body: BubbleIn) -> Bubble:
-        existing = await store.list_bubbles()
+        existing = await repo.list_bubbles()
         if body.name.casefold() in {b.name.strip().casefold() for b in existing}:
             raise HTTPException(409, f"bubble named {body.name!r} already exists")
         taken = {b.id for b in existing}
@@ -69,7 +73,7 @@ def create_app(
         while bubble_id in taken:
             bubble_id, n = f"{base}-{n}", n + 1
         vec = (await embedder.embed([f"{body.name}: {body.description}"]))[0]
-        return await store.create_bubble(
+        return await repo.create_bubble(
             Bubble(
                 id=bubble_id,
                 name=body.name,
@@ -81,7 +85,7 @@ def create_app(
 
     @app.get("/bubbles", response_model=list[Bubble])
     async def list_bubbles() -> list[Bubble]:
-        return await store.list_bubbles()
+        return await repo.list_bubbles()
 
     @app.post("/sources", status_code=201, response_model=Source)
     async def create_source(body: SourceIn) -> Source:
@@ -93,17 +97,17 @@ def create_app(
             ) from exc
         if missing := await unknown_bubbles(source.bubble_ids):
             raise HTTPException(422, f"unknown bubble ids: {missing}")
-        await store.upsert_source(source)
+        await repo.upsert_source(source)
         scheduler.schedule_source(source)
         return source
 
     @app.get("/sources", response_model=list[Source])
     async def list_sources() -> list[Source]:
-        return await store.list_sources()
+        return await repo.list_sources()
 
     @app.post("/sources/{source_id}/poll", response_model=list[IngestResult])
     async def poll_source(source_id: str) -> list[IngestResult]:
-        if await store.get_source(source_id) is None:
+        if await repo.get_source(source_id) is None:
             raise HTTPException(404, f"unknown source {source_id!r}")
         return await scheduler.poll_source(source_id)
 
@@ -141,7 +145,7 @@ def create_app(
             raise HTTPException(415, str(exc)) from exc
         except Exception as exc:
             raise HTTPException(422, f"could not parse document: {exc}") from exc
-        await store.upsert_source(source)
+        await repo.upsert_source(source)
         return await pipeline.process_many(items, source)
 
     return app
@@ -165,10 +169,11 @@ def main_app() -> FastAPI:
         settings.neo4j_password,
         settings.embed_dim,
     )
+    repo = Repository.from_path(str(Path(settings.data_dir) / "omnistream.db"))
     embedder = SentenceTransformerEmbedder(settings.embed_model)
     llm = build_llm_client(settings)
     pipeline = IngestPipeline(
-        store,
+        repo,
         Router(llm, settings.llm_model),
         Extractor(llm, settings.llm_model),
         EntityResolver(
@@ -181,7 +186,7 @@ def main_app() -> FastAPI:
         grounding_threshold=settings.grounding_threshold,
     )
     http = httpx.AsyncClient()
-    scheduler = IngestScheduler(store, pipeline, http)
+    scheduler = IngestScheduler(repo, pipeline, http)
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
@@ -193,5 +198,6 @@ def main_app() -> FastAPI:
             await scheduler.shutdown()
             await http.aclose()
             await store.close()
+            await repo.close()
 
-    return create_app(store, pipeline, scheduler, embedder, settings, lifespan)
+    return create_app(repo, pipeline, scheduler, embedder, settings, lifespan)

@@ -1,6 +1,7 @@
 import asyncio
 from datetime import UTC, datetime
 
+from omnistream.db import Repository
 from omnistream.graph.extract import Extractor
 from omnistream.graph.resolve import EntityResolver
 from omnistream.graph.write import FactWriter
@@ -43,8 +44,9 @@ def source() -> Source:
 
 async def setup(extraction=None, bubbles=("news", "finance"), delay=0.0):
     store = InMemoryStore()
+    repo = Repository()
     for b in bubbles:
-        await store.create_bubble(
+        await repo.create_bubble(
             Bubble(id=b, name=b, description=f"{b} topics", updated_at=NOW)
         )
     fake = FakeLLM(
@@ -55,13 +57,14 @@ async def setup(extraction=None, bubbles=("news", "finance"), delay=0.0):
         delay=delay,
     )
     pipe = IngestPipeline(
-        store,
+        repo,
         Router(fake, "m"),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
         FactWriter(store, clock=lambda: NOW),
         grounding_threshold=85,
     )
+    store.repo = repo  # test convenience: seen-state lives in SQLite
     return store, fake, pipe
 
 
@@ -80,7 +83,7 @@ async def test_happy_path_writes_facts_to_all_routed_bubbles():
     assert len(facts_finance) == 1
     assert facts_news[0].subject_id == facts_finance[0].subject_id
     assert facts_news[0].object_id == facts_finance[0].object_id
-    assert await store.has_seen(res.item_hash)
+    assert await store.repo.has_seen(res.item_hash)
 
 
 async def test_duplicate_item_skipped_before_llm():
@@ -107,7 +110,7 @@ async def test_empty_text_returns_empty():
     res = await pipe.process(it, source())
     assert res.status == "empty"
     assert res.item_hash == content_hash(it.url, it.text)
-    assert not await store.has_seen(res.item_hash)
+    assert not await store.repo.has_seen(res.item_hash)
     assert fake.calls == []
 
 
@@ -115,7 +118,7 @@ async def test_unrouted_item_not_marked_seen():
     store, fake, pipe = await setup(bubbles=())
     res = await pipe.process(item(), source())
     assert res.status == "unrouted"
-    assert not await store.has_seen(res.item_hash)
+    assert not await store.repo.has_seen(res.item_hash)
     assert fake.calls == []
 
 
@@ -136,7 +139,7 @@ async def test_item_with_no_triples_is_marked_seen():
     res = await pipe.process(item(), source())
     assert res.status == "ingested"
     assert res.facts_created == 0
-    assert await store.has_seen(res.item_hash)
+    assert await store.repo.has_seen(res.item_hash)
 
 
 async def test_merge_and_supersede_counters():
@@ -180,7 +183,7 @@ async def test_llm_failure_returns_failed_and_does_not_mark_seen():
     assert res.status == "failed"
     assert res.item_hash == h
     assert "LLMError" in (res.error or "")
-    assert not await store.has_seen(h)
+    assert not await store.repo.has_seen(h)
 
     fake.responses[Extraction] = Extraction(triples=[triple()])
     res2 = await pipe.process(it, source())

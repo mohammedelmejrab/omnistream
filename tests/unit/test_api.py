@@ -9,6 +9,7 @@ from httpx import ASGITransport
 
 from omnistream.api.app import create_app
 from omnistream.config import Settings
+from omnistream.db import Repository
 from omnistream.graph.extract import Extractor
 from omnistream.graph.resolve import EntityResolver
 from omnistream.graph.write import FactWriter
@@ -29,6 +30,7 @@ DOC_TEXT = b"Alice became CEO of Acme Corp this week."
 
 def make_env(settings: Settings | None = None):
     store = InMemoryStore()
+    repo = Repository()
     fake = FakeLLM(
         {
             BubbleChoice: BubbleChoice(bubble_ids=["news"]),
@@ -46,7 +48,7 @@ def make_env(settings: Settings | None = None):
         }
     )
     pipe = IngestPipeline(
-        store,
+        repo,
         Router(fake, "m"),
         Extractor(fake, "m"),
         EntityResolver(store, FakeEmbedder(), 0.9, 90),
@@ -55,7 +57,7 @@ def make_env(settings: Settings | None = None):
     )
     aps = AsyncIOScheduler()
     aps.start(paused=True)
-    return store, pipe, aps
+    return repo, pipe, aps
 
 
 @pytest.fixture

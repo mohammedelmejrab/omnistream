@@ -1,7 +1,11 @@
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Literal, Self
 
 from pydantic import BaseModel, Field, model_validator
+
+
+def _utcnow() -> datetime:
+    return datetime.now(UTC)
 
 
 class Bubble(BaseModel):
@@ -10,34 +14,45 @@ class Bubble(BaseModel):
     description: str
     description_embedding: list[float] | None = None
     auto_summary: str | None = None
-    updated_at: datetime
+    half_life_days: int = Field(default=30, ge=1)
+    created_at: datetime = Field(default_factory=_utcnow)
+    updated_at: datetime = Field(default_factory=_utcnow)
 
 
-class ApiFeedConfig(BaseModel):
-    items_path: str
-    text_field: str
-    url_field: str
-    title_field: str | None = None
-    published_field: str | None = None
+class ApiMapping(BaseModel):
+    """JSONPath expressions locating item fields in an API response (spec §5).
+
+    `items` is evaluated against the response; the other paths against each item.
+    """
+
+    items: str
+    title: str | None = None
+    body: str
+    date: str | None = None
+    url: str
     headers: dict[str, str] = Field(default_factory=dict)
 
 
 class Source(BaseModel):
     id: str
-    type: Literal["rss", "api", "document"]
-    url: str | None
+    type: Literal["rss", "api", "document", "log"]
+    url: str | None = None
     credibility: float = Field(default=0.5, ge=0.0, le=1.0)
     poll_interval: int = Field(default=900, ge=60)
     bubble_ids: list[str] = Field(default_factory=list)
     auto_route: bool = True
-    api_config: ApiFeedConfig | None = None
+    api_mapping: ApiMapping | None = None
+    max_items_per_hour: int = Field(default=30, ge=1)
+    store_full_text: bool = True
+    enabled: bool = True
     last_polled_at: datetime | None = None
+    status: Literal["ok", "error", "pending"] = "pending"
     last_error: str | None = None
 
     @model_validator(mode="after")
-    def _api_requires_config(self) -> Self:
-        if self.type == "api" and self.api_config is None:
-            raise ValueError("api_config is required when type == 'api'")
+    def _api_requires_mapping(self) -> Self:
+        if self.type == "api" and self.api_mapping is None:
+            raise ValueError("api_mapping is required when type == 'api'")
         return self
 
 

@@ -6,7 +6,7 @@ from typing import Any
 
 from neo4j import AsyncGraphDatabase
 
-from omnistream.models import ApiFeedConfig, Bubble, Entity, Fact, Source
+from omnistream.models import Entity, Fact
 
 _FACT_PROPS = (
     "id",
@@ -32,33 +32,6 @@ def _dt(value: Any) -> datetime | None:
     if native.tzinfo is None:
         native = native.replace(tzinfo=UTC)
     return native.astimezone(UTC)
-
-
-def _bubble(n: Any) -> Bubble:
-    return Bubble(
-        id=n["id"],
-        name=n["name"],
-        description=n["description"],
-        description_embedding=n.get("description_embedding"),
-        auto_summary=n.get("auto_summary"),
-        updated_at=_dt(n["updated_at"]),
-    )
-
-
-def _source(n: Any) -> Source:
-    cfg = n.get("api_config")
-    return Source(
-        id=n["id"],
-        type=n["type"],
-        url=n.get("url"),
-        credibility=n["credibility"],
-        poll_interval=n["poll_interval"],
-        bubble_ids=list(n["bubble_ids"]),
-        auto_route=n["auto_route"],
-        api_config=ApiFeedConfig.model_validate_json(cfg) if cfg else None,
-        last_polled_at=_dt(n.get("last_polled_at")),
-        last_error=n.get("last_error"),
-    )
 
 
 def _entity(n: Any) -> Entity:
@@ -118,68 +91,6 @@ class Neo4jStore:
     async def _run(self, query: str, **params: Any) -> list[Any]:
         records, _, _ = await self._driver.execute_query(query, params)
         return records
-
-    # --- seen items ---
-    async def has_seen(self, item_hash: str) -> bool:
-        recs = await self._run(
-            "MATCH (s:SeenItem {hash: $h}) RETURN count(s) AS c", h=item_hash
-        )
-        return recs[0]["c"] > 0
-
-    async def mark_seen(self, item_hash: str, source_id: str) -> None:
-        await self._run(
-            "MERGE (s:SeenItem {hash: $h}) "
-            "ON CREATE SET s.source_id = $sid, s.seen_at = datetime()",
-            h=item_hash,
-            sid=source_id,
-        )
-
-    # --- bubbles ---
-    async def create_bubble(self, b: Bubble) -> Bubble:
-        await self._run(
-            "MERGE (n:Bubble {id: $id}) SET n.name = $name, n.description = $description, "
-            "n.description_embedding = $description_embedding, "
-            "n.auto_summary = $auto_summary, n.updated_at = $updated_at",
-            **b.model_dump(),
-        )
-        return b.model_copy(deep=True)
-
-    async def get_bubble(self, id: str) -> Bubble | None:
-        recs = await self._run("MATCH (n:Bubble {id: $id}) RETURN n", id=id)
-        return _bubble(recs[0]["n"]) if recs else None
-
-    async def list_bubbles(self) -> list[Bubble]:
-        recs = await self._run("MATCH (n:Bubble) RETURN n ORDER BY n.id")
-        return [_bubble(r["n"]) for r in recs]
-
-    # --- sources ---
-    async def upsert_source(self, s: Source) -> Source:
-        await self._run(
-            "MERGE (n:Source {id: $id}) SET n.type = $type, n.url = $url, "
-            "n.credibility = $credibility, n.poll_interval = $poll_interval, "
-            "n.bubble_ids = $bubble_ids, n.auto_route = $auto_route, "
-            "n.api_config = $api_config, n.last_polled_at = $last_polled_at, "
-            "n.last_error = $last_error",
-            id=s.id,
-            type=s.type,
-            url=s.url,
-            credibility=s.credibility,
-            poll_interval=s.poll_interval,
-            bubble_ids=s.bubble_ids,
-            auto_route=s.auto_route,
-            api_config=s.api_config.model_dump_json() if s.api_config else None,
-            last_polled_at=s.last_polled_at,
-            last_error=s.last_error,
-        )
-        return s.model_copy(deep=True)
-
-    async def get_source(self, id: str) -> Source | None:
-        recs = await self._run("MATCH (n:Source {id: $id}) RETURN n", id=id)
-        return _source(recs[0]["n"]) if recs else None
-
-    async def list_sources(self) -> list[Source]:
-        recs = await self._run("MATCH (n:Source) RETURN n ORDER BY n.id")
-        return [_source(r["n"]) for r in recs]
 
     # --- entities ---
     async def create_entity(self, e: Entity) -> Entity:
