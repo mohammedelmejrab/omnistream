@@ -11,11 +11,13 @@ from pydantic import BaseModel, Field, ValidationError, field_validator
 
 from omnistream.config import Settings
 from omnistream.db import Repository
+from omnistream.ingest.intake import Intake
+from omnistream.ingest.normalize import content_hash
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import ApiMapping, Bubble, IngestResult, Source
 from omnistream.sources import UnsupportedDocumentError
-from omnistream.sources.documents import load_document
+from omnistream.sources.documents import document_ext, load_document
 
 
 class BubbleIn(BaseModel):
@@ -55,6 +57,7 @@ def create_app(
     embedder,
     settings: Settings | None = None,
     lifespan=None,
+    intake: Intake | None = None,
 ) -> FastAPI:
     settings = settings or Settings()
     app = FastAPI(title="OmniStream ingestion", lifespan=lifespan)
@@ -137,8 +140,7 @@ def create_app(
                 source.id,
                 file.filename or "upload",
                 data,
-                settings.chunk_size,
-                settings.chunk_overlap,
+                settings.document_episode_tokens,
                 ids,
             )
         except UnsupportedDocumentError as exc:
@@ -146,7 +148,20 @@ def create_app(
         except Exception as exc:
             raise HTTPException(422, f"could not parse document: {exc}") from exc
         await repo.upsert_source(source)
-        return await pipeline.process_many(items, source)
+        if intake is None:
+            return await pipeline.process_many(items, source)
+        # One original per upload; every episode points at it (spec §4.2).
+        ext = document_ext(file.filename or "upload")
+        results: list[IngestResult] = []
+        for i, item in enumerate(items):
+            row = await intake.accept(item, source, data, ext, part=i)
+            results.append(
+                IngestResult(
+                    status="queued" if row else "duplicate",
+                    item_hash=row.id if row else content_hash(item.url, item.text),
+                )
+            )
+        return results
 
     return app
 
@@ -160,6 +175,7 @@ def main_app() -> FastAPI:
     from omnistream.graph.write import FactWriter
     from omnistream.llm import build_llm_client
     from omnistream.router.route import Router
+    from omnistream.sources.replay import SnapshotRecorder
     from omnistream.store.neo4j_store import Neo4jStore
 
     settings = Settings()
@@ -186,7 +202,13 @@ def main_app() -> FastAPI:
         grounding_threshold=settings.grounding_threshold,
     )
     http = httpx.AsyncClient()
-    scheduler = IngestScheduler(repo, pipeline, http)
+    intake = Intake(repo, settings.data_dir, settings.prefilter_min_chars)
+    recorder = (
+        SnapshotRecorder(settings.data_dir, settings.record_snapshot)
+        if settings.record_snapshot
+        else None
+    )
+    scheduler = IngestScheduler(repo, pipeline, http, intake=intake, recorder=recorder)
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
@@ -200,4 +222,6 @@ def main_app() -> FastAPI:
             await store.close()
             await repo.close()
 
-    return create_app(repo, pipeline, scheduler, embedder, settings, lifespan)
+    return create_app(
+        repo, pipeline, scheduler, embedder, settings, lifespan, intake=intake
+    )

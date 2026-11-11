@@ -259,3 +259,26 @@ async def test_upload_unknown_bubble_422(env):
 async def test_upload_bad_credibility_422(env):
     client, _, _ = env
     assert (await upload(client, credibility="2")).status_code == 422
+
+
+async def test_upload_via_intake_queues_parts_with_shared_original(tmp_path):
+    from omnistream.ingest.intake import Intake
+
+    repo, pipe, aps = make_env()
+    intake = Intake(repo, str(tmp_path))
+    text = ("# One\n\n" + "alpha " * 700 + "\n\n# Two\n\n" + "beta " * 700).encode()
+    async with httpx.AsyncClient() as http:
+        sched = IngestScheduler(repo, pipe, http, scheduler=aps, intake=intake)
+        app = create_app(repo, pipe, sched, FakeEmbedder(), intake=intake)
+        async with httpx.AsyncClient(
+            transport=ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            r1 = await upload(client, name="doc.md", data=text)
+            r2 = await upload(client, name="doc.md", data=text)
+    aps.shutdown(wait=False)
+    assert [x["status"] for x in r1.json()] == ["queued", "queued"]
+    assert [x["status"] for x in r2.json()] == ["duplicate", "duplicate"]
+    a, b = await repo.list_items(status="queued")
+    assert a.raw_path == b.raw_path and a.text_path != b.text_path
+    assert Path(a.raw_path).read_bytes() == text
+    assert len(await repo.list_jobs()) == 2

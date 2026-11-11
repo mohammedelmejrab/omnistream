@@ -63,6 +63,10 @@ class RawItem(BaseModel):
     text: str
     published_at: datetime | None = None
     bubble_ids_override: list[str] | None = None
+    # Original payload as fetched (RSS entry html, API entry json) for the
+    # original store (spec §4.2); falls back to `text` when absent.
+    raw_content: str | None = None
+    raw_ext: str = "txt"
 
 
 class ExtractedTriple(BaseModel):
@@ -105,7 +109,7 @@ class Fact(BaseModel):
 
 
 class IngestResult(BaseModel):
-    status: Literal["ingested", "duplicate", "unrouted", "empty", "failed"]
+    status: Literal["queued", "ingested", "duplicate", "unrouted", "empty", "failed"]
     item_hash: str
     bubble_ids: list[str] = Field(default_factory=list)
     facts_created: int = 0

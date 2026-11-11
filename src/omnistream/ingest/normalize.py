@@ -6,7 +6,7 @@ import unicodedata
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 _DEFAULT_PORTS = {"http": 80, "https": 443}
-_DROP_PARAMS = {"fbclid", "gclid"}
+_DROP_PARAMS = {"fbclid", "gclid", "mc_cid", "mc_eid", "ref", "ref_src"}
 
 
 def normalize_text(text: str) -> str:

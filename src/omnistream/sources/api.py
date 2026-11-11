@@ -1,3 +1,4 @@
+import json
 from datetime import UTC, datetime
 from typing import Any
 
@@ -76,6 +77,8 @@ async def fetch_api(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
                 title=title,
                 text=text,
                 published_at=published,
+                raw_content=json.dumps(entry, ensure_ascii=False, default=str),
+                raw_ext="json",
             )
         )
     return items

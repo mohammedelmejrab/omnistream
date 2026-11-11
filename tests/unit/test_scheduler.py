@@ -154,3 +154,33 @@ async def test_start_schedules_non_document_sources(env):
     await sched.start()
     assert [j.id for j in aps.get_jobs()] == ["poll:a"]
     await sched.shutdown()
+
+
+@respx.mock
+async def test_poll_with_intake_queues_items_and_repoll_adds_none(tmp_path):
+    from omnistream.ingest.intake import Intake
+
+    repo = Repository()
+    await repo.upsert_source(rss("a", URL_A))
+    respx.get(URL_A).respond(200, content=NEWS_XML)
+    aps = AsyncIOScheduler()
+    async with httpx.AsyncClient() as http:
+        sched = IngestScheduler(
+            repo, None, http, scheduler=aps, intake=Intake(repo, str(tmp_path), 1)
+        )
+        first = await sched.poll_source("a")
+        second = await sched.poll_source("a")
+    assert len(first) == 3 and all(r.status == "queued" for r in first)
+    assert second == []
+    items = await repo.list_items(status="queued")
+    assert len(items) == 3 and len(await repo.list_jobs()) == 3
+    assert all(Path(i.raw_path).exists() and Path(i.text_path).exists() for i in items)
+
+
+async def test_poll_disabled_source_does_nothing(env):
+    repo, sched, _ = env
+    s = rss("a", URL_A)
+    s.enabled = False
+    await repo.upsert_source(s)
+    assert await sched.poll_source("a") == []
+    assert (await repo.get_source("a")).last_polled_at is None

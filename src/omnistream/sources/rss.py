@@ -52,6 +52,8 @@ async def fetch_rss(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
                 title=title,
                 text=text,
                 published_at=published,
+                raw_content=raw,
+                raw_ext="html",
             )
         )
     return items

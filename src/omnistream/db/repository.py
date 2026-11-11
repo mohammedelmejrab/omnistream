@@ -9,7 +9,7 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any, TypeVar
 
-from sqlalchemy import Engine, event
+from sqlalchemy import Engine, event, func
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine, select
@@ -217,6 +217,25 @@ class Repository:
             if status is not None:
                 q = q.where(ItemRow.status == status)
             return list(s.exec(q))
+
+        return await self._run(fn)
+
+    async def count_items_since(
+        self, source_id: str, since: datetime, *, exclude_status: str = "filtered"
+    ) -> int:
+        """Items polled for `source_id` at or after `since` (drives the hourly cap)."""
+
+        def fn(s: Session) -> int:
+            q = (
+                select(func.count())
+                .select_from(ItemRow)
+                .where(
+                    ItemRow.source_id == source_id,
+                    ItemRow.polled_at >= since,
+                    ItemRow.status != exclude_status,
+                )
+            )
+            return int(s.exec(q).one())
 
         return await self._run(fn)
 

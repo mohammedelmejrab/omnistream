@@ -51,6 +51,7 @@ class Settings(BaseSettings):
     half_life_research_days: int = 365
 
     # Existing app settings
-    chunk_size: int = 2000
-    chunk_overlap: int = 200
+    record_snapshot: str | None = (
+        None  # when set, polled items go to snapshots/<name>.jsonl
+    )
     max_upload_bytes: int = 20_000_000

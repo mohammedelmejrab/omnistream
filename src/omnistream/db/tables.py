@@ -93,6 +93,9 @@ class ItemRow(SQLModel, table=True):
     published_at: datetime | None = Field(default=None, sa_column=dt_col())
     raw_path: str | None = None
     text_path: str | None = None
+    text_truncated: bool = (
+        False  # store_full_text off: only title + first 500 chars kept
+    )
     # queued | routed | unsorted | extracted | written | failed | filtered
     status: str = Field(default="queued", index=True)
     route_confidence: float | None = None

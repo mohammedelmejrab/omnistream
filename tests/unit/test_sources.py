@@ -1,3 +1,4 @@
+import io
 import json
 from datetime import UTC
 from pathlib import Path
@@ -10,7 +11,11 @@ from fpdf import FPDF
 from omnistream.models import ApiMapping, Source
 from omnistream.sources import SourceFetchError, UnsupportedDocumentError
 from omnistream.sources.api import fetch_api
-from omnistream.sources.documents import chunk_text, load_document
+from omnistream.sources.documents import (
+    estimate_tokens,
+    load_document,
+    split_episodes,
+)
 from omnistream.sources.rss import fetch_rss
 
 FIXTURES = Path(__file__).parent.parent / "fixtures"
@@ -162,80 +167,109 @@ async def test_api_root_list_with_empty_items_path():
     assert len(items) == 1 and items[0].title == ""
 
 
-def _long_text(n: int = 5000) -> str:
-    paras = []
-    i = 0
-    while sum(len(p) + 2 for p in paras) < n:
-        paras.append(" ".join(f"word{i + j}" for j in range(40)))
-        i += 40
-    return "\n\n".join(paras)[:n]
+def _words(n: int, prefix: str = "w") -> str:
+    return " ".join(f"{prefix}{i}" for i in range(n))
 
 
-def test_chunk_text_respects_size_and_overlap():
-    text = _long_text(5000)
-    assert len(text) == 5000
-    chunks = chunk_text(text, size=2000, overlap=200)
-    assert len(chunks) == 3
-    assert all(len(c) <= 2000 for c in chunks)
-    assert chunks[1][:50] in chunks[0][-400:]
-    assert chunks[-1].endswith(text.rstrip()[-20:])
+def test_split_episodes_short_text_single_episode():
+    assert split_episodes("hello world", 1500) == ["hello world"]
 
 
-def test_chunk_text_is_deterministic():
-    text = _long_text(5000)
-    assert chunk_text(text, 2000, 200) == chunk_text(text, 2000, 200)
+def test_split_episodes_empty_returns_empty():
+    assert split_episodes("  \n\n ", 1500) == []
 
 
-def test_chunk_text_short_text_single_chunk():
-    assert chunk_text("hello world", 2000, 200) == ["hello world"]
+def test_split_episodes_cuts_at_headings():
+    text = (
+        f"# One\n\n{_words(600)}\n\n# Two\n\n{_words(600)}\n\n# Three\n\n{_words(600)}"
+    )
+    eps = split_episodes(text, 1000)  # ~780 tokens per section: one per episode
+    assert len(eps) == 3
+    assert [e.split("\n", 1)[0] for e in eps] == ["# One", "# Two", "# Three"]
+    assert all(estimate_tokens(e) <= 1000 for e in eps)
 
 
-def test_chunk_text_empty_returns_empty():
-    assert chunk_text("  \n\n ", 2000, 200) == []
+def test_split_episodes_packs_small_sections_together():
+    text = "# A\n\nalpha beta\n\n# B\n\ngamma delta"
+    assert len(split_episodes(text, 1500)) == 1
 
 
-def test_chunk_text_hard_splits_unbroken_text():
-    chunks = chunk_text("x" * 5000, size=1000, overlap=100)
-    assert all(len(c) <= 1000 for c in chunks)
-    assert len(chunks) >= 5
-    assert "".join(c for c in chunks).count("x") >= 5000
+def test_split_episodes_oversize_section_cuts_at_paragraphs():
+    paras = [_words(300, f"p{i}x") for i in range(6)]
+    eps = split_episodes("# Big\n\n" + "\n\n".join(paras), 1000)
+    assert len(eps) > 1
+    assert all(estimate_tokens(e) <= 1000 for e in eps)
+    assert "p5x299" in eps[-1]
+
+
+def test_split_episodes_hard_splits_oversize_paragraph():
+    eps = split_episodes(_words(3000), 1500)
+    assert len(eps) >= 3
+    assert all(estimate_tokens(e) <= 1500 for e in eps)
+    assert sum(len(e.split()) for e in eps) == 3000
 
 
 def test_load_pdf_extracts_text(pdf_bytes):
-    items = load_document(
-        "doc1", "report.pdf", pdf_bytes, size=2000, overlap=200, bubble_ids=["b1"]
-    )
+    items = load_document("doc1", "report.pdf", pdf_bytes, 1500, ["b1"])
     assert items
     assert "Zephyr protocol" in " ".join(i.text for i in items)
     assert items[0].source_id == "doc1"
     assert items[0].bubble_ids_override == ["b1"]
     assert items[0].title == f"report.pdf (part 1/{len(items)})"
-    assert items[0].url.startswith("doc://") and items[0].url.endswith("#chunk-0")
+    assert items[0].url.startswith("doc://") and items[0].url.endswith("#part-0")
+    assert items[0].raw_ext == "pdf"
 
 
 def test_load_pdf_uppercase_extension(pdf_bytes):
-    assert load_document("d", "REPORT.PDF", pdf_bytes, 2000, 200, None)
+    assert load_document("d", "REPORT.PDF", pdf_bytes, 1500, None)
 
 
 def test_load_pdf_without_text_returns_empty():
     pdf = FPDF()
     pdf.add_page()
-    assert load_document("d", "scan.pdf", bytes(pdf.output()), 2000, 200, None) == []
+    assert load_document("d", "scan.pdf", bytes(pdf.output()), 1500, None) == []
 
 
 def test_load_txt_replaces_invalid_utf8():
-    items = load_document("d", "a.txt", b"caf\xe9 au lait", 2000, 200, None)
+    items = load_document("d", "a.txt", b"caf\xe9 au lait", 1500, None)
     assert "au lait" in items[0].text
 
 
+def test_load_md_keeps_headings():
+    items = load_document("d", "a.md", b"# Title\n\nbody text", 1500, None)
+    assert items[0].text.startswith("# Title")
+    assert items[0].raw_ext == "md"
+
+
+def _docx_bytes() -> bytes:
+    from docx import Document
+
+    doc = Document()
+    doc.add_heading("Overview", level=1)
+    doc.add_paragraph(_words(500, "ov"))
+    doc.add_heading("Details", level=2)
+    doc.add_paragraph(_words(500, "de"))
+    buf = io.BytesIO()
+    doc.save(buf)
+    return buf.getvalue()
+
+
+def test_load_docx_parses_and_splits_at_headings():
+    items = load_document("d", "spec.docx", _docx_bytes(), 800, None)
+    assert len(items) == 2
+    assert items[0].text.startswith("# Overview") and "ov499" in items[0].text
+    assert items[1].text.startswith("## Details") and "de499" in items[1].text
+    assert items[0].raw_ext == "docx"
+
+
 def test_same_file_bytes_same_urls_regardless_of_filename():
-    data = b"Some shared content. " * 300
-    a = load_document("d", "one.txt", data, 1000, 100, None)
-    b = load_document("d", "two.md", data, 1000, 100, None)
+    data = (_words(400) + "\n\n") * 6
+    a = load_document("d", "one.txt", data.encode(), 800, None)
+    b = load_document("d", "two.md", data.encode(), 800, None)
     assert len(a) > 1
     assert [i.url for i in a] == [i.url for i in b]
 
 
 def test_unsupported_extension_raises():
     with pytest.raises(UnsupportedDocumentError):
-        load_document("d", "file.docx", b"x", 2000, 200, None)
+        load_document("d", "file.exe", b"x", 1500, None)

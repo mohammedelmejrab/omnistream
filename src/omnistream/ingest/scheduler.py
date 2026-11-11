@@ -6,9 +6,11 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 
 from omnistream.db import Repository
+from omnistream.ingest.intake import Intake
 from omnistream.ingest.pipeline import IngestPipeline
 from omnistream.models import IngestResult, RawItem, Source
 from omnistream.sources.api import fetch_api
+from omnistream.sources.replay import SnapshotRecorder
 from omnistream.sources.rss import fetch_rss
 
 logger = logging.getLogger(__name__)
@@ -21,7 +23,13 @@ class IngestScheduler:
         pipeline: IngestPipeline,
         http: httpx.AsyncClient,
         scheduler: AsyncIOScheduler | None = None,
+        intake: Intake | None = None,
+        recorder: SnapshotRecorder | None = None,
     ) -> None:
+        # With `intake`, polling stores + queues items (spec §4.1); without it
+        # the legacy direct pipeline path runs (Task 7 removes it).
+        self._intake = intake
+        self._recorder = recorder
         self._repo = repo
         self._pipeline = pipeline
         self._http = http
@@ -53,11 +61,16 @@ class IngestScheduler:
 
     async def poll_source(self, source_id: str) -> list[IngestResult]:
         source = await self._repo.get_source(source_id)
-        if source is None:
+        if source is None or not source.enabled:
             return []
         try:
             items = await self._fetch(source)
-            results = await self._pipeline.process_many(items, source)
+            if self._recorder is not None:
+                self._recorder.record(items)
+            if self._intake is not None:
+                results = await self._accept_all(items, source)
+            else:
+                results = await self._pipeline.process_many(items, source)
         except Exception as exc:
             logger.exception("polling source %s failed", source_id)
             source.last_error = repr(exc)
@@ -68,6 +81,19 @@ class IngestScheduler:
         source.last_error = None
         source.status = "ok"
         await self._record(source)
+        return results
+
+    async def _accept_all(
+        self, items: list[RawItem], source: Source
+    ) -> list[IngestResult]:
+        results: list[IngestResult] = []
+        for item in items:
+            raw = item.raw_content if item.raw_content is not None else item.text
+            row = await self._intake.accept(
+                item, source, raw.encode("utf-8"), item.raw_ext
+            )
+            if row is not None:
+                results.append(IngestResult(status="queued", item_hash=row.id))
         return results
 
     async def shutdown(self) -> None:
