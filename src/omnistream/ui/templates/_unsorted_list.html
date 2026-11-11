@@ -1,0 +1,10 @@
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+{% for it in items %}
+<form id="item-{{ it.id }}" hx-post="/ui/items/{{ it.id }}/assign" hx-target="#unsorted">
+  <h3>{{ it.title or it.url or it.id }}</h3>
+  <p>{{ snippets[it.id] }}</p>
+  <p>Route confidence: {{ "%.2f"|format(it.route_confidence) if it.route_confidence is not none else "n/a" }}</p>
+  <select name="bubble_ids" multiple required>{% for b in bubbles %}<option value="{{ b.id }}">{{ b.name }}</option>{% endfor %}</select>
+  <button type="submit">Assign</button>
+</form>
+{% else %}<p>No unsorted items.</p>{% endfor %}

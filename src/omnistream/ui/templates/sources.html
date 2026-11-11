@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<div id="sources">{% include "_sources_table.html" %}</div>
+<h2>Add source</h2>
+<form hx-post="/ui/sources" hx-target="#sources" hx-swap="innerHTML">
+  <label>Type <select name="type"><option>rss</option><option>api</option></select></label>
+  <label>URL <input name="url" required></label>
+  <label>Credibility <input name="credibility" type="number" step="0.05" min="0" max="1" value="0.5"></label>
+  <label>Poll interval (s) <input name="poll_interval" type="number" min="60" value="900"></label>
+  <label>Bubbles
+    <select name="bubble_ids" multiple>{% for b in bubbles %}<option value="{{ b.id }}">{{ b.name }}</option>{% endfor %}</select></label>
+  <fieldset><legend>API mapping (type api)</legend>
+    <label>items <input name="map_items" placeholder="$.articles[*]"></label>
+    <label>title <input name="map_title"></label>
+    <label>body <input name="map_body"></label>
+    <label>date <input name="map_date"></label>
+    <label>url <input name="map_url"></label>
+    <label>headers (one "Name: value" per line) <textarea name="map_headers"></textarea></label>
+  </fieldset>
+  <button type="submit">Add</button>
+</form>
+{% endblock %}

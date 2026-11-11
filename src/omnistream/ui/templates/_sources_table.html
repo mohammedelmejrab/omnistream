@@ -1,0 +1,10 @@
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<table><tr><th>Type</th><th>URL</th><th>Status</th><th>Last polled</th><th>Last error</th><th>Enabled</th><th></th></tr>
+{% for s in sources %}
+<tr id="source-{{ s.id }}"><td>{{ s.type }}</td><td>{{ s.url or "" }}</td><td>{{ s.status }}</td>
+<td>{{ s.last_polled_at or "never" }}</td><td>{{ s.last_error or "" }}</td>
+<td>{{ "yes" if s.enabled else "no" }}
+  <button hx-post="/ui/sources/{{ s.id }}/toggle" hx-target="#sources">{{ "Disable" if s.enabled else "Enable" }}</button></td>
+<td><button hx-post="/ui/sources/{{ s.id }}/poll" hx-target="#sources">Poll now</button></td></tr>
+{% else %}<tr><td colspan="7">No sources.</td></tr>{% endfor %}
+</table>

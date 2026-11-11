@@ -24,6 +24,7 @@ from omnistream.router.router import Router
 from omnistream.sources import UnsupportedDocumentError
 from omnistream.sources.documents import document_ext, load_document
 from omnistream.sources.replay import SnapshotRecorder
+from omnistream.ui.routes import build_router, static_files
 
 
 class BubbleIn(BaseModel):
@@ -242,6 +243,8 @@ def create_app(
             )
         return results
 
+    app.mount("/ui/static", static_files(), name="ui-static")
+    app.include_router(build_router(repo, scheduler))
     return app
 
 
