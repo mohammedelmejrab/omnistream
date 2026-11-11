@@ -98,6 +98,8 @@ class ItemRow(SQLModel, table=True):
     # queued | routed | unsorted | extracted | written | failed | filtered
     status: str = Field(default="queued", index=True)
     route_confidence: float | None = None
+    # Bubbles already written for this item; lets a retry skip finished bubbles.
+    written_bubble_ids: list[str] = Field(default_factory=list, sa_column=json_col())
     polled_at: datetime | None = Field(default=None, sa_column=dt_col())
     deduplicated_at: datetime | None = Field(default=None, sa_column=dt_col())
     routed_at: datetime | None = Field(default=None, sa_column=dt_col())

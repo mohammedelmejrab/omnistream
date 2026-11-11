@@ -57,6 +57,16 @@ class Repository:
         self._engine: Engine = create_engine(url, **kwargs)
         event.listen(self._engine, "connect", _sqlite_pragmas)
         SQLModel.metadata.create_all(self._engine)
+        self._add_missing_columns()
+
+    def _add_missing_columns(self) -> None:
+        """Upgrade pre-existing SQLite files that predate newer item columns."""
+        with self._engine.begin() as conn:
+            cols = {r[1] for r in conn.exec_driver_sql("PRAGMA table_info(items)")}
+            if "written_bubble_ids" not in cols:
+                conn.exec_driver_sql(
+                    "ALTER TABLE items ADD COLUMN written_bubble_ids JSON DEFAULT '[]'"
+                )
 
     @classmethod
     def from_path(cls, path: str) -> "Repository":

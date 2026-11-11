@@ -101,8 +101,12 @@ class StubOpenAI:
         self.chat = SimpleNamespace(completions=SimpleNamespace(create=self._create))
 
     def _canned(self, prompt: str) -> dict:
-        tag = "CURRENT_MESSAGE" if "<CURRENT_MESSAGE>" in prompt else "CURRENT MESSAGE"
-        episode = prompt.split(f"<{tag}>")[1].split(f"</{tag}>")[0]
+        import re
+
+        m = re.search(
+            r"<(TEXT|CURRENT_MESSAGE|CURRENT MESSAGE)>(.*?)</\1>", prompt, re.DOTALL
+        )
+        episode = m.group(2) if m else prompt
         for marker, body in EXTRACTIONS.items():
             if marker in episode:
                 return body
@@ -277,15 +281,14 @@ async def test_episode_write_provenance_grounding_links_and_confidence(env):
     assert "Acme Corporation" in acme[0]["aliases"]
 
     # Chunks in per-bubble collections; vector index live.
-    import chromadb
-
-    client = chromadb.PersistentClient(
-        path=str(writer._chunks._client._settings.persist_directory)
-    )
+    client = writer._chunks._client
     assert {c.name for c in client.list_collections()} == {
         "bubble_news",
         "bubble_finance",
     }
+    got = client.get_collection("bubble_news").get(include=["metadatas"])
+    assert got["ids"]
+    assert {m["item_id"] for m in got["metadatas"]} == {"it1", "it2"}
     assert "ExtractedEntities" in stub.titles
 
 
@@ -315,5 +318,12 @@ async def test_bubble_delete_removes_all_derived_data(env):
         )
         == []
     )
+    # News-only GlobalEntities are gone; the Acme one shared with finance survives.
+    remaining = await q(graphiti, "MATCH (g:GlobalEntity) RETURN g.type AS t")
+    assert remaining == [{"t": "Organization"}]
+    assert await q(graphiti, "MATCH (:Entity)-[r:SAME_AS]->() RETURN r") != []
+    # Chroma collection dropped for news, kept for finance.
+    names = {c.name for c in writer._chunks._client.list_collections()}
+    assert names == {"bubble_finance"}
     # The other bubble is untouched.
     assert (await life.counts("finance"))["episodes"] == 1

@@ -32,12 +32,10 @@ class ItemProcessor:
 
         if item.bubble_ids:  # upload override / manual assignment bypasses the router
             bubble_ids = list(item.bubble_ids)
-            await self._repo.update_item(
-                item_id,
-                status="routed",
-                route_confidence=1.0,
-                routed_at=datetime.now(UTC),
-            )
+            changes = {"status": "routed", "routed_at": datetime.now(UTC)}
+            if item.status != "routed":  # a retry keeps the confidence from routing
+                changes["route_confidence"] = 1.0
+            await self._repo.update_item(item_id, **changes)
         else:
             raw = RawItem(
                 source_id=source.id,
@@ -63,7 +61,13 @@ class ItemProcessor:
                 return
             bubble_ids = decision.bubble_ids
 
-        await self._writer.write(item, text, bubble_ids, source)
+        written = list(item.written_bubble_ids or [])
+        for bubble_id in bubble_ids:
+            if bubble_id in written:  # finished before a failed attempt
+                continue
+            await self._writer.write(item, text, [bubble_id], source)
+            written.append(bubble_id)
+            await self._repo.update_item(item_id, written_bubble_ids=list(written))
         now = datetime.now(UTC)
         await self._repo.update_item(
             item_id, status="written", extracted_at=now, written_at=now, error=None

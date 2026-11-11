@@ -93,6 +93,37 @@ async def test_llm_error_propagates_for_retry(tmp_path):
     assert (await repo.get_item("i1")).status != "unsorted"
 
 
+class FlakyWriter(FakeWriter):
+    def __init__(self, fail_on):
+        super().__init__()
+        self.fail_on = fail_on
+
+    async def write(self, item, text, bubble_ids, source):
+        if bubble_ids == [self.fail_on]:
+            self.fail_on = None
+            raise RuntimeError("neo4j down")
+        await super().write(item, text, bubble_ids, source)
+
+
+async def test_retry_skips_written_bubbles_and_keeps_router_confidence(tmp_path):
+    repo, proc, _, router, _ = await setup(
+        tmp_path, BubbleChoice(bubble_ids=["news", "sci"], confidence=0.8)
+    )
+    await BubbleService(repo, FakeEmbedder()).create(
+        Bubble(id="sci", name="Sci", description="s")
+    )
+    writer = FlakyWriter(fail_on="sci")
+    proc = ItemProcessor(repo, router, writer)
+    with pytest.raises(RuntimeError):
+        await proc.process_item("i1")
+    assert (await repo.get_item("i1")).written_bubble_ids == ["news"]
+    await proc.process_item("i1")
+    item = await repo.get_item("i1")
+    assert [c[2] for c in writer.calls] == [["news"], ["sci"]]
+    assert item.status == "written" and item.route_confidence == 0.8
+    assert item.written_bubble_ids == ["news", "sci"]
+
+
 async def test_unknown_item_is_ignored(tmp_path):
     _, proc, writer, _, _ = await setup(
         tmp_path, BubbleChoice(bubble_ids=[], confidence=0)
