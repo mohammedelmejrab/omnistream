@@ -14,6 +14,7 @@ from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.pool import StaticPool
 from sqlmodel import Session, SQLModel, create_engine, select
 
+from omnistream.config import Settings
 from omnistream.db.tables import (
     BubbleRow,
     EvalRunRow,
@@ -50,7 +51,10 @@ def _source_row(s: Source) -> SourceRow:
 
 
 class Repository:
-    def __init__(self, url: str = "sqlite://") -> None:
+    def __init__(
+        self, url: str = "sqlite://", *, settings: Settings | None = None
+    ) -> None:
+        self._settings = settings
         kwargs: dict[str, Any] = {"connect_args": {"check_same_thread": False}}
         if url in ("sqlite://", "sqlite:///:memory:"):
             kwargs["poolclass"] = StaticPool  # one shared in-memory connection
@@ -76,6 +80,19 @@ class Repository:
     async def close(self) -> None:
         await asyncio.to_thread(self._engine.dispose)
 
+    def read_bubbles(self) -> list[Bubble]:
+        """Synchronous read view for C5's worker-thread store contracts."""
+        with Session(self._engine) as session:
+            return [
+                _bubble(row)
+                for row in session.exec(select(BubbleRow).order_by(BubbleRow.id))
+            ]
+
+    def read_item(self, item_id: str) -> ItemRow | None:
+        """Detached item metadata for the query path; caller owns no session."""
+        with Session(self._engine, expire_on_commit=False) as session:
+            return session.get(ItemRow, item_id)
+
     async def _run(self, fn: Callable[[Session], T]) -> T:
         def work() -> T:
             with Session(self._engine, expire_on_commit=False) as session:
@@ -87,6 +104,12 @@ class Repository:
 
     # --- bubbles ---
     async def create_bubble(self, b: Bubble) -> Bubble:
+        if "half_life_days" not in b.model_fields_set:
+            settings = self._settings or Settings(_env_file=None)
+            b = b.model_copy(
+                update={"half_life_days": bubble_half_life(b.name, settings)}
+            )
+
         def fn(s: Session) -> Bubble:
             existing = s.get(BubbleRow, b.id)
             data = b.model_dump()
@@ -419,3 +442,12 @@ def _sqlite_pragmas(dbapi_conn: Any, _record: Any) -> None:
     cur.execute("PRAGMA journal_mode=WAL")
     cur.execute("PRAGMA busy_timeout=5000")
     cur.close()
+
+
+def bubble_half_life(name: str, settings: Settings) -> int:
+    key = name.strip().casefold()
+    return (
+        getattr(settings, f"half_life_{key}_days")
+        if key in {"news", "finance", "research"}
+        else 30
+    )

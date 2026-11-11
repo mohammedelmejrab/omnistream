@@ -11,6 +11,7 @@ from omnistream.agents import MultiHopResult, SubagentFindings, run_subagents
 from omnistream.config import Settings
 from omnistream.llm import AsyncLLMClient, LLMClient
 from omnistream.retrieval.citations import CitedAnswer, build_context, generate_answer
+from omnistream.retrieval.merge import Conflict
 from omnistream.retrieval.models import RetrievalMode, RetrievalResult, ScoredFact
 from omnistream.retrieval.modes import RetrievalDispatcher
 from omnistream.retrieval.protocols import GraphStore, ItemStore
@@ -28,6 +29,7 @@ class QAResult:
     retrieval: RetrievalResult | None = None
     multi_hop: MultiHopResult | None = None
     specific_item_id: str | None = None
+    conflicts: tuple[Conflict, ...] = ()
 
 
 def _infer_specific_item(result: RetrievalResult) -> str | None:
@@ -128,6 +130,11 @@ async def answer_question(
             item_store=item_store,
             settings=settings,
             time_scope=routing.time_scope,
+            **(
+                {"excluded_bubbles": routing.excluded_bubbles}
+                if routing.excluded_bubbles
+                else {}
+            ),
         )
         ordered_findings = _ordered_findings(multi_hop, routing.bubbles)
         facts, chunks = {}, {}
@@ -136,13 +143,29 @@ async def answer_question(
                 facts.setdefault(fact.id, fact)
             for chunk in finding.chunks:
                 chunks.setdefault(chunk.id, chunk)
+        scored = {
+            entry.fact.id: entry
+            for finding in ordered_findings
+            for entry in finding.scored_facts
+        }
+        seeds = {
+            entity.id: entity
+            for finding in ordered_findings
+            for entity in finding.seeds
+        }
         result = RetrievalResult(
             selected,
             tuple(
-                ScoredFact(fact, 0.0, ranks={"subagent": rank})
+                ScoredFact(
+                    fact,
+                    0.0,
+                    path=scored[fact.id].path if fact.id in scored else (),
+                    ranks={"subagent": rank},
+                )
                 for rank, fact in enumerate(facts.values(), 1)
             ),
             tuple(chunks.values()),
+            tuple(seeds.values()),
         )
     else:
         result = await asyncio.to_thread(
@@ -151,6 +174,11 @@ async def answer_question(
             mode=selected,
             bubbles=routing.bubbles,
             time_scope=routing.time_scope,
+            **(
+                {"excluded_bubbles": routing.excluded_bubbles}
+                if routing.excluded_bubbles
+                else {}
+            ),
         )
     specific = None
     if routing.names_specific_item and not use_agents:
@@ -216,4 +244,6 @@ async def answer_question(
                 context, text=context.text + "\n\n" + "\n\n".join(sections)
             )
     answer = await asyncio.to_thread(generate_answer, llm, question, context)
-    return QAResult(answer, routing, selected, result, multi_hop, specific)
+    return QAResult(
+        answer, routing, selected, result, multi_hop, specific, context.conflicts
+    )

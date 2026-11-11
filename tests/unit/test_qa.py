@@ -501,3 +501,29 @@ async def test_join_identifiers_cannot_inject_citations(settings, mock_openai):
     parsed = parse_citations(notes, AnswerContext("", ()))
     assert not parsed and not parsed.invalid
     assert "b(98)" in notes and "global(97)" in notes
+
+
+@pytest.mark.parametrize("subagents", [False, True])
+async def test_exclusions_flow_from_routing_to_retrieval(
+    settings, mock_openai, subagents
+):
+    from unittest.mock import Mock
+
+    router = Router(bubbles=("news",))
+    router.decision = replace(router.decision, excluded_bubbles=("finance",))
+    retriever = Mock()
+    retriever.retrieve.return_value = RetrievalResult("own", (ScoredFact(FACT, 1),))
+    client, _ = mock_openai(lambda _: "Supported [1].")
+    await answer_question(
+        "q",
+        router=router,
+        dispatcher=RetrievalDispatcher({"own": retriever}, "own"),
+        llm=LLMClient(settings, client=client),
+        async_llm=ScriptedLLM(),
+        graph_store=Graph(),
+        item_store=Items(),
+        settings=settings,
+        subagents=subagents,
+        exclude=("finance",),
+    )
+    assert retriever.retrieve.call_args.kwargs["excluded_bubbles"] == ("finance",)

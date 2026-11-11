@@ -6,6 +6,7 @@ from pathlib import Path
 
 from omnistream.config import Settings
 from omnistream.db import Repository
+from omnistream.db.repository import bubble_half_life
 from omnistream.ingest.intake import Intake
 from omnistream.models import ApiMapping, Bubble, Source
 from omnistream.router.bubbles import BubbleService
@@ -74,11 +75,14 @@ async def seed(
     service = BubbleService(repo, embedder)
     try:
         have = {b.id for b in await repo.list_bubbles()}
-        for bid, name, desc, half_life in SEED_BUBBLES:
+        for bid, name, desc, _half_life in SEED_BUBBLES:
             if bid not in have:
                 await service.create(
                     Bubble(
-                        id=bid, name=name, description=desc, half_life_days=half_life
+                        id=bid,
+                        name=name,
+                        description=desc,
+                        half_life_days=bubble_half_life(name, settings),
                     )
                 )
         sources = [

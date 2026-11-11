@@ -10,7 +10,14 @@ from typing import Literal
 
 from omnistream.config import Settings, get_settings
 from omnistream.llm import AsyncLLMClient
-from omnistream.retrieval.models import Chunk, Fact, RetrievalMode, TimeScope
+from omnistream.retrieval.models import (
+    Chunk,
+    Entity,
+    Fact,
+    RetrievalMode,
+    ScoredFact,
+    TimeScope,
+)
 from omnistream.retrieval.protocols import GraphStore, ItemStore, Retriever
 
 from .tools import ToolExecutor, tool_error
@@ -29,6 +36,8 @@ class SubagentFindings:
     error: str | None = None
     facts: tuple[Fact, ...] = ()
     chunks: tuple[Chunk, ...] = ()
+    scored_facts: tuple[ScoredFact, ...] = ()
+    seeds: tuple[Entity, ...] = ()
 
 
 def format_error(exc: BaseException) -> str:
@@ -47,6 +56,7 @@ class Subagent:
         item_store: ItemStore,
         settings: Settings | None = None,
         time_scope: TimeScope | None = None,
+        excluded_bubbles: tuple[str, ...] = (),
     ) -> None:
         self.bubble, self.llm = bubble, llm
         self.settings = settings or get_settings()
@@ -57,6 +67,7 @@ class Subagent:
             graph_store=graph_store,
             item_store=item_store,
             time_scope=time_scope,
+            **({"excluded_bubbles": excluded_bubbles} if excluded_bubbles else {}),
         )
 
     async def run(self, question: str) -> SubagentFindings:
@@ -108,6 +119,7 @@ class Subagent:
                                         "published_at",
                                         "valid_at",
                                         "invalid_at",
+                                        "expired_at",
                                     ):
                                         if isinstance(values.get(name), str):
                                             values[name] = datetime.fromisoformat(
@@ -158,4 +170,6 @@ class Subagent:
             error,
             tuple(evidence["facts"].values()),
             tuple(evidence["chunks"].values()),
+            tuple(self.executor.scored_facts.values()),
+            tuple(self.executor.seeds.values()),
         )

@@ -40,6 +40,7 @@ async def run_subagents(
     item_store: ItemStore,
     settings: Settings,
     time_scope: TimeScope | None = None,
+    excluded_bubbles: tuple[str, ...] = (),
 ) -> MultiHopResult:
     bubbles = list(dict.fromkeys(bubbles))
 
@@ -53,6 +54,7 @@ async def run_subagents(
             item_store=item_store,
             settings=settings,
             time_scope=time_scope,
+            **({"excluded_bubbles": excluded_bubbles} if excluded_bubbles else {}),
         ).run(question)
 
     results = await asyncio.gather(

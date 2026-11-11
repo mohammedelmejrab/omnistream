@@ -10,7 +10,7 @@ from datetime import datetime
 from typing import Any
 
 from omnistream.llm import ToolCall
-from omnistream.retrieval.models import RetrievalMode, TimeScope, _utc
+from omnistream.retrieval.models import RetrievalMode, TimeScope, _utc, fact_in_scope
 from omnistream.retrieval.protocols import GraphStore, ItemStore, Retriever
 
 MAX_RESULT_CHARS = 64000
@@ -131,6 +131,7 @@ class ToolExecutor:
         graph_store: GraphStore | None,
         item_store: ItemStore,
         time_scope: TimeScope | None = None,
+        excluded_bubbles: tuple[str, ...] = (),
     ) -> None:
         self.bubble, self.mode = bubble, mode
         self.retriever, self.graph_store, self.item_store = (
@@ -138,8 +139,11 @@ class ToolExecutor:
             graph_store,
             item_store,
         )
+        self.excluded_bubbles = excluded_bubbles
         self.time_scope = time_scope
         self.tools = tools_for_mode(mode)
+        self.scored_facts = {}
+        self.seeds = {}
 
     async def _entities(self, facts) -> list:
         if self.graph_store is None or not facts:
@@ -180,7 +184,16 @@ class ToolExecutor:
                     args["query"],
                     bubbles=[self.bubble],
                     time_scope=self.time_scope,
+                    **(
+                        {"excluded_bubbles": self.excluded_bubbles}
+                        if self.excluded_bubbles and self.mode == "own"
+                        else {}
+                    ),
                 )
+                for entry in result.facts:
+                    self.scored_facts.setdefault(entry.fact.id, entry)
+                for seed in result.seeds:
+                    self.seeds.setdefault(seed.id, seed)
                 facts = [entry.fact for entry in result.facts]
                 payload = {
                     "facts": [asdict(f) for f in facts],
@@ -210,15 +223,42 @@ class ToolExecutor:
                     depth = args.get("depth", 1)
                     if type(depth) is not int or not 1 <= depth <= 2:
                         raise ValueError("depth must be within 1..2")
-                    graph = await _invoke(
-                        self.graph_store.neighbors, args["entity_id"], depth=depth
-                    )
-                    scope = self.time_scope or TimeScope()
+                    if self.time_scope is not None and callable(
+                        getattr(self.graph_store, "expand", None)
+                    ):
+                        graph = await _invoke(
+                            self.graph_store.expand,
+                            [args["entity_id"]],
+                            bubbles=[self.bubble],
+                            time_scope=self.time_scope,
+                            **(
+                                {"excluded_bubbles": self.excluded_bubbles}
+                                if self.excluded_bubbles and self.mode == "own"
+                                else {}
+                            ),
+                            max_hops=depth,
+                            **(
+                                {"excluded_bubbles": self.excluded_bubbles}
+                                if self.excluded_bubbles
+                                else {}
+                            ),
+                        )
+                    else:
+                        graph = await _invoke(
+                            self.graph_store.neighbors,
+                            args["entity_id"],
+                            depth=depth,
+                            **(
+                                {"excluded_bubbles": self.excluded_bubbles}
+                                if self.excluded_bubbles
+                                else {}
+                            ),
+                        )
+                    scope = self.time_scope
                     facts = [
                         f
                         for f in graph.facts
-                        if f.grounded is True
-                        and scope.overlaps(f.valid_at, f.invalid_at)
+                        if f.grounded is True and fact_in_scope(f, scope)
                     ]
                     # Prune only orphaned identities belonging to rejected evidence.
                     # Standalone entities can still provide cross-bubble identity joins.
@@ -280,18 +320,26 @@ class ToolExecutor:
                     ):
                         facts = []  # Disjoint explicit and routed bounds are a valid empty query.
                     else:
-                        scope = TimeScope(start, end)
+                        scope = (
+                            TimeScope(start, end)
+                            if start is not None or end is not None
+                            else None
+                        )
                         facts = await _invoke(
                             self.graph_store.facts_about,
                             args["entity_id"],
                             start=start,
                             end=end,
+                            **(
+                                {"excluded_bubbles": self.excluded_bubbles}
+                                if self.excluded_bubbles
+                                else {}
+                            ),
                         )
                         facts = [
                             f
                             for f in facts
-                            if f.grounded is True
-                            and scope.overlaps(f.valid_at, f.invalid_at)
+                            if f.grounded is True and fact_in_scope(f, scope)
                         ]
                     payload = {
                         "facts": [asdict(f) for f in facts],

@@ -13,6 +13,7 @@ from pydantic import BaseModel, Field, ValidationError, field_validator
 
 from omnistream.config import Settings
 from omnistream.db import Repository
+from omnistream.db.repository import bubble_half_life
 from omnistream.ingest.intake import Intake
 from omnistream.ingest.normalize import content_hash
 from omnistream.ingest.pipeline import ItemProcessor
@@ -30,7 +31,7 @@ from omnistream.ui.routes import build_router, static_files
 class BubbleIn(BaseModel):
     name: str
     description: str
-    half_life_days: int = Field(default=30, ge=1)
+    half_life_days: int | None = Field(default=None, ge=1)
     backfill_days: int | None = Field(default=None, ge=1)
 
     @field_validator("name", "description")
@@ -110,7 +111,9 @@ def create_app(
                 id=bubble_id,
                 name=body.name,
                 description=body.description,
-                half_life_days=body.half_life_days,
+                half_life_days=body.half_life_days
+                if body.half_life_days is not None
+                else bubble_half_life(body.name, settings),
                 updated_at=datetime.now(UTC),
             ),
             body.backfill_days,

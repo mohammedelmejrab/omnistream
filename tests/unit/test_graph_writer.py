@@ -78,6 +78,7 @@ class FakeOps:
                 self.edges.get(u, {}).get("source_ids", []),
                 self.edges.get(u, {}).get("credibilities", []),
                 self.edges.get(u, {}).get("grounded"),
+                self.edges.get(u, {}).get("published_at"),
             )
             for u in uuids
         }
@@ -182,6 +183,8 @@ async def test_full_write_flags_links_and_edges(tmp_path):
     # global links for every new entity, none for the existing one
     assert {e for e, _ in gstore.links} == {alice.uuid, acme.uuid, ghost.uuid}
     # ledger: asserted edges carry item ids; e3 untouched except status
+    assert ops.edges["e1"]["published_at"] == NOW
+    assert ops.edges["e2"]["published_at"] == NOW
     assert ops.edges["e1"]["item_ids"] == ["item1"]
     assert ops.edges["e1"]["grounded"] is True
     assert ops.edges["e2"]["grounded"] is False
@@ -266,3 +269,38 @@ async def test_summary_failure_does_not_fail_write(tmp_path):
 
 def test_bubble_summary_is_pydantic():
     assert issubclass(BubbleSummary, BaseModel)
+
+
+async def test_asserted_edges_use_ingestion_reference_when_item_date_missing(tmp_path):
+    alice, acme = node("Alice Smith"), node("Acme Corp", ("Entity", "Organization"))
+    graphiti = FakeGraphiti(
+        [alice, acme], [edge("dated", alice.uuid, acme.uuid, ["ep1"])]
+    )
+    writer, ops, *_ = await build(tmp_path, graphiti)
+    item = make_item()
+    item.published_at = None
+    await writer.write(item, TEXT, ["news"], make_source())
+    assert ops.edges["dated"]["published_at"] == graphiti.calls[0]["reference_time"]
+
+
+@pytest.mark.parametrize(
+    "dates",
+    [(NOW, NOW - timedelta(days=10)), (NOW - timedelta(days=10), NOW), (NOW, NOW)],
+)
+async def test_corroboration_keeps_newest_primary_provenance(tmp_path, dates):
+    g = FakeGraphiti([], [edge("e", "a", "b", ["ep1", "ep2"])])
+    w, ops, _, repo = await build(tmp_path, g)
+    try:
+        for n, date in enumerate(dates):
+            item = make_item(f"i{n}")
+            item.published_at = date
+            await w.write(item, TEXT, ["news"], make_source(f"s{n}", 0.5))
+        state = ops.edges["e"]
+        assert state["published_at"] == max(dates)
+        assert state["item_id"] == ("i1" if dates[1] > dates[0] else "i0")
+        assert state["item_ids"] == ["i0", "i1"]
+        assert state["source_count"] == 2
+        assert state["confidence"] == pytest.approx(0.75)
+    finally:
+        await repo.close()
+        w.chunks._client.close()

@@ -366,3 +366,22 @@ async def test_items_assign_and_text(env):
     again = await client.post(f"/items/{item.id}/assign", json={"bubble_ids": ["news"]})
     assert again.status_code == 409
     assert (await client.get("/items/nope/text")).status_code == 404
+
+
+async def test_api_half_life_uses_configured_name_default(tmp_path):
+    settings = Settings(_env_file=None, half_life_news_days=17)
+    repo, lifecycle, intake, aps, _, _ = make_env(tmp_path)
+    try:
+        app = create_app(repo, None, lifecycle, intake, settings=settings)
+        async with httpx.AsyncClient(
+            transport=ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            response = await client.post(
+                "/bubbles", json={"name": "News", "description": "d"}
+            )
+            assert response.status_code == 201
+            assert response.json()["half_life_days"] == 17
+            assert (await repo.get_bubble("news")).half_life_days == 17
+    finally:
+        aps.shutdown(wait=False)
+        await repo.close()

@@ -21,6 +21,7 @@ from omnistream.graph.grounding import is_grounded
 from omnistream.graph.linker import GlobalEntityLinker
 from omnistream.graph.ops import EdgeState, GraphOps
 from omnistream.models import Source
+from omnistream.retrieval.models import _utc
 
 logger = logging.getLogger(__name__)
 
@@ -179,8 +180,6 @@ class GraphWriter:
                 "item_ids": state.item_ids
                 if item.id in state.item_ids
                 else [*state.item_ids, item.id],
-                "item_id": item.id,
-                "source_url": item.url,
                 "credibility": source.credibility,
                 "source_ids": ids,
                 "credibilities": creds,
@@ -189,6 +188,11 @@ class GraphWriter:
                 # A previously-flagged edge is never silently promoted.
                 "grounded": not bad and state.grounded is not False,
             }
+            previous = state.published_at
+            if previous is None or _utc(ref_time) > _utc(previous):
+                props.update(
+                    item_id=item.id, published_at=_utc(ref_time), source_url=item.url
+                )
             await self._ops.set_edge_props(edge.uuid, props)
         result.edges += len(asserted)
 

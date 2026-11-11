@@ -88,7 +88,8 @@ def test_expand_query_bounds_filters_mapping_and_identity():
                 "facts": [{"fact": EDGE, "subject": "a", "object": "b"}],
                 "same_as": [["a", "b"], ["b", "a"]],
             }
-        ]
+        ],
+        [],
     )
     graph = Neo4jGraphStore(driver).expand(
         ["a"], bubbles=["news"], time_scope=TimeScope(NOW, NOW)
@@ -105,7 +106,8 @@ def test_expand_query_bounds_filters_mapping_and_identity():
         fact.published_at == NOW and fact.confidence == 0.8 and fact.source_count == 2
     )
     query, params = driver.calls[0]
-    assert "*0..2" in query and "SAME_AS" in query and "length(p) <= $max_hops" in query
+    assert "*0..4" not in query and "UNION" in query and "SAME_AS" in query
+    assert driver.calls[1][1]["seed_ids"] == ["b"]
     assert (
         "grounded = true" in query
         and "r.valid_at <= $end" in query
@@ -114,12 +116,14 @@ def test_expand_query_bounds_filters_mapping_and_identity():
     assert "LIMIT $max_edges" in query
     assert params == {
         "seed_ids": ["a"],
-        "max_hops": 2,
+        "known_fact_ids": [],
+        "excluded_bubbles": [],
         "max_edges": 500,
+        "now": None,
         "start": NOW,
         "end": NOW,
     }
-    assert "group_id IN" not in query  # cross-bubble SAME_AS paths stay reachable
+    assert "NOT coalesce(target.group_id" in query
 
 
 def test_neighbors_facts_and_embeddings():
@@ -130,10 +134,16 @@ def test_neighbors_facts_and_embeddings():
     )
     store = Neo4jGraphStore(driver)
     assert not store.neighbors("a", 1).facts
-    assert driver.calls[0][1]["max_hops"] == 1
+    assert len(driver.calls) == 1
     assert store.facts_about("a", NOW, NOW)[0].relation == "FUNDS"
     query, params = driver.calls[1]
-    assert params == {"entity_id": "a", "start": NOW, "end": NOW}
+    assert params == {
+        "entity_id": "a",
+        "excluded_bubbles": [],
+        "now": None,
+        "start": NOW,
+        "end": NOW,
+    }
     assert "grounded = true" in query and "r.invalid_at > $start" in query
     assert np.array_equal(store.fact_embeddings(["f"])["f"], [1.0, 0.0])
     assert driver.calls[2][1] == {"fact_ids": ["f"]}
@@ -175,3 +185,20 @@ def test_invalid_seed_and_empty_bubbles_never_run():
     with pytest.raises(ValueError):
         store.seed_by_embedding(np.array([float("nan")]), bubbles=["news"])
     assert not driver.calls
+
+
+@pytest.mark.parametrize("dimension", [None, 8, 384])
+def test_reader_index_dimension_check(dimension):
+    rows = (
+        []
+        if dimension is None
+        else [{"options": {"indexConfig": {"vector.dimensions": dimension}}}]
+    )
+    driver = Driver([], rows, [])
+    if dimension == 384:
+        Neo4jGraphStore(driver).ensure_schema(384)
+        assert "awaitIndex" in driver.calls[-1][0]
+    else:
+        with pytest.raises(ValueError, match="expected 384"):
+            Neo4jGraphStore(driver).ensure_schema(384)
+    assert "SHOW INDEXES" in driver.calls[1][0]

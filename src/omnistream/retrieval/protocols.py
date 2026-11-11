@@ -57,9 +57,12 @@ class GraphStore(Protocol):
         time_scope: TimeScope | None,
         max_hops: int = 2,
         max_edges: int = 500,
+        excluded_bubbles: Sequence[str] = (),
     ) -> Subgraph: ...
 
-    def neighbors(self, entity_id: str, depth: int = 1) -> Subgraph:
+    def neighbors(
+        self, entity_id: str, depth: int = 1, *, excluded_bubbles: Sequence[str] = ()
+    ) -> Subgraph:
         """Return the neighborhood at depth 1..2 (spec C5 tools)."""
         ...
 
@@ -68,6 +71,8 @@ class GraphStore(Protocol):
         entity_id: str,
         start: datetime | None = None,
         end: datetime | None = None,
+        *,
+        excluded_bubbles: Sequence[str] = (),
     ) -> list[Fact]: ...
 
     def fact_embeddings(self, fact_ids: Sequence[str]) -> dict[str, np.ndarray]: ...

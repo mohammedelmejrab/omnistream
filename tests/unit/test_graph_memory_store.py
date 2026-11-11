@@ -66,7 +66,7 @@ def test_expand_filters_hops_and_cross_bubble(store):
     assert graph.same_as == (("a", "af"),)
     assert "f" in graph.entities and "d" not in graph.entities
     assert [f.id for f in store.facts_about("a", NOW, NOW)] == ["ab"]
-    assert {f.id for f in store.neighbors("a").facts} == {"ab", "old"}
+    assert {f.id for f in store.neighbors("a").facts} == {"ab"}
 
 
 def test_vector_top_five_inclusive_boundary():

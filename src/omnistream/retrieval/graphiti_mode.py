@@ -6,7 +6,7 @@ import asyncio
 import concurrent.futures
 import threading
 from collections.abc import Callable, Sequence
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any, Protocol, Self
 
 from omnistream.config import Settings
@@ -105,9 +105,30 @@ class GraphitiCoreSearcher:
 
         token = _SEARCH_QUERY_MODE.set(True)
         try:
-            return await self.graphiti.search(
+            edges = await self.graphiti.search(
                 query, group_ids=group_ids, num_results=num_results
             )
+            legacy = [
+                e
+                for e in edges
+                if not e.attributes.get("published_at")
+                and e.valid_at is None
+                and e.episodes
+            ]
+            if legacy:
+                rows, _, _ = await self.graphiti.driver.execute_query(
+                    "MATCH (ep:Episodic) WHERE ep.uuid IN $ids "
+                    "RETURN ep.uuid AS id, ep.valid_at AS valid_at",
+                    ids=list({ep for e in legacy for ep in e.episodes}),
+                )
+                dates = {r["id"]: _date(r["valid_at"]) for r in rows}
+                for edge in legacy:
+                    stamps = [
+                        dates[ep] for ep in edge.episodes if dates.get(ep) is not None
+                    ]
+                    if stamps:
+                        edge.attributes["episode_valid_at"] = min(stamps)
+            return edges
         finally:
             _SEARCH_QUERY_MODE.reset(token)
 
@@ -119,6 +140,10 @@ class GraphitiCoreSearcher:
 
 
 def _date(value: Any) -> datetime | None:
+    if hasattr(value, "to_native"):
+        return value.to_native()
+    if value == "":
+        return None
     if value is None or isinstance(value, datetime):
         return value
     return datetime.fromisoformat(value)
@@ -573,15 +598,21 @@ class GraphitiRetriever:
                     missing += 1
                     continue
                 valid, invalid = _date(edge.valid_at), _date(edge.invalid_at)
-                if not (time_scope or TimeScope()).overlaps(valid, invalid):
+                if not (
+                    time_scope or TimeScope(datetime.now(UTC), datetime.now(UTC))
+                ).overlaps(valid, invalid) or (
+                    time_scope is None
+                    and _date(getattr(edge, "expired_at", None)) is not None
+                ):
                     continue
                 published = (
-                    _date(attrs.get("published_at")) or _date(edge.created_at) or valid
+                    _date(attrs.get("published_at"))
+                    or valid
+                    or _date(attrs.get("episode_valid_at"))
+                    or _date(edge.created_at)
                 )
                 if published is None:
-                    raise ValueError(
-                        "Graphiti edge requires published_at, created_at or valid_at"
-                    )
+                    published = datetime.min.replace(tzinfo=UTC)
                 fact = Fact(
                     edge.uuid,
                     edge.source_node_uuid,
@@ -598,6 +629,8 @@ class GraphitiRetriever:
                     attrs.get("credibility", 0.5),
                     attrs.get("confidence", 0.5),
                     attrs.get("source_count", 1),
+                    _date(getattr(edge, "expired_at", None)),
+                    tuple(attrs.get("item_ids") or ()),
                 )
                 facts.append(ScoredFact(fact, 1.0 / rank, ranks={"graphiti": rank}))
             if (

@@ -105,15 +105,15 @@ def store_graph(driver, entity_vector_index):
     }
     driver.execute_query(
         """
-        CREATE (a:Entity {uuid: $a, name: 'Zephyr Labs', type: 'Organization',
+        CREATE (a:Entity:Organization {uuid: $a, name: 'Zephyr Labs',
                           group_id: $group, name_embedding: $ea, aliases: ['Zephyr']})
-        CREATE (b:Entity {uuid: $b, name: 'Helios Grid', type: 'Organization',
+        CREATE (b:Entity:Organization {uuid: $b, name: 'Helios Grid',
                           group_id: $group, name_embedding: $eb})
-        CREATE (c:Entity {uuid: $c, name: 'Ada Kova', type: 'Person',
+        CREATE (c:Entity:Person {uuid: $c, name: 'Ada Kova',
                           group_id: $group, name_embedding: $ec})
-        CREATE (d:Entity {uuid: $d, name: 'Quantum Lab', type: 'Organization',
+        CREATE (d:Entity:Organization {uuid: $d, name: 'Quantum Lab',
                           group_id: $group, name_embedding: $ed})
-        CREATE (x:Entity {uuid: $x, name: 'Zephyr Labs Global', type: 'Organization',
+        CREATE (x:Entity:Organization {uuid: $x, name: 'Zephyr Labs Global',
                           group_id: $other, name_embedding: $ex})
         CREATE (a)-[:RELATES_TO {uuid: $f1, name: 'PARTNERS_WITH',
                 fact: 'Zephyr Labs partners with Helios Grid', group_id: $group,
@@ -136,7 +136,8 @@ def store_graph(driver, entity_vector_index):
                 item_id: 'item4', source_url: 'https://example.test/4',
                 published_at: $published, valid_at: $valid, grounded: true,
                 credibility: 0.8, confidence: 0.7, source_count: 1}]->(d)
-        CREATE (a)-[:SAME_AS {uuid: $s1}]->(x)
+        CREATE (g:GlobalEntity {uuid: $s1, name: 'Zephyr Labs', group_id: $group})
+        CREATE (a)-[:SAME_AS]->(g)<-[:SAME_AS]-(x)
         """,
         group=group,
         other=other,
@@ -202,14 +203,18 @@ def test_expand_neighbors_facts_about_and_embeddings(
 
     # Two hops from the seed: all grounded facts, the cross-bubble SAME_AS
     # link, and the other-bubble entity reachable through it.
-    graph = store.expand([a], bubbles=[group], time_scope=None, max_hops=2)
+    graph = store.expand(
+        [a], bubbles=[group], time_scope=TimeScope(NOW, NOW), max_hops=2
+    )
     assert {f.id for f in graph.facts} == {f1, f2, f4}
     assert set(graph.entities) == {a, b, c, d, x}
     assert graph.same_as == ((a, x),)
 
     # One hop keeps the two direct facts but not the c->d fact; the
     # cross-bubble identity link still counts as a single hop.
-    one_hop = store.expand([a], bubbles=[group], time_scope=None, max_hops=1)
+    one_hop = store.expand(
+        [a], bubbles=[group], time_scope=TimeScope(NOW, NOW), max_hops=1
+    )
     assert [f.id for f in one_hop.facts] == [f1, f2]
     assert set(one_hop.entities) == {a, b, c, x}
     assert one_hop.same_as == ((a, x),)
@@ -226,7 +231,7 @@ def test_expand_neighbors_facts_about_and_embeddings(
 
     # neighbors is the depth-bounded form of expand; the ungrounded b->c fact
     # never opens a path to c->d (which would need 3 hops anyway).
-    assert [f.id for f in store.neighbors(b, 2).facts] == [f1, f2]
+    assert [f.id for f in store.neighbors(b, 2).facts] == [f1]
 
     # facts_about applies grounding and the validity window.
     about_b = store.facts_about(b, start=None, end=None)
@@ -276,9 +281,9 @@ def test_own_retriever_end_to_end(driver, entity_vector_index, live_settings):
     try:
         driver.execute_query(
             """
-            CREATE (a:Entity {uuid: $a, name: 'Zephyr Labs', type: 'Organization',
+            CREATE (a:Entity:Organization {uuid: $a, name: 'Zephyr Labs',
                               group_id: $group, name_embedding: $ea})
-            CREATE (b:Entity {uuid: $b, name: 'Helios Grid', type: 'Organization',
+            CREATE (b:Entity:Organization {uuid: $b, name: 'Helios Grid',
                               group_id: $group, name_embedding: $eb})
             CREATE (a)-[:RELATES_TO {uuid: $f1, name: 'ANNOUNCED',
                     fact: 'Zephyr Labs announced a partnership with Helios Grid',
@@ -338,8 +343,9 @@ def test_expand_uses_scoped_clause_without_deprecation_warnings(
         seed_ids=[a],
         max_hops=2,
         max_edges=500,
-        start=None,
-        end=None,
+        now=None,
+        start=NOW,
+        end=NOW,
     )
     deprecations = [
         status

@@ -77,3 +77,48 @@ class FileItemStore:
         ):
             raise ValueError("max_tokens must be a non-negative integer")
         return " ".join(self._words(item_id)[:max_tokens])
+
+
+class RepositoryItemStore(FileItemStore):
+    """Read C1 clean originals through SQLite; all paths stay inside data_dir."""
+
+    def __init__(self, repo, data_dir: Path, *, tokens_per_part: int = 2000):
+        super().__init__(data_dir, tokens_per_part=tokens_per_part)
+        self.repo = repo
+
+    def _text(self, item_id: str) -> str:
+        if not _ITEM_ID.fullmatch(item_id) or item_id in {".", ".."}:
+            raise ValueError("invalid item id")
+        row = self.repo.read_item(item_id)
+        if row is None or not row.text_path:
+            raise ItemUnavailableError(item_id)
+        path = Path(row.text_path)
+        # C1 records paths relative to the application cwd (including data_dir).
+        # Also accept paths relative to data_dir for imported SQLite snapshots.
+        if not path.is_absolute():
+            cwd_path = path.resolve()
+            path = cwd_path if cwd_path.is_relative_to(self.root) else self.root / path
+        path = path.resolve()
+        if not path.is_relative_to(self.root):
+            raise ValueError("item path escapes data_dir")
+        try:
+            return path.read_text(encoding="utf-8")
+        except (FileNotFoundError, IsADirectoryError) as exc:
+            raise ItemUnavailableError(item_id) from exc
+
+    def _words(self, item_id: str) -> list[str]:
+        return self._text(item_id).split()
+
+    def item_text(self, item_id: str, max_tokens: int = 4000) -> str:
+        if (
+            isinstance(max_tokens, bool)
+            or not isinstance(max_tokens, int)
+            or max_tokens < 0
+        ):
+            raise ValueError("max_tokens must be a non-negative integer")
+        text = self._text(item_id)
+        matches = list(re.finditer(r"\S+", text))
+        # Preserve original whitespace so citation spans index the stored file.
+        if len(matches) <= max_tokens:
+            return text
+        return text[: matches[max_tokens].start()] if max_tokens else ""

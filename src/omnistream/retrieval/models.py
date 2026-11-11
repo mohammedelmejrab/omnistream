@@ -78,8 +78,11 @@ class Fact:
     credibility: float = 0.5
     confidence: float = 0.5
     source_count: int = 1
+    expired_at: datetime | None = None
+    item_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
+        object.__setattr__(self, "item_ids", tuple(self.item_ids))
         for name in ("credibility", "confidence"):
             if not 0 <= getattr(self, name) <= 1:
                 raise ValueError(f"{name} must be within [0, 1]")
@@ -151,6 +154,7 @@ class RetrievalResult:
     mode: RetrievalMode
     facts: tuple[ScoredFact, ...] = ()
     chunks: tuple[Chunk, ...] = ()
+    seeds: tuple[Entity, ...] = ()
 
     @property
     def item_ids(self) -> tuple[str, ...]:
@@ -161,3 +165,15 @@ class RetrievalResult:
                 + [chunk.item_id for chunk in self.chunks]
             )
         )
+
+
+def fact_in_scope(
+    fact: Fact, scope: TimeScope | None, *, now: datetime | None = None
+) -> bool:
+    """No routed interval means valid now; explicit intervals include history."""
+    if scope is not None:
+        return scope.overlaps(fact.valid_at, fact.invalid_at)
+    stamp = now or datetime.now(UTC)
+    return fact.expired_at is None and TimeScope(stamp, stamp).overlaps(
+        fact.valid_at, fact.invalid_at
+    )

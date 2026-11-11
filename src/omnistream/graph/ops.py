@@ -1,6 +1,7 @@
 """Neo4j operations on top of Graphiti's driver: provenance props, flags, links."""
 
 from dataclasses import dataclass, field
+from datetime import datetime
 from typing import Any, Protocol
 
 from omnistream.graph.linker import GlobalCandidate
@@ -14,6 +15,7 @@ class EdgeState:
     source_ids: list[str] = field(default_factory=list)
     credibilities: list[float] = field(default_factory=list)
     grounded: bool | None = None
+    published_at: datetime | None = None
 
 
 class GraphOps(Protocol):
@@ -57,6 +59,25 @@ class Neo4jGraphOps:
 
     async def ensure_schema(self) -> None:
         await self._q(
+            "CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS "
+            "FOR (e:Entity) ON (e.name_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        rows = await self._q(
+            "SHOW INDEXES YIELD name, options WHERE name = 'entity_name_embedding' RETURN options"
+        )
+        actual = (
+            rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
+            if rows
+            else None
+        )
+        if actual != self._dim:
+            raise ValueError(
+                f"Neo4j index 'entity_name_embedding' dimension is {actual}; expected {self._dim}"
+            )
+        await self._q(
             f"CREATE VECTOR INDEX {GLOBAL_INDEX} IF NOT EXISTS "
             "FOR (g:GlobalEntity) ON (g.name_embedding) "
             "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
@@ -87,7 +108,7 @@ class Neo4jGraphOps:
         rows = await self._q(
             "MATCH ()-[r:RELATES_TO]->() WHERE r.uuid IN $uuids "
             "RETURN r.uuid AS uuid, r.item_ids AS item_ids, r.source_ids AS source_ids, "
-            "r.credibilities AS credibilities, r.grounded AS grounded",
+            "r.credibilities AS credibilities, r.grounded AS grounded, r.published_at AS published_at",
             uuids=uuids,
         )
         return {
@@ -96,6 +117,9 @@ class Neo4jGraphOps:
                 list(r["source_ids"] or []),
                 list(r["credibilities"] or []),
                 r["grounded"],
+                r.get("published_at").to_native()
+                if hasattr(r.get("published_at"), "to_native")
+                else r.get("published_at"),
             )
             for r in rows
         }

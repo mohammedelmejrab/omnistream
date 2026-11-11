@@ -56,3 +56,27 @@ def test_workerpool_import_has_no_settings_side_effect(name):
     import omnistream.ingest.queue as q
 
     assert not hasattr(q, "_settings")
+
+
+async def test_seed_uses_configured_half_lives(tmp_path, monkeypatch):
+    monkeypatch.delenv("FINNHUB_API_KEY", raising=False)
+    repo = KeepOpen()
+    try:
+        await seed(
+            Settings(
+                _env_file=None,
+                data_dir=str(tmp_path),
+                half_life_news_days=8,
+                half_life_finance_days=60,
+                half_life_research_days=700,
+            ),
+            repo,
+            FakeEmbedder(),
+        )
+        assert {b.id: b.half_life_days for b in await repo.list_bubbles()} == {
+            "news": 8,
+            "finance": 60,
+            "research": 700,
+        }
+    finally:
+        await Repository.close(repo)

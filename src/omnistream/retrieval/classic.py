@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import re
 import threading
 import warnings
 from collections.abc import Sequence
@@ -74,10 +75,18 @@ def make_chroma_client(path, *, hnsw_cache_size: int = 4096, settings=None):
 
 
 def collection_name(bubble: str) -> str:
-    """Stable collision-resistant Chroma name, including for Unicode bubble ids."""
+    """C4 collection scheme: preserve legal slugs; hash unsafe/overlong ids.
+
+    Chroma permits 3..512 ASCII letters, digits, dots, dashes and underscores,
+    with alphanumeric endpoints. A digest prevents sanitization collisions.
+    """
     if not isinstance(bubble, str) or not bubble.strip():
         raise ValueError("bubble must be a non-empty string")
-    return "bubble-" + hashlib.sha256(bubble.encode()).hexdigest()
+    if len(bubble) <= 505 and re.fullmatch(
+        r"[A-Za-z0-9](?:[A-Za-z0-9_-]*[A-Za-z0-9])?", bubble
+    ):
+        return "bubble_" + bubble
+    return "bubble_" + hashlib.sha256(bubble.encode()).hexdigest()
 
 
 def add_chunks(

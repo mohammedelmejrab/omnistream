@@ -10,7 +10,7 @@ import networkx as nx
 import numpy as np
 
 from omnistream.embeddings import EmbeddingService
-from omnistream.retrieval.models import Entity, Fact, Subgraph, TimeScope
+from omnistream.retrieval.models import Entity, Fact, Subgraph, TimeScope, fact_in_scope
 
 
 def _bounds(max_hops: int, max_edges: int) -> None:
@@ -93,19 +93,27 @@ class InMemoryGraphStore:
         time_scope: TimeScope | None,
         max_hops: int = 2,
         max_edges: int = 500,
+        excluded_bubbles: Sequence[str] = (),
     ) -> Subgraph:
         _bounds(max_hops, max_edges)
-        scope = time_scope or TimeScope()
         facts = [
             f
             for f in self._facts.values()
-            if f.grounded and scope.overlaps(f.valid_at, f.invalid_at)
+            if f.grounded
+            and fact_in_scope(f, time_scope)
+            and f.bubble not in excluded_bubbles
+            and self._entities[f.subject_id].bubble not in excluded_bubbles
+            and self._entities[f.object_id].bubble not in excluded_bubbles
         ]
         graph = nx.Graph()
-        graph.add_nodes_from(self._entities)
+        allowed = {
+            i for i, e in self._entities.items() if e.bubble not in excluded_bubbles
+        }
+        same_as = [(a, b) for a, b in self._same_as if a in allowed and b in allowed]
+        graph.add_nodes_from(allowed)
         graph.add_edges_from((f.subject_id, f.object_id) for f in facts)
-        graph.add_edges_from(self._same_as)
-        seeds = sorted(set(seed_ids) & self._entities.keys())
+        graph.add_edges_from(same_as)
+        seeds = sorted(set(seed_ids) & allowed)
         distances = (
             nx.multi_source_dijkstra_path_length(
                 graph, seeds, cutoff=max_hops, weight=None
@@ -130,7 +138,7 @@ class InMemoryGraphStore:
         )
         links = tuple(
             (a, b)
-            for a, b in self._same_as
+            for a, b in same_as
             if min(distances.get(a, math.inf), distances.get(b, math.inf)) < max_hops
         )
         return Subgraph(
@@ -139,21 +147,35 @@ class InMemoryGraphStore:
             links,
         )
 
-    def neighbors(self, entity_id: str, depth: int = 1) -> Subgraph:
+    def neighbors(
+        self, entity_id: str, depth: int = 1, *, excluded_bubbles: Sequence[str] = ()
+    ) -> Subgraph:
         _bounds(depth, 500)
-        return self.expand([entity_id], bubbles=(), time_scope=None, max_hops=depth)
+        return self.expand(
+            [entity_id],
+            bubbles=(),
+            time_scope=None,
+            max_hops=depth,
+            excluded_bubbles=excluded_bubbles,
+        )
 
     def facts_about(
-        self, entity_id: str, start: datetime | None = None, end: datetime | None = None
+        self,
+        entity_id: str,
+        start: datetime | None = None,
+        end: datetime | None = None,
+        *,
+        excluded_bubbles: Sequence[str] = (),
     ) -> list[Fact]:
-        scope = TimeScope(start, end)
+        scope = TimeScope(start, end) if start is not None or end is not None else None
         return sorted(
             (
                 f
                 for f in self._facts.values()
                 if entity_id in (f.subject_id, f.object_id)
+                and f.bubble not in excluded_bubbles
                 and f.grounded
-                and scope.overlaps(f.valid_at, f.invalid_at)
+                and fact_in_scope(f, scope)
             ),
             key=lambda f: f.id,
         )

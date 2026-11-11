@@ -32,7 +32,7 @@ class OwnRetriever:
             raise ValueError("k must be a non-negative integer")
         self.store, self.embedder = store, embedder
         self.now = now or (lambda: datetime.now(UTC))
-        self.half_lives = dict(half_lives or {})
+        self.half_lives = half_lives if half_lives is not None else {}
         self.top_k, self.k = top_k, k
 
     @staticmethod
@@ -46,6 +46,7 @@ class OwnRetriever:
         *,
         bubbles: Sequence[str],
         time_scope: TimeScope | None = None,
+        excluded_bubbles: Sequence[str] = (),
         top_k: int | None = None,
     ) -> RetrievalResult:
         limit = self.top_k if top_k is None else top_k
@@ -57,9 +58,14 @@ class OwnRetriever:
         if not seeds:
             return RetrievalResult(mode="own")
         ids = [s.entity.id for s in seeds]
-        graph = self.store.expand(ids, bubbles=bubbles, time_scope=time_scope)
+        graph = self.store.expand(
+            ids,
+            bubbles=bubbles,
+            time_scope=time_scope,
+            **({"excluded_bubbles": excluded_bubbles} if excluded_bubbles else {}),
+        )
         if not graph.facts:
-            return RetrievalResult(mode="own")
+            return RetrievalResult(mode="own", seeds=tuple(s.entity for s in seeds))
         ranks = personalized_pagerank(graph, ids)
         embeddings = self.store.fact_embeddings([f.id for f in graph.facts])
         missing = [f for f in graph.facts if f.id not in embeddings]
@@ -88,6 +94,7 @@ class OwnRetriever:
         )
         return RetrievalResult(
             mode="own",
+            seeds=tuple(s.entity for s in seeds),
             facts=tuple(
                 ScoredFact(facts[f.fact.id], f.score, f.fact.path, f.ranks)
                 for f in fused

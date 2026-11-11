@@ -33,10 +33,19 @@ class RetrievalDispatcher:
         bubbles: Sequence[str],
         time_scope: TimeScope | None = None,
         top_k: int | None = None,
+        excluded_bubbles: Sequence[str] = (),
     ) -> RetrievalResult:
         selected = self.default_mode if mode is None else mode
         result = self._retriever(selected).retrieve(
-            question, bubbles=bubbles, time_scope=time_scope, top_k=top_k
+            question,
+            bubbles=bubbles,
+            time_scope=time_scope,
+            top_k=top_k,
+            **(
+                {"excluded_bubbles": excluded_bubbles}
+                if excluded_bubbles and selected == "own"
+                else {}
+            ),
         )
         if result.mode != selected:
             raise ValueError(f"retriever returned {result.mode}, expected {selected}")
