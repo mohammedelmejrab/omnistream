@@ -1,4 +1,17 @@
-"""Graphiti wiring (spec C4): OpenAI-compatible LLM, local embedder and reranker."""
+"""Graphiti wiring (spec C4/C5): one shared builder, hardened C5 clients.
+
+``build_graphiti`` is the single construction path for both the C4 writer
+(``GraphWriter``) and the C5 graphiti retrieval mode
+(``GraphitiCoreSearcher.from_settings``). It always injects the hardened C5
+clients from :mod:`omnistream.retrieval.graphiti_clients` - ``GraphitiLLMClient``
+(DeepSeek schema-echo recovery), ``LocalEmbedderClient`` (BGE query-mode
+contextvar) and ``LocalRerankerClient`` - so graphiti never falls back to its
+OpenAI defaults.
+
+The C4 ``BgeEmbedderClient``/``LocalCrossEncoder`` adapters remain: they wrap
+the async ``Embedder`` protocol used by the ingestion modules, and
+``build_graphiti`` accepts such an embedder in place of an ``EmbeddingService``.
+"""
 
 import math
 from collections.abc import Iterable
@@ -7,11 +20,11 @@ from graphiti_core import Graphiti
 from graphiti_core.cross_encoder.client import CrossEncoderClient
 from graphiti_core.embedder.client import EmbedderClient
 from graphiti_core.llm_client.config import LLMConfig
-from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
 from pydantic import BaseModel
 
 from omnistream.config import Settings
 from omnistream.embed import Embedder
+from omnistream.embeddings import EmbeddingService
 
 
 class Person(BaseModel):
@@ -104,21 +117,49 @@ def _cosine(a: list[float], b: list[float]) -> float:
     return sum(x * y for x, y in zip(a, b)) / (na * nb)
 
 
-def build_graphiti(settings: Settings, embedder: Embedder) -> Graphiti:
-    llm = OpenAIGenericClient(
-        LLMConfig(
-            api_key=settings.llm_api_key,
+def build_graphiti(
+    settings: Settings,
+    embeddings: EmbeddingService | Embedder | None = None,
+    *,
+    max_tokens: int = 8192,  # DeepSeek caps output at 8192; graphiti defaults to 16384
+) -> Graphiti:
+    """Build Graphiti with the hardened clients; never OpenAI defaults.
+
+    ``embeddings`` may be an ``EmbeddingService`` (C5 query path; one shared
+    model instance) or an async ``Embedder`` (C4 ingestion path); ``None``
+    builds a fresh ``EmbeddingService`` from ``Settings``. The graphiti and
+    client names are looked up at call time so tests can monkeypatch them.
+    """
+    from graphiti_core import Graphiti as GraphitiClass
+
+    from omnistream.retrieval.graphiti_clients import (
+        GraphitiLLMClient,
+        LocalEmbedderClient,
+        LocalRerankerClient,
+    )
+
+    if embeddings is None or isinstance(embeddings, EmbeddingService):
+        service = embeddings if embeddings is not None else EmbeddingService(settings)
+        embedder_client: EmbedderClient = LocalEmbedderClient(service)
+        cross_encoder: CrossEncoderClient = LocalRerankerClient(service)
+    else:
+        embedder_client = BgeEmbedderClient(embeddings)
+        cross_encoder = LocalCrossEncoder(embeddings)
+    llm = GraphitiLLMClient(
+        config=LLMConfig(
+            api_key=settings.llm_api_key.get_secret_value(),
             model=settings.llm_model,
             base_url=settings.llm_base_url,
         ),
+        max_tokens=max_tokens,
         # Spec: JSON mode (works on providers without json_schema, e.g. DeepSeek).
         structured_output_mode="json_object",
     )
-    return Graphiti(
+    return GraphitiClass(
         settings.neo4j_uri,
         settings.neo4j_user,
-        settings.neo4j_password,
+        settings.neo4j_password.get_secret_value(),
         llm_client=llm,
-        embedder=BgeEmbedderClient(embedder),
-        cross_encoder=LocalCrossEncoder(embedder),
+        embedder=embedder_client,
+        cross_encoder=cross_encoder,
     )

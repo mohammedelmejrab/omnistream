@@ -1,20 +1,58 @@
+"""LLM clients for any OpenAI-compatible endpoint, shared by C3-C5.
+
+Two call styles live on one ``LLMClient`` class so the router/writer path and
+the C5 query path stay on a single client construction from ``Settings``:
+
+* **structured (C4)** - ``LLMClient(async_client, max_concurrency, ...)`` with
+  ``await parse(model, system, user, schema)``: JSON mode plus Pydantic
+  validation, re-asks on invalid output, a token-bucket rate limit and backoff
+  on HTTP 429/5xx. Used by the ingestion router and graph writer.
+* **chat (C5)** - ``LLMClient(settings, *, client=..., model=...)`` with
+  ``chat``/``chat_json``/``answer``: synchronous completions with empty-200
+  response retry and OpenRouter attribution headers. Used by query routing,
+  merge-and-answer and auto-summaries.
+
+``AsyncLLMClient`` adds the C5 function-calling loop (``chat_with_tools``) used
+by multi-hop subagents. All clients share the same ``Settings``-driven
+``AsyncOpenAI`` construction.
+"""
+
+from __future__ import annotations
+
 import asyncio
 import json
+import re
 import time
-from typing import TypeVar
+from collections.abc import Sequence
+from dataclasses import dataclass
+from typing import Any, Literal, TypeVar
 
 import openai
+from openai import AsyncOpenAI, OpenAI
 from pydantic import BaseModel, ValidationError
 
-from omnistream.config import Settings
+from omnistream.config import Settings, get_settings
 
 T = TypeVar("T", bound=BaseModel)
 
 MAX_REASKS = 2
 
+ANSWER_SYSTEM_PROMPT = (
+    "You answer questions using only the numbered context passages provided. "
+    "Cite passages inline as [n]. If the context does not contain the answer, say so."
+)
 
-class LLMError(Exception):
-    """The model returned no usable output after retries."""
+_JSON_FENCE = re.compile(r"^```(?:json)?\s*(.*?)\s*```$", re.DOTALL)
+
+# Backoff for empty 200 responses (HTTP 429/5xx are retried by the SDK itself).
+_BACKOFF_BASE_SECONDS = 0.5
+_BACKOFF_MAX_SECONDS = 8.0
+_sleep = time.sleep  # module-level so tests can replace it
+_async_sleep = asyncio.sleep  # module-level so tests can replace it
+
+
+class LLMError(RuntimeError):
+    """Raised when the provider returns an unusable response."""
 
 
 class TokenBucket:
@@ -43,19 +81,66 @@ class TokenBucket:
                 await self._sleep((1 - self._tokens) / self._rate)
 
 
+def _build_async_openai(settings: Settings) -> AsyncOpenAI:
+    """AsyncOpenAI construction shared by every client style."""
+    headers: dict[str, str] = {}
+    if settings.llm_app_url:
+        headers["HTTP-Referer"] = settings.llm_app_url
+    if settings.llm_app_title:
+        headers["X-Title"] = settings.llm_app_title
+    return AsyncOpenAI(
+        base_url=settings.llm_base_url,
+        api_key=settings.llm_api_key.get_secret_value() or "missing",
+        timeout=settings.llm_timeout_seconds,
+        max_retries=settings.llm_max_retries,
+        default_headers=headers or None,
+    )
+
+
+def _provider_error(response: Any) -> str:
+    """OpenRouter puts upstream failures in an ``error`` field of a 200 body."""
+    extra = getattr(response, "model_extra", None) or {}
+    error = extra.get("error")
+    if isinstance(error, dict):
+        return f": {error.get('code', '')} {error.get('message', '')}".rstrip()
+    return f": {error}" if error else ""
+
+
 class LLMClient:
-    """Structured output over any OpenAI-compatible endpoint: JSON mode plus
-    Pydantic validation, re-ask on invalid output, token-bucket rate limit and
-    backoff on 429/5xx (on top of the SDK's own max_retries)."""
+    """One client class with two construction styles (see module docstring)."""
 
     def __init__(
         self,
-        client: openai.AsyncOpenAI,
-        max_concurrency: int,
+        client_or_settings: AsyncOpenAI | Settings | None = None,
+        max_concurrency: int = 2,
         tokens_per_minute: int = 60,
         max_retries: int = 5,
         sleep=asyncio.sleep,
+        *,
+        client: OpenAI | None = None,
+        model: str | None = None,
     ) -> None:
+        if isinstance(client_or_settings, Settings):
+            self._init_chat(client_or_settings, client=client, model=model)
+        else:
+            self._init_structured(
+                client_or_settings,
+                max_concurrency,
+                tokens_per_minute,
+                max_retries,
+                sleep,
+            )
+
+    # ------------------------------------------------------------- C4 style
+    def _init_structured(
+        self,
+        client,
+        max_concurrency: int,
+        tokens_per_minute: int,
+        max_retries: int,
+        sleep,
+    ) -> None:
+        self._style = "structured"
         self._client = client
         self._sem = asyncio.Semaphore(max_concurrency)
         self._bucket = TokenBucket(tokens_per_minute, sleep=sleep)
@@ -160,16 +245,204 @@ class LLMClient:
             function_calling = False
         return {"json_mode": json_mode, "function_calling": function_calling}
 
+    # ------------------------------------------------------------- C5 style
+    def _init_chat(
+        self, settings: Settings, *, client: OpenAI | None, model: str | None
+    ) -> None:
+        self._style = "chat"
+        self.settings = settings
+        self.model = model or self.settings.llm_model
+        self._client = client
+
+    @property
+    def client(self) -> OpenAI:
+        if self._client is None:
+            if not self.settings.has_llm_credentials:
+                raise LLMError("LLM_API_KEY is not set")
+            headers = {}
+            if self.settings.llm_app_url:
+                headers["HTTP-Referer"] = self.settings.llm_app_url
+            if self.settings.llm_app_title:
+                headers["X-Title"] = self.settings.llm_app_title
+            self._client = OpenAI(
+                base_url=self.settings.llm_base_url,
+                api_key=self.settings.llm_api_key.get_secret_value(),
+                timeout=self.settings.llm_timeout_seconds,
+                max_retries=self.settings.llm_max_retries,
+                default_headers=headers or None,
+            )
+        return self._client
+
+    def chat(
+        self,
+        messages: Sequence[dict[str, str]],
+        *,
+        model: str | None = None,
+        temperature: float = 0.0,
+        max_tokens: int | None = None,
+        **kwargs: Any,
+    ) -> str:
+        """Return the assistant message text.
+
+        HTTP 429/5xx and connection errors are retried by the OpenAI SDK with
+        exponential backoff (``llm_max_retries``). OpenRouter can also answer
+        HTTP 200 with no choices (an upstream error in the body); those are
+        retried here with the same budget, then raised as ``LLMError``.
+        """
+        params: dict[str, Any] = {
+            "model": model or self.model,
+            "messages": list(messages),
+            "temperature": temperature,
+            **kwargs,
+        }
+        if max_tokens is not None:
+            params["max_tokens"] = max_tokens
+        attempts = 1 + max(0, self.settings.llm_max_retries)
+        for attempt in range(attempts):
+            response = self.client.chat.completions.create(**params)
+            if response.choices and response.choices[0].message.content is not None:
+                return response.choices[0].message.content
+            problem = "no choices" if not response.choices else "an empty message"
+            detail = _provider_error(response)
+            if attempt + 1 < attempts:
+                _sleep(min(_BACKOFF_MAX_SECONDS, _BACKOFF_BASE_SECONDS * 2**attempt))
+        raise LLMError(
+            f"provider returned {problem} after {attempts} attempt(s){detail}"
+        )
+
+    def chat_json(self, messages: Sequence[dict[str, str]], **kwargs: Any) -> Any:
+        """Chat and parse the reply as JSON (tolerates a ```json fence)."""
+        text = self.chat(messages, **kwargs).strip()
+        fenced = _JSON_FENCE.match(text)
+        if fenced:
+            text = fenced.group(1)
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError as exc:
+            raise LLMError(f"response is not valid JSON: {text[:200]!r}") from exc
+
+    def answer(self, question: str, passages: Sequence[str], **kwargs: Any) -> str:
+        """Generate a cited answer grounded in retrieved passages."""
+        context = (
+            "\n\n".join(f"[{i}] {p}" for i, p in enumerate(passages, start=1))
+            or "(no context)"
+        )
+        return self.chat(
+            [
+                {"role": "system", "content": ANSWER_SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": f"Context:\n{context}\n\nQuestion: {question}",
+                },
+            ],
+            **kwargs,
+        )
+
 
 def build_llm_client(settings: Settings) -> LLMClient:
-    client = openai.AsyncOpenAI(
-        base_url=settings.llm_base_url,
-        api_key=settings.llm_api_key or "missing",
-        max_retries=settings.llm_max_retries,
-    )
+    """Structured-style client for the C3/C4 pipeline (no API key required)."""
     return LLMClient(
-        client,
+        _build_async_openai(settings),
         max_concurrency=settings.llm_max_concurrency,
         tokens_per_minute=settings.llm_tokens_per_minute,
         max_retries=settings.llm_max_retries,
     )
+
+
+def judge_client(settings: Settings | None = None, **kwargs: Any) -> LLMClient:
+    settings = settings or get_settings()
+    return LLMClient(settings, model=settings.judge_model, **kwargs)
+
+
+@dataclass(frozen=True)
+class ToolCall:
+    id: str
+    name: str
+    arguments: dict
+    arguments_error: str | None = None
+
+
+@dataclass(frozen=True)
+class AssistantTurn:
+    content: str | None
+    tool_calls: tuple[ToolCall, ...]
+    raw_message: dict
+
+
+class AsyncLLMClient:
+    """Async function-calling client with the synchronous client's policy."""
+
+    def __init__(
+        self,
+        settings: Settings | None = None,
+        *,
+        client: AsyncOpenAI | None = None,
+        model: str | None = None,
+    ) -> None:
+        self.settings = settings or get_settings()
+        self.model = model or self.settings.llm_model
+        self._client = client
+
+    @property
+    def client(self) -> AsyncOpenAI:
+        if self._client is None:
+            if not self.settings.has_llm_credentials:
+                raise LLMError("LLM_API_KEY is not set")
+            self._client = _build_async_openai(self.settings)
+        return self._client
+
+    async def chat_with_tools(
+        self,
+        messages: Sequence[dict],
+        tools: Sequence[dict],
+        *,
+        model: str | None = None,
+        temperature: float = 0.0,
+        max_tokens: int | None = None,
+        tool_choice: Literal["auto", "none", "required"] | None = None,
+    ) -> AssistantTurn:
+        params: dict[str, Any] = {
+            "model": model or self.model,
+            "messages": list(messages),
+            "temperature": temperature,
+        }
+        if tools:
+            params["tools"] = list(tools)
+        elif tool_choice is not None:
+            raise ValueError("tool_choice requires tool definitions")
+        if tool_choice is not None:
+            params["tool_choice"] = tool_choice
+        if max_tokens is not None:
+            params["max_tokens"] = max_tokens
+        attempts = 1 + max(0, self.settings.llm_max_retries)
+        for attempt in range(attempts):
+            response = await self.client.chat.completions.create(**params)
+            if response.choices:
+                message = response.choices[0].message
+                if message.content is not None or message.tool_calls:
+                    calls = []
+                    for call in message.tool_calls or ():
+                        error = None
+                        try:
+                            arguments = json.loads(call.function.arguments)
+                            if not isinstance(arguments, dict):
+                                raise ValueError("arguments must be a JSON object")  # noqa: TRY004
+                        except (ValueError, TypeError) as exc:
+                            arguments, error = {}, str(exc)
+                        calls.append(
+                            ToolCall(call.id, call.function.name, arguments, error)
+                        )
+                    return AssistantTurn(
+                        message.content,
+                        tuple(calls),
+                        message.model_dump(exclude_none=True),
+                    )
+            problem = "no choices" if not response.choices else "an empty message"
+            detail = _provider_error(response)
+            if attempt + 1 < attempts:
+                await _async_sleep(
+                    min(_BACKOFF_MAX_SECONDS, _BACKOFF_BASE_SECONDS * 2**attempt)
+                )
+        raise LLMError(
+            f"provider returned {problem} after {attempts} attempt(s){detail}"
+        )

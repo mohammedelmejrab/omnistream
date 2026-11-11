@@ -8,8 +8,8 @@ dependencies = [
     "uvicorn",
     "neo4j>=5.26",
     "openai",
-    "graphiti-core",
-    "chromadb",
+    "graphiti-core>=0.31,<0.32",
+    "chromadb>=1.5,<1.6",
     "sqlmodel",
     "python-docx",
     "networkx",
@@ -25,6 +25,7 @@ dependencies = [
     "python-multipart",
     "apscheduler>=3.10,<4",
     "jinja2>=3.1.6",
+    "numpy>=1.26.0",
 ]
 
 [dependency-groups]
@@ -36,6 +37,7 @@ dev = [
     "fpdf2",
     "ruff",
     "mypy",
+    "tenacity",
 ]
 
 [project.scripts]

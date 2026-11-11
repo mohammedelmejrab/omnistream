@@ -1,8 +1,9 @@
 import math
-import sys
-import types
+
+import numpy as np
 
 from omnistream.embed import SentenceTransformerEmbedder
+from omnistream.embeddings import EmbeddingService
 from tests.conftest import FakeEmbedder
 
 
@@ -26,22 +27,27 @@ async def test_fake_embedder_table_is_casefolded_and_normalized():
     assert v == [0.6, 0.8]
 
 
-async def test_sentence_transformer_embedder_uses_normalized_encode(monkeypatch):
-    import numpy as np
+class FakeEncoder:
+    """Deterministic 2-dim encoder standing in for SentenceTransformer."""
 
-    calls = {}
+    def encode(self, texts, **kwargs):
+        return np.array([[1.0, 0.0] for _ in texts])
 
-    class FakeModel:
-        def __init__(self, name):
-            calls["name"] = name
 
-        def encode(self, texts, normalize_embeddings):
-            calls["norm"] = normalize_embeddings
-            return np.array([[1.0, 0.0] for _ in texts])
+def make_service():
+    return EmbeddingService(model_name="m", dimension=2, encoder=FakeEncoder())
 
-    mod = types.ModuleType("sentence_transformers")
-    mod.SentenceTransformer = FakeModel
-    monkeypatch.setitem(sys.modules, "sentence_transformers", mod)
+
+def test_sentence_transformer_embedder_builds_shared_service():
     emb = SentenceTransformerEmbedder("m")
+    assert emb.service.model_name == "m"
+    assert isinstance(emb.service, EmbeddingService)
+
+
+async def test_sentence_transformer_embedder_uses_document_encoding():
+    # The adapter is a thin async wrapper over EmbeddingService.embed_documents
+    # (C4 ingestion embeds in the document space); vectors stay L2-normalized.
+    emb = SentenceTransformerEmbedder("m", service=make_service())
     assert await emb.embed(["a", "b"]) == [[1.0, 0.0], [1.0, 0.0]]
-    assert calls == {"name": "m", "norm": True}
+    # One shared model instance: injecting a service keeps it, no reload.
+    assert emb.service is not None

@@ -1,16 +1,161 @@
-"""Shared fixtures and constants. Later tasks add fakes here."""
+"""Shared fixtures and constants for the whole test suite (C1-C5)."""
+
+from __future__ import annotations
 
 import asyncio
 import hashlib
+import json
 import math
 import random
+import re
 from collections.abc import Callable
+from pathlib import Path
+from typing import Any
 
+import httpx
+import numpy as np
+import pytest
+from openai import OpenAI
 from pydantic import BaseModel
 
-DIM = 8  # embedding dimension used by tests
+from omnistream.config import Settings, get_settings
+from omnistream.embeddings import BGE_QUERY_INSTRUCTION, EmbeddingService
+
+DIM = 384  # embedding dimension used by the C5 test fixtures
+FIXTURES = Path(__file__).parent / "fixtures"
 
 
+# --------------------------------------------------------------------------
+# C5 environment isolation (autouse): no test reads the developer's .env
+# --------------------------------------------------------------------------
+@pytest.fixture(autouse=True)
+def isolated_env(request: pytest.FixtureRequest, monkeypatch: pytest.MonkeyPatch):
+    """Make every non-live test independent of the developer's configuration.
+
+    Strips settings variables (prefixed and unprefixed) from the process
+    environment and stops ``Settings()`` / ``get_settings()`` from reading the
+    project ``.env``. Live tests keep the real configuration.
+    """
+    get_settings.cache_clear()
+    if request.node.get_closest_marker("live") is None:
+        for name in Settings.model_fields:
+            monkeypatch.delenv(name.upper(), raising=False)
+            monkeypatch.delenv("OMNI_" + name.upper(), raising=False)
+        monkeypatch.setitem(Settings.model_config, "env_file", None)
+        monkeypatch.setattr("omnistream.llm._sleep", lambda seconds: None)
+    yield
+    get_settings.cache_clear()
+
+
+class HashingEncoder:
+    """Deterministic bag-of-words encoder: shared words -> higher cosine.
+
+    Each new token gets the next free dimension, so there are no collisions
+    for vocabularies under ``dim`` tokens.
+    """
+
+    def __init__(self, dim: int = DIM) -> None:
+        self.dim = dim
+        self.calls: list[list[str]] = []
+        self.vocab: dict[str, int] = {}
+
+    def encode(self, sentences: list[str], **kwargs: Any) -> np.ndarray:
+        self.calls.append(list(sentences))
+        out = np.zeros((len(sentences), self.dim), dtype=np.float32)
+        for row, text in enumerate(sentences):
+            text = text.removeprefix(BGE_QUERY_INSTRUCTION)
+            for tok in re.findall(r"[a-z0-9]+", text.lower()):
+                idx = self.vocab.setdefault(tok, len(self.vocab) % self.dim)
+                out[row, idx] += 1.0
+        return out
+
+
+@pytest.fixture
+def settings() -> Settings:
+    """Settings isolated from the developer's real .env and environment."""
+    return Settings(
+        _env_file=None,
+        llm_base_url="https://openrouter.ai/api/v1",
+        llm_api_key="test-key",
+        llm_model="deepseek/deepseek-chat",
+        judge_model="deepseek/deepseek-chat",
+    )
+
+
+@pytest.fixture
+def encoder() -> HashingEncoder:
+    return HashingEncoder()
+
+
+@pytest.fixture
+def embedder(settings: Settings, encoder: HashingEncoder) -> EmbeddingService:
+    return EmbeddingService(settings, encoder=encoder)
+
+
+class RecordingTransport:
+    """httpx transport that answers chat completions with canned content."""
+
+    def __init__(self, responder: Callable[[dict], httpx.Response | str]) -> None:
+        self.responder = responder
+        self.requests: list[httpx.Request] = []
+
+    @property
+    def bodies(self) -> list[dict]:
+        return [json.loads(r.content) for r in self.requests]
+
+    def __call__(self, request: httpx.Request) -> httpx.Response:
+        self.requests.append(request)
+        result = self.responder(json.loads(request.content))
+        if isinstance(result, httpx.Response):
+            return result
+        return httpx.Response(
+            200,
+            json=chat_completion(result, model=json.loads(request.content)["model"]),
+        )
+
+
+def chat_completion(content: str | None, model: str = "deepseek/deepseek-chat") -> dict:
+    return {
+        "id": "gen-test",
+        "object": "chat.completion",
+        "created": 0,
+        "model": model,
+        "choices": [
+            {
+                "index": 0,
+                "message": {"role": "assistant", "content": content},
+                "finish_reason": "stop",
+            }
+        ],
+        "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
+    }
+
+
+def load_llm_fixture(name: str) -> dict:
+    return json.loads((FIXTURES / "llm" / f"{name}.json").read_text(encoding="utf-8"))
+
+
+@pytest.fixture
+def mock_openai() -> Callable[..., tuple[OpenAI, RecordingTransport]]:
+    def factory(
+        responder: Callable[[dict], httpx.Response | str], **headers: str
+    ) -> tuple[OpenAI, RecordingTransport]:
+        transport = RecordingTransport(responder)
+        client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key="test-key",
+            max_retries=0,
+            default_headers=headers or None,
+            http_client=httpx.Client(transport=httpx.MockTransport(transport)),
+        )
+        return client, transport
+
+    return factory
+
+
+# --------------------------------------------------------------------------
+# C1-C4 fixtures
+# --------------------------------------------------------------------------
 def _unit(v: list[float]) -> list[float]:
     n = math.sqrt(sum(x * x for x in v))
     return [x / n for x in v] if n else list(v)

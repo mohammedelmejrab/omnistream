@@ -1,0 +1,59 @@
+{
+  "request": {
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Select bubbles for the question. Reply with JSON only: {\"bubbles\": [...], \"strategy\": \"simple | multi_hop\", \"time_scope\": {}, \"names_specific_item\": false}. Bubbles: news, finance, research."
+      },
+      {
+        "role": "user",
+        "content": "How did Apple's share price react to last week's EU ruling?"
+      }
+    ],
+    "max_tokens": 120
+  },
+  "response": {
+    "id": "gen-recorded-router_json",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "```json\n{\"bubbles\": [\"news\", \"finance\"], \"strategy\": \"simple\", \"time_scope\": {}, \"names_specific_item\": false}\n```",
+          "role": "assistant"
+        },
+        "native_finish_reason": "stop"
+      }
+    ],
+    "created": 1794264942,
+    "model": "deepseek/deepseek-chat",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 37,
+      "prompt_tokens": 70,
+      "total_tokens": 107,
+      "completion_tokens_details": {
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost": 5.533e-05,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.533e-05,
+        "upstream_inference_prompt_cost": 2.24e-05,
+        "upstream_inference_completions_cost": 3.293e-05
+      }
+    },
+    "provider": "DeepInfra"
+  }
+}
