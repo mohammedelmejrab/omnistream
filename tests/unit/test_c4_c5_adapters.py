@@ -193,9 +193,16 @@ async def test_runtime_factory_uses_shared_dependencies_and_closes(
     monkeypatch.setattr(runtime, "AsyncLLMClient", Mock(return_value=async_llm))
     answer = AsyncMock(return_value="qa-result")
     monkeypatch.setattr(runtime, "answer_question", answer)
+    from datetime import UTC, datetime
+
+    clock = lambda: datetime(2020, 6, 1, tzinfo=UTC)
     rt = runtime.build_query_runtime(
-        settings, repo, embeddings=SimpleNamespace(service=embedder)
+        settings, repo, embeddings=SimpleNamespace(service=embedder), now=clock
     )
+    assert rt.router.now is clock
+    assert rt.dispatcher.retrievers["own"].now is clock
+    assert graph.now is clock
+    assert graphiti.now is clock
     graph.ensure_schema.assert_not_called()
     graph.check_schema.assert_not_called()
     assert rt.embeddings is embedder

@@ -95,7 +95,7 @@ def test_missing_empty_and_scope(store):
     add_chunks(client, embedder, "a", chunks("a", 0, 4))
     assert not retriever.retrieve("", bubbles=["a"]).chunks
     scope = TimeScope(start=datetime(2026, 1, 1))
-    assert not retriever.retrieve("query", bubbles=["a"], time_scope=scope).chunks
+    assert len(retriever.retrieve("query", bubbles=["a"], time_scope=scope).chunks) == 4
     exact = TimeScope(datetime(2025, 1, 1), datetime(2025, 1, 1))
     assert len(retriever.retrieve("query", bubbles=["a"], time_scope=exact).chunks) == 4
 
@@ -192,3 +192,110 @@ def test_unrelated_chroma_internal_error_is_not_retried(store):
         ClassicRetriever(client, embedder).retrieve("q", bubbles=["a"])
     assert client.get_collection.call_count == 1
     assert collection.query.call_count == 1
+
+
+def test_reporting_lag_and_unknown_dates_never_remove_similarity_candidates(store):
+    client, embedder = store
+    day = datetime(2026, 2, 7, tzinfo=UTC)
+    items = [
+        Chunk(
+            "report",
+            "same",
+            "reported-next-day",
+            "news",
+            None,
+            datetime(2026, 2, 8, tzinfo=UTC),
+        ),
+        Chunk("unknown", "same", "undated", "news", None, None),
+        Chunk(
+            "later",
+            "same",
+            "reported-next-year",
+            "news",
+            None,
+            datetime(2027, 2, 8, tzinfo=UTC),
+        ),
+    ]
+    add_chunks(client, embedder, "news", items)
+    result = ClassicRetriever(client, embedder).retrieve(
+        "query",
+        bubbles=["news"],
+        time_scope=TimeScope(day, datetime(2026, 2, 7, 23, 59, 59, tzinfo=UTC)),
+    )
+    assert result.chunks[0].item_id == "reported-next-day"
+    assert set(result.item_ids) == {c.item_id for c in items}
+
+
+@pytest.mark.parametrize("point", [False, True])
+def test_cutoff_excludes_later_report_before_similarity_top_k(store, point):
+    client, embedder = store
+    add_chunks(
+        client,
+        embedder,
+        "news",
+        [
+            Chunk("a-later", "same", "later", "news", None, datetime(2026, 3, 1)),
+            Chunk(
+                "z-contemporary", "same", "then", "news", None, datetime(2025, 12, 31)
+            ),
+        ],
+    )
+    retriever = ClassicRetriever(client, embedder)
+    scope = TimeScope(datetime(2026, 1, 1) if point else None, datetime(2026, 1, 1))
+    assert retriever.retrieve("q", bubbles=["news"], time_scope=scope).item_ids == (
+        "then",
+    )
+    # Cutoff filtering happens before selecting top-k.
+    assert retriever.retrieve(
+        "q", bubbles=["news"], time_scope=scope, top_k=1
+    ).item_ids == ("then",)
+
+
+def test_cutoff_answer_uses_old_report_and_now_uses_new(store):
+    from omnistream.retrieval.citations import AnswerContext, generate_answer
+
+    client, embedder = store
+    add_chunks(
+        client,
+        embedder,
+        "news",
+        [
+            Chunk(
+                "old",
+                "Ada leads X",
+                "old",
+                "news",
+                None,
+                datetime(2025, 1, 1, tzinfo=UTC),
+            ),
+            Chunk(
+                "new",
+                "Bea leads X",
+                "new",
+                "news",
+                None,
+                datetime(2026, 1, 1, tzinfo=UTC),
+            ),
+        ],
+    )
+    retriever = ClassicRetriever(client, embedder)
+    cutoff = datetime(2025, 6, 1, 23, 59, 59, 999999, tzinfo=UTC)
+    scope = TimeScope(cutoff, cutoff)
+    past = retriever.retrieve("leader", bubbles=["news"], time_scope=scope)
+    current = retriever.retrieve("leader", bubbles=["news"])
+    assert past.item_ids == ("old",)
+    assert set(current.item_ids) == {"old", "new"}
+
+    class LLM:
+        def chat(self, messages):
+            self.system = messages[0]["content"]
+            return messages[1]["content"]
+
+    llm = LLM()
+    context = AnswerContext(text=past.chunks[0].text, citations=())
+    answer = generate_answer(llm, "leader", context, time_scope=scope)
+    assert "Ada leads X" in answer.text and "Bea" not in answer.text
+    assert "Answer as of 2025-06-01" in llm.system
+    assert "prefer the most recent statement on or before it" in llm.system
+    generate_answer(llm, "leader", context)
+    assert "prefer the most recent statement valid now" in llm.system

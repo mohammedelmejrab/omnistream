@@ -254,3 +254,59 @@ async def test_neighbors_preserves_standalone_identity_entities():
         )
     )
     assert [e["id"] for e in data["entities"]] == ["global"]
+
+
+@pytest.mark.parametrize("mode", ["own", "graphiti"])
+@pytest.mark.parametrize("tool", ["neighbors", "facts"])
+async def test_graph_tools_keep_historical_validity_despite_late_publication(
+    mode, tool
+):
+    from dataclasses import replace
+
+    from omnistream.graph.memory_store import InMemoryGraphStore
+
+    boundary = datetime(2025, 2, 7, tzinfo=UTC)
+    report = datetime(2025, 2, 8, tzinfo=UTC)
+    old = replace(
+        FACT, id="old", published_at=report, invalid_at=boundary, expired_at=report
+    )
+    current = replace(FACT, id="new", published_at=report, valid_at=boundary)
+    other = Entity("other", "Other", "person", "news")
+    graph = InMemoryGraphStore([ENTITY, other], [old, current])
+    for point, expected in [
+        (datetime(2025, 2, 6, tzinfo=UTC), "old"),
+        (boundary, "new"),
+    ]:
+        runner = executor(mode, graph_store=graph, time_scope=TimeScope(point, point))
+        payload = json.loads(
+            await runner.execute(ToolCall("call", tool, {"entity_id": "e"}))
+        )
+        assert [f["id"] for f in payload["facts"]] == [expected]
+
+
+async def test_subagent_chunk_search_retains_delayed_report(embedder):
+    from unittest.mock import Mock
+
+    from omnistream.retrieval.classic import ClassicRetriever
+
+    collection = Mock(metadata={"hnsw:space": "cosine"})
+    collection.count.return_value = 1
+    collection.query.return_value = {
+        "ids": [["report"]],
+        "documents": [["A report about yesterday's event"]],
+        "metadatas": [
+            [{"item_id": "next-day", "published_at": "2026-02-08T00:00:00Z"}]
+        ],
+        "distances": [[0.1]],
+    }
+    client = Mock()
+    client.get_collection.return_value = collection
+    runner = executor(
+        "classic",
+        retriever=ClassicRetriever(client, embedder),
+        time_scope=TimeScope(datetime(2026, 2, 7), datetime(2026, 2, 7, 23, 59, 59)),
+    )
+    payload = json.loads(
+        await runner.execute(ToolCall("call", "search", {"query": "q"}))
+    )
+    assert [c["item_id"] for c in payload["chunks"]] == ["next-day"]

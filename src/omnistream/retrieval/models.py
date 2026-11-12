@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Literal
@@ -20,13 +21,15 @@ def _utc(value: datetime | None) -> datetime | None:
 
 @dataclass(frozen=True)
 class TimeScope:
-    """Closed query interval for C5 validity filtering; None bounds are open."""
+    """Closed fact-validity interval; None bounds are open, stored bounds are UTC."""
 
     start: datetime | None = None
     end: datetime | None = None
 
     def __post_init__(self) -> None:
         start, end = _utc(self.start), _utc(self.end)
+        object.__setattr__(self, "start", start)
+        object.__setattr__(self, "end", end)
         if start is not None and end is not None and start > end:
             raise ValueError("start must not be after end")
 
@@ -168,12 +171,15 @@ class RetrievalResult:
 
 
 def fact_in_scope(
-    fact: Fact, scope: TimeScope | None, *, now: datetime | None = None
+    fact: Fact,
+    scope: TimeScope | None,
+    *,
+    now: datetime | Callable[[], datetime] | None = None,
 ) -> bool:
     """No routed interval means valid now; explicit intervals include history."""
     if scope is not None:
         return scope.overlaps(fact.valid_at, fact.invalid_at)
-    stamp = now or datetime.now(UTC)
+    stamp = (now() if callable(now) else now) or datetime.now(UTC)
     return fact.expired_at is None and TimeScope(stamp, stamp).overlaps(
         fact.valid_at, fact.invalid_at
     )

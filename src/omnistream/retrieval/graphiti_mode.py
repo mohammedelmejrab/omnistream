@@ -445,7 +445,8 @@ class GraphitiRetriever:
 
     mode = "graphiti"
 
-    def __init__(self, searcher: GraphitiSearcher) -> None:
+    def __init__(self, searcher: GraphitiSearcher, *, now=None) -> None:
+        self.now = now or (lambda: datetime.now(UTC))
         self.searcher = searcher
         self.skipped_missing_provenance = 0
         self._loop = _SyncLoopRunner()
@@ -578,6 +579,7 @@ class GraphitiRetriever:
         groups = list(dict.fromkeys(bubbles))
         if any(not isinstance(b, str) or not b.strip() for b in groups):
             raise ValueError("bubbles must contain non-empty strings")
+        stamp = self.now()
         facts = []
         missing = 0
         seen: set[str] = set()
@@ -601,9 +603,9 @@ class GraphitiRetriever:
                     missing += 1
                     continue
                 valid, invalid = _date(edge.valid_at), _date(edge.invalid_at)
-                if not (
-                    time_scope or TimeScope(datetime.now(UTC), datetime.now(UTC))
-                ).overlaps(valid, invalid) or (
+                if not (time_scope or TimeScope(stamp, stamp)).overlaps(
+                    valid, invalid
+                ) or (
                     time_scope is None
                     and _date(getattr(edge, "expired_at", None)) is not None
                 ):

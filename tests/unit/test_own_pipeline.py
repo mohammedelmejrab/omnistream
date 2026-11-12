@@ -123,3 +123,41 @@ def test_shared_identity_seeds_preserve_cross_bubble_bridge():
         for f in result.facts
         for a, b in zip(f.path, f.path[1:])
     )
+
+
+def test_changed_facts_follow_validity_not_report_publication():
+    from datetime import UTC, datetime
+
+    service, _ = embedder()
+    boundary = datetime(2025, 2, 7, tzinfo=UTC)
+    report = datetime(2025, 2, 8, tzinfo=UTC)
+    old = replace(
+        fact("old", "a", "b"),
+        published_at=report,
+        valid_at=datetime(2025, 1, 1, tzinfo=UTC),
+        invalid_at=boundary,
+        expired_at=report,
+    )
+    current = replace(fact("new", "a", "b"), published_at=report, valid_at=boundary)
+    graph = InMemoryGraphStore(
+        [entity("a"), entity("b")],
+        [old, current],
+        entity_embeddings={"a": np.array([1.0, 0.0])},
+    )
+    retriever = OwnRetriever(graph, service)
+    historical = datetime(2025, 2, 6, 23, 59, 59, tzinfo=UTC)
+    assert {
+        f.fact.id
+        for f in retriever.retrieve(
+            "Entity a", bubbles=["news"], time_scope=TimeScope(historical, historical)
+        ).facts
+    } == {"old"}
+    assert {
+        f.fact.id
+        for f in retriever.retrieve(
+            "Entity a", bubbles=["news"], time_scope=TimeScope(boundary, boundary)
+        ).facts
+    } == {"new"}
+    assert {
+        f.fact.id for f in retriever.retrieve("Entity a", bubbles=["news"]).facts
+    } == {"new"}

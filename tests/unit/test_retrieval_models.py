@@ -194,3 +194,19 @@ def test_runtime_protocols_are_structural():
     assert not isinstance(object(), GraphStore)
     assert not isinstance(object(), ItemStore)
     assert not isinstance(OfflineRetriever(), GraphStore)
+
+
+def test_fact_scope_accepts_fixed_clock():
+    from dataclasses import replace
+    from datetime import UTC, datetime
+
+    from omnistream.retrieval.models import fact_in_scope
+    from tests.unit.test_agent_tools import FACT
+
+    fact = replace(
+        FACT,
+        valid_at=datetime(2020, 1, 1, tzinfo=UTC),
+        invalid_at=datetime(2021, 1, 1, tzinfo=UTC),
+    )
+    assert fact_in_scope(fact, None, now=lambda: datetime(2020, 6, 1, tzinfo=UTC))
+    assert not fact_in_scope(fact, None, now=lambda: datetime(2022, 6, 1, tzinfo=UTC))

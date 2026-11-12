@@ -228,12 +228,26 @@ def test_expand_freezes_now_across_hops(monkeypatch):
     calls = []
     original = neo4j_store._scope_parameters
 
-    def scope(value):
+    def scope(value, now=None):
         calls.append(value)
-        return original(value)
+        return original(value, now)
 
     monkeypatch.setattr(neo4j_store, "_scope_parameters", scope)
     driver = Driver([{"entities": [NODE, OTHER]}], [])
     Neo4jGraphStore(driver).expand(["a"], bubbles=["news"], time_scope=None)
     assert len(calls) == 1
     assert driver.calls[0][1]["now"] is driver.calls[1][1]["now"]
+
+
+def test_injected_scope_clock():
+    from datetime import UTC, datetime
+
+    from omnistream.graph.neo4j_store import _scope_parameters
+
+    stamp = datetime(2021, 6, 1, tzinfo=UTC)
+    assert _scope_parameters(None, lambda: stamp)["now"] == stamp
+    driver = Driver([{"entities": [NODE, OTHER]}], [])
+    Neo4jGraphStore(driver, now=lambda: stamp).expand(
+        ["a"], bubbles=["news"], time_scope=None
+    )
+    assert all(params["now"] == stamp for _, params in driver.calls)

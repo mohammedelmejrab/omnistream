@@ -258,7 +258,10 @@ class ToolExecutor:
                     facts = [
                         f
                         for f in graph.facts
-                        if f.grounded is True and fact_in_scope(f, scope)
+                        if f.grounded is True
+                        and fact_in_scope(
+                            f, scope, now=getattr(self.retriever, "now", None)
+                        )
                     ]
                     # Prune only orphaned identities belonging to rejected evidence.
                     # Standalone entities can still provide cross-bubble identity joins.
@@ -339,7 +342,10 @@ class ToolExecutor:
                         facts = [
                             f
                             for f in facts
-                            if f.grounded is True and fact_in_scope(f, scope)
+                            if f.grounded is True
+                            and fact_in_scope(
+                                f, scope, now=getattr(self.retriever, "now", None)
+                            )
                         ]
                     payload = {
                         "facts": [asdict(f) for f in facts],

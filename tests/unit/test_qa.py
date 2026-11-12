@@ -65,6 +65,10 @@ class ScriptedLLM:
 async def test_six_configurations(settings, mock_openai, mode, subagents):
     # Opposite strategy verifies explicit on/off always overrides routing.
     router = Router("simple" if subagents else "multi_hop")
+    from datetime import UTC, datetime
+
+    cutoff = datetime(2020, 6, 1, 23, 59, 59, 999999, tzinfo=UTC)
+    router.decision = replace(router.decision, time_scope=TimeScope(cutoff, cutoff))
     retriever = ModeRetriever(mode)
     client, transport = mock_openai(lambda _: "Supported [1] and [2].")
     result = await answer_question(
@@ -80,6 +84,7 @@ async def test_six_configurations(settings, mock_openai, mode, subagents):
         pins=("news",),
         exclude=(),
     )
+    assert "Answer as of 2020-06-01" in transport.bodies[-1]["messages"][0]["content"]
     assert result.mode == mode
     assert result.routing == router.decision
     assert router.kwargs == {"pins": ("news",), "exclude": ()}

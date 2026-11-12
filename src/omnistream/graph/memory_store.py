@@ -46,7 +46,10 @@ class InMemoryGraphStore:
         same_as: Sequence[tuple[str, str]] = (),
         entity_embeddings: Mapping[str, np.ndarray] | None = None,
         fact_embeddings: Mapping[str, np.ndarray] | None = None,
+        *,
+        now=None,
     ) -> None:
+        self.now = now
         self._entities = {e.id: e for e in entities}
         self._facts = {f.id: f for f in facts}
         if len(self._entities) != len(entities) or len(self._facts) != len(facts):
@@ -100,7 +103,7 @@ class InMemoryGraphStore:
             f
             for f in self._facts.values()
             if f.grounded
-            and fact_in_scope(f, time_scope)
+            and fact_in_scope(f, time_scope, now=self.now)
             and f.bubble not in excluded_bubbles
             and self._entities[f.subject_id].bubble not in excluded_bubbles
             and self._entities[f.object_id].bubble not in excluded_bubbles
@@ -175,7 +178,7 @@ class InMemoryGraphStore:
                 if entity_id in (f.subject_id, f.object_id)
                 and f.bubble not in excluded_bubbles
                 and f.grounded
-                and fact_in_scope(f, scope)
+                and fact_in_scope(f, scope, now=self.now)
             ),
             key=lambda f: f.id,
         )

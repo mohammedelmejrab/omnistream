@@ -64,9 +64,9 @@ RETURN facts, links AS same_as,
 )
 
 
-def _scope_parameters(scope: TimeScope | None) -> dict[str, Any]:
+def _scope_parameters(scope: TimeScope | None, now=None) -> dict[str, Any]:
     return {
-        "now": datetime.now(UTC) if scope is None else None,
+        "now": (now() if now else datetime.now(UTC)) if scope is None else None,
         "start": _utc(scope.start) if scope else None,
         "end": _utc(scope.end) if scope else None,
     }
@@ -147,12 +147,15 @@ class Neo4jGraphStore:
         database: str = "neo4j",
         entity_index_name: str = "entity_name_embedding",
         fact_index_name: str = "fact_embedding",
+        *,
+        now=None,
     ) -> None:
         if not all(
             isinstance(v, str) and v.strip()
             for v in (database, entity_index_name, fact_index_name)
         ):
             raise ValueError("database and index names must be non-empty strings")
+        self.now = now or (lambda: datetime.now(UTC))
         self.driver, self.database = driver, database
         self.entity_index_name, self.fact_index_name = (
             entity_index_name,
@@ -259,7 +262,7 @@ RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:Glo
         entities, facts, links = {}, {}, set()
         frontier = sorted(set(seed_ids))
         visited = set()
-        scope_parameters = _scope_parameters(time_scope)
+        scope_parameters = _scope_parameters(time_scope, self.now)
         for _ in range(max_hops):
             if not frontier:
                 break
@@ -320,15 +323,15 @@ WITH r, s, o, min(ep.valid_at) AS episode_valid_at
 RETURN r{.*, episode_valid_at: episode_valid_at} AS r, s.uuid AS subject, o.uuid AS object ORDER BY r.uuid""",
             entity_id=entity_id,
             excluded_bubbles=list(excluded_bubbles),
-            **_scope_parameters(scope),
+            **_scope_parameters(scope, self.now),
         )
         return [_fact(r["r"], r["subject"], r["object"]) for r in records]
 
     def fact_embeddings(self, fact_ids: Sequence[str]) -> dict[str, np.ndarray]:
         records = self._run(
             """MATCH ()-[r:RELATES_TO]->() WHERE r.uuid IN $fact_ids
-AND coalesce(r.fact_embedding, r.embedding) IS NOT NULL
-RETURN r.uuid AS id, coalesce(r.fact_embedding, r.embedding) AS embedding""",
+AND r.fact_embedding IS NOT NULL
+RETURN r.uuid AS id, r.fact_embedding AS embedding""",
             fact_ids=list(fact_ids),
         )
         return {r["id"]: np.asarray(r["embedding"], dtype=float) for r in records}

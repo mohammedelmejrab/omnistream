@@ -8,7 +8,7 @@ import re
 import threading
 import warnings
 from collections.abc import Sequence
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any
 
 import chromadb
@@ -126,8 +126,9 @@ def add_chunks(
 class ClassicRetriever:
     """Global top 10 cosine chunks; ties sort by bubble then chunk id (C5).
 
-    Request all candidates per collection so time filtering and boundary ties
-    cannot discard eligible evidence. Appropriate for the spec's laptop scale.
+    Cutoff scopes exclude publications beyond the cutoff plus one reporting day.
+    Bounded event windows keep similarity candidates and softly rank publication
+    proximity. Request all candidates for deterministic ties at laptop scale.
     """
 
     mode = "classic"
@@ -198,17 +199,14 @@ class ClassicRetriever:
                     if meta.get("published_at")
                     else None
                 )
-                if time_scope is not None:
-                    stamp = _utc(published)
-                    if (
-                        stamp is None
-                        or (
-                            time_scope.start is not None
-                            and stamp < _utc(time_scope.start)
-                        )
-                        or (time_scope.end is not None and stamp > _utc(time_scope.end))
-                    ):
-                        continue
+                if (
+                    time_scope is not None
+                    and time_scope.end is not None
+                    and time_scope.start in (None, time_scope.end)
+                    and published is not None
+                    and _utc(published) > time_scope.end + timedelta(days=1)
+                ):
+                    continue
                 chunks.append(
                     Chunk(
                         ident,
@@ -221,4 +219,34 @@ class ClassicRetriever:
                     )
                 )
         chunks.sort(key=lambda c: (-c.score, c.bubble, c.id))
-        return RetrievalResult(mode="classic", chunks=tuple(chunks[:limit]))
+        # Preserve the similarity top-k candidate set; time only changes its order.
+        candidates = chunks[:limit]
+        candidates.sort(
+            key=lambda c: (
+                -(c.score + _publication_boost(c.published_at, time_scope)),
+                c.bubble,
+                c.id,
+            )
+        )
+        return RetrievalResult(mode="classic", chunks=tuple(candidates))
+
+
+def _publication_boost(published: datetime | None, scope: TimeScope | None) -> float:
+    """Soft proximity boost only for bounded event windows, with one day lag."""
+    stamp = _utc(published)
+    if (
+        scope is None
+        or stamp is None
+        or scope.start is None
+        or scope.end is None
+        or scope.start == scope.end
+    ):
+        return 0.0
+    start, end = scope.start, scope.end
+    lag = timedelta(days=1) if start is not None and start != end else timedelta(0)
+    distance = 0.0
+    if start is not None and start != end and stamp < start:
+        distance = (start - stamp).total_seconds() / 86400
+    elif end is not None and stamp > end:
+        distance = max(0.0, (stamp - end - lag).total_seconds() / 86400)
+    return 0.05 * 2 ** (-distance)

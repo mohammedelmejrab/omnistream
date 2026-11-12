@@ -196,3 +196,37 @@ def _assert_no_graphiti_runner_threads() -> None:
 def test_no_graphiti_runner_threads_are_leaked():
     """Every test above closes its retriever, so no runner threads remain."""
     _assert_no_graphiti_runner_threads()
+
+
+def test_changed_facts_use_validity_even_when_reported_later():
+    from datetime import UTC
+
+    boundary = datetime(2025, 2, 7, tzinfo=UTC)
+    report = datetime(2025, 2, 8, tzinfo=UTC)
+    old = edge(1, published_at=report)
+    old.invalid_at = boundary
+    old.expired_at = report
+    current = edge(2, published_at=report)
+    current.valid_at = boundary
+    historical = datetime(2025, 2, 6, 23, 59, 59, tzinfo=UTC)
+    with GraphitiRetriever(Searcher([old, current])) as retriever:
+        assert retriever.retrieve(
+            "q", bubbles=["news"], time_scope=TimeScope(historical, historical)
+        ).item_ids == ("item1",)
+        assert retriever.retrieve(
+            "q", bubbles=["news"], time_scope=TimeScope(boundary, boundary)
+        ).item_ids == ("item2",)
+        assert retriever.retrieve("q", bubbles=["news"]).item_ids == ("item2",)
+
+
+def test_fixed_clock_filters_current_facts():
+    from datetime import UTC
+
+    old, new = edge(1), edge(2)
+    old.valid_at = datetime(2020, 1, 1, tzinfo=UTC)
+    old.invalid_at = datetime(2021, 1, 1, tzinfo=UTC)
+    new.valid_at = old.invalid_at
+    with GraphitiRetriever(
+        Searcher([old, new]), now=lambda: datetime(2020, 6, 1, tzinfo=UTC)
+    ) as retriever:
+        assert retriever.retrieve("q", bubbles=["news"]).item_ids == ("item1",)

@@ -253,7 +253,9 @@ async def answer_question(
             context = replace(
                 context, text=context.text + "\n\n" + "\n\n".join(sections)
             )
-    answer = await asyncio.to_thread(generate_answer, llm, question, context)
+    answer = await asyncio.to_thread(
+        generate_answer, llm, question, context, time_scope=routing.time_scope
+    )
     return QAResult(
         answer, routing, selected, result, multi_hop, specific, context.conflicts
     )

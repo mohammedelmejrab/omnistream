@@ -44,20 +44,33 @@ class CatalogHalfLives(Mapping):
 
 class QueryRuntime:
     def __init__(
-        self, settings, repo, embeddings, graph, chroma, graphiti, llm, async_llm
+        self,
+        settings,
+        repo,
+        embeddings,
+        graph,
+        chroma,
+        graphiti,
+        llm,
+        async_llm,
+        *,
+        now=None,
     ):
         self.settings, self.repo, self.embeddings = settings, repo, embeddings
         self.graph, self.chroma, self.graphiti = graph, chroma, graphiti
         self.llm, self.async_llm = llm, async_llm
         self.catalog = RepositoryBubbleCatalog(repo)
-        self.router = QueryRouter(llm, embeddings, self.catalog)
+        self.router = QueryRouter(llm, embeddings, self.catalog, now=now)
         self.items = RepositoryItemStore(repo, Path(settings.data_dir))
         self.dispatcher = RetrievalDispatcher(
             {
                 "classic": ClassicRetriever(chroma, embeddings),
                 "graphiti": graphiti,
                 "own": OwnRetriever(
-                    graph, embeddings, half_lives=CatalogHalfLives(self.catalog)
+                    graph,
+                    embeddings,
+                    now=now,
+                    half_lives=CatalogHalfLives(self.catalog),
                 ),
             },
             "own",
@@ -152,7 +165,7 @@ class QueryRuntime:
             raise ExceptionGroup("query runtime close failed", errors)
 
 
-def build_query_runtime(settings, repo, *, embeddings=None):
+def build_query_runtime(settings, repo, *, embeddings=None, now=None):
     """Build lazy clients without Neo4j I/O, model loading, or LLM calls.
 
     Await runtime.initialize() for a read-only index check (also done on the
@@ -165,10 +178,14 @@ def build_query_runtime(settings, repo, *, embeddings=None):
         else EmbeddingService(settings)
     )
     graph = Neo4jGraphStore.from_settings(settings)
+    if now is not None:
+        graph.now = now
     chroma = graphiti = llm = async_llm = None
     try:
         chroma = make_chroma_client(Path(settings.data_dir) / "chroma")
         graphiti = GraphitiRetriever.from_settings(settings, embeddings=service)
+        if now is not None:
+            graphiti.now = now
         llm = LLMClient(settings)
         async_llm = AsyncLLMClient(settings)
         return QueryRuntime(
@@ -180,6 +197,7 @@ def build_query_runtime(settings, repo, *, embeddings=None):
             graphiti,
             llm,
             async_llm,
+            now=now,
         )
     except BaseException:
         # Attempt every cleanup without masking the construction failure.
