@@ -151,6 +151,29 @@ class Neo4jGraphOps:
         if not rows:
             return None
         row = rows[0]
+        if not getattr(self, "_recovery_indexes", False):
+            for prop in ("invalid_at", "expired_at"):
+                await self._q(
+                    f"CREATE RANGE INDEX relates_{prop} IF NOT EXISTS "
+                    f"FOR ()-[r:RELATES_TO]-() ON (r.{prop})"
+                )
+            self._recovery_indexes = True
+        # Only recovery performs this time-window repair. Use relationship range
+        # indexes so a crashed write does not require scanning its entire group.
+        await self._q(
+            "MATCH (next:Episodic {group_id: $group}) "
+            "WHERE next.created_at > $created "
+            "WITH min(next.created_at) AS until "
+            "CALL { WITH until MATCH ()-[r:RELATES_TO]->() "
+            "WHERE r.invalid_at >= $created AND (until IS NULL OR r.invalid_at < until) "
+            "AND r.group_id = $group RETURN r "
+            "UNION WITH until MATCH ()-[r:RELATES_TO]->() "
+            "WHERE r.expired_at >= $created AND (until IS NULL OR r.expired_at < until) "
+            "AND r.group_id = $group RETURN r } "
+            "SET r.status = 'HISTORICAL'",
+            group=group_id,
+            created=row["created_at"],
+        )
         return SimpleNamespace(
             episode=await EpisodicNode.get_by_uuid(self._driver, row["episode"]),
             nodes=await EntityNode.get_by_uuids(self._driver, row["nodes"]),
@@ -287,4 +310,43 @@ class Neo4jGraphOps:
             "MERGE (n)-[:SAME_AS]->(g)",
             e=entity_uuid,
             g=global_uuid,
+        )
+
+    async def bubble_graph(
+        self, group_id: str, limit: int = 50, *, include_historical: bool = False
+    ) -> dict:
+        nodes = await self._q(
+            "MATCH (n:Entity {group_id: $g}) OPTIONAL MATCH (n)-[r:RELATES_TO]-() "
+            "WHERE $historical OR (r.invalid_at IS NULL AND r.expired_at IS NULL AND coalesce(r.status, 'CURRENT') <> 'HISTORICAL') "
+            "RETURN n.uuid AS id, n.name AS label, count(r) AS value "
+            "ORDER BY value DESC, id LIMIT $limit",
+            g=group_id,
+            limit=limit,
+            historical=include_historical,
+        )
+        edges = await self._q(
+            "MATCH (a:Entity)-[r:RELATES_TO]->(b:Entity) "
+            "WHERE a.uuid IN $ids AND b.uuid IN $ids "
+            "AND ($historical OR (r.invalid_at IS NULL AND r.expired_at IS NULL AND coalesce(r.status, 'CURRENT') <> 'HISTORICAL')) "
+            "RETURN r.uuid AS id, a.uuid AS `from`, b.uuid AS `to`, r.name AS label",
+            ids=[n["id"] for n in nodes],
+            historical=include_historical,
+        )
+        return {"nodes": nodes, "edges": edges}
+
+    async def bubble_map(self) -> list[dict]:
+        return await self._q(
+            "MATCH (a:Entity)-[:SAME_AS]->(g:GlobalEntity)<-[:SAME_AS]-(b:Entity) "
+            "WHERE a.group_id < b.group_id "
+            "WITH a.group_id AS a, b.group_id AS b, collect(DISTINCT {id:g.uuid, name:g.name}) AS entities "
+            "RETURN a AS `from`, b AS `to`, size(entities) AS value, entities"
+        )
+
+    async def recent_episodes(self, group_id: str, limit: int = 20) -> list[dict]:
+        return await self._q(
+            "MATCH (e:Episodic {group_id: $g}) RETURN e.uuid AS id, e.name AS name, "
+            "e.item_id AS item_id, toString(e.created_at) AS created_at "
+            "ORDER BY e.created_at DESC LIMIT $limit",
+            g=group_id,
+            limit=limit,
         )

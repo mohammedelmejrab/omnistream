@@ -72,6 +72,17 @@ class Repository:
                     "ALTER TABLE items ADD COLUMN written_bubble_ids JSON DEFAULT '[]'"
                 )
 
+        # Additive migration for C7 evaluation records in existing databases.
+        with self._engine.begin() as conn:
+            columns = {r[1] for r in conn.exec_driver_sql("PRAGMA table_info(eval_runs)")}
+            for name, definition in {
+                "snapshot": "TEXT DEFAULT ''", "rows": "JSON DEFAULT '[]'",
+                "status": "TEXT DEFAULT 'pending'", "metrics": "JSON DEFAULT '{}'",
+                "results": "JSON DEFAULT '[]'", "report_path": "TEXT", "csv_path": "TEXT",
+            }.items():
+                if name not in columns:
+                    conn.exec_driver_sql(f"ALTER TABLE eval_runs ADD COLUMN {name} {definition}")
+
     @classmethod
     def from_path(cls, path: str, *, settings: Settings | None = None) -> "Repository":
         Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -435,6 +446,26 @@ class Repository:
         return await self._run(
             lambda s: list(s.exec(select(EvalRunRow).order_by(EvalRunRow.id)))
         )
+
+
+    async def create_eval_run(self, *, snapshot: str, rows: list[str], status: str = "running", **values: Any) -> EvalRunRow:
+        return await self.add_eval_run(EvalRunRow(config=",".join(rows), snapshot=snapshot, rows=rows, status=status, **values))
+
+    async def update_eval_run(self, id: int, **changes: Any) -> EvalRunRow:
+        def fn(session: Session) -> EvalRunRow:
+            row = session.get(EvalRunRow, id)
+            if row is None:
+                raise KeyError(id)
+            for key, value in changes.items():
+                if key not in EvalRunRow.model_fields or key in {"id", "created_at"}:
+                    raise ValueError(key)
+                setattr(row, key, value)
+            session.add(row)
+            return row
+        return await self._run(fn)
+
+    async def get_eval_run(self, id: int) -> EvalRunRow | None:
+        return await self._run(lambda session: session.get(EvalRunRow, id))
 
 
 def _sqlite_pragmas(dbapi_conn: Any, _record: Any) -> None:

@@ -1,0 +1,6 @@
+<article><h2>Answer</h2><div class="answer-text">{{ answer_html }}</div>
+<p>Mode: <strong>{{ result.mode }}</strong> · Bubbles used: {{ result.routing.bubbles | join(', ') }}</p><p>{{ result.routing.rationale }}</p>
+<ol>{% for c in result.answer.citations %}<li value="{{ c.number }}"><a href="{{ c.text_url }}" target="_blank" rel="noopener">[{{ c.number }}] Stored original</a> {% if not c.verified %}<strong class="unverified">Unverified — no supporting passage located</strong>{% endif %}<p>{{ c.snippet }}</p></li>{% endfor %}</ol>
+{% for conflict in result.conflicts %}<h3>Conflicting assertions: {{ conflict.relation }}</h3><div class="columns">{% for scored in conflict.facts %}<section class="card">{% if scored.fact.id == conflict.preferred_fact_id %}<strong>Preferred assertion</strong>{% endif %}<p>{{ scored.fact.text }}</p><small>Credibility {{ scored.fact.credibility }} · {{ scored.fact.published_at }}</small></section>{% endfor %}</div>{% endfor %}
+<h3>Evidence graph</h3><p>Gold nodes are seeds. Dashed links show retrieval hops, including cross-bubble paths.</p><div class="graph" id="answer-graph"></div><script>Omni.graph('answer-graph', {{ graph | tojson }});</script></article>
+

@@ -47,7 +47,7 @@ async def env(tmp_path):
         sched = IngestScheduler(store, http, intake, scheduler=aps)
         app = create_app(store, sched, lifecycle, intake)
         async with httpx.AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://localhost"
         ) as client:
             client.ops, client.chunks = ops, chunks
             yield client, store, aps
@@ -204,7 +204,7 @@ async def test_upload_too_large_413(tmp_path):
         sched = IngestScheduler(store, http, intake, scheduler=aps)
         app = create_app(store, sched, lifecycle, intake, Settings(max_upload_bytes=10))
         async with httpx.AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://localhost"
         ) as client:
             r = await upload(client)
     aps.shutdown(wait=False)
@@ -243,7 +243,7 @@ async def test_upload_queues_parts_with_shared_original(tmp_path):
         sched = IngestScheduler(repo, http, intake, scheduler=aps)
         app = create_app(repo, sched, lifecycle, intake)
         async with httpx.AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://localhost"
         ) as client:
             r1 = await upload(client, name="doc.md", data=text)
             r2 = await upload(client, name="doc.md", data=text)
@@ -306,7 +306,14 @@ async def test_delete_bubble_cascades_and_disables_sole_sources(env):
         )
     ).json()["id"]
     await store.mark_seen("h", solo, "u")
-    r = await client.delete("/bubbles/news")
+    preview = await client.delete("/bubbles/news")
+    assert preview.status_code == 409
+    import json
+
+    counts = preview.json()["detail"]["counts"]
+    r = await client.delete(
+        "/bubbles/news", params={"confirmed_counts": json.dumps(counts)}
+    )
     assert r.status_code == 204
     assert client.ops.deleted == ["news"] and client.chunks.dropped == ["news"]
     assert await store.get_bubble("news") is None
@@ -374,7 +381,7 @@ async def test_api_half_life_uses_configured_name_default(tmp_path):
     try:
         app = create_app(repo, None, lifecycle, intake, settings=settings)
         async with httpx.AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://localhost"
         ) as client:
             response = await client.post(
                 "/bubbles", json={"name": "News", "description": "d"}

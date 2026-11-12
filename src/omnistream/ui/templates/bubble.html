@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block body %}
+<p>{{ bubble.description }}</p><h2>Auto-summary</h2><p>{{ bubble.auto_summary or 'No summary yet.' }}</p><p>Half-life: {{ bubble.half_life_days }} days</p>
+<h2>Counts</h2><dl>{% for key,value in counts.items() %}<dt>{{ key }}</dt><dd>{{ value }}</dd>{% endfor %}</dl>
+<h2>Sources</h2><ul>{% for s in sources %}<li>{{ s.type }} · {{ s.url or 'Uploaded document' }} · {{ 'Enabled' if s.enabled else 'Disabled' }}</li>{% endfor %}</ul>
+<h2>Recent episodes</h2><ul>{% for e in episodes %}<li>{{ e.name }} · {{ e.created_at }} {% if e.item_id %}<a href="/ui/items/{{ e.item_id }}/text">Stored text</a>{% endif %}</li>{% endfor %}</ul>
+<h2>Top entities by degree</h2><div id="detail-graph" class="graph"></div>
+<h2>Delete bubble</h2><p>Review current counts before confirming deletion. Stored originals and deduplication history are kept.</p><button id="preview-delete">Preview counts</button><div id="delete-preview"></div><button id="confirm-delete" hidden>Confirm deletion</button><p id="delete-status" role="status"></p>
+<script>Omni.detail({{ bubble.id | tojson }});</script>{% endblock %}

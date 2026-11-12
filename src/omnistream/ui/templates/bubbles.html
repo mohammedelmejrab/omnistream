@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block body %}
+<h2>Bubble map</h2><div id="bubble-map" class="graph"></div><div id="shared" aria-live="polite">Select an edge to inspect shared global entities.</div>
+<ul>{% for b in bubbles %}<li><a href="/ui/bubbles/{{ b.id }}">{{ b.name }}</a> — {{ b.description }}</li>{% endfor %}</ul>
+<h2>Create bubble</h2><form id="create-bubble"><label>Name <input name="name" required></label><label>Description <textarea name="description" required></textarea></label><label>Half-life (days) <input name="half_life_days" type="number" min="1" value="30" required></label>
+<label>Collection <select name="collection"><option value="new">New items only</option><option value="backfill">Backfill stored items through router</option></select></label><label>Backfill last N days <input name="backfill_days" type="number" min="1" value="30"></label><button>Create</button></form><p id="bubble-status" role="status"></p>
+<script>Omni.map(); Omni.createBubble();</script>{% endblock %}

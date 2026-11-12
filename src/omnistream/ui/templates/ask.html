@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block body %}
+<form hx-post="/ui/ask" hx-target="#answer" hx-indicator="#busy">
+<label>Question <textarea name="question" required></textarea></label>
+<label>Mode <select name="mode"><option value="">Global default</option>{% for mode in ['classic','graphiti','own'] %}<option>{{ mode }}</option>{% endfor %}</select></label>
+<label><input type="checkbox" name="subagents" checked> Use subagents</label>
+<div class="columns"><label>Pin bubbles <select name="pin" multiple>{% for b in bubbles %}<option value="{{ b.id }}">{{ b.name }}</option>{% endfor %}</select></label>
+<label>Exclude bubbles <select name="exclude" multiple>{% for b in bubbles %}<option value="{{ b.id }}">{{ b.name }}</option>{% endfor %}</select></label></div>
+<button>Ask</button><span id="busy" class="htmx-indicator">Investigating…</span></form><section id="answer" aria-live="polite"></section>
+{% endblock %}

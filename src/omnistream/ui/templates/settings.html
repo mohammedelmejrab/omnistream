@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block body %}
+<p>Provider URL, model and judge changes apply to queries, ingestion and evaluations after restart.</p>
+<form hx-post="/ui/settings" hx-target="#saved">{% for key,value in settings.items() %}<label>{{ key | replace('_',' ') }} {% if key == 'retrieval_mode' %}<select name="{{ key }}">{% for mode in ['classic','graphiti','own'] %}<option {% if mode == value %}selected{% endif %}>{{ mode }}</option>{% endfor %}</select>{% else %}<input name="{{ key }}" value="{{ value }}" {% if 'days' in key %}type="number" min="1"{% elif key == 'router_threshold' %}type="number" min="0" max="1" step="0.01"{% elif key == 'llm_base_url' %}type="url"{% endif %}>{% endif %}</label>{% endfor %}<button>Save settings</button></form><div id="saved" role="status"></div>
+<button id="test-connection">Test saved connection</button><pre id="connection-result" aria-live="polite"></pre><script>Omni.connection();</script>{% endblock %}

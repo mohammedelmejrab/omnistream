@@ -38,7 +38,7 @@ async def ui(tmp_path):
         sched = IngestScheduler(repo, http, intake, scheduler=aps)
         app = create_app(repo, sched, lifecycle, intake)
         async with httpx.AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://localhost"
         ) as client:
             yield client, repo
     aps.shutdown(wait=False)

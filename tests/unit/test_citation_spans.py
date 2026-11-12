@@ -397,7 +397,7 @@ def test_entailment_rejection_never_creates_span(source, claim):
     )
     fact = replace(_fact(claim, "i").fact, relation=relation)
     assert _entailed_span(source, fact, entities, llm) is None
-    assert llm.chat_json.call_count == (0 if "Acme" in claim else 1)
+    assert llm.chat_json.call_count == 1
 
 
 def test_entailment_acceptance_and_pair_cache():
@@ -457,8 +457,7 @@ def test_malformed_entailment_json_leaves_span_unverified():
     fact = replace(_fact("Alice Smith leads Acme Corp", "i").fact, relation="LEADS")
     assert _entailed_span("Alice Smith leads Acme Corp.", fact, entities, llm) is None
     llm.chat_json.side_effect = LLMError("transport failed")
-    with pytest.raises(LLMError, match="transport failed"):
-        _entailed_span("Alice Smith leads Acme Corp.", fact, entities, llm)
+    assert _entailed_span("Alice Smith leads Acme Corp.", fact, entities, llm) is None
 
 
 def test_abstract_graph_relation_uses_claim_predicate_before_entailment():

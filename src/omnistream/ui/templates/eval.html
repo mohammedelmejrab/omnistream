@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block body %}
+<form id="start-eval"><label>Snapshot <input name="snapshot" required pattern="[\w.-]+"></label><label>Configurations (comma-separated; blank = all) <input name="rows"></label><button>Start evaluation</button></form><p id="eval-status" role="status"></p>
+{% for run in runs %}<article class="card"><h2>Run {{ run.id }} · {{ run.status or 'complete' }}</h2><p>{{ run.snapshot or run.config }} · {{ run.created_at }}</p>
+{% set metrics = run.metrics or run.scores %}{% if metrics %}<h3>Per-configuration metrics</h3><table><thead><tr><th>Configuration</th><th>Metrics</th></tr></thead><tbody>{% for config,values in metrics.items() %}<tr><td>{{ config }}</td><td><pre>{{ values | tojson(indent=2) }}</pre></td></tr>{% endfor %}</tbody></table>{% endif %}
+<details><summary>Per-question results</summary><pre>{{ (run.results or run.question_results or []) | tojson(indent=2) }}</pre></details>{% if run.csv_path %}<a href="/eval/runs/{{ run.id }}/csv">Download CSV</a>{% endif %}</article>{% else %}<p>No evaluation runs yet.</p>{% endfor %}
+<script>Omni.evaluation();</script>{% endblock %}

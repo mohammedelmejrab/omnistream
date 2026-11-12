@@ -1,3 +1,4 @@
+import asyncio
 import re
 import uuid
 from contextlib import asynccontextmanager
@@ -7,7 +8,7 @@ from pathlib import Path
 from typing import Annotated, Literal
 
 import httpx
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
@@ -89,9 +90,34 @@ def create_app(
     intake: Intake,
     settings: Settings | None = None,
     lifespan=None,
+    runtime_factory=None,
+    evaluator=None,
 ) -> FastAPI:
-    settings = settings or Settings()
-    app = FastAPI(title="OmniStream ingestion", lifespan=lifespan)
+    settings = settings or Settings(_env_file=None)
+    from omnistream.api.c6 import Services, install
+
+    services = Services(
+        repo, lifecycle, scheduler, settings, runtime_factory, evaluator
+    )
+
+    @asynccontextmanager
+    async def full_lifespan(app):
+        await services.load()
+        await services.get_runtime()
+        if lifespan:
+            async with lifespan(app):
+                try:
+                    yield
+                finally:
+                    await services.close()
+        else:
+            try:
+                yield
+            finally:
+                await services.close()
+
+    app = FastAPI(title="OmniStream", lifespan=full_lifespan)
+    install(app, services)
 
     async def unknown_bubbles(ids: list[str]) -> list[str]:
         return [i for i in ids if await repo.get_bubble(i) is None]
@@ -106,6 +132,9 @@ def create_app(
         bubble_id, n = base, 2
         while bubble_id in taken:
             bubble_id, n = f"{base}-{n}", n + 1
+        await repo.set_setting(
+            f"c6.half_life_custom.{bubble_id}", body.half_life_days is not None
+        )
         return await lifecycle.create(
             Bubble(
                 id=bubble_id,
@@ -113,7 +142,7 @@ def create_app(
                 description=body.description,
                 half_life_days=body.half_life_days
                 if body.half_life_days is not None
-                else bubble_half_life(body.name, settings),
+                else bubble_half_life(body.name, services.settings),
                 updated_at=datetime.now(UTC),
             ),
             body.backfill_days,
@@ -130,10 +159,24 @@ def create_app(
         }
 
     @app.delete("/bubbles/{bubble_id}", status_code=204)
-    async def delete_bubble(bubble_id: str) -> None:
+    async def delete_bubble(bubble_id: str, confirmed_counts: str | None = None):
         if await repo.get_bubble(bubble_id) is None:
             raise HTTPException(404, f"unknown bubble {bubble_id!r}")
-        await lifecycle.delete(bubble_id)
+        if confirmed_counts is None:
+            raise HTTPException(
+                409,
+                {
+                    "counts": await lifecycle.counts(bubble_id),
+                    "message": "Confirm current counts",
+                },
+            )
+        endpoint = next(
+            r.endpoint
+            for r in app.routes
+            if getattr(r, "path", "") == "/bubbles"
+            and "DELETE" in getattr(r, "methods", set())
+        )
+        await endpoint(bubble_id, confirmed_counts)
 
     @app.get("/bubbles", response_model=list[Bubble])
     async def list_bubbles() -> list[Bubble]:
@@ -188,11 +231,18 @@ def create_app(
         return row.model_dump(mode="json")
 
     @app.get("/items/{item_id}/text", response_class=PlainTextResponse)
-    async def item_text(item_id: str) -> str:
+    async def item_text(item_id: str, request: Request):
+        if request.query_params.getlist("span"):
+            endpoint = next(
+                r.endpoint
+                for r in app.routes
+                if getattr(r, "path", "") == "/ui/items/{item_id}/text"
+            )
+            return await endpoint(item_id, request)
         row = await repo.get_item(item_id)
         if row is None or not row.text_path or not Path(row.text_path).exists():
             raise HTTPException(404, "no stored text for this item")
-        return Path(row.text_path).read_text(encoding="utf-8")
+        return await asyncio.to_thread(Path(row.text_path).read_text, encoding="utf-8")
 
     @app.post("/sources/{source_id}/poll", response_model=list[IngestResult])
     async def poll_source(source_id: str) -> list[IngestResult]:
@@ -248,6 +298,9 @@ def create_app(
 
     app.mount("/ui/static", static_files(), name="ui-static")
     app.include_router(build_router(repo, scheduler))
+    from omnistream.ui.c6 import build_pages
+
+    app.include_router(build_pages(services))
     return app
 
 
@@ -277,6 +330,20 @@ async def build_components(
     tests pass fakes; anything left None is built for real."""
     repo = repo or Repository.from_path(
         str(Path(settings.data_dir) / "omnistream.db"), settings=settings
+    )
+    from omnistream.api.c6 import SettingsIn
+
+    overrides = await repo.all_settings()
+    settings = type(settings).model_validate(
+        {
+            **settings.model_dump(),
+            **{
+                k: v
+                for k, v in overrides.items()
+                if k in SettingsIn.model_fields and k != "retrieval_mode"
+            },
+            "_env_file": None,
+        }
     )
     if embedder is None:
         from omnistream.embed import SentenceTransformerEmbedder
@@ -330,6 +397,7 @@ def app_from_components(c: Components, settings: Settings) -> FastAPI:
         finally:
             await c.pool.stop()
             await c.scheduler.shutdown()
+            await _app.state.c6.close_ingestion_clients()
             await c.http.aclose()
             await c.repo.close()
 

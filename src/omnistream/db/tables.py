@@ -146,3 +146,11 @@ class EvalRunRow(SQLModel, table=True):
     config: str
     scores: dict[str, Any] = Field(default_factory=dict, sa_column=json_col())
     created_at: datetime = Field(default_factory=_utcnow, sa_column=dt_col(False))
+
+    snapshot: str = ""
+    rows: list[str] = Field(default_factory=list, sa_column=json_col())
+    status: str = "pending"
+    metrics: dict[str, Any] = Field(default_factory=dict, sa_column=json_col())
+    results: list[dict[str, Any]] = Field(default_factory=list, sa_column=json_col())
+    report_path: str | None = None
+    csv_path: str | None = None
