@@ -157,8 +157,61 @@ def main(argv: list[str] | None = None) -> int:
     sv.add_argument("--host", default="127.0.0.1")
     sv.add_argument("--port", type=int, default=8000)
     sub.add_parser("replay").add_argument("name")
+    ev = sub.add_parser("eval")
+    ev.add_argument(
+        "eval_action",
+        nargs="?",
+        choices=["calibrate", "calibration-report", "verify-snapshot"],
+    )
+    ev.add_argument("--dataset", choices=["eval-v1", "eval-v2"])
+    ev.add_argument("--run", default="latest")
+    ev.add_argument("--rows", default="all")
+    ev.add_argument("--snapshot", required=True)
+    ev.add_argument("--rebuild", action="store_true")
+    ev.add_argument("--resume", nargs="?", const="latest")
+    ev.add_argument("--limit", type=int)
     args = parser.parse_args(argv)
     settings = Settings()
+    if args.command == "eval":
+        if args.eval_action:
+            from omnistream.eval.calibration import calibration_report, export_sample
+            from omnistream.eval.snapshot import (
+                bound_dataset,
+                migrate_manifest,
+                snapshot_path,
+            )
+
+            directory = snapshot_path(settings, args.snapshot)
+            if args.eval_action == "verify-snapshot":
+                print(
+                    migrate_manifest(directory, bound_dataset(directory, args.dataset))
+                )
+            elif args.eval_action == "calibration-report":
+                print(calibration_report())
+            else:
+                export_sample(
+                    directory / "runs",
+                    run=args.run,
+                    dataset_name="eval-v2"
+                    if bound_dataset(directory)["version"].startswith("2")
+                    else "eval-v1",
+                )
+                print(calibration_report())
+            return 0
+        return asyncio.run(
+            evaluate(
+                settings,
+                args.rows,
+                args.snapshot,
+                args.rebuild,
+                **({"dataset_name": args.dataset} if args.dataset else {}),
+                **(
+                    {"resume": args.resume, "limit": args.limit}
+                    if args.resume or args.limit
+                    else {}
+                ),
+            )
+        )
     if args.command == "replay":
         return asyncio.run(replay(args.name, settings))
     if args.command == "seed":
@@ -167,3 +220,71 @@ def main(argv: list[str] | None = None) -> int:
         return asyncio.run(serve(settings, args.host, args.port))
     print(f"unknown command {args.command}", file=sys.stderr)
     return 1
+
+
+async def evaluate(
+    settings, rows, snapshot, rebuild=False, resume=None, limit=None, dataset_name=None
+):
+    if rebuild and resume:
+        raise ValueError("--rebuild cannot be combined with --resume")
+    from omnistream.eval import run_evaluation
+    from omnistream.eval.dataset import parse_rows
+    from omnistream.eval.snapshot import snapshot_path
+
+    selected = parse_rows([rows])
+    path = snapshot_path(settings, snapshot)
+    if rebuild and path.exists():
+        import json
+
+        manifest_path = path / "manifest.json"
+        if manifest_path.exists() and json.loads(manifest_path.read_text()).get(
+            "frozen"
+        ):
+            raise ValueError("Cannot rebuild a frozen snapshot")
+        # Rebuild only explicitly named snapshot groups and its checked directory.
+        import shutil
+
+        from neo4j import GraphDatabase
+
+        driver = GraphDatabase.driver(
+            settings.neo4j_uri,
+            auth=(settings.neo4j_user, settings.neo4j_password.get_secret_value()),
+        )
+        try:
+            with driver.session() as session:
+                groups = [snapshot + "-" + b for b in ("news", "finance", "research")]
+                globals_before = [
+                    r["id"]
+                    for r in session.run(
+                        "MATCH (e:Entity)-[:SAME_AS]->(g:GlobalEntity) WHERE e.group_id IN $groups RETURN DISTINCT g.uuid AS id",
+                        groups=groups,
+                    )
+                ]
+                session.run(
+                    "MATCH (n) WHERE n.group_id IN $groups DETACH DELETE n",
+                    groups=groups,
+                ).consume()
+                session.run(
+                    "MATCH (g:GlobalEntity) WHERE g.uuid IN $ids AND NOT (g)<-[:SAME_AS]-() DETACH DELETE g",
+                    ids=globals_before,
+                ).consume()
+        finally:
+            driver.close()
+        expected_parent = Path(settings.data_dir).resolve() / "snapshots"
+        if path.parent != expected_parent or path.name != snapshot:
+            raise ValueError("unsafe snapshot path")
+        shutil.rmtree(path)
+    repo = Repository.from_path(_db_path(settings), settings=settings)
+    try:
+        result = await run_evaluation(
+            settings,
+            repo,
+            rows=selected,
+            snapshot=snapshot,
+            resume=resume,
+            limit=limit,
+            dataset_name=dataset_name,
+        )
+        return 0 if result.status.startswith("completed") else 1
+    finally:
+        await repo.close()

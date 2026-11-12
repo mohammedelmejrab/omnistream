@@ -27,7 +27,7 @@ from graphiti_core.llm_client.config import DEFAULT_MAX_TOKENS, ModelSize
 from graphiti_core.llm_client.errors import EmptyResponseError
 from graphiti_core.llm_client.openai_generic_client import OpenAIGenericClient
 from graphiti_core.prompts.models import Message
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
 from omnistream.embeddings import EmbeddingService
 
@@ -65,6 +65,15 @@ class GraphitiLLMClient(OpenAIGenericClient):
         parsed = await super()._generate_response(
             messages, response_model, max_tokens, model_size, model=model
         )
+        if response_model is not None and not self._is_schema_echo(
+            parsed, response_model
+        ):
+            try:
+                response_model.model_validate(parsed)
+            except ValidationError as exc:
+                raise EmptyResponseError(
+                    "LLM returned an invalid extraction instance; re-sample required"
+                ) from exc
         if self._is_schema_echo(parsed, response_model):
             if self._CORRECTION not in messages[-1].content:
                 content = messages[-1].content

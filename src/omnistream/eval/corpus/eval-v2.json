@@ -1,0 +1,2446 @@
+{
+  "version": "2.0.0",
+  "description": "Ten fictional industrial research networks with aliases, unnamed bridges, near-name distractors and dated reversals. All routing labels authored; ten archives held back.",
+  "items": [
+    {
+      "id": "0-leader",
+      "title": "Board register: executive appointment",
+      "text": "The board of Halvex Mobility appointed Iona Pelwick as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation HVM. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "0-recall",
+      "title": "Safety wire: brake seal recall",
+      "text": "SAFETY WIRE / September 9. Halvex Mobility recalled its vehicle modules after inspectors identified a defective brake seal. The chief executive resigned following the recall on September 11. The notice refers to that officer as the HVM chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "0-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Resolution adopted September 18: Sefu Daram is appointed chief executive of Halvex Mobility, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "0-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "ANALYST NOTE. HVM, the listed abbreviation used by Halvex Mobility, signed a research funding agreement with Cobalt Reach Laboratory (CRL) on February 7. The commitment is 8.4 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "0-study",
+      "title": "Wispcoil: a laboratory methods abstract",
+      "text": "ABSTRACT. Investigators at CRL report development of Wispcoil, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "0-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "The investment filing dated June 3 records Halvex Mobility's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 1. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "0-cancel",
+      "title": "Transaction termination notice",
+      "text": "Filing update, October 6. Halvex Mobility and Dovetail Quay 1 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "0-fresh",
+      "title": "Archive deposit for Wispcoil",
+      "text": "DATA DEPOSIT / November 2. The CRL team deposited the replication archive for Wispcoil under accession AX-49. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "0-decoy",
+      "title": "Halvek Materials: investor interview",
+      "text": "INTERVIEW. A spokesperson for Halvek Materials rejected suggestions that the firm financed Cobalt Reach Laboratory. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Halvex Mobility. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.\nThe archive uses signed paper minutes and a separately maintained electronic index.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/0/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "1-leader",
+      "title": "Board register: executive appointment",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nThe board of Nacreline Systems appointed Omar Vesk as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation NLS. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "1-recall",
+      "title": "Safety wire: coolant valve recall",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nSAFETY WIRE / September 9. Nacreline Systems recalled its vehicle modules after inspectors identified a defective coolant valve. The chief executive resigned following the recall on September 11. The notice refers to that officer as the NLS chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "1-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nResolution adopted September 18: Leda Quorin is appointed chief executive of Nacreline Systems, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "1-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nANALYST NOTE. NLS, the listed abbreviation used by Nacreline Systems, signed a research funding agreement with Juniper Basin Institute (JBI) on February 7. The commitment is 31.7 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "1-study",
+      "title": "Morrowcell: a laboratory methods abstract",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nABSTRACT. Investigators at JBI report development of Morrowcell, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "1-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nThe investment filing dated June 3 records Nacreline Systems's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 2. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "1-cancel",
+      "title": "Transaction termination notice",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nFiling update, October 6. Nacreline Systems and Dovetail Quay 2 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "1-fresh",
+      "title": "Archive deposit for Morrowcell",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nDATA DEPOSIT / November 2. The JBI team deposited the replication archive for Morrowcell under accession QD-18. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "1-decoy",
+      "title": "Nacrelane Services: investor interview",
+      "text": "From the editor: A regional editor checked the figures against the board's original supporting schedule.\n\nINTERVIEW. A spokesperson for Nacrelane Services rejected suggestions that the firm financed Juniper Basin Institute. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Nacreline Systems. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/1/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "2-leader",
+      "title": "Board register: executive appointment",
+      "text": "Document extract / The board of Brindle Arc appointed Talia Muren as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation BDA. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "2-recall",
+      "title": "Safety wire: battery latch recall",
+      "text": "Document extract / SAFETY WIRE / September 9. Brindle Arc recalled its vehicle modules after inspectors identified a defective battery latch. The chief executive resigned following the recall on September 11. The notice refers to that officer as the BDA chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "2-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Document extract / Resolution adopted September 18: Kofi Zelan is appointed chief executive of Brindle Arc, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "2-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "Document extract / ANALYST NOTE. BDA, the listed abbreviation used by Brindle Arc, signed a research funding agreement with Sable Meridian Centre (SMC) on February 7. The commitment is 6.25 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "2-study",
+      "title": "Kiteglass: a laboratory methods abstract",
+      "text": "Document extract / ABSTRACT. Investigators at SMC report development of Kiteglass, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability. Visiting fellow Talia Muren supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "2-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "Document extract / The investment filing dated June 3 records Brindle Arc's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 3. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "2-cancel",
+      "title": "Transaction termination notice",
+      "text": "Document extract / Filing update, October 6. Brindle Arc and Dovetail Quay 3 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "2-fresh",
+      "title": "Archive deposit for Kiteglass",
+      "text": "Document extract / DATA DEPOSIT / November 2. The SMC team deposited the replication archive for Kiteglass under accession VT-73. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "2-decoy",
+      "title": "Brindle Arch: investor interview",
+      "text": "Document extract / INTERVIEW. A spokesperson for Brindle Arch rejected suggestions that the firm financed Sable Meridian Centre. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Brindle Arc. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/2/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "3-leader",
+      "title": "Board register: executive appointment",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: The board of Oxbriar Robotics appointed Neri Solvek as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation OBR. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "3-recall",
+      "title": "Safety wire: sensor housing recall",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: SAFETY WIRE / September 9. Oxbriar Robotics recalled its vehicle modules after inspectors identified a defective sensor housing. The chief executive resigned following the recall on September 11. The notice refers to that officer as the OBR chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "3-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: Resolution adopted September 18: Pia Ashuno is appointed chief executive of Oxbriar Robotics, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "3-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: ANALYST NOTE. OBR, the listed abbreviation used by Oxbriar Robotics, signed a research funding agreement with Ivory Delta Laboratory (IDL) on February 7. The commitment is 42.9 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "3-study",
+      "title": "Thistledrive: a laboratory methods abstract",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: ABSTRACT. Investigators at IDL report development of Thistledrive, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Visiting fellow Neri Solvek supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "3-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: The investment filing dated June 3 records Oxbriar Robotics's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 4. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "3-cancel",
+      "title": "Transaction termination notice",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: Filing update, October 6. Oxbriar Robotics and Dovetail Quay 4 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "3-fresh",
+      "title": "Archive deposit for Thistledrive",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: DATA DEPOSIT / November 2. The IDL team deposited the replication archive for Thistledrive under accession BK-26. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "3-decoy",
+      "title": "Oxbrier Logistics: investor interview",
+      "text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: INTERVIEW. A spokesperson for Oxbrier Logistics rejected suggestions that the firm financed Ivory Delta Laboratory. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Oxbriar Robotics. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/3/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "4-leader",
+      "title": "Board register: executive appointment",
+      "text": "The board of Vespergate Works appointed Arun Kelso as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation VGW. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "4-recall",
+      "title": "Safety wire: pressure relay recall",
+      "text": "SAFETY WIRE / September 9. Vespergate Works recalled its vehicle modules after inspectors identified a defective pressure relay. The chief executive resigned following the recall on September 11. The notice refers to that officer as the VGW chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "4-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Resolution adopted September 18: Zora Fendel is appointed chief executive of Vespergate Works, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "4-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "ANALYST NOTE. VGW, the listed abbreviation used by Vespergate Works, signed a research funding agreement with Copper Fen Institute (CFI) on February 7. The commitment is 12.6 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "4-study",
+      "title": "Rillmesh: a laboratory methods abstract",
+      "text": "ABSTRACT. Investigators at CFI report development of Rillmesh, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nA public webcast accompanied the release; its transcript is retained by the publisher. Visiting fellow Arun Kelso supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "4-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "The investment filing dated June 3 records Vespergate Works's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 5. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "4-cancel",
+      "title": "Transaction termination notice",
+      "text": "Filing update, October 6. Vespergate Works and Dovetail Quay 5 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "4-fresh",
+      "title": "Archive deposit for Rillmesh",
+      "text": "DATA DEPOSIT / November 2. The CFI team deposited the replication archive for Rillmesh under accession SM-91. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "4-decoy",
+      "title": "Vespergait Foods: investor interview",
+      "text": "INTERVIEW. A spokesperson for Vespergait Foods rejected suggestions that the firm financed Copper Fen Institute. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Vespergate Works. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/4/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "5-leader",
+      "title": "Board register: executive appointment",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nThe board of Quenara Devices appointed Mina Tolvik as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation QND. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "5-recall",
+      "title": "Safety wire: steering pin recall",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nSAFETY WIRE / September 9. Quenara Devices recalled its vehicle modules after inspectors identified a defective steering pin. The chief executive resigned following the recall on September 11. The notice refers to that officer as the QND chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "5-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nResolution adopted September 18: Eben Rusk is appointed chief executive of Quenara Devices, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "5-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nANALYST NOTE. QND, the listed abbreviation used by Quenara Devices, signed a research funding agreement with Indigo Vale Centre (IVC) on February 7. The commitment is 27.3 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "5-study",
+      "title": "Emberfoil: a laboratory methods abstract",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nABSTRACT. Investigators at IVC report development of Emberfoil, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Visiting fellow Mina Tolvik supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "5-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nThe investment filing dated June 3 records Quenara Devices's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 6. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "5-cancel",
+      "title": "Transaction termination notice",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nFiling update, October 6. Quenara Devices and Dovetail Quay 6 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "5-fresh",
+      "title": "Archive deposit for Emberfoil",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nDATA DEPOSIT / November 2. The IVC team deposited the replication archive for Emberfoil under accession ER-35. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "5-decoy",
+      "title": "Quenaro Digital: investor interview",
+      "text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nINTERVIEW. A spokesperson for Quenaro Digital rejected suggestions that the firm financed Indigo Vale Centre. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Quenara Devices. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/5/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "6-leader",
+      "title": "Board register: executive appointment",
+      "text": "Document extract / The board of Tesselmere Controls appointed Yara Penlo as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation TMC. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "6-recall",
+      "title": "Safety wire: power connector recall",
+      "text": "Document extract / SAFETY WIRE / September 9. Tesselmere Controls recalled its vehicle modules after inspectors identified a defective power connector. The chief executive resigned following the recall on September 11. The notice refers to that officer as the TMC chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "6-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Document extract / Resolution adopted September 18: Davi Ornek is appointed chief executive of Tesselmere Controls, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "6-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "Document extract / ANALYST NOTE. TMC, the listed abbreviation used by Tesselmere Controls, signed a research funding agreement with Opal Ridge Laboratory (ORL) on February 7. The commitment is 5.8 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "6-study",
+      "title": "Driftloom: a laboratory methods abstract",
+      "text": "Document extract / ABSTRACT. Investigators at ORL report development of Driftloom, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts. Visiting fellow Yara Penlo supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "6-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "Document extract / The investment filing dated June 3 records Tesselmere Controls's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 7. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "6-cancel",
+      "title": "Transaction termination notice",
+      "text": "Document extract / Filing update, October 6. Tesselmere Controls and Dovetail Quay 7 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "6-fresh",
+      "title": "Archive deposit for Driftloom",
+      "text": "Document extract / DATA DEPOSIT / November 2. The ORL team deposited the replication archive for Driftloom under accession UP-62. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "6-decoy",
+      "title": "Tesselmar Construction: investor interview",
+      "text": "Document extract / INTERVIEW. A spokesperson for Tesselmar Construction rejected suggestions that the firm financed Opal Ridge Laboratory. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Tesselmere Controls. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/6/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "7-leader",
+      "title": "Board register: executive appointment",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: The board of Aldervane Transit appointed Sana Ulrich as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation AVT. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "7-recall",
+      "title": "Safety wire: axle collar recall",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: SAFETY WIRE / September 9. Aldervane Transit recalled its vehicle modules after inspectors identified a defective axle collar. The chief executive resigned following the recall on September 11. The notice refers to that officer as the AVT chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "7-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: Resolution adopted September 18: Remi Basun is appointed chief executive of Aldervane Transit, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "7-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: ANALYST NOTE. AVT, the listed abbreviation used by Aldervane Transit, signed a research funding agreement with Ochre Hollow Institute (OHI) on February 7. The commitment is 19.45 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "7-study",
+      "title": "Glimmerpod: a laboratory methods abstract",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: ABSTRACT. Investigators at OHI report development of Glimmerpod, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Dovetail Quay 8 supplied the sealed chamber used by OHI; equipment ownership stayed with the institute.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "7-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: The investment filing dated June 3 records Aldervane Transit's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 8. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "7-cancel",
+      "title": "Transaction termination notice",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: Filing update, October 6. Aldervane Transit and Dovetail Quay 8 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "7-fresh",
+      "title": "Archive deposit for Glimmerpod",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: DATA DEPOSIT / November 2. The OHI team deposited the replication archive for Glimmerpod under accession CW-14. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "7-decoy",
+      "title": "Aldervain Travel: investor interview",
+      "text": "Local correspondents compared the statement with the register held by the company secretary.\nRecord summary: INTERVIEW. A spokesperson for Aldervain Travel rejected suggestions that the firm financed Ochre Hollow Institute. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Aldervane Transit. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/7/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "8-leader",
+      "title": "Board register: executive appointment",
+      "text": "The board of Pellucid Forge appointed Enzo Nalik as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation PCF. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "8-recall",
+      "title": "Safety wire: motor bearing recall",
+      "text": "SAFETY WIRE / September 9. Pellucid Forge recalled its vehicle modules after inspectors identified a defective motor bearing. The chief executive resigned following the recall on September 11. The notice refers to that officer as the PCF chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "8-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "Resolution adopted September 18: Ada Wurfen is appointed chief executive of Pellucid Forge, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "8-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "ANALYST NOTE. PCF, the listed abbreviation used by Pellucid Forge, signed a research funding agreement with Violet Strand Centre (VSC) on February 7. The commitment is 37.2 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "8-study",
+      "title": "Frostweave: a laboratory methods abstract",
+      "text": "ABSTRACT. Investigators at VSC report development of Frostweave, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nAn appendix describes the document's scope and excludes figures from affiliated businesses. Dovetail Quay 9 supplied the sealed chamber used by VSC; equipment ownership stayed with the institute.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "8-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "The investment filing dated June 3 records Pellucid Forge's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 9. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "8-cancel",
+      "title": "Transaction termination notice",
+      "text": "Filing update, October 6. Pellucid Forge and Dovetail Quay 9 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "8-fresh",
+      "title": "Archive deposit for Frostweave",
+      "text": "DATA DEPOSIT / November 2. The VSC team deposited the replication archive for Frostweave under accession JF-87. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "8-decoy",
+      "title": "Pellucent Foundry: investor interview",
+      "text": "INTERVIEW. A spokesperson for Pellucent Foundry rejected suggestions that the firm financed Violet Strand Centre. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Pellucid Forge. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.\nAn appendix describes the document's scope and excludes figures from affiliated businesses.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/8/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "9-leader",
+      "title": "Board register: executive appointment",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nThe board of Ravenspire Instruments appointed Jori Anvek as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation RSI. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+      "published_at": "2026-01-13T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/leader",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "9-recall",
+      "title": "Safety wire: control fuse recall",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nSAFETY WIRE / September 9. Ravenspire Instruments recalled its vehicle modules after inspectors identified a defective control fuse. The chief executive resigned following the recall on September 11. The notice refers to that officer as the RSI chief and does not name a replacement. Shipments from the affected assembly line were suspended pending inspection. Customers were offered replacement parts and a dedicated telephone service. The board established a safety committee to examine the supplier records. Directors said that the resignation and the recall were separate resolutions adopted during the same emergency meeting. Export deliveries remained suspended through the weekend.",
+      "published_at": "2026-09-12T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/recall",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "9-appointment",
+      "title": "Minutes from the extraordinary board meeting",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nResolution adopted September 18: Uma Cevran is appointed chief executive of Ravenspire Instruments, effective at the close of this meeting. The appointee accepts responsibility for rebuilding safety procedures after the September recall. An interim operations committee will transfer signing authority over the following two business days. No merger or change of ownership forms part of this resolution. The directors instructed the company secretary to record the effective date and circulate a signed copy to employees. The appointment applies to the parent company and all manufacturing divisions. A separate remuneration resolution will be considered at the next scheduled meeting.",
+      "published_at": "2026-09-19T12:00:00+00:00",
+      "source": "Wire Desk",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/appointment",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "News"
+      ]
+    },
+    {
+      "id": "9-funding",
+      "title": "Research allocation in the investment ledger",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nANALYST NOTE. RSI, the listed abbreviation used by Ravenspire Instruments, signed a research funding agreement with Silver Marsh Laboratory (SML) on February 7. The commitment is 14.15 million crowns, payable in three tranches subject to audited spending. It is a grant rather than an equity purchase, and gives the sponsor no ownership of the laboratory. Payment conditions concern laboratory equipment, staff costs and independent measurement. The recipient must retain experimental records for inspection. Unused funds return to the sponsor after the project closes. The note distinguishes the committed amount from the smaller first cash installment and excludes unrelated charitable donations.",
+      "published_at": "2026-02-08T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/funding",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "9-study",
+      "title": "Pebbleflux: a laboratory methods abstract",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nABSTRACT. Investigators at SML report development of Pebbleflux, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Dovetail Quay 10 supplied the sealed chamber used by SML; equipment ownership stayed with the institute.",
+      "published_at": "2026-04-17T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/study",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "9-deal",
+      "title": "Proposed acquisition: filing summary",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nThe investment filing dated June 3 records Ravenspire Instruments's agreement to acquire a controlling stake in the instrument supplier Dovetail Quay 10. Completion is conditional on competition clearance and lender consent. The parties signed a provisional purchase agreement with a refundable deposit. The announced consideration includes cash and a deferred component tied to delivery performance. Analysts should distinguish a signed agreement from a completed transfer of ownership. Neither company has consolidated the other's accounts. The filing sets an October deadline for the required consents and allows either party to withdraw if the conditions fail.",
+      "published_at": "2026-06-04T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/deal",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "9-cancel",
+      "title": "Transaction termination notice",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nFiling update, October 6. Ravenspire Instruments and Dovetail Quay 10 terminated their June purchase agreement after the lenders declined consent. The refundable deposit will be returned within ten business days. No shares were transferred under the agreement and the supplier remains independent. Each party will bear its own advisory costs. The termination releases both companies from the proposed closing obligations. Management declined to announce a replacement transaction. Accountants will expense the due diligence work in the next reporting period. The notice identifies the signed June agreement precisely to avoid confusion with ordinary supply contracts that continue between the parties.",
+      "published_at": "2026-10-07T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/cancel",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "9-fresh",
+      "title": "Archive deposit for Pebbleflux",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nDATA DEPOSIT / November 2. The SML team deposited the replication archive for Pebbleflux under accession NZ-53. The archive includes instrument settings, anonymized batch measurements and a description of excluded samples. A curator checked that the package could be opened independently of the authors' laboratory software. Readers should use the accession identifier when requesting this particular deposit. The archive is released for replication studies and does not certify commercial product performance. A checksum accompanies each file to detect transmission errors. The institute will preserve earlier versions alongside any corrected uploads so that published analyses remain reproducible.",
+      "published_at": "2026-11-02T12:00:00+00:00",
+      "source": "Methods Review",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true,
+      "routing_label": [
+        "Research"
+      ]
+    },
+    {
+      "id": "9-decoy",
+      "title": "Ravenspear Insurance: investor interview",
+      "text": "From the editor: The editor retained the dated attachments rather than combining them with previous notices.\n\nINTERVIEW. A spokesperson for Ravenspear Insurance rejected suggestions that the firm financed Silver Marsh Laboratory. \"Our similarly named neighbor operates in a different industry,\" the spokesperson said. \"Our September product inspection did not lead to an executive resignation.\" The firm's expenditure review covered training and office systems, with no research grant to the named institution. An editor checked the registration record and confirmed that the business is legally separate from Ravenspire Instruments. The distinction matters because an early market newsletter confused the two businesses. The correction preserves the separate trading names and warns readers against combining their financial statements.",
+      "published_at": "2026-10-12T12:00:00+00:00",
+      "source": "Market Ledger",
+      "credibility": 0.92,
+      "url": "https://fictional-v2.invalid/9/decoy",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false,
+      "routing_label": [
+        "Finance"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "v2-q01",
+      "type": "single",
+      "question": "How much research funding did Halvex Mobility commit on February 7?",
+      "reference_answer": "8.4 million crowns",
+      "key_facts": [
+        "8.4 million crowns"
+      ],
+      "gold": [
+        "0-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q03",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September brake seal recall?",
+      "reference_answer": "Cobalt Reach Laboratory",
+      "key_facts": [
+        "Cobalt Reach Laboratory"
+      ],
+      "gold": [
+        "0-recall",
+        "0-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q04",
+      "type": "multi_hop",
+      "question": "What experimental membrane did the laboratory backed by the company affected by the brake seal recall develop?",
+      "reference_answer": "Wispcoil",
+      "key_facts": [
+        "Wispcoil"
+      ],
+      "gold": [
+        "0-recall",
+        "0-funding",
+        "0-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q05",
+      "type": "time_sensitive",
+      "question": "Who led Halvex Mobility immediately before the September recall?",
+      "reference_answer": "Iona Pelwick",
+      "key_facts": [
+        "Iona Pelwick"
+      ],
+      "gold": [
+        "0-leader",
+        "0-recall"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q07",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Wispcoil?",
+      "reference_answer": "AX-49",
+      "key_facts": [
+        "AX-49"
+      ],
+      "gold": [
+        "0-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q02",
+      "type": "single",
+      "question": "Which experimental membrane was developed by CRL?",
+      "reference_answer": "Wispcoil",
+      "key_facts": [
+        "Wispcoil"
+      ],
+      "gold": [
+        "0-study"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "acceptable_evidence": [
+        "0-fresh"
+      ]
+    },
+    {
+      "id": "v2-q06",
+      "type": "time_sensitive",
+      "question": "As of October 15, did Halvex Mobility own Dovetail Quay 1 under the June agreement?",
+      "reference_answer": "No; the acquisition agreement was terminated on October 6 and no shares transferred.",
+      "key_facts": [
+        "terminated",
+        "No shares"
+      ],
+      "gold": [
+        "0-deal",
+        "0-cancel"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q08",
+      "type": "single",
+      "question": "How much research funding did Nacreline Systems commit on February 7?",
+      "reference_answer": "31.7 million crowns",
+      "key_facts": [
+        "31.7 million crowns"
+      ],
+      "gold": [
+        "1-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q09",
+      "type": "single",
+      "question": "Which experimental membrane was developed by JBI?",
+      "reference_answer": "Morrowcell",
+      "key_facts": [
+        "Morrowcell"
+      ],
+      "gold": [
+        "1-study"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "acceptable_evidence": [
+        "1-fresh"
+      ]
+    },
+    {
+      "id": "v2-q10",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September coolant valve recall?",
+      "reference_answer": "Juniper Basin Institute",
+      "key_facts": [
+        "Juniper Basin Institute"
+      ],
+      "gold": [
+        "1-recall",
+        "1-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q11",
+      "type": "multi_hop",
+      "question": "What experimental membrane did the laboratory backed by the company affected by the coolant valve recall develop?",
+      "reference_answer": "Morrowcell",
+      "key_facts": [
+        "Morrowcell"
+      ],
+      "gold": [
+        "1-recall",
+        "1-funding",
+        "1-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q12",
+      "type": "time_sensitive",
+      "question": "Who led Nacreline Systems immediately before the September recall?",
+      "reference_answer": "Omar Vesk",
+      "key_facts": [
+        "Omar Vesk"
+      ],
+      "gold": [
+        "1-leader",
+        "1-recall"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q13",
+      "type": "time_sensitive",
+      "question": "As of October 15, did Nacreline Systems own Dovetail Quay 2 under the June agreement?",
+      "reference_answer": "No; the acquisition agreement was terminated on October 6 and no shares transferred.",
+      "key_facts": [
+        "terminated",
+        "No shares"
+      ],
+      "gold": [
+        "1-deal",
+        "1-cancel"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q14",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Morrowcell?",
+      "reference_answer": "QD-18",
+      "key_facts": [
+        "QD-18"
+      ],
+      "gold": [
+        "1-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q15",
+      "type": "single",
+      "question": "How much research funding did Brindle Arc commit on February 7?",
+      "reference_answer": "6.25 million crowns",
+      "key_facts": [
+        "6.25 million crowns"
+      ],
+      "gold": [
+        "2-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q16",
+      "type": "single",
+      "question": "Which experimental membrane was developed by SMC?",
+      "reference_answer": "Kiteglass",
+      "key_facts": [
+        "Kiteglass"
+      ],
+      "gold": [
+        "2-study"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "acceptable_evidence": [
+        "2-fresh"
+      ]
+    },
+    {
+      "id": "v2-q17",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September battery latch recall?",
+      "reference_answer": "Sable Meridian Centre",
+      "key_facts": [
+        "Sable Meridian Centre"
+      ],
+      "gold": [
+        "2-recall",
+        "2-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q18",
+      "type": "multi_hop",
+      "question": "What membrane did the institution hosting the visiting fellowship of the January-appointed BDA chief develop?",
+      "reference_answer": "Kiteglass",
+      "key_facts": [
+        "Kiteglass"
+      ],
+      "gold": [
+        "2-leader",
+        "2-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q19",
+      "type": "time_sensitive",
+      "question": "Who led Brindle Arc immediately before the September recall?",
+      "reference_answer": "Talia Muren",
+      "key_facts": [
+        "Talia Muren"
+      ],
+      "gold": [
+        "2-leader",
+        "2-recall"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q20",
+      "type": "time_sensitive",
+      "question": "As of October 15, did Brindle Arc own Dovetail Quay 3 under the June agreement?",
+      "reference_answer": "No; the acquisition agreement was terminated on October 6 and no shares transferred.",
+      "key_facts": [
+        "terminated",
+        "No shares"
+      ],
+      "gold": [
+        "2-deal",
+        "2-cancel"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q21",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Kiteglass?",
+      "reference_answer": "VT-73",
+      "key_facts": [
+        "VT-73"
+      ],
+      "gold": [
+        "2-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q22",
+      "type": "single",
+      "question": "How much research funding did Oxbriar Robotics commit on February 7?",
+      "reference_answer": "42.9 million crowns",
+      "key_facts": [
+        "42.9 million crowns"
+      ],
+      "gold": [
+        "3-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q23",
+      "type": "single",
+      "question": "Which experimental membrane was developed by IDL?",
+      "reference_answer": "Thistledrive",
+      "key_facts": [
+        "Thistledrive"
+      ],
+      "gold": [
+        "3-study"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "acceptable_evidence": [
+        "3-fresh"
+      ]
+    },
+    {
+      "id": "v2-q24",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September sensor housing recall?",
+      "reference_answer": "Ivory Delta Laboratory",
+      "key_facts": [
+        "Ivory Delta Laboratory"
+      ],
+      "gold": [
+        "3-recall",
+        "3-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q25",
+      "type": "multi_hop",
+      "question": "What membrane did the institution hosting the visiting fellowship of the January-appointed OBR chief develop?",
+      "reference_answer": "Thistledrive",
+      "key_facts": [
+        "Thistledrive"
+      ],
+      "gold": [
+        "3-leader",
+        "3-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q26",
+      "type": "time_sensitive",
+      "question": "Who led Oxbriar Robotics immediately before the September recall?",
+      "reference_answer": "Neri Solvek",
+      "key_facts": [
+        "Neri Solvek"
+      ],
+      "gold": [
+        "3-leader",
+        "3-recall"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q27",
+      "type": "time_sensitive",
+      "question": "As of October 15, did Oxbriar Robotics own Dovetail Quay 4 under the June agreement?",
+      "reference_answer": "No; the acquisition agreement was terminated on October 6 and no shares transferred.",
+      "key_facts": [
+        "terminated",
+        "No shares"
+      ],
+      "gold": [
+        "3-deal",
+        "3-cancel"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q28",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Thistledrive?",
+      "reference_answer": "BK-26",
+      "key_facts": [
+        "BK-26"
+      ],
+      "gold": [
+        "3-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q29",
+      "type": "single",
+      "question": "How much research funding did Vespergate Works commit on February 7?",
+      "reference_answer": "12.6 million crowns",
+      "key_facts": [
+        "12.6 million crowns"
+      ],
+      "gold": [
+        "4-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q30",
+      "type": "single",
+      "question": "Which experimental membrane was developed by CFI?",
+      "reference_answer": "Rillmesh",
+      "key_facts": [
+        "Rillmesh"
+      ],
+      "gold": [
+        "4-study"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "acceptable_evidence": [
+        "4-fresh"
+      ]
+    },
+    {
+      "id": "v2-q31",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September pressure relay recall?",
+      "reference_answer": "Copper Fen Institute",
+      "key_facts": [
+        "Copper Fen Institute"
+      ],
+      "gold": [
+        "4-recall",
+        "4-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q32",
+      "type": "multi_hop",
+      "question": "What membrane did the institution hosting the visiting fellowship of the January-appointed VGW chief develop?",
+      "reference_answer": "Rillmesh",
+      "key_facts": [
+        "Rillmesh"
+      ],
+      "gold": [
+        "4-leader",
+        "4-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q33",
+      "type": "time_sensitive",
+      "question": "Who led Vespergate Works immediately before the September recall?",
+      "reference_answer": "Arun Kelso",
+      "key_facts": [
+        "Arun Kelso"
+      ],
+      "gold": [
+        "4-leader",
+        "4-recall"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q34",
+      "type": "time_sensitive",
+      "question": "As of October 15, did Vespergate Works own Dovetail Quay 5 under the June agreement?",
+      "reference_answer": "No; the acquisition agreement was terminated on October 6 and no shares transferred.",
+      "key_facts": [
+        "terminated",
+        "No shares"
+      ],
+      "gold": [
+        "4-deal",
+        "4-cancel"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q35",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Rillmesh?",
+      "reference_answer": "SM-91",
+      "key_facts": [
+        "SM-91"
+      ],
+      "gold": [
+        "4-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q36",
+      "type": "single",
+      "question": "How much research funding did Quenara Devices commit on February 7?",
+      "reference_answer": "27.3 million crowns",
+      "key_facts": [
+        "27.3 million crowns"
+      ],
+      "gold": [
+        "5-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q37",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September steering pin recall?",
+      "reference_answer": "Indigo Vale Centre",
+      "key_facts": [
+        "Indigo Vale Centre"
+      ],
+      "gold": [
+        "5-recall",
+        "5-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q38",
+      "type": "multi_hop",
+      "question": "What membrane did the institution hosting the visiting fellowship of the January-appointed QND chief develop?",
+      "reference_answer": "Emberfoil",
+      "key_facts": [
+        "Emberfoil"
+      ],
+      "gold": [
+        "5-leader",
+        "5-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q39",
+      "type": "time_sensitive",
+      "question": "Who leads Quenara Devices as of October 15?",
+      "reference_answer": "Eben Rusk",
+      "key_facts": [
+        "Eben Rusk"
+      ],
+      "gold": [
+        "5-leader",
+        "5-appointment"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q40",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Emberfoil?",
+      "reference_answer": "ER-35",
+      "key_facts": [
+        "ER-35"
+      ],
+      "gold": [
+        "5-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q41",
+      "type": "single",
+      "question": "How much research funding did Tesselmere Controls commit on February 7?",
+      "reference_answer": "5.8 million crowns",
+      "key_facts": [
+        "5.8 million crowns"
+      ],
+      "gold": [
+        "6-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q42",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September power connector recall?",
+      "reference_answer": "Opal Ridge Laboratory",
+      "key_facts": [
+        "Opal Ridge Laboratory"
+      ],
+      "gold": [
+        "6-recall",
+        "6-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q43",
+      "type": "multi_hop",
+      "question": "What membrane did the institution hosting the visiting fellowship of the January-appointed TMC chief develop?",
+      "reference_answer": "Driftloom",
+      "key_facts": [
+        "Driftloom"
+      ],
+      "gold": [
+        "6-leader",
+        "6-study"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q44",
+      "type": "time_sensitive",
+      "question": "Who leads Tesselmere Controls as of October 15?",
+      "reference_answer": "Davi Ornek",
+      "key_facts": [
+        "Davi Ornek"
+      ],
+      "gold": [
+        "6-leader",
+        "6-appointment"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q45",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Driftloom?",
+      "reference_answer": "UP-62",
+      "key_facts": [
+        "UP-62"
+      ],
+      "gold": [
+        "6-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q46",
+      "type": "single",
+      "question": "How much research funding did Aldervane Transit commit on February 7?",
+      "reference_answer": "19.45 million crowns",
+      "key_facts": [
+        "19.45 million crowns"
+      ],
+      "gold": [
+        "7-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q47",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September axle collar recall?",
+      "reference_answer": "Ochre Hollow Institute",
+      "key_facts": [
+        "Ochre Hollow Institute"
+      ],
+      "gold": [
+        "7-recall",
+        "7-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q48",
+      "type": "multi_hop",
+      "question": "Which research institution used the sealed chamber supplied by the proposed acquisition target in the June Aldervane Transit agreement?",
+      "reference_answer": "Ochre Hollow Institute (OHI)",
+      "key_facts": [
+        "OHI"
+      ],
+      "gold": [
+        "7-deal",
+        "7-study"
+      ],
+      "expected_bubbles": [
+        "Finance",
+        "Research"
+      ],
+      "key_fact_alternatives": [
+        [
+          "OHI",
+          "Ochre Hollow Institute"
+        ]
+      ]
+    },
+    {
+      "id": "v2-q49",
+      "type": "time_sensitive",
+      "question": "Who leads Aldervane Transit as of October 15?",
+      "reference_answer": "Remi Basun",
+      "key_facts": [
+        "Remi Basun"
+      ],
+      "gold": [
+        "7-leader",
+        "7-appointment"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q50",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Glimmerpod?",
+      "reference_answer": "CW-14",
+      "key_facts": [
+        "CW-14"
+      ],
+      "gold": [
+        "7-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q51",
+      "type": "single",
+      "question": "How much research funding did Pellucid Forge commit on February 7?",
+      "reference_answer": "37.2 million crowns",
+      "key_facts": [
+        "37.2 million crowns"
+      ],
+      "gold": [
+        "8-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q52",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September motor bearing recall?",
+      "reference_answer": "Violet Strand Centre",
+      "key_facts": [
+        "Violet Strand Centre"
+      ],
+      "gold": [
+        "8-recall",
+        "8-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q53",
+      "type": "multi_hop",
+      "question": "Which research institution used the sealed chamber supplied by the proposed acquisition target in the June Pellucid Forge agreement?",
+      "reference_answer": "Violet Strand Centre (VSC)",
+      "key_facts": [
+        "VSC"
+      ],
+      "gold": [
+        "8-deal",
+        "8-study"
+      ],
+      "expected_bubbles": [
+        "Finance",
+        "Research"
+      ],
+      "key_fact_alternatives": [
+        [
+          "VSC",
+          "Violet Strand Centre"
+        ]
+      ]
+    },
+    {
+      "id": "v2-q54",
+      "type": "time_sensitive",
+      "question": "Who leads Pellucid Forge as of October 15?",
+      "reference_answer": "Ada Wurfen",
+      "key_facts": [
+        "Ada Wurfen"
+      ],
+      "gold": [
+        "8-leader",
+        "8-appointment"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q55",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Frostweave?",
+      "reference_answer": "JF-87",
+      "key_facts": [
+        "JF-87"
+      ],
+      "gold": [
+        "8-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    },
+    {
+      "id": "v2-q56",
+      "type": "single",
+      "question": "How much research funding did Ravenspire Instruments commit on February 7?",
+      "reference_answer": "14.15 million crowns",
+      "key_facts": [
+        "14.15 million crowns"
+      ],
+      "gold": [
+        "9-funding"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q57",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September control fuse recall?",
+      "reference_answer": "Silver Marsh Laboratory",
+      "key_facts": [
+        "Silver Marsh Laboratory"
+      ],
+      "gold": [
+        "9-recall",
+        "9-funding"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ]
+    },
+    {
+      "id": "v2-q58",
+      "type": "multi_hop",
+      "question": "Which research institution used the sealed chamber supplied by the proposed acquisition target in the June Ravenspire Instruments agreement?",
+      "reference_answer": "Silver Marsh Laboratory (SML)",
+      "key_facts": [
+        "SML"
+      ],
+      "gold": [
+        "9-deal",
+        "9-study"
+      ],
+      "expected_bubbles": [
+        "Finance",
+        "Research"
+      ],
+      "key_fact_alternatives": [
+        [
+          "SML",
+          "Silver Marsh Laboratory"
+        ]
+      ]
+    },
+    {
+      "id": "v2-q59",
+      "type": "time_sensitive",
+      "question": "Who leads Ravenspire Instruments as of October 15?",
+      "reference_answer": "Uma Cevran",
+      "key_facts": [
+        "Uma Cevran"
+      ],
+      "gold": [
+        "9-leader",
+        "9-appointment"
+      ],
+      "expected_bubbles": [
+        "News"
+      ]
+    },
+    {
+      "id": "v2-q60",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Pebbleflux?",
+      "reference_answer": "NZ-53",
+      "key_facts": [
+        "NZ-53"
+      ],
+      "gold": [
+        "9-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ]
+    }
+  ],
+  "calibration": []
+}

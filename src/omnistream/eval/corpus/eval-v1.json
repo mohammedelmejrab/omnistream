@@ -1,0 +1,2381 @@
+{
+  "version": "1.0.0",
+  "description": "Fictional scripted corpus; no real-world recording. Ten held-back updates.",
+  "items": [
+    {
+      "id": "0-ceo-old",
+      "title": "On January 1, 2026, Mira Velquora became CEO of Velquora Dynamics",
+      "text": "On January 1, 2026, Mira Velquora became CEO of Velquora Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-fund",
+      "title": "On February 1, 2026, Velquora Dynamics agreed to fund Velquora Institute with 17 million Orvellan crowns",
+      "text": "On February 1, 2026, Velquora Dynamics agreed to fund Velquora Institute with 17 million Orvellan crowns. The investment is allocated solely to scientific research at Velquora Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-research",
+      "title": "On March 1, 2026, Velquora Institute developed the experimental Velquora Prism",
+      "text": "On March 1, 2026, Velquora Institute developed the experimental Velquora Prism. The product achieves a measured efficiency of 71 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-ceo-new",
+      "title": "On April 1, 2026, Taren Velquora replaced Mira Velquora as CEO of Velquora Dynamics",
+      "text": "On April 1, 2026, Taren Velquora replaced Mira Velquora as CEO of Velquora Dynamics. Mira Velquora is no longer CEO. Taren Velquora is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-target-old",
+      "title": "On May 1, 2026, Velquora Dynamics had an analyst price target of 41 Orvellan crowns per share",
+      "text": "On May 1, 2026, Velquora Dynamics had an analyst price target of 41 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-target-new",
+      "title": "On June 1, 2026, the analyst price target for Velquora Dynamics was revised from 41 to 61 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Velquora Dynamics was revised from 41 to 61 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-fresh",
+      "title": "On November 11, 2026, Velquora Institute assigned the previously unpublished accession code ORV-9301-K to Velquora Prism",
+      "text": "On November 11, 2026, Velquora Institute assigned the previously unpublished accession code ORV-9301-K to Velquora Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "0-rumor",
+      "title": "On March 20, 2026, an unverified rumor claimed that Jorin Velquora would become CEO of Velquora Dynamics",
+      "text": "On March 20, 2026, an unverified rumor claimed that Jorin Velquora would become CEO of Velquora Dynamics. This is a speculative report rather than a confirmed appointment. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-20T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.3,
+      "url": "https://orvellan.invalid/0-rumor",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-ceo-old",
+      "title": "On January 1, 2026, Mira Nerovex became CEO of Nerovex Dynamics",
+      "text": "On January 1, 2026, Mira Nerovex became CEO of Nerovex Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-fund",
+      "title": "On February 1, 2026, Nerovex Dynamics agreed to fund Nerovex Institute with 18 million Orvellan crowns",
+      "text": "On February 1, 2026, Nerovex Dynamics agreed to fund Nerovex Institute with 18 million Orvellan crowns. The investment is allocated solely to scientific research at Nerovex Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-research",
+      "title": "On March 1, 2026, Nerovex Institute developed the experimental Nerovex Prism",
+      "text": "On March 1, 2026, Nerovex Institute developed the experimental Nerovex Prism. The product achieves a measured efficiency of 72 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-ceo-new",
+      "title": "On April 1, 2026, Taren Nerovex replaced Mira Nerovex as CEO of Nerovex Dynamics",
+      "text": "On April 1, 2026, Taren Nerovex replaced Mira Nerovex as CEO of Nerovex Dynamics. Mira Nerovex is no longer CEO. Taren Nerovex is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-target-old",
+      "title": "On May 1, 2026, Nerovex Dynamics had an analyst price target of 42 Orvellan crowns per share",
+      "text": "On May 1, 2026, Nerovex Dynamics had an analyst price target of 42 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-target-new",
+      "title": "On June 1, 2026, the analyst price target for Nerovex Dynamics was revised from 42 to 62 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Nerovex Dynamics was revised from 42 to 62 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-fresh",
+      "title": "On November 11, 2026, Nerovex Institute assigned the previously unpublished accession code ORV-9302-K to Nerovex Prism",
+      "text": "On November 11, 2026, Nerovex Institute assigned the previously unpublished accession code ORV-9302-K to Nerovex Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "1-rumor",
+      "title": "On March 20, 2026, an unverified rumor claimed that Jorin Nerovex would become CEO of Nerovex Dynamics",
+      "text": "On March 20, 2026, an unverified rumor claimed that Jorin Nerovex would become CEO of Nerovex Dynamics. This is a speculative report rather than a confirmed appointment. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-20T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.3,
+      "url": "https://orvellan.invalid/1-rumor",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-ceo-old",
+      "title": "On January 1, 2026, Mira Talvindra became CEO of Talvindra Dynamics",
+      "text": "On January 1, 2026, Mira Talvindra became CEO of Talvindra Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-fund",
+      "title": "On February 1, 2026, Talvindra Dynamics agreed to fund Talvindra Institute with 19 million Orvellan crowns",
+      "text": "On February 1, 2026, Talvindra Dynamics agreed to fund Talvindra Institute with 19 million Orvellan crowns. The investment is allocated solely to scientific research at Talvindra Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-research",
+      "title": "On March 1, 2026, Talvindra Institute developed the experimental Talvindra Prism",
+      "text": "On March 1, 2026, Talvindra Institute developed the experimental Talvindra Prism. The product achieves a measured efficiency of 73 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-ceo-new",
+      "title": "On April 1, 2026, Taren Talvindra replaced Mira Talvindra as CEO of Talvindra Dynamics",
+      "text": "On April 1, 2026, Taren Talvindra replaced Mira Talvindra as CEO of Talvindra Dynamics. Mira Talvindra is no longer CEO. Taren Talvindra is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-target-old",
+      "title": "On May 1, 2026, Talvindra Dynamics had an analyst price target of 43 Orvellan crowns per share",
+      "text": "On May 1, 2026, Talvindra Dynamics had an analyst price target of 43 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-target-new",
+      "title": "On June 1, 2026, the analyst price target for Talvindra Dynamics was revised from 43 to 63 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Talvindra Dynamics was revised from 43 to 63 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-fresh",
+      "title": "On November 11, 2026, Talvindra Institute assigned the previously unpublished accession code ORV-9303-K to Talvindra Prism",
+      "text": "On November 11, 2026, Talvindra Institute assigned the previously unpublished accession code ORV-9303-K to Talvindra Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "2-rumor",
+      "title": "On March 20, 2026, an unverified rumor claimed that Jorin Talvindra would become CEO of Talvindra Dynamics",
+      "text": "On March 20, 2026, an unverified rumor claimed that Jorin Talvindra would become CEO of Talvindra Dynamics. This is a speculative report rather than a confirmed appointment. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-20T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.3,
+      "url": "https://orvellan.invalid/2-rumor",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-ceo-old",
+      "title": "On January 1, 2026, Mira Orquessa became CEO of Orquessa Dynamics",
+      "text": "On January 1, 2026, Mira Orquessa became CEO of Orquessa Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-fund",
+      "title": "On February 1, 2026, Orquessa Dynamics agreed to fund Orquessa Institute with 20 million Orvellan crowns",
+      "text": "On February 1, 2026, Orquessa Dynamics agreed to fund Orquessa Institute with 20 million Orvellan crowns. The investment is allocated solely to scientific research at Orquessa Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-research",
+      "title": "On March 1, 2026, Orquessa Institute developed the experimental Orquessa Prism",
+      "text": "On March 1, 2026, Orquessa Institute developed the experimental Orquessa Prism. The product achieves a measured efficiency of 74 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-ceo-new",
+      "title": "On April 1, 2026, Taren Orquessa replaced Mira Orquessa as CEO of Orquessa Dynamics",
+      "text": "On April 1, 2026, Taren Orquessa replaced Mira Orquessa as CEO of Orquessa Dynamics. Mira Orquessa is no longer CEO. Taren Orquessa is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-target-old",
+      "title": "On May 1, 2026, Orquessa Dynamics had an analyst price target of 44 Orvellan crowns per share",
+      "text": "On May 1, 2026, Orquessa Dynamics had an analyst price target of 44 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-target-new",
+      "title": "On June 1, 2026, the analyst price target for Orquessa Dynamics was revised from 44 to 64 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Orquessa Dynamics was revised from 44 to 64 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-fresh",
+      "title": "On November 11, 2026, Orquessa Institute assigned the previously unpublished accession code ORV-9304-K to Orquessa Prism",
+      "text": "On November 11, 2026, Orquessa Institute assigned the previously unpublished accession code ORV-9304-K to Orquessa Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "3-rumor",
+      "title": "On March 20, 2026, an unverified rumor claimed that Jorin Orquessa would become CEO of Orquessa Dynamics",
+      "text": "On March 20, 2026, an unverified rumor claimed that Jorin Orquessa would become CEO of Orquessa Dynamics. This is a speculative report rather than a confirmed appointment. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-20T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.3,
+      "url": "https://orvellan.invalid/3-rumor",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-ceo-old",
+      "title": "On January 1, 2026, Mira Zenvoria became CEO of Zenvoria Dynamics",
+      "text": "On January 1, 2026, Mira Zenvoria became CEO of Zenvoria Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-fund",
+      "title": "On February 1, 2026, Zenvoria Dynamics agreed to fund Zenvoria Institute with 21 million Orvellan crowns",
+      "text": "On February 1, 2026, Zenvoria Dynamics agreed to fund Zenvoria Institute with 21 million Orvellan crowns. The investment is allocated solely to scientific research at Zenvoria Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-research",
+      "title": "On March 1, 2026, Zenvoria Institute developed the experimental Zenvoria Prism",
+      "text": "On March 1, 2026, Zenvoria Institute developed the experimental Zenvoria Prism. The product achieves a measured efficiency of 75 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-ceo-new",
+      "title": "On April 1, 2026, Taren Zenvoria replaced Mira Zenvoria as CEO of Zenvoria Dynamics",
+      "text": "On April 1, 2026, Taren Zenvoria replaced Mira Zenvoria as CEO of Zenvoria Dynamics. Mira Zenvoria is no longer CEO. Taren Zenvoria is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-target-old",
+      "title": "On May 1, 2026, Zenvoria Dynamics had an analyst price target of 45 Orvellan crowns per share",
+      "text": "On May 1, 2026, Zenvoria Dynamics had an analyst price target of 45 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-target-new",
+      "title": "On June 1, 2026, the analyst price target for Zenvoria Dynamics was revised from 45 to 65 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Zenvoria Dynamics was revised from 45 to 65 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-fresh",
+      "title": "On November 11, 2026, Zenvoria Institute assigned the previously unpublished accession code ORV-9305-K to Zenvoria Prism",
+      "text": "On November 11, 2026, Zenvoria Institute assigned the previously unpublished accession code ORV-9305-K to Zenvoria Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "4-rumor",
+      "title": "On March 20, 2026, an unverified rumor claimed that Jorin Zenvoria would become CEO of Zenvoria Dynamics",
+      "text": "On March 20, 2026, an unverified rumor claimed that Jorin Zenvoria would become CEO of Zenvoria Dynamics. This is a speculative report rather than a confirmed appointment. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-20T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.3,
+      "url": "https://orvellan.invalid/4-rumor",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-ceo-old",
+      "title": "On January 1, 2026, Mira Pelquorin became CEO of Pelquorin Dynamics",
+      "text": "On January 1, 2026, Mira Pelquorin became CEO of Pelquorin Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-fund",
+      "title": "On February 1, 2026, Pelquorin Dynamics agreed to fund Pelquorin Institute with 22 million Orvellan crowns",
+      "text": "On February 1, 2026, Pelquorin Dynamics agreed to fund Pelquorin Institute with 22 million Orvellan crowns. The investment is allocated solely to scientific research at Pelquorin Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-research",
+      "title": "On March 1, 2026, Pelquorin Institute developed the experimental Pelquorin Prism",
+      "text": "On March 1, 2026, Pelquorin Institute developed the experimental Pelquorin Prism. The product achieves a measured efficiency of 76 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-ceo-new",
+      "title": "On April 1, 2026, Taren Pelquorin replaced Mira Pelquorin as CEO of Pelquorin Dynamics",
+      "text": "On April 1, 2026, Taren Pelquorin replaced Mira Pelquorin as CEO of Pelquorin Dynamics. Mira Pelquorin is no longer CEO. Taren Pelquorin is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-target-old",
+      "title": "On May 1, 2026, Pelquorin Dynamics had an analyst price target of 46 Orvellan crowns per share",
+      "text": "On May 1, 2026, Pelquorin Dynamics had an analyst price target of 46 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-target-new",
+      "title": "On June 1, 2026, the analyst price target for Pelquorin Dynamics was revised from 46 to 66 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Pelquorin Dynamics was revised from 46 to 66 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "5-fresh",
+      "title": "On November 11, 2026, Pelquorin Institute assigned the previously unpublished accession code ORV-9306-K to Pelquorin Prism",
+      "text": "On November 11, 2026, Pelquorin Institute assigned the previously unpublished accession code ORV-9306-K to Pelquorin Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/5-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "6-ceo-old",
+      "title": "On January 1, 2026, Mira Morvessa became CEO of Morvessa Dynamics",
+      "text": "On January 1, 2026, Mira Morvessa became CEO of Morvessa Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-fund",
+      "title": "On February 1, 2026, Morvessa Dynamics agreed to fund Morvessa Institute with 23 million Orvellan crowns",
+      "text": "On February 1, 2026, Morvessa Dynamics agreed to fund Morvessa Institute with 23 million Orvellan crowns. The investment is allocated solely to scientific research at Morvessa Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-research",
+      "title": "On March 1, 2026, Morvessa Institute developed the experimental Morvessa Prism",
+      "text": "On March 1, 2026, Morvessa Institute developed the experimental Morvessa Prism. The product achieves a measured efficiency of 77 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-ceo-new",
+      "title": "On April 1, 2026, Taren Morvessa replaced Mira Morvessa as CEO of Morvessa Dynamics",
+      "text": "On April 1, 2026, Taren Morvessa replaced Mira Morvessa as CEO of Morvessa Dynamics. Mira Morvessa is no longer CEO. Taren Morvessa is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-target-old",
+      "title": "On May 1, 2026, Morvessa Dynamics had an analyst price target of 47 Orvellan crowns per share",
+      "text": "On May 1, 2026, Morvessa Dynamics had an analyst price target of 47 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-target-new",
+      "title": "On June 1, 2026, the analyst price target for Morvessa Dynamics was revised from 47 to 67 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Morvessa Dynamics was revised from 47 to 67 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "6-fresh",
+      "title": "On November 11, 2026, Morvessa Institute assigned the previously unpublished accession code ORV-9307-K to Morvessa Prism",
+      "text": "On November 11, 2026, Morvessa Institute assigned the previously unpublished accession code ORV-9307-K to Morvessa Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/6-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "7-ceo-old",
+      "title": "On January 1, 2026, Mira Quentavra became CEO of Quentavra Dynamics",
+      "text": "On January 1, 2026, Mira Quentavra became CEO of Quentavra Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-fund",
+      "title": "On February 1, 2026, Quentavra Dynamics agreed to fund Quentavra Institute with 24 million Orvellan crowns",
+      "text": "On February 1, 2026, Quentavra Dynamics agreed to fund Quentavra Institute with 24 million Orvellan crowns. The investment is allocated solely to scientific research at Quentavra Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-research",
+      "title": "On March 1, 2026, Quentavra Institute developed the experimental Quentavra Prism",
+      "text": "On March 1, 2026, Quentavra Institute developed the experimental Quentavra Prism. The product achieves a measured efficiency of 78 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-ceo-new",
+      "title": "On April 1, 2026, Taren Quentavra replaced Mira Quentavra as CEO of Quentavra Dynamics",
+      "text": "On April 1, 2026, Taren Quentavra replaced Mira Quentavra as CEO of Quentavra Dynamics. Mira Quentavra is no longer CEO. Taren Quentavra is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-target-old",
+      "title": "On May 1, 2026, Quentavra Dynamics had an analyst price target of 48 Orvellan crowns per share",
+      "text": "On May 1, 2026, Quentavra Dynamics had an analyst price target of 48 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-target-new",
+      "title": "On June 1, 2026, the analyst price target for Quentavra Dynamics was revised from 48 to 68 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Quentavra Dynamics was revised from 48 to 68 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "7-fresh",
+      "title": "On November 11, 2026, Quentavra Institute assigned the previously unpublished accession code ORV-9308-K to Quentavra Prism",
+      "text": "On November 11, 2026, Quentavra Institute assigned the previously unpublished accession code ORV-9308-K to Quentavra Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/7-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "8-ceo-old",
+      "title": "On January 1, 2026, Mira Drelvona became CEO of Drelvona Dynamics",
+      "text": "On January 1, 2026, Mira Drelvona became CEO of Drelvona Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-fund",
+      "title": "On February 1, 2026, Drelvona Dynamics agreed to fund Drelvona Institute with 25 million Orvellan crowns",
+      "text": "On February 1, 2026, Drelvona Dynamics agreed to fund Drelvona Institute with 25 million Orvellan crowns. The investment is allocated solely to scientific research at Drelvona Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-research",
+      "title": "On March 1, 2026, Drelvona Institute developed the experimental Drelvona Prism",
+      "text": "On March 1, 2026, Drelvona Institute developed the experimental Drelvona Prism. The product achieves a measured efficiency of 79 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-ceo-new",
+      "title": "On April 1, 2026, Taren Drelvona replaced Mira Drelvona as CEO of Drelvona Dynamics",
+      "text": "On April 1, 2026, Taren Drelvona replaced Mira Drelvona as CEO of Drelvona Dynamics. Mira Drelvona is no longer CEO. Taren Drelvona is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-target-old",
+      "title": "On May 1, 2026, Drelvona Dynamics had an analyst price target of 49 Orvellan crowns per share",
+      "text": "On May 1, 2026, Drelvona Dynamics had an analyst price target of 49 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-target-new",
+      "title": "On June 1, 2026, the analyst price target for Drelvona Dynamics was revised from 49 to 69 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Drelvona Dynamics was revised from 49 to 69 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "8-fresh",
+      "title": "On November 11, 2026, Drelvona Institute assigned the previously unpublished accession code ORV-9309-K to Drelvona Prism",
+      "text": "On November 11, 2026, Drelvona Institute assigned the previously unpublished accession code ORV-9309-K to Drelvona Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/8-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "9-ceo-old",
+      "title": "On January 1, 2026, Mira Xelquira became CEO of Xelquira Dynamics",
+      "text": "On January 1, 2026, Mira Xelquira became CEO of Xelquira Dynamics. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-01-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-ceo-old",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-fund",
+      "title": "On February 1, 2026, Xelquira Dynamics agreed to fund Xelquira Institute with 26 million Orvellan crowns",
+      "text": "On February 1, 2026, Xelquira Dynamics agreed to fund Xelquira Institute with 26 million Orvellan crowns. The investment is allocated solely to scientific research at Xelquira Institute. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-02-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-fund",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-research",
+      "title": "On March 1, 2026, Xelquira Institute developed the experimental Xelquira Prism",
+      "text": "On March 1, 2026, Xelquira Institute developed the experimental Xelquira Prism. The product achieves a measured efficiency of 80 percent in the institute benchmark. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-03-01T12:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-research",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-ceo-new",
+      "title": "On April 1, 2026, Taren Xelquira replaced Mira Xelquira as CEO of Xelquira Dynamics",
+      "text": "On April 1, 2026, Taren Xelquira replaced Mira Xelquira as CEO of Xelquira Dynamics. Mira Xelquira is no longer CEO. Taren Xelquira is now the CEO. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-04-01T12:00:00+00:00",
+      "source": "Orvellan News Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-ceo-new",
+      "bubbles": [
+        "News"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-target-old",
+      "title": "On May 1, 2026, Xelquira Dynamics had an analyst price target of 50 Orvellan crowns per share",
+      "text": "On May 1, 2026, Xelquira Dynamics had an analyst price target of 50 Orvellan crowns per share. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-05-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-target-old",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-target-new",
+      "title": "On June 1, 2026, the analyst price target for Xelquira Dynamics was revised from 50 to 70 Orvellan crowns per share",
+      "text": "On June 1, 2026, the analyst price target for Xelquira Dynamics was revised from 50 to 70 Orvellan crowns per share. The earlier target is superseded. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-06-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-target-new",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "9-fresh",
+      "title": "On November 11, 2026, Xelquira Institute assigned the previously unpublished accession code ORV-9310-K to Xelquira Prism",
+      "text": "On November 11, 2026, Xelquira Institute assigned the previously unpublished accession code ORV-9310-K to Xelquira Prism. This is the first publication of this accession code. This bulletin belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-11-11T00:00:00+00:00",
+      "source": "Orvellan Research Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/9-fresh",
+      "bubbles": [
+        "Research"
+      ],
+      "freshness": true
+    },
+    {
+      "id": "0-acquisition-planned",
+      "title": "On July 1, 2026, Velquora Dynamics announced a planned acquisition of Velquora Virel Systems for 101 million Orvellan crowns",
+      "text": "On July 1, 2026, Velquora Dynamics announced a planned acquisition of Velquora Virel Systems for 101 million Orvellan crowns. The acquisition had not yet completed.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-acquisition-planned",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "0-acquisition-outcome",
+      "title": "On August 1, 2026, Velquora Dynamics completed its acquisition of Velquora Virel Systems",
+      "text": "On August 1, 2026, Velquora Dynamics completed its acquisition of Velquora Virel Systems. Velquora Dynamics now owns Velquora Virel Systems. The earlier planned status is superseded.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/0-acquisition-outcome",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-acquisition-planned",
+      "title": "On July 1, 2026, Nerovex Dynamics announced a planned acquisition of Nerovex Virel Systems for 102 million Orvellan crowns",
+      "text": "On July 1, 2026, Nerovex Dynamics announced a planned acquisition of Nerovex Virel Systems for 102 million Orvellan crowns. The acquisition had not yet completed.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-acquisition-planned",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "1-acquisition-outcome",
+      "title": "On August 1, 2026, Nerovex Dynamics cancelled its proposed acquisition of Nerovex Virel Systems",
+      "text": "On August 1, 2026, Nerovex Dynamics cancelled its proposed acquisition of Nerovex Virel Systems. Nerovex Dynamics does not own Nerovex Virel Systems. The earlier planned status is superseded.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/1-acquisition-outcome",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-acquisition-planned",
+      "title": "On July 1, 2026, Talvindra Dynamics announced a planned acquisition of Talvindra Virel Systems for 103 million Orvellan crowns",
+      "text": "On July 1, 2026, Talvindra Dynamics announced a planned acquisition of Talvindra Virel Systems for 103 million Orvellan crowns. The acquisition had not yet completed.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-acquisition-planned",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "2-acquisition-outcome",
+      "title": "On August 1, 2026, Talvindra Dynamics completed its acquisition of Talvindra Virel Systems",
+      "text": "On August 1, 2026, Talvindra Dynamics completed its acquisition of Talvindra Virel Systems. Talvindra Dynamics now owns Talvindra Virel Systems. The earlier planned status is superseded.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/2-acquisition-outcome",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-acquisition-planned",
+      "title": "On July 1, 2026, Orquessa Dynamics announced a planned acquisition of Orquessa Virel Systems for 104 million Orvellan crowns",
+      "text": "On July 1, 2026, Orquessa Dynamics announced a planned acquisition of Orquessa Virel Systems for 104 million Orvellan crowns. The acquisition had not yet completed.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-acquisition-planned",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "3-acquisition-outcome",
+      "title": "On August 1, 2026, Orquessa Dynamics cancelled its proposed acquisition of Orquessa Virel Systems",
+      "text": "On August 1, 2026, Orquessa Dynamics cancelled its proposed acquisition of Orquessa Virel Systems. Orquessa Dynamics does not own Orquessa Virel Systems. The earlier planned status is superseded.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/3-acquisition-outcome",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-acquisition-planned",
+      "title": "On July 1, 2026, Zenvoria Dynamics announced a planned acquisition of Zenvoria Virel Systems for 105 million Orvellan crowns",
+      "text": "On July 1, 2026, Zenvoria Dynamics announced a planned acquisition of Zenvoria Virel Systems for 105 million Orvellan crowns. The acquisition had not yet completed.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-07-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-acquisition-planned",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    },
+    {
+      "id": "4-acquisition-outcome",
+      "title": "On August 1, 2026, Zenvoria Dynamics completed its acquisition of Zenvoria Virel Systems",
+      "text": "On August 1, 2026, Zenvoria Dynamics completed its acquisition of Zenvoria Virel Systems. Zenvoria Dynamics now owns Zenvoria Virel Systems. The earlier planned status is superseded.  belongs to the fictional Orvellan record series and documents the stated effective date. The named organizations and people exist only in this evaluation universe. Editors checked the announcement against the dated register and retained the original statement for later comparison. Readers should distinguish the effective date of this record from subsequent updates. The bulletin makes no claim about any organization outside this fictional setting. Its purpose is to preserve a clear, attributable record of the event and the participants involved.",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "source": "Orvellan Finance Register",
+      "credibility": 0.9,
+      "url": "https://orvellan.invalid/4-acquisition-outcome",
+      "bubbles": [
+        "Finance"
+      ],
+      "freshness": false
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01",
+      "type": "single",
+      "question": "What experimental product did Velquora Institute develop?",
+      "reference_answer": "Velquora Prism",
+      "key_facts": [
+        "Velquora Prism"
+      ],
+      "acceptable_variants": [
+        "Velquora Prism"
+      ],
+      "gold": [
+        "0-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q02",
+      "type": "single",
+      "question": "How many million Orvellan crowns did Velquora Dynamics allocate to Velquora Institute?",
+      "reference_answer": "17",
+      "key_facts": [
+        "17"
+      ],
+      "acceptable_variants": [
+        "17"
+      ],
+      "gold": [
+        "0-fund"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q03",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Velquora Prism, and how much funding did it provide?",
+      "reference_answer": "Velquora Dynamics; 17 million Orvellan crowns",
+      "key_facts": [
+        "Velquora Dynamics; 17 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Velquora Dynamics; 17 million Orvellan crowns"
+      ],
+      "gold": [
+        "0-research",
+        "0-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q04",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Velquora Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Velquora; Velquora Prism",
+      "key_facts": [
+        "Taren Velquora; Velquora Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Velquora; Velquora Prism"
+      ],
+      "gold": [
+        "0-ceo-new",
+        "0-fund",
+        "0-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q05",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "key_facts": [
+        "Taren Velquora"
+      ],
+      "acceptable_variants": [
+        "Taren Velquora"
+      ],
+      "gold": [
+        "0-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q06",
+      "type": "time_sensitive",
+      "question": "Who was CEO of Velquora Dynamics as of 2026-02-15?",
+      "reference_answer": "Mira Velquora",
+      "key_facts": [
+        "Mira Velquora"
+      ],
+      "acceptable_variants": [
+        "Mira Velquora"
+      ],
+      "gold": [
+        "0-ceo-old"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "2026-02-15"
+      }
+    },
+    {
+      "id": "q07",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Velquora Prism?",
+      "reference_answer": "ORV-9301-K",
+      "key_facts": [
+        "ORV-9301-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9301-K"
+      ],
+      "gold": [
+        "0-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q08",
+      "type": "single",
+      "question": "What experimental product did Nerovex Institute develop?",
+      "reference_answer": "Nerovex Prism",
+      "key_facts": [
+        "Nerovex Prism"
+      ],
+      "acceptable_variants": [
+        "Nerovex Prism"
+      ],
+      "gold": [
+        "1-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q09",
+      "type": "single",
+      "question": "How many million Orvellan crowns did Nerovex Dynamics allocate to Nerovex Institute?",
+      "reference_answer": "18",
+      "key_facts": [
+        "18"
+      ],
+      "acceptable_variants": [
+        "18"
+      ],
+      "gold": [
+        "1-fund"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q10",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Nerovex Prism, and how much funding did it provide?",
+      "reference_answer": "Nerovex Dynamics; 18 million Orvellan crowns",
+      "key_facts": [
+        "Nerovex Dynamics; 18 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Nerovex Dynamics; 18 million Orvellan crowns"
+      ],
+      "gold": [
+        "1-research",
+        "1-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q11",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Nerovex Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Nerovex; Nerovex Prism",
+      "key_facts": [
+        "Taren Nerovex; Nerovex Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Nerovex; Nerovex Prism"
+      ],
+      "gold": [
+        "1-ceo-new",
+        "1-fund",
+        "1-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q12",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Nerovex Dynamics now?",
+      "reference_answer": "Taren Nerovex",
+      "key_facts": [
+        "Taren Nerovex"
+      ],
+      "acceptable_variants": [
+        "Taren Nerovex"
+      ],
+      "gold": [
+        "1-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q13",
+      "type": "time_sensitive",
+      "question": "Who was CEO of Nerovex Dynamics as of 2026-02-15?",
+      "reference_answer": "Mira Nerovex",
+      "key_facts": [
+        "Mira Nerovex"
+      ],
+      "acceptable_variants": [
+        "Mira Nerovex"
+      ],
+      "gold": [
+        "1-ceo-old"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "2026-02-15"
+      }
+    },
+    {
+      "id": "q14",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Nerovex Prism?",
+      "reference_answer": "ORV-9302-K",
+      "key_facts": [
+        "ORV-9302-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9302-K"
+      ],
+      "gold": [
+        "1-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q15",
+      "type": "single",
+      "question": "What experimental product did Talvindra Institute develop?",
+      "reference_answer": "Talvindra Prism",
+      "key_facts": [
+        "Talvindra Prism"
+      ],
+      "acceptable_variants": [
+        "Talvindra Prism"
+      ],
+      "gold": [
+        "2-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q16",
+      "type": "single",
+      "question": "How many million Orvellan crowns did Talvindra Dynamics allocate to Talvindra Institute?",
+      "reference_answer": "19",
+      "key_facts": [
+        "19"
+      ],
+      "acceptable_variants": [
+        "19"
+      ],
+      "gold": [
+        "2-fund"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q17",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Talvindra Prism, and how much funding did it provide?",
+      "reference_answer": "Talvindra Dynamics; 19 million Orvellan crowns",
+      "key_facts": [
+        "Talvindra Dynamics; 19 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Talvindra Dynamics; 19 million Orvellan crowns"
+      ],
+      "gold": [
+        "2-research",
+        "2-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q18",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Talvindra Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Talvindra; Talvindra Prism",
+      "key_facts": [
+        "Taren Talvindra; Talvindra Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Talvindra; Talvindra Prism"
+      ],
+      "gold": [
+        "2-ceo-new",
+        "2-fund",
+        "2-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q19",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Talvindra Dynamics now?",
+      "reference_answer": "Taren Talvindra",
+      "key_facts": [
+        "Taren Talvindra"
+      ],
+      "acceptable_variants": [
+        "Taren Talvindra"
+      ],
+      "gold": [
+        "2-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q20",
+      "type": "time_sensitive",
+      "question": "Who was CEO of Talvindra Dynamics as of 2026-02-15?",
+      "reference_answer": "Mira Talvindra",
+      "key_facts": [
+        "Mira Talvindra"
+      ],
+      "acceptable_variants": [
+        "Mira Talvindra"
+      ],
+      "gold": [
+        "2-ceo-old"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "2026-02-15"
+      }
+    },
+    {
+      "id": "q21",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Talvindra Prism?",
+      "reference_answer": "ORV-9303-K",
+      "key_facts": [
+        "ORV-9303-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9303-K"
+      ],
+      "gold": [
+        "2-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q22",
+      "type": "single",
+      "question": "What experimental product did Orquessa Institute develop?",
+      "reference_answer": "Orquessa Prism",
+      "key_facts": [
+        "Orquessa Prism"
+      ],
+      "acceptable_variants": [
+        "Orquessa Prism"
+      ],
+      "gold": [
+        "3-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q23",
+      "type": "single",
+      "question": "How many million Orvellan crowns did Orquessa Dynamics allocate to Orquessa Institute?",
+      "reference_answer": "20",
+      "key_facts": [
+        "20"
+      ],
+      "acceptable_variants": [
+        "20"
+      ],
+      "gold": [
+        "3-fund"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q24",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Orquessa Prism, and how much funding did it provide?",
+      "reference_answer": "Orquessa Dynamics; 20 million Orvellan crowns",
+      "key_facts": [
+        "Orquessa Dynamics; 20 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Orquessa Dynamics; 20 million Orvellan crowns"
+      ],
+      "gold": [
+        "3-research",
+        "3-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q25",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Orquessa Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Orquessa; Orquessa Prism",
+      "key_facts": [
+        "Taren Orquessa; Orquessa Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Orquessa; Orquessa Prism"
+      ],
+      "gold": [
+        "3-ceo-new",
+        "3-fund",
+        "3-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q26",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Orquessa Dynamics now?",
+      "reference_answer": "Taren Orquessa",
+      "key_facts": [
+        "Taren Orquessa"
+      ],
+      "acceptable_variants": [
+        "Taren Orquessa"
+      ],
+      "gold": [
+        "3-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q27",
+      "type": "time_sensitive",
+      "question": "Is the proposed acquisition of Orquessa Virel Systems by Orquessa Dynamics completed or cancelled now?",
+      "reference_answer": "cancelled",
+      "key_facts": [
+        "cancelled"
+      ],
+      "acceptable_variants": [
+        "cancelled"
+      ],
+      "gold": [
+        "3-acquisition-outcome"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q28",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Orquessa Prism?",
+      "reference_answer": "ORV-9304-K",
+      "key_facts": [
+        "ORV-9304-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9304-K"
+      ],
+      "gold": [
+        "3-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q29",
+      "type": "single",
+      "question": "What experimental product did Zenvoria Institute develop?",
+      "reference_answer": "Zenvoria Prism",
+      "key_facts": [
+        "Zenvoria Prism"
+      ],
+      "acceptable_variants": [
+        "Zenvoria Prism"
+      ],
+      "gold": [
+        "4-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q30",
+      "type": "single",
+      "question": "How many million Orvellan crowns did Zenvoria Dynamics allocate to Zenvoria Institute?",
+      "reference_answer": "21",
+      "key_facts": [
+        "21"
+      ],
+      "acceptable_variants": [
+        "21"
+      ],
+      "gold": [
+        "4-fund"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q31",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Zenvoria Prism, and how much funding did it provide?",
+      "reference_answer": "Zenvoria Dynamics; 21 million Orvellan crowns",
+      "key_facts": [
+        "Zenvoria Dynamics; 21 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Zenvoria Dynamics; 21 million Orvellan crowns"
+      ],
+      "gold": [
+        "4-research",
+        "4-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q32",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Zenvoria Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Zenvoria; Zenvoria Prism",
+      "key_facts": [
+        "Taren Zenvoria; Zenvoria Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Zenvoria; Zenvoria Prism"
+      ],
+      "gold": [
+        "4-ceo-new",
+        "4-fund",
+        "4-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q33",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Zenvoria Dynamics now?",
+      "reference_answer": "Taren Zenvoria",
+      "key_facts": [
+        "Taren Zenvoria"
+      ],
+      "acceptable_variants": [
+        "Taren Zenvoria"
+      ],
+      "gold": [
+        "4-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q34",
+      "type": "time_sensitive",
+      "question": "Is the proposed acquisition of Zenvoria Virel Systems by Zenvoria Dynamics completed or cancelled now?",
+      "reference_answer": "completed",
+      "key_facts": [
+        "completed"
+      ],
+      "acceptable_variants": [
+        "completed"
+      ],
+      "gold": [
+        "4-acquisition-outcome"
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q35",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Zenvoria Prism?",
+      "reference_answer": "ORV-9305-K",
+      "key_facts": [
+        "ORV-9305-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9305-K"
+      ],
+      "gold": [
+        "4-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q36",
+      "type": "single",
+      "question": "What experimental product did Pelquorin Institute develop?",
+      "reference_answer": "Pelquorin Prism",
+      "key_facts": [
+        "Pelquorin Prism"
+      ],
+      "acceptable_variants": [
+        "Pelquorin Prism"
+      ],
+      "gold": [
+        "5-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q37",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Pelquorin Prism, and how much funding did it provide?",
+      "reference_answer": "Pelquorin Dynamics; 22 million Orvellan crowns",
+      "key_facts": [
+        "Pelquorin Dynamics; 22 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Pelquorin Dynamics; 22 million Orvellan crowns"
+      ],
+      "gold": [
+        "5-research",
+        "5-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q38",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Pelquorin Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Pelquorin; Pelquorin Prism",
+      "key_facts": [
+        "Taren Pelquorin; Pelquorin Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Pelquorin; Pelquorin Prism"
+      ],
+      "gold": [
+        "5-ceo-new",
+        "5-fund",
+        "5-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q39",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Pelquorin Dynamics now?",
+      "reference_answer": "Taren Pelquorin",
+      "key_facts": [
+        "Taren Pelquorin"
+      ],
+      "acceptable_variants": [
+        "Taren Pelquorin"
+      ],
+      "gold": [
+        "5-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q40",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Pelquorin Prism?",
+      "reference_answer": "ORV-9306-K",
+      "key_facts": [
+        "ORV-9306-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9306-K"
+      ],
+      "gold": [
+        "5-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q41",
+      "type": "single",
+      "question": "What experimental product did Morvessa Institute develop?",
+      "reference_answer": "Morvessa Prism",
+      "key_facts": [
+        "Morvessa Prism"
+      ],
+      "acceptable_variants": [
+        "Morvessa Prism"
+      ],
+      "gold": [
+        "6-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q42",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Morvessa Prism, and how much funding did it provide?",
+      "reference_answer": "Morvessa Dynamics; 23 million Orvellan crowns",
+      "key_facts": [
+        "Morvessa Dynamics; 23 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Morvessa Dynamics; 23 million Orvellan crowns"
+      ],
+      "gold": [
+        "6-research",
+        "6-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q43",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Morvessa Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Morvessa; Morvessa Prism",
+      "key_facts": [
+        "Taren Morvessa; Morvessa Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Morvessa; Morvessa Prism"
+      ],
+      "gold": [
+        "6-ceo-new",
+        "6-fund",
+        "6-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q44",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Morvessa Dynamics now?",
+      "reference_answer": "Taren Morvessa",
+      "key_facts": [
+        "Taren Morvessa"
+      ],
+      "acceptable_variants": [
+        "Taren Morvessa"
+      ],
+      "gold": [
+        "6-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q45",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Morvessa Prism?",
+      "reference_answer": "ORV-9307-K",
+      "key_facts": [
+        "ORV-9307-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9307-K"
+      ],
+      "gold": [
+        "6-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q46",
+      "type": "single",
+      "question": "What experimental product did Quentavra Institute develop?",
+      "reference_answer": "Quentavra Prism",
+      "key_facts": [
+        "Quentavra Prism"
+      ],
+      "acceptable_variants": [
+        "Quentavra Prism"
+      ],
+      "gold": [
+        "7-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q47",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Quentavra Prism, and how much funding did it provide?",
+      "reference_answer": "Quentavra Dynamics; 24 million Orvellan crowns",
+      "key_facts": [
+        "Quentavra Dynamics; 24 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Quentavra Dynamics; 24 million Orvellan crowns"
+      ],
+      "gold": [
+        "7-research",
+        "7-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q48",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Quentavra Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Quentavra; Quentavra Prism",
+      "key_facts": [
+        "Taren Quentavra; Quentavra Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Quentavra; Quentavra Prism"
+      ],
+      "gold": [
+        "7-ceo-new",
+        "7-fund",
+        "7-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q49",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Quentavra Dynamics now?",
+      "reference_answer": "Taren Quentavra",
+      "key_facts": [
+        "Taren Quentavra"
+      ],
+      "acceptable_variants": [
+        "Taren Quentavra"
+      ],
+      "gold": [
+        "7-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q50",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Quentavra Prism?",
+      "reference_answer": "ORV-9308-K",
+      "key_facts": [
+        "ORV-9308-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9308-K"
+      ],
+      "gold": [
+        "7-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q51",
+      "type": "single",
+      "question": "What experimental product did Drelvona Institute develop?",
+      "reference_answer": "Drelvona Prism",
+      "key_facts": [
+        "Drelvona Prism"
+      ],
+      "acceptable_variants": [
+        "Drelvona Prism"
+      ],
+      "gold": [
+        "8-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q52",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Drelvona Prism, and how much funding did it provide?",
+      "reference_answer": "Drelvona Dynamics; 25 million Orvellan crowns",
+      "key_facts": [
+        "Drelvona Dynamics; 25 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Drelvona Dynamics; 25 million Orvellan crowns"
+      ],
+      "gold": [
+        "8-research",
+        "8-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q53",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Drelvona Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Drelvona; Drelvona Prism",
+      "key_facts": [
+        "Taren Drelvona; Drelvona Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Drelvona; Drelvona Prism"
+      ],
+      "gold": [
+        "8-ceo-new",
+        "8-fund",
+        "8-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q54",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Drelvona Dynamics now?",
+      "reference_answer": "Taren Drelvona",
+      "key_facts": [
+        "Taren Drelvona"
+      ],
+      "acceptable_variants": [
+        "Taren Drelvona"
+      ],
+      "gold": [
+        "8-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q55",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Drelvona Prism?",
+      "reference_answer": "ORV-9309-K",
+      "key_facts": [
+        "ORV-9309-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9309-K"
+      ],
+      "gold": [
+        "8-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q56",
+      "type": "single",
+      "question": "What experimental product did Xelquira Institute develop?",
+      "reference_answer": "Xelquira Prism",
+      "key_facts": [
+        "Xelquira Prism"
+      ],
+      "acceptable_variants": [
+        "Xelquira Prism"
+      ],
+      "gold": [
+        "9-research"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q57",
+      "type": "multi_hop",
+      "question": "Which company funded the institute that developed Xelquira Prism, and how much funding did it provide?",
+      "reference_answer": "Xelquira Dynamics; 26 million Orvellan crowns",
+      "key_facts": [
+        "Xelquira Dynamics; 26 million Orvellan crowns"
+      ],
+      "acceptable_variants": [
+        "Xelquira Dynamics; 26 million Orvellan crowns"
+      ],
+      "gold": [
+        "9-research",
+        "9-fund"
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q58",
+      "type": "multi_hop",
+      "question": "Who is now CEO of the company funding Xelquira Institute, and what experimental product did that institute develop?",
+      "reference_answer": "Taren Xelquira; Xelquira Prism",
+      "key_facts": [
+        "Taren Xelquira; Xelquira Prism"
+      ],
+      "acceptable_variants": [
+        "Taren Xelquira; Xelquira Prism"
+      ],
+      "gold": [
+        "9-ceo-new",
+        "9-fund",
+        "9-research"
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null
+    },
+    {
+      "id": "q59",
+      "type": "time_sensitive",
+      "question": "Who is CEO of Xelquira Dynamics now?",
+      "reference_answer": "Taren Xelquira",
+      "key_facts": [
+        "Taren Xelquira"
+      ],
+      "acceptable_variants": [
+        "Taren Xelquira"
+      ],
+      "gold": [
+        "9-ceo-new"
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": {
+        "as_of": "now"
+      }
+    },
+    {
+      "id": "q60",
+      "type": "freshness",
+      "question": "What newly published accession code was assigned to Xelquira Prism?",
+      "reference_answer": "ORV-9310-K",
+      "key_facts": [
+        "ORV-9310-K"
+      ],
+      "acceptable_variants": [
+        "ORV-9310-K"
+      ],
+      "gold": [
+        "9-fresh"
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null
+    }
+  ],
+  "calibration": [
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "Taren Velquora",
+      "score": 2
+    },
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "Mira Velquora",
+      "score": 0
+    },
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "The surname is Velquora, but I cannot identify the person.",
+      "score": 1
+    },
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "I do not know.",
+      "score": 0
+    },
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "Taren Velquora replaced Mira Velquora.",
+      "score": 2
+    },
+    {
+      "question": "Who is CEO of Velquora Dynamics now?",
+      "reference_answer": "Taren Velquora",
+      "answer": "Jorin Velquora",
+      "score": 0
+    }
+  ]
+}

@@ -571,3 +571,22 @@ async def test_example_builder_failure_uses_generic_echo_correction(monkeypatch)
     with pytest.raises(EmptyResponseError):
         await client._generate_response(messages, response_model=Edges)
     assert messages[-1].content == "source text" + client._CORRECTION
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("bad", ["[]", "{}", '{"edges": [{}]}'])
+async def test_invalid_extraction_instance_is_retryable(bad):
+    class Edge(BaseModel):
+        duplicate_candidate_id: int
+        fact: str
+
+    class Response(BaseModel):
+        edges: list[Edge]
+
+    client = _llm_client([bad, '{"edges": []}'])
+    messages = [Message(role="user", content="extract facts")]
+    with pytest.raises(EmptyResponseError):
+        await client._generate_response(messages, response_model=Response)
+    assert await client._generate_response(messages, response_model=Response) == {
+        "edges": []
+    }
