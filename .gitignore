@@ -7,3 +7,10 @@ __pycache__/
 .DS_Store
 .env
 data/
+
+# run logs
+docs/eval/*.log
+docs/eval/*stdout.txt
+docs/eval/*stderr.txt
+.env.*
+!.env.example
