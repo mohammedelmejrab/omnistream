@@ -545,3 +545,62 @@ different results in 6.
 - Round 3 in progress: full-text-index name ranking with stopwords removed; collapse only
   true supersession (an older fact explicitly replaced), never across bubbles; generic
   endpoints of strong fact matches may seed at reduced weight; normalised seed scores.
+
+### Change 12: event-relative time intent (fix for Finding 4 cause 5 / E8)
+
+- Problem (verified in E8): all 14 measured current time-sensitive failures are
+  'immediately before the September recall' questions. QueryRouter._parse_scope
+  correctly refused to guess an event-relative date and returned time_scope None;
+  graph retrieval then defaulted to 'facts valid now' (the historical predecessor
+  fact was filtered out), and generate_answer added 'Answer for now: prefer the
+  most recent statement valid now' - the opposite of what the question asks.
+- General mechanism (no dataset-specific tuning):
+  1. Router returns a structured hint alongside time_scope:
+     RoutingDecision.temporal_relation ('before' | 'after' | 'at' | None) and
+     anchor_event (event description from the question). The routing LLM's JSON
+     schema gained temporal_relation/anchor_event fields (primary source), and a
+     deterministic cue check is a safety net for missing/invalid LLM fields.
+     Cues: immediately/just/right/shortly before, before, prior to, until, till;
+     immediately after, after, since, following, in the wake of, subsequent to;
+     at the time of, when <event> happened; role succession without an anchor:
+     previously, formerly (not 'formerly known as'), former, predecessor,
+     preceded, previous <role>. Rule for anchors: they must name a specific
+     event (at least one capitalised character - proper name, month, acronym),
+     so 'What happened before markets opened?' produces no hint; pure calendar
+     anchors ('before September 18') and 'since when/until when' stay on the
+     unchanged explicit-date path. time_scope remains None when no date is given,
+     and an explicit date scope suppresses the hint entirely.
+  2. Retrieval: qa.answer_question converts an event hint with no date into an
+     explicit unbounded TimeScope(None, None) ('any time') and threads it through
+     the dispatcher and subagents instead of the None = 'valid now' default. The
+     existing store/own APIs already express unbounded scopes (neo4j _VALID with
+     now=null, memory_store fact_in_scope, graphiti overlap, own expand/seeding/
+     versions), so own expansion, fact seeding and graphiti filtering now keep
+     historical facts (valid_at/invalid_at any); classic applies no cutoff for an
+     unbounded scope. The agents' facts tool maps an unbounded routed scope to
+     sentinel bounds (datetime min/max) because stores' facts_about treats None
+     bounds as 'valid now'.
+  3. Answer prompt: generate_answer replaces the 'Answer for now' instruction,
+     when time_scope is None and temporal_relation is set, with an instruction
+     matching the relation: identify the event's date from the evidence, then
+     answer with the statement valid immediately before / after / at the time of
+     the event; mention both when ambiguous. Existing as-of/now/interval
+     instructions are unchanged.
+- Offline tests added: tests/unit/test_event_relative.py (68 tests): deterministic
+  cue detection over many phrasings, the specificity rule and its false positives,
+  LLM JSON field parsing and fallback, explicit-date precedence, retrieval
+  threading (simple and subagents), unbounded-scope history inclusion in own
+  expansion and graphiti, the facts tool, and answer-prompt selection. Stubs only;
+  no paid LLM calls.
+- Validation: full offline suite 1172 passed, 4 failed, 1 skipped, 22 deselected.
+  The 4 failures are in concurrently edited files outside this task
+  (neo4j_store.py ANN shortfall fallback, own_algorithm/versions.py, own_algorithm/
+  seeding.py) and their tracebacks never touch this change's files. Ruff clean.
+- No commits, no .env access, no data/** changes.
+- Supervisor note on the change above (commit `8c65e18`): the deterministic safety net
+  decides that an anchor names a specific event when it contains a capital letter
+  ("before the September recall" yes, "before markets opened" no). That is a casing
+  heuristic of the kind criticised in setback 6. It is acceptable here only because the
+  LLM's own `temporal_relation` field is the primary signal and the cue check is a backup;
+  it would mis-handle caseless scripts. Revisit if the real-data dev set shows misses.
+  Offline suite after the change: 1,189 passed.
