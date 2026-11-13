@@ -458,3 +458,17 @@ different results in 6.
   provider errors must be marked unmeasured and excluded, and a run with a high error rate
   must be flagged invalid.
 - Needs the project owner: buy credit on OpenRouter (about 10 USD for the remaining work).
+
+### Change 8: the evaluation harness no longer scores provider errors as wrong answers
+
+- Fix for the flaw found in setback 7. A question whose answer or retrieval failed with a
+  provider or transport error is now "unmeasured": left out of every metric, counted in an
+  errors column.
+- A run with more than 10% unmeasured questions in any configuration is labelled INVALID
+  RUN, and its spec section 8.3 checks become UNMEASURED instead of FAIL.
+- On HTTP 401/402/403 (auth or credit) the run stops launching calls and saves its
+  checkpoint; `--resume` retries the unmeasured questions.
+- Answer, agent and judge calls now send explicit max_tokens caps (4096 and 1024). Some
+  calls had sent no cap, so the provider saw up to 131,072 tokens.
+- Check: run 13 re-aggregated with the fixed code says INVALID RUN, 302 unmeasured pairs,
+  all HTTP 402. The original report is kept next to it for the record.
