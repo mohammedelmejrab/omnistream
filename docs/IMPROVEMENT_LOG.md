@@ -245,3 +245,59 @@ secondary check. The real-data test split is used only for the final measurement
 OpenRouter key limit raised to 14 USD by the owner on 13 Nov; 8.99 USD available at this
 point. Plan: measure the ingestion cost on a few real items first, build a small dev
 snapshot for developing fixes, and build the test snapshot once.
+
+### Change 4: real-v2 evaluation plumbing and bounded ingestion probe
+
+- Added a local-text real-v2 loader with explicit dev/test selection, manifest text
+  hash checks, disjoint gold validation, freshness hold-back, and deterministic
+  background selection (default dev 40 / test 60). Snapshots bind the selected IDs,
+  digest, split and background size; CLI forwards `--split` and `--background`.
+- Manual routing annotations score C3 without pinning source bubbles. No changes
+  to retrieval, answering or ingestion behavior. Shared usage metering now records
+  prompt and completion tokens separately in addition to existing totals/costs.
+- Added a ten-item fixed-seed probe (3 News / 3 Finance / 4 Research, including two
+  SEC exhibits and two long blog posts), conservative $0.55 request budget guard,
+  durable per-item measurements, and scoped cleanup. It never builds a full snapshot.
+- Measurement is pending credentials: LLM_API_KEY is absent from the process
+  environment and the task forbids opening `.env`; a private credential request was
+  made and timed out without delivery. No LLM requests were sent, actual spend $0.00.
+  Read-only Neo4j verification:
+  zero nodes for `real-v2-costprobe`, and no throwaway snapshot directory.
+- Finding: the existing snapshot API-item path writes one Graphiti episode per
+  routed bubble, not 1,500-token document-upload parts. The probe records actual
+  episode counts plus the hypothetical C1 document split count separately. This
+  behavior was left unchanged; it limits transfer to document-upload ingestion.
+- The current question file has 60 test questions and no dev questions. The loader
+  rejects an empty split. Projection inputs: hypothetical dev 120-item fixed-seed
+  sample 132,534 words; actual test selection + background 60 has 140 items and
+  170,065 words; full corpus 350 items / 456,032 words. Ingestion USD projections
+  remain unmeasured. Recorded eval-v2 costs, repriced under an explicit token-mix
+  scenario with unchanged deepseek-chat judge, imply $0.601318 for a 60-question,
+  six-configuration run, excluding shared overhead. Report:
+  `docs/realdata/real-v2-ingestion-cost.md`.
+- Final offline validation: `1021 passed, 1 skipped, 21 deselected in 43.57s`;
+  ruff clean. Full captured output: `docs/realdata/real-v2-ingestion-tests.txt`.
+  No commits and no protected snapshot/diagnostic/question artifacts modified.
+
+### Setback 4: the new model "thinks" before answering, which broke ingestion
+
+- First cost probe (one 2,139-word NVIDIA blog post through the real pipeline): 17 LLM calls,
+  213,928 completion tokens (about 12,600 per call), 0.14 USD, 23 minutes, and the item
+  FAILED. The probe stopped there and cleaned up after itself (0 nodes left).
+- Verified cause with a single small extraction call:
+
+  | Request | Time | Completion tokens | Of which hidden reasoning | Valid JSON |
+  |---|---|---|---|---|
+  | default | 12.2 s | 1,654 | 1,379 | yes |
+  | reasoning switched off | 1.6 s | 330 | 0 | yes |
+  | reasoning effort "low" | 6.5 s | 1,352 | 1,048 | yes |
+
+- `deepseek/deepseek-v4.1-flash-1017` reasons by default; the old `deepseek-chat` did not.
+  With reasoning on, a long document's extraction calls most likely ran out of their output
+  budget before finishing the JSON.
+- Fix in progress: a project setting for reasoning (default off) applied to every LLM call
+  path, plus treating truncated completions as retryable failures. The cost probe will be
+  re-run after the fix.
+- Also logged by the probe: the snapshot builder writes one Graphiti episode per routed
+  bubble rather than splitting long documents into ~1,500-token parts. Left unchanged for
+  now; it affects long items.
