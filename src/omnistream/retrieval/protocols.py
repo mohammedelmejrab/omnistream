@@ -45,6 +45,15 @@ class GraphStore(Protocol):
         min_cosine: float = 0.5,
     ) -> list[tuple[Entity, float]]: ...
 
+    def seed_by_fact_embedding(
+        self,
+        embedding: np.ndarray,
+        *,
+        bubbles: Sequence[str],
+        top_k: int = 10,
+        time_scope: TimeScope | None = None,
+    ) -> list[tuple[Entity, float]]: ...
+
     def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
         """Return candidates for fuzzy entity-name matching."""
         ...

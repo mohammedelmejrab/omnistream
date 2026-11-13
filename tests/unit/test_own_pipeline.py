@@ -43,7 +43,7 @@ def test_pipeline_filters_and_fallback(store):  # noqa: F811 - pytest fixture pa
     assert result.mode == "own"
     assert {r.fact.id for r in result.facts} == {"ab", "bc", "cross"}
     assert all(
-        r.path and set(r.ranks) == {"fact_score", "recency", "confidence"}
+        r.path and "fact_score" in r.ranks and "confidence" not in r.ranks
         for r in result.facts
     )
     assert any("Fact cross" == text for text in encoder.inputs)
@@ -69,7 +69,7 @@ def test_top_twenty_order_matches_fusion():
     result = retriever.retrieve("question", bubbles=["news"])
     assert len(result.facts) == 20
     graph = built.neighbors("seed", 2)
-    pr = personalized_pagerank(graph, ["seed"])
+    pr = personalized_pagerank(graph, [e.id for e in result.seeds])
     expected = fuse_facts(
         [
             FactCandidate(

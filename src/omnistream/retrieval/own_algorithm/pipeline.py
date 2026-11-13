@@ -54,7 +54,13 @@ class OwnRetriever:
         if not limit:
             return RetrievalResult(mode="own")
         query = self.embedder.embed_query(question)
-        seeds = seed_entities(question, query, self.store, bubbles=bubbles)
+        seeds = seed_entities(
+            question,
+            query,
+            self.store,
+            bubbles=[b for b in bubbles if b not in excluded_bubbles],
+            time_scope=time_scope,
+        )
         if not seeds:
             return RetrievalResult(mode="own")
         # One seed per real-world identity: seeding both bubble-local copies

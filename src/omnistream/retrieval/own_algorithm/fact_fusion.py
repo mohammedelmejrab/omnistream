@@ -1,7 +1,7 @@
 """Step 5 of the ``own`` algorithm (spec C5): fuse fact signals with RRF.
 
-Each candidate fact is ranked three ways and the rankings are fused with
-Reciprocal Rank Fusion (k = 60):
+Candidate facts use weighted Reciprocal Rank Fusion (k = 60, weights 2:1:1);
+near-constant auxiliary signals are omitted. This extends spec C5 step 5:
 
 1. fact score  - question similarity x endpoint PageRank (from step 4)
 2. recency     - ``exp(-lambda * age_days)`` with ``lambda = ln 2 / half_life``
@@ -79,8 +79,11 @@ def fuse_facts(
     default_half_life: float = 30.0,
     k: int = DEFAULT_RRF_K,
     top_n: int | None = DEFAULT_TOP_N,
+    relevance_weight: float = 2.0,
+    drop_constant: bool = True,
+    min_cv: float = 0.01,
 ) -> list[FusedFact]:
-    """Rank facts by RRF over fact score, recency and confidence.
+    """Rank facts by weighted RRF over informative relevance/recency/confidence.
 
     ``now`` is required (no hidden clock) so results are reproducible.
     ``half_lives`` overrides are merged over :data:`DEFAULT_HALF_LIVES`; lookup
@@ -108,14 +111,39 @@ def fuse_facts(
         )
         for c in candidates
     }
+    # Spec C5 step 5 deviation: weighted RRF prioritizes relevance (2:1:1).
+    # Auxiliary signals with <1% relative standard deviation convey negligible
+    # discrimination. Keep relevance even when all scores are zero for fallback.
+    signals = {
+        "fact_score": {c.id: c.fact_score for c in candidates},
+        "recency": recency,
+        "confidence": {c.id: c.confidence for c in candidates},
+    }
+    if not math.isfinite(relevance_weight) or relevance_weight <= 0:
+        raise ValueError("relevance_weight must be finite and positive")
+    if not math.isfinite(min_cv) or min_cv < 0:
+        raise ValueError("min_cv must be finite and non-negative")
+
+    def informative(values):
+        xs = list(values.values())
+        if len(set(xs)) < 2:
+            return False
+        mean = math.fsum(xs) / len(xs)
+        sd = math.sqrt(math.fsum((x - mean) ** 2 for x in xs) / len(xs))
+        return sd / max(abs(mean), 1e-12) >= min_cv
+
+    rankings = {
+        name: ranks_from_scores(values)
+        for name, values in signals.items()
+        if name == "fact_score" or not drop_constant or informative(values)
+    }
     fused = reciprocal_rank_fusion(
-        {
-            "fact_score": ranks_from_scores([(c.id, c.fact_score) for c in candidates]),
-            "recency": ranks_from_scores(recency),
-            "confidence": ranks_from_scores([(c.id, c.confidence) for c in candidates]),
-        },
+        rankings,
         k=k,
         top_n=top_n,
+        weights={
+            name: relevance_weight if name == "fact_score" else 1.0 for name in rankings
+        },
     )
     return [
         FusedFact(fact=by_id[r.id], score=r.score, recency=recency[r.id], ranks=r.ranks)

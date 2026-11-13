@@ -148,6 +148,9 @@ class OfflineRetriever:
 
 
 class OfflineGraphStore:
+    def seed_by_fact_embedding(self, embedding, *, bubbles, top_k=10, time_scope=None):
+        return []
+
     def seed_by_embedding(
         self,
         embedding: np.ndarray,

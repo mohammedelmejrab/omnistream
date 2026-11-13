@@ -248,6 +248,72 @@ RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:Glo
         )
         return [(_entity(r["e"]), float(r["score"])) for r in records]
 
+    def seed_by_fact_embedding(
+        self,
+        embedding: np.ndarray,
+        *,
+        bubbles: Sequence[str],
+        top_k: int = 10,
+        time_scope: TimeScope | None = None,
+    ) -> list[tuple[Entity, float]]:
+        """Search relationship vectors; exact fallback needs no schema mutation.
+
+        Enumerating selected groups is linear in their embedded facts. This is
+        appropriate for small graphs; large deployments need filtered ANN search.
+        """
+        from omnistream.embeddings import EmbeddingService
+
+        _seed_bounds(top_k, -1)
+        if not top_k or not bubbles:
+            return []
+        indices = self._run(
+            "SHOW INDEXES YIELD name, type, entityType, labelsOrTypes, properties, state "
+            "WHERE type = 'VECTOR' AND entityType = 'RELATIONSHIP' "
+            "AND 'RELATES_TO' IN labelsOrTypes AND properties = ['fact_embedding'] "
+            "AND state = 'ONLINE' RETURN name ORDER BY name"
+        )
+        if indices:
+            # Retrieve before group/time filtering so other groups cannot consume
+            # the budget. This is still linear; filtered ANN is future scale work.
+            rows = self._run(
+                "MATCH ()-[candidate:RELATES_TO]->() WITH count(candidate) AS n "
+                "CALL db.index.vector.queryRelationships($index_name, CASE WHEN n > 0 THEN n ELSE 1 END, "
+                "$embedding) YIELD relationship AS r, score "
+                "WITH r, 2.0 * score - 1.0 AS score WHERE r.group_id IN $bubbles AND "
+                + _VALID
+                + " RETURN r.uuid AS id, startNode(r).uuid AS subject, endNode(r).uuid AS object, score "
+                "ORDER BY score DESC, id LIMIT $top_k",
+                index_name=indices[0]["name"],
+                embedding=np.asarray(embedding, dtype=float).tolist(),
+                bubbles=list(bubbles),
+                top_k=top_k,
+                **_scope_parameters(time_scope, self.now),
+            )
+            ranked = [(r, r["score"]) for r in rows]
+        else:
+            rows = self._run(
+                "MATCH (s:Entity)-[r:RELATES_TO]->(o:Entity) WHERE r.group_id IN $bubbles "
+                "AND r.fact_embedding IS NOT NULL AND "
+                + _VALID
+                + " RETURN r.uuid AS id, r.fact_embedding AS embedding, "
+                "s.uuid AS subject, o.uuid AS object ORDER BY r.uuid",
+                bubbles=list(bubbles),
+                **_scope_parameters(time_scope, self.now),
+            )
+            scores = EmbeddingService.cosine_similarity(
+                embedding, [r["embedding"] for r in rows]
+            )
+            ranked = sorted(
+                zip(rows, scores), key=lambda x: (-float(x[1]), x[0]["id"])
+            )[:top_k]
+        entities = {e.id: e for e in self.entities_in(bubbles)}
+        return [
+            (entities[r[key]], float(score))
+            for r, score in ranked
+            for key in ("subject", "object")
+            if r[key] in entities
+        ]
+
     def expand(
         self,
         seed_ids: Sequence[str],

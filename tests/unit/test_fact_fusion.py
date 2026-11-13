@@ -96,7 +96,7 @@ def test_rrf_over_three_signals_exact_scores():
     )  # best fact score, oldest, least confident
     b = fact("b", score=0.5, age_days=0, confidence=0.5)
     c = fact("c", score=0.1, age_days=5, confidence=0.9)
-    fused = {f.fact.id: f for f in fuse_facts([a, b, c], now=NOW)}
+    fused = {f.fact.id: f for f in fuse_facts([a, b, c], now=NOW, relevance_weight=1)}
     assert fused["a"].ranks == {"fact_score": 1, "recency": 3, "confidence": 3}
     assert fused["b"].ranks == {"fact_score": 2, "recency": 1, "confidence": 2}
     assert fused["c"].ranks == {"fact_score": 3, "recency": 2, "confidence": 1}
@@ -153,7 +153,7 @@ def test_non_finite_fact_score_rejected(score):
 def test_tied_signals_share_ranks():
     out = fuse_facts([fact("a"), fact("b")], now=NOW)
     assert (
-        out[0].ranks == out[1].ranks == {"fact_score": 1, "recency": 1, "confidence": 1}
+        out[0].ranks == out[1].ranks == {"fact_score": 1}
     )
     assert out[0].score == out[1].score
     assert [f.fact.id for f in out] == ["a", "b"]

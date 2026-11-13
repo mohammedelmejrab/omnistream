@@ -88,6 +88,37 @@ class InMemoryGraphStore:
         found = [(e, float(s)) for e, s in zip(candidates, scores) if s >= min_cosine]
         return sorted(found, key=lambda row: (-row[1], row[0].id))[:top_k]
 
+    def seed_by_fact_embedding(
+        self,
+        embedding: np.ndarray,
+        *,
+        bubbles: Sequence[str],
+        top_k: int = 10,
+        time_scope: TimeScope | None = None,
+    ) -> list[tuple[Entity, float]]:
+        """Exact read-only cosine over eligible fact text vectors, then endpoints."""
+        _seed_bounds(top_k, -1)
+        facts = [
+            f
+            for f in self._facts.values()
+            if f.bubble in bubbles
+            and f.grounded
+            and fact_in_scope(f, time_scope, now=self.now)
+            and f.id in self._fact_embeddings
+        ]
+        scores = EmbeddingService.cosine_similarity(
+            embedding, [self._fact_embeddings[f.id] for f in facts]
+        )
+        ranked = sorted(zip(facts, scores), key=lambda x: (-float(x[1]), x[0].id))[
+            :top_k
+        ]
+        return [
+            (self._entities[i], float(score))
+            for f, score in ranked
+            for i in (f.subject_id, f.object_id)
+            if self._entities[i].bubble in bubbles
+        ]
+
     def expand(
         self,
         seed_ids: Sequence[str],
