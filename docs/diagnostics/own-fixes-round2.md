@@ -1,6 +1,6 @@
 # Own retrieval fixes, round 2
 
-Measured 2026-11-13 on `feat/c5-integration`, with round-1 sources frozen from `cbba2e7`. No commits, paid calls, answer generation, web search, snapshot writes, or mutations of the application Neo4j graph. Schema writes in tests target a separate testcontainers database only.
+Measured 2026-11-13 on `feat/c5-integration`, with round-1 sources frozen from `f9caa47`. No commits, paid calls, answer generation, web search, snapshot writes, or mutations of the application Neo4j graph. Schema writes in tests target a separate testcontainers database only.
 
 ## Result and measurement controls
 

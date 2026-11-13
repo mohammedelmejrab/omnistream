@@ -123,7 +123,7 @@ both be present in the same question. Experiment plan below.
 3. Write questions over the real data, with a development split and a held-out test split.
 4. Measure a baseline with the new model, fix the verified causes, measure again.
 
-### Change 2: real-data collector and quality verifier (commit `70fcbcb`)
+### Change 2: real-data collector and quality verifier (commit `9556854`)
 
 - New commands `omni realdata collect` and `omni realdata verify`, driven by a committed
   source list. The committed manifest holds only URL, date, source and SHA-256 per item.
@@ -199,7 +199,7 @@ Decision: approved for building the question set, with these caveats.
    (cross-bubble entities, how many appear under several names).
 4. 101 of the 350 items are dated in the last 4 days of the window (mostly arXiv).
 
-### Finding 4: controlled diagnosis on eval-v2 (commit `a363621`)
+### Finding 4: controlled diagnosis on eval-v2 (commit `b0089a7`)
 
 Full report: `docs/diagnostics/eval-v2-diagnosis.md`. Each suspected cause was tested by
 changing one thing at a time on the frozen eval-v2 snapshot, with the new model, without
@@ -407,7 +407,7 @@ Same pipeline, same items, reasoning switched off (Change 5):
   table retains the original paired pass; downstream audit replays captured
   seed IDs and requires matching rankings. Raw replay evidence is retained.
 
-### Change 9: own-mode fixes, round 1 (commit `cbba2e7`)
+### Change 9: own-mode fixes, round 1 (commit `f9caa47`)
 
 Addresses causes 1 and 2 of Finding 4. Report: `docs/diagnostics/own-fixes-eval-v2.md`.
 
@@ -474,7 +474,7 @@ different results in 6.
   all HTTP 402. The original report is kept next to it for the record.
 
 
-### Change 11: own retrieval fixes, round 2 (commit `646beb6`)
+### Change 11: own retrieval fixes, round 2 (commit `336cdbd`)
 
 - Replaced casing-based name eligibility with the shared ingestion ontology:
   seven named types seed; Concept/untyped/unknown types do not. Same rule for
@@ -597,7 +597,7 @@ different results in 6.
   (neo4j_store.py ANN shortfall fallback, own_algorithm/versions.py, own_algorithm/
   seeding.py) and their tracebacks never touch this change's files. Ruff clean.
 - No commits, no .env access, no data/** changes.
-- Supervisor note on the change above (commit `8c65e18`): the deterministic safety net
+- Supervisor note on the change above (commit `01f7eae`): the deterministic safety net
   decides that an anchor names a specific event when it contains a capital letter
   ("before the September recall" yes, "before markets opened" no). That is a casing
   heuristic of the kind criticised in setback 6. It is acceptable here only because the
@@ -660,9 +660,9 @@ different results in 6.
   verification, paired deltas, regression reasons and test outputs:
   data/diagnostics/own-fixes-round3/. Reproducible measurement/report modules:
   src/omnistream/eval/diagnostics/own_fixes_round3*.py; round-two sources frozen
-  from 646beb6 in own_fixes_round2_sources.json.
+  from 336cdbd in own_fixes_round2_sources.json.
 
-### Change 13: own-mode fixes, round 3 (commit `aa720fc`) - reviewed clean
+### Change 13: own-mode fixes, round 3 (commit `22cb706`) - reviewed clean
 
 Report: `docs/diagnostics/own-fixes-round3.md`. Independent review: clean.
 
@@ -697,11 +697,11 @@ Offline retrieval on eval-v2, own mode, all 60 questions (exact search path):
 ### Setback 9 and fixes: first real-data snapshot build exposed two harness gaps
 
 - A held-back freshness item whose question had been excluded from scoring (rq-d-026) made
-  the freshness phase crash (`StopIteration`). Fixed (commit `f331793`): such items are
+  the freshness phase crash (`StopIteration`). Fixed (commit `6835ab6`): such items are
   still ingested, the answerability probe is skipped.
 - The ingestion router put 2 of 76 real items in the Unsorted queue (confidence 0.10 and
   0.45, below the 0.5 threshold), which the freeze check did not expect. Fixed (commit
-  `7108b21`): "unsorted" is a valid end state and is reported, never rescued. One of them
+  `cd06b91`): "unsorted" is a valid end state and is reported, never rescued. One of them
   (a Mozilla blog post) is the gold item of dev question rq-d-008, so the system genuinely
   cannot answer it. That is a real router weakness: a product announcement fits none of the
   three bubble descriptions well.

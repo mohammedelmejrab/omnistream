@@ -1,6 +1,6 @@
 # Own retrieval fixes, round 3
 
-Measured 2026-11-13 on `feat/c5-integration`, round-two reference `646beb6`. No commits, web search, paid LLM calls, `.env` access, application graph writes or snapshot writes. Local embeddings only; OpenAI completion SDK calls are blocked during measurement. Integration schema writes target disposable testcontainers databases.
+Measured 2026-11-13 on `feat/c5-integration`, round-two reference `336cdbd`. No commits, web search, paid LLM calls, `.env` access, application graph writes or snapshot writes. Local embeddings only; OpenAI completion SDK calls are blocked during measurement. Integration schema writes target disposable testcontainers databases.
 
 ## Controls and headline
 
@@ -138,4 +138,4 @@ Times are 60 uncached recorded-route queries per search operation, with local em
 
 Added general tests cover common-word name survival beyond 300 distractors, Lucene literal escaping/parameterization, co-existing quarterly/tranche/month facts despite identical embeddings, same-relation near-identical collapse, cross-bubble retention, input permutations, invalidated CEO now versus unbounded scope, generic endpoint reduction, source-scale independence/fact quota, incompatible-index warning, and ANN-shortfall exact fallback. Integration executes actual fulltext/schema/fallback queries in isolated Neo4j. Existing round-two tests were updated where they asserted the rejected over-merge or silent underfill contracts.
 
-All sources/replays/metrics are in `src/omnistream/eval/diagnostics/own_fixes_round3*.py` and `data/diagnostics/own-fixes-round3/`. Source fixture own_fixes_round2_sources.json comes from git show 646beb6. Diagnostics are retrieval-only and use synthetic eval-v2; real-data dev validation remains outstanding. OpenCode-owned router/QA/runtime/modes/tools files were not edited by this implementation agent; the full suite includes concurrent event-relative changes.
+All sources/replays/metrics are in `src/omnistream/eval/diagnostics/own_fixes_round3*.py` and `data/diagnostics/own-fixes-round3/`. Source fixture own_fixes_round2_sources.json comes from git show 336cdbd. Diagnostics are retrieval-only and use synthetic eval-v2; real-data dev validation remains outstanding. OpenCode-owned router/QA/runtime/modes/tools files were not edited by this implementation agent; the full suite includes concurrent event-relative changes.
