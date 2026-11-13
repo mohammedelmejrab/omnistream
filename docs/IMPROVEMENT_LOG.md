@@ -325,7 +325,7 @@ snapshot for developing fixes, and build the test snapshot once.
   `scripts/verify_reasoning.py` (128 output tokens/request, ten-call hard cap,
   no ingestion). Actual spend so far: $0.00.
 
-### Change 5: reasoning control for the new model (fix for setback 4)
+### Change 6: reasoning control for the new model (fix for setback 4)
 
 - New settings `llm_reasoning` and `judge_reasoning` (default `off`), sent as OpenRouter's
   `reasoning` request field; endpoint gating `auto|always|never` (auto = only for
@@ -338,7 +338,7 @@ snapshot for developing fixes, and build the test snapshot once.
   calls, judge, Graphiti, LlamaIndex baseline): 0 reasoning tokens, every call finished
   with `stop`. Cost of the check: 0.00007 USD. Offline suite: 1,053 passed.
 
-### Change 6: real-v2 questions written, independently verified, repaired
+### Change 7: real-v2 questions written, independently verified, repaired
 
 - 87 questions over the real corpus (test 60, dev 27; dev is 3 short because few genuine
   cross-bubble links and changed facts stay inside the dev companies). Written by one model
@@ -356,7 +356,7 @@ snapshot for developing fixes, and build the test snapshot once.
   (kept in the file, never deleted).
 
 
-### Change 5: own fact seeding and relevance-weighted fusion (2026-11-13)
+### Change 8: own fact seeding and relevance-weighted fusion (2026-11-13)
 
 - Implemented P1/P2 mechanisms from Finding 4: ten fact-text vector matches seed
   endpoints, proper-name guard, five distinct name identities after dedup/refill,
@@ -407,7 +407,7 @@ Same pipeline, same items, reasoning switched off (Change 5):
   table retains the original paired pass; downstream audit replays captured
   seed IDs and requires matching rankings. Raw replay evidence is retained.
 
-### Change 7: own-mode fixes, round 1 (commit `cbba2e7`)
+### Change 9: own-mode fixes, round 1 (commit `cbba2e7`)
 
 Addresses causes 1 and 2 of Finding 4. Report: `docs/diagnostics/own-fixes-eval-v2.md`.
 
@@ -459,7 +459,7 @@ different results in 6.
   must be flagged invalid.
 - Needs the project owner: buy credit on OpenRouter (about 10 USD for the remaining work).
 
-### Change 8: the evaluation harness no longer scores provider errors as wrong answers
+### Change 10: the evaluation harness no longer scores provider errors as wrong answers
 
 - Fix for the flaw found in setback 7. A question whose answer or retrieval failed with a
   provider or transport error is now "unmeasured": left out of every metric, counted in an
@@ -474,7 +474,7 @@ different results in 6.
   all HTTP 402. The original report is kept next to it for the record.
 
 
-### Change 9: own retrieval fixes, round 2 (commit `646beb6`)
+### Change 11: own retrieval fixes, round 2 (commit `646beb6`)
 
 - Replaced casing-based name eligibility with the shared ingestion ontology:
   seven named types seed; Concept/untyped/unknown types do not. Same rule for
