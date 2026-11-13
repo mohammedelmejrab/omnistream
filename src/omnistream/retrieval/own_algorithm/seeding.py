@@ -16,7 +16,7 @@ from omnistream.retrieval.protocols import GraphStore
 
 @dataclass(frozen=True)
 class Seed:
-    """Deduplicated entity seed; scores use a common [-1, 1] scale."""
+    """Deduplicated entity seed; scores use within-source rank scaling in (0, 1]."""
 
     entity: Entity
     score: float
@@ -53,11 +53,13 @@ def seed_entities(
     fact_top_k: int = 10,
     time_scope=None,
     max_seeds: int = 10,
+    generic_fact_weight: float = 0.5,
 ) -> list[Seed]:
     """Combine bounded name/fact candidates, capped by distinct identity.
 
-    Ten seeds is twice the five-name budget; fuzzy and fact endpoints share
-    this total budget and the ontology eligibility rule.
+    Ten seeds is twice the five-name budget. Each source uses reciprocal dense
+    ranks; generic endpoints of positive top-fact matches receive half weight.
+    Half the total budget is reserved for fact-derived identities before refill.
     """
     if isinstance(max_seeds, bool) or not isinstance(max_seeds, int) or max_seeds < 0:
         raise ValueError("max_seeds must be a non-negative integer")
@@ -82,6 +84,12 @@ def seed_entities(
     for seed in sorted(seeds.values(), key=lambda s: (-s.score, s.entity.id)):
         distinct.setdefault(seed.entity.global_id or seed.entity.id, seed)
     seeds = {s.entity.id: s for s in list(distinct.values())[:top_k]}
+    vector_scores = sorted({s.score for s in seeds.values()}, reverse=True)
+    seeds = {
+        i: Seed(s.entity, 1 / (vector_scores.index(s.score) + 1), s.source)
+        for i, s in seeds.items()
+    }
+    fuzzy_seeds = {}
     question_tokens = re.findall(r"\w+", question.casefold())
     # Compare complete token windows, never substrings within another word.
     windows: dict[int, list[str]] = {}
@@ -109,21 +117,50 @@ def seed_entities(
                 ),
             )
         if score >= fuzzy_threshold:
-            previous = seeds.get(entity.id)
-            seeds[entity.id] = Seed(
-                entity,
-                max(score / 100, previous.score if previous else -1),
-                "both" if previous else "fuzzy",
-            )
+            fuzzy_seeds[entity.id] = Seed(entity, score / 100, "fuzzy")
+
+    # Reciprocal dense rank within each source avoids comparing lexical
+    # ratios with cosine magnitudes. Equal scores receive equal weights.
+    def normalize(found):
+        scores = sorted({s.score for s in found}, reverse=True)
+        return [
+            Seed(s.entity, 1.0 / (scores.index(s.score) + 1), s.source) for s in found
+        ]
+
+    for i in fuzzy_seeds:
+        if i in seeds:
+            seeds[i] = Seed(seeds[i].entity, seeds[i].score, "both")
+    lexical = list(seeds.values()) + normalize(list(fuzzy_seeds.values()))
+    facts = []
     for entity, score in store.seed_by_fact_embedding(
         question_embedding, bubbles=bubbles, top_k=fact_top_k, time_scope=time_scope
     ):
-        if not is_named_entity(entity) or score <= 0:
-            continue
-        previous = seeds.get(entity.id)
-        if previous is None or score > previous.score:
-            seeds[entity.id] = Seed(entity, score, "fact")
-    distinct = {}
-    for seed in sorted(seeds.values(), key=lambda s: (-s.score, s.entity.id)):
-        distinct.setdefault(seed.entity.global_id or seed.entity.id, seed)
-    return list(distinct.values())[:max_seeds]
+        if score > 0:
+            facts.append(Seed(entity, score, "fact"))
+    facts = [
+        Seed(
+            s.entity,
+            s.score * (1 if is_named_entity(s.entity) else generic_fact_weight),
+            "fact",
+        )
+        for s in normalize(facts)
+    ]
+
+    def unique(found):
+        distinct = {}
+        for seed in sorted(found, key=lambda s: (-s.score, s.entity.id)):
+            distinct.setdefault(seed.entity.global_id or seed.entity.id, seed)
+        return list(distinct.values())
+
+    # Reserve half the budget for fact-derived identities, then fill by score.
+    # This symmetric share is declared independently of evaluation outcomes.
+    reserved = unique(facts)[: (max_seeds + 1) // 2]
+    selected = {s.entity.global_id or s.entity.id: s for s in reserved}
+    for seed in unique(lexical + facts):
+        identity = seed.entity.global_id or seed.entity.id
+        if identity in selected:
+            if seed.score > selected[identity].score:
+                selected[identity] = seed
+        elif len(selected) < max_seeds:
+            selected[identity] = seed
+    return sorted(selected.values(), key=lambda s: (-s.score, s.entity.id))

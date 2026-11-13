@@ -198,7 +198,7 @@ def test_versions_current_point_and_interval_and_identity():
     unrelated = replace(new, id="other", relation="different relation")
     graph = Subgraph(entities, (old, new, unrelated))
     groups = fact_versions(graph, {}, scope=None, now=NOW)
-    assert {g.representative.id for g in groups} == {"new", "other"}
+    assert {g.representative.id for g in groups} == {"new", "old", "other"}
     assert {f.id for g in groups for f in g.versions} == {"new", "old", "other"}
     past = NOW - timedelta(days=5)
     assert [
@@ -223,7 +223,9 @@ def test_versions_paraphrase_threshold():
     a = replace(
         fact("a", "a", "b"), relation="works with", published_at=NOW - timedelta(days=1)
     )
-    b = replace(a, id="b", relation="collaborates", published_at=NOW)
+    b = replace(
+        a, id="b", relation="works_with", text="A distinct paraphrase", published_at=NOW
+    )
     graph = Subgraph(entities, (a, b))
     assert (
         len(

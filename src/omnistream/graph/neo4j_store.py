@@ -8,7 +8,6 @@ Query values and limits are parameters; DDL index identifiers are backtick-escap
 from __future__ import annotations
 
 import logging
-import re
 from collections.abc import Sequence
 from datetime import UTC, datetime
 from time import perf_counter
@@ -226,20 +225,35 @@ class Neo4jGraphStore:
     def name_candidates(
         self, question: str, *, bubbles: Sequence[str], limit: int = 100
     ) -> list[Entity]:
-        # A bounded server-side lexical prefilter; fuzzy scoring stays local.
-        tokens = sorted(
-            {t[:3] for t in re.findall(r"\w+", question.casefold()) if len(t) >= 3}
+        from omnistream.graph.name_search import lucene_query, rank_names
+
+        started = perf_counter()
+        query = lucene_query(question)
+        if not query or limit <= 0:
+            return []
+        indexes = self._run(
+            "SHOW INDEXES YIELD name, type, state, labelsOrTypes, properties "
+            "WHERE type = 'FULLTEXT' AND state = 'ONLINE' AND 'Entity' IN labelsOrTypes "
+            "AND 'name' IN properties RETURN name ORDER BY name"
         )
-        rows = self._run(
-            "MATCH (e:Entity) WHERE e.group_id IN $bubbles "
-            "AND any(t IN $tokens WHERE any(n IN [e.name] + coalesce(e.aliases, []) WHERE toLower(n) CONTAINS t)) "
-            "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e "
-            "ORDER BY e.uuid LIMIT $limit",
-            bubbles=list(bubbles),
-            tokens=tokens,
-            limit=limit,
-        )
-        return [_entity(r["e"]) for r in rows]
+        if indexes:
+            rows = self._run(
+                "CALL db.index.fulltext.queryNodes($index_name, $lexical_query) YIELD node AS e, score "
+                "WHERE e.group_id IN $bubbles "
+                "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e "
+                "ORDER BY score DESC, e.name, e.uuid LIMIT $limit",
+                index_name=indexes[0]["name"],
+                lexical_query=query,
+                bubbles=list(bubbles),
+                limit=limit,
+            )
+            found = [_entity(r["e"]) for r in rows]
+            path = "name_fulltext"
+        else:
+            found = rank_names(question, self.entities_in(bubbles))[:limit]
+            path = "name_exact"
+        self._record_path(path, started)
+        return found
 
     def _cosine_index(self, name: str, kind: str) -> bool:
         rows = self._run(
@@ -263,7 +277,8 @@ class Neo4jGraphStore:
             or row["properties"] != [prop]
             or str(config.get("vector.similarity_function", "")).lower() != "cosine"
         ):
-            raise ValueError(f"Index {name!r} is not a compatible cosine index")
+            logger.warning("Index %r is incompatible; using exact cosine search", name)
+            return False
         return row["state"] == "ONLINE"
 
     def _record_path(self, path, started, **details):
@@ -320,6 +335,19 @@ class Neo4jGraphStore:
                 if len(rows) >= top_k:
                     break
             path = "entity_ann"
+            if len(rows) < top_k:
+                logger.warning(
+                    "Entity ANN shortfall: %s/%s; falling back to exact",
+                    len(rows),
+                    top_k,
+                )
+                from copy import copy
+
+                exact = copy(self)
+                exact.exact_search = True
+                return exact.seed_by_embedding(
+                    embedding, bubbles=bubbles, top_k=top_k, min_cosine=min_cosine
+                )
         self._record_path(path, started)
         return [(_entity(r["e"]), float(r["score"])) for r in rows]
 
@@ -369,7 +397,11 @@ class Neo4jGraphStore:
                 if len(rows) >= top_k:
                     break
             path = "fact_ann"
-        else:
+        if not indexed or len(rows) < top_k:
+            if indexed:
+                logger.warning(
+                    "Fact ANN shortfall: %s/%s; falling back to exact", len(rows), top_k
+                )
             rows = self._run(
                 "MATCH ()-[r:RELATES_TO]->() WHERE r.group_id IN $bubbles AND r.fact_embedding IS NOT NULL AND "
                 + _VALID
@@ -377,7 +409,15 @@ class Neo4jGraphStore:
                 + suffix,
                 **params,
             )
-            path = "fact_exact" if self.exact_search else "fact_exact_missing_index"
+            path = (
+                "fact_exact"
+                if self.exact_search
+                else (
+                    "fact_exact_ann_shortfall"
+                    if indexed
+                    else "fact_exact_missing_index"
+                )
+            )
         ids = sorted({r[key] for r in rows for key in ("subject", "object")})
         nodes = (
             self._run(

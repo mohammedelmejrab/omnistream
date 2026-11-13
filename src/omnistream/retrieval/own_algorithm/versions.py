@@ -1,16 +1,13 @@
-"""Current assertion representatives before global fusion.
+"""Conservative, bubble-local supersession before fusion.
 
-Identity uses GlobalEntity when present; normalized relation names define an
-assertion family. Within the same endpoint pair, cosine >= .95 also recognizes
-near-identical paraphrases. This is a semantic duplicate threshold, not a
-retrieval relevance threshold. Explicit interval queries retain all versions
-intersecting the interval, so historical evidence is not silently collapsed.
+Intervals (including two open bounds) retain every overlapping assertion.
+Point queries collapse only near-identical assertions with the same endpoints
+and relation. Different numeric/date tokens require explicit replacement.
 """
 
 from __future__ import annotations
 
 import re
-from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -21,65 +18,73 @@ from omnistream.retrieval.models import Fact, Subgraph, TimeScope, _utc, fact_in
 @dataclass(frozen=True)
 class VersionGroup:
     representative: Fact
-    versions: tuple[
-        Fact, ...
-    ]  # preserve full assertions and provenance for diagnostics
+    versions: tuple[Fact, ...]
 
 
 def fact_versions(
     graph: Subgraph, embeddings, *, scope: TimeScope | None, now: datetime
 ) -> list[VersionGroup]:
-    buckets = defaultdict(list)
-    for f in sorted(graph.facts, key=lambda f: f.id):
-        if not fact_in_scope(f, scope, now=now):
-            continue
+    facts = sorted(
+        (f for f in graph.facts if fact_in_scope(f, scope, now=now)),
+        key=lambda f: (
+            -_utc(f.valid_at or f.published_at).timestamp(),
+            -_utc(f.published_at).timestamp(),
+            f.id,
+        ),
+    )
+    if scope is not None and (
+        scope.start is None or scope.end is None or scope.start != scope.end
+    ):
+        return [VersionGroup(f, (f,)) for f in facts]
 
-        def identity(i):
-            e = graph.entities[i]
-            return e.global_id or e.id
+    def key(f):
+        return (
+            f.bubble,
+            f.subject_id,
+            f.object_id,
+            re.sub(r"[\W_]+", " ", f.relation.casefold()).strip(),
+        )
 
-        buckets[(identity(f.subject_id), identity(f.object_id))].append(f)
-    groups = []
-    for pair in sorted(buckets):
-        families = []
-        for f in buckets[pair]:
-            relation = re.sub(r"[\W_]+", " ", f.relation.casefold()).strip()
-            for family in families:
-                other = family[0]
-                same_relation = (
-                    relation
-                    == re.sub(r"[\W_]+", " ", other.relation.casefold()).strip()
-                )
-                similar = (
-                    f.id in embeddings
-                    and other.id in embeddings
-                    and float(
-                        EmbeddingService.cosine_similarity(
-                            embeddings[f.id], embeddings[other.id]
-                        )[0]
-                    )
-                    >= 0.95
-                )
-                if same_relation or similar:
-                    family.append(f)
-                    break
-            else:
-                families.append([f])
-        for family in families:
-            ordered = tuple(
-                sorted(
-                    family,
-                    key=lambda f: (
-                        -_utc(f.valid_at or f.published_at).timestamp(),
-                        -_utc(f.published_at).timestamp(),
-                        f.id,
-                    ),
-                )
+    def equivalent(a, b):
+        if key(a) != key(b):
+            return False
+        newer, older = sorted(
+            (a, b),
+            key=lambda f: (_utc(f.valid_at or f.published_at), f.id),
+            reverse=True,
+        )
+        replaced = newer.valid_at is not None and any(
+            t is not None and _utc(t) <= _utc(newer.valid_at)
+            for t in (older.invalid_at, older.expired_at)
+        )
+        # Digits cover amounts, quarters and numeric dates; month names protect
+        # spelled dates even when embeddings are insensitive to them.
+        tokens = lambda f: re.findall(
+            r"\d+(?:[.,:/-]\d+)*|\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\b",
+            f.text.casefold(),
+        )
+        if tokens(a) != tokens(b) and not replaced:
+            return False
+        text = lambda f: " ".join(re.findall(r"\w+", f.text.casefold()))
+        return text(a) == text(b) or (
+            a.id in embeddings
+            and b.id in embeddings
+            and float(
+                EmbeddingService.cosine_similarity(embeddings[a.id], embeddings[b.id])[
+                    0
+                ]
             )
-            # A past interval can legitimately ask for more than one change.
-            # At a point in time, use the latest assertion valid at that point.
-            if scope is not None and scope.start != scope.end:
-                groups.extend(VersionGroup(f, (f,)) for f in ordered)
-            else:
-                groups.append(VersionGroup(ordered[0], ordered))
-    return groups
+            >= 0.95
+        )
+
+    families = []
+    for f in facts:
+        # Complete-link comparison avoids transitive similarity bridges. Sorted
+        # newest-first input and all-member comparison make replay deterministic.
+        for family in families:
+            if all(equivalent(f, other) for other in family):
+                family.append(f)
+                break
+        else:
+            families.append([f])
+    return [VersionGroup(family[0], tuple(family)) for family in families]

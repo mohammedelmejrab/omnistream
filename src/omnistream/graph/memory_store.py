@@ -74,19 +74,9 @@ class InMemoryGraphStore:
     def name_candidates(
         self, question: str, *, bubbles: Sequence[str], limit: int = 100
     ) -> list[Entity]:
-        """Bound fuzzy matching by token overlap, independent of entity casing."""
-        import re
+        from omnistream.graph.name_search import rank_names
 
-        tokens = re.findall(r"\w+", question.casefold())
-        return [
-            e
-            for e in self.entities_in(bubbles)
-            if any(
-                token[:3] in (e.name + " " + " ".join(e.aliases)).casefold()
-                for token in tokens
-                if len(token) >= 3
-            )
-        ][:limit]
+        return rank_names(question, self.entities_in(bubbles))[:limit]
 
     def seed_by_embedding(
         self,

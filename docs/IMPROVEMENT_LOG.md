@@ -604,3 +604,60 @@ different results in 6.
   LLM's own `temporal_relation` field is the primary signal and the cue check is a backup;
   it would mis-handle caseless scripts. Revisit if the real-data dev set shows misses.
   Offline suite after the change: 1,189 passed.
+
+
+### Change 12: own retrieval fixes, round 3 (2026-11-13)
+
+- Name candidate retrieval now uses Graphiti's existing Entity fulltext name
+  index with escaped, parameterized content-word terms, score ranking and bounded
+  output. Read-only SHOW INDEXES confirms node_name_and_summary. If unavailable,
+  rank by whole-word overlap then fuzzy score before capping; removed prefix/UUID
+  truncation. Fixed English stopwords/legal suffixes are declared general rules.
+- Version grouping now requires same bubble/local endpoints/normalized relation
+  and near-identical fact text. Differing numbers/quarters/amounts/months are
+  retained unless explicit validity proves replacement. Deterministic complete-link
+  families compare every member. Every interval, including two open bounds, keeps
+  all overlapping facts. Removed cross-bubble/global-identity and relation-only
+  collapse; preserved source provenance. No additional recency tuning.
+- Generic endpoints of positive top-10 fact matches can seed at 0.5 times the
+  normalized fact rank score. Each source uses reciprocal dense ranks before
+  cross-source capping/weighting; reserve half the ten-identity cap for fact seeds,
+  then refill by score. Sensitivity 0.25/1.0 measured; default stays 0.5.
+- Incompatible vector indexes warn and use exact cosine. ANN shortfall after
+  bounded refill warns and falls back to exact for both fact and entity search.
+  Neo4j 5.26.33 SHOW PROCEDURES has no vector-call filter argument. No application
+  index/schema writes; integration DDL runs only in disposable testcontainers.
+- 960 exact offline cells: all 60 questions, fixed recorded and all-bubble routes,
+  baseline/round1/round2/round3, two weight sensitivities, two counterfactuals.
+  Frozen-source baseline/round1/round2 reproduce round-two exact aggregates.
+  Recorded recall .678/.794/.800/.839; R@10 .661/.786/.772/.831;
+  full 31/41/39/42 of 60; MRR .444/.424/.553/.571; Hits@1
+  .267/.183/.350/.350; freshness MRR .858/.475/1.000/1.000.
+- All-bubble round2 -> round3 recall .800 -> .800, R@10 .772 -> .800,
+  full 38 -> 37/60 (regression), MRR .542 -> .564, Hits@1 .350 unchanged,
+  freshness 1.000 unchanged. Every regression retained: 13 recorded, 13 all-bubble.
+  q20/q54 all-bubble gold loss is final top20 displacement, not missing expansion.
+  Counterfactuals and per-cell seed changes document ranking interactions.
+- Sensitivity recorded .25/.5/1.0: recall .839 throughout, full 42 throughout,
+  MRR .563/.571/.580. All-bubble recall .808/.800/.800, full 38/37/37,
+  MRR .567/.564/.573. No threshold/default changed after observing outcomes.
+- Independent uncached graph replay: 0/44 changed seeds/fact ranks/item ranks.
+  Exact fact search: mean 12.79 ms, median 12.13; fulltext name search including
+  index discovery: mean 5.95 ms, median 5.59; 60 queries each. Small synthetic
+  graph/concurrent activity; no large-corpus scaling claim.
+- Full offline: 1189 passed, 1 skipped, 22 deselected in 102.96s; integration
+  -m integration: 10 passed, 1199 deselected in 130.73s. Final focused 63 passed;
+  owned-file ruff clean. Full suite includes concurrent event-relative changes.
+  Early focused pass found four old-contract expectations; updated over-merge
+  assertions/ANN mock responses and preserved both-source seed tagging. An initial
+  measurement attempt stopped on a Python parameter-name collision in lexical
+  query plumbing; corrected to lexical_query and reran the complete paired pass.
+- No commits, web search, paid calls, .env access, snapshot or application graph
+  writes. OpenCode-owned router/QA/runtime/modes/tools files were not edited here.
+  Recorded routes stay fixed; concurrent event-relative routing is not credited
+  as a retrieval gain. Answer evaluation and real-data dev validation outstanding.
+- Report: docs/diagnostics/own-fixes-round3.md. Raw exact cells, replays, schema
+  verification, paired deltas, regression reasons and test outputs:
+  data/diagnostics/own-fixes-round3/. Reproducible measurement/report modules:
+  src/omnistream/eval/diagnostics/own_fixes_round3*.py; round-two sources frozen
+  from 646beb6 in own_fixes_round2_sources.json.

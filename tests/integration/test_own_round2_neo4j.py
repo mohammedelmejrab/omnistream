@@ -69,9 +69,18 @@ async def test_actual_schema_and_search(neo4j_container):  # noqa: F811
             250,
         ]
         assert all("count(candidate)" not in q for q, p in calls)
+        driver.execute_query(
+            "CREATE FULLTEXT INDEX node_name_and_summary IF NOT EXISTS FOR (e:Entity) ON EACH [e.name, e.summary]"
+        )
+        driver.execute_query("CALL db.awaitIndexes()")
         assert [
-            e.id for e in store.name_candidates("iphone", bubbles=["selected"])
+            e.id
+            for e in store.name_candidates(
+                "the iphone company inc", bubbles=["selected"]
+            )
         ] == ["a"]
+        assert store.search_paths[-1]["path"] == "name_fulltext"
+        assert any("vector.similarity.cosine" in q for q, _ in calls)
         store.exact_search = False
         store.fact_index_name = "absent"
         assert len(store.seed_by_fact_embedding(query, bubbles=["selected"])) == 2
@@ -81,5 +90,5 @@ async def test_actual_schema_and_search(neo4j_container):  # noqa: F811
         )
         driver.execute_query("CALL db.awaitIndexes()")
         store.fact_index_name = "wrong_metric"
-        with pytest.raises(ValueError, match="compatible cosine"):
-            store.seed_by_fact_embedding(query, bubbles=["selected"])
+        assert len(store.seed_by_fact_embedding(query, bubbles=["selected"])) == 2
+        assert store.search_paths[-1]["path"] == "fact_exact_missing_index"

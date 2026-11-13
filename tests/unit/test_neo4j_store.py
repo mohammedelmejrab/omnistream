@@ -59,7 +59,7 @@ EDGE = {
 def test_seed_parameters_mapping_and_entities():
     malicious = "news' OR true //"
     index = "index' malicious"
-    driver = Driver(*[[{"e": NODE, "score": 0.5}]] * 3, [{"e": NODE}])
+    driver = Driver(*[[{"e": NODE, "score": 0.5}]] * 4, [{"e": NODE}])
     store = Neo4jGraphStore(driver, database="test-db", entity_index_name=index)
     store._cosine_index = lambda *args: True
     assert isinstance(store, GraphStore)
@@ -79,7 +79,7 @@ def test_seed_parameters_mapping_and_entities():
         "fetch": 25,
     }
     assert store.entities_in(["news"])[0].id == "a"
-    assert driver.databases == [{"database": "test-db"}] * 4
+    assert driver.databases == [{"database": "test-db"}] * 5
 
 
 def test_expand_query_bounds_filters_mapping_and_identity():
