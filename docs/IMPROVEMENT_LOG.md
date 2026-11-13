@@ -122,3 +122,33 @@ both be present in the same question. Experiment plan below.
    appear in more than one bubble.
 3. Write questions over the real data, with a development split and a held-out test split.
 4. Measure a baseline with the new model, fix the verified causes, measure again.
+
+### Change 2: real-data collector and quality verifier (commit `70fcbcb`)
+
+- New commands `omni realdata collect` and `omni realdata verify`, driven by a committed
+  source list. The committed manifest holds only URL, date, source and SHA-256 per item.
+  Article text stays under `data/real/`, which git ignores.
+- Running real feeds through the C1 source code for the first time exposed three bugs,
+  now fixed with regression tests: summaries that were empty markup, HTML left inside API
+  bodies, and navigation or hidden page content left in the clean text.
+
+### Setback 2: first real corpus (real-v1) not good enough, held back
+
+Quality report: `docs/realdata/real-v1-quality.md`. 228 items from 18 Sep to 13 Nov 2026:
+News 110, Finance 60, Research 58. Median 437 words. 63.6% likely full text.
+
+Why it was not approved:
+
+| Problem | Detail | Decision for round 2 |
+|---|---|---|
+| Research bubble is weak | arXiv was skipped: the collector applied `robots.txt` to arXiv's official API. Research was left with 81-word blog teasers and off-theme biomedical abstracts | Treat documented public APIs by their own terms of use (arXiv: one request per 3 s). Rebuild Research around arXiv abstracts |
+| Finance filings are thin | SEC 8-K filings were collected without their press-release exhibits, where the figures are | Fetch the exhibits; widen to about 20-25 technology issuers |
+| Off-theme news | 27 NASA items | Drop NASA; add on-theme public-domain and openly licensed sources (FTC, DOJ, NIST, European Commission, EFF, Wikinews and others, each checked for its terms) |
+| Too small | 228 against a target of 250-400 | Target 300-400, no bubble under 25% |
+| Entity statistics unreliable | Local name extraction was 65% precise by hand check | Use the project LLM for the statistics, hand-check 30 items again |
+
+What was good: 0 exact duplicates kept (61 rejected), dates handled, and one real changed
+fact already confirmed by reading the items: an NVIDIA blog post of 23 Oct names the CEO,
+and an SEC filing of 12 Nov reports his resignation and a successor.
+
+Round 2 is recorded as `real-v2`; real-v1 files are kept for the record.
