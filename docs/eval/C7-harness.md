@@ -16,6 +16,33 @@ linked from eval_runs. Provider-unreported cost remains N/A rather than zero.
 
 ## Frozen snapshots and freshness
 
+### Local real-v2 corpus and split selection
+
+`omni eval --rows classic --snapshot real-v2-dev --dataset real-v2 --split dev --background 40`
+loads committed manifest metadata and the locally stored clean texts. The question
+file is `src/omnistream/eval/corpus/real-v2-questions.json`. A split is mandatory for
+real-v2; questions from the other split are never evaluated. Defaults are 40
+background items for dev and 60 for test (`--background 0` disables background).
+The selected corpus contains that split's gold, evidence, distractors and explicit
+acceptable evidence, plus its freshness updates and a fixed-seed background sample.
+Other-split gold and freshness items cannot enter the background. Gold overlap,
+cross-split required references, unknown IDs, missing freshness probes, altered clean
+text hashes and out-of-corpus text paths fail before ingestion.
+
+The manifest records the split, requested background size, seed, selected item IDs
+and their SHA-256. Existing snapshots reject conflicting split/background options
+and selected content changes. Manual routing annotations are used only for scoring;
+sources enter with empty bubble IDs so C3 routes them. Evidence quotes are retained
+as annotations; only explicit `acceptable_evidence` IDs count as alternative hits.
+Freshness updates for the selected split use the existing hold-back/injection path.
+
+The standalone cost probe is `scripts/realdata/ingestion_costprobe.py`. It requires
+process-environment credentials, never reads `.env`, measures ten fixed-seed real
+items, caps conservative request reservations at $0.55 and deletes its throwaway
+groups/directory. `scripts/realdata/report_ingestion_cost.py` regenerates the report
+from saved measurements and recorded eval-v2 costs without API calls. See
+`docs/realdata/real-v2-ingestion-cost.md` for measurement status and limitations.
+
 Snapshots store `dataset` and `item_content_sha256` in the manifest. New snapshots
 accept `--dataset eval-v1|eval-v2` (default v1); names do not select a corpus.
 Existing bindings reject conflicting `--dataset`. Legacy frozen snapshots infer

@@ -63,7 +63,7 @@ def item_digest(dataset):
     ).hexdigest()
 
 
-def bound_dataset(directory, requested=None):
+def bound_dataset(directory, requested=None, *, split=None, background=None):
     from .dataset import load_dataset
 
     path = directory / "manifest.json"
@@ -77,7 +77,14 @@ def bound_dataset(directory, requested=None):
         )
     if requested and name and requested != name:
         raise ValueError("--dataset conflicts with snapshot corpus binding")
-    return load_dataset(name or requested or "eval-v1")
+    for key, value in (("split", split), ("background", background)):
+        if value is not None and key in manifest and manifest[key] != value:
+            raise ValueError(f"--{key} conflicts with snapshot binding")
+    return load_dataset(
+        name or requested or "eval-v1",
+        split=manifest.get("split", split),
+        background=manifest.get("background", background),
+    )
 
 
 def verify_item_store(directory, manifest, dataset):
@@ -170,9 +177,19 @@ class SnapshotBuilder:
             if self.manifest_path.exists()
             else {
                 "dataset_sha256": digest,
-                "dataset": "eval-v2"
-                if dataset["version"].startswith("2")
-                else "eval-v1",
+                "dataset": dataset.get("corpus")
+                or ("eval-v2" if dataset["version"].startswith("2") else "eval-v1"),
+                **{
+                    k: dataset[k]
+                    for k in (
+                        "split",
+                        "background",
+                        "selection_seed",
+                        "selected_item_ids",
+                        "selected_item_ids_sha256",
+                    )
+                    if k in dataset
+                },
                 "item_content_sha256": item_digest(dataset),
                 "construction_started_at": time.time(),
                 "items": {},
@@ -189,6 +206,14 @@ class SnapshotBuilder:
             raise ValueError(
                 "dataset changed: item content differs; use a new snapshot"
             )
+        for key in (
+            "split",
+            "background",
+            "selected_item_ids",
+            "selected_item_ids_sha256",
+        ):
+            if key in dataset and self.manifest.get(key) != dataset[key]:
+                raise ValueError("snapshot selection binding mismatch: " + key)
 
         self.local_settings = settings.model_copy(
             update={"data_dir": str(self.path), "llm_max_concurrency": 2}

@@ -28,7 +28,13 @@ def parse_rows(rows=None):
     return list(dict.fromkeys(names))
 
 
-def load_dataset(name="eval-v1"):
+def load_dataset(name="eval-v1", *, split=None, background=None, root=None):
+    if name == "real-v2":
+        from .real.dataset import load_real_dataset
+
+        return load_real_dataset(split, background=background, root=root)
+    if split is not None or background:
+        raise ValueError("split/background require real-v2")
     data = json.loads(
         (Path(__file__).parent / "corpus" / (name + ".json")).read_text(
             encoding="utf-8"

@@ -215,9 +215,9 @@ def ingestion_routing_metrics(items, entries, groups):
         bucket["over_assignments"] += extra
     n = len(items)
     return {
-        "ingestion_routing_accuracy": exact / n,
-        "ingestion_primary_label_recall": primary / n,
-        "ingestion_over_assignment_rate": extras / n,
-        "ingestion_wrong_routing_rate": wrong / n,
+        "ingestion_routing_accuracy": exact / n if n else None,
+        "ingestion_primary_label_recall": primary / n if n else None,
+        "ingestion_over_assignment_rate": extras / n if n else None,
+        "ingestion_wrong_routing_rate": wrong / n if n else None,
         "ingestion_over_assignments_by_category": categories,
     }

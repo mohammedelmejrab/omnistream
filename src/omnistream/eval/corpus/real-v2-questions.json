@@ -1,0 +1,3983 @@
+{
+  "version": "real-v2-q1",
+  "corpus": "real-v2",
+  "split_assignment": {
+    "rule": "Decided before writing. Each organisation or research topic belongs to exactly one split; primary publisher/entity determines item ownership. Mixed-side mentions are permitted and recorded in split_overlap. Gold and accepted evidence must not overlap the other split's gold or evidence IDs; incidental mentions alone are not leakage.",
+    "test": {
+      "organisations": [
+        "NVIDIA",
+        "TSMC",
+        "Apple",
+        "Amazon",
+        "Meta",
+        "AMD",
+        "IBM",
+        "Marvell",
+        "Lumentum",
+        "Cisco",
+        "Arm",
+        "Oracle",
+        "Snowflake",
+        "Broadcom",
+        "Palantir",
+        "Anthropic",
+        "OpenAI",
+        "US DOJ",
+        "NIST",
+        "FTC",
+        "UK CMA (Apple mobile platform page)",
+        "SEC (enforcement releases)",
+        "EFF (posts not about Google)",
+        "BAIR / UC Berkeley"
+      ],
+      "research_topics": [
+        "GPU architecture and simulation",
+        "agentic coding benchmarks",
+        "quantum computing on IBM hardware",
+        "analog circuit design",
+        "formal proof repair",
+        "encrypted inference",
+        "game-playing RL",
+        "tokenisation",
+        "speech recognition",
+        "human evaluation of LLMs",
+        "combinatorial search"
+      ]
+    },
+    "dev": {
+      "organisations": [
+        "Alphabet / Google",
+        "Microsoft (blog, research, filings)",
+        "Samsung",
+        "Qualcomm",
+        "Intel",
+        "Micron",
+        "ASML",
+        "Supermicro",
+        "Salesforce / Braze",
+        "HPE",
+        "Dell",
+        "Mozilla",
+        "Federal Reserve",
+        "SEC (rule-making and roundtable releases)",
+        "UK CMA (Google pages and technology-transfer pages)",
+        "EFF (posts about Google)"
+      ],
+      "research_topics": [
+        "Gemini evaluations",
+        "tabular foundation models",
+        "financial-disclosure NLP",
+        "AI security / backdoors",
+        "retrosynthesis",
+        "climate equation discovery",
+        "protein-ligand ranking",
+        "FPGA accelerators"
+      ]
+    }
+  },
+  "freshness_item_ids": {
+    "test": [
+      "b2727e77c3e99a2c4d6793369a6e9a297d3c323e86290c216c198bdf906ca96b",
+      "957e8680803ad8738070f32300b148e17d369f32bc51240ca97850b3dcddf5cc",
+      "b8b52c864bb0447c7d335ed4b8484b50d21907e2cbc21a4e88a4614a66eb1769",
+      "c161a6520afa0aac77ecb67809daabf2d1f6cf650b3e39ea2bace35e68bd9b44",
+      "bc277f198536389f5c29912ec0216b3022b2674e70e645578654dce8a6d13200",
+      "0c025868d83499a41c3c99b35857b558e495d62ea4a552c269a7e9288d2202d9",
+      "27b21c79dcb04ce27d3114357ff72294f374a0d9a1c23addd2952948f684c04e",
+      "cd9a0000bf14536f61050273a6fcc184d1720de20b44bfc6f12df46eafafcff3",
+      "358b6cdcd776ed9d655838070e8f19d6ad5a2fe1d2fcfc586ceb4f12030fd235",
+      "db84505aa67f3532daa0f918101e50511ca6fb51f23b4ca0abb4eaaa5f4fbf97"
+    ],
+    "dev": [
+      "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+      "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486",
+      "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+      "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4",
+      "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd"
+    ]
+  },
+  "questions": [
+    {
+      "id": "rq-d-001",
+      "split": "dev",
+      "type": "single",
+      "question": "What range of total net sales did ASML guide to for the fourth quarter of 2026?",
+      "reference_answer": "Between EUR 14.2 billion and EUR 15.2 billion",
+      "key_facts": [
+        "EUR 14.2-15.2 billion (€14.2bn to €15.2bn)"
+      ],
+      "gold": [
+        "cbca4caf7812befeea30708db0c8b051ffca45803a3ee9bbef97893757cf3bc2"
+      ],
+      "evidence": [
+        {
+          "item_id": "cbca4caf7812befeea30708db0c8b051ffca45803a3ee9bbef97893757cf3bc2",
+          "quote": "ASML expects Q4 2026 total net sales between €14.2 billion and €15.2 billion",
+          "establishes": "Q4 2026 sales guidance"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The full-year 2026 guide (EUR 44-45 billion) is a different figure.",
+      "acceptable_evidence": [
+        "321561f3ed881e6ce4981b3ece28e394a904037bb5a085db9a4bcd738b0b6e85"
+      ],
+      "split_overlap": [
+        {
+          "item": "321561f3ed881e6ce4981b3ece28e394a904037bb5a085db9a4bcd738b0b6e85",
+          "other_split_org": "TSMC"
+        }
+      ]
+    },
+    {
+      "id": "rq-d-002",
+      "split": "dev",
+      "type": "single",
+      "question": "What enterprise value and per-share cash price did Salesforce agree for Braze in October 2026?",
+      "reference_answer": "About $5.66 billion enterprise value; $47.50 in cash per Braze Class A share",
+      "key_facts": [
+        "approximately $5.66 billion enterprise value",
+        "$47.50 cash per share"
+      ],
+      "gold": [
+        "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c"
+      ],
+      "evidence": [
+        {
+          "item_id": "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c",
+          "quote": "for approximately $5.66 billion in enterprise value",
+          "establishes": "Deal value"
+        },
+        {
+          "item_id": "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c",
+          "quote": "will receive $47.50 in cash per share",
+          "establishes": "Per-share consideration"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": ""
+    },
+    {
+      "id": "rq-d-003",
+      "split": "dev",
+      "type": "single",
+      "question": "Who will succeed Dell Technologies' retiring general counsel as chief legal officer, and from when?",
+      "reference_answer": "Christopher Garcia, effective 1 February 2027",
+      "key_facts": [
+        "Christopher Garcia (also acceptable: Christopher A. Garcia)",
+        "effective 1 February 2027"
+      ],
+      "gold": [
+        "d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073"
+      ],
+      "evidence": [
+        {
+          "item_id": "d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073",
+          "quote": "the Board of Directors appointed Christopher Garcia",
+          "establishes": "Successor named"
+        },
+        {
+          "item_id": "d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073",
+          "quote": "effective as of February 1, 2027",
+          "establishes": "Effective date"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Richard Rothberg is the retiring executive. Both quotes come from the same short 8-K."
+    },
+    {
+      "id": "rq-d-004",
+      "split": "dev",
+      "type": "single",
+      "question": "What growth rate did HPE set for its Data Center Networking revenue at its September 2026 networking investor day, and through which fiscal year?",
+      "reference_answer": "A low-to-high 50s percent CAGR through fiscal 2029",
+      "key_facts": [
+        "low-to-high 50s percent CAGR",
+        "through fiscal 2029"
+      ],
+      "gold": [
+        "e1eb2e3747448f44f6939458dea6ed041943e62b6d87b0acfb430221eef69b0e"
+      ],
+      "evidence": [
+        {
+          "item_id": "e1eb2e3747448f44f6939458dea6ed041943e62b6d87b0acfb430221eef69b0e",
+          "quote": "Data Center Networking revenue to grow at a low-to-high 50s percent CAGR",
+          "establishes": "DCN growth target"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Routing has its own target (low-to-high 20s percent CAGR)."
+    },
+    {
+      "id": "rq-d-005",
+      "split": "dev",
+      "type": "single",
+      "question": "What revenue did Micron report for its fiscal year 2026, which ended 3 September 2026?",
+      "reference_answer": "$133.19 billion",
+      "key_facts": [
+        "$133.19 billion"
+      ],
+      "gold": [
+        "ef70a0662c5714d2a0ae1174851dcf7b67bf2d0bf2fde9c4cc36c1c3755c43e6"
+      ],
+      "evidence": [
+        {
+          "item_id": "ef70a0662c5714d2a0ae1174851dcf7b67bf2d0bf2fde9c4cc36c1c3755c43e6",
+          "quote": "Revenue of $133.19 billion versus $37.38 billion for the prior year",
+          "establishes": "FY2026 revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "$54.23 billion is fiscal Q4 only."
+    },
+    {
+      "id": "rq-d-006",
+      "split": "dev",
+      "type": "single",
+      "question": "How much more precipitation variance does the best symbolic-distillation equation for the South Asian monsoon explain than the common buoyancy-based diagnostic?",
+      "reference_answer": "1.5 times as much",
+      "key_facts": [
+        "1.5 times as much variance (equivalently, 50% more variance)"
+      ],
+      "gold": [
+        "759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f"
+      ],
+      "evidence": [
+        {
+          "item_id": "759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f",
+          "quote": "Our best equation explains 1.5 times as much precipitation variance",
+          "establishes": "Variance explained relative to the buoyancy diagnostic"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "'About 85% of neural network skill' is a different comparison."
+    },
+    {
+      "id": "rq-d-007",
+      "split": "dev",
+      "type": "single",
+      "question": "On the Pyrite protein-ligand pose-ranking benchmark, what accuracies do the two LLM-based agents reach?",
+      "reference_answer": "Up to 67% for PyriteReasoner and up to 74% for PyriteFeaturizer",
+      "key_facts": [
+        "PyriteReasoner 67%",
+        "PyriteFeaturizer 74%"
+      ],
+      "gold": [
+        "69cf9e2de96e8504cb30e3263c301d07194bf4b4f36dbcbe4b770b7a285d6768"
+      ],
+      "evidence": [
+        {
+          "item_id": "69cf9e2de96e8504cb30e3263c301d07194bf4b4f36dbcbe4b770b7a285d6768",
+          "quote": "These agents achieve up to 67% and 74% accuracy, respectively",
+          "establishes": "Agent accuracies (in the order PyriteReasoner, PyriteFeaturizer)"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": ""
+    },
+    {
+      "id": "rq-d-008",
+      "split": "dev",
+      "type": "single",
+      "question": "How many active watch tasks can a Firefox Smart Window user keep at once?",
+      "reference_answer": "Up to 15",
+      "key_facts": [
+        "15 active tasks"
+      ],
+      "gold": [
+        "6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19"
+      ],
+      "evidence": [
+        {
+          "item_id": "6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19",
+          "quote": "You can have up to 15 active tasks at a time",
+          "establishes": "Task limit"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The same post says tasks pause after 60 days without a matching change; 90 days is a different threshold."
+    },
+    {
+      "id": "rq-d-009",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "The chip platform inside Samsung's intelligent eyewear, due in December 2026, comes from which company, and what GAAP revenues did that company report for its fiscal 2026?",
+      "reference_answer": "Qualcomm; $43.1 billion",
+      "key_facts": [
+        "Qualcomm (Snapdragon AR1 Gen 1)",
+        "fiscal 2026 GAAP revenues of $43.1 billion"
+      ],
+      "gold": [
+        "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+        "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18"
+      ],
+      "evidence": [
+        {
+          "item_id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+          "quote": "Powered by the Snapdragon® AR1 Gen 1 Platform",
+          "establishes": "The eyewear uses a Snapdragon platform"
+        },
+        {
+          "item_id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+          "quote": "Snapdragon is a trademark or registered trademark of Qualcomm Incorporated",
+          "establishes": "Snapdragon belongs to Qualcomm"
+        },
+        {
+          "item_id": "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18",
+          "quote": "Fiscal 2026 GAAP Revenues: $43.1 billion",
+          "establishes": "Qualcomm's FY2026 revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Not an alias question: the eyewear item names Qualcomm in its trademark footnote.",
+      "split_overlap": [
+        {
+          "item": "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18",
+          "other_split_org": "Apple"
+        },
+        {
+          "item": "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18",
+          "other_split_org": "Amazon"
+        }
+      ]
+    },
+    {
+      "id": "rq-d-010",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "A diagnostic text-to-video judge released in November 2026 was found to match one proprietary frontier model. What total principal of euro-denominated notes did that model's developer close in November 2026?",
+      "reference_answer": "EUR 6 billion",
+      "key_facts": [
+        "€6 billion aggregate principal amount"
+      ],
+      "gold": [
+        "1ff30f2fbafc9172867581931c6bd586a774ec345dc01331f06c3110dabbb6e7",
+        "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9",
+        "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc"
+      ],
+      "evidence": [
+        {
+          "item_id": "1ff30f2fbafc9172867581931c6bd586a774ec345dc01331f06c3110dabbb6e7",
+          "quote": "while matching the frontier proprietary Gemini 4 Argon",
+          "establishes": "The proprietary model is Gemini 4 Argon"
+        },
+        {
+          "item_id": "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9",
+          "quote": "Gemini 4 Argon and Carbon are now leading at the frontier",
+          "establishes": "Alphabet's results claim Gemini 4 Argon as its model"
+        },
+        {
+          "item_id": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+          "quote": "closed its underwritten public offering of €6 billion aggregate principal amount",
+          "establishes": "Alphabet's euro notes offering"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "Three-item chain. Neither the paper nor the notes 8-K names the other's entity; the earnings release links the model to Alphabet.",
+      "surface_forms": [
+        "Gemini 4 Argon",
+        "Alphabet Inc."
+      ]
+    },
+    {
+      "id": "rq-d-011",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "EFF objected to a chatbot that Google switched on for 150 million K-12 students in August 2026. In a November 2026 audio-reasoning diagnostic, what accuracy did a flash version of that chatbot reach once both the rule and the acoustic observations were supplied?",
+      "reference_answer": "98.5%",
+      "key_facts": [
+        "98.5%"
+      ],
+      "gold": [
+        "23e20026a4c06e9e316bfbc84039bebae86f1ada98c1fc4549db9382a2c55415",
+        "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3"
+      ],
+      "evidence": [
+        {
+          "item_id": "23e20026a4c06e9e316bfbc84039bebae86f1ada98c1fc4549db9382a2c55415",
+          "quote": "activated AI chatbot Gemini for 150 million K-12 students on Google Classroom",
+          "establishes": "The chatbot is Gemini"
+        },
+        {
+          "item_id": "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3",
+          "quote": "In a preliminary evaluation of Gemini-3.8-flash",
+          "establishes": "AuDiR evaluates Gemini-3.8-flash"
+        },
+        {
+          "item_id": "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3",
+          "quote": "98.5% with the observations also supplied",
+          "establishes": "Accuracy with rule plus observations"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "29.3% (nothing supplied), 31.3% (rule only) and 23.9% (no audio) are the other conditions.",
+      "exclude_from_scoring": true,
+      "exclusion_reason": "The classroom Gemini text does not identify its version as Gemini-3.8-flash; the proposed bridge assumes model equivalence."
+    },
+    {
+      "id": "rq-d-012",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "The tabular foundation model evaluated for predicting firms' next-year earnings changes comes from a corporate research lab. How fast did the cloud business of that lab's parent company grow in the quarter ended 30 September 2026?",
+      "reference_answer": "103%, to $30.7 billion",
+      "key_facts": [
+        "103% growth",
+        "$30.7 billion Google Cloud revenue"
+      ],
+      "gold": [
+        "2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb",
+        "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9"
+      ],
+      "evidence": [
+        {
+          "item_id": "2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb",
+          "quote": "We compare Google Research's TabFM with a fine-tuned",
+          "establishes": "TabFM is from Google Research"
+        },
+        {
+          "item_id": "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9",
+          "quote": "Google Cloud delivered record growth as revenues increased 103% to $30.7 billion",
+          "establishes": "Alphabet's Google Cloud growth"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "The parent relation (Google is part of Alphabet) is stated in the release ('CEO of Google and Alphabet').",
+      "surface_forms": [
+        "Google Research",
+        "Alphabet Inc."
+      ]
+    },
+    {
+      "id": "rq-d-013",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "The model platform through which Microsoft Research distributes its RetroChimera retrosynthesis model was chosen in October 2026 to host an agent harness. Which team built that harness?",
+      "reference_answer": "The GitHub engineering team (the Microsoft Copilot harness)",
+      "key_facts": [
+        "GitHub engineering team",
+        "Microsoft Copilot harness"
+      ],
+      "gold": [
+        "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+        "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f"
+      ],
+      "evidence": [
+        {
+          "item_id": "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+          "quote": "accessible via Microsoft Foundry",
+          "establishes": "RetroChimera is distributed through Microsoft Foundry"
+        },
+        {
+          "item_id": "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f",
+          "quote": "making that harness available through Microsoft Foundry",
+          "establishes": "The Copilot harness is offered through Foundry"
+        },
+        {
+          "item_id": "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f",
+          "quote": "the GitHub engineering team built a best-in-class, truly multi-model harness",
+          "establishes": "GitHub engineering built it"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Weak point: the harness post alone answers 'who built the harness offered on Foundry'; the research item only identifies the platform.",
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Invalid strict multi-hop probe (R2): the question supplies Microsoft and the harness event, so the GitHub answer needs only one item."
+    },
+    {
+      "id": "rq-d-014",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "Mozilla says one operating-system vendor respects users' browser choice only when the law forces it to. What revenue did that vendor's Devices and Consumer segment report for the quarter ended 30 September 2026, and how did it change?",
+      "reference_answer": "$15.484 billion, down 3% year over year",
+      "key_facts": [
+        "$15,484 million (about $15.5 billion)",
+        "down 3%"
+      ],
+      "gold": [
+        "d3ebd0012e800aaa6ea8a9fdb1558e474cefb414f58a52ec4640e30aab9e3af8",
+        "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e"
+      ],
+      "evidence": [
+        {
+          "item_id": "d3ebd0012e800aaa6ea8a9fdb1558e474cefb414f58a52ec4640e30aab9e3af8",
+          "quote": "Microsoft will respect user choice only when it is forced to",
+          "establishes": "The vendor is Microsoft"
+        },
+        {
+          "item_id": "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+          "quote": "Devices and Consumer $15,484 $16,001 (3)%",
+          "establishes": "Segment revenue and change"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943"
+      ],
+      "notes": "57761b28 explains the new segment structure but gives no Q1 FY27 figures.",
+      "split_overlap": [
+        {
+          "item": "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+          "other_split_org": "OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "rq-d-015",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "Researchers at one company found that a backdoor could reprogram dormant neurons so that an AI agent runs malicious actions. What revenue did that company's cloud business report for the quarter ended 30 September 2026?",
+      "reference_answer": "$63.9 billion (Microsoft Cloud), up 30%",
+      "key_facts": [
+        "Microsoft Cloud revenue $63.9 billion"
+      ],
+      "gold": [
+        "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae",
+        "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e"
+      ],
+      "evidence": [
+        {
+          "item_id": "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae",
+          "quote": "a backdoor technique that can reprogram dormant neurons in an AI model",
+          "establishes": "Microsoft researchers describe the backdoor"
+        },
+        {
+          "item_id": "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+          "quote": "Microsoft Cloud revenue of $63.9 billion",
+          "establishes": "Microsoft Cloud revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Total company revenue ($92.3 billion) and Agents and Infra ($76.8 billion) are distractors within the same release.",
+      "split_overlap": [
+        {
+          "item": "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+          "other_split_org": "OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "rq-d-016",
+      "split": "dev",
+      "type": "multi_hop",
+      "question": "A November 2026 IFRS compliance benchmark adapted its sentence embeddings on one regulator's electronic filings. For which date did that regulator schedule a public roundtable on machine-understandable data?",
+      "reference_answer": "9 November 2026",
+      "key_facts": [
+        "9 November 2026"
+      ],
+      "gold": [
+        "8faa6a570793c3ac0fadfeed24a0aa5b685f16baf40aaa2b6958aa2e9ef81be3",
+        "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17"
+      ],
+      "evidence": [
+        {
+          "item_id": "8faa6a570793c3ac0fadfeed24a0aa5b685f16baf40aaa2b6958aa2e9ef81be3",
+          "quote": "BERT masked language modeling on SEC EDGAR filings",
+          "establishes": "The filings are from SEC EDGAR"
+        },
+        {
+          "item_id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "quote": "will host a roundtable on November 9, 2026",
+          "establishes": "The Securities and Exchange Commission's roundtable date"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "The roundtable release never uses 'EDGAR'; the paper never spells out the commission's name.",
+      "surface_forms": [
+        "SEC EDGAR",
+        "Securities and Exchange Commission"
+      ]
+    },
+    {
+      "id": "rq-d-017",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "What was Samsung Electronics' consolidated revenue for the third quarter of 2026?",
+      "reference_answer": "KRW 195.3 trillion (reported 29 October 2026)",
+      "key_facts": [
+        "KRW 195.3 trillion"
+      ],
+      "gold": [
+        "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+        "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f"
+      ],
+      "evidence": [
+        {
+          "item_id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+          "quote": "Consolidated Sales: Approximately 195 trillion Korean won",
+          "establishes": "Old: 8 Oct estimate of about KRW 195 trillion"
+        },
+        {
+          "item_id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+          "quote": "KRW 195.3 trillion in consolidated revenue",
+          "establishes": "New: reported result"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-10-29)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact. An answer of 'approximately 195 trillion' uses the superseded estimate."
+    },
+    {
+      "id": "rq-d-018",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "As of 20 October 2026, what was the most recent quarterly operating profit Samsung Electronics had actually reported (not estimated)?",
+      "reference_answer": "KRW 89.49 trillion, for the second quarter of 2026",
+      "key_facts": [
+        "KRW 89.49 trillion",
+        "Q2 2026"
+      ],
+      "gold": [
+        "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+        "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f"
+      ],
+      "evidence": [
+        {
+          "item_id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+          "quote": "Operating profit 89.49 12.17",
+          "establishes": "Q2 2026 actual operating profit (Q3 was only guidance then)"
+        },
+        {
+          "item_id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+          "quote": "Operating profit reached KRW 107.4 trillion",
+          "establishes": "Q3 actual published later, on 29 Oct"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "as of 2026-10-20",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact. KRW 107.40 trillion was only an estimate on that date."
+    },
+    {
+      "id": "rq-d-019",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "Before Samsung published its full third-quarter 2026 results, what operating-profit range had it guided to?",
+      "reference_answer": "KRW 107.3 trillion to 107.5 trillion (midpoint about 107.40 trillion)",
+      "key_facts": [
+        "107.3-107.5 trillion won"
+      ],
+      "gold": [
+        "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+        "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f"
+      ],
+      "evidence": [
+        {
+          "item_id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+          "quote": "Operating Profit: 107.3 trillion to 107.5 trillion Korean won",
+          "establishes": "Guided range"
+        },
+        {
+          "item_id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+          "quote": "Operating profit reached KRW 107.4 trillion",
+          "establishes": "The reported figure that replaced it"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "before 2026-10-29",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading, linked to the verified Samsung entries."
+    },
+    {
+      "id": "rq-d-020",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "What revenue did Supermicro report for its first quarter of fiscal 2027?",
+      "reference_answer": "$19.9 billion (net sales, reported 3 November 2026)",
+      "key_facts": [
+        "$19.9 billion net sales"
+      ],
+      "gold": [
+        "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+        "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428"
+      ],
+      "evidence": [
+        {
+          "item_id": "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+          "quote": "estimated to be in the range of $18.5 billion to $19.5 billion",
+          "establishes": "Old: preliminary range of 20 Oct"
+        },
+        {
+          "item_id": "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428",
+          "quote": "Net sales of $19.9 billion versus $11.1 billion in Q4'26",
+          "establishes": "New: reported figure"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-03)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. The final figure lies above the preliminary range."
+    },
+    {
+      "id": "rq-d-021",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "As of 25 October 2026, what revenue did Supermicro expect for the quarter ended 30 September 2026?",
+      "reference_answer": "$18.5 billion to $19.5 billion (preliminary estimate)",
+      "key_facts": [
+        "$18.5-19.5 billion"
+      ],
+      "gold": [
+        "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+        "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428"
+      ],
+      "evidence": [
+        {
+          "item_id": "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+          "quote": "estimated to be in the range of $18.5 billion to $19.5 billion",
+          "establishes": "Preliminary estimate of 20 Oct"
+        },
+        {
+          "item_id": "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428",
+          "quote": "Net sales of $19.9 billion versus $11.1 billion in Q4'26",
+          "establishes": "Actual published only on 3 Nov"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "as of 2026-10-25",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. The original guidance ($14.5-15.5 billion) had already been superseded by then."
+    },
+    {
+      "id": "rq-d-022",
+      "split": "dev",
+      "type": "time_sensitive",
+      "question": "Before its final first-quarter fiscal 2027 results, what gross margin did Supermicro give in its most recent preliminary update for that quarter?",
+      "reference_answer": "12.0% to 12.5%",
+      "key_facts": [
+        "12.0%-12.5% estimated gross margin"
+      ],
+      "gold": [
+        "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+        "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428"
+      ],
+      "evidence": [
+        {
+          "item_id": "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+          "quote": "Gross margins are estimated to be in the range of 12.0% to 12.5%",
+          "establishes": "Preliminary gross margin"
+        },
+        {
+          "item_id": "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428",
+          "quote": "Gross margin of 12.7% versus 17.5% in Q4'26",
+          "establishes": "Reported 12.7%"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "before 2026-11-03",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading."
+    },
+    {
+      "id": "rq-d-023",
+      "split": "dev",
+      "type": "freshness",
+      "question": "Which of the Federal Open Market Committee's tentatively scheduled 2027 meetings will not end with the usual policy announcement, and why?",
+      "reference_answer": "The 26-27 October 2027 meeting, which will be dedicated to broad monetary policy strategy issues",
+      "key_facts": [
+        "October 26-27, 2027",
+        "dedicated to monetary policy strategy"
+      ],
+      "gold": [
+        "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a"
+      ],
+      "evidence": [
+        {
+          "item_id": "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+          "quote": "except the October 26-27 meeting",
+          "establishes": "Exception to the usual announcement"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 12 Nov 2026."
+    },
+    {
+      "id": "rq-d-024",
+      "split": "dev",
+      "type": "freshness",
+      "question": "What average price increase will the Federal Reserve Banks' established payment services see in 2027?",
+      "reference_answer": "About 1.4% on average",
+      "key_facts": [
+        "estimated 1.4 percent average price increase"
+      ],
+      "gold": [
+        "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486"
+      ],
+      "evidence": [
+        {
+          "item_id": "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486",
+          "quote": "an estimated 1.4 percent average price increase for established, mature services",
+          "establishes": "2027 price change"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 12 Nov 2026. 101.5 percent is the expected cost-recovery rate."
+    },
+    {
+      "id": "rq-d-025",
+      "split": "dev",
+      "type": "freshness",
+      "question": "Against whom did the Federal Reserve Board announce a consent prohibition on 12 November 2026, and for what conduct?",
+      "reference_answer": "Katilyn M. Robinson, a former United Community Bank employee, for misappropriating customer funds",
+      "key_facts": [
+        "Katilyn M. Robinson",
+        "misappropriation of customer funds"
+      ],
+      "gold": [
+        "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703"
+      ],
+      "evidence": [
+        {
+          "item_id": "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+          "quote": "Consent prohibition against Katilyn M. Robinson",
+          "establishes": "Named individual"
+        },
+        {
+          "item_id": "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+          "quote": "Misappropriation of customer funds",
+          "establishes": "Conduct"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 12 Nov 2026."
+    },
+    {
+      "id": "rq-d-026",
+      "split": "dev",
+      "type": "freshness",
+      "question": "On what date did the UK's Technology Transfer Block Exemption Order 2026 come into force?",
+      "reference_answer": "1 May 2026",
+      "key_facts": [
+        "1 May 2026"
+      ],
+      "gold": [
+        "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4"
+      ],
+      "evidence": [
+        {
+          "item_id": "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4",
+          "quote": "1 May 2026 Technology Transfer Block Exemption Order (TTBEO) 2026 comes into force",
+          "establishes": "Entry into force"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "f7860b035016f1b681bbacc3f319e27bcea9c3d120cd1318d8ee31f2331ea525",
+        "d02369ad64bc04f34a4d2a50cb97c8bcb8de31f300e3b017e4763f406fb1d99b"
+      ],
+      "notes": "Published 10 Nov 2026. The two companion CMA items name the order but not the date.",
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Invalid freshness probe: the May 2026 commencement fact was public before the corpus window, so November publication does not establish freshness.",
+      "exclude_from_freshness_scoring": true
+    },
+    {
+      "id": "rq-d-027",
+      "split": "dev",
+      "type": "freshness",
+      "question": "At what clock frequency do six SkipLane zero-skipping CNN engines run on a PYNQ-Z2 board?",
+      "reference_answer": "140 MHz",
+      "key_facts": [
+        "140 MHz"
+      ],
+      "gold": [
+        "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd"
+      ],
+      "evidence": [
+        {
+          "item_id": "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd",
+          "quote": "Six engines meet 140 MHz on a PYNQ-Z2 using 21.1k LUTs",
+          "establishes": "Clock frequency and resources"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026."
+    },
+    {
+      "id": "rq-t-001",
+      "split": "test",
+      "type": "single",
+      "question": "What is the most Broadcom could owe, undiscounted, under the residual-value backstop for AI racks that it disclosed in late October 2026?",
+      "reference_answer": "Approximately $43 billion",
+      "key_facts": [
+        "approximately $43 billion maximum potential liability"
+      ],
+      "gold": [
+        "904be74c369c5aca07128b34b5b75d42e1604e00f0cadc1381c4d0f0d12926c6"
+      ],
+      "evidence": [
+        {
+          "item_id": "904be74c369c5aca07128b34b5b75d42e1604e00f0cadc1381c4d0f0d12926c6",
+          "quote": "on an undiscounted basis, is approximately $43 billion",
+          "establishes": "Maximum potential liability under the Backstop"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "72.5% is the share of outstanding lease amounts used in the liability formula, not the cap."
+    },
+    {
+      "id": "rq-t-002",
+      "split": "test",
+      "type": "single",
+      "question": "How many Marvell shares will holders receive for each Lumentum share under the merger agreed in November 2026?",
+      "reference_answer": "4.500 shares of Marvell common stock per Lumentum share",
+      "key_facts": [
+        "4.500 (4.5) Marvell shares per Lumentum share"
+      ],
+      "gold": [
+        "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950"
+      ],
+      "evidence": [
+        {
+          "item_id": "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+          "quote": "a fixed exchange ratio of 4.500 shares of Marvell common stock",
+          "establishes": "Fixed exchange ratio"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "75ee4f31 (the 8-K body) states the same ratio; either item supports the answer.",
+      "acceptable_evidence": [
+        "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+        "75ee4f31c6181f87deb587c5c0aabee0762ed7058ee60d01aa78fb9ecf6b4644"
+      ],
+      "split_overlap": [
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Qualcomm"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Microsoft"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Supermicro"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Dell"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "HPE"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Salesforce"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Intel"
+        },
+        {
+          "item": "c4bbb8b3ce671cbfb43738fab7b6cd1d90121e7344178e3621cdb0e351550144",
+          "other_split_org": "Micron"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-003",
+      "split": "test",
+      "type": "single",
+      "question": "What total revenue did Oracle set as its long-term outlook for fiscal 2030 at its 2026 Investor Day?",
+      "reference_answer": "$225 billion or more",
+      "key_facts": [
+        "$225 billion+ total revenue in FY30"
+      ],
+      "gold": [
+        "acb0bb57fbfb59366ef1c11699d8aefa7102bff01672088ff6a8a8a29ce4ce02"
+      ],
+      "evidence": [
+        {
+          "item_id": "acb0bb57fbfb59366ef1c11699d8aefa7102bff01672088ff6a8a8a29ce4ce02",
+          "quote": "Set long-term outlook for FY30 of $225 billion+ in total revenue",
+          "establishes": "FY30 revenue outlook"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The fiscal 2027 outlook of at least $90 billion is a different year."
+    },
+    {
+      "id": "rq-t-004",
+      "split": "test",
+      "type": "single",
+      "question": "In Arm's quarter ended 30 September 2026, how much licence and other revenue did it record, and how fast did that line grow?",
+      "reference_answer": "$773 million, up 50% year over year",
+      "key_facts": [
+        "$773 million",
+        "50% growth"
+      ],
+      "gold": [
+        "ed092e93db5f17d4aca915b6e80a3aca958e7c984a43e19040c959ae05ca677f"
+      ],
+      "evidence": [
+        {
+          "item_id": "ed092e93db5f17d4aca915b6e80a3aca958e7c984a43e19040c959ae05ca677f",
+          "quote": "License and other revenue grew 50% to $773 million",
+          "establishes": "Licence and other revenue for Q2 FYE27"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Royalty revenue was $670 million (+8%); total revenue $1.44 billion.",
+      "acceptable_evidence": [
+        "b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2"
+      ],
+      "split_overlap": [
+        {
+          "item": "b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2",
+          "other_split_org": "Qualcomm"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-005",
+      "split": "test",
+      "type": "single",
+      "question": "How many depositary shares did Meta agree to sell in its October 2026 mandatory convertible preferred offering, and what fraction of a preferred share does each represent?",
+      "reference_answer": "250,000,000 depositary shares, each a 1/20th interest in a share of 6.50% Series A Mandatory Convertible Preferred Stock",
+      "key_facts": [
+        "250,000,000 (250 million) depositary shares",
+        "1/20th interest each"
+      ],
+      "gold": [
+        "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d"
+      ],
+      "evidence": [
+        {
+          "item_id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "quote": "agreed to issue and sell 250,000,000 Series A depositary shares",
+          "establishes": "Number of depositary shares"
+        },
+        {
+          "item_id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "quote": "each representing a 1/20th interest in a share of 6.50% Series A Mandatory",
+          "establishes": "Fraction represented"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The 37,500,000 figure is the underwriters' over-allotment option."
+    },
+    {
+      "id": "rq-t-006",
+      "split": "test",
+      "type": "single",
+      "question": "When the Justice Department closed its review of FOX's purchase of Roku, for how long did FOX commit to keep carrying other companies' content on Roku?",
+      "reference_answer": "At least 3 years",
+      "key_facts": [
+        "at least 3 years"
+      ],
+      "gold": [
+        "939a45abea94969be385ebcde7c5920deab6d3a88414947961de03e915371404"
+      ],
+      "evidence": [
+        {
+          "item_id": "939a45abea94969be385ebcde7c5920deab6d3a88414947961de03e915371404",
+          "quote": "continue carrying non-FOX content on Roku for a period of at least 3 years",
+          "establishes": "FOX's carriage commitment"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": ""
+    },
+    {
+      "id": "rq-t-007",
+      "split": "test",
+      "type": "single",
+      "question": "In the Hawaii defence-contract case to which a former Army civilian official pleaded guilty in October 2026, how large was the bribe he had agreed to accept, and over what period?",
+      "reference_answer": "Approximately $1.25 million over five years",
+      "key_facts": [
+        "approximately $1.25 million",
+        "over five years"
+      ],
+      "gold": [
+        "60ce7dcdc7a9185d693a82d67a4266c7841390d84d090be28f805ba4f411fc4d"
+      ],
+      "evidence": [
+        {
+          "item_id": "60ce7dcdc7a9185d693a82d67a4266c7841390d84d090be28f805ba4f411fc4d",
+          "quote": "to accept a bribe of approximately $1.25 million over five years",
+          "establishes": "Size of the agreed bribe"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "He ultimately received about $55,000; the question asks for the agreed amount."
+    },
+    {
+      "id": "rq-t-008",
+      "split": "test",
+      "type": "single",
+      "question": "According to NIST's October 2026 report on moving to post-quantum cryptography, by which years must federal high-value assets migrate under Executive Order 14412?",
+      "reference_answer": "By 2030 for key establishment and by 2031 for digital signatures",
+      "key_facts": [
+        "2030 for key establishment",
+        "2031 for digital signatures"
+      ],
+      "gold": [
+        "7a85fbb1e42a5762d291e6fecca24e63e628cb08d9af0f4a3f4a241dc78476f6"
+      ],
+      "evidence": [
+        {
+          "item_id": "7a85fbb1e42a5762d291e6fecca24e63e628cb08d9af0f4a3f4a241dc78476f6",
+          "quote": "to migrate by 2030 for key establishment and 2031 for digital signatures",
+          "establishes": "Accelerated federal deadlines"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "2035 is the earlier general target from National Security Memorandum 10."
+    },
+    {
+      "id": "rq-t-009",
+      "split": "test",
+      "type": "single",
+      "question": "Which two US states did federal appeals courts clear in October 2026 to start enforcing laws that age-gate young people's access to social media?",
+      "reference_answer": "Florida and Georgia",
+      "key_facts": [
+        "Florida",
+        "Georgia"
+      ],
+      "gold": [
+        "185889d3ce3dda885dc4d9a85c4895df996c24057fc0fd5322afc55fdd4c72ad"
+      ],
+      "evidence": [
+        {
+          "item_id": "185889d3ce3dda885dc4d9a85c4895df996c24057fc0fd5322afc55fdd4c72ad",
+          "quote": "will allow Florida and Georgia to start enforcing laws that will age-gate",
+          "establishes": "The two states"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": ""
+    },
+    {
+      "id": "rq-t-010",
+      "split": "test",
+      "type": "single",
+      "question": "Which two entities did the SEC charge on 29 October 2026 over a 'wealth-sharing program' that relied on false SEC filings, and roughly how much did they raise?",
+      "reference_answer": "BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd; more than $130 million",
+      "key_facts": [
+        "BG Wealth Sharing Ltd",
+        "DSJ Exchange Pty Ltd",
+        "more than $130 million"
+      ],
+      "gold": [
+        "0cc91334623978a158d8953956f855f3acd88e198b1cb4cf73c2ede460a36fef"
+      ],
+      "evidence": [
+        {
+          "item_id": "0cc91334623978a158d8953956f855f3acd88e198b1cb4cf73c2ede460a36fef",
+          "quote": "BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd",
+          "establishes": "The two charged entities"
+        },
+        {
+          "item_id": "0cc91334623978a158d8953956f855f3acd88e198b1cb4cf73c2ede460a36fef",
+          "quote": "helped them raise more than $130 million",
+          "establishes": "Amount raised"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": ""
+    },
+    {
+      "id": "rq-t-011",
+      "split": "test",
+      "type": "single",
+      "question": "What share of test lines does the lattice-based hidden Markov model for Ottoman aruz scansion get fully right?",
+      "reference_answer": "77.6%",
+      "key_facts": [
+        "77.6% of test lines"
+      ],
+      "gold": [
+        "cefc09303bac0a09c7fcbd15f2680243a5ee4079e9358e01de52265ce2bdedd7"
+      ],
+      "evidence": [
+        {
+          "item_id": "cefc09303bac0a09c7fcbd15f2680243a5ee4079e9358e01de52265ce2bdedd7",
+          "quote": "it scans 77.6% of the test lines fully correctly",
+          "establishes": "Held-out scansion accuracy"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "26.8%, 55.0% and 63.6% are the baselines (rule-based scanner, neural tagger, few-shot LLM)."
+    },
+    {
+      "id": "rq-t-012",
+      "split": "test",
+      "type": "single",
+      "question": "In the zero-search reinforcement-learning study of Slay the Spire 2, what win rate do the released policies reach at Ascension 10 averaged across the five characters?",
+      "reference_answer": "8.05%",
+      "key_facts": [
+        "8.05% win rate at Ascension 10"
+      ],
+      "gold": [
+        "37222495b652481a3b0de18d8d13ec0a3ced27d56b96f539a90c00e760754034"
+      ],
+      "evidence": [
+        {
+          "item_id": "37222495b652481a3b0de18d8d13ec0a3ced27d56b96f539a90c00e760754034",
+          "quote": "the released policies win 8.05% averaged over the five characters",
+          "establishes": "A10 win rate over 12,800 held-out games"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "80.2% is the Ascension 0 figure; 8.2% is on a different 2,000-game comparison panel."
+    },
+    {
+      "id": "rq-t-013",
+      "split": "test",
+      "type": "single",
+      "question": "How early, relative to the end of a spoken word, does the Earlybird streaming recogniser get the median word right on clean audiobook speech?",
+      "reference_answer": "90 ms before the speaker finishes the word",
+      "key_facts": [
+        "90 ms before the word ends"
+      ],
+      "gold": [
+        "be81cefa327d287bd0ec3bc5f57046523d2a4d8fee8047fbe25ae52f6397e56c"
+      ],
+      "evidence": [
+        {
+          "item_id": "be81cefa327d287bd0ec3bc5f57046523d2a4d8fee8047fbe25ae52f6397e56c",
+          "quote": "the median word is predicted correctly 90 ms before the speaker finishes it",
+          "establishes": "Median lead time on LibriSpeech test-clean"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Other released models emit the word 90 to 400 ms after it ends."
+    },
+    {
+      "id": "rq-t-014",
+      "split": "test",
+      "type": "single",
+      "question": "What final-leaderboard place did the authors report for their 2026 BEHAVIOR Challenge entry, and what Q score did their learned single policy alone achieve across all 100 tasks, excluding Astra results from the public submission?",
+      "reference_answer": "The authors reported 9th place for their entry; the learned policy alone scored Q = 0.392 across all 100 tasks.",
+      "key_facts": [
+        "9th place",
+        "0.392 across all 100 tasks"
+      ],
+      "gold": [
+        "9509c40e72f112667a63e5add85e821959f8161c9de63978634c49b08c2d486a"
+      ],
+      "evidence": [
+        {
+          "item_id": "9509c40e72f112667a63e5add85e821959f8161c9de63978634c49b08c2d486a",
+          "quote": "We placed 9th on the final leaderboard",
+          "establishes": "Leaderboard position"
+        },
+        {
+          "item_id": "9509c40e72f112667a63e5add85e821959f8161c9de63978634c49b08c2d486a",
+          "quote": "across all 100 tasks it scores 0.392",
+          "establishes": "Score on all 100 tasks"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "0.371 is the score on the 50 tasks shared with 2025. The public submission also included some Astra results and scored Q = 0.446; the policy-only score is a separate measurement."
+    },
+    {
+      "id": "rq-t-015",
+      "split": "test",
+      "type": "single",
+      "question": "In the study of the 'RSI Tax' on recursive self-improvement, what portion of that tax is taken up by verification for the three costly methods examined?",
+      "reference_answer": "74.8% to 93.6%",
+      "key_facts": [
+        "74.8-93.6% of the aggregate RSI Tax"
+      ],
+      "gold": [
+        "0b4d895e86c1100206ed79e079058b1066734f54e5f38d81a8bb4f466af130f6"
+      ],
+      "evidence": [
+        {
+          "item_id": "0b4d895e86c1100206ed79e079058b1066734f54e5f38d81a8bb4f466af130f6",
+          "quote": "verification accounts for 74.8--93.6% of the aggregate RSI Tax",
+          "establishes": "Verification share"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "65.6-71.0% is the token saving of the bounded-note baseline, a different quantity."
+    },
+    {
+      "id": "rq-t-016",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "Who took over as board chair on the day the executive who held a public fireside chat with Kazakhstan's AI minister in Astana on 23 October 2026 stepped down?",
+      "reference_answer": "Harvey C. Jones",
+      "key_facts": [
+        "Harvey C. Jones (also acceptable: Harvey Jones)"
+      ],
+      "gold": [
+        "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+        "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207"
+      ],
+      "evidence": [
+        {
+          "item_id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+          "establishes": "The Astana visitor and fireside-chat speaker is Jensen Huang of NVIDIA"
+        },
+        {
+          "item_id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "quote": "accepted the resignation of Jen-Hsun Huang",
+          "establishes": "The 8-K reports the same person, under his legal name, resigning on 11 Nov 2026"
+        },
+        {
+          "item_id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "quote": "the Board appointed Harvey C. Jones, age 73, as Chair of the Board",
+          "establishes": "Jones became Chair the same day"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "The press-release exhibit 6efa7d34 states the same facts using the name 'Jensen Huang'; it is an acceptable alternative to da5cc113 but does not exercise the alias. Colette Kress (interim CEO) is the tempting wrong answer.",
+      "surface_forms": [
+        "Jensen Huang",
+        "Jen-Hsun Huang"
+      ],
+      "acceptable_evidence": [
+        "6efa7d34961196a57a1382eaae17c4a64c6c4ae4c18b7082ab6492ec1d449bb2"
+      ],
+      "split_overlap": [
+        {
+          "item": "6efa7d34961196a57a1382eaae17c4a64c6c4ae4c18b7082ab6492ec1d449bb2",
+          "other_split_org": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-017",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "A November 2026 paper benchmarks a one-sided expert-parallel all-to-all for mixture-of-experts inference on one GPU generation. According to the vendor's own post on memory codesign, by roughly how much did HBM capacity per GPU grow between the Ultra version of that generation and the platform that follows it?",
+      "reference_answer": "Roughly 3%",
+      "key_facts": [
+        "about 3% (roughly 3 percent)"
+      ],
+      "gold": [
+        "c2cadf01ae33f8990f0fe4cb2ba520dac1a3f4586a104e0a8b57a85a060095ea",
+        "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876"
+      ],
+      "evidence": [
+        {
+          "item_id": "c2cadf01ae33f8990f0fe4cb2ba520dac1a3f4586a104e0a8b57a85a060095ea",
+          "quote": "On Blackwell GPUs, NVLinkOneSided completes dispatch and combine",
+          "establishes": "The paper's benchmark hardware is the Blackwell generation"
+        },
+        {
+          "item_id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "quote": "HBM capacity per GPU rose roughly 3%",
+          "establishes": "From Blackwell Ultra to Vera Rubin, HBM per GPU rose about 3%"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "03018bb6e10503e95c6a82ad17c86d0c77c363a8cf10a6f5e303a9c9081b4724",
+        "d1ccfe31627c9fcae62ecdc09ff32ef571ac1778ca10f1dcd0cd3f9d90db9405"
+      ],
+      "notes": "03018bb6 and d1ccfe31 also use Blackwell GPUs but are about other methods. The 30x figure in the same sentence is throughput per dollar, not HBM capacity.",
+      "split_overlap": [
+        {
+          "item": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "other_split_org": "HPE"
+        },
+        {
+          "item": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "other_split_org": "Dell"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-018",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "The US Supreme Court decision that EFF says ended corporate liability under the Alien Tort Statute was named after a networking company. Which outside chief executive joined that company's board in October 2026?",
+      "reference_answer": "Girish D. Rishi, CEO of Cognite Holding B.V.",
+      "key_facts": [
+        "Girish D. Rishi (Girish Rishi)",
+        "CEO of Cognite"
+      ],
+      "gold": [
+        "6bbb2a8b7c9d11813e2db157e2299cdd276de42083f971070d0f3a324ed37fbb",
+        "8dcb1e896d8dfbe9103cd7da711cbf757d034ddcf5656fab533e2c3f43d1b77e"
+      ],
+      "evidence": [
+        {
+          "item_id": "6bbb2a8b7c9d11813e2db157e2299cdd276de42083f971070d0f3a324ed37fbb",
+          "quote": "recent ruling in Cisco Systems, Inc. v. Doe I dealt the law a final blow",
+          "establishes": "The case is Cisco Systems, Inc. v. Doe I"
+        },
+        {
+          "item_id": "8dcb1e896d8dfbe9103cd7da711cbf757d034ddcf5656fab533e2c3f43d1b77e",
+          "quote": "appointed Girish D. Rishi, CEO of Cognite Holding B.V., as a member",
+          "establishes": "Cisco's board appointed Rishi, effective 9 Oct 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Cisco's November results items do not mention the appointment."
+    },
+    {
+      "id": "rq-t-019",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "On 20 October 2026 the UK competition authority opened a consultation on requiring one handset maker to open up contactless (NFC) access. What revenue did that company report for its fiscal quarter ended 26 September 2026?",
+      "reference_answer": "$114.5 billion",
+      "key_facts": [
+        "$114.5 billion rounded (also acceptable: $114.477 billion or $114,477 million)"
+      ],
+      "gold": [
+        "378b27e8577fe9de8595f8d763dfcf5f452b9d6d15d51c6ba90bfe8a7aecc98d",
+        "30589f0ec53590d9caa0274a226c6d03fab0b8c477971cbe6d8ea7a0b1392aea"
+      ],
+      "evidence": [
+        {
+          "item_id": "378b27e8577fe9de8595f8d763dfcf5f452b9d6d15d51c6ba90bfe8a7aecc98d",
+          "quote": "consultation on a proposed NFC access conduct requirement in relation to Apple",
+          "establishes": "The NFC consultation of 20 Oct 2026 concerns Apple's mobile platform"
+        },
+        {
+          "item_id": "30589f0ec53590d9caa0274a226c6d03fab0b8c477971cbe6d8ea7a0b1392aea",
+          "quote": "The Company posted quarterly revenue of $114.5 billion",
+          "establishes": "Apple's fiscal Q4 2026 revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "9fcaeedc9708cea93a1c2b876f124f647ad5f10f4af1401b8de4256123844892"
+      ],
+      "notes": "The parallel CMA page on Google's mobile platform (9fcaeedc) has no NFC consultation.",
+      "split_overlap": [
+        {
+          "item": "378b27e8577fe9de8595f8d763dfcf5f452b9d6d15d51c6ba90bfe8a7aecc98d",
+          "other_split_org": "Google"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-020",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "At the October 2026 OCP Global Summit one hyperscaler was credited with advancing open AI networking together with NVIDIA on Spectrum-X Ethernet SuperNICs. How large an expense charge (rather than the total settlement amount) did that hyperscaler book in the third quarter of 2026 for its agreement with state attorneys general?",
+      "reference_answer": "$9.89 billion",
+      "key_facts": [
+        "$9.89 billion charge"
+      ],
+      "gold": [
+        "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+        "99de9e9e4c70c3f0cf9df97ea03e15e7dd7448e2aefd296331794c078ba0e1a9"
+      ],
+      "evidence": [
+        {
+          "item_id": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "quote": "Meta and NVIDIA advanced open AI networking with NVIDIA Spectrum-X Ethernet SuperNIC",
+          "establishes": "The hyperscaler is Meta"
+        },
+        {
+          "item_id": "99de9e9e4c70c3f0cf9df97ea03e15e7dd7448e2aefd296331794c078ba0e1a9",
+          "quote": "includes a $9.89 billion charge related to this agreement",
+          "establishes": "Meta's Q3 2026 costs include a $9.89bn charge for the attorneys-general agreement"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The total settlement is up to about $18.59bn; the question asks for the Q3 charge only.",
+      "split_overlap": [
+        {
+          "item": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "other_split_org": "Google"
+        },
+        {
+          "item": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "other_split_org": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-021",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "Three companies joined NVIDIA in publishing version 0.7 of the Open Data Center Specification; one of them is a rival processor designer. How much did that designer agree to pay for World Labs, and in what form?",
+      "reference_answer": "Approximately $8.2 billion, paid in shares of its common stock",
+      "key_facts": [
+        "approximately $8.2 billion",
+        "paid in shares of common stock (all-stock)"
+      ],
+      "gold": [
+        "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+        "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97"
+      ],
+      "evidence": [
+        {
+          "item_id": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "quote": "At OCP, NVIDIA joined AMD, Google and Meta",
+          "establishes": "The three co-publishers are AMD, Google and Meta; AMD is the processor designer"
+        },
+        {
+          "item_id": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+          "quote": "total purchase price of approximately $8.2 billion to be paid in shares",
+          "establishes": "Advanced Micro Devices, Inc. agreed to acquire World Labs for about $8.2bn in stock"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [
+        "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a"
+      ],
+      "notes": "The 8-K body refers to the registrant as 'Advanced Micro Devices, Inc. (the Company)'. The AMD earnings release b64c2e06 mentions the World Labs agreement without the price.",
+      "surface_forms": [
+        "AMD",
+        "Advanced Micro Devices, Inc."
+      ],
+      "split_overlap": [
+        {
+          "item": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "other_split_org": "Google"
+        },
+        {
+          "item": "99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d",
+          "other_split_org": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-022",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "NVIDIA says its own supply-chain organisation deploys specialised agents through a partner's Foundry and ontology products. What U.S. commercial revenue did that partner report for the quarter ended 30 September 2026?",
+      "reference_answer": "$984 million",
+      "key_facts": [
+        "$984 million U.S. commercial revenue"
+      ],
+      "gold": [
+        "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+        "6c9efc491c588c786390c2e9317bff72e56faddc25fb0e082a90b50805fc35fb"
+      ],
+      "evidence": [
+        {
+          "item_id": "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+          "quote": "supply chain organization is using Agent Knowledge Foundation through Palantir Foundry",
+          "establishes": "The partner is Palantir"
+        },
+        {
+          "item_id": "6c9efc491c588c786390c2e9317bff72e56faddc25fb0e082a90b50805fc35fb",
+          "quote": "29% quarter-over-quarter to $984 million",
+          "establishes": "Palantir's Q3 2026 U.S. commercial revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "U.S. government revenue was $953m and total U.S. revenue $1.937bn; only $984m is the commercial figure.",
+      "split_overlap": [
+        {
+          "item": "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+          "other_split_org": "Dell"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-023",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "EFF's records on Medicare's AI prior-authorisation pilot show that the vendor Zyter runs on another firm's software infrastructure. What full-year 2026 revenue range did that other firm guide to in early November 2026?",
+      "reference_answer": "Between $8.530 billion and $8.534 billion",
+      "key_facts": [
+        "$8.530 - $8.534 billion"
+      ],
+      "gold": [
+        "4d5cc1c48e9c5d6dbc7f4e8e15ab18c2b733ae7d15058d5b1ffa93c115ccf83b",
+        "6c9efc491c588c786390c2e9317bff72e56faddc25fb0e082a90b50805fc35fb"
+      ],
+      "evidence": [
+        {
+          "item_id": "4d5cc1c48e9c5d6dbc7f4e8e15ab18c2b733ae7d15058d5b1ffa93c115ccf83b",
+          "quote": "a vendor that uses Palantir software infrastructure",
+          "establishes": "Zyter uses Palantir software infrastructure"
+        },
+        {
+          "item_id": "6c9efc491c588c786390c2e9317bff72e56faddc25fb0e082a90b50805fc35fb",
+          "quote": "raising our revenue guidance to between $8.530 - $8.534 billion",
+          "establishes": "Palantir's raised FY2026 revenue guidance"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "The same release gives the guidance as 91% Y/Y growth in its headline."
+    },
+    {
+      "id": "rq-t-024",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "One data-platform vendor is letting customers run NVIDIA's Kumo Engine and Kumo Relational models inside its notebook environment. What estimated net proceeds, excluding the optional additional notes, did that vendor expect from the convertible notes it priced on 28 September 2026?",
+      "reference_answer": "Approximately $3.70 billion (about $4.24 billion if the purchasers' options are exercised in full)",
+      "key_facts": [
+        "approximately $3.70 billion net proceeds"
+      ],
+      "gold": [
+        "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+        "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e"
+      ],
+      "evidence": [
+        {
+          "item_id": "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+          "quote": "Snowflake is enabling customers to use the NVIDIA Kumo Engine and Kumo Relational",
+          "establishes": "The vendor is Snowflake"
+        },
+        {
+          "item_id": "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e",
+          "quote": "net proceeds from the offering will be approximately $3.70 billion",
+          "establishes": "Snowflake's estimated net proceeds"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65"
+      ],
+      "notes": "$3.75bn is the gross principal amount, not net proceeds; the launch release 017deb85 gives no proceeds estimate.",
+      "acceptable_evidence": [
+        "7a4b80e2e778f3a9ef1aa9d633bab26a50d7425b315d80e1b5ea54780ea276c2"
+      ],
+      "split_overlap": [
+        {
+          "item": "f9343678ab052a20cd4cab484141134141d113b20ef12d365c4f8c66113b46f7",
+          "other_split_org": "Dell"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-025",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "TSMC's board approved buying stock in the developer of the model that scored highest on the ExpertCrowd-SWE coding benchmark. What ceiling did the board set on that purchase, and at what price will the shares be bought?",
+      "reference_answer": "Not more than US$500 million, at the company's initial public offering price per share",
+      "key_facts": [
+        "not to exceed US$500 million",
+        "at the IPO price per share"
+      ],
+      "gold": [
+        "a1da460c619401d4cfcbba32ea146e5dfa5c5dd486591cda957db4e7aef2ea4a",
+        "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+        "af60f5ac895f01bfb9c7e606dadf2508ea16d9808daac4ed736f9d8a7f4e724f"
+      ],
+      "evidence": [
+        {
+          "item_id": "a1da460c619401d4cfcbba32ea146e5dfa5c5dd486591cda957db4e7aef2ea4a",
+          "quote": "Claude Opus 5.5 (67.3%) and GPT-6 Astra (63.7%) lead",
+          "establishes": "Claude Opus 5.5 has the top score on EC-SWE"
+        },
+        {
+          "item_id": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "quote": "Anthropic’s Claude Fable 5.1, Opus 5.5, Sonnet 5.5, and Haiku 5.5",
+          "establishes": "Opus 5.5 is an Anthropic model"
+        },
+        {
+          "item_id": "af60f5ac895f01bfb9c7e606dadf2508ea16d9808daac4ed736f9d8a7f4e724f",
+          "quote": "Anthropic, PBC at its per share initial public offering price",
+          "establishes": "TSMC will buy Anthropic common shares at the IPO price"
+        },
+        {
+          "item_id": "af60f5ac895f01bfb9c7e606dadf2508ea16d9808daac4ed736f9d8a7f4e724f",
+          "quote": "in an amount not to exceed US$500 million to acquire Anthropic",
+          "establishes": "Cap of US$500 million"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "Three-item chain. The paper never names Anthropic; the Amazon release supplies the product-to-company link. The runner-up's developer (OpenAI) has the same US$500m cap but for preferred stock, not IPO-priced common shares.",
+      "surface_forms": [
+        "Claude Opus 5.5",
+        "Anthropic, PBC"
+      ],
+      "split_overlap": [
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Samsung"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Qualcomm"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Salesforce"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-026",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "Amazon's third-quarter 2026 release says its Continuum vulnerability tool is being brought into three coding agents. One of those agents was tested as a marker of handwritten university exam papers. How strongly did its total marks correlate with the human examiner's?",
+      "reference_answer": "r = 0.97",
+      "key_facts": [
+        "Pearson r = 0.97"
+      ],
+      "gold": [
+        "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+        "9553071426ca46d879df4053183f0e62bdf333a3989969bc3cd0f74ec5d6f4b2"
+      ],
+      "evidence": [
+        {
+          "item_id": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "quote": "bringing Continuum into Anthropic’s Claude Code, OpenAI’s Codex, and AWS’s Kiro",
+          "establishes": "The three agents are Claude Code, Codex and Kiro"
+        },
+        {
+          "item_id": "9553071426ca46d879df4053183f0e62bdf333a3989969bc3cd0f74ec5d6f4b2",
+          "quote": "agreed strongly with human grading on totals (r = 0.97; MAE = 0.85 marks)",
+          "establishes": "Claude Code's agreement with the human grader"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance",
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "f2134f2ff6829e0934fbb5a9feb919ee0e5aeff6307393f83e573d100af40833",
+        "9eacbdd927bac319a716bf39c75faeec59bb3e0fefb3669a4cd7b20ddb07e96e"
+      ],
+      "notes": "f2134f2f and 9eacbdd9 mention Claude Code but are not grading studies. ICC = 0.96 is test-retest consistency, not agreement with the human.",
+      "split_overlap": [
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Samsung"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Qualcomm"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Salesforce"
+        }
+      ],
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Invalid strict multi-hop probe (R3): the uniquely described grading study alone supplies Pearson r; the Amazon hop is unnecessary."
+    },
+    {
+      "id": "rq-t-027",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "A reinforcement-fine-tuned small language model for analog circuit optimisation was shown to transfer to one foundry's commercial 65 nm process design kit. In that foundry's third-quarter 2026 results, what share of wafer revenue came from 2-nanometer?",
+      "reference_answer": "8%",
+      "key_facts": [
+        "8% of total wafer revenue"
+      ],
+      "gold": [
+        "dd3202e03bdaeed244093abcbae46df900f505304a0017977b38c93cd35ea572",
+        "80b4295fbd53d86404ecab7323ba0ce142b10c42517b7edd0d3546df56c0b077"
+      ],
+      "evidence": [
+        {
+          "item_id": "dd3202e03bdaeed244093abcbae46df900f505304a0017977b38c93cd35ea572",
+          "quote": "This transfer extends to a commercial TSMC 65 nm CMOS PDK",
+          "establishes": "The foundry is TSMC"
+        },
+        {
+          "item_id": "80b4295fbd53d86404ecab7323ba0ce142b10c42517b7edd0d3546df56c0b077",
+          "quote": "shipments of 2-nanometer accounted for 8% of total wafer revenue",
+          "establishes": "2nm share in 3Q26"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "3nm was 33%, 5nm 28%, 7nm 10%."
+    },
+    {
+      "id": "rq-t-028",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "Researchers trained a generative quantum eigensolver with a Heron-class processor in the loop at up to 70 qubits. By how much does the company that makes that processor now expect its free cash flow to rise in 2026?",
+      "reference_answer": "By more than $1 billion year over year",
+      "key_facts": [
+        "more than $1 billion year-over-year increase in free cash flow"
+      ],
+      "gold": [
+        "27a499f3fef4a638274e99b3f34461ccb1574b578efb10ea4a9cec40116aded2",
+        "b622243b309b18db73b59296a706fc54475bf1f6fb08f22b0d5f18e6ecbea261"
+      ],
+      "evidence": [
+        {
+          "item_id": "27a499f3fef4a638274e99b3f34461ccb1574b578efb10ea4a9cec40116aded2",
+          "quote": "with the IBM Heron processor ibm_kobe inside the loop",
+          "establishes": "The processor is IBM's"
+        },
+        {
+          "item_id": "b622243b309b18db73b59296a706fc54475bf1f6fb08f22b0d5f18e6ecbea261",
+          "quote": "we now expect free cash flow to increase by more than $1 billion year-over-year",
+          "establishes": "IBM's raised FCF outlook"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [
+        "23512c6fd2eda728c8c50795e4232c803997860c0c960af587c3211c6f0460ab"
+      ],
+      "notes": "Year-to-date free cash flow of $7.8bn is a different figure."
+    },
+    {
+      "id": "rq-t-029",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "The FTC and 22 states accuse an online retailer of secretly inflating prices in its search-advertising auctions. What year-over-year growth in advertising revenue does that retailer itself expect for the fourth quarter of 2026?",
+      "reference_answer": "Year-over-year growth in the high teens (percent)",
+      "key_facts": [
+        "high teens year-over-year growth"
+      ],
+      "gold": [
+        "0e8e1a038107f533fff2af164e6c69aa9b35227f98e74293f9ba6862a0dd5c85",
+        "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7"
+      ],
+      "evidence": [
+        {
+          "item_id": "0e8e1a038107f533fff2af164e6c69aa9b35227f98e74293f9ba6862a0dd5c85",
+          "quote": "sued Amazon in the Western District of Washington",
+          "establishes": "The retailer is Amazon"
+        },
+        {
+          "item_id": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "quote": "advertising revenue to grow in the high teens in fourth quarter 2026",
+          "establishes": "Amazon's Q4 2026 advertising outlook"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Q3 advertising growth was 12% excluding FX; the question asks for the Q4 expectation.",
+      "split_overlap": [
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Samsung"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Qualcomm"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Salesforce"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-030",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "The strongest agent in the Embodied First Exam robotics benchmark runs on a model whose developer is one of five organisations named as running workloads on AMD's first Helios rack-scale systems. Which GPU series powers those systems?",
+      "reference_answer": "AMD Instinct MI450 Series GPUs",
+      "key_facts": [
+        "Instinct MI450 Series"
+      ],
+      "gold": [
+        "7b9fc55d9e7385ea759c186d1f62be95db784a36f2b644c017d0335a82516c73",
+        "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+        "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a"
+      ],
+      "evidence": [
+        {
+          "item_id": "7b9fc55d9e7385ea759c186d1f62be95db784a36f2b644c017d0335a82516c73",
+          "quote": "the strongest of eight agents, GPT-6 Astra in Codex",
+          "establishes": "The strongest agent uses GPT-6 Astra"
+        },
+        {
+          "item_id": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "quote": "OpenAI’s GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and GPT-6.1 Sol",
+          "establishes": "GPT-6 Astra is an OpenAI model"
+        },
+        {
+          "item_id": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+          "quote": "powered by AMD Instinct MI450 Series GPUs",
+          "establishes": "Helios systems (run by Anthropic, Meta, Microsoft, OpenAI, OCI) use Instinct MI450"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "Three-item chain; the paper does not name OpenAI. The Helios systems also use 6th Gen EPYC CPUs, but the question asks for the GPU series. Weakness: the AMD release alone answers the final clause once Helios is named.",
+      "surface_forms": [
+        "GPT-6 Astra",
+        "OpenAI"
+      ],
+      "split_overlap": [
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Samsung"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Qualcomm"
+        },
+        {
+          "item": "6d38920496a9f847158d2714d94aeda9ddc1061c252425f543c7f5e8466ea2d7",
+          "other_split_org": "Salesforce"
+        },
+        {
+          "item": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+          "other_split_org": "Google"
+        },
+        {
+          "item": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+          "other_split_org": "Microsoft"
+        },
+        {
+          "item": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+          "other_split_org": "HPE"
+        }
+      ],
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Invalid strict multi-hop probe (R1): the question names AMD Helios and its release directly supplies the GPU series."
+    },
+    {
+      "id": "rq-t-031",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "The company whose software underpins Zyter, one of the vendors in Medicare's WISeR programme, also appears in the SEC's fiscal-2026 enforcement summary. What did the SEC's settled order say had happened in connection with that company's shares?",
+      "reference_answer": "A California resident allegedly defrauded investors in a private fund that invested in the company's pre-IPO shares",
+      "key_facts": [
+        "California resident",
+        "defrauded investors in a private fund",
+        "fund invested in pre-IPO shares of Palantir"
+      ],
+      "gold": [
+        "4d5cc1c48e9c5d6dbc7f4e8e15ab18c2b733ae7d15058d5b1ffa93c115ccf83b",
+        "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673"
+      ],
+      "evidence": [
+        {
+          "item_id": "4d5cc1c48e9c5d6dbc7f4e8e15ab18c2b733ae7d15058d5b1ffa93c115ccf83b",
+          "quote": "a vendor that uses Palantir software infrastructure",
+          "establishes": "Zyter's software infrastructure is Palantir's"
+        },
+        {
+          "item_id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "quote": "private fund that invested in pre-IPO shares of Palantir Technologies, Inc.",
+          "establishes": "SEC settled order about a fund holding pre-IPO Palantir shares"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Palantir itself was not charged; the order concerns a fund manager."
+    },
+    {
+      "id": "rq-t-032",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "The device maker that added an 'Exclude Apps' control for its AI assistant in iOS 27.2 reported fiscal fourth-quarter results on 2 November 2026. Who is quoted in that release as its chief executive?",
+      "reference_answer": "John Ternus",
+      "key_facts": [
+        "John Ternus"
+      ],
+      "gold": [
+        "692eaf473852f2f09dcce1336ae22e836b23882381eb3d104a64037ad61e9500",
+        "30589f0ec53590d9caa0274a226c6d03fab0b8c477971cbe6d8ea7a0b1392aea"
+      ],
+      "evidence": [
+        {
+          "item_id": "692eaf473852f2f09dcce1336ae22e836b23882381eb3d104a64037ad61e9500",
+          "quote": "introduced a new setting to “Exclude Apps” from Siri AI",
+          "establishes": "The iOS 27.2 setting is Apple's"
+        },
+        {
+          "item_id": "30589f0ec53590d9caa0274a226c6d03fab0b8c477971cbe6d8ea7a0b1392aea",
+          "quote": "said John Ternus, Apple’s CEO",
+          "establishes": "Apple's CEO in the Q4 FY2026 release"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Kevan Parekh is the CFO quoted in the same release. The answer differs from older general knowledge, so the release is needed.",
+      "split_overlap": [
+        {
+          "item": "692eaf473852f2f09dcce1336ae22e836b23882381eb3d104a64037ad61e9500",
+          "other_split_org": "Google"
+        },
+        {
+          "item": "692eaf473852f2f09dcce1336ae22e836b23882381eb3d104a64037ad61e9500",
+          "other_split_org": "Samsung"
+        }
+      ],
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Invalid retrieval-isolated multi-hop probe: iOS identifies Apple by general knowledge and the CEO can be recalled without the bridge."
+    },
+    {
+      "id": "rq-t-033",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "A contextual-bandit controller for choosing quantum error-mitigation techniques was validated on noise models from eight real devices of a single vendor. To how many directors did that vendor enlarge its board on 1 October 2026?",
+      "reference_answer": "Fourteen",
+      "key_facts": [
+        "14 directors (fourteen)"
+      ],
+      "gold": [
+        "23512c6fd2eda728c8c50795e4232c803997860c0c960af587c3211c6f0460ab",
+        "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed"
+      ],
+      "evidence": [
+        {
+          "item_id": "23512c6fd2eda728c8c50795e4232c803997860c0c960af587c3211c6f0460ab",
+          "quote": "On noise models from eight real IBM devices",
+          "establishes": "The devices are IBM's"
+        },
+        {
+          "item_id": "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed",
+          "quote": "amended to increase the number of directors to fourteen",
+          "establishes": "International Business Machines Corporation raised its board size to fourteen"
+        }
+      ],
+      "expected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [
+        "27a499f3fef4a638274e99b3f34461ccb1574b578efb10ea4a9cec40116aded2",
+        "68bc481960f7506f075ad344e0ae64b7fff0cf01476cc03589bc1c1847cba88f"
+      ],
+      "notes": "The press-release exhibit 68bc4819 announces Frank Baker's election but does not give the board size. The 8-K body also uses the short form 'IBM', so this alias is the mildest of the set.",
+      "surface_forms": [
+        "IBM",
+        "International Business Machines Corporation"
+      ]
+    },
+    {
+      "id": "rq-t-034",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "Among the model builders NVIDIA lists as recently shipping NVFP4 checkpoints, one is a social-media company. What were that company's capital expenditures, including principal payments on finance leases, in the third quarter of 2026?",
+      "reference_answer": "$34.91 billion",
+      "key_facts": [
+        "$34.91 billion (including principal payments on finance leases)"
+      ],
+      "gold": [
+        "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+        "99de9e9e4c70c3f0cf9df97ea03e15e7dd7448e2aefd296331794c078ba0e1a9"
+      ],
+      "evidence": [
+        {
+          "item_id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "quote": "Meta Muse Spark from Meta",
+          "establishes": "The social-media company in the NVFP4 list is Meta"
+        },
+        {
+          "item_id": "99de9e9e4c70c3f0cf9df97ea03e15e7dd7448e2aefd296331794c078ba0e1a9",
+          "quote": "including principal payments on finance leases, were $34.91 billion",
+          "establishes": "Meta's Q3 2026 capital expenditures"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Other builders in the list (Black Forest Labs, Thinking Machines Lab, Reflection, StepFun) are not social-media companies.",
+      "split_overlap": [
+        {
+          "item": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "other_split_org": "HPE"
+        },
+        {
+          "item": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "other_split_org": "Dell"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-035",
+      "split": "test",
+      "type": "multi_hop",
+      "question": "NVIDIA names a Californian university among its partners at the 2026 Conference on Robot Learning. How many main-conference papers is that university's AI research lab presenting there?",
+      "reference_answer": "33",
+      "key_facts": [
+        "33 main-conference papers"
+      ],
+      "gold": [
+        "162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec",
+        "fd7933fb4e2efd78dbd589bde0d7ea156221ca94605679b322f6bf83adcb4c2e"
+      ],
+      "evidence": [
+        {
+          "item_id": "162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec",
+          "quote": "RLWRLD , UC Berkeley , Walden Robotics and the University of Washington",
+          "establishes": "UC Berkeley is the Californian university partner"
+        },
+        {
+          "item_id": "fd7933fb4e2efd78dbd589bde0d7ea156221ca94605679b322f6bf83adcb4c2e",
+          "quote": "33 Main-conference papers",
+          "establishes": "BAIR lists 33 main-conference papers at CoRL 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": true,
+      "distractors": [],
+      "notes": "The lab page also lists 4 late-breaking posters and 10 orals and spotlights; those are different counts.",
+      "surface_forms": [
+        "UC Berkeley",
+        "BAIR"
+      ]
+    },
+    {
+      "id": "rq-t-036",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "Who currently serves as NVIDIA's chief executive, and on what basis?",
+      "reference_answer": "Colette M. Kress, as interim Chief Executive Officer (she remains CFO)",
+      "key_facts": [
+        "Colette M. Kress (Colette Kress)",
+        "interim CEO"
+      ],
+      "gold": [
+        "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+        "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207"
+      ],
+      "evidence": [
+        {
+          "item_id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+          "establishes": "Old state: Jensen Huang was CEO on 23 Oct 2026"
+        },
+        {
+          "item_id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "quote": "to serve as interim Chief Executive Officer",
+          "establishes": "New state: Kress appointed interim CEO on 11 Nov 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-11)",
+      "alias_bridge": false,
+      "distractors": [
+        "66b41ebef1028fc285926a811ca3b53fdbab9e4baf84e74bd6fc469e0dcd130b"
+      ],
+      "notes": "Verified changed fact. Many October items still call Jensen Huang the CEO. 6efa7d34 states the same new fact.",
+      "acceptable_evidence": [
+        "6efa7d34961196a57a1382eaae17c4a64c6c4ae4c18b7082ab6492ec1d449bb2"
+      ],
+      "split_overlap": [
+        {
+          "item": "6efa7d34961196a57a1382eaae17c4a64c6c4ae4c18b7082ab6492ec1d449bb2",
+          "other_split_org": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-037",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "As of 1 November 2026, who was NVIDIA's chief executive?",
+      "reference_answer": "Jensen Huang (Jen-Hsun Huang)",
+      "key_facts": [
+        "Jensen Huang (also: Jen-Hsun Huang)"
+      ],
+      "gold": [
+        "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+        "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207"
+      ],
+      "evidence": [
+        {
+          "item_id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+          "establishes": "Huang was CEO on 23 Oct 2026"
+        },
+        {
+          "item_id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "quote": "accepted the resignation of Jen-Hsun Huang",
+          "establishes": "His resignation was accepted only on 11 Nov 2026, after the as-of date"
+        }
+      ],
+      "expected_bubbles": [
+        "News",
+        "Finance"
+      ],
+      "time_scope": "as of 2026-11-01",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact. Answering 'Colette Kress' is the stale-direction error. Alternative October CEO sources support the as-of answer; answer correctness alone does not demonstrate temporal retrieval.",
+      "acceptable_evidence": [
+        "66b41ebef1028fc285926a811ca3b53fdbab9e4baf84e74bd6fc469e0dcd130b",
+        "4f3416cdcd60ce1ebc7567a6e950f4ba90470d91fb5f4cb2ce34dcd39a10fb87",
+        "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5"
+      ],
+      "split_overlap": [
+        {
+          "item": "66b41ebef1028fc285926a811ca3b53fdbab9e4baf84e74bd6fc469e0dcd130b",
+          "other_split_org": "Microsoft"
+        },
+        {
+          "item": "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5",
+          "other_split_org": "Dell"
+        },
+        {
+          "item": "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5",
+          "other_split_org": "Microsoft"
+        },
+        {
+          "item": "66b41ebef1028fc285926a811ca3b53fdbab9e4baf84e74bd6fc469e0dcd130b",
+          "other_split_org": "Dell"
+        },
+        {
+          "item": "4f3416cdcd60ce1ebc7567a6e950f4ba90470d91fb5f4cb2ce34dcd39a10fb87",
+          "other_split_org": "Google"
+        },
+        {
+          "item": "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5",
+          "other_split_org": "Supermicro"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-038",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "What is the latest monthly revenue figure TSMC has reported, and which month does it cover?",
+      "reference_answer": "About NT$586.89 billion, for October 2026",
+      "key_facts": [
+        "NT$586.89 billion",
+        "October 2026"
+      ],
+      "gold": [
+        "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+        "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a"
+      ],
+      "evidence": [
+        {
+          "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+          "quote": "revenue for September 2026 was approximately NT$511.86 billion",
+          "establishes": "Old state: September 2026 revenue"
+        },
+        {
+          "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+          "quote": "revenue for October 2026 was approximately NT$586.89 billion",
+          "establishes": "New state: October 2026 revenue"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-10)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact (TSMC monthly)."
+    },
+    {
+      "id": "rq-t-039",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "As of 20 October 2026, what cumulative revenue had TSMC reported for 2026 so far?",
+      "reference_answer": "About NT$3,898.73 billion, for January through September 2026",
+      "key_facts": [
+        "NT$3,898.73 billion",
+        "January through September 2026"
+      ],
+      "gold": [
+        "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+        "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a"
+      ],
+      "evidence": [
+        {
+          "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+          "quote": "Revenue for January through September 2026 totaled T$3,898.73 billion",
+          "establishes": "Year-to-date revenue as reported on 8 Oct 2026"
+        },
+        {
+          "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+          "quote": "Revenue for January through October 2026 totaled NT$4,485.62 billion",
+          "establishes": "Superseding figure published 10 Nov 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "as of 2026-10-20",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact (TSMC monthly). The source text prints 'T$' (a typo for NT$) in the September release."
+    },
+    {
+      "id": "rq-t-040",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "Before TSMC published its October 2026 revenue, what month-on-month change did its most recent monthly report show?",
+      "reference_answer": "A decrease of 0.6% (September 2026 versus August 2026)",
+      "key_facts": [
+        "decrease of 0.6 percent",
+        "September versus August 2026"
+      ],
+      "gold": [
+        "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+        "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a"
+      ],
+      "evidence": [
+        {
+          "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+          "quote": "a decrease of 0.6 percent from August 2026",
+          "establishes": "September report: month-on-month change"
+        },
+        {
+          "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+          "quote": "an increase of 14.7 percent from September 2026",
+          "establishes": "The October report that superseded it"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "before 2026-11-10",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact (TSMC monthly)."
+    },
+    {
+      "id": "rq-t-041",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "TSMC's third-quarter 2026 figures were first published without board sign-off. What is their approval status after the board's November meeting?",
+      "reference_answer": "Approved: the board approved the 2026 third-quarter Business Report and Financial Statements at its meeting on 10 November 2026",
+      "key_facts": [
+        "approved by the Board of Directors",
+        "10 November 2026"
+      ],
+      "gold": [
+        "80b4295fbd53d86404ecab7323ba0ce142b10c42517b7edd0d3546df56c0b077",
+        "af60f5ac895f01bfb9c7e606dadf2508ea16d9808daac4ed736f9d8a7f4e724f"
+      ],
+      "evidence": [
+        {
+          "item_id": "80b4295fbd53d86404ecab7323ba0ce142b10c42517b7edd0d3546df56c0b077",
+          "quote": "3Q2026 figures have not been approved by Board of Directors",
+          "establishes": "Old state on 15 Oct 2026"
+        },
+        {
+          "item_id": "af60f5ac895f01bfb9c7e606dadf2508ea16d9808daac4ed736f9d8a7f4e724f",
+          "quote": "Approved the 2026 third quarter Business Report and Financial Statements",
+          "establishes": "New state on 10 Nov 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-10)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading; not in the verified changed-facts file. Not a monthly-figure question."
+    },
+    {
+      "id": "rq-t-042",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "What is the current GeForce NOW status of 'World of Warcraft: Forever'?",
+      "reference_answer": "It launched on Wednesday 4 November 2026 and is streaming on GeForce NOW",
+      "key_facts": [
+        "launched 4 November 2026",
+        "now streaming on GeForce NOW"
+      ],
+      "gold": [
+        "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+        "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43"
+      ],
+      "evidence": [
+        {
+          "item_id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+          "quote": "World of Warcraft: Forever arrives Wednesday, Nov. 4 at 3 p.m. PST",
+          "establishes": "Old state: scheduled"
+        },
+        {
+          "item_id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "quote": "launched Wednesday, Nov. 4, and is streaming on GeForce NOW",
+          "establishes": "New state: launched and streaming"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": "latest (after 2026-11-05)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Verified changed fact."
+    },
+    {
+      "id": "rq-t-043",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "NVIDIA first said only that the 64GB DGX Spark would arrive 'this month'. What firm availability date did it give later?",
+      "reference_answer": "Friday, 23 October 2026",
+      "key_facts": [
+        "23 October 2026 (Friday, Oct. 23)"
+      ],
+      "gold": [
+        "e3d671e8862f261f0919b410d9d17bd4a0c6e68c7c775a833788de84f5c386a5",
+        "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5"
+      ],
+      "evidence": [
+        {
+          "item_id": "e3d671e8862f261f0919b410d9d17bd4a0c6e68c7c775a833788de84f5c386a5",
+          "quote": "Coming this month, NVIDIA DGX Spark will be available with 64GB",
+          "establishes": "Old state on 2 Oct: no date"
+        },
+        {
+          "item_id": "a91dcd5be4c8758e5e5d0b1e9b335689c7a548443f95c3747a3d4e24758daeb5",
+          "quote": "DGX Spark 64GB available on Friday, Oct. 23",
+          "establishes": "New state on 21 Oct: firm date"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": "latest (after 2026-10-21)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. A vague plan replaced by a specific date."
+    },
+    {
+      "id": "rq-t-044",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "How much of Snowflake's September 2026 convertible offering ended up in the notes due 2031, compared with what was first proposed?",
+      "reference_answer": "$1.75 billion, down from the $2.2 billion first proposed",
+      "key_facts": [
+        "$1.75 billion final 2031 tranche",
+        "$2.2 billion originally proposed"
+      ],
+      "gold": [
+        "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65",
+        "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e"
+      ],
+      "evidence": [
+        {
+          "item_id": "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65",
+          "quote": "and $2.2 billion aggregate principal amount of its 0.00% Convertible Senior Notes due 2031",
+          "establishes": "Proposed 2031 tranche"
+        },
+        {
+          "item_id": "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e",
+          "quote": "and $1.75 billion aggregate principal amount of its 0.00% Convertible Senior Notes due 2031",
+          "establishes": "Priced 2031 tranche"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after pricing on 2026-09-28)",
+      "alias_bridge": false,
+      "distractors": [
+        "7a4b80e2e778f3a9ef1aa9d633bab26a50d7425b315d80e1b5ea54780ea276c2"
+      ],
+      "notes": "Found by reading. Both press releases carry the same date (28 Sep) and were filed together on 2 Oct, so the ordering comes from 'proposed' versus 'priced', not from the publication date. 7a4b80e2 confirms the final amounts.",
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Strict date-based changed-fact scoring unavailable: both versions have the same release and manifest dates; only textual event order is known.",
+      "date_order_unavailable": true
+    },
+    {
+      "id": "rq-t-045",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "As of 8 November 2026, what was the longest-dated tranche in the most recent senior notes offering Meta had completed?",
+      "reference_answer": "$2.75 billion of 7.500% Senior Notes due 2056",
+      "key_facts": [
+        "7.500% Senior Notes due 2056",
+        "$2,750,000,000"
+      ],
+      "gold": [
+        "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476"
+      ],
+      "evidence": [
+        {
+          "item_id": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+          "quote": "$2,750,000,000 aggregate principal amount of its 7.500% Senior Notes due 2056",
+          "establishes": "Longest tranche of the offering completed 5 Nov 2026"
+        },
+        {
+          "item_id": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+          "quote": "aggregate principal amount of its 6.400% Senior Notes due 2065",
+          "establishes": "A later euro offering (12 Nov) now supersedes it"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "as of 2026-11-08",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. After 12 Nov the answer becomes the 6.400% euro notes due 2065."
+    },
+    {
+      "id": "rq-t-046",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "Oracle told investors in October 2026 that it would cap new capital raising through fiscal 2030 at $20 billion. How much of that has it now raised, and how?",
+      "reference_answer": "All $20 billion: $10 billion of common stock (86,206,897 shares) and $10 billion of notes, both closed on 4 November 2026",
+      "key_facts": [
+        "$10 billion of common stock",
+        "$10 billion of notes",
+        "closed 4 November 2026"
+      ],
+      "gold": [
+        "acb0bb57fbfb59366ef1c11699d8aefa7102bff01672088ff6a8a8a29ce4ce02",
+        "16e9a090828cb3a7ecbc2f8c661b5bb913678d8e8a41c186247a12594bcc1950"
+      ],
+      "evidence": [
+        {
+          "item_id": "acb0bb57fbfb59366ef1c11699d8aefa7102bff01672088ff6a8a8a29ce4ce02",
+          "quote": "Committed to limiting additional capital raises through FY30 to $20 billion",
+          "establishes": "Old state: a plan"
+        },
+        {
+          "item_id": "16e9a090828cb3a7ecbc2f8c661b5bb913678d8e8a41c186247a12594bcc1950",
+          "quote": "The Common Stock Offering closed on November 4, 2026",
+          "establishes": "New state: equity raised"
+        },
+        {
+          "item_id": "16e9a090828cb3a7ecbc2f8c661b5bb913678d8e8a41c186247a12594bcc1950",
+          "quote": "Issuance of $10 Billion Aggregate Principal Amount of Notes",
+          "establishes": "New state: debt raised"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-04)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. Plan announced, then executed."
+    },
+    {
+      "id": "rq-t-047",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "Which announced acquisitions does AMD still have pending?",
+      "reference_answer": "World Labs and Taalas",
+      "key_facts": [
+        "World Labs",
+        "Taalas"
+      ],
+      "gold": [
+        "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+        "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a"
+      ],
+      "evidence": [
+        {
+          "item_id": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+          "quote": "to acquire all of the equity interests in World Labs Technologies, Inc.",
+          "establishes": "Old state (28 Sep): one pending deal"
+        },
+        {
+          "item_id": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+          "quote": "AMD announced an agreement to acquire Taalas",
+          "establishes": "New state (3 Nov): a second pending deal"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-03)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. The slide deck c88e556c also lists both as proposed acquisitions. Neither is reported as closed in the corpus.",
+      "acceptable_evidence": [
+        "c88e556cdb1cdbecb17c6cf6b0ee293d9e62037884354a0e1fb95a73b09628e2"
+      ],
+      "split_overlap": [
+        {
+          "item": "c88e556cdb1cdbecb17c6cf6b0ee293d9e62037884354a0e1fb95a73b09628e2",
+          "other_split_org": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-048",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "How many directors sit on Marvell's board following its latest appointments?",
+      "reference_answer": "Ten",
+      "key_facts": [
+        "ten directors (10)"
+      ],
+      "gold": [
+        "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+        "5ee625bf0e74cf8c3c787bd66215fc443897dc769d25b258195b608ba0d0df7a"
+      ],
+      "evidence": [
+        {
+          "item_id": "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+          "quote": "which currently consists of seven directors",
+          "establishes": "Old state on 2 Nov 2026"
+        },
+        {
+          "item_id": "5ee625bf0e74cf8c3c787bd66215fc443897dc769d25b258195b608ba0d0df7a",
+          "quote": "Board from seven to ten directors",
+          "establishes": "New state on 12 Nov 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "latest (after 2026-11-12)",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. 830d165f states the same increase.",
+      "acceptable_evidence": [
+        "830d165fb617f2834ab457283c7b98ed54da05d8a037571f1f653d5595bcb20e"
+      ],
+      "split_overlap": [
+        {
+          "item": "830d165fb617f2834ab457283c7b98ed54da05d8a037571f1f653d5595bcb20e",
+          "other_split_org": "Intel"
+        }
+      ]
+    },
+    {
+      "id": "rq-t-049",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "As of 5 November 2026, how many directors did Marvell's board have?",
+      "reference_answer": "Seven",
+      "key_facts": [
+        "seven directors (7)"
+      ],
+      "gold": [
+        "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+        "830d165fb617f2834ab457283c7b98ed54da05d8a037571f1f653d5595bcb20e"
+      ],
+      "evidence": [
+        {
+          "item_id": "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+          "quote": "which currently consists of seven directors",
+          "establishes": "State on 2 Nov 2026"
+        },
+        {
+          "item_id": "830d165fb617f2834ab457283c7b98ed54da05d8a037571f1f653d5595bcb20e",
+          "quote": "increase in the size of the Board from seven (7) to ten (10) members",
+          "establishes": "The increase took effect only on 12 Nov 2026"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "as of 2026-11-05",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. Three Lumentum directors join only when the merger closes, which had not happened."
+    },
+    {
+      "id": "rq-t-050",
+      "split": "test",
+      "type": "time_sensitive",
+      "question": "What total size had Snowflake announced for its convertible notes placement before the deal was upsized?",
+      "reference_answer": "$3.5 billion",
+      "key_facts": [
+        "$3.5 billion originally announced"
+      ],
+      "gold": [
+        "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e",
+        "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65"
+      ],
+      "evidence": [
+        {
+          "item_id": "d210bc08b89adc4b61ef78bda8b0b2882d290e0d163dfa9d5d2534b4b4ac441e",
+          "quote": "upsized from the previously announced offering size of $3.5 billion",
+          "establishes": "The earlier announced size"
+        },
+        {
+          "item_id": "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65",
+          "quote": "$1.3 billion aggregate principal amount",
+          "establishes": "The launch release: $1.3bn of 2029 notes plus $2.2bn of 2031 notes"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": "before pricing on 2026-09-28",
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Found by reading. The final size was $3.75 billion.",
+      "exclude_from_scoring": true,
+      "exclusion_reason": "Strict date-based changed-fact scoring unavailable: both versions have the same release and manifest dates; no intervening dated cutoff exists.",
+      "date_order_unavailable": true
+    },
+    {
+      "id": "rq-t-051",
+      "split": "test",
+      "type": "freshness",
+      "question": "To what level did Cisco raise its expectation for AI infrastructure revenue from hyperscalers in fiscal 2027?",
+      "reference_answer": "$9 billion",
+      "key_facts": [
+        "$9B in FY27"
+      ],
+      "gold": [
+        "b2727e77c3e99a2c4d6793369a6e9a297d3c323e86290c216c198bdf906ca96b"
+      ],
+      "evidence": [
+        {
+          "item_id": "b2727e77c3e99a2c4d6793369a6e9a297d3c323e86290c216c198bdf906ca96b",
+          "quote": "AI infrastructure revenue from hyperscalers to $9B in FY27",
+          "establishes": "Raised FY27 expectation"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 12 Nov 2026. The figure appears in no other item."
+    },
+    {
+      "id": "rq-t-052",
+      "split": "test",
+      "type": "freshness",
+      "question": "What is the largest single tranche in the notes Apple issued on 9 November 2026?",
+      "reference_answer": "$2.0 billion of 5.350% Notes due 2036",
+      "key_facts": [
+        "$2,000,000,000",
+        "5.350% Notes due 2036"
+      ],
+      "gold": [
+        "957e8680803ad8738070f32300b148e17d369f32bc51240ca97850b3dcddf5cc"
+      ],
+      "evidence": [
+        {
+          "item_id": "957e8680803ad8738070f32300b148e17d369f32bc51240ca97850b3dcddf5cc",
+          "quote": "$2,000,000,000 aggregate principal amount of its 5.350% Notes due 2036",
+          "establishes": "Largest tranche"
+        }
+      ],
+      "expected_bubbles": [
+        "Finance"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 9 Nov 2026."
+    },
+    {
+      "id": "rq-t-053",
+      "split": "test",
+      "type": "freshness",
+      "question": "How many inter partes review petitions were filed at the Patent Trial and Appeal Board in the third quarter of 2026, and how does that compare with a year earlier?",
+      "reference_answer": "97 petitions, down from 327 in the same period of 2025",
+      "key_facts": [
+        "97 IPR petitions in Q3 2026",
+        "327 in Q3 2025"
+      ],
+      "gold": [
+        "b8b52c864bb0447c7d335ed4b8484b50d21907e2cbc21a4e88a4614a66eb1769"
+      ],
+      "evidence": [
+        {
+          "item_id": "b8b52c864bb0447c7d335ed4b8484b50d21907e2cbc21a4e88a4614a66eb1769",
+          "quote": "only 97 IPR petitions were filed at the PTAB, compared to 327 petitions",
+          "establishes": "Petition counts"
+        }
+      ],
+      "expected_bubbles": [
+        "News"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 9 Nov 2026."
+    },
+    {
+      "id": "rq-t-054",
+      "split": "test",
+      "type": "freshness",
+      "question": "In the Chatbot Arena study of rising evaluator standards, how fast does the share of 'both are bad' votes climb for pairs of unchanged models?",
+      "reference_answer": "By 1.71 percentage points a month (on a mean of 17.1%)",
+      "key_facts": [
+        "1.71 percentage points per month"
+      ],
+      "gold": [
+        "c161a6520afa0aac77ecb67809daabf2d1f6cf650b3e39ea2bace35e68bd9b44"
+      ],
+      "evidence": [
+        {
+          "item_id": "c161a6520afa0aac77ecb67809daabf2d1f6cf650b3e39ea2bace35e68bd9b44",
+          "quote": "rises by 1.71 percentage points a month on a mean of 17.1%",
+          "establishes": "Monthly drift"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026. 1.91 points a month is the 2024-only rate."
+    },
+    {
+      "id": "rq-t-055",
+      "split": "test",
+      "type": "freshness",
+      "question": "On ARE-bench, on what proportion of tasks does the strongest frontier model pass every checklist item?",
+      "reference_answer": "66.2% of tasks",
+      "key_facts": [
+        "66.2%"
+      ],
+      "gold": [
+        "bc277f198536389f5c29912ec0216b3022b2674e70e645578654dce8a6d13200"
+      ],
+      "evidence": [
+        {
+          "item_id": "bc277f198536389f5c29912ec0216b3022b2674e70e645578654dce8a6d13200",
+          "quote": "the strongest passes every checklist item on only 66.2% of tasks",
+          "establishes": "Best full-pass rate"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026."
+    },
+    {
+      "id": "rq-t-056",
+      "split": "test",
+      "type": "freshness",
+      "question": "In the comparison of branch-and-bound and A* on resource-constrained project scheduling, how many of the 480 benchmark instances does each method prove optimal?",
+      "reference_answer": "A* (with additional pruning rules) proves all 480; best-first branch-and-bound proves 445",
+      "key_facts": [
+        "A*: 480 of 480",
+        "best-first B&B: 445"
+      ],
+      "gold": [
+        "0c025868d83499a41c3c99b35857b558e495d62ea4a552c269a7e9288d2202d9"
+      ],
+      "evidence": [
+        {
+          "item_id": "0c025868d83499a41c3c99b35857b558e495d62ea4a552c269a7e9288d2202d9",
+          "quote": "proves optimality for all 480 instances, compared with 445 for best-first B&B",
+          "establishes": "Instances proved optimal"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026."
+    },
+    {
+      "id": "rq-t-057",
+      "split": "test",
+      "type": "freshness",
+      "question": "How accurately does the ForeSight analytical model predict GPU kernel execution time, and how does the best earlier model compare?",
+      "reference_answer": "Mean absolute percentage error of 8.3%, against 14.1% for the best baseline",
+      "key_facts": [
+        "MAPE 8.3%",
+        "14.1% for the best baseline"
+      ],
+      "gold": [
+        "27b21c79dcb04ce27d3114357ff72294f374a0d9a1c23addd2952948f684c04e"
+      ],
+      "evidence": [
+        {
+          "item_id": "27b21c79dcb04ce27d3114357ff72294f374a0d9a1c23addd2952948f684c04e",
+          "quote": "mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for the best baseline",
+          "establishes": "Kernel-time prediction error"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026. 2.0% is its error on end-to-end vLLM inference time."
+    },
+    {
+      "id": "rq-t-058",
+      "split": "test",
+      "type": "freshness",
+      "question": "What amortised time per input does the MOAI framework for encrypted transformer inference report on a single GPU?",
+      "reference_answer": "2.36 minutes per input",
+      "key_facts": [
+        "2.36 minutes"
+      ],
+      "gold": [
+        "cd9a0000bf14536f61050273a6fcc184d1720de20b44bfc6f12df46eafafcff3"
+      ],
+      "evidence": [
+        {
+          "item_id": "cd9a0000bf14536f61050273a6fcc184d1720de20b44bfc6f12df46eafafcff3",
+          "quote": "an amortized time of 2.36 minutes per input on a single GPU environment",
+          "establishes": "Amortised inference time"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026."
+    },
+    {
+      "id": "rq-t-059",
+      "split": "test",
+      "type": "freshness",
+      "question": "What weighted-average Safe-Pass@1 and Safe-Pass@3 does TopoVerus reach across its seven Verus proof-repair benchmarks?",
+      "reference_answer": "61.6% Safe-Pass@1 and 72.2% Safe-Pass@3",
+      "key_facts": [
+        "61.6% Safe-Pass@1",
+        "72.2% Safe-Pass@3"
+      ],
+      "gold": [
+        "358b6cdcd776ed9d655838070e8f19d6ad5a2fe1d2fcfc586ceb4f12030fd235"
+      ],
+      "evidence": [
+        {
+          "item_id": "358b6cdcd776ed9d655838070e8f19d6ad5a2fe1d2fcfc586ceb4f12030fd235",
+          "quote": "TopoVerus achieves 61.6%/72.2% weighted-average Safe-Pass@1/Safe-Pass@3",
+          "establishes": "Headline results on 471 problems"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026."
+    },
+    {
+      "id": "rq-t-060",
+      "split": "test",
+      "type": "freshness",
+      "question": "By how much does GemAtlas cut the average simulation error across the four GPUs it was tested on?",
+      "reference_answer": "Mean absolute percentage error falls from 31.69% to 22.24%",
+      "key_facts": [
+        "MAPE decreases from 31.69% to 22.24%; equivalently, 9.45 percentage points or about 29.8% relative reduction"
+      ],
+      "gold": [
+        "db84505aa67f3532daa0f918101e50511ca6fb51f23b4ca0abb4eaaa5f4fbf97"
+      ],
+      "evidence": [
+        {
+          "item_id": "db84505aa67f3532daa0f918101e50511ca6fb51f23b4ca0abb4eaaa5f4fbf97",
+          "quote": "reduces the mean absolute percentage error (MAPE) from 31.69% to 22.24%",
+          "establishes": "Average MAPE reduction"
+        }
+      ],
+      "expected_bubbles": [
+        "Research"
+      ],
+      "time_scope": null,
+      "alias_bridge": false,
+      "distractors": [],
+      "notes": "Published 10 Nov 2026. 34.04% to 23.98% is the figure for real-world LLM operators only."
+    }
+  ],
+  "routing_labels": [
+    {
+      "item_id": "9fcaeedc9708cea93a1c2b876f124f647ad5f10f4af1401b8de4256123844892",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Regulator case page on Google's mobile platform: competition-policy news",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "e1698167cc6ab26dd7b881a44c79a188a90f80f3ede820e731bb24622d4e448c",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Vendor announcement about joining an EU science-enablement initiative",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "4e764a474ce29b03ba6069b889106e09e8e809d1368e5b7031f25654df1bb1b2",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Profile of an NVIDIA engineer and open models; feature journalism",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "d02369ad64bc04f34a4d2a50cb97c8bcb8de31f300e3b017e4763f406fb1d99b",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "CMA publication notice for technology-transfer guidance",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Cloud-gaming release announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "dcfca97c5e1931a1a6d8dd21b38437ed1d94b879851dcc75ec5500adf708024a",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Product launch of the new Copilot app",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "8fbda6a1ae67f09a9d4a1282024be01fd893912c5c109f641656cc6a48cfc8e6",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Advocacy post on software security and AI-found vulnerabilities",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "a7a734777df5b5c84084ab2b323098e7264141c3b8b30af151f46051f69080a1",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Consumer product/content announcement (Art Store)",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "e8ca2bd55dab33e56ccca0997625a7e27bb5402ae0ec6234682935fedf277502",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Feature on healthcare AI startups",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "d36750f823f521a1de4eedaf13521fd16f7e4de9a07ad00188b542ce7d8e89fd",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Vendor blog summarising a commissioned IDC survey; marketing news, not peer research",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "60ce7dcdc7a9185d693a82d67a4266c7841390d84d090be28f805ba4f411fc4d",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "DOJ guilty-plea announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "185889d3ce3dda885dc4d9a85c4895df996c24057fc0fd5322afc55fdd4c72ad",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Advocacy post on state social-media age-gating laws",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "dbc214e3b5ec5451005a3eb6c4259a39ef411dea10471d3bf88ec692f80146fa",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Consumer promotion announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "84d945b5009e59d37b32b19dd15be4e32f372e10bbadd78fd3443d4bd3599014",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Newsletter teaser on government data access",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Cloud-gaming weekly release announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Startup investment announcement without financial figures; corporate news",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "6bbb2a8b7c9d11813e2db157e2299cdd276de42083f971070d0f3a324ed37fbb",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Commentary on a Supreme Court ruling",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "afc6be23483e062927be4789ad0dd66c3d077bfc1e80312a8c0c2e7568353e77",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Advice post for parents",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "7fb6f8e1e2f0fede8f8dd96e3264859ac0f568165572f01182924099c2aa077c",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Marketing campaign announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "af0b17e21e5eb868637444b343ecb83326789a28c16fd409d36ca559c0ac5436",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Advocacy post about a spyware campaign",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "937dcced2e0897e7154e3389ace27123acbc29bebabff09796caffd6ea91f57f",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Feature on clean-energy companies using AI",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "5569f5b3b7b0babd9b01deee62482c90900ef70fac1a631d62471fe9ccb4cd96",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Advocacy post on censorship in India",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Vendor technical blog on memory codesign; product news, not a research paper",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "f2ab86448cb46008a6050feedfeedabee50ae1784f43a33e9de08056824ef0a9",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Product hands-on review",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "a283060223e079afee4a5aa94c87eea16e795f0f8c167cec94d0554cec6945e6",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Cloud-gaming release announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "fbadb309b7346f3749de964ab2a035b69c3907fdf3f81fe3ee3256a9c1de0025",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Sponsorship/event announcement",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "7a85fbb1e42a5762d291e6fecca24e63e628cb08d9af0f4a3f4a241dc78476f6",
+      "bubble_hint": "news",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "Agency announcement of a finalised migration report",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "81f42a91fa3767aa2a70847b2704bc8387e0ec092a83593f960209601e7ae154",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Preferred-stock dividend declaration",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K director departure disclosure (governance filing)",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "b64c2e063a2e875e36fd7c5d02f75b57f6fba73c1e96016a6144781a22f0aa3a",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance",
+        "News"
+      ],
+      "reason": "Earnings release that also announces products, customer deployments and acquisitions",
+      "differs_from_hint": true
+    },
+    {
+      "item_id": "f22f6caccdc3acf3d4ec2082ccce1f82e723aa04701fc7f6336dbce187c0e950",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance",
+        "News"
+      ],
+      "reason": "Merger announcement with deal terms; major corporate news as well as a financial event",
+      "differs_from_hint": true
+    },
+    {
+      "item_id": "1f9eb8688ffab83a42b7c51bb63ce3f0a7cc967bacb608f02cb32d26077f882a",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "News"
+      ],
+      "reason": "6-K wrapper around a statement on leaked employee data; no financial content, so News rather than the Finance hint",
+      "differs_from_hint": true
+    },
+    {
+      "item_id": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Notes offering 8-K",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "SEC settled enforcement action against an investment adviser",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "SEC roundtable announcement on market data policy",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "7c9eebcf5b8d6103406eb11eb7ce2240ad3f2854930c28010d541fd587a3256d",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Financial statements exhibit",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "7f207a76773540d5b311e8a45558eac01264f0923b5aef092a03d608649c56c8",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "SEC fraud charges",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "3e750a4fad39458fc870bed9116385d38c4023bab456a525f9c55d258a939d47",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K cover for earnings release",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "e90047ddd8a8e1eab04380a38ba7c4719698ca34ba571d1f15f262ac4353d9c2",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Board retirement press release (governance)",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "bd102c5f9abb129083c19e08a58a4ed22c3b8f3dbd5d7acf255cb1ad95c1f355",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K cover for earnings release",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "30589f0ec53590d9caa0274a226c6d03fab0b8c477971cbe6d8ea7a0b1392aea",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance",
+        "News"
+      ],
+      "reason": "Earnings release that also announces the new product line-up",
+      "differs_from_hint": true
+    },
+    {
+      "item_id": "80b4295fbd53d86404ecab7323ba0ce142b10c42517b7edd0d3546df56c0b077",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Quarterly earnings release",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Quarterly earnings release, almost entirely financial tables",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "7e5af29998f59cdc01635ef800cddd4e4a6511b49ae7af1e1ebe1222294b9712",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Non-GAAP definitions exhibit",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "2b9dc50b9ae6189b7cb0f87344880bfaa7590cb4fbd647a802c8787188138324",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "SEC exemptive relief on Treasury clearing",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "830d165fb617f2834ab457283c7b98ed54da05d8a037571f1f653d5595bcb20e",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K board appointments",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "904be74c369c5aca07128b34b5b75d42e1604e00f0cadc1381c4d0f0d12926c6",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K off-balance-sheet obligation",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "8-K cover for earnings release",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "c8d953a6e45e3976e9b0e556ac175a113220fe703f51589a0a18d6a2dad0c1ed",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "SEC investor bulletin with other regulators",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Federal Reserve banking enforcement action",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "99de9e9e4c70c3f0cf9df97ea03e15e7dd7448e2aefd296331794c078ba0e1a9",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Quarterly earnings release with capital-structure change",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "017deb85fa5bc04f88f836deb23b217ce61a179cad7b67c5d5c875af91e26e65",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Convertible notes offering launch",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance"
+      ],
+      "reason": "Quarterly financial report",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9",
+      "bubble_hint": "finance",
+      "routing_labels": [
+        "Finance",
+        "News"
+      ],
+      "reason": "Earnings release that also reports model and product milestones",
+      "differs_from_hint": true
+    },
+    {
+      "item_id": "cd9a0000bf14536f61050273a6fcc184d1720de20b44bfc6f12df46eafafcff3",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: encrypted transformer inference",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "4871ba528815798a35c891bbfc0d5698767e6d9603bd131846516d603f460254",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: LoRA theory",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "37222495b652481a3b0de18d8d13ec0a3ced27d56b96f539a90c00e760754034",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: game-playing RL",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "9eacbdd927bac319a716bf39c75faeec59bb3e0fefb3669a4cd7b20ddb07e96e",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: multi-agent review framework",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "a3e4ef07d158b7b8446d3a2db1d94c0b8e60c68449b98795bfbb1c5f76bfee04",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: recommendation model",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "d1ccfe31627c9fcae62ecdc09ff32ef571ac1778ca10f1dcd0cd3f9d90db9405",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: verifiable inference proofs",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "db9ea866803b8d8ed413a70159f316e12d7cd5c85dc3ba01debd91d352bc9537",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: agent memory",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "a1da460c619401d4cfcbba32ea146e5dfa5c5dd486591cda957db4e7aef2ea4a",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: coding-agent benchmark",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "358b6cdcd776ed9d655838070e8f19d6ad5a2fe1d2fcfc586ceb4f12030fd235",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: proof repair",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "ece95376dfb272ded3cb35b01f8861bb2862cfc7ffbdc43a5f6b6d07cca8a320",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: text encoding for LMs",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "c161a6520afa0aac77ecb67809daabf2d1f6cf650b3e39ea2bace35e68bd9b44",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: human evaluation drift",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "9553071426ca46d879df4053183f0e62bdf333a3989969bc3cd0f74ec5d6f4b2",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: AI exam grading study",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "dd3202e03bdaeed244093abcbae46df900f505304a0017977b38c93cd35ea572",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: analog circuit optimisation",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "4daf6932e66f7ac6757117303f7a9af5a17ef09e02ecd18ebe31d3fced4aea18",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "Microsoft Research post on a visualisation language",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "bc277f198536389f5c29912ec0216b3022b2674e70e645578654dce8a6d13200",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: research-agent benchmark",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "6fe23e4d593de5edcb2b9916aff832943ebe4665aa780b8fb4edcb16cf2bd94d",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: time-series pretraining",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "4e3f7c1cedcc50e5fda275e13be3505f56fa75499c4e92b3733fb5fb76404fab",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "Microsoft Research post on synthetic enterprise evaluation data",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "f67d2b7fe89fe2bcca2180f6aa1502531b8ed761e01ea624c8a04720b925230d",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: protein inverse folding",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "Microsoft Research post on a Nature retrosynthesis paper",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "83b20bfab639a847137216d138fe18c1f46e365811665bdbdc7cd16d5abbfc03",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: tokenizer cost disparity",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "09f646c79f3b4f4dfd60058b876b58478101c0515ef7efe00515d28c4cbe8b80",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: agent evaluation frameworks",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: climate equation discovery",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: audio reasoning diagnostic",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract on earnings prediction; the topic is finance but the content is a method evaluation, so Research",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "796f85accd3273903f02d8da1f4200e0b13163e2f1713014b29d2c74ef0a188b",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "Microsoft Research post on an agentic RL framework",
+      "differs_from_hint": false
+    },
+    {
+      "item_id": "64bf15d17ded663895a2f20f0246a940252bdfdfb0667364261de3558dd6d813",
+      "bubble_hint": "research",
+      "routing_labels": [
+        "Research"
+      ],
+      "reason": "arXiv abstract: bandit algorithm",
+      "differs_from_hint": false
+    }
+  ]
+}

@@ -168,7 +168,9 @@ def main(argv: list[str] | None = None) -> int:
         nargs="?",
         choices=["calibrate", "calibration-report", "verify-snapshot"],
     )
-    ev.add_argument("--dataset", choices=["eval-v1", "eval-v2"])
+    ev.add_argument("--dataset", choices=["eval-v1", "eval-v2", "real-v2"])
+    ev.add_argument("--split", choices=["dev", "test"])
+    ev.add_argument("--background", type=int)
     ev.add_argument("--run", default="latest")
     ev.add_argument("--rows", default="all")
     ev.add_argument("--snapshot", required=True)
@@ -223,6 +225,12 @@ def main(argv: list[str] | None = None) -> int:
                 args.snapshot,
                 args.rebuild,
                 **({"dataset_name": args.dataset} if args.dataset else {}),
+                **({"split": args.split} if args.split else {}),
+                **(
+                    {"background": args.background}
+                    if args.background is not None
+                    else {}
+                ),
                 **(
                     {"resume": args.resume, "limit": args.limit}
                     if args.resume or args.limit
@@ -241,7 +249,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 async def evaluate(
-    settings, rows, snapshot, rebuild=False, resume=None, limit=None, dataset_name=None
+    settings,
+    rows,
+    snapshot,
+    rebuild=False,
+    resume=None,
+    limit=None,
+    dataset_name=None,
+    split=None,
+    background=None,
 ):
     if rebuild and resume:
         raise ValueError("--rebuild cannot be combined with --resume")
@@ -302,6 +318,8 @@ async def evaluate(
             resume=resume,
             limit=limit,
             dataset_name=dataset_name,
+            **({"split": split} if split is not None else {}),
+            **({"background": background} if background is not None else {}),
         )
         return 0 if result.status.startswith("completed") else 1
     finally:

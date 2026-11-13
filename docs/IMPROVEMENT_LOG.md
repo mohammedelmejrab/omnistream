@@ -301,3 +301,56 @@ snapshot for developing fixes, and build the test snapshot once.
 - Also logged by the probe: the snapshot builder writes one Graphiti episode per routed
   bubble rather than splitting long documents into ~1,500-token parts. Left unchanged for
   now; it affects long items.
+
+### Change 5: explicit reasoning policy and truncated-response recovery
+
+- Added `OMNI_LLM_REASONING` and independent `OMNI_JUDGE_REASONING`, both
+  defaulting to `off`; effort levels and `provider_default` are supported.
+  `OMNI_LLM_SEND_REASONING_PARAM=auto|always|never` defaults to an exact
+  `openrouter.ai` hostname check. See `docs/llm-reasoning.md` for wire mappings.
+- One shared request policy covers structured extraction, chat/JSON/answer,
+  tools, routing, production citation entailment, eval judges, Graphiti, and
+  LlamaIndex. Graphiti wraps its SDK completion resource so its own request
+  construction and four-attempt retry loop remain intact.
+- Length-truncated completions are logged and rejected before parsing JSON or
+  tool arguments. Shared usage reports now include hidden reasoning tokens
+  without counting them twice in total completion usage.
+- Serialized transport tests exercise all paths under OpenRouter auto,
+  generic auto/always, never, and provider-default policies; truncation tests
+  cover resampling and exhausted retries. Existing replay expectations include
+  the new default field. Offline suite: 1053 passed, 1 skipped, 21 deselected;
+  ruff clean. Additional focused exhaustion/missing-details tests added afterward.
+- Live verification pending a private credential delivery; the process has no
+  LLM credential and `.env` was not accessed. Added the bounded
+  `scripts/verify_reasoning.py` (128 output tokens/request, ten-call hard cap,
+  no ingestion). Actual spend so far: $0.00.
+
+### Change 5: reasoning control for the new model (fix for setback 4)
+
+- New settings `llm_reasoning` and `judge_reasoning` (default `off`), sent as OpenRouter's
+  `reasoning` request field; endpoint gating `auto|always|never` (auto = only for
+  openrouter.ai, since other OpenAI-compatible providers may reject unknown fields).
+  Documentation: `docs/llm-reasoning.md`.
+- Applied through shared code to every LLM call path. A truncated completion
+  (`finish_reason == "length"`) is now retried instead of parsed as broken JSON.
+  Reasoning tokens are recorded in usage metering.
+- Verified live on all 8 call paths (structured parse, chat, chat_json, answer, tool
+  calls, judge, Graphiti, LlamaIndex baseline): 0 reasoning tokens, every call finished
+  with `stop`. Cost of the check: 0.00007 USD. Offline suite: 1,053 passed.
+
+### Change 6: real-v2 questions written, independently verified, repaired
+
+- 87 questions over the real corpus (test 60, dev 27; dev is 3 short because few genuine
+  cross-bubble links and changed facts stay inside the dev companies). Written by one model
+  from the source texts (`docs/realdata/real-v2-questions-report.md`).
+- Checked one by one against the sources by a different model
+  (`docs/realdata/real-v2-questions-verification.md`): 54 OK, 3 fixed (wrong bubble label),
+  27 flagged, 3 rejected.
+- Most flags were labelling issues, not wrong answers: a second item also supports the
+  answer but was listed as a distractor (it would have penalised correct retrieval), or a
+  linking item also mentions a company from the other split. Genuine problems: 3
+  multi-hop questions answerable from one item (rejected), 2 time-sensitive questions whose
+  two versions carry the same date, 1 answerable from general knowledge (Apple's CEO).
+- Repair in progress: accept alternative supporting items as valid evidence, sharpen
+  ambiguous wording, and exclude genuinely invalid questions from scoring with a reason
+  (kept in the file, never deleted).

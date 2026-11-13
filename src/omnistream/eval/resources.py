@@ -24,6 +24,12 @@ class UsageMeter:
             value = self.values[stage.get()]
             value["calls"] += 1
             value["tokens"] += getattr(usage, "total_tokens", 0) or 0
+            for key in ("prompt_tokens", "completion_tokens"):
+                value[key] = value.get(key, 0) + (getattr(usage, key, 0) or 0)
+            details = getattr(usage, "completion_tokens_details", None)
+            value["reasoning_tokens"] = value.get("reasoning_tokens", 0) + (
+                getattr(details, "reasoning_tokens", 0) or 0
+            )
             cost = (getattr(usage, "model_extra", None) or {}).get("cost")
             if cost is not None:
                 value["cost_usd"] += float(cost)

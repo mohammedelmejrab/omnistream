@@ -144,6 +144,8 @@ async def run_evaluation(
     resume=None,
     limit=None,
     dataset_name=None,
+    split=None,
+    background=None,
 ) -> EvalRunSummary:
     from omnistream.db import Repository
     from omnistream.retrieval.runtime import build_query_runtime
@@ -154,7 +156,7 @@ async def run_evaluation(
 
     names = parse_rows(rows)
     directory = snapshot_path(settings, snapshot)
-    dataset = bound_dataset(directory, dataset_name)
+    dataset = bound_dataset(directory, dataset_name, split=split, background=background)
 
     directory.mkdir(parents=True, exist_ok=True)
     if limit is not None and limit < 1:
@@ -503,7 +505,17 @@ async def run_evaluation(
             from .metrics import ingestion_routing_metrics
 
             summary.global_metrics.update(
-                ingestion_routing_metrics(dataset["items"], entries, builder.groups)
+                ingestion_routing_metrics(
+                    [
+                        {**i, "bubbles": i["routing_label"]}
+                        for i in dataset["items"]
+                        if i.get("routing_label")
+                    ]
+                    if dataset.get("corpus") == "real-v2"
+                    else dataset["items"],
+                    entries,
+                    builder.groups,
+                )
             )
             summary.global_metrics["snapshot_validation"] = (
                 "PASS: matching dataset, exact item set, all written, all queue jobs done"
