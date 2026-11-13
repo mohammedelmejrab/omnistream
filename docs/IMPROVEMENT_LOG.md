@@ -444,3 +444,17 @@ different results in 6.
   and score-weighted seeds, a fact vector index with bounded queries, grouping of fact
   versions with the newest preferred, deterministic replays. Measured offline again before
   any paid run.
+
+### Setback 7: OpenRouter account out of credit (not the key limit)
+
+- 13 Nov, 14:16-14:21: a full eval-v2 run (run 13) and the real-v2 dev snapshot build both
+  failed on almost every request with HTTP 402 "Insufficient credits".
+- Cause: the account had 5.00 USD of purchased credit and 5.20 USD used. The key's 14 USD
+  limit is only a cap; it does not add money. Calls fail once the purchased balance is gone.
+- Effect: dev build stopped at item 3 of 76 (3 written, 64 failed); eval run 13 is invalid
+  and must not be reported. Almost no money was spent, since requests were refused.
+- Harness flaw found: provider errors were scored as correctness 0 and recall 0, so a run
+  that never got answers looked like a real result with all scores at zero. To fix:
+  provider errors must be marked unmeasured and excluded, and a run with a high error rate
+  must be flagged invalid.
+- Needs the project owner: buy credit on OpenRouter (about 10 USD for the remaining work).
