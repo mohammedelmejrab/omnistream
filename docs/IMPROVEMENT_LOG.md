@@ -402,3 +402,45 @@ Same pipeline, same items, reasoning switched off (Change 5):
   measured. In a real snapshot build the queue retries a failed item up to 5 times and the
   snapshot refuses to freeze if any item is still failed, so an intermittent failure cannot
   silently drop data. Watch the failure rate in the first real snapshot build.
+- Reproducibility limitation found during regression QA: fresh retrieval changed
+  seed/rank outputs in 6/44 replayed regression cells. Cause not isolated. Main
+  table retains the original paired pass; downstream audit replays captured
+  seed IDs and requires matching rankings. Raw replay evidence is retained.
+
+### Change 7: own-mode fixes, round 1 (commit `cbba2e7`)
+
+Addresses causes 1 and 2 of Finding 4. Report: `docs/diagnostics/own-fixes-eval-v2.md`.
+
+- Seeding: also seed from facts whose text matches the question (endpoints of the top-10
+  matching facts), keep generic entities out of name-seed slots, refill the seed budget
+  after merging duplicate identities.
+- Fusion: weighted RRF (relevance 2 : recency 1 : confidence 1); near-constant signals
+  dropped. The spec says plain RRF; weighted RRF is a documented deviation.
+
+Offline retrieval on eval-v2 (no LLM, local embeddings), own mode:
+
+| | Before | Round 1 |
+|---|---|---|
+| Multi-hop recall | 0.308 | 0.533 |
+| Multi-hop questions with all evidence | 1/20 | 6/20 |
+| All 60: recall | 0.644 | 0.803 |
+| All 60: all evidence | 29/60 | 42/60 |
+| Freshness MRR | 0.858 | 0.475 (regression; gold still found 10/10) |
+
+Also lost: some recall on 4 multi-hop questions. A replay of the 44 regression cells gave
+different results in 6.
+
+### Setback 6: independent review of round 1 found an overfitted rule
+
+- The "is this a real name" rule (a word must start with a capital letter) reflects how the
+  extractor happened to case words in eval-v2. It rejects real names (eBay, iPhone, arXiv,
+  x86, every Chinese or Arabic name) and accepts capitalised generic phrases. This breaks
+  the no-overfitting rule, so it is being replaced.
+- Other findings: seeds from fact matches have no cap and full weight (generic hubs come
+  back); the fact search pulls every fact embedding per query, which will not scale to the
+  real corpus; the freshness drop happens because old versions of a fact match as well as
+  the current one and get boosted.
+- Round 2 in progress: entity-type-based seedability (from ingestion, not casing), capped
+  and score-weighted seeds, a fact vector index with bounded queries, grouping of fact
+  versions with the newest preferred, deterministic replays. Measured offline again before
+  any paid run.
