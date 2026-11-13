@@ -1,0 +1,842 @@
+{
+  "facts": [
+    {
+      "index": 0,
+      "id": "3ee09342-b347-4320-b8ab-49a070accabf",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 1,
+      "id": "04e2c303-5697-4ce9-bf86-d317ec7b1dbf",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 2,
+      "id": "2e1a4a28-a045-42d2-8200-4cf487ba56cc",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 3,
+      "id": "7b3b99b9-f756-402e-acf3-bd688b5b5339",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 4,
+      "id": "d9e70d3f-0b90-4417-a0ed-d0ad13b282a7",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 5,
+      "id": "028fa963-b1d5-45c2-b9a0-73d83ee64195",
+      "label": "wrong direction or wrong subject",
+      "rationale": "Source says deposit returned; does not say buyer returns it to seller. Graph invents payer/payee.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 6,
+      "id": "986b9050-1050-4123-94d0-76f5d91f0a5c",
+      "label": "supported",
+      "rationale": "Company HAD_AGREEMENT agreement is a supported representation of this sentence.",
+      "judge_label": "wrong direction or wrong subject",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 7,
+      "id": "164152df-a650-4192-9dd6-d6bd11bf9f5c",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 8,
+      "id": "ae5d259f-8af6-44f0-9481-8e8987ce299d",
+      "label": "supported",
+      "rationale": "Agreement INCLUDES deposit is supported; temporal termination is not an extraction precision error.",
+      "judge_label": "wrong direction or wrong subject",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 9,
+      "id": "2f4f84bb-a255-432d-9121-4499e0b37e32",
+      "label": "wrong direction or wrong subject",
+      "rationale": "Graph subject Dovetail Quay 1 misidentifies Dovetail Quay 10; source does not identify return direction.",
+      "judge_label": "wrong direction or wrong subject",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 10,
+      "id": "2206943a-5cd3-41a5-ae92-6d5574635075",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 11,
+      "id": "0e102d84-8c3d-4e1c-a0b2-43ade2910362",
+      "label": "unsupported",
+      "rationale": "Graph FINANCED edge asserts positive funding although source explicitly denies it.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 12,
+      "id": "81aade65-993f-4b28-a400-633f76ca22c8",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 13,
+      "id": "0eb05e00-c0c3-4bee-a419-a598133e2916",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 14,
+      "id": "bb44f4e4-ca98-4a2f-8836-fe00d3760eb8",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 15,
+      "id": "2717afc9-f939-4fa6-b97c-f2f43ee82138",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 16,
+      "id": "ce47d783-46f0-4dd4-a6c7-c95a2aab6d77",
+      "label": "supported",
+      "rationale": "Filing RECORDS Ravenspire Instruments is an incomplete but supported representation of the sentence.",
+      "judge_label": "wrong direction or wrong subject",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 17,
+      "id": "6509b72c-2570-4a2e-8287-1c22a0fcadc1",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 18,
+      "id": "08a720ed-edd8-4148-abae-911566de6018",
+      "label": "supported",
+      "rationale": "Read source and graph triple; supported.",
+      "judge_label": "supported",
+      "reviewer": "research agent manual source reading; not independent human"
+    },
+    {
+      "index": 19,
+      "id": "648edab6-7a99-4667-b90c-5c9645be4dcb",
+      "label": "wrong direction or wrong subject",
+      "rationale": "Source says unused funds return to sponsor HVM; RETURNS_UNUSED_FUNDS_TO edge is reversed.",
+      "judge_label": "wrong direction or wrong subject",
+      "reviewer": "research agent manual source reading; not independent human"
+    }
+  ],
+  "merges": [
+    {
+      "global_id": "a94cb9e6ac37402dbdaed7c2a1461868",
+      "names": [
+        "Dovetail Quay 1",
+        "Dovetail Quay 2",
+        "Dovetail Quay 3",
+        "Dovetail Quay 4",
+        "Dovetail Quay 5",
+        "Dovetail Quay 6",
+        "Dovetail Quay 7",
+        "Dovetail Quay 8",
+        "Dovetail Quay 9"
+      ],
+      "judge_wrong_merge": true,
+      "review": "confirmed distinct named entities",
+      "rationale": "Numbered suppliers are distinct, and Brindle Arch is explicitly legally separate from Brindle Arc."
+    },
+    {
+      "global_id": "e32f37a96b7940c4b7ec2ffa89200bb3",
+      "names": [
+        "Brindle Arc",
+        "Brindle Arch"
+      ],
+      "judge_wrong_merge": true,
+      "review": "confirmed distinct named entities",
+      "rationale": "Numbered suppliers are distinct, and Brindle Arch is explicitly legally separate from Brindle Arc."
+    },
+    {
+      "global_id": "4cb70390b2b3441db8b1134977007a24",
+      "names": [
+        "Ochre Hollow Institute",
+        "Ochre Hollow Institute (OHI)"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e24954f51b7f418ebe9dbe1c5ee8298e",
+      "names": [
+        "TMC"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e7ff20ba015f46a59d87ec55e9d63657",
+      "names": [
+        "Ravenspire Instruments"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "5cad6e9c6ee24267a74a5ebff139d2a1",
+      "names": [
+        "SML"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "f9a7b2c36a4f4c9995ad180bbeafb5e2",
+      "names": [
+        "OBR"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "1c5af170b6f643f4af45232e1378f738",
+      "names": [
+        "PCF"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "4d39ee4608f0478184268aed75f10927",
+      "names": [
+        "Quenara Devices"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e86ae625b8974345a793e84d7b462456",
+      "names": [
+        "public webcast"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "93f82a1eea024f9a87e042a9b0d177de",
+      "names": [
+        "Nacreline Systems"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "515154e9639f469fbbb6dc211d412bf9",
+      "names": [
+        "19.45 million crowns"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "d3d2e71323254f848c0e3faf00e25906",
+      "names": [
+        "Omar Vesk"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "ed334280ff0340b6864d03b5d43759c6",
+      "names": [
+        "Copper Fen Institute"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "84ced81a3b444e75accf45ffc00adfe0",
+      "names": [
+        "Iona Pelwick"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+      "names": [
+        "Opal Ridge Laboratory"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "8b14b43206204c64ac5a457bc276bada",
+      "names": [
+        "Talia Muren"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "c0fc66150a3e4a60b69c3be4ad53aa21",
+      "names": [
+        "Cobalt Reach Laboratory"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "31ecdc376ac44226b0eec8c8726267c2",
+      "names": [
+        "electronic index"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "7fe0725b0c1c4b98861599dca7a4c678",
+      "names": [
+        "Tesselmere Controls"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "310659dbda19456b953a022316dae534",
+      "names": [
+        "Ada Wurfen"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "cbac46474f3d4462b17c184c89875175",
+      "names": [
+        "provisional purchase agreement"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "9d3b3436198b4c858619e9b12bab6471",
+      "names": [
+        "Juniper Basin Institute"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "9b45a4c58310455a995be53379bd2d7d",
+      "names": [
+        "Indigo Vale Centre"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e9f92d6c5d5f4bc9bd32c131646783f4",
+      "names": [
+        "IDL"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "3b082e99fb474c329d2949b7bff464b0",
+      "names": [
+        "Pia Ashuno"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "d7dda281a0f446e7b5fec881d5c2bf8d",
+      "names": [
+        "interim operations committee"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "3df4dce313ca46ecad5d858d5d05226e",
+      "names": [
+        "refundable deposit"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "2e7c575ef826435f8012497b255cfe59",
+      "names": [
+        "Nacrelane Services"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "dcb606b1e6f44681bf20d45f96745b1f",
+      "names": [
+        "IVC"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "2d6a7e6c138e44d0b157bfa2fe07a2f1",
+      "names": [
+        "HVM"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "67e240adc90248b78dfd2decd542ffb4",
+      "names": [
+        "directors"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "850fda56ef5c425f8ab2dc7ce503a243",
+      "names": [
+        "JBI"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e9f311ec2abc41a6a2431adea1d5a6b7",
+      "names": [
+        "Yara Penlo"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "5b52d3cd22ad447cab79b17430e1eb05",
+      "names": [
+        "Aldervane Transit"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "82d12a60d25f44d0aa87540631c04fc3",
+      "names": [
+        "Vespergait Foods"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "a5a579564fca4beda6bf795d78721594",
+      "names": [
+        "Uma Cevran"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "2be518e225cc4415a05120535b28d508",
+      "names": [
+        "Arun Kelso"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "2b3f2f99f1ed477588fce9c8f5d6b50d",
+      "names": [
+        "Leda Quorin"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "199535cd9eb94a4e916da34be86c91a4",
+      "names": [
+        "Jori Anvek"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "ad892e14f76e4e15b8eac457474b1b0a",
+      "names": [
+        "AVT"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "be0f7696bcf249d2906638bf2d43052f",
+      "names": [
+        "expenditure review"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "7fd111cf23d444aeb79053be3512e583",
+      "names": [
+        "research funding agreement"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "1153031dede84362827130727a9e24e3",
+      "names": [
+        "Aldervain Travel"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "72264c1a2337479a90bdd26110620a22",
+      "names": [
+        "signing authority"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "e22d04e021c94a8db64e6d8277eef4a9",
+      "names": [
+        "NLS"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "59c60d5fbbfd4cb198aa5fb5967684d3",
+      "names": [
+        "Vespergate Works"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "4277107e9dd6459aa2802920fcf8706d",
+      "names": [
+        "Resolution adopted September 18"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "8ac1e49fba824fafa6019aa5fd8b39e3",
+      "names": [
+        "parent company"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "30a358cf6d1e4fb0a31507ebdd57bb2f",
+      "names": [
+        "remuneration resolution"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "80cfec4813d64e959b57f83dabb8a1c3",
+      "names": [
+        "Remi Basun"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "ab73861509814b36930835bab826e34c",
+      "names": [
+        "SMC"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "8f1cdcba947f45d3a0cd3a0031c6e345",
+      "names": [
+        "RSI"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "2cbff3f5273c4ff3a675b7233974cf05",
+      "names": [
+        "Halvex Mobility"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "eae731425c7d4fba97c67329778095df",
+      "names": [
+        "Sefu Daram"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "312a3437e6b6414e8863cc32f0605ca4",
+      "names": [
+        "Oxbriar Robotics"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e9f95bc0b63544eda512b4fed1fac675",
+      "names": [
+        "Davi Ornek"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "05893511df064c899b4501f6923162db",
+      "names": [
+        "Mina Tolvik"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "81f33ee8e5934b66bcd671df0c4685d1",
+      "names": [
+        "company secretary"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "d73485d7401747168b4c94b6730defb8",
+      "names": [
+        "early market newsletter"
+      ],
+      "judge_wrong_merge": true,
+      "review": "generic role/document conflation; ontology-dependent",
+      "rationale": "Repeated common noun descriptions span distinct company documents or roles; whether concept-level identity is intended is ambiguous."
+    },
+    {
+      "global_id": "33986350df5042a89eed010638208855",
+      "names": [
+        "Tesselmar Construction"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "ed130e53774f4663a7091ffbed504381",
+      "names": [
+        "Neri Solvek"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "0f435c021eab4b38ad496863752ec813",
+      "names": [
+        "QND"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "60b1c30ea0e149338c30a1689cb620ea",
+      "names": [
+        "Ivory Delta Laboratory"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "e40da88bedad4db9b8c13f4b1a68d82f",
+      "names": [
+        "Pellucid Forge"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "14776b84a17343268f7fbdc32722f489",
+      "names": [
+        "CFI"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "4080507746e342a8bfa60a3d1f60f49b",
+      "names": [
+        "BDA"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "cc9f3c19b37946d2b5b9de1de8305241",
+      "names": [
+        "Quenaro Digital"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "5ad3c479027e47088eaeefcd8624ed21",
+      "names": [
+        "VSC"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "7903b99d29d048849268c2eef7a21ab6",
+      "names": [
+        "ordinary supply contracts"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "ee3e22dd279f448fb20f5fa24f607197",
+      "names": [
+        "Violet Strand Centre"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "01c51e359d1446ac97b20e0833ba8df6",
+      "names": [
+        "VGW"
+      ],
+      "judge_wrong_merge": false,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "61eb02b4cde1484484f67fec8a05fccd",
+      "names": [
+        "Sable Meridian Centre"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    },
+    {
+      "global_id": "8b8f1b1953004859800624eee571f68f",
+      "names": [
+        "Oxbrier Logistics"
+      ],
+      "judge_wrong_merge": true,
+      "review": "no demonstrated wrong merge",
+      "rationale": "Equal proper names across bubbles and roles do not establish different entities; reject judge inferences based only on different activities."
+    }
+  ]
+}
