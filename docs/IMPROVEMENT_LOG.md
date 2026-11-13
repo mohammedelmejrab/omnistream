@@ -530,3 +530,18 @@ different results in 6.
   replays, historical/exact paired deltas and timings: data/diagnostics/own-fixes-round2/.
   Real-data dev validation and answer-level evaluation remain outstanding;
   the concurrently owned real snapshot and real test split were not used.
+
+### Setback 8: independent review of round 2 found two more problems
+
+- Name matching: any entity sharing the first three letters of any question word
+  ("the", "com", "inc") passed a pre-filter, and the list was then cut at 100 by ID order.
+  On a large corpus the entity the question names could be cut.
+- Version grouping removed facts that are still valid: it kept only the newest fact per
+  (subject, object, relation), so co-existing facts (two quarterly results, two stake
+  purchases) collapsed. It also merged across bubbles, and it was order-dependent.
+- Smaller: facts whose two endpoints are generic no longer contributed seeds (a likely cause
+  of full coverage dropping 41 -> 39 between rounds 1 and 2); seed scores from different
+  sources were on different scales; an incompatible index crashed instead of falling back.
+- Round 3 in progress: full-text-index name ranking with stopwords removed; collapse only
+  true supersession (an older fact explicitly replaced), never across bubbles; generic
+  endpoints of strong fact matches may seed at reduced weight; normalised seed scores.
