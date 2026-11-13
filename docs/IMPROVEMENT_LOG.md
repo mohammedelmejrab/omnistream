@@ -354,3 +354,51 @@ snapshot for developing fixes, and build the test snapshot once.
 - Repair in progress: accept alternative supporting items as valid evidence, sharpen
   ambiguous wording, and exclude genuinely invalid questions from scoring with a reason
   (kept in the file, never deleted).
+
+
+### Change 5: own fact seeding and relevance-weighted fusion (2026-11-13)
+
+- Implemented P1/P2 mechanisms from Finding 4: ten fact-text vector matches seed
+  endpoints, proper-name guard, five distinct name identities after dedup/refill,
+  and 2:1:1 weighted RRF dropping near-constant auxiliary signals (CV < 1%).
+  Two-hop expansion, 500-edge cap, PPR 0.85 and top20 are unchanged. No BM25.
+- Controlled offline eval-v2: 1,200 cells / all 60 questions / recorded and all-bubble
+  routes / baseline, F1, F2, F1+F2 and six fixed sensitivity settings. E0 routes
+  only exist for 35 questions; remaining 25 reuse labelled E2 repeat-0 routes.
+  Reproduced all four E0 retrieval metrics on 35/35 comparable questions.
+- Current-route multi-hop Recall-any 0.308 -> 0.533; full coverage 1/20 -> 6/20.
+  All-question Recall-any 0.644 -> 0.803; full coverage 29/60 -> 42/60.
+  Regressions retained: four multi-hop recall losses, freshness MRR 0.858 -> 0.475.
+  All-bubble full coverage 32/60 -> 39/60. Defaults were not tuned after results.
+- Answer-level 35-question run BLOCKED: no LLM_API_KEY in process environment;
+  private credential request timed out. No .env access, LLM calls or spend ($0.00).
+  No correctness gain inferred; E0 own/classic remain historical comparisons.
+- Full offline suite: 1080 passed, 1 skipped, 21 deselected in 99.04s. Snapshot
+  integrity 107/107 hashes unchanged. Read-only Neo4j; no commits.
+- This requested eval-v2 check is synthetic, built by the old extraction model;
+  real-data dev validation remains outstanding and no real test data was used.
+  Report: docs/diagnostics/own-fixes-eval-v2.md. Durable measurements and paired
+  deltas: data/diagnostics/own-fixes/. Baseline source fixture and resumable
+  measurement/audit/report modules: src/omnistream/eval/diagnostics/own_fixes*.
+
+### Result: cost probe after the reasoning fix
+
+Same pipeline, same items, reasoning switched off (Change 5):
+
+| Item | Before (reasoning on) | After (reasoning off) |
+|---|---|---|
+| NVIDIA blog post, 2,139 words | failed, 0 facts, 0.14 USD, 23 min | written, 52 entities, 62 facts, 0.005 USD, 39 s |
+| NVIDIA blog post, 1,569 words | not reached | written, 56 entities, 63 facts, 0.005 USD, 38 s |
+| NVIDIA blog post, 589 words | not reached | written, 31 entities, 34 facts, 0.001 USD, 18 s |
+| ARM 6-K exhibit, 272 words | not reached | failed after 10 calls (see below) |
+
+- Measured cost: about 0.003 USD per 1,000 words, 0 reasoning tokens. Projection from the
+  manifest's word counts: full 350-item corpus (456,032 words) about 1.50 USD; a dev
+  snapshot of about 120 items well under 0.50 USD.
+- Setback 5: the ARM exhibit failed once in the probe. Ingested alone afterwards, the same
+  item was written on the first attempt (route confidence 0.97), so the failure is
+  intermittent (most likely one malformed LLM response that used up the per-call retries),
+  not systematic. The probe stops at the first failure by design, so 6 of 10 items were not
+  measured. In a real snapshot build the queue retries a failed item up to 5 times and the
+  snapshot refuses to freeze if any item is still failed, so an intermittent failure cannot
+  silently drop data. Watch the failure rate in the first real snapshot build.

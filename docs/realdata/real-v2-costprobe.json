@@ -278,38 +278,145 @@
       "source": "nvidia-blog",
       "words": 2139,
       "manifest_words": 2139,
-      "wall_seconds": 1373.157664599974,
+      "wall_seconds": 39.150216199981514,
       "document_split_episodes": 2,
-      "status": "failed",
+      "status": "written",
       "bubbles": [
         "real-v2-costprobe-news"
+      ],
+      "episodes": 1,
+      "entities": 52,
+      "facts": 62,
+      "usage": {
+        "tokens": 22277,
+        "cost_usd": 0.005080595,
+        "calls": 4,
+        "cost_reported_calls": 4,
+        "prompt_tokens": 14258,
+        "completion_tokens": 8019,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "id": "162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec",
+      "title": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+      "bubble_hint": "news",
+      "source": "nvidia-blog",
+      "words": 1569,
+      "manifest_words": 1569,
+      "wall_seconds": 37.946833099995274,
+      "document_split_episodes": 2,
+      "status": "written",
+      "bubbles": [
+        "real-v2-costprobe-research"
+      ],
+      "episodes": 1,
+      "entities": 56,
+      "facts": 63,
+      "usage": {
+        "tokens": 17479,
+        "cost_usd": 0.005338171,
+        "calls": 3,
+        "cost_reported_calls": 3,
+        "prompt_tokens": 9719,
+        "completion_tokens": 7760,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "id": "e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573",
+      "title": "How Companies Are Using NVIDIA DSX to Break the Power Bottleneck",
+      "bubble_hint": "news",
+      "source": "nvidia-blog",
+      "words": 589,
+      "manifest_words": 589,
+      "wall_seconds": 17.553233099984936,
+      "document_split_episodes": 1,
+      "status": "written",
+      "bubbles": [
+        "real-v2-costprobe-finance"
+      ],
+      "episodes": 1,
+      "entities": 31,
+      "facts": 34,
+      "usage": {
+        "tokens": 10719,
+        "cost_usd": 0.00134986728,
+        "calls": 3,
+        "cost_reported_calls": 3,
+        "prompt_tokens": 6353,
+        "completion_tokens": 4366,
+        "reasoning_tokens": 0
+      }
+    },
+    {
+      "id": "48c38ad65c4e203280990933439c43b2fe22c9445e5cda8c680a2b781b0df490",
+      "title": "ARM HOLDINGS PLC /UK: 6-K filed 2026-11-04: exhibit exhibit991fye27q230-sepx26.htm",
+      "bubble_hint": "finance",
+      "source": "edgar-arm",
+      "words": 272,
+      "manifest_words": 272,
+      "wall_seconds": 18.697228299977724,
+      "document_split_episodes": 1,
+      "status": "failed",
+      "bubbles": [
+        "real-v2-costprobe-finance"
       ],
       "episodes": 0,
       "entities": 0,
       "facts": 0,
       "usage": {
-        "tokens": 301538,
-        "cost_usd": 0.1413338282,
-        "calls": 17,
-        "cost_reported_calls": 17,
-        "prompt_tokens": 87610,
-        "completion_tokens": 213928
+        "tokens": 26215,
+        "cost_usd": 0.0027551875600000005,
+        "calls": 10,
+        "cost_reported_calls": 10,
+        "prompt_tokens": 24067,
+        "completion_tokens": 2148,
+        "reasoning_tokens": 0
       }
     }
   ],
   "status": "failed",
   "usage_by_stage": {
     "ingestion:99e3e5da7420d0635813c233f5dc304a984840110fe0e798ff9af0e3827d009d": {
-      "tokens": 301538,
-      "cost_usd": 0.1413338282,
-      "calls": 17,
-      "cost_reported_calls": 17,
-      "prompt_tokens": 87610,
-      "completion_tokens": 213928
+      "tokens": 22277,
+      "cost_usd": 0.005080595,
+      "calls": 4,
+      "cost_reported_calls": 4,
+      "prompt_tokens": 14258,
+      "completion_tokens": 8019,
+      "reasoning_tokens": 0
+    },
+    "ingestion:162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec": {
+      "tokens": 17479,
+      "cost_usd": 0.005338171,
+      "calls": 3,
+      "cost_reported_calls": 3,
+      "prompt_tokens": 9719,
+      "completion_tokens": 7760,
+      "reasoning_tokens": 0
+    },
+    "ingestion:e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573": {
+      "tokens": 10719,
+      "cost_usd": 0.00134986728,
+      "calls": 3,
+      "cost_reported_calls": 3,
+      "prompt_tokens": 6353,
+      "completion_tokens": 4366,
+      "reasoning_tokens": 0
+    },
+    "ingestion:48c38ad65c4e203280990933439c43b2fe22c9445e5cda8c680a2b781b0df490": {
+      "tokens": 26215,
+      "cost_usd": 0.0027551875600000005,
+      "calls": 10,
+      "cost_reported_calls": 10,
+      "prompt_tokens": 24067,
+      "completion_tokens": 2148,
+      "reasoning_tokens": 0
     }
   },
   "error_type": "RuntimeError",
-  "conservative_budget_charge_usd": 0.1413338282,
+  "conservative_budget_charge_usd": 0.08686027083999999,
   "remaining_prefix_nodes": 0,
   "snapshot_directory_removed": true
 }
