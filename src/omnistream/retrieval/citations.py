@@ -442,13 +442,44 @@ def parse_citations(answer: str, context: AnswerContext) -> ParsedCitations:
     return ParsedCitations(valid, invalid)
 
 
+def _event_relative_instruction(relation: str, anchor: str) -> str:
+    """Answering guidance for event-relative questions with no calendar date.
+
+    The model must locate the event's date in the evidence first, then report
+    the statement valid at the relative point; ambiguity is stated, never
+    resolved silently.
+    """
+    target = (
+        f" the event {anchor!r}" if anchor else " the event referenced in the question"
+    )
+    if relation == "before":
+        timing = "the statement valid immediately before it"
+    elif relation == "after":
+        timing = "the statement valid immediately after it"
+    else:
+        timing = "the statement valid at the time of the event"
+    return (
+        f" Answer relative to{target}, not as of now: identify the event's date "
+        f"from the evidence, then answer using {timing}. Mention both when the "
+        "evidence is ambiguous."
+    )
+
+
 def generate_answer(
-    llm: LLMClient, question: str, context: AnswerContext, *, time_scope=None
+    llm: LLMClient,
+    question: str,
+    context: AnswerContext,
+    *,
+    time_scope=None,
+    temporal_relation=None,
+    anchor_event="",
 ) -> CitedAnswer:
     """Generate a grounded answer and report unsupported citation numbers (C5)."""
     if not isinstance(question, str) or not question.strip():
         raise ValueError("question must be a non-empty string")
-    if time_scope is None:
+    if time_scope is None and temporal_relation in ("before", "after", "at"):
+        temporal = _event_relative_instruction(temporal_relation, anchor_event)
+    elif time_scope is None:
         temporal = " Answer for now: prefer the most recent statement valid now."
     elif time_scope.end is not None and time_scope.start in (None, time_scope.end):
         temporal = (

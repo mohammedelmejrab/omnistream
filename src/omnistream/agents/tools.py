@@ -6,7 +6,7 @@ import asyncio
 import inspect
 import json
 from dataclasses import asdict, is_dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
 
 from omnistream.llm import ToolCall
@@ -14,6 +14,13 @@ from omnistream.retrieval.models import RetrievalMode, TimeScope, _utc, fact_in_
 from omnistream.retrieval.protocols import GraphStore, ItemStore, Retriever
 
 MAX_RESULT_CHARS = 64000
+
+# The facts tool asks stores for "any time" when the routed scope is an
+# explicit unbounded interval (event-relative questions). The stores'
+# facts_about API treats None bounds as "valid now", so sentinel bounds
+# spanning all representable time express the unbounded intent instead.
+_ANY_TIME_START = datetime.min.replace(tzinfo=UTC)
+_ANY_TIME_END = datetime.max.replace(tzinfo=UTC)
 
 
 def _schema(name: str, description: str, properties: dict, required: list[str]) -> dict:
@@ -323,16 +330,29 @@ class ToolExecutor:
                     ):
                         facts = []  # Disjoint explicit and routed bounds are a valid empty query.
                     else:
+                        # An explicit unbounded routed scope means "any time":
+                        # keep historical facts instead of the valid-now default.
+                        any_time = (
+                            self.time_scope is not None
+                            and self.time_scope.start is None
+                            and self.time_scope.end is None
+                            and start is None
+                            and end is None
+                        )
                         scope = (
-                            TimeScope(start, end)
-                            if start is not None or end is not None
-                            else None
+                            TimeScope(None, None)
+                            if any_time
+                            else (
+                                TimeScope(start, end)
+                                if start is not None or end is not None
+                                else None
+                            )
                         )
                         facts = await _invoke(
                             self.graph_store.facts_about,
                             args["entity_id"],
-                            start=start,
-                            end=end,
+                            start=_ANY_TIME_START if any_time else start,
+                            end=_ANY_TIME_END if any_time else end,
                             **(
                                 {"excluded_bubbles": self.excluded_bubbles}
                                 if self.excluded_bubbles

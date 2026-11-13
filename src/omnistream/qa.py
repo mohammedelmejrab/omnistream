@@ -12,13 +12,31 @@ from omnistream.config import Settings
 from omnistream.llm import AsyncLLMClient, LLMClient
 from omnistream.retrieval.citations import CitedAnswer, build_context, generate_answer
 from omnistream.retrieval.merge import Conflict
-from omnistream.retrieval.models import RetrievalMode, RetrievalResult, ScoredFact
+from omnistream.retrieval.models import (
+    RetrievalMode,
+    RetrievalResult,
+    ScoredFact,
+    TimeScope,
+)
 from omnistream.retrieval.modes import RetrievalDispatcher
 from omnistream.retrieval.protocols import GraphStore, ItemStore
 from omnistream.retrieval.router import QueryRouter, RoutingDecision
 
 SPECIFIC_ITEM_INFERENCE_FACTS = 5
 """Top facts (chunks when no facts exist) inspected to infer a specific item."""
+
+
+def _retrieval_scope(routing: RoutingDecision) -> TimeScope | None:
+    """Scope for retrieval: the routed interval, or any-time for event hints.
+
+    A question relative to an event (temporal_relation) has no calendar date,
+    so its routed scope is None and retrieval would default to "facts valid
+    now" and hide the historical predecessor. An explicit unbounded scope
+    keeps every fact-validity interval eligible (spec C5 own step 2; E8).
+    """
+    if routing.time_scope is not None or routing.temporal_relation is None:
+        return routing.time_scope
+    return TimeScope(None, None)
 
 
 @dataclass(frozen=True)
@@ -116,6 +134,7 @@ async def answer_question(
     routing = await asyncio.to_thread(
         router.route, question, pins=pins, exclude=exclude
     )
+    retrieval_scope = _retrieval_scope(routing)
     use_agents = routing.strategy == "multi_hop" if subagents is None else subagents
     multi_hop = None
     ordered_findings: tuple[SubagentFindings, ...] = ()
@@ -129,7 +148,7 @@ async def answer_question(
             graph_store=graph_store,
             item_store=item_store,
             settings=settings,
-            time_scope=routing.time_scope,
+            time_scope=retrieval_scope,
             **(
                 {"excluded_bubbles": routing.excluded_bubbles}
                 if routing.excluded_bubbles
@@ -173,7 +192,7 @@ async def answer_question(
             question,
             mode=selected,
             bubbles=routing.bubbles,
-            time_scope=routing.time_scope,
+            time_scope=retrieval_scope,
             **(
                 {"excluded_bubbles": routing.excluded_bubbles}
                 if routing.excluded_bubbles
@@ -254,7 +273,13 @@ async def answer_question(
                 context, text=context.text + "\n\n" + "\n\n".join(sections)
             )
     answer = await asyncio.to_thread(
-        generate_answer, llm, question, context, time_scope=routing.time_scope
+        generate_answer,
+        llm,
+        question,
+        context,
+        time_scope=routing.time_scope,
+        temporal_relation=routing.temporal_relation,
+        anchor_event=routing.anchor_event,
     )
     return QAResult(
         answer, routing, selected, result, multi_hop, specific, context.conflicts

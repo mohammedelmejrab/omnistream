@@ -251,6 +251,30 @@ def test_cutoff_excludes_later_report_before_similarity_top_k(store, point):
     ).item_ids == ("then",)
 
 
+def test_unbounded_scope_applies_no_cutoff(store):
+    """Event-relative any-time scopes must not cut by publication date."""
+    client, embedder = store
+    add_chunks(
+        client,
+        embedder,
+        "news",
+        [
+            Chunk("later", "same", "later", "news", None, datetime(2026, 3, 1)),
+            Chunk("older", "same", "older", "news", None, datetime(2025, 1, 1)),
+        ],
+    )
+    retriever = ClassicRetriever(client, embedder)
+    any_time = retriever.retrieve(
+        "q", bubbles=["news"], time_scope=TimeScope(None, None)
+    )
+    assert set(any_time.item_ids) == {"later", "older"}
+    # A point scope still cuts the later publication.
+    cutoff = TimeScope(datetime(2026, 1, 1), datetime(2026, 1, 1))
+    assert retriever.retrieve("q", bubbles=["news"], time_scope=cutoff).item_ids == (
+        "older",
+    )
+
+
 def test_cutoff_answer_uses_old_report_and_now_uses_new(store):
     from omnistream.retrieval.citations import AnswerContext, generate_answer
 
