@@ -22,6 +22,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import os
 import re
 import time
 from collections.abc import Sequence
@@ -350,8 +351,12 @@ class LLMClient:
             "temperature": temperature,
             **kwargs,
         }
-        if max_tokens is not None:
-            params["max_tokens"] = max_tokens
+        cap = getattr(
+            self.settings,
+            "llm_max_output_tokens",
+            int(os.environ.get("OMNI_LLM_MAX_OUTPUT_TOKENS", "4096")),
+        )
+        params["max_tokens"] = min(max_tokens or cap, cap)
         attempts = 1 + max(0, self.settings.llm_max_retries)
         for attempt in range(attempts):
             response = self.client.chat.completions.create(**params)
@@ -479,8 +484,12 @@ class AsyncLLMClient:
             raise ValueError("tool_choice requires tool definitions")
         if tool_choice is not None:
             params["tool_choice"] = tool_choice
-        if max_tokens is not None:
-            params["max_tokens"] = max_tokens
+        cap = getattr(
+            self.settings,
+            "llm_max_output_tokens",
+            int(os.environ.get("OMNI_LLM_MAX_OUTPUT_TOKENS", "4096")),
+        )
+        params["max_tokens"] = min(max_tokens or cap, cap)
         attempts = 1 + max(0, self.settings.llm_max_retries)
         for attempt in range(attempts):
             response = await self.client.chat.completions.create(**params)

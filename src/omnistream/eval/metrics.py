@@ -1,6 +1,62 @@
 """Deterministic metrics. Items are deduplicated in first-retrieval order."""
 
+import re
+from collections import Counter
 from statistics import mean
+
+UNMEASURED_LIMIT = 0.10
+
+
+def error_type(error):
+    text = str(error)
+    code = re.search(
+        r"(?:Error code:|HTTP|status[ _]code[=:]?)\s*(4\d\d|5\d\d)", text, re.IGNORECASE
+    )
+    if code:
+        return "provider_http_" + code.group(1)
+    return text.split(":", 1)[0] or "unknown"
+
+
+def fatal_provider_error(error):
+    code = getattr(error, "status_code", None)
+    return code in (401, 402, 403) or error_type(error) in {
+        "provider_http_401",
+        "provider_http_402",
+        "provider_http_403",
+    }
+
+
+def run_validity(metrics):
+    invalid = [
+        name
+        for name, m in metrics.items()
+        if m.get("unmeasured_share", 0) > UNMEASURED_LIMIT
+    ]
+    counts = Counter()
+    for m in metrics.values():
+        counts.update(m.get("error_types", {}))
+    return {
+        "status": "invalid"
+        if invalid
+        else (
+            "completed_with_errors"
+            if any(m.get("errors") for m in metrics.values())
+            else "completed"
+        ),
+        "unmeasured_limit": UNMEASURED_LIMIT,
+        "invalid_configurations": invalid,
+        "error_types": dict(counts),
+        "provider_error_pairs": sum(
+            m.get("provider_error_pairs", 0) for m in metrics.values()
+        ),
+        "judge_error_types": dict(
+            sum(
+                (Counter(m.get("judge_error_types", {})) for m in metrics.values()),
+                Counter(),
+            )
+        ),
+        "unmeasured_pairs": sum(m.get("unmeasured", 0) for m in metrics.values()),
+    }
 
 
 def retrieval_metrics(retrieved, gold, acceptable=()):
@@ -27,6 +83,8 @@ def routing_metrics(selected, expected):
 
 def aggregate(results):
     def group(values):
+        all_values = values
+        values = [r for r in values if not r.get("error") and not r.get("unmeasured")]
         metrics = {}
         for key in (
             "recall_at_10",
@@ -66,8 +124,35 @@ def aggregate(results):
             mean(float(r["correctness"] == 2) for r in changed) if changed else None
         )
         metrics["errors"] = sum(
-            bool(r.get("error") or r.get("judgement_errors")) for r in values
+            bool(r.get("error") or r.get("unmeasured") or r.get("judgement_errors"))
+            for r in all_values
         )
+        metrics["unmeasured"] = len(all_values) - len(values)
+        metrics["unmeasured_share"] = (
+            metrics["unmeasured"] / len(all_values) if all_values else 0
+        )
+        metrics["error_types"] = dict(
+            Counter(
+                error_type(r.get("error", "unmeasured"))
+                for r in all_values
+                if r.get("error") or r.get("unmeasured")
+            )
+        )
+        metrics["judge_error_types"] = dict(
+            Counter(
+                error_type(e)
+                for r in all_values
+                for e in r.get("judgement_errors", {}).values()
+            )
+        )
+        metrics["provider_error_pairs"] = sum(
+            any(
+                error_type(e).startswith("provider_http_")
+                for e in [r.get("error", ""), *r.get("judgement_errors", {}).values()]
+            )
+            for r in all_values
+        )
+        metrics["measured"] = len(values)
         metrics["correctness_errors"] = sum(
             "correctness" in r.get("judgement_errors", {}) for r in values
         )
@@ -80,7 +165,7 @@ def aggregate(results):
         metrics["abstentions"] = sum(
             r.get("correctness") == 0 and r.get("citation_count") == 0 for r in values
         )
-        metrics["questions"] = len(values)
+        metrics["questions"] = len(all_values)
         return metrics
 
     output = {}
@@ -194,6 +279,17 @@ def success_criteria(metrics, global_metrics):
                 status="UNMEASURED",
                 failed_judgements=failed,
                 reason=f"{failed} failed judgements; value is partial",
+            )
+    invalid = set(run_validity(metrics)["invalid_configurations"])
+    for label, check in checks.items():
+        deps = {label.split(":")[0]}
+        if "multi-hop recall improvement" in label:
+            deps.add("classic")
+        if label.startswith("Full system"):
+            deps = {"own+subagents", label.rsplit(" ", 1)[1]}
+        if deps & invalid:
+            check.update(
+                status="UNMEASURED", reason="Configuration exceeds 10% unmeasured pairs"
             )
     return checks
 

@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+import os
 import re
 
 from omnistream.llm import LLMClient, LLMError, judge_client
@@ -11,7 +12,14 @@ Return JSON {"score":0|1|2,"rationale":"..."}. Score 2 only when all reference k
 
 
 class Judge:
+    max_tokens = 1024
+
     def __init__(self, settings):
+        self.max_tokens = getattr(
+            settings,
+            "judge_max_output_tokens",
+            int(os.environ.get("OMNI_JUDGE_MAX_OUTPUT_TOKENS", "1024")),
+        )
         self.client = judge_client(settings)
         self.bare = LLMClient(settings)
 
@@ -44,7 +52,7 @@ class Judge:
                     self.client.chat_json,
                     messages,
                     response_format={"type": "json_object"},
-                    max_tokens=500,
+                    max_tokens=self.max_tokens,
                 )
                 if field == "score":
                     value = result.get(field)
@@ -134,7 +142,7 @@ class Judge:
                 },
                 {"role": "user", "content": question["question"]},
             ],
-            max_tokens=300,
+            max_tokens=self.max_tokens,
         )
         return {"answer": answer, **await self.correctness(question, answer)}
 

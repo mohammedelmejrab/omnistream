@@ -18,7 +18,7 @@ def test_chat_sends_openai_compatible_request(settings, mock_openai):
     assert body["model"] == "deepseek/deepseek-chat"
     assert body["messages"] == [{"role": "user", "content": "hi"}]
     assert body["temperature"] == 0.0
-    assert "max_tokens" not in body
+    assert body["max_tokens"] == 4096
 
 
 def test_chat_overrides(settings, mock_openai):

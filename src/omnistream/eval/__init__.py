@@ -13,7 +13,14 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from .dataset import parse_rows
-from .metrics import aggregate, retrieval_metrics, routing_metrics, success_criteria
+from .metrics import (
+    aggregate,
+    fatal_provider_error,
+    retrieval_metrics,
+    routing_metrics,
+    run_validity,
+    success_criteria,
+)
 from .report import table, write_report
 from .resources import MemorySampler, UsageMeter, stage
 
@@ -117,6 +124,8 @@ async def score_question(
     except Exception as exc:  # noqa: BLE001
         errors["correctness"] = type(exc).__name__ + ": " + str(exc)
     try:
+        if any(fatal_provider_error(e) for e in errors.values()):
+            raise RuntimeError("Judging stopped after provider credit/auth failure")
         faithful, count, rationales = await judge.citations(
             answer, citations, originals, invalid
         )
@@ -237,13 +246,16 @@ async def run_evaluation(
     sampler.container_peak = summary.global_metrics.get("neo4j_peak_bytes") or 0
     sampler.peak = summary.global_metrics.get("peak_memory_bytes") or 0
     sampler.errors = summary.global_metrics.get("memory_sampling_errors", [])
-    # Retry a recorded failed pair once when explicitly resumed.
+    # Answer/retrieval failures remain retryable on every explicit resume.
+    # Retain the existing once-only retry policy for judge-only failures.
     if resume:
+        summary.global_metrics.pop("fatal_error", None)
         retry_pairs = {
             (r["configuration"], r["question_id"])
             for r in summary.results
-            if (r.get("error") or r.get("judgement_errors"))
-            and not r.get("resume_retry")
+            if r.get("error")
+            or r.get("unmeasured")
+            or (r.get("judgement_errors") and not r.get("resume_retry"))
         }
         summary.results = [
             r
@@ -260,6 +272,7 @@ async def run_evaluation(
     await emit(
         f"Run {record.id}: {len(completed)} completed pairs; checkpoint {chosen}"
     )
+    provider_stop = None
     with UsageMeter() as meter:
         for key, value in summary.global_metrics.get("usage_by_stage", {}).items():
             meter.values[key].update(
@@ -359,7 +372,7 @@ async def run_evaluation(
             external = None
             for configuration in names:
                 stage.set(configuration)
-                if configuration == "external":
+                if configuration == "external" and not provider_stop:
                     from .external import ExternalBaseline
 
                     external = await asyncio.to_thread(
@@ -375,9 +388,14 @@ async def run_evaluation(
                 async def evaluate_one(
                     question, configuration=configuration, external=external
                 ):
+                    nonlocal provider_stop
                     started = time.perf_counter()
                     stage.set(configuration)
                     try:
+                        if provider_stop:
+                            raise RuntimeError(
+                                "Unmeasured: calls stopped after " + provider_stop
+                            )
                         if configuration == "external":
                             answer, ids, sources = await asyncio.to_thread(
                                 external.answer, question["question"]
@@ -415,6 +433,10 @@ async def run_evaluation(
                             ]
                             invalid = result.answer.invalid_citations
                         elapsed = time.perf_counter() - started
+                        if provider_stop:
+                            raise RuntimeError(
+                                "Unmeasured: calls stopped after " + provider_stop
+                            )
                         stage.set(configuration + ":judge")
                         scored = await score_question(
                             configuration,
@@ -433,27 +455,29 @@ async def run_evaluation(
                                 for i in question.get("acceptable_evidence", [])
                             ],
                         )
-                    except Exception as exc:  # noqa: BLE001 - failures must persist and remain in the denominator
+                    except Exception as exc:  # noqa: BLE001 - persist unmeasured failures
+                        if fatal_provider_error(exc):
+                            provider_stop = type(exc).__name__ + ": " + str(exc)
                         scored = {
+                            "unmeasured": True,
                             "configuration": configuration,
                             "question_id": question["id"],
                             "type": question["type"],
                             "question": question["question"],
-                            "correctness": 0,
-                            "recall_at_10": 0.0,
-                            "mrr": 0.0,
-                            "hits_at_1": 0.0,
-                            "routing_recall": 0.0
-                            if configuration != "external"
-                            else None,
-                            "routing_precision": 0.0
-                            if configuration != "external"
-                            else None,
+                            "correctness": None,
+                            "recall_at_10": None,
+                            "mrr": None,
+                            "hits_at_1": None,
+                            "routing_recall": None,
+                            "routing_precision": None,
                             "latency_seconds": time.perf_counter() - started,
                             "error": type(exc).__name__ + ": " + str(exc),
-                            "citation_count": 0,
+                            "citation_count": None,
                             "faithful_citations": 0,
                         }
+                    for error in scored.get("judgement_errors", {}).values():
+                        if fatal_provider_error(error):
+                            provider_stop = error
                     if (configuration, question["id"]) in retry_pairs:
                         scored["resume_retry"] = True
                     with answers_path.open("a", encoding="utf-8") as stream:
@@ -473,7 +497,7 @@ async def run_evaluation(
                         results=summary.results,
                     )
                     await emit(
-                        f"{configuration} {question['id']}/{len(questions)}: correctness={scored['correctness']} recall@10={scored['recall_at_10']:.3f}"
+                        f"{configuration} {question['id']}/{len(questions)}: correctness={scored['correctness']} recall@10={scored['recall_at_10']}"
                         + (" ERROR " + scored["error"] if scored.get("error") else "")
                     )
 
@@ -483,6 +507,8 @@ async def run_evaluation(
                     q for q in questions if (configuration, q["id"]) not in completed
                 ]
                 for start in range(0, len(pending), 2):
+                    if provider_stop:
+                        break
                     await asyncio.gather(
                         *(evaluate_one(q) for q in pending[start : start + 2])
                     )
@@ -490,8 +516,10 @@ async def run_evaluation(
                 await repo.update_eval_run(
                     record.id, metrics=summary.metrics, results=summary.results
                 )
+                if provider_stop:
+                    break
             stage.set("audit")
-            if "audit_sample_size" not in summary.global_metrics:
+            if not provider_stop and "audit_sample_size" not in summary.global_metrics:
                 summary.global_metrics.update(await audit_graph(builder, judge))
             entries = builder.manifest["items"]
             for item_id, entry in entries.items():
@@ -557,7 +585,7 @@ async def run_evaluation(
                 )
                 else "completed"
             )
-        except Exception as exc:  # noqa: BLE001 - failures must persist and remain in the denominator
+        except Exception as exc:  # noqa: BLE001 - persist failures and mark missing pairs unmeasured
             summary.status = "failed"
             summary.global_metrics["fatal_error"] = type(exc).__name__ + ": " + str(exc)
             await emit("Evaluation failed: " + summary.global_metrics["fatal_error"])
@@ -567,7 +595,30 @@ async def run_evaluation(
                     json.loads(line)
                     for line in answers_path.read_text(encoding="utf-8").splitlines()
                 ]
+            if provider_stop or summary.global_metrics.get("fatal_error"):
+                reason = provider_stop or summary.global_metrics["fatal_error"]
+                done = {(r["configuration"], r["question_id"]) for r in summary.results}
+                with answers_path.open("a", encoding="utf-8") as stream:
+                    for name in names:
+                        for q in questions:
+                            if (name, q["id"]) not in done:
+                                row = {
+                                    "configuration": name,
+                                    "question_id": q["id"],
+                                    "type": q["type"],
+                                    "unmeasured": True,
+                                    "error": reason,
+                                }
+                                summary.results.append(row)
+                                stream.write(json.dumps(row) + "\n")
+                await emit(
+                    "Provider calls stopped; remaining pairs UNMEASURED: " + reason
+                )
             summary.metrics = aggregate(summary.results)
+            validity = run_validity(summary.metrics)
+            summary.global_metrics["run_validity"] = validity
+            if validity["status"] != "completed":
+                summary.status = validity["status"]
             summary.global_metrics["usage_by_stage"] = meter.summary()
             summary.global_metrics["total_tokens"] = sum(
                 v["tokens"] for v in meter.summary().values()

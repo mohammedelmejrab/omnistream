@@ -4,6 +4,8 @@ import csv
 import json
 from pathlib import Path
 
+from .metrics import run_validity
+
 
 def display(value):
     if value is None:
@@ -85,8 +87,17 @@ def write_report(directory, snapshot, stamp, metrics, results, global_metrics, c
             for name, m in metrics.items()
         ],
     )
+    validity = run_validity(metrics)
     lines = [
         f"# OmniStream evaluation: {snapshot}",
+        "",
+        "INVALID RUN"
+        if validity["status"] == "invalid"
+        else validity["status"].upper(),
+        f"Unmeasured pairs: {validity['unmeasured_pairs']}; invalid if any configuration exceeds {validity['unmeasured_limit']:.0%}. Error types: {json.dumps(validity['error_types'], sort_keys=True)}",
+        f"Provider-error pairs (answer/retrieval or judge): {validity['provider_error_pairs']}. Judge error types (separate): {json.dumps(validity['judge_error_types'], sort_keys=True)}",
+        "Invalid configurations: " + ", ".join(validity["invalid_configurations"]),
+        "",
         table(metrics),
         "",
         "Native retrieval limits: classic 10 chunks; graphiti/own 20 facts; external LlamaIndex default 2 nodes. Subagents can perform several searches. Recall@10 cuts the deduplicated item ranking after round-robin interleaving per-bubble evidence. Footnote: with the three-bubble catalog, round-robin guarantees each routed bubble with returned evidence representation in the top-10; empty evidence cannot be represented.",
@@ -100,13 +111,13 @@ def write_report(directory, snapshot, stamp, metrics, results, global_metrics, c
             else str(global_metrics.get("judge_calibration", "pending real v2 sample"))
         ),
         "## Per-question-type metrics",
-        "| Configuration | Type | Correctness (0-2) | Recall@10 |",
-        "|---|---|---|---|",
+        "| Configuration | Type | Correctness (0-2) | Recall@10 | Errors |",
+        "|---|---|---|---|---|",
     ]
     for name, m in metrics.items():
         for kind, values in m["by_type"].items():
             lines.append(
-                f"| {name} | {kind} | {display(values['correctness'])} | {display(values['recall_at_10'])} |"
+                f"| {name} | {kind} | {display(values['correctness'])} | {display(values['recall_at_10'])} | {values['errors']} |"
             )
     lines += [
         "",
@@ -130,7 +141,7 @@ def write_report(directory, snapshot, stamp, metrics, results, global_metrics, c
         "- Corpus: versioned fictional scripted records only, no recorded real-world feed. Ten updates are held back until runtime. Snapshot manifest binds the corpus name and ingested item-content SHA-256 (excluding question/reference edits); reruns reuse the data.",
         "- Recall@10 uses distinct supporting item IDs, in retrieval order for direct configurations and round-robin per-bubble rank for subagents; retrieved/read IDs contribute after deduplication. MRR uses the full observed ranking. This is item-level provenance, not a separately annotated atomic-fact benchmark.",
         "- Routing is scored without gold bubble pins; other application bubbles are excluded. Ingestion uses automatic routing for every item; exact set agreement with manual labels is required.",
-        "- Correctness rubric: 0 incorrect/unsupported/abstention, 1 partial answer with a required fact missing, 2 all required facts correct at the requested date. Answer failures score zero; failed judgements retain partial values and separate error counts, and dependent section 8.3 checks are UNMEASURED. Changed-fact accuracy is the fraction scoring 2.",
+        "- Correctness rubric: 0 incorrect/unsupported/abstention, 1 partial answer with a required fact missing, 2 all required facts correct at the requested date. Answer/retrieval failures are UNMEASURED and excluded from every metric denominator; failed judgements retain partial values and separate error counts, and dependent section 8.3 checks are UNMEASURED. Changed-fact accuracy is the fraction scoring 2.",
         "- Citation faithfulness is judged for each cited claim against the union of the cited stored originals, with valid spans supplied as additional context. Missing source text, invalid citations, or unsupported claims count as unfaithful. Zero citations yields 0 per-answer faithfulness. Multi-marker sentence claims are judged against the union of their cited sources.",
         "- Calibration uses thirty real v2 answer/reference triples from one specified run, stratified by judge score and spread across configurations/question types. Human labeling files omit configuration and judge score, retained in a separate key; exact agreement and Cohen kappa are computed when labels are supplied. Same-family answer and judge models may share biases (O3).",
         "- Duplicate audit samples 100 bubble-local entities deterministically; normalized equal names or cosine >=0.88 generate candidates, and the LLM confirms semantic identity. Same identity across bubbles is a duplicate only when global IDs differ; same-bubble duplicate nodes always count. Denominator is sampled nodes; each duplicate node counted once. Ungrounded rate uses all snapshot entities.",
@@ -145,3 +156,44 @@ def write_report(directory, snapshot, stamp, metrics, results, global_metrics, c
         str(question_path.resolve()),
         str(config_path.resolve()),
     )
+
+
+def reaggregate(answers_path, directory, snapshot="eval-v2", stamp="reaggregated"):
+    """Offline report repair: read recorded rows only; never initialize clients or DBs."""
+    from .metrics import aggregate, success_criteria
+
+    rows = [
+        json.loads(line)
+        for line in Path(answers_path).read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    metrics = aggregate(rows)
+    global_metrics = {
+        "run_validity": run_validity(metrics),
+        "offline_reaggregation": True,
+        "source": str(answers_path),
+    }
+    return write_report(
+        directory,
+        snapshot,
+        stamp,
+        metrics,
+        rows,
+        global_metrics,
+        success_criteria(metrics, global_metrics),
+    )
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Re-aggregate recorded answers offline (no provider calls)"
+    )
+    parser.add_argument("--answers", required=True)
+    parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--stamp", default="reaggregated")
+    args = parser.parse_args()
+    path, _, _ = reaggregate(args.answers, args.output_dir, stamp=args.stamp)
+    print("\n".join(Path(path).read_text(encoding="utf-8").splitlines()[:7]))
+    print(path)

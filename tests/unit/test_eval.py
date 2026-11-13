@@ -278,6 +278,35 @@ async def test_eval_run_with_fakes(tmp_path, monkeypatch):
         progress=lambda _: None,
     )
     assert twice.results == retried.results
+    # Repeated credit failures must stop new calls and remain retryable on every resume.
+    calls = []
+
+    async def broke(self, *args, **kwargs):
+        calls.append(args)
+        raise RuntimeError("APIStatusError: Error code: 402 - Insufficient credits")
+
+    monkeypatch.setattr(Runtime, "answer", broke)
+    answers.write_text("", encoding="utf-8")
+    for _ in range(2):
+        calls.clear()
+        invalid = await run_evaluation(
+            settings,
+            repo,
+            rows=["classic"],
+            snapshot="fixture",
+            resume="latest",
+            progress=lambda _: None,
+        )
+        assert 1 <= len(calls) <= 2
+        assert invalid.status == "invalid"
+        assert len(invalid.results) == 60
+        assert invalid.metrics["classic"]["unmeasured"] == 60
+        assert invalid.metrics["classic"]["correctness"] is None
+        assert (await repo.get_eval_run(invalid.id)).status == "invalid"
+        assert "INVALID RUN" in __import__("pathlib").Path(
+            invalid.report_path
+        ).read_text(encoding="utf-8")
+
     with pytest.raises(ValueError, match="question selection"):
         await run_evaluation(
             settings,
