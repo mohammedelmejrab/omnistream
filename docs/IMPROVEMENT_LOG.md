@@ -166,3 +166,35 @@ Round 2 is recorded as `real-v2`; real-v1 files are kept for the record.
   embeddings), to keep the model results already collected, and to make the rest
   resumable so no work is repeated.
 - Needs the project owner: raise the key's limit on openrouter.ai.
+
+### Change 3: second real corpus (real-v2), approved with two caveats
+
+Quality report: `docs/realdata/real-v2-quality.md`. 350 real items, 18 Sep to 12 Nov 2026.
+
+| Measure | real-v1 | real-v2 |
+|---|---|---|
+| Items | 228 | 350 |
+| News / Finance / Research | 110 / 60 / 58 | 115 / 115 / 120 |
+| Full articles or complete abstracts | 63.6% | 95.7% (66.6% articles, 29.1% abstracts) |
+| Median words | 437 | 564.5 |
+| Exact duplicates kept | 0 | 0 |
+| Verified changed facts | 1 | 25 |
+
+- Sources: company blogs (NVIDIA, Microsoft, Samsung), EFF, Mozilla, UK CMA, DOJ, FTC, NIST;
+  SEC filings with press-release exhibits for 24 technology companies, SEC releases, Federal
+  Reserve; arXiv abstracts (51 from a general query, 51 from a query for named companies),
+  Microsoft Research, BAIR.
+- Sources that failed and were left out, not replaced with invented items: Commerce/BIS and
+  The Conversation (terms could not be verified), Wikinews (blocked by robots.txt), European
+  Commission (no on-theme matches), two Mozilla pages (HTTP 403).
+
+Decision: approved for building the question set, with these caveats.
+
+1. arXiv is 85% of the Research bubble, above the 25% per-source cap. The cap is waived for
+   arXiv because it is a repository of papers by independent authors, not one publisher.
+2. 21 of the 25 verified changed facts come from one company (TSMC monthly figures). The
+   time-sensitive questions must not lean on them: more varied changed facts have to be
+   found while writing questions.
+3. Not yet measured, blocked by the API key limit (setback 3): LLM-based entity statistics
+   (cross-bubble entities, how many appear under several names).
+4. 101 of the 350 items are dated in the last 4 days of the window (mostly arXiv).
