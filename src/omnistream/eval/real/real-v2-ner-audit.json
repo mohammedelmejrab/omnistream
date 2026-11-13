@@ -1,0 +1,218 @@
+{
+  "status": "30-item text prefix/ending review complete; LLM entity precision audit BLOCKED: credentials unavailable (private request timed out)",
+  "manifest_sha256": "22b4bb78cc66def4f518923e20a91128ece29cd98f62d0163448d7d3eec81c50",
+  "method": "direct prefix and ending review by implementation agent, not whole-document entity recall",
+  "precision": null,
+  "items": [
+    {
+      "id": "4c7439bb11fa689ce236ec8369a03c96e5f1fc6f8b75a3e0dba9b7603fea4d81",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "097fdf4af9c2d7a65c2cea8a7c1ea2741f0ede3ad371085862ddb2d361047026",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "8f65181129c1b7f8a9e052504cb3b154562d29b1bfe8352356d441b85f7ac5f5",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "f2ab86448cb46008a6050feedfeedabee50ae1784f43a33e9de08056824ef0a9",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "aa2abbec3add046e7e1724e7989e289bec2c9aedf2994f6f9dadf2bd18679811",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "1a412b7a56462a6c4593c110f384e00b1917ae22c7fd39379a9b67cd240f2f46",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "c161a6520afa0aac77ecb67809daabf2d1f6cf650b3e39ea2bace35e68bd9b44",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "36b4dff7d405310e2c0bfa62233474e8dc860ef01453f4513a86f07618f9f66e",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "27b21c79dcb04ce27d3114357ff72294f374a0d9a1c23addd2952948f684c04e",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "0f13c52215001e1cfe94665e190b551624627fbffca2ea6e929c070bd77d0e20",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "9509c40e72f112667a63e5add85e821959f8161c9de63978634c49b08c2d486a",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "13a5e44ad63dc6c77af8bbebcbae42e43fdfd8533ef7ec2b2c37c443fbe3533b",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "d1ccfe31627c9fcae62ecdc09ff32ef571ac1778ca10f1dcd0cd3f9d90db9405",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "2dab99fba0f993d2ea8eea25279c36cc94d8b2a8486884ac54c89315b94b9cd7",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "e3d671e8862f261f0919b410d9d17bd4a0c6e68c7c775a833788de84f5c386a5",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "77af2cdeb7897efafbbc9234021b526cd003908d57c03b43b907d8f452f2427d",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "0ba904b8ad2a8e788c6d0f7c7e840a9cdcbf82b6aec0cd1105eb7bb63a315cd8",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "75e4c10aaaecd3432bc02d59f55407349278f4afee68ba7050694ed9b09641f8",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "065869c7c1369c5b0dbd18a6abe9d4be735e2d47deba0a9a96b0f854fa0d76c4",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "f7429fe451311af0442cff964b7324099a02fe973aee99f6bdf5ae9b957a5e18",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "bd102c5f9abb129083c19e08a58a4ed22c3b8f3dbd5d7acf255cb1ad95c1f355",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "a1da460c619401d4cfcbba32ea146e5dfa5c5dd486591cda957db4e7aef2ea4a",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "68bd6afadaea5f865497443d82a21e2ef9bb708dfd3dd0c871e159a41800bee1",
+      "quality_note": "Prefix and ending reviewed: readable syndicated or fetched body; marketing, CTA or article footer may remain. Completeness is still a proxy.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "b5bb5bd83fb3c105642f9d6eeb66af0f8549bb30c167d2346943a3ec53fcc435",
+      "quality_note": "Prefix and ending reviewed: official filing/exhibit with financial tables or filing boilerplate retained; content label requires later review.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    },
+    {
+      "id": "9553071426ca46d879df4053183f0e62bdf333a3989969bc3cd0f74ec5d6f4b2",
+      "quality_note": "Prefix and ending reviewed: on-theme complete abstract; not a full paper. Entity precision cannot be measured without the requested extraction.",
+      "entity_review_status": "blocked: no LLM extraction",
+      "valid_names": null,
+      "invalid_names": null
+    }
+  ]
+}

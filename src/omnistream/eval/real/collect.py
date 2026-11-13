@@ -23,6 +23,7 @@ from langdetect import DetectorFactory, LangDetectException, detect_langs
 
 from omnistream.config import Settings
 from omnistream.db import Repository
+from omnistream.eval.real.v2 import documented_api_allows
 from omnistream.ingest.intake import Intake
 from omnistream.ingest.normalize import content_hash, normalize_text
 from omnistream.models import Source
@@ -143,12 +144,16 @@ class PublicHTTP:
         self.folder = folder
         folder.mkdir(parents=True, exist_ok=True)
         self.client = httpx.AsyncClient(
-            headers={"User-Agent": UA}, transport=transport, follow_redirects=False
+            headers={"User-Agent": UA},
+            transport=transport,
+            follow_redirects=False,
+            limits=httpx.Limits(max_connections=1, max_keepalive_connections=1),
         )
         self.sleep, self.clock = sleep, clock
         self.last: dict[str, float] = {}
         self.robots: dict[str, RobotFileParser | None] = {}
         self.events: list[dict] = []
+        self.access_policy: dict | None = None
 
     async def close(self):
         await self.client.aclose()
@@ -208,7 +213,10 @@ class PublicHTTP:
                 and urlsplit(url).hostname not in allowed_hosts
             ):
                 raise PermissionError("redirect leaves opted-in article hosts")
-            delay = await self._robots(url, delay)
+            if documented_api_allows(self.access_policy, url):
+                delay = max(delay, self.access_policy.get("delay_seconds", 3))
+            else:
+                delay = await self._robots(url, delay)
             cache = self.folder / (hashlib.sha256(url.encode()).hexdigest() + ".json")
             if cache.exists():
                 d = json.loads(cache.read_text(encoding="utf8"))
@@ -298,7 +306,7 @@ class SECSubmissionHTTP(SourceHTTP):
         entries = []
         for i, day in enumerate(columns["filingDate"]):
             if (
-                columns["form"][i] not in {"8-K", "8-K/A"}
+                columns["form"][i] not in {"8-K", "8-K/A", "6-K", "6-K/A"}
                 or not self.since <= day <= self.until
             ):
                 continue
@@ -339,9 +347,16 @@ async def collect(
         if old["since"] != lower.isoformat() or old["until"] != upper.isoformat():
             raise ValueError("A recorded corpus window is immutable; use a new name")
     settings = Settings(_env_file=None, data_dir=str(folder))
-    repo = Repository.from_path(str(folder / "intake.db"), settings=settings)
+    repo = Repository.from_path(
+        str(
+            folder
+            / ("intake.db" if name == "real-v1" else f"intake-{time.time_ns()}.db")
+        ),
+        settings=settings,
+    )
     intake = Intake(repo, str(folder), 200)
     http = PublicHTTP(folder / "http")
+    snapshot_root = root / "data" if name == "real-v1" else folder
     previous = read_jsonl(manifest_path)
     accepted = {r["id"]: r for r in previous}
     previous_ids = set(accepted)
@@ -350,16 +365,17 @@ async def collect(
     exact: set[str] = set()
     outcomes, statuses, raw_items = [], [], []
     accepted_raw = {}
-    if snapshot_path(root / "data", name).exists():
+    if snapshot_path(snapshot_root, name).exists():
         accepted_raw = {
             content_hash(item.url, item.text): item
-            for item in load_snapshot(root / "data", name)
+            for item in load_snapshot(snapshot_root, name)
             if content_hash(item.url, item.text) in accepted
         }
     counts = Counter()
     try:
         for cfg in config["sources"]:
             sid = cfg["id"]
+            http.access_policy = cfg
             status = {
                 "source": sid,
                 "enabled": cfg["enabled"],
@@ -406,6 +422,10 @@ async def collect(
                         if source.type == "rss"
                         else fetch_api(source, client)
                     )
+                    if cfg.get("fetch_exhibits"):
+                        from omnistream.eval.real.v2 import expand_exhibits
+
+                        items = await expand_exhibits(items, http, status["errors"])
                     status["pages"] += 1
                 except (
                     httpx.HTTPError,
@@ -423,6 +443,20 @@ async def collect(
                 for item in items:
                     item.bubble_ids_override = [cfg["bubble_hint"]]
                     raw_items.append(item.model_copy(deep=True))
+                    if name != "real-v1" and source_count >= cfg["max_items"]:
+                        outcomes.append(
+                            {
+                                "id": content_hash(item.url, item.text),
+                                "source": sid,
+                                "url": item.url,
+                                "published_at": item.published_at.isoformat()
+                                if item.published_at
+                                else None,
+                                "reason": "source_cap",
+                            }
+                        )
+                        counts["source_cap"] += 1
+                        continue
                     # Content-only C1 leaves the raw payload intact; remove scripts/nav.
                     if item.raw_ext == "html" and item.raw_content:
                         item.text = clean_html(item.raw_content)
@@ -432,15 +466,44 @@ async def collect(
                         language(item.text) if len(item.text) >= 200 else ("unknown", 0)
                     )
                     reason = rejection(item, lower, upper, lang=lang)
+                    url_event_hint = None
+                    if name != "real-v1":
+                        from omnistream.eval.real.v2 import url_date_hint
+
+                        url_event_hint = url_date_hint(item.url)
+                        if url_event_hint and url_event_hint < lower.isoformat():
+                            reason = "event_before_window"
+                    from omnistream.eval.real.v2 import theme_matches
+
+                    if cfg.get("theme_filter_before_fetch") and not theme_matches(
+                        item.title + " " + item.text, cfg
+                    ):
+                        reason = "off_theme"
+                    feed_complete = (
+                        cfg.get("prefer_complete_feed")
+                        and content_kind(
+                            item.text, cfg["full_text_policy"], item.raw_content or ""
+                        )
+                        == "full_text_likely"
+                    )
                     fetched_article = False
                     # An explicit public-domain opt-in, never a general web scraper.
-                    if cfg["full_text_policy"] in {
-                        "fetch_public_domain",
-                        "fetch_public_filing",
-                    } and reason not in (
-                        "no_date",
-                        "future_or_after_window",
-                        "before_window",
+                    if (
+                        cfg["full_text_policy"]
+                        in {
+                            "fetch_public_domain",
+                            "fetch_public_filing",
+                            "fetch_open_licence",
+                        }
+                        and not feed_complete
+                        and reason
+                        not in (
+                            "no_date",
+                            "future_or_after_window",
+                            "before_window",
+                            "event_before_window",
+                            "off_theme",
+                        )
                     ):
                         try:
                             if urlsplit(item.url).hostname not in cfg.get(
@@ -456,6 +519,7 @@ async def collect(
                                     "article_hosts", [urlsplit(url).hostname]
                                 ),
                             )
+                            response.raise_for_status()
                             soup = BeautifulSoup(response.content, "html.parser")
                             body = next(
                                 (
@@ -483,6 +547,29 @@ async def collect(
                             status["errors"].append(
                                 f"article {item.url}: {type(exc).__name__}: {str(exc)[:150]}"
                             )
+                    from omnistream.eval.real.v2 import (
+                        body_date_hint,
+                        content_labels,
+                        theme_matches,
+                    )
+
+                    event_hint = (
+                        cfg.get("event_date_overrides", {}).get(item.url)
+                        or body_date_hint(item.text)
+                        or url_event_hint
+                    )
+                    if name != "real-v1":
+                        if event_hint and event_hint < lower.isoformat():
+                            reason = "event_before_window"
+                        if not theme_matches(item.title + " " + item.text, cfg):
+                            reason = "off_theme"
+                        if (
+                            cfg["full_text_policy"] == "abstract"
+                            and len(item.text.split()) < 120
+                        ):
+                            reason = "abstract_too_short"
+                    if item.url in config.get("quality_exclusions", {}):
+                        reason = "reviewed_source_metadata_mismatch"
                     key = content_hash(item.url, item.text)
                     digest = hashlib.sha256(item.text.encode()).hexdigest()
                     norm_digest = hashlib.sha256(
@@ -501,6 +588,21 @@ async def collect(
                         if item.published_at
                         else None,
                         "reason": reason or "accepted",
+                        "event_date_hint": event_hint,
+                        "event_date_hint_basis": "reviewed_override"
+                        if item.url in cfg.get("event_date_overrides", {})
+                        else (
+                            "displayed_body_date"
+                            if body_date_hint(item.text)
+                            else (
+                                "url_date_or_month_upper_bound"
+                                if url_event_hint
+                                else None
+                            )
+                        ),
+                        "review_exclusion_note": config.get(
+                            "quality_exclusions", {}
+                        ).get(item.url),
                         "language": lang,
                         "language_confidence": confidence,
                     }
@@ -542,6 +644,7 @@ async def collect(
                             "bubble_hint": cfg["bubble_hint"],
                             "content_kind": "full_text_fetched"
                             if fetched_article
+                            and (name == "real-v1" or len(item.text.split()) >= 120)
                             else content_kind(
                                 item.text,
                                 cfg["full_text_policy"],
@@ -554,6 +657,27 @@ async def collect(
                             .relative_to(root)
                             .as_posix(),
                         }
+                    if name != "real-v1":
+                        record.update(
+                            label_basis="source_hint",
+                            body_fetched=fetched_article,
+                            content_bubbles=content_labels(
+                                item.title + " " + item.text
+                            ),
+                            event_date_hint=event_hint,
+                            event_date_hint_basis="displayed_body_date"
+                            if body_date_hint(item.text)
+                            else (
+                                "url_date_or_month_upper_bound"
+                                if url_event_hint
+                                else None
+                            ),
+                            query=cfg.get("query"),
+                            query_group=cfg.get("query_group"),
+                        )
+                        if cfg.get("adapter") == "sec_submissions":
+                            record["accession"] = item.url.split("/")[-2]
+                            record["document"] = item.url.split("/")[-1]
                     accepted[key] = record
                     accepted_raw[key] = item
                     source_count += 1
@@ -574,6 +698,21 @@ async def collect(
         (v for k, v in accepted.items() if k in current_ids),
         key=lambda x: (x["source"], x["published_at"], x["id"]),
     )
+    if config.get("bubble_targets"):
+        from omnistream.eval.real.v2 import select_balanced
+
+        records = select_balanced(
+            records,
+            config["bubble_targets"],
+            config.get("source_selection_limits"),
+            config.get("priority_title_keywords"),
+        )
+        selected_ids = {r["id"] for r in records}
+        for outcome in outcomes:
+            if outcome["reason"] == "accepted" and outcome["id"] not in selected_ids:
+                outcome["reason"] = "bubble_target"
+        counts = Counter(o["reason"] for o in outcomes)
+        current_ids = selected_ids
     accepted_raw = {k: v for k, v in accepted_raw.items() if k in current_ids}
     write_jsonl(manifest_path, records)
     write_jsonl(folder / "outcomes.jsonl", outcomes)
@@ -582,10 +721,10 @@ async def collect(
         (name, list(accepted_raw.values())),
         (name + "-polled", raw_items),
     ]:
-        path = snapshot_path(root / "data", snapshot_name)
+        path = snapshot_path(snapshot_root, snapshot_name)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("", encoding="utf8")
-        SnapshotRecorder(root / "data", snapshot_name).record(items)
+        SnapshotRecorder(snapshot_root, snapshot_name).record(items)
     result = {
         "name": name,
         "since": lower.isoformat(),

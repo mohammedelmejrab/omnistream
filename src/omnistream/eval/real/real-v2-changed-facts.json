@@ -1,0 +1,525 @@
+[
+  {
+    "entity": "NVIDIA",
+    "attribute": "chief executive officer",
+    "old": {
+      "value": "Jensen Huang (Jen-Hsun Huang)",
+      "item_id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+      "date": "2026-10-23",
+      "quote": "NVIDIA founder and CEO Jensen Huang"
+    },
+    "new": {
+      "value": "Colette M. Kress (interim)",
+      "item_id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+      "date": "2026-11-12",
+      "quote": "to serve as interim Chief Executive Officer",
+      "event_date": "2026-11-11"
+    },
+    "note": "October blog names Huang; November filing explicitly reports resignation and interim successor, effective November 11.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "Samsung Electronics",
+    "attribute": "Q3 2026 consolidated revenue: estimate superseded by reported result",
+    "old": {
+      "value": "approximately KRW 195 trillion (guidance)",
+      "item_id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+      "date": "2026-10-08",
+      "quote": "Consolidated Sales: Approximately 195 trillion Korean won"
+    },
+    "new": {
+      "value": "KRW 195.3 trillion (reported)",
+      "item_id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+      "date": "2026-10-29",
+      "quote": "KRW 195.3 trillion in consolidated revenue",
+      "event_date": "2026-09-30"
+    },
+    "note": "October 8 preliminary Q3 estimate is superseded by October 29 Q3 results.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "Samsung Electronics",
+    "attribute": "latest reported quarterly operating profit",
+    "old": {
+      "value": "KRW 89.49 trillion (Q2 2026 actual)",
+      "item_id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+      "date": "2026-10-08",
+      "quote": "Operating profit 89.49 12.17",
+      "event_date": "2026-06-30"
+    },
+    "new": {
+      "value": "KRW 107.4 trillion (Q3 2026 actual)",
+      "item_id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+      "date": "2026-10-29",
+      "quote": "Operating profit reached KRW 107.4 trillion",
+      "event_date": "2026-09-30"
+    },
+    "note": "Old table identifies Q2 2026 and Q3 2025 columns; new report makes Q3 2026 the latest actual quarter.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "World of Warcraft: Forever",
+    "attribute": "GeForce NOW release status",
+    "old": {
+      "value": "scheduled for November 4, 2026",
+      "item_id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+      "date": "2026-10-29",
+      "quote": "World of Warcraft: Forever , arriving Wednesday, Nov. 4",
+      "event_date": "2026-11-04"
+    },
+    "new": {
+      "value": "launched and streaming",
+      "item_id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+      "date": "2026-11-05",
+      "quote": "is streaming on GeForce NOW",
+      "event_date": "2026-11-04"
+    },
+    "note": "October 29 announces upcoming launch; November 5 explicitly confirms launch and current streaming.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "latest monthly consolidated revenue",
+    "old": {
+      "value": "NT$511.86 billion (September 2026)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "revenue for September 2026 was approximately NT$511.86 billion",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "NT$586.89 billion (October 2026)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "revenue for October 2026 was approximately NT$586.89 billion",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "latest monthly revenue month-on-month growth",
+    "old": {
+      "value": "-0.6% (September 2026)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "a decrease of 0.6 percent from August 2026",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "+14.7% (October 2026)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "an increase of 14.7 percent from September 2026",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "latest monthly revenue year-on-year growth",
+    "old": {
+      "value": "54.6% (September 2026)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "an increase of 54.6 percent from September 2025",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "59.7% (October 2026)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "an increase of 59.7 percent from October 2025",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "latest year-to-date consolidated revenue",
+    "old": {
+      "value": "NT$3,898.73 billion (January?September 2026)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Revenue for January through September 2026 totaled T$3,898.73 billion",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "NT$4,485.62 billion (January?October 2026)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Revenue for January through October 2026 totaled NT$4,485.62 billion",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "latest year-to-date revenue year-on-year growth",
+    "old": {
+      "value": "41.1% (January?September 2026)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "an increase of 41.1 percent compared to the same period in 2025",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "43.3% (January?October 2026)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "an increase of 43.3 percent compared to the same period in 2025",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Development",
+    "attribute": "limit of lending",
+    "old": {
+      "value": "34,609,725",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "TSMC Development* 34,609,725 3,825,600 3,825,600",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "35,419,601",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "TSMC Development* 35,419,601 3,915,120 3,915,120",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Development",
+    "attribute": "loan outstanding to TSMC Washington",
+    "old": {
+      "value": "3,825,600",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "TSMC Development* 34,609,725 3,825,600 3,825,600",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "3,915,120",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "TSMC Development* 35,419,601 3,915,120 3,915,120",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "guarantee outstanding for TSMC North America",
+    "old": {
+      "value": "2,652,840",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "TSMC* 2,573,007,334 2,652,840 2,652,840",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "2,714,917",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "TSMC* 2,573,007,334 2,714,917 2,714,917",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "guarantee outstanding for TSMC Global",
+    "old": {
+      "value": "172,152,000",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "TSMC** 172,152,000 172,152,000",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "176,180,400",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "TSMC** 176,180,400 176,180,400",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "guarantee outstanding for TSMC Arizona",
+    "old": {
+      "value": "359,431,483",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "TSMC*** 487,475,027 359,431,483",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "326,953,998",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "TSMC*** 457,993,793 326,953,998",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "unhedged forward contracts: outstanding notional amount",
+    "old": {
+      "value": "242,564,986",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Outstanding Notional Amount 242,564,986",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "441,197,649",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Outstanding Notional Amount 441,197,649",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "unhedged forward contracts: mark-to-market of outstanding contracts",
+    "old": {
+      "value": "(1,599,198)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Mark to Market of Outstanding Contracts (1,599,198)",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "(6,251,892)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Mark to Market of Outstanding Contracts (6,251,892)",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC",
+    "attribute": "unhedged forward contracts: cumulative unrealized profit/loss",
+    "old": {
+      "value": "1,415,998",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Cumulative Unrealized Profit/Loss 1,415,998",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "(3,236,695)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Cumulative Unrealized Profit/Loss (3,236,695)",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC China",
+    "attribute": "unhedged forward contracts: outstanding notional amount",
+    "old": {
+      "value": "2,823,530",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Outstanding Notional Amount 2,823,530",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "779,520",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Outstanding Notional Amount 779,520",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC China",
+    "attribute": "unhedged forward contracts: mark-to-market of outstanding contracts",
+    "old": {
+      "value": "1,099",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Mark to Market of Outstanding Contracts 1,099",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "816",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Mark to Market of Outstanding Contracts 816",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC China",
+    "attribute": "unhedged forward contracts: cumulative unrealized profit/loss",
+    "old": {
+      "value": "(15,491)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Cumulative Unrealized Profit/Loss (15,491)",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "(15,800)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Cumulative Unrealized Profit/Loss (15,800)",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Nanjing",
+    "attribute": "unhedged forward contracts: outstanding notional amount",
+    "old": {
+      "value": "6,348,090",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Outstanding Notional Amount 6,348,090",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "1,981,280",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Outstanding Notional Amount 1,981,280",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Nanjing",
+    "attribute": "unhedged forward contracts: mark-to-market of outstanding contracts",
+    "old": {
+      "value": "3,899",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Mark to Market of Outstanding Contracts 3,899",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "2,044",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Mark to Market of Outstanding Contracts 2,044",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Nanjing",
+    "attribute": "unhedged forward contracts: cumulative unrealized profit/loss",
+    "old": {
+      "value": "(19,978)",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Cumulative Unrealized Profit/Loss (19,978)",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "(21,914)",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Cumulative Unrealized Profit/Loss (21,914)",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Global",
+    "attribute": "hedged futures: outstanding notional amount",
+    "old": {
+      "value": "787,436",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Outstanding Notional Amount 787,436",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "1,148,435",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Outstanding Notional Amount 1,148,435",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  },
+  {
+    "entity": "TSMC Global",
+    "attribute": "hedged futures: mark-to-market of outstanding contracts",
+    "old": {
+      "value": "19,384",
+      "item_id": "5a093fbb919c5edd82ce68d40874c1f62d254a85825e7fa1b667fa43a9624fd5",
+      "date": "2026-10-08",
+      "quote": "Mark to Market of Outstanding Contracts 19,384",
+      "event_date": "2026-09-30"
+    },
+    "new": {
+      "value": "3,589",
+      "item_id": "259893e236f204c37b31de27898dc299bd46c8c542790aba6475add502c9cd2a",
+      "date": "2026-11-10",
+      "quote": "Mark to Market of Outstanding Contracts 3,589",
+      "event_date": "2026-10-31"
+    },
+    "note": "September month-end disclosure is superseded by October month-end disclosure; amounts are NT$ thousands unless stated otherwise.",
+    "verified": true,
+    "review_method": "direct reading of both local originals by implementation agent"
+  }
+]

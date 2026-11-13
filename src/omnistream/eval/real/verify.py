@@ -344,6 +344,10 @@ def assess_requirements(rows, sources, entity_result, integrity):
 
 
 def verify(name: str, *, root: Path = Path("."), entity_fn=None, near_fn=None) -> dict:
+    if name == "real-v2":
+        from omnistream.eval.real.verify_v2 import verify_v2
+
+        return verify_v2(name, root=root, near_fn=near_fn)
     folder, manifest_path, docs = corpus_paths(name, root)
     rows = read_jsonl(manifest_path)
     config = json.loads((PACKAGE / f"sources-{name}.json").read_text(encoding="utf8"))

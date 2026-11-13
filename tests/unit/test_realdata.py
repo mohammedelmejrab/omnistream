@@ -183,7 +183,7 @@ async def test_collect_idempotent_replay_and_no_production_db(tmp_path, monkeypa
     assert first["manifest_count"] == second["manifest_count"] == 1
     assert manifest.read_bytes() == original
     assert not (tmp_path / "data/omnistream.db").exists()
-    replay = load_snapshot(tmp_path / "data", "real-test")
+    replay = load_snapshot(tmp_path / "data/real/real-test", "real-test")
     assert len(replay) == 1 and replay[0].bubble_ids_override == ["news"]
     row = json.loads(original)
     assert row["id"] == content_hash(replay[0].url, body.strip())

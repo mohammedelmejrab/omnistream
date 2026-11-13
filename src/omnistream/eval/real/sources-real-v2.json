@@ -1,0 +1,1562 @@
+{
+  "version": 2,
+  "theme": "AI, cloud computing and semiconductor industry, with financial and regulatory context",
+  "since": "2026-09-18",
+  "until": "2026-11-13",
+  "seed": 20261113,
+  "sources": [
+    {
+      "id": "nvidia-blog",
+      "type": "rss",
+      "url": "https://blogs.nvidia.com/feed/",
+      "bubble_hint": "news",
+      "credibility": 0.85,
+      "licence_note": "NVIDIA terms 3.1: local personal noncommercial use. RSS is purposely made available; no article scraping under 3.2(f).",
+      "terms_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 5,
+      "max_items": 120,
+      "delay_seconds": 3
+    },
+    {
+      "id": "microsoft-blog",
+      "type": "rss",
+      "url": "https://blogs.microsoft.com/feed/",
+      "bubble_hint": "news",
+      "credibility": 0.85,
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://www.microsoft.com/en-us/legal/terms-of-use",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 3,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "delay_override": 10
+    },
+    {
+      "id": "samsung-news",
+      "type": "rss",
+      "url": "https://news.samsung.com/global/feed",
+      "bubble_hint": "news",
+      "credibility": 0.85,
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://news.samsung.com/global/terms",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 6,
+      "max_items": 26,
+      "delay_seconds": 3
+    },
+    {
+      "id": "sec-releases",
+      "type": "rss",
+      "url": "https://www.sec.gov/news/pressreleases.rss",
+      "bubble_hint": "finance",
+      "credibility": 0.85,
+      "licence_note": "SEC staff authored press-release text is US government public-domain material (17 USC 105); third-party material excepted. Public-domain article-body retrieval opted in, robots checked per request.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_domain",
+      "quote_excerpts": true,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 22,
+      "delay_seconds": 3,
+      "article_selectors": [
+        ".field--name-body"
+      ]
+    },
+    {
+      "id": "microsoft-research",
+      "type": "rss",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "bubble_hint": "research",
+      "credibility": 0.85,
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://www.microsoft.com/en-us/legal/terms-of-use",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 6,
+      "max_items": 25,
+      "delay_seconds": 3,
+      "event_date_overrides": {
+        "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/": "2025-07-24"
+      }
+    },
+    {
+      "id": "bair-research",
+      "type": "rss",
+      "url": "https://bair.berkeley.edu/blog/feed.xml",
+      "bubble_hint": "research",
+      "credibility": 0.85,
+      "licence_note": "BAIR blog copyright; full text intentionally syndicated in RSS; per-post licence not assumed; private local research only.",
+      "terms_url": "https://bair.berkeley.edu/blog/",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 25,
+      "delay_seconds": 3
+    },
+    {
+      "id": "federal-reserve",
+      "type": "rss",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "bubble_hint": "finance",
+      "credibility": 0.95,
+      "licence_note": "US federal agency authored text is generally public domain (17 USC 105); third-party material excepted. Fetch public press release body only with robots permission.",
+      "terms_url": "https://www.federalreserve.gov/disclaimer.htm",
+      "full_text_policy": "fetch_public_domain",
+      "quote_excerpts": true,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 5,
+      "delay_seconds": 3,
+      "article_selectors": [
+        "#article",
+        ".col-xs-12.col-sm-8.col-md-8"
+      ]
+    },
+    {
+      "id": "ftc-news",
+      "type": "rss",
+      "url": "https://www.ftc.gov/feeds/press-release.xml",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "US government authored prose: public domain; third-party material excluded.",
+      "terms_url": "https://www.ftc.gov/site-information/website-policy",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.ftc.gov"
+      ],
+      "article_selectors": [
+        ".field--name-body",
+        ".field-name-body",
+        "article"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "doj-news",
+      "type": "rss",
+      "url": "https://www.justice.gov/news/rss?field_component=376&require_all=0&search_api_language=en&show_public_archived=0&type%5B0%5D=press_release",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "DOJ prose public domain unless otherwise indicated; attribution retained.",
+      "terms_url": "https://www.justice.gov/legalpolicies",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.justice.gov"
+      ],
+      "article_selectors": [
+        "article .field_body"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "nist-news",
+      "type": "rss",
+      "url": "https://www.nist.gov/news-events/news/rss.xml",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "NIST authored works generally public domain; exclude standard reference data and third-party works.",
+      "terms_url": "https://www.nist.gov/open/copyright-fair-use-and-licensing-statements-srd-data-software-and-technical-series-publications",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.nist.gov"
+      ],
+      "article_selectors": [
+        ".nist-page__content"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "eff-deeplinks",
+      "type": "rss",
+      "url": "https://www.eff.org/rss/updates.xml",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "EFF original prose CC BY 4.0 International unless otherwise stated; third-party material excepted.",
+      "terms_url": "https://www.eff.org/copyright",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.eff.org"
+      ],
+      "article_selectors": [
+        ".field--name-body",
+        ".field-name-body"
+      ],
+      "theme_filter_before_fetch": true,
+      "prefer_complete_feed": true
+    },
+    {
+      "id": "mozilla-blog",
+      "type": "rss",
+      "url": "https://blog.mozilla.org/en/feed/",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "Mozilla prose CC BY-SA 3.0 or later unless otherwise indicated.",
+      "terms_url": "https://www.mozilla.org/en-US/foundation/licensing/website-content/",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "blog.mozilla.org"
+      ],
+      "article_selectors": [
+        ".entry-content"
+      ],
+      "theme_filter_before_fetch": true,
+      "prefer_complete_feed": true
+    },
+    {
+      "id": "uk-cma",
+      "type": "rss",
+      "url": "https://www.gov.uk/government/organisations/competition-and-markets-authority.atom",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "Crown copyright Open Government Licence v3; attribution retained.",
+      "terms_url": "https://www.gov.uk/help/reuse-govuk-content",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.gov.uk"
+      ],
+      "article_selectors": [
+        ".gem-c-govspeak"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "ec-press",
+      "type": "rss",
+      "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "European Commission reuse with attribution, CC BY 4.0 unless otherwise indicated.",
+      "terms_url": "https://commission.europa.eu/legal-notice_en",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "ec.europa.eu"
+      ],
+      "article_selectors": [
+        ".ecl-editor",
+        "article"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "commerce-news",
+      "type": "rss",
+      "url": "https://www.commerce.gov/feeds/news",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "US federal prose; terms endpoint returned 403; excluded pending verifiable access.",
+      "terms_url": "https://www.commerce.gov/about/policies",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": false,
+      "disabled_reason": "US federal prose; terms endpoint returned 403; excluded pending verifiable access.",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.commerce.gov"
+      ],
+      "article_selectors": [],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "wikinews",
+      "type": "rss",
+      "url": "https://en.wikinews.org/w/index.php?title=Special:NewsFeed&feed=rss&categories=Science_and_technology&notcategories=Disputed&namespace=0&count=100",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "Wikinews text after 2024-12-16 is CC BY 4.0; attribution to Wikinews retained. Third-party fair-use content excluded.",
+      "terms_url": "https://en.wikinews.org/wiki/Wikinews:Copyright",
+      "full_text_policy": "fetch_open_licence",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "en.wikinews.org"
+      ],
+      "article_selectors": [
+        ".mw-parser-output"
+      ],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "conversation-tech",
+      "type": "rss",
+      "url": "https://theconversation.com/global/technology/articles.atom",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "Republishing policy could not be retrieved; no full article access enabled.",
+      "terms_url": "https://theconversation.com/republishing-guidelines",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": false,
+      "disabled_reason": "Republishing policy could not be retrieved; no full article access enabled.",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "theconversation.com"
+      ],
+      "article_selectors": [],
+      "theme_filter_before_fetch": true
+    },
+    {
+      "id": "edgar-nvidia",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001045810.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-microsoft",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-alphabet",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001652044.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-amazon",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001018724.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-meta",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001326801.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-apple",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000320193.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-amd",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000002488.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-intel",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000050863.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-ibm",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000051143.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-broadcom",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001730168.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-qualcomm",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000804328.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-micron",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000723125.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-tsmc",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001046179.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 12,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true,
+      "event_date_overrides": {
+        "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000660/tsm-monthend6kx20260924.htm": "2026-08-31"
+      }
+    },
+    {
+      "id": "edgar-asml",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000937966.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-oracle",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001341439.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-salesforce",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001108524.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-cisco",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0000858877.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-dell",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001571996.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-hpe",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001645590.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-arm",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001973239.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-marvell",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001835632.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-supermicro",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001375365.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-palantir",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001321655.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "edgar-snowflake",
+      "type": "api",
+      "url": "https://data.sec.gov/submissions/CIK0001640147.json",
+      "bubble_hint": "finance",
+      "credibility": 0.98,
+      "licence_note": "Public EDGAR filing access under SEC fair-access policy; issuer text may be copyrighted; private research only. Generic declared research User-Agent, one request per 3 seconds per host.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "quote_excerpts": false,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 6,
+      "delay_seconds": 3,
+      "adapter": "sec_submissions",
+      "article_hosts": [
+        "www.sec.gov"
+      ],
+      "article_selectors": [
+        "body"
+      ],
+      "api_mapping": {
+        "items": "$.items",
+        "title": "$.title",
+        "body": "$.body",
+        "date": "$.date",
+        "url": "$.url"
+      },
+      "access": "documented_api",
+      "fetch_exhibits": true
+    },
+    {
+      "id": "arxiv-general",
+      "type": "rss",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.CL+OR+cat%3Acs.AR+OR+cat%3Acs.DC%29+AND+submittedDate%3A%5B202609180000+TO+202611132359%5D&start=0&max_results=180&sortBy=submittedDate&sortOrder=descending",
+      "bubble_hint": "research",
+      "credibility": 0.85,
+      "licence_note": "arXiv descriptive metadata CC0 1.0; abstracts retained as abstracts, not full papers. API research use allowed, minimum 3 seconds.",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "full_text_policy": "abstract",
+      "quote_excerpts": true,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 55,
+      "delay_seconds": 3,
+      "source_group": "arxiv",
+      "query": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.CL+OR+cat%3Acs.AR+OR+cat%3Acs.DC%29+AND+submittedDate%3A%5B202609180000+TO+202611132359%5D&start=0&max_results=180&sortBy=submittedDate&sortOrder=descending",
+      "query_group": "general",
+      "access": "documented_api"
+    },
+    {
+      "id": "arxiv-entities",
+      "type": "rss",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.CL+OR+cat%3Acs.AR+OR+cat%3Acs.DC%29+AND+submittedDate%3A%5B202609180000+TO+202611132359%5D+AND+%28all%3A%22NVIDIA%22+OR+all%3A%22Microsoft%22+OR+all%3A%22Google%22+OR+all%3A%22Meta%22+OR+all%3A%22Amazon%22+OR+all%3A%22Intel%22+OR+all%3A%22AMD%22+OR+all%3A%22IBM%22+OR+all%3A%22Samsung%22+OR+all%3A%22OpenAI%22+OR+all%3A%22Anthropic%22+OR+all%3A%22TSMC%22+OR+all%3A%22Blackwell%22+OR+all%3A%22GPT%22+OR+all%3A%22Claude%22+OR+all%3A%22Gemini%22+OR+all%3A%22Llama%22%29&start=0&max_results=180&sortBy=submittedDate&sortOrder=descending",
+      "bubble_hint": "research",
+      "credibility": 0.85,
+      "licence_note": "arXiv descriptive metadata CC0 1.0; abstracts retained as abstracts, not full papers. API research use allowed, minimum 3 seconds.",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "full_text_policy": "abstract",
+      "quote_excerpts": true,
+      "enabled": true,
+      "disabled_reason": "",
+      "pages": 1,
+      "max_items": 65,
+      "delay_seconds": 3,
+      "source_group": "arxiv",
+      "query": "https://export.arxiv.org/api/query?search_query=%28cat%3Acs.AI+OR+cat%3Acs.LG+OR+cat%3Acs.CL+OR+cat%3Acs.AR+OR+cat%3Acs.DC%29+AND+submittedDate%3A%5B202609180000+TO+202611132359%5D+AND+%28all%3A%22NVIDIA%22+OR+all%3A%22Microsoft%22+OR+all%3A%22Google%22+OR+all%3A%22Meta%22+OR+all%3A%22Amazon%22+OR+all%3A%22Intel%22+OR+all%3A%22AMD%22+OR+all%3A%22IBM%22+OR+all%3A%22Samsung%22+OR+all%3A%22OpenAI%22+OR+all%3A%22Anthropic%22+OR+all%3A%22TSMC%22+OR+all%3A%22Blackwell%22+OR+all%3A%22GPT%22+OR+all%3A%22Claude%22+OR+all%3A%22Gemini%22+OR+all%3A%22Llama%22%29&start=0&max_results=180&sortBy=submittedDate&sortOrder=descending",
+      "query_group": "entities",
+      "access": "documented_api"
+    },
+    {
+      "id": "bis-news",
+      "type": "rss",
+      "url": "https://www.bis.gov/news-updates",
+      "bubble_hint": "news",
+      "credibility": 0.9,
+      "licence_note": "US federal authored prose generally public domain; actual site policy could not be retrieved; excluded.",
+      "terms_url": "https://www.bis.gov/website-policies",
+      "full_text_policy": "feed_only",
+      "quote_excerpts": false,
+      "enabled": false,
+      "disabled_reason": "Policy endpoint inaccessible; no permission-qualified feed established.",
+      "pages": 1,
+      "max_items": 26,
+      "delay_seconds": 3,
+      "theme_keywords": [
+        "artificial intelligence",
+        "AI",
+        "machine learning",
+        "semiconductor",
+        "chips",
+        "cloud",
+        "NVIDIA",
+        "Microsoft",
+        "Google",
+        "Alphabet",
+        "Meta",
+        "Amazon",
+        "Intel",
+        "AMD",
+        "IBM",
+        "Samsung",
+        "OpenAI",
+        "Anthropic",
+        "TSMC",
+        "accelerator",
+        "technology",
+        "digital",
+        "export control",
+        "Roku",
+        "Qualcomm",
+        "Broadcom",
+        "Micron",
+        "Apple",
+        "Salesforce"
+      ],
+      "article_hosts": [
+        "www.commerce.gov"
+      ],
+      "article_selectors": [],
+      "theme_filter_before_fetch": true
+    }
+  ],
+  "acceptance": {
+    "min_items": 300,
+    "max_items": 400,
+    "min_bubble_share": 0.25,
+    "max_source_share": 0.25,
+    "min_complete_share": 0.7
+  },
+  "theme_rule": "Case-insensitive word-boundary ANY keyword match on title plus clean body; government and open news sources carry explicit theme_keywords. Company/research/issuer sources are theme-scoped at selection. arXiv queries grouped as one source for concentration. Sources with theme_filter_before_fetch require the same keyword match in syndicated title/body before article retrieval. For prefer_complete_feed, full-text-likely RSS bodies are kept without a redundant page request. For NVIDIA, discovery covers the whole window before seeded selection of up to 26 items, prioritising weekly cloud release updates and the already-confirmed leadership anchor; no source is duplicated to evade balance limits. The one-year MSRA Singapore post identified by the supervisor in v1 is excluded by an explicit reviewed body-date override; this is a conservative corpus exclusion, not an inferred publication date. Direct review also excludes TSMC?s September 24 filing reporting only August month-end events (event-date override August 31), while September/October monthly revenue disclosures remain eligible.",
+  "bubble_targets": {
+    "news": 120,
+    "finance": 120,
+    "research": 120
+  },
+  "source_selection_limits": {
+    "nvidia-blog": 26
+  },
+  "priority_title_keywords": {
+    "nvidia-blog": [
+      "GeForce NOW",
+      "Kazakhstan"
+    ]
+  },
+  "quality_exclusions": {
+    "https://arxiv.org/abs/2611.13578v1": "Direct review: title says POEM/block-sparse prefilling while supplied abstract describes TERM/jailbreak defence. Excluded rather than guessing repaired metadata."
+  }
+}
