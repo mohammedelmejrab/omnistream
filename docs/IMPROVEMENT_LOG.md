@@ -661,3 +661,35 @@ different results in 6.
   data/diagnostics/own-fixes-round3/. Reproducible measurement/report modules:
   src/omnistream/eval/diagnostics/own_fixes_round3*.py; round-two sources frozen
   from 646beb6 in own_fixes_round2_sources.json.
+
+### Change 13: own-mode fixes, round 3 (commit `aa720fc`) - reviewed clean
+
+Report: `docs/diagnostics/own-fixes-round3.md`. Independent review: clean.
+
+- Entity names found through the full-text index (stopwords removed, Lucene-escaped,
+  passed as a query parameter); the fallback ranks by whole-word matches.
+- Fact versions collapse only on true duplicates or explicit replacement, never across
+  bubbles; any time interval, including an open one, keeps every version.
+- Generic endpoints of the top fact matches may seed at half weight; seed scores are
+  normalised per source; index problems fall back to exact search.
+
+Offline retrieval on eval-v2, own mode, all 60 questions (exact search path):
+
+| Routing | Version | Recall | Recall@10 | All evidence | MRR | Hits@1 | Freshness MRR |
+|---|---|---|---|---|---|---|---|
+| As routed | Baseline | 0.678 | 0.661 | 31/60 | 0.444 | 0.267 | 0.858 |
+| As routed | Round 1 | 0.794 | 0.786 | 41/60 | 0.424 | 0.183 | 0.475 |
+| As routed | Round 2 | 0.800 | 0.772 | 39/60 | 0.553 | 0.350 | 1.000 |
+| As routed | Round 3 | 0.839 | 0.831 | 42/60 | 0.571 | 0.350 | 1.000 |
+| All bubbles | Baseline | 0.689 | 0.689 | 32/60 | 0.464 | 0.317 | 0.858 |
+| All bubbles | Round 3 | 0.800 | 0.800 | 37/60 | 0.564 | 0.350 | 1.000 |
+
+- 13 questions per routing policy get worse on at least one measure; each is listed with its
+  reason in the report. Replays: 0 of 44 differ. Search time: facts 13 ms, names 6 ms.
+- Correction from the review: with the stricter rule, version grouping almost never fires,
+  so the freshness recovery comes from the other round-2/3 changes (weighted, capped seeds
+  and rounding), not from grouping.
+- Known limits: exact-word name search no longer matches misspelled names; the entity
+  vector index path usually falls through to the exact scan (latency only).
+- These are retrieval numbers on synthetic eval-v2 with a graph built by the old model.
+  Answer-level and real-data measurement still to come.
