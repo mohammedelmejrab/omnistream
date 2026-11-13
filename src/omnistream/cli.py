@@ -157,6 +157,11 @@ def main(argv: list[str] | None = None) -> int:
     sv.add_argument("--host", default="127.0.0.1")
     sv.add_argument("--port", type=int, default=8000)
     sub.add_parser("replay").add_argument("name")
+    real = sub.add_parser("realdata")
+    real.add_argument("real_action", choices=["collect", "verify"])
+    real.add_argument("--name", required=True)
+    real.add_argument("--since")
+    real.add_argument("--until")
     ev = sub.add_parser("eval")
     ev.add_argument(
         "eval_action",
@@ -171,6 +176,19 @@ def main(argv: list[str] | None = None) -> int:
     ev.add_argument("--resume", nargs="?", const="latest")
     ev.add_argument("--limit", type=int)
     args = parser.parse_args(argv)
+    if args.command == "realdata":
+        # Corpus tooling never reads .env or connects to production stores.
+        if args.real_action == "collect":
+            from omnistream.eval.real.collect import collect
+
+            result = asyncio.run(collect(args.name, args.since, args.until))
+            print(f"recorded {result['manifest_count']} items")
+        else:
+            from omnistream.eval.real.verify import verify
+
+            result = verify(args.name)
+            print(f"{result['verdict']}: {result['accepted']} items")
+        return 0
     settings = Settings()
     if args.command == "eval":
         if args.eval_action:

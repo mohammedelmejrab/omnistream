@@ -1,0 +1,4376 @@
+{
+  "name": "real-v1",
+  "verified_at": "2026-11-13T00:22:25.591322+00:00",
+  "window": [
+    "2026-09-18",
+    "2026-11-13"
+  ],
+  "accepted": 228,
+  "per_bubble": {
+    "research": 58,
+    "finance": 60,
+    "news": 110
+  },
+  "words": {
+    "min": 41,
+    "median": 437.0,
+    "p90": 1426.8000000000002,
+    "max": 7668
+  },
+  "full_text_likely_share": 0.6359649122807017,
+  "outcomes": {
+    "accepted": 228,
+    "too_short": 1046,
+    "source_cap": 71,
+    "before_window": 72,
+    "duplicate": 61,
+    "non_english": 2,
+    "boilerplate": 1
+  },
+  "sources": [
+    {
+      "source": "nvidia-blog",
+      "bubble": "news",
+      "accepted": 28,
+      "rejected": {
+        "too_short": 1,
+        "source_cap": 7
+      },
+      "word_lengths": {
+        "min": 134,
+        "median": 776.0,
+        "p90": 1343.6000000000001,
+        "max": 2174
+      },
+      "content_kinds": {
+        "full_text_likely": 22,
+        "summary_or_truncated": 2,
+        "summary_or_unknown": 4
+      },
+      "full_text_likely_share": 0.7857142857142857,
+      "cleanliness_flags": {},
+      "verdict": "keep with caveat",
+      "licence_note": "NVIDIA terms 3.1: local personal noncommercial use. RSS is purposely made available; no article scraping under 3.2(f).",
+      "terms_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "microsoft-blog",
+      "bubble": "news",
+      "accepted": 11,
+      "rejected": {
+        "before_window": 19
+      },
+      "word_lengths": {
+        "min": 351,
+        "median": 1145.0,
+        "p90": 2136.0,
+        "max": 2824
+      },
+      "content_kinds": {
+        "summary_or_truncated": 1,
+        "full_text_likely": 9,
+        "summary_or_unknown": 1
+      },
+      "full_text_likely_share": 0.8181818181818182,
+      "cleanliness_flags": {},
+      "verdict": "keep with caveat",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://www.microsoft.com/en-us/legal/terms-of-use",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "google-blog",
+      "bubble": "news",
+      "accepted": 0,
+      "rejected": {
+        "too_short": 20
+      },
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://policies.google.com/terms",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "samsung-news",
+      "bubble": "news",
+      "accepted": 28,
+      "rejected": {
+        "source_cap": 10,
+        "before_window": 12
+      },
+      "word_lengths": {
+        "min": 89,
+        "median": 799.0,
+        "p90": 1263.0000000000002,
+        "max": 1600
+      },
+      "content_kinds": {
+        "full_text_likely": 22,
+        "summary_or_unknown": 6
+      },
+      "full_text_likely_share": 0.7857142857142857,
+      "cleanliness_flags": {},
+      "verdict": "keep with caveat",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://news.samsung.com/global/terms",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "aws-blog",
+      "bubble": "news",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://aws.amazon.com/terms/",
+      "full_text_policy": "feed_only",
+      "errors": [
+        "AWS Site Terms prohibit data mining and robots; excluded conservatively, including further feed collection."
+      ]
+    },
+    {
+      "source": "nvidia-releases",
+      "bubble": "news",
+      "accepted": 16,
+      "rejected": {
+        "too_short": 3,
+        "duplicate": 61
+      },
+      "word_lengths": {
+        "min": 41,
+        "median": 56.0,
+        "p90": 56.0,
+        "max": 56
+      },
+      "content_kinds": {
+        "summary_or_unknown": 16
+      },
+      "full_text_likely_share": 0.0,
+      "cleanliness_flags": {},
+      "verdict": "keep with caveat",
+      "licence_note": "NVIDIA personal noncommercial local use; syndicated feed only, no article scraping. Product announcements may be weak Finance labels. Live feed includes product news/blog syndication; assigned News rather than assuming Finance.",
+      "terms_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "ibm-releases",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {
+        "too_short": 5
+      },
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "IBM copyright; syndicated feed only, no article fetching; local informational use, not redistribution.",
+      "terms_url": "https://www.ibm.com/legal",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "amd-releases",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {
+        "too_short": 10
+      },
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Terms endpoint returned site shell, permission for article scraping unverified. Feed only; empty bodies expected.",
+      "terms_url": "https://www.amd.com/en/legal/terms-and-conditions.html",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "cnbc-tech",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Copyright NBCUniversal. Feed summaries only; no article scraping, no redistribution. Technology market coverage; provisional Finance hint.",
+      "terms_url": "https://www.cnbc.com/nbcuniversal-terms-of-service/",
+      "full_text_policy": "feed_only",
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114"
+      ]
+    },
+    {
+      "source": "yahoo-finance",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Yahoo/syndicator copyright. RSS summaries only, private research; article fetching prohibited/permission unverified.",
+      "terms_url": "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html",
+      "full_text_policy": "feed_only",
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NVDA,MSFT,GOOG,AMD,INTC,IBM&region=US&lang=en-US"
+      ]
+    },
+    {
+      "source": "sec-releases",
+      "bubble": "finance",
+      "accepted": 23,
+      "rejected": {
+        "before_window": 2
+      },
+      "word_lengths": {
+        "min": 192,
+        "median": 335.0,
+        "p90": 549.6,
+        "max": 5501
+      },
+      "content_kinds": {
+        "full_text_fetched": 23
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "SEC staff authored press-release text is US government public-domain material (17 USC 105); third-party material excepted. Public-domain article-body retrieval opted in, robots checked per request.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_domain",
+      "errors": []
+    },
+    {
+      "source": "intel-releases",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://www.intel.com/content/www/us/en/legal/terms-of-use.html",
+      "full_text_policy": "feed_only",
+      "errors": [
+        "Intel terms 4.1.14 and 4.1.16 prohibit automated scraping and text mining without written permission."
+      ]
+    },
+    {
+      "source": "microsoft-research",
+      "bubble": "research",
+      "accepted": 18,
+      "rejected": {
+        "before_window": 12
+      },
+      "word_lengths": {
+        "min": 985,
+        "median": 1510.0,
+        "p90": 6485.5,
+        "max": 7668
+      },
+      "content_kinds": {
+        "full_text_likely": 18
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {
+        "javascript": 2,
+        "table_or_code": 2
+      },
+      "verdict": "keep with caveat",
+      "licence_note": "Publisher copyright; intentionally syndicated RSS only; private local research; redistribution not authorised.",
+      "terms_url": "https://www.microsoft.com/en-us/legal/terms-of-use",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "google-research",
+      "bubble": "research",
+      "accepted": 0,
+      "rejected": {
+        "too_short": 100
+      },
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Google copyright; RSS category descriptions are not abstracts. No full-page fetching without explicit content licence.",
+      "terms_url": "https://policies.google.com/terms",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "bair-research",
+      "bubble": "research",
+      "accepted": 1,
+      "rejected": {
+        "before_window": 9
+      },
+      "word_lengths": {
+        "min": 2666,
+        "median": 2666.0,
+        "p90": 2666.0,
+        "max": 2666
+      },
+      "content_kinds": {
+        "full_text_likely": 1
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "BAIR blog copyright; full text intentionally syndicated in RSS; per-post licence not assumed; private local research only.",
+      "terms_url": "https://bair.berkeley.edu/blog/",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "huggingface-blog",
+      "bubble": "research",
+      "accepted": 0,
+      "rejected": {
+        "too_short": 906
+      },
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Hugging Face proprietary blog, no blanket open licence assumed. Feed only; empty descriptions expected.",
+      "terms_url": "https://huggingface.co/terms-of-service",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "arxiv-ai",
+      "bubble": "research",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "arXiv descriptive metadata CC0 1.0; abstracts retained as abstracts, not full papers. API research use allowed, minimum 3 seconds.",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "full_text_policy": "abstract",
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://export.arxiv.org/api/query?search_query=cat:cs.AI+AND+submittedDate:[202609180000+TO+202611132359]&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending"
+      ]
+    },
+    {
+      "source": "federal-reserve",
+      "bubble": "finance",
+      "accepted": 20,
+      "rejected": {},
+      "word_lengths": {
+        "min": 63,
+        "median": 121.0,
+        "p90": 363.20000000000033,
+        "max": 585
+      },
+      "content_kinds": {
+        "full_text_fetched": 20
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {
+        "javascript": 1
+      },
+      "verdict": "keep with caveat",
+      "licence_note": "US federal agency authored text is generally public domain (17 USC 105); third-party material excepted. Fetch public press release body only with robots permission.",
+      "terms_url": "https://www.federalreserve.gov/disclaimer.htm",
+      "full_text_policy": "fetch_public_domain",
+      "errors": []
+    },
+    {
+      "source": "treasury",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "US federal agency authored text is generally public domain (17 USC 105); third-party material excepted. Fetch public press release body only with robots permission.",
+      "terms_url": "https://home.treasury.gov/utility/privacy-policy",
+      "full_text_policy": "fetch_public_domain",
+      "errors": [
+        "HTTPStatusError: Client error '404 Not Found' for url 'https://home.treasury.gov/news/press-releases/rss'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+      ]
+    },
+    {
+      "source": "fdic",
+      "bubble": "finance",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "Official FDIC feed linked by fdic.gov/news/press-releases, hosted by GovDelivery; US federal agency text generally public domain; no article scraping.",
+      "terms_url": "https://www.fdic.gov/policies",
+      "full_text_policy": "feed_only",
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://public.govdelivery.com/topics/USFDIC_26/feed.rss"
+      ]
+    },
+    {
+      "source": "nasa-news",
+      "bubble": "news",
+      "accepted": 27,
+      "rejected": {
+        "non_english": 2,
+        "boilerplate": 1
+      },
+      "word_lengths": {
+        "min": 72,
+        "median": 637.0,
+        "p90": 1285.4,
+        "max": 1396
+      },
+      "content_kinds": {
+        "full_text_likely": 13,
+        "summary_or_unknown": 9,
+        "summary_or_truncated": 5
+      },
+      "full_text_likely_share": 0.48148148148148145,
+      "cleanliness_flags": {
+        "repeated_intro": 1
+      },
+      "verdict": "keep with caveat",
+      "licence_note": "US NASA authored text generally public domain; third-party credits excepted. Full-text public RSS, attribution via item URL; no external articles fetched.",
+      "terms_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "nvidia-technical",
+      "bubble": "research",
+      "accepted": 28,
+      "rejected": {
+        "source_cap": 54,
+        "before_window": 18
+      },
+      "word_lengths": {
+        "min": 73,
+        "median": 81.0,
+        "p90": 91.80000000000001,
+        "max": 98
+      },
+      "content_kinds": {
+        "summary_or_unknown": 28
+      },
+      "full_text_likely_share": 0.0,
+      "cleanliness_flags": {
+        "repeated_intro": 28
+      },
+      "verdict": "keep with caveat",
+      "licence_note": "NVIDIA technical blog syndicated feed; local personal noncommercial use. Tutorials and engineering posts, not necessarily peer-reviewed research. No article scraping.",
+      "terms_url": "https://www.nvidia.com/en-us/about-nvidia/legal-info/",
+      "full_text_policy": "feed_only",
+      "errors": []
+    },
+    {
+      "source": "europe-pmc",
+      "bubble": "research",
+      "accepted": 11,
+      "rejected": {
+        "too_short": 1
+      },
+      "word_lengths": {
+        "min": 146,
+        "median": 246.0,
+        "p90": 343.0,
+        "max": 353
+      },
+      "content_kinds": {
+        "abstract": 11
+      },
+      "full_text_likely_share": 0.0,
+      "cleanliness_flags": {},
+      "verdict": "keep with caveat",
+      "licence_note": "Europe PMC API for open-access scholarly metadata and abstracts; article-specific licences vary. Abstracts retained, no full-paper licence assumed; no excerpts republished.",
+      "terms_url": "https://europepmc.org/RestfulWebService",
+      "full_text_policy": "abstract",
+      "errors": []
+    },
+    {
+      "source": "arxiv-rss",
+      "bubble": "research",
+      "accepted": 0,
+      "rejected": {},
+      "word_lengths": {
+        "min": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "content_kinds": {},
+      "full_text_likely_share": 0,
+      "cleanliness_flags": {},
+      "verdict": "drop",
+      "licence_note": "arXiv descriptive metadata CC0; abstracts only, no full papers. Live RSS may have an empty daily issue.",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "full_text_policy": "abstract",
+      "errors": []
+    },
+    {
+      "source": "edgar-nvidia",
+      "bubble": "finance",
+      "accepted": 1,
+      "rejected": {},
+      "word_lengths": {
+        "min": 602,
+        "median": 602.0,
+        "p90": 602.0,
+        "max": 602
+      },
+      "content_kinds": {
+        "full_text_fetched": 1
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-microsoft",
+      "bubble": "finance",
+      "accepted": 4,
+      "rejected": {},
+      "word_lengths": {
+        "min": 441,
+        "median": 713.0,
+        "p90": 1214.1000000000001,
+        "max": 1341
+      },
+      "content_kinds": {
+        "full_text_fetched": 4
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-amd",
+      "bubble": "finance",
+      "accepted": 2,
+      "rejected": {},
+      "word_lengths": {
+        "min": 577,
+        "median": 624.5,
+        "p90": 662.5,
+        "max": 672
+      },
+      "content_kinds": {
+        "full_text_fetched": 2
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-intel",
+      "bubble": "finance",
+      "accepted": 1,
+      "rejected": {},
+      "word_lengths": {
+        "min": 631,
+        "median": 631.0,
+        "p90": 631.0,
+        "max": 631
+      },
+      "content_kinds": {
+        "full_text_fetched": 1
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-alphabet",
+      "bubble": "finance",
+      "accepted": 2,
+      "rejected": {},
+      "word_lengths": {
+        "min": 860,
+        "median": 958.0,
+        "p90": 1036.4,
+        "max": 1056
+      },
+      "content_kinds": {
+        "full_text_fetched": 2
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-ibm",
+      "bubble": "finance",
+      "accepted": 2,
+      "rejected": {},
+      "word_lengths": {
+        "min": 869,
+        "median": 888.5,
+        "p90": 904.1,
+        "max": 908
+      },
+      "content_kinds": {
+        "full_text_fetched": 2
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-amazon",
+      "bubble": "finance",
+      "accepted": 1,
+      "rejected": {},
+      "word_lengths": {
+        "min": 639,
+        "median": 639.0,
+        "p90": 639.0,
+        "max": 639
+      },
+      "content_kinds": {
+        "full_text_fetched": 1
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    },
+    {
+      "source": "edgar-meta",
+      "bubble": "finance",
+      "accepted": 4,
+      "rejected": {},
+      "word_lengths": {
+        "min": 1060,
+        "median": 2338.0,
+        "p90": 3527.8,
+        "max": 3649
+      },
+      "content_kinds": {
+        "full_text_fetched": 4
+      },
+      "full_text_likely_share": 1.0,
+      "cleanliness_flags": {},
+      "verdict": "keep",
+      "licence_note": "Public SEC EDGAR issuer disclosure; issuer-authored 8-K material-event filings (not assumed public domain). Local noncommercial research only, no article excerpts or text redistributed. Official submissions API and archive; each host robots checked.",
+      "terms_url": "https://www.sec.gov/about/developer-resources",
+      "full_text_policy": "fetch_public_filing",
+      "errors": []
+    }
+  ],
+  "exact_duplicate_clusters": [],
+  "same_canonical_url_clusters": [
+    [
+      "0633c8f2cf909ec8236dfb15eae101679fe36ff41b633858103e77fd235cbd08",
+      "39aba012b9ceef4d4c79382cb71073638ca9f080c8c95e08d29c8383fd4a495f"
+    ],
+    [
+      "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+      "8794595cdff1a6498448172bdbfdf2d0e32a46514de116219120eafee2d1fde0"
+    ],
+    [
+      "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+      "bcd20a36c9fddff8491c9ef75ff66ba5950754c4590dc9081ed48c816d5aa52f"
+    ],
+    [
+      "4e764a474ce29b03ba6069b889106e09e8e809d1368e5b7031f25654df1bb1b2",
+      "9805e6c8215a296ba5d820952b8254bb6154dd82f22b12a1f1d9990a6648f0cc"
+    ],
+    [
+      "53a2559144dcd9a151fdc9a77940ac16178941568afe7d37cb975e0a5f507a02",
+      "99602e36a5dec8b2f9d9576f72580a0752e9e9c47ff69f83906a392e3322f54e"
+    ],
+    [
+      "5141612f9aee29b3de808d7adcc41e00872ed9a2ba415aa6eae780e1f5608297",
+      "3df72bb8736aeb2a1c340ff5fe6054ac7cc883513a94525f44806194e00fcc99"
+    ],
+    [
+      "a6358b68ffdc9224713c5faa69a10d9dbc15f1bd6d60bd3a5070e19620c6ba56",
+      "2a752489e2268c9a471105bd3d54cece6eb1258ef1e381ad97537d6fec32c123"
+    ],
+    [
+      "4fb838d7856a77b1653e1c86e8311a5bcb1258b2b9e0f73b33bee1b66eb24afa",
+      "105b1f5b333d71b5929f116eabc1ae9dfd0a932ac5f0e81d2cfc73becac77523"
+    ],
+    [
+      "06f8118b96a2da061188910e968126a33892f2e06f9997bba3a1f6f9422d1b34",
+      "c88766c52f7261051f3ccebef694e29444279aa81fe2e5df1b9010a6032b2855"
+    ],
+    [
+      "b1d8a75091c36324034616760696e66a4c5d08a6b5d0816ac7712a24c2f85929",
+      "732055f627b5ccabf21b586f69224523902dc0cbefc0d2aa484475df613224c0"
+    ],
+    [
+      "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354",
+      "a8b3d8fdf04c3509358736b7a830e7203a2fad43b65f872ea5cfdbf04b6a9987"
+    ],
+    [
+      "162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec",
+      "0b1fe99bd287a7fc8c631e23e2b9de31aca1c50f7f58435bcfbc6246d2f314d8"
+    ],
+    [
+      "f7dd32495ac08e59ff39920ae726ab2127bf0ece662fd53bb41b544016fb7bee",
+      "35d19e2cd5165599f82d44b0feaa5f9d67ad6cfcd3bb703a650e86907b862613"
+    ],
+    [
+      "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+      "16c4ba94c2f5e52217422ac8342401cc26f4b3f87d520a75441175b0ef09dc57"
+    ]
+  ],
+  "near_duplicates": {
+    "model": "BAAI/bge-small-en-v1.5:384",
+    "method": "1200-character nonoverlapping chunks, mean pooled and L2 normalized; cosine >=0.92; candidate similarity, not proof of syndication",
+    "threshold": 0.92,
+    "pairs": [
+      {
+        "left": "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+        "right": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+        "cosine": 0.97224,
+        "cross_source": false
+      },
+      {
+        "left": "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+        "right": "990ed04afc2b8ad720dce0f885446b72a8d4de0f7e8b911df3135f0aa0368f42",
+        "cosine": 0.93011,
+        "cross_source": true
+      },
+      {
+        "left": "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+        "right": "67bdc5dcd90736eb18370c83235a45a52002ef63834ea2b82be1a514c83dd97f",
+        "cosine": 0.92659,
+        "cross_source": true
+      },
+      {
+        "left": "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+        "right": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "cosine": 0.92135,
+        "cross_source": true
+      },
+      {
+        "left": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+        "right": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "cosine": 0.92127,
+        "cross_source": true
+      },
+      {
+        "left": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+        "right": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+        "cosine": 0.92729,
+        "cross_source": true
+      },
+      {
+        "left": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+        "right": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+        "cosine": 0.92585,
+        "cross_source": true
+      },
+      {
+        "left": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+        "right": "335b9598350ee40d9d7f06dcb2aa9f453b621b07de1a050a3a27554cc2db270f",
+        "cosine": 0.93446,
+        "cross_source": false
+      },
+      {
+        "left": "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed",
+        "right": "67bdc5dcd90736eb18370c83235a45a52002ef63834ea2b82be1a514c83dd97f",
+        "cosine": 0.96922,
+        "cross_source": false
+      },
+      {
+        "left": "a253c6c56f596c5081863c3220df9c178e675b2435eb5f2830606f3cc9b12898",
+        "right": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+        "cosine": 0.93966,
+        "cross_source": false
+      },
+      {
+        "left": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+        "right": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "cosine": 0.95257,
+        "cross_source": false
+      },
+      {
+        "left": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "right": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+        "cosine": 0.96814,
+        "cross_source": false
+      },
+      {
+        "left": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "right": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+        "cosine": 0.94118,
+        "cross_source": true
+      },
+      {
+        "left": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+        "right": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+        "cosine": 0.93761,
+        "cross_source": true
+      },
+      {
+        "left": "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+        "right": "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+        "cosine": 0.95347,
+        "cross_source": false
+      },
+      {
+        "left": "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+        "right": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+        "cosine": 0.97512,
+        "cross_source": false
+      },
+      {
+        "left": "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+        "right": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+        "cosine": 0.93727,
+        "cross_source": false
+      },
+      {
+        "left": "9bd2920f6fee3d473ccd11c07759516a3a077914d7dc1c63b2155419afc1f120",
+        "right": "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+        "cosine": 0.93736,
+        "cross_source": false
+      },
+      {
+        "left": "d36750f823f521a1de4eedaf13521fd16f7e4de9a07ad00188b542ce7d8e89fd",
+        "right": "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+        "cosine": 0.92489,
+        "cross_source": false
+      },
+      {
+        "left": "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd",
+        "right": "2fcd97dc2a0ea255e970a0e3101b09dee2b40f3a91d838586bf7836fee1cb63d",
+        "cosine": 0.93198,
+        "cross_source": false
+      },
+      {
+        "left": "2bd73c14019c05a6e0248016eab6d751f1a0820e6b94310d8ba8f05e8deabdce",
+        "right": "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+        "cosine": 0.92682,
+        "cross_source": false
+      },
+      {
+        "left": "0c02d7097be582777533f5c206f10929fa96870bde69b6fcb7692ced8024fede",
+        "right": "ed7f595424a7bbde58d429cdc0d7878eff9046626ca3c714079efbee04edaf6e",
+        "cosine": 0.93478,
+        "cross_source": false
+      },
+      {
+        "left": "0c02d7097be582777533f5c206f10929fa96870bde69b6fcb7692ced8024fede",
+        "right": "397b3c48eff9903a029a3f901a2cc4a79b456b7f9e05fbbde5c8b54de468015e",
+        "cosine": 0.93827,
+        "cross_source": false
+      },
+      {
+        "left": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+        "right": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+        "cosine": 0.9287,
+        "cross_source": false
+      },
+      {
+        "left": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+        "right": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+        "cosine": 0.92171,
+        "cross_source": false
+      },
+      {
+        "left": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+        "right": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+        "cosine": 0.92409,
+        "cross_source": false
+      },
+      {
+        "left": "a6358b68ffdc9224713c5faa69a10d9dbc15f1bd6d60bd3a5070e19620c6ba56",
+        "right": "2a752489e2268c9a471105bd3d54cece6eb1258ef1e381ad97537d6fec32c123",
+        "cosine": 0.94516,
+        "cross_source": true
+      },
+      {
+        "left": "4fb838d7856a77b1653e1c86e8311a5bcb1258b2b9e0f73b33bee1b66eb24afa",
+        "right": "105b1f5b333d71b5929f116eabc1ae9dfd0a932ac5f0e81d2cfc73becac77523",
+        "cosine": 0.94776,
+        "cross_source": true
+      },
+      {
+        "left": "105b1f5b333d71b5929f116eabc1ae9dfd0a932ac5f0e81d2cfc73becac77523",
+        "right": "a8b3d8fdf04c3509358736b7a830e7203a2fad43b65f872ea5cfdbf04b6a9987",
+        "cosine": 0.93618,
+        "cross_source": false
+      },
+      {
+        "left": "12ae8b94e1822892ff777ff0de2be42434e27c924771db9b83c239d381682dfa",
+        "right": "dede5f92a20dfb35372a60140d898fd049bfc988729b34e718386ab74328a502",
+        "cosine": 0.92692,
+        "cross_source": false
+      }
+    ],
+    "clusters": [
+      [
+        "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+        "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+        "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943"
+      ],
+      [
+        "0c02d7097be582777533f5c206f10929fa96870bde69b6fcb7692ced8024fede",
+        "397b3c48eff9903a029a3f901a2cc4a79b456b7f9e05fbbde5c8b54de468015e",
+        "ed7f595424a7bbde58d429cdc0d7878eff9046626ca3c714079efbee04edaf6e"
+      ],
+      [
+        "105b1f5b333d71b5929f116eabc1ae9dfd0a932ac5f0e81d2cfc73becac77523",
+        "4fb838d7856a77b1653e1c86e8311a5bcb1258b2b9e0f73b33bee1b66eb24afa",
+        "a8b3d8fdf04c3509358736b7a830e7203a2fad43b65f872ea5cfdbf04b6a9987"
+      ],
+      [
+        "12ae8b94e1822892ff777ff0de2be42434e27c924771db9b83c239d381682dfa",
+        "dede5f92a20dfb35372a60140d898fd049bfc988729b34e718386ab74328a502"
+      ],
+      [
+        "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+        "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed",
+        "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+        "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+        "67bdc5dcd90736eb18370c83235a45a52002ef63834ea2b82be1a514c83dd97f",
+        "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+        "990ed04afc2b8ad720dce0f885446b72a8d4de0f7e8b911df3135f0aa0368f42",
+        "a253c6c56f596c5081863c3220df9c178e675b2435eb5f2830606f3cc9b12898",
+        "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+        "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476"
+      ],
+      [
+        "2a752489e2268c9a471105bd3d54cece6eb1258ef1e381ad97537d6fec32c123",
+        "a6358b68ffdc9224713c5faa69a10d9dbc15f1bd6d60bd3a5070e19620c6ba56"
+      ],
+      [
+        "2bd73c14019c05a6e0248016eab6d751f1a0820e6b94310d8ba8f05e8deabdce",
+        "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459"
+      ],
+      [
+        "2fcd97dc2a0ea255e970a0e3101b09dee2b40f3a91d838586bf7836fee1cb63d",
+        "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd"
+      ],
+      [
+        "335b9598350ee40d9d7f06dcb2aa9f453b621b07de1a050a3a27554cc2db270f",
+        "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97"
+      ],
+      [
+        "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+        "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+        "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+        "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c"
+      ],
+      [
+        "9bd2920f6fee3d473ccd11c07759516a3a077914d7dc1c63b2155419afc1f120",
+        "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+        "d36750f823f521a1de4eedaf13521fd16f7e4de9a07ad00188b542ce7d8e89fd"
+      ]
+    ]
+  },
+  "date_histogram": {
+    "2026-09-18": 1,
+    "2026-09-19": 0,
+    "2026-09-20": 0,
+    "2026-09-21": 1,
+    "2026-09-22": 1,
+    "2026-09-23": 4,
+    "2026-09-24": 1,
+    "2026-09-25": 2,
+    "2026-09-26": 0,
+    "2026-09-27": 0,
+    "2026-09-28": 3,
+    "2026-09-29": 4,
+    "2026-09-30": 6,
+    "2026-10-01": 5,
+    "2026-10-02": 3,
+    "2026-10-03": 0,
+    "2026-10-04": 0,
+    "2026-10-05": 2,
+    "2026-10-06": 5,
+    "2026-10-07": 2,
+    "2026-10-08": 3,
+    "2026-10-09": 4,
+    "2026-10-10": 0,
+    "2026-10-11": 0,
+    "2026-10-12": 2,
+    "2026-10-13": 2,
+    "2026-10-14": 3,
+    "2026-10-15": 4,
+    "2026-10-16": 1,
+    "2026-10-17": 0,
+    "2026-10-18": 0,
+    "2026-10-19": 3,
+    "2026-10-20": 6,
+    "2026-10-21": 7,
+    "2026-10-22": 9,
+    "2026-10-23": 3,
+    "2026-10-24": 0,
+    "2026-10-25": 0,
+    "2026-10-26": 3,
+    "2026-10-27": 8,
+    "2026-10-28": 7,
+    "2026-10-29": 9,
+    "2026-10-30": 7,
+    "2026-10-31": 0,
+    "2026-11-01": 0,
+    "2026-11-02": 6,
+    "2026-11-03": 7,
+    "2026-11-04": 6,
+    "2026-11-05": 17,
+    "2026-11-06": 4,
+    "2026-11-07": 0,
+    "2026-11-08": 0,
+    "2026-11-09": 25,
+    "2026-11-10": 18,
+    "2026-11-11": 4,
+    "2026-11-12": 20,
+    "2026-11-13": 0
+  },
+  "date_invalid_accepted": [],
+  "date_invalid_accepted_share": 0.0,
+  "older_date_in_body_prefix": [
+    {
+      "id": "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+      "source": "microsoft-research",
+      "body_date_hint": "2025-07-24",
+      "feed_date": "2026-09-28T21:00:00+00:00"
+    },
+    {
+      "id": "13a278f596a2839e1a1c8a47468cb1d49c2581983eaa3588461210c11a219669",
+      "source": "nasa-news",
+      "body_date_hint": "2026-03-15",
+      "feed_date": "2026-11-10T18:06:33+00:00"
+    },
+    {
+      "id": "94e39edd4688b49103e5a374e024b7739e915f9ba22acae3ffa1701faab24da3",
+      "source": "nasa-news",
+      "body_date_hint": "2024-03-04",
+      "feed_date": "2026-11-12T05:01:00+00:00"
+    }
+  ],
+  "timezone": "RSS feedparser parsed offsets into UTC; API naive ISO dates default UTC (C1). UTC inclusive calendar date window; no inferred publication dates.",
+  "languages": {
+    "en": 228
+  },
+  "cleanliness": {
+    "javascript": 3,
+    "table_or_code": 2,
+    "repeated_intro": 29
+  },
+  "flagged_items": {
+    "42a44478d34b1b53e2e64ca7e8f0a8e7e2ff44fbced4b2291c9b1467d5667ed6": [
+      "javascript"
+    ],
+    "ebc9a0451f76baca43774ffeca595435590daacf30ecff9948c36e6b926524c4": [
+      "javascript"
+    ],
+    "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd": [
+      "table_or_code"
+    ],
+    "0d1c4470ce9cca719de1a68021d2ba56150a5d2fb61a4245bebc4dee8e68448a": [
+      "javascript",
+      "table_or_code"
+    ],
+    "e03ab0c29c21e0e9a847cbe10e0d40b2c6a1eee8e3b1aaad73a0d6ee65deaa48": [
+      "repeated_intro"
+    ],
+    "c5bcd031534a9763adb08fc3baccfe47f0b3f0f7aa092499a8b42a5fe9a7bf94": [
+      "repeated_intro"
+    ],
+    "d15f689a68338edb4970c83bcf5cfa905afa46ffe365cbf7b128ce174714b985": [
+      "repeated_intro"
+    ],
+    "b039d425d49da18779f2eeae9b5125e26a340afa18f8ddcb0bf2f14da2221524": [
+      "repeated_intro"
+    ],
+    "916bf92994f98662b057c8ff01b2f1d32df99816d924d5fbc40c7e19e48b5139": [
+      "repeated_intro"
+    ],
+    "35a828c473ebbdb1f7fa35ef9a7cb8eca1747ed41b08e1a496ed48b7de6ef1c6": [
+      "repeated_intro"
+    ],
+    "d83dca14d98458f498600dba15d4004785d48cc47dbdb6b0ac5aed3b4850a562": [
+      "repeated_intro"
+    ],
+    "19567ad15a1e3b7eb89c9d5c9d5b5495a26f2540a67c3d4a2b1ffa9b814a3d74": [
+      "repeated_intro"
+    ],
+    "bcdfe081fb9fbe75b60067bd641165c5846b29cd78f28108b7a120ec84f1b77a": [
+      "repeated_intro"
+    ],
+    "a6d488e3a8e93f8b23d5826bc1d41dd7de673b43e9d2b1d1d2c4b81951473b7c": [
+      "repeated_intro"
+    ],
+    "5463b34e691cafe751effe8c8a57473d676d3b7e1eff82227a05604af4d7f394": [
+      "repeated_intro"
+    ],
+    "2ffe9df2063e2be383620fc52127dc32953abea0aca6b1a90fcae7ed0c84bf1b": [
+      "repeated_intro"
+    ],
+    "3dd3a3e8f89d7946c192b3d6b9b1ba29dff88f5f6dc546f3bb2c106f30da824b": [
+      "repeated_intro"
+    ],
+    "747e0b3b099642adab19626b2d71ce9869f5f45be8e973575de1dbdc5cd00348": [
+      "repeated_intro"
+    ],
+    "a38c4413d6248494f6614bb24541f4531a393af35f594bed53d72ff094f4b73e": [
+      "repeated_intro"
+    ],
+    "dc515f0d3d1074ef7b852205c913c39b2e9d25980d88fffe21b4aadcd072d4de": [
+      "repeated_intro"
+    ],
+    "e8a46b1df16b548b8933396b1e6eed7053816c91002cb40837842aced20be8d4": [
+      "repeated_intro"
+    ],
+    "5eec8a12f25e37f0616cead962ad326082afc7e61a48306da1d87cee60bff631": [
+      "repeated_intro"
+    ],
+    "74bd6b8d94cea71c8b73d0ebe9cc8dd09752a0c154390c21792562bb774492f0": [
+      "repeated_intro"
+    ],
+    "52c5e106c7176f823c7dabf52d584136176d1ff7f864fcc75a9c43191513c3d5": [
+      "repeated_intro"
+    ],
+    "11093ad017eb824739049a7de7d76c30e4256f7f12248103768d537959e0abb1": [
+      "repeated_intro"
+    ],
+    "ad6773dcdf0a4cb9909b59b57fc1f857b30a7980483cf46caa42ebc84979314b": [
+      "repeated_intro"
+    ],
+    "9dfe7447f2e15f3cdc8107935ade12e84bbb91d7f2e117bed3c751ae2fa0c938": [
+      "repeated_intro"
+    ],
+    "fd786cfe1cbea7cba8c6b7a7fdc5686e821bf301ce4a75b12d7f1ee6cc3c3941": [
+      "repeated_intro"
+    ],
+    "c061b6f998284f911d8081c496cac76e5b9b0343830649614d5f348b10bdeeb9": [
+      "repeated_intro"
+    ],
+    "dc4af69a7462cd7986285e0cfffb5c58994584ccdd4f279bc7dbb3a2c11d5486": [
+      "repeated_intro"
+    ],
+    "f381a9f7d2287f4bfbfcedce29edd600710bd621c33140780eff6ad489f5beeb": [
+      "repeated_intro"
+    ],
+    "ebd3346c73f7cc2714fbfc5de958096918e9acf11851033bee47ecafedfac4aa": [
+      "repeated_intro"
+    ],
+    "16f1f35703eaf21ac341ccd10e45d689d29b95490751b4742c267f38ae9d92c2": [
+      "repeated_intro"
+    ]
+  },
+  "entity_extraction": {
+    "method": "spaCy en_core_web_sm 3.8.0; ORG/PERSON/PRODUCT; fixed common-organisation EntityRuler, technical-acronym exclusion list, deterministic alias map; no LLM. QA only, not used by the RAG system.",
+    "spacy_version": "3.8.18",
+    "model_version": "3.8.0",
+    "limitations": "Small general-domain NER misses products and acronyms, may label generic phrases as organisations. Counts are estimates, not graph entity-linking ground truth."
+  },
+  "entity_audit": {
+    "status": "completed manual spot-check",
+    "reviewer": "implementation agent, direct reading; no LLM extraction/judge calls",
+    "seed": 20261113,
+    "manifest_sha256": "edf451ad7b0d322f0474685433365fa0050a315564b0315a003e2a2c922dda03",
+    "items_reviewed": 30,
+    "scope": "First 1100 clean-text characters of each fixed-seed sample item; complete text for shorter summaries. Full-document predicted names restricted to whole-name presence in that prefix. Titles excluded from entity scoring. Validity requires an organisation, person or product referent in context; partial names and aliases counted as valid when unambiguous, duplicates not penalised. Missed-name examples are qualitative, not exhaustive; no recall claim. This is not a held-out NER benchmark.",
+    "predicted_names_reviewed": 138,
+    "valid_prediction_names": 90,
+    "invalid_prediction_names": 48,
+    "name_precision": 0.6521739130434783,
+    "items_with_missed_name_examples": 15,
+    "conclusion": "Organisation anchors are useful, but product recall, alias fragmentation and cover-page/legal boilerplate errors prevent treating raw overlap counts as gold entity-linking labels. Manually validate entities used for future questions.",
+    "items": [
+      {
+        "id": "2ffe9df2063e2be383620fc52127dc32953abea0aca6b1a90fcae7ed0c84bf1b",
+        "index": 1,
+        "source": "nvidia-technical",
+        "predicted_names": [
+          "nvidia"
+        ],
+        "valid_predictions": [
+          "nvidia"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "NVIDIA Cosmos",
+          "Cosmos Framework"
+        ],
+        "quality_note": "Truncated technical summary repeats its opening; Cosmos product names are missed by NER."
+      },
+      {
+        "id": "0633c8f2cf909ec8236dfb15eae101679fe36ff41b633858103e77fd235cbd08",
+        "index": 2,
+        "source": "nvidia-blog",
+        "predicted_names": [],
+        "valid_predictions": [],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Readable long announcement; opening is general semiconductor commentary rather than item-specific facts."
+      },
+      {
+        "id": "f381a9f7d2287f4bfbfcedce29edd600710bd621c33140780eff6ad489f5beeb",
+        "index": 3,
+        "source": "nvidia-technical",
+        "predicted_names": [
+          "ai factory",
+          "kubernetes",
+          "kubernetes recipes",
+          "nvidia",
+          "nvke",
+          "nvkr"
+        ],
+        "valid_predictions": [
+          "kubernetes",
+          "kubernetes recipes",
+          "nvidia",
+          "nvke",
+          "nvkr"
+        ],
+        "invalid_predictions": [
+          "ai factory"
+        ],
+        "missed_name_examples": [
+          "NVIDIA Kubernetes Engine"
+        ],
+        "quality_note": "Truncated engineering summary with concrete product releases; opening repeats and one generic phrase is mislabelled."
+      },
+      {
+        "id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+        "index": 4,
+        "source": "sec-releases",
+        "predicted_names": [
+          "sec",
+          "securities and exchange commission",
+          "zoe financial",
+          "zoe financial inc",
+          "zoe wealth"
+        ],
+        "valid_predictions": [
+          "sec",
+          "securities and exchange commission",
+          "zoe financial",
+          "zoe financial inc",
+          "zoe wealth"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Clean full SEC enforcement release; clear named firm and dated allegation, not a finding of guilt."
+      },
+      {
+        "id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+        "index": 5,
+        "source": "samsung-news",
+        "predicted_names": [
+          "gemini",
+          "gentle monster",
+          "google",
+          "parker",
+          "samsung",
+          "samsung electronics",
+          "warby parker",
+          "wearer"
+        ],
+        "valid_predictions": [
+          "gemini",
+          "gentle monster",
+          "google",
+          "samsung",
+          "samsung electronics",
+          "warby parker"
+        ],
+        "invalid_predictions": [
+          "parker",
+          "wearer"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Readable full product launch with collaborators and a future release date; promotional claims require attribution."
+      },
+      {
+        "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+        "index": 6,
+        "source": "samsung-news",
+        "predicted_names": [
+          "fda",
+          "galaxy ring",
+          "galaxy watch",
+          "korea s ministry of food and drug safety",
+          "ring",
+          "samsung",
+          "samsung electronics",
+          "sleep apnea"
+        ],
+        "valid_predictions": [
+          "fda",
+          "galaxy ring",
+          "galaxy watch",
+          "korea s ministry of food and drug safety",
+          "ring",
+          "samsung",
+          "samsung electronics",
+          "sleep apnea"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "Samsung Health Monitor"
+        ],
+        "quality_note": "Full dated regulatory/product update; distinguishes prior approval from newly available device support."
+      },
+      {
+        "id": "019981258bfa52aaabd6711835e956bb65bd37abb4dd57ef975046ef73fd72c7",
+        "index": 7,
+        "source": "nvidia-blog",
+        "predicted_names": [
+          "minerva",
+          "nvidia"
+        ],
+        "valid_predictions": [
+          "minerva",
+          "nvidia"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Readable full platform launch; promotional inline announcement link remains in prose."
+      },
+      {
+        "id": "8fe3144b550811b7117d30f0081461ef1d61d6181aca59964bb07d8d73fe07a8",
+        "index": 8,
+        "source": "europe-pmc",
+        "predicted_names": [
+          "background objectives prioritizing",
+          "esi",
+          "hajj",
+          "umrah"
+        ],
+        "valid_predictions": [],
+        "invalid_predictions": [
+          "background objectives prioritizing",
+          "esi",
+          "hajj",
+          "umrah"
+        ],
+        "missed_name_examples": [
+          "GPT-5.2"
+        ],
+        "quality_note": "Clean published research abstract about synthetic clinical dialogues; the corpus item itself is a real paper, not generated benchmark data."
+      },
+      {
+        "id": "0d5790a56622735cd9d35817d19f2f1f611d6b001f5a8a8f460482962aa4baa5",
+        "index": 9,
+        "source": "nvidia-blog",
+        "predicted_names": [
+          "3.5 transcribe",
+          "asus",
+          "dlss",
+          "hp",
+          "lenovo",
+          "microsoft",
+          "msi",
+          "nemotron",
+          "nvidia",
+          "phantom blade zero",
+          "rtx spark",
+          "s-game"
+        ],
+        "valid_predictions": [
+          "asus",
+          "dlss",
+          "hp",
+          "lenovo",
+          "microsoft",
+          "msi",
+          "nemotron",
+          "nvidia",
+          "phantom blade zero",
+          "rtx spark",
+          "s-game"
+        ],
+        "invalid_predictions": [
+          "3.5 transcribe"
+        ],
+        "missed_name_examples": [
+          "Dell",
+          "NVIDIA Blackwell RTX",
+          "NVIDIA Grace",
+          "NVIDIA CUDA",
+          "NVIDIA App",
+          "LFM3",
+          "Windows",
+          "Minecraft",
+          "RTX Remix1.6"
+        ],
+        "quality_note": "Substantial hardware/software update with recurring manufacturers and model versions; product NER recall is weak."
+      },
+      {
+        "id": "9dfe7447f2e15f3cdc8107935ade12e84bbb91d7f2e117bed3c751ae2fa0c938",
+        "index": 10,
+        "source": "nvidia-technical",
+        "predicted_names": [
+          "black forest labs"
+        ],
+        "valid_predictions": [
+          "black forest labs"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "FLUX 3 Image Klein"
+        ],
+        "quality_note": "Truncated model-engineering summary repeats its introduction and misses the model name in NER."
+      },
+      {
+        "id": "fd786cfe1cbea7cba8c6b7a7fdc5686e821bf301ce4a75b12d7f1ee6cc3c3941",
+        "index": 11,
+        "source": "nvidia-technical",
+        "predicted_names": [],
+        "valid_predictions": [],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Truncated technical summary; body omits the Holoscan name supplied by the title, limiting item-specific evidence."
+      },
+      {
+        "id": "14e7a4c2cd7c1aa99d7f79718934c568fb452ffe9b4cbd51d3457ed96da27da1",
+        "index": 12,
+        "source": "microsoft-research",
+        "predicted_names": [
+          "magnetar",
+          "microsoft"
+        ],
+        "valid_predictions": [
+          "magnetar",
+          "microsoft"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "Rust",
+          "Go",
+          "C",
+          "Microsoft Research"
+        ],
+        "quality_note": "Full technical research explanation with quantified performance; named language/tool recall is incomplete."
+      },
+      {
+        "id": "0c02d7097be582777533f5c206f10929fa96870bde69b6fcb7692ced8024fede",
+        "index": 13,
+        "source": "nasa-news",
+        "predicted_names": [
+          "curiosity",
+          "curiosity blog",
+          "jpl-caltech",
+          "nasa",
+          "nazca",
+          "planetary mineralogy",
+          "susanne p. schwenzer",
+          "the open university",
+          "utc"
+        ],
+        "valid_predictions": [
+          "curiosity",
+          "jpl-caltech",
+          "nasa",
+          "susanne p. schwenzer",
+          "the open university"
+        ],
+        "invalid_predictions": [
+          "curiosity blog",
+          "nazca",
+          "planetary mineralogy",
+          "utc"
+        ],
+        "missed_name_examples": [
+          "Mastcam",
+          "MSSS"
+        ],
+        "quality_note": "Readable mission update with author and observation date; some navigation/title repetition remains."
+      },
+      {
+        "id": "77e0f3a4dd52b04c24ae81522d0bb0d0468d490f3ef6db56b7843b5829d8fff3",
+        "index": 14,
+        "source": "europe-pmc",
+        "predicted_names": [
+          "mt-dmn",
+          "stable diffusion"
+        ],
+        "valid_predictions": [
+          "stable diffusion"
+        ],
+        "invalid_predictions": [
+          "mt-dmn"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Clean research abstract; concrete Stable Diffusion use, with a neural-network anatomical abbreviation falsely typed as an entity."
+      },
+      {
+        "id": "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+        "index": 15,
+        "source": "microsoft-research",
+        "predicted_names": [
+          "kls",
+          "microsoft"
+        ],
+        "valid_predictions": [
+          "microsoft"
+        ],
+        "invalid_predictions": [
+          "kls"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Readable research claim; KLS is a conjecture, outside requested organisation/person/product types."
+      },
+      {
+        "id": "a38c4413d6248494f6614bb24541f4531a393af35f594bed53d72ff094f4b73e",
+        "index": 16,
+        "source": "nvidia-technical",
+        "predicted_names": [
+          "nccl",
+          "nvidia"
+        ],
+        "valid_predictions": [
+          "nccl",
+          "nvidia"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "NVIDIA Attribution"
+        ],
+        "quality_note": "Truncated diagnostic-tool summary repeats its opening; tool name should be recovered for entity linking."
+      },
+      {
+        "id": "18e81a569cd52be5c5173f3f2373d762793de386c97875fe483ff0e271fab461",
+        "index": 17,
+        "source": "sec-releases",
+        "predicted_names": [
+          "ipo",
+          "n.e",
+          "reg cf",
+          "regulation crowdfunding",
+          "regulation crowdfunding reg cf",
+          "sec",
+          "securities and exchange commission"
+        ],
+        "valid_predictions": [
+          "sec",
+          "securities and exchange commission"
+        ],
+        "invalid_predictions": [
+          "ipo",
+          "n.e",
+          "reg cf",
+          "regulation crowdfunding",
+          "regulation crowdfunding reg cf"
+        ],
+        "missed_name_examples": [
+          "Small Business Capital Formation Advisory Committee"
+        ],
+        "quality_note": "Clean full meeting notice; useful event timing, but regulatory terms and address fragments produce false entity labels."
+      },
+      {
+        "id": "add6a228ed4d9e57f37595604003495291f8664d37120579e610b2b688a984f7",
+        "index": 18,
+        "source": "nvidia-blog",
+        "predicted_names": [
+          "earth2studio",
+          "earthmover",
+          "eu",
+          "eumetsat",
+          "meteosat",
+          "nvidia",
+          "stormscope"
+        ],
+        "valid_predictions": [
+          "earth2studio",
+          "earthmover",
+          "eumetsat",
+          "meteosat",
+          "nvidia",
+          "stormscope"
+        ],
+        "invalid_predictions": [
+          "eu"
+        ],
+        "missed_name_examples": [
+          "NVIDIA Earth-2",
+          "StormScope EU"
+        ],
+        "quality_note": "Full weather-model announcement with dated model additions; promotional inline link and product variants need careful parsing."
+      },
+      {
+        "id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+        "index": 19,
+        "source": "samsung-news",
+        "predicted_names": [
+          "business",
+          "company",
+          "krw",
+          "memory business",
+          "qoq",
+          "samsung",
+          "samsung electronics",
+          "the ds division",
+          "the memory business"
+        ],
+        "valid_predictions": [
+          "memory business",
+          "samsung",
+          "samsung electronics",
+          "the ds division",
+          "the memory business"
+        ],
+        "invalid_predictions": [
+          "business",
+          "company",
+          "krw",
+          "qoq"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Full earnings release is a Finance item within a News-hinted source; bubble label needs review and figures are issuer-reported."
+      },
+      {
+        "id": "08abce7384db4c7bfbd4fff63dc583ce881248036a59f84ae68e26381ea313ad",
+        "index": 20,
+        "source": "europe-pmc",
+        "predicted_names": [
+          "transformer"
+        ],
+        "valid_predictions": [],
+        "invalid_predictions": [
+          "transformer"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Clean research review abstract; broad scope and no named organisation/person/product in inspected prefix."
+      },
+      {
+        "id": "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+        "index": 21,
+        "source": "edgar-microsoft",
+        "predicted_names": [
+          "001-37845",
+          "cfr 240.14a-12",
+          "irs employer identification no",
+          "microsoft",
+          "pre",
+          "pre-commencement",
+          "securities and exchange commission",
+          "the securities exchange act",
+          "the securities exchange act of",
+          "united states",
+          "washington",
+          "written"
+        ],
+        "valid_predictions": [
+          "microsoft",
+          "securities and exchange commission"
+        ],
+        "invalid_predictions": [
+          "001-37845",
+          "cfr 240.14a-12",
+          "irs employer identification no",
+          "pre",
+          "pre-commencement",
+          "the securities exchange act",
+          "the securities exchange act of",
+          "united states",
+          "washington",
+          "written"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Authoritative primary 8-K, but inspected prefix is legal cover-page boilerplate and NER has many false positives."
+      },
+      {
+        "id": "99602e36a5dec8b2f9d9576f72580a0752e9e9c47ff69f83906a392e3322f54e",
+        "index": 22,
+        "source": "nvidia-releases",
+        "predicted_names": [],
+        "valid_predictions": [],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Short truncated summary provides generic agent-computing context while the Vera product is only in the title."
+      },
+      {
+        "id": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+        "index": 23,
+        "source": "edgar-microsoft",
+        "predicted_names": [
+          "001-37845",
+          "irs employer identification no",
+          "microsoft",
+          "securities and exchange commission",
+          "the securities exchange act",
+          "the securities exchange act of",
+          "united states",
+          "washington"
+        ],
+        "valid_predictions": [
+          "microsoft",
+          "securities and exchange commission"
+        ],
+        "invalid_predictions": [
+          "001-37845",
+          "irs employer identification no",
+          "the securities exchange act",
+          "the securities exchange act of",
+          "united states",
+          "washington"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Authoritative primary 8-K; event date is November 4 while filing date is November 5, and cover-page NER is noisy."
+      },
+      {
+        "id": "be50e4a475ad4c9f5ac64f787fd3a18731288726c9cbfcf246612a508fccff4f",
+        "index": 24,
+        "source": "microsoft-research",
+        "predicted_names": [
+          "harnessed agentic rl",
+          "kubernetes",
+          "microsoft",
+          "verified"
+        ],
+        "valid_predictions": [
+          "kubernetes",
+          "microsoft"
+        ],
+        "invalid_predictions": [
+          "harnessed agentic rl",
+          "verified"
+        ],
+        "missed_name_examples": [
+          "Agent Lightning",
+          "Microsoft Research Asia",
+          "Qwen3.5-9B",
+          "SWE-bench Verified"
+        ],
+        "quality_note": "Full research-framework release with explicit version and benchmark change; NER misses several central product/model names."
+      },
+      {
+        "id": "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22",
+        "index": 25,
+        "source": "samsung-news",
+        "predicted_names": [
+          "armin prommersberger",
+          "bowers wilkins",
+          "dave rogers",
+          "harman",
+          "innovation q",
+          "jbl",
+          "jbl and bowers wilkins",
+          "samsung",
+          "samsung electronics",
+          "the lifestyle division"
+        ],
+        "valid_predictions": [
+          "armin prommersberger",
+          "bowers wilkins",
+          "dave rogers",
+          "harman",
+          "jbl",
+          "samsung",
+          "samsung electronics",
+          "the lifestyle division"
+        ],
+        "invalid_predictions": [
+          "innovation q",
+          "jbl and bowers wilkins"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Readable attributed corporate interview with named people and brands; not independent market reporting."
+      },
+      {
+        "id": "dc4af69a7462cd7986285e0cfffb5c58994584ccdd4f279bc7dbb3a2c11d5486",
+        "index": 26,
+        "source": "nvidia-technical",
+        "predicted_names": [
+          "nvidia",
+          "snapshot"
+        ],
+        "valid_predictions": [
+          "nvidia",
+          "snapshot"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "NVIDIA DSX AI Factory Platform"
+        ],
+        "quality_note": "Truncated technical release with repeated introduction; parent platform name is missed by NER."
+      },
+      {
+        "id": "c88766c52f7261051f3ccebef694e29444279aa81fe2e5df1b9010a6032b2855",
+        "index": 27,
+        "source": "nvidia-releases",
+        "predicted_names": [
+          "aim intelligence",
+          "hyundai motor group",
+          "nvidia",
+          "openshell"
+        ],
+        "valid_predictions": [
+          "aim intelligence",
+          "hyundai motor group",
+          "nvidia",
+          "openshell"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [
+          "NVIDIA NemoClaw",
+          "Starfort"
+        ],
+        "quality_note": "Specific but truncated ecosystem announcement; organisations recur naturally and product-name recall is incomplete."
+      },
+      {
+        "id": "58a3aa221819515c7fba9712174aef6560c9e005b36b28c1e4dcc9c9cb31b721",
+        "index": 28,
+        "source": "samsung-news",
+        "predicted_names": [
+          "harman",
+          "jbl",
+          "samsung"
+        ],
+        "valid_predictions": [
+          "harman",
+          "jbl",
+          "samsung"
+        ],
+        "invalid_predictions": [],
+        "missed_name_examples": [],
+        "quality_note": "Brief infographic introduction; substantive evidence may be in excluded image content, so retain only with caveat."
+      },
+      {
+        "id": "9bd2920f6fee3d473ccd11c07759516a3a077914d7dc1c63b2155419afc1f120",
+        "index": 29,
+        "source": "microsoft-blog",
+        "predicted_names": [
+          "copilot",
+          "frontier",
+          "frontier transformation",
+          "microsoft"
+        ],
+        "valid_predictions": [
+          "copilot",
+          "microsoft"
+        ],
+        "invalid_predictions": [
+          "frontier",
+          "frontier transformation"
+        ],
+        "missed_name_examples": [
+          "Microsoft IQ",
+          "Agent 365"
+        ],
+        "quality_note": "Full strategy announcement mixes named products with broad transformation language; not all prose is factual evidence."
+      },
+      {
+        "id": "ca81f2df3addd0a8a16d9363f72769b0a3d4b83e27354cafa63cfb1b1d981c43",
+        "index": 30,
+        "source": "microsoft-blog",
+        "predicted_names": [
+          "digital",
+          "microsoft",
+          "sovereign cloud"
+        ],
+        "valid_predictions": [
+          "microsoft",
+          "sovereign cloud"
+        ],
+        "invalid_predictions": [
+          "digital"
+        ],
+        "missed_name_examples": [],
+        "quality_note": "Readable full sovereignty announcement; generic terms produce false entities and product aliases remain fragmented."
+      }
+    ]
+  },
+  "manual_review_notes": {
+    "confirmed_three_bubble_organisations": [
+      {
+        "entity": "nvidia",
+        "counts": {
+          "news": 40,
+          "finance": 1,
+          "research": 17
+        },
+        "examples": {
+          "news": {
+            "id": "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+            "source": "microsoft-blog",
+            "title": "From AI ambition to business impact",
+            "url": "https://blogs.microsoft.com/blog/2026/11/12/from-ai-ambition-to-business-impact/",
+            "date": "2026-11-12T17:00:03+00:00"
+          },
+          "finance": {
+            "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+            "source": "edgar-nvidia",
+            "title": "NVIDIA CORP: 8-K filed 2026-11-12",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+            "date": "2026-11-12T00:00:00+00:00"
+          },
+          "research": {
+            "id": "6229bab0ec803c2ec070b01994da2d4f42cf1855648ad1a088935e87462321a2",
+            "source": "microsoft-research",
+            "title": "Offloaded inference for real-world physical AI robotics",
+            "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+            "date": "2026-09-23T16:01:36+00:00"
+          }
+        }
+      },
+      {
+        "entity": "microsoft",
+        "counts": {
+          "news": 14,
+          "finance": 4,
+          "research": 18
+        },
+        "examples": {
+          "news": {
+            "id": "dcfca97c5e1931a1a6d8dd21b38437ed1d94b879851dcc75ec5500adf708024a",
+            "source": "microsoft-blog",
+            "title": "Introducing the new Copilot with Home, Code and Autopilot",
+            "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+            "date": "2026-09-25T12:03:50+00:00"
+          },
+          "finance": {
+            "id": "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+            "source": "edgar-microsoft",
+            "title": "MICROSOFT CORP: 8-K filed 2026-10-28",
+            "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+            "date": "2026-10-28T00:00:00+00:00"
+          },
+          "research": {
+            "id": "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+            "source": "microsoft-research",
+            "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+            "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+            "date": "2026-09-21T15:30:19+00:00"
+          }
+        }
+      }
+    ],
+    "rejected_three_bubble_identity": {
+      "name": "huang",
+      "reason": "Surname collision: finance Jen-Hsun Huang/Jensen Huang and Research Qiming Huang are different people; do not treat this as a shared person identity. News refers to Jensen Huang.",
+      "item_ids": [
+        "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+        "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+        "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5"
+      ]
+    },
+    "checked_changed_fact_candidate": {
+      "entity": "NVIDIA",
+      "description": "News describes Jensen Huang as NVIDIA founder and CEO at an October 23 Kazakhstan visit; the November 12 8-K reports acceptance of Jen-Hsun Huang resignation effective November 11 and appointment of Colette M. Kress. This is a real dated leadership-change candidate; event date and filing/publication date are distinct. No evaluation question was written.",
+      "items": [
+        {
+          "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+          "published_at": "2026-11-12T00:00:00+00:00",
+          "title": "NVIDIA CORP: 8-K filed 2026-11-12"
+        },
+        {
+          "id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+          "published_at": "2026-10-23T02:00:13+00:00",
+          "title": "Kazakhstan Expands Compute for Its AI Future"
+        }
+      ]
+    },
+    "source_label_findings": [
+      "Samsung earnings results occur inside the News-hinted Samsung feed; C3/manual bubble labelling is required before source hints are treated as evaluation gold.",
+      "NVIDIA releases feed syndicates many product/blog summaries; it is assigned News, not Finance.",
+      "NVIDIA technical blog contains engineering tutorials and release notes rather than exclusively academic research; retain with caveat.",
+      "NASA news broadens the theme, and some entries have older dates in their body; feed publication recency is not proof of novel facts."
+    ],
+    "provenance_caveat": "Initial reachability probes preceded the complete robots/terms review. Those probe responses are not corpus inputs unless separately fetched by the policy-enforcing collector. The collection client denies blocked sources and never uses the prohibited discovery responses as backfill."
+  },
+  "entity_overlap": {
+    "entities_in_2_or_more_bubbles": 55,
+    "entities_in_exactly_2_bubbles": 52,
+    "entities_in_all_3_bubbles": 3,
+    "cross_bubble_item_pairs": 1237,
+    "top_40": [
+      {
+        "entity": "nvidia",
+        "counts": {
+          "finance": 1,
+          "news": 40,
+          "research": 17
+        }
+      },
+      {
+        "entity": "microsoft",
+        "counts": {
+          "finance": 4,
+          "news": 14,
+          "research": 18
+        }
+      },
+      {
+        "entity": "huang",
+        "counts": {
+          "finance": 1,
+          "research": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "nasa",
+        "counts": {
+          "news": 29,
+          "research": 1
+        }
+      },
+      {
+        "entity": "sec",
+        "counts": {
+          "finance": 24,
+          "research": 1
+        }
+      },
+      {
+        "entity": "company",
+        "counts": {
+          "finance": 8,
+          "news": 1
+        }
+      },
+      {
+        "entity": "copilot",
+        "counts": {
+          "news": 5,
+          "research": 2
+        }
+      },
+      {
+        "entity": "github",
+        "counts": {
+          "news": 4,
+          "research": 3
+        }
+      },
+      {
+        "entity": "kubernetes",
+        "counts": {
+          "research": 5,
+          "news": 2
+        }
+      },
+      {
+        "entity": "notes",
+        "counts": {
+          "finance": 6,
+          "news": 1
+        }
+      },
+      {
+        "entity": "dynamo",
+        "counts": {
+          "news": 5,
+          "research": 1
+        }
+      },
+      {
+        "entity": "meta",
+        "counts": {
+          "finance": 4,
+          "news": 1
+        }
+      },
+      {
+        "entity": "the international space station",
+        "counts": {
+          "research": 1,
+          "news": 4
+        }
+      },
+      {
+        "entity": "youtube",
+        "counts": {
+          "research": 4,
+          "news": 1
+        }
+      },
+      {
+        "entity": "foundry",
+        "counts": {
+          "news": 3,
+          "research": 1
+        }
+      },
+      {
+        "entity": "frontier",
+        "counts": {
+          "news": 3,
+          "research": 1
+        }
+      },
+      {
+        "entity": "hugging face",
+        "counts": {
+          "research": 1,
+          "news": 3
+        }
+      },
+      {
+        "entity": "ibm",
+        "counts": {
+          "finance": 2,
+          "news": 2
+        }
+      },
+      {
+        "entity": "max",
+        "counts": {
+          "research": 1,
+          "news": 3
+        }
+      },
+      {
+        "entity": "siemens",
+        "counts": {
+          "news": 3,
+          "research": 1
+        }
+      },
+      {
+        "entity": "alphabet",
+        "counts": {
+          "finance": 2,
+          "research": 1
+        }
+      },
+      {
+        "entity": "amazon",
+        "counts": {
+          "finance": 1,
+          "news": 2
+        }
+      },
+      {
+        "entity": "black forest labs",
+        "counts": {
+          "news": 2,
+          "research": 1
+        }
+      },
+      {
+        "entity": "linkedin",
+        "counts": {
+          "news": 2,
+          "research": 1
+        }
+      },
+      {
+        "entity": "neo",
+        "counts": {
+          "research": 1,
+          "news": 2
+        }
+      },
+      {
+        "entity": "openai",
+        "counts": {
+          "news": 2,
+          "research": 1
+        }
+      },
+      {
+        "entity": "operations",
+        "counts": {
+          "finance": 1,
+          "news": 2
+        }
+      },
+      {
+        "entity": "super intelligence",
+        "counts": {
+          "news": 1,
+          "finance": 2
+        }
+      },
+      {
+        "entity": "williams",
+        "counts": {
+          "news": 2,
+          "finance": 1
+        }
+      },
+      {
+        "entity": "av",
+        "counts": {
+          "news": 1,
+          "research": 1
+        }
+      },
+      {
+        "entity": "byte",
+        "counts": {
+          "news": 1,
+          "research": 1
+        }
+      },
+      {
+        "entity": "claude",
+        "counts": {
+          "research": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "corl",
+        "counts": {
+          "research": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "dgx",
+        "counts": {
+          "news": 1,
+          "research": 1
+        }
+      },
+      {
+        "entity": "eth zurich",
+        "counts": {
+          "research": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "intel",
+        "counts": {
+          "finance": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "ken goldberg",
+        "counts": {
+          "research": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "kim",
+        "counts": {
+          "finance": 1,
+          "news": 1
+        }
+      },
+      {
+        "entity": "kubernetes recipes",
+        "counts": {
+          "news": 1,
+          "research": 1
+        }
+      },
+      {
+        "entity": "mcp",
+        "counts": {
+          "news": 1,
+          "research": 1
+        }
+      }
+    ]
+  },
+  "changed_fact_candidates": [
+    {
+      "entity": "art store",
+      "items": [
+        {
+          "id": "68bd6afadaea5f865497443d82a21e2ef9bb708dfd3dd0c871e159a41800bee1",
+          "date": "2026-10-06T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-expands-its-collection-with-30-exclusive-works-from-the-british-museum",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a7a734777df5b5c84084ab2b323098e7264141c3b8b30af151f46051f69080a1",
+          "date": "2026-10-20T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-unveils-curated-collection-from-art-basel-paris-2026",
+          "signals": [
+            "announced"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "coding",
+      "items": [
+        {
+          "id": "2bd73c14019c05a6e0248016eab6d751f1a0820e6b94310d8ba8f05e8deabdce",
+          "date": "2026-10-29T19:19:16+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
+          "signals": [
+            "transition"
+          ]
+        },
+        {
+          "id": "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+          "date": "2026-11-12T21:31:57+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+          "signals": [
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "commission",
+      "items": [
+        {
+          "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "date": "2026-10-19T17:19:43+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "adb6bb8bc0896d8c572acbbcb4d34718c0c069ab40f9032e47a03ccd9cba4ec1",
+          "date": "2026-10-23T14:10:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "2b9dc50b9ae6189b7cb0f87344880bfaa7590cb4fbd647a802c8787188138324",
+          "date": "2026-10-30T19:30:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+          "signals": [
+            "announced",
+            "launched",
+            "transition"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "committee",
+      "items": [
+        {
+          "id": "fe38811b39deea59f1869c5b385cf283874876301f22e3cebbcad4daa4662a2e",
+          "date": "2026-10-07T18:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+          "date": "2026-11-12T17:45:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+          "signals": [
+            "announced",
+            "revised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "company",
+      "items": [
+        {
+          "id": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+          "date": "2026-09-28T00:00:00+00:00",
+          "source": "edgar-amd",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "a253c6c56f596c5081863c3220df9c178e675b2435eb5f2830606f3cc9b12898",
+          "date": "2026-10-21T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+          "signals": [
+            "acquired",
+            "released",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+          "date": "2026-10-28T00:00:00+00:00",
+          "source": "edgar-microsoft",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436149/msft-20261028.htm",
+          "signals": [
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+          "signals": [
+            "acquired",
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+          "date": "2026-10-29T10:10:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results",
+          "signals": [
+            "completed",
+            "launched"
+          ]
+        },
+        {
+          "id": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+          "date": "2026-11-04T00:00:00+00:00",
+          "source": "edgar-microsoft",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-microsoft",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526448357/d177209d8k.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "control resonant",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "crimson desert",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "division",
+      "items": [
+        {
+          "id": "adb6bb8bc0896d8c572acbbcb4d34718c0c069ab40f9032e47a03ccd9cba4ec1",
+          "date": "2026-10-23T14:10:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "dlss",
+      "items": [
+        {
+          "id": "0d5790a56622735cd9d35817d19f2f1f611d6b001f5a8a8f460482962aa4baa5",
+          "date": "2026-10-28T15:00:46+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/",
+          "signals": [
+            "released",
+            "version"
+          ]
+        },
+        {
+          "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+          "date": "2026-11-12T14:00:59+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "signals": [
+            "announced",
+            "released",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "eu",
+      "items": [
+        {
+          "id": "ca81f2df3addd0a8a16d9363f72769b0a3d4b83e27354cafa63cfb1b1d981c43",
+          "date": "2026-10-20T08:20:02+00:00",
+          "source": "microsoft-blog",
+          "url": "https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/",
+          "signals": [
+            "guidance",
+            "launched",
+            "released",
+            "transition"
+          ]
+        },
+        {
+          "id": "add6a228ed4d9e57f37595604003495291f8664d37120579e610b2b688a984f7",
+          "date": "2026-10-22T05:00:19+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/",
+          "signals": [
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "federal open market committee",
+      "items": [
+        {
+          "id": "fe38811b39deea59f1869c5b385cf283874876301f22e3cebbcad4daa4662a2e",
+          "date": "2026-10-07T18:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+          "date": "2026-11-12T17:45:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+          "signals": [
+            "announced",
+            "revised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "federal reserve",
+      "items": [
+        {
+          "id": "89baa8982f2572820549ab630502919f9adb6596d25b644a712c3e414b7b9009",
+          "date": "2026-09-25T20:30:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260925a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "fbc44cce140cb443489a97d0780f1d19e827c196e054c46c025f9a1fb6687a5c",
+          "date": "2026-10-02T15:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261002a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0005230adf0ed203bbce71b60c6742d8cfaca10a005fd8e66fc65b4b31961c22",
+          "date": "2026-10-02T20:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261002a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "e6b63a573108ca8ab9103a5ed4b834d37909d806f7d64ab828dfbdc7593a0027",
+          "date": "2026-10-02T20:45:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261002a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "b0fc41789199b83f4eee25ecd09631104bb94b163ec4a0e29ad83d5e386bf439",
+          "date": "2026-10-05T20:30:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "fe38811b39deea59f1869c5b385cf283874876301f22e3cebbcad4daa4662a2e",
+          "date": "2026-10-07T18:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "f906f58e706d65a155de66a2dbc4a16d8f4445d92a8684ae40fc3d5171034b9e",
+          "date": "2026-10-08T20:30:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a32bc08c83478a5bfb4648ebefedb3456b3f9c0ea1f3900e8e054c0032f57e2f",
+          "date": "2026-10-09T14:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261009a.htm",
+          "signals": [
+            "released",
+            "version"
+          ]
+        },
+        {
+          "id": "42a44478d34b1b53e2e64ca7e8f0a8e7e2ff44fbced4b2291c9b1467d5667ed6",
+          "date": "2026-10-13T18:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "fd6c0a320c08ca6f5b4158c7ed75024a5eeb8dc7ff45a02998eae2b2834a044e",
+          "date": "2026-10-16T15:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "7d2e8236117f25bec53cfcd4a3bec81c65765dfd5e24350c31e01c032703511b",
+          "date": "2026-10-29T20:30:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "273cfc5cf237997e74c2e72be94e77ef1ecbaeb53c782c66392e1665dad26c28",
+          "date": "2026-11-05T16:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "f51e164a1d7a7af4a6455211e50ca5c4f2c784bf505e98046ee49262941abf62",
+          "date": "2026-11-09T21:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+          "date": "2026-11-12T16:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+          "date": "2026-11-12T17:45:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+          "signals": [
+            "announced",
+            "revised"
+          ]
+        },
+        {
+          "id": "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486",
+          "date": "2026-11-12T18:30:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+          "signals": [
+            "announced"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "geforce",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+          "date": "2026-10-29T13:00:16+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+          "signals": [
+            "announced",
+            "cut",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+          "date": "2026-11-12T14:00:59+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "signals": [
+            "announced",
+            "released",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "geforce now",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+          "date": "2026-10-29T13:00:16+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+          "signals": [
+            "announced",
+            "cut",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+          "date": "2026-11-12T14:00:59+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "signals": [
+            "announced",
+            "released",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "gfn",
+      "items": [
+        {
+          "id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+          "date": "2026-10-29T13:00:16+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+          "signals": [
+            "announced",
+            "cut",
+            "released"
+          ]
+        },
+        {
+          "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+          "date": "2026-11-12T14:00:59+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "signals": [
+            "announced",
+            "released",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "gfn thursdays",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+          "date": "2026-10-29T13:00:16+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
+          "signals": [
+            "announced",
+            "cut",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+          "date": "2026-11-12T14:00:59+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/",
+          "signals": [
+            "announced",
+            "released",
+            "version"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "hathaway",
+      "items": [
+        {
+          "id": "c16cdb5a2240a60adf52762ca50b2eb8db3c4963573abc77689402a996671940",
+          "date": "2026-11-09T11:00:00+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/centers-and-facilities/johnson/chapea-mission-2-crew-reflects-after-378-days-on-simulated-mars/",
+          "signals": [
+            "completed"
+          ]
+        },
+        {
+          "id": "13a278f596a2839e1a1c8a47468cb1d49c2581983eaa3588461210c11a219669",
+          "date": "2026-11-10T18:06:33+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/news-release/nasa-to-welcome-expedition-74-astronauts-home-at-space-center-houston/",
+          "signals": [
+            "completed",
+            "launched"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "huang",
+      "items": [
+        {
+          "id": "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+          "date": "2026-09-28T21:00:00+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+          "signals": [
+            "announced",
+            "guidance"
+          ]
+        },
+        {
+          "id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "date": "2026-10-23T02:00:13+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-nvidia",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+          "signals": [
+            "appointed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "inc",
+      "items": [
+        {
+          "id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+          "signals": [
+            "acquired",
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "jbl",
+      "items": [
+        {
+          "id": "2cbc3555d01ff5ef0022568e2b139f7b4da70e7d9372a24f475de565600360b2",
+          "date": "2026-10-23T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/inside-jbl-playback-gallery-80-years-of-sound-innovation",
+          "signals": [
+            "announced",
+            "launched"
+          ]
+        },
+        {
+          "id": "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22",
+          "date": "2026-10-26T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/interview-sound-that-connects-80-years-of-audio-and-the-future-of-connected-experiences",
+          "signals": [
+            "launched",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "kls",
+      "items": [
+        {
+          "id": "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+          "date": "2026-10-21T16:00:00+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+          "signals": [
+            "completed",
+            "cut",
+            "guidance",
+            "released",
+            "version"
+          ]
+        },
+        {
+          "id": "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+          "date": "2026-11-12T21:31:57+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+          "signals": [
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "llc",
+      "items": [
+        {
+          "id": "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed",
+          "date": "2026-10-01T00:00:00+00:00",
+          "source": "edgar-ibm",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/ibm-20261001.htm",
+          "signals": [
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "273cfc5cf237997e74c2e72be94e77ef1ecbaeb53c782c66392e1665dad26c28",
+          "date": "2026-11-05T16:00:00+00:00",
+          "source": "federal-reserve",
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "max",
+      "items": [
+        {
+          "id": "e03ab0c29c21e0e9a847cbe10e0d40b2c6a1eee8e3b1aaad73a0d6ee65deaa48",
+          "date": "2026-11-09T16:07:10+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/general/max-power-nasas-inaugural-aerospace-expo-ignites-americas-future/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+          "date": "2026-11-12T21:31:57+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/",
+          "signals": [
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "microsoft",
+      "items": [
+        {
+          "id": "6229bab0ec803c2ec070b01994da2d4f42cf1855648ad1a088935e87462321a2",
+          "date": "2026-09-23T16:01:36+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+          "date": "2026-09-28T21:00:00+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+          "signals": [
+            "announced",
+            "guidance"
+          ]
+        },
+        {
+          "id": "ebc9a0451f76baca43774ffeca595435590daacf30ecff9948c36e6b926524c4",
+          "date": "2026-09-30T16:00:00+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+          "signals": [
+            "guidance"
+          ]
+        },
+        {
+          "id": "ca81f2df3addd0a8a16d9363f72769b0a3d4b83e27354cafa63cfb1b1d981c43",
+          "date": "2026-10-20T08:20:02+00:00",
+          "source": "microsoft-blog",
+          "url": "https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/",
+          "signals": [
+            "guidance",
+            "launched",
+            "released",
+            "transition"
+          ]
+        },
+        {
+          "id": "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+          "date": "2026-10-21T16:00:00+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+          "signals": [
+            "completed",
+            "cut",
+            "guidance",
+            "released",
+            "version"
+          ]
+        },
+        {
+          "id": "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae",
+          "date": "2026-11-10T20:52:56+00:00",
+          "source": "microsoft-research",
+          "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+          "signals": [
+            "guidance"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "nasa",
+      "items": [
+        {
+          "id": "c16cdb5a2240a60adf52762ca50b2eb8db3c4963573abc77689402a996671940",
+          "date": "2026-11-09T11:00:00+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/centers-and-facilities/johnson/chapea-mission-2-crew-reflects-after-378-days-on-simulated-mars/",
+          "signals": [
+            "completed"
+          ]
+        },
+        {
+          "id": "e03ab0c29c21e0e9a847cbe10e0d40b2c6a1eee8e3b1aaad73a0d6ee65deaa48",
+          "date": "2026-11-09T16:07:10+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/general/max-power-nasas-inaugural-aerospace-expo-ignites-americas-future/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "77753f7d596a19c9c8ba44122ae20b9787c9b654d40780ef6bcf6b9b9d83b1e7",
+          "date": "2026-11-09T22:25:52+00:00",
+          "source": "nasa-news",
+          "url": "https://science.nasa.gov/blog/newest-sample-oldest-rock/",
+          "signals": [
+            "acquired",
+            "completed"
+          ]
+        },
+        {
+          "id": "4a13c6189d6673a38ed1b04573b1c6a395e7925368f2c411cf9402afa9ddb319",
+          "date": "2026-11-10T05:00:00+00:00",
+          "source": "nasa-news",
+          "url": "https://science.nasa.gov/earth/earth-observatory/autumn-mornings-bring-valley-fog/",
+          "signals": [
+            "acquired"
+          ]
+        },
+        {
+          "id": "0e76cbbfc31fc4b2cfbd6caee56f9f3470907f5474a704e32e93b442680582da",
+          "date": "2026-11-10T19:22:45+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "397b3c48eff9903a029a3f901a2cc4a79b456b7f9e05fbbde5c8b54de468015e",
+          "date": "2026-11-12T00:41:35+00:00",
+          "source": "nasa-news",
+          "url": "https://science.nasa.gov/blog/curiosity-blog-sols-5063-5069-rocks-and-chips/",
+          "signals": [
+            "acquired"
+          ]
+        },
+        {
+          "id": "6277b3bb10662191b3f9b53fdfdfb0dea86df898fc43c2aed1e7ff8e05c4fb1c",
+          "date": "2026-11-12T13:18:40+00:00",
+          "source": "nasa-news",
+          "url": "https://science.nasa.gov/missions/hubble/nasas-hubble-offers-cosmic-sampler-of-targets-for-roman/",
+          "signals": [
+            "launched"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "nemotron",
+      "items": [
+        {
+          "id": "4ef0141fbcb01eda871defb62cf9e9bc0efcf82ff65d469826e20bd140c10232",
+          "date": "2026-10-22T05:00:23+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/european-retail-open-models-robotics/",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "date": "2026-11-05T16:00:00+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/",
+          "signals": [
+            "released"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "notes",
+      "items": [
+        {
+          "id": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "nvidia",
+      "items": [
+        {
+          "id": "add6a228ed4d9e57f37595604003495291f8664d37120579e610b2b688a984f7",
+          "date": "2026-10-22T05:00:19+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction/",
+          "signals": [
+            "version"
+          ]
+        },
+        {
+          "id": "4ef0141fbcb01eda871defb62cf9e9bc0efcf82ff65d469826e20bd140c10232",
+          "date": "2026-10-22T05:00:23+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/european-retail-open-models-robotics/",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "019981258bfa52aaabd6711835e956bb65bd37abb4dd57ef975046ef73fd72c7",
+          "date": "2026-10-22T15:00:02+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+          "date": "2026-10-23T02:00:13+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0d5790a56622735cd9d35817d19f2f1f611d6b001f5a8a8f460482962aa4baa5",
+          "date": "2026-10-28T15:00:46+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/",
+          "signals": [
+            "released",
+            "version"
+          ]
+        },
+        {
+          "id": "2c5c9457110dc41291f8dc43f41cbf3bed499e4472c40376468d3516231c8ed1",
+          "date": "2026-11-03T07:00:12+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+          "date": "2026-11-05T16:00:00+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/",
+          "signals": [
+            "released"
+          ]
+        },
+        {
+          "id": "91cb3b365dacc497e6b8d85adc4776af4186ad7305c136c9fbb4e103045ef5c4",
+          "date": "2026-11-05T17:00:35+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+          "signals": [
+            "announced",
+            "completed"
+          ]
+        },
+        {
+          "id": "a4bd20289b65302ba6526fb9bc38c5a37e9eab63a6adc44f5fadcfd5e68bf646",
+          "date": "2026-11-09T05:00:00+00:00",
+          "source": "nvidia-releases",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-rebellions-and-sk-telecom-announce-collaboration-to-advance-sovereign-ai-infrastructure-with-nvidia-nvlink-fusion",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "4fb838d7856a77b1653e1c86e8311a5bcb1258b2b9e0f73b33bee1b66eb24afa",
+          "date": "2026-11-09T05:00:04+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/korea-sovereign-ai-collaboration/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354",
+          "date": "2026-11-09T08:00:53+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/korean-startup-investments-msit/",
+          "signals": [
+            "announced",
+            "released"
+          ]
+        },
+        {
+          "id": "a8b3d8fdf04c3509358736b7a830e7203a2fad43b65f872ea5cfdbf04b6a9987",
+          "date": "2026-11-09T08:00:53+00:00",
+          "source": "nvidia-releases",
+          "url": "https://blogs.nvidia.com/blog/korean-startup-investments-msit/",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "f7dd32495ac08e59ff39920ae726ab2127bf0ece662fd53bb41b544016fb7bee",
+          "date": "2026-11-10T16:00:03+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/open-source-openshell-infrastructure/",
+          "signals": [
+            "announced",
+            "version"
+          ]
+        },
+        {
+          "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-nvidia",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+          "signals": [
+            "appointed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "registrant",
+      "items": [
+        {
+          "id": "76535d0ba0292de9d795447c0304d3f28c061dd1d5d6bdf1db6dea612b108f97",
+          "date": "2026-09-28T00:00:00+00:00",
+          "source": "edgar-amd",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "4ed129d785f92d4e62dfa5698a841446ea2061819924bd64e31e58acde25d6ed",
+          "date": "2026-10-01T00:00:00+00:00",
+          "source": "edgar-ibm",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000086/ibm-20261001.htm",
+          "signals": [
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "67bdc5dcd90736eb18370c83235a45a52002ef63834ea2b82be1a514c83dd97f",
+          "date": "2026-10-21T00:00:00+00:00",
+          "source": "edgar-ibm",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000093/ibm-20261021.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "a253c6c56f596c5081863c3220df9c178e675b2435eb5f2830606f3cc9b12898",
+          "date": "2026-10-21T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+          "signals": [
+            "acquired",
+            "released",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "5de0ff1b6c6f485042e4ccd44fb141782d885c44b17921a61c92090e16ea4fb2",
+          "date": "2026-10-28T00:00:00+00:00",
+          "source": "edgar-alphabet",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/goog-20261028.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "990ed04afc2b8ad720dce0f885446b72a8d4de0f7e8b911df3135f0aa0368f42",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-amazon",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20261029.htm",
+          "signals": [
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+          "signals": [
+            "acquired",
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "335b9598350ee40d9d7f06dcb2aa9f453b621b07de1a050a3a27554cc2db270f",
+          "date": "2026-11-03T00:00:00+00:00",
+          "source": "edgar-amd",
+          "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000188/amd-20261103.htm",
+          "signals": [
+            "announced",
+            "guidance",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+          "date": "2026-11-04T00:00:00+00:00",
+          "source": "edgar-microsoft",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526447173/d178557d8k.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-alphabet",
+          "url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+          "signals": [
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "5fa2f857e1e2f466c5006bb776694a150c17f56d70c6671fbabebb53cfc8099a",
+          "date": "2026-11-05T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526450074/d166273d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "ea94630d241d08389f31391e9a33c3e69f93d89eb1e36f4356f15816450c0476",
+          "date": "2026-11-12T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+          "signals": [
+            "completed",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "samsung",
+      "items": [
+        {
+          "id": "68bd6afadaea5f865497443d82a21e2ef9bb708dfd3dd0c871e159a41800bee1",
+          "date": "2026-10-06T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-expands-its-collection-with-30-exclusive-works-from-the-british-museum",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "e1aca5489c0fe0a56f73a31f6576699d5a1365c874af99009907d5b90a3f84ec",
+          "date": "2026-10-06T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-introduces-smartthings-now-in-new-platform-update-that-brings-more-intuitive-user-experiences",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "9dede30b51cb0c4b154b9b348b5e5303320d06c0ca4a03a37f68547ecb31a5da",
+          "date": "2026-10-14T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-health-makes-sleep-coaching-easier-to-start-and-tailors-weekly-guidance",
+          "signals": [
+            "announced",
+            "guidance"
+          ]
+        },
+        {
+          "id": "3cf3688d183d6881463d67d8dd68fe60246e94dcb7402f1ae3daf90e32ab476b",
+          "date": "2026-10-15T06:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "12ae8b94e1822892ff777ff0de2be42434e27c924771db9b83c239d381682dfa",
+          "date": "2026-10-15T10:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-presents-design-is-an-act-of-love-at-seoul-design-week-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a7a734777df5b5c84084ab2b323098e7264141c3b8b30af151f46051f69080a1",
+          "date": "2026-10-20T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-unveils-curated-collection-from-art-basel-paris-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "2cbc3555d01ff5ef0022568e2b139f7b4da70e7d9372a24f475de565600360b2",
+          "date": "2026-10-23T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/inside-jbl-playback-gallery-80-years-of-sound-innovation",
+          "signals": [
+            "announced",
+            "launched"
+          ]
+        },
+        {
+          "id": "f2ab86448cb46008a6050feedfeedabee50ae1784f43a33e9de08056824ef0a9",
+          "date": "2026-10-27T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/hands-on-comfort-convenience-and-more-a-day-with-galaxy-buds-on",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "5fea45fa65d96ad6a74aa657dc78ac6cf03806522ecc925b85c2578fefd61c54",
+          "date": "2026-10-28T13:39:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-ranks-no-5-in-interbrands-best-global-brands-2026-for-seventh-consecutive-year",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "fbadb309b7346f3749de964ab2a035b69c3907fdf3f81fe3ee3256a9c1de0025",
+          "date": "2026-11-02T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-champions-young-olympians-at-dakar-2026-first-ever-olympic-event-on-african-continent",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+          "date": "2026-11-03T21:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/upgraded-sleep-apnea-feature-now-available-on-galaxy-ring-following-regulatory-approvals-from-us-fda-and-korea-mfds",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "f43b93a225c93de337030fc91279682ee393daaa74efc5ac3bdb6cd201a9b15b",
+          "date": "2026-11-11T14:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-and-ioc-back-young-innovators-at-africas-first-olympic-games",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+          "date": "2026-11-12T23:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-announces-december-release-for-intelligent-eyewear-bringing-a-smarter-way-to-see-the-world",
+          "signals": [
+            "announced"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "samsung electronics",
+      "items": [
+        {
+          "id": "68bd6afadaea5f865497443d82a21e2ef9bb708dfd3dd0c871e159a41800bee1",
+          "date": "2026-10-06T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-expands-its-collection-with-30-exclusive-works-from-the-british-museum",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "e1aca5489c0fe0a56f73a31f6576699d5a1365c874af99009907d5b90a3f84ec",
+          "date": "2026-10-06T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-introduces-smartthings-now-in-new-platform-update-that-brings-more-intuitive-user-experiences",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+          "date": "2026-10-08T07:49:06+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-electronics-announces-earnings-guidance-for-third-quarter-2026",
+          "signals": [
+            "announced",
+            "guidance"
+          ]
+        },
+        {
+          "id": "9dede30b51cb0c4b154b9b348b5e5303320d06c0ca4a03a37f68547ecb31a5da",
+          "date": "2026-10-14T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-health-makes-sleep-coaching-easier-to-start-and-tailors-weekly-guidance",
+          "signals": [
+            "announced",
+            "guidance"
+          ]
+        },
+        {
+          "id": "3cf3688d183d6881463d67d8dd68fe60246e94dcb7402f1ae3daf90e32ab476b",
+          "date": "2026-10-15T06:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "12ae8b94e1822892ff777ff0de2be42434e27c924771db9b83c239d381682dfa",
+          "date": "2026-10-15T10:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-presents-design-is-an-act-of-love-at-seoul-design-week-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a7a734777df5b5c84084ab2b323098e7264141c3b8b30af151f46051f69080a1",
+          "date": "2026-10-20T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-art-store-unveils-curated-collection-from-art-basel-paris-2026",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "2cbc3555d01ff5ef0022568e2b139f7b4da70e7d9372a24f475de565600360b2",
+          "date": "2026-10-23T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/inside-jbl-playback-gallery-80-years-of-sound-innovation",
+          "signals": [
+            "announced",
+            "launched"
+          ]
+        },
+        {
+          "id": "f2ab86448cb46008a6050feedfeedabee50ae1784f43a33e9de08056824ef0a9",
+          "date": "2026-10-27T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/hands-on-comfort-convenience-and-more-a-day-with-galaxy-buds-on",
+          "signals": [
+            "launched"
+          ]
+        },
+        {
+          "id": "5fea45fa65d96ad6a74aa657dc78ac6cf03806522ecc925b85c2578fefd61c54",
+          "date": "2026-10-28T13:39:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-ranks-no-5-in-interbrands-best-global-brands-2026-for-seventh-consecutive-year",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "fbadb309b7346f3749de964ab2a035b69c3907fdf3f81fe3ee3256a9c1de0025",
+          "date": "2026-11-02T08:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-champions-young-olympians-at-dakar-2026-first-ever-olympic-event-on-african-continent",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+          "date": "2026-11-03T21:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/upgraded-sleep-apnea-feature-now-available-on-galaxy-ring-following-regulatory-approvals-from-us-fda-and-korea-mfds",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+          "date": "2026-11-12T23:00:00+00:00",
+          "source": "samsung-news",
+          "url": "https://news.samsung.com/global/samsung-announces-december-release-for-intelligent-eyewear-bringing-a-smarter-way-to-see-the-world",
+          "signals": [
+            "announced"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "sec",
+      "items": [
+        {
+          "id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+          "date": "2026-09-28T17:46:30+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest",
+          "signals": [
+            "announced",
+            "launched"
+          ]
+        },
+        {
+          "id": "a06b66b0b5ce86f4f0f48c502a7a9026afe2a1fc591aae48111ca8f5751ab0bf",
+          "date": "2026-09-30T16:42:15+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-97-sec-charges-two-individuals-orchestrating-fraud-scheme-targeted-veterans",
+          "signals": [
+            "announced",
+            "raised"
+          ]
+        },
+        {
+          "id": "6af16faa3ac75f9f3408e486c6ece0c87527fca38478f7edc0798bb6cea0c4a4",
+          "date": "2026-10-06T14:37:55+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "18e81a569cd52be5c5173f3f2373d762793de386c97875fe483ff0e271fab461",
+          "date": "2026-10-14T14:30:47+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "date": "2026-10-19T17:19:43+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a54d2de30f19c57e99a265446b567caea6e29289eb95462fc19ff37d1cff8334",
+          "date": "2026-10-20T13:25:16+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "adb6bb8bc0896d8c572acbbcb4d34718c0c069ab40f9032e47a03ccd9cba4ec1",
+          "date": "2026-10-23T14:10:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+          "signals": [
+            "acquired",
+            "announced",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "2b9dc50b9ae6189b7cb0f87344880bfaa7590cb4fbd647a802c8787188138324",
+          "date": "2026-10-30T19:30:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo",
+          "signals": [
+            "announced",
+            "launched",
+            "transition"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "securities and exchange commission",
+      "items": [
+        {
+          "id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+          "date": "2026-09-28T17:46:30+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest",
+          "signals": [
+            "announced",
+            "launched"
+          ]
+        },
+        {
+          "id": "a06b66b0b5ce86f4f0f48c502a7a9026afe2a1fc591aae48111ca8f5751ab0bf",
+          "date": "2026-09-30T16:42:15+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-97-sec-charges-two-individuals-orchestrating-fraud-scheme-targeted-veterans",
+          "signals": [
+            "announced",
+            "raised"
+          ]
+        },
+        {
+          "id": "6af16faa3ac75f9f3408e486c6ece0c87527fca38478f7edc0798bb6cea0c4a4",
+          "date": "2026-10-06T14:37:55+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "18e81a569cd52be5c5173f3f2373d762793de386c97875fe483ff0e271fab461",
+          "date": "2026-10-14T14:30:47+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "date": "2026-10-19T17:19:43+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "a54d2de30f19c57e99a265446b567caea6e29289eb95462fc19ff37d1cff8334",
+          "date": "2026-10-20T13:25:16+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "adb6bb8bc0896d8c572acbbcb4d34718c0c069ab40f9032e47a03ccd9cba4ec1",
+          "date": "2026-10-23T14:10:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities",
+          "signals": [
+            "announced"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "si",
+      "items": [
+        {
+          "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "date": "2026-10-19T17:19:43+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "super intelligence",
+      "items": [
+        {
+          "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+          "date": "2026-10-19T17:19:43+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+          "signals": [
+            "announced"
+          ]
+        },
+        {
+          "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+          "date": "2026-11-10T16:15:35+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026",
+          "signals": [
+            "acquired",
+            "announced",
+            "launched",
+            "raised"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "the",
+      "items": [
+        {
+          "id": "a253c6c56f596c5081863c3220df9c178e675b2435eb5f2830606f3cc9b12898",
+          "date": "2026-10-21T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm",
+          "signals": [
+            "acquired",
+            "released",
+            "revised",
+            "transition"
+          ]
+        },
+        {
+          "id": "a86bd3921ee6552002fca2e439130bf0e92af422a64122993054674a2a72c55d",
+          "date": "2026-10-29T00:00:00+00:00",
+          "source": "edgar-meta",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526438017/d183592d8k.htm",
+          "signals": [
+            "acquired",
+            "announced",
+            "revised",
+            "transition"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "williams",
+      "items": [
+        {
+          "id": "7f207a76773540d5b311e8a45558eac01264f0923b5aef092a03d608649c56c8",
+          "date": "2026-09-23T16:00:00+00:00",
+          "source": "sec-releases",
+          "url": "https://www.sec.gov/newsroom/press-releases/2026-92-sec-charges-south-florida-resident-his-company-alleged-investment-scheme-defrauding-law-enforcement",
+          "signals": [
+            "raised"
+          ]
+        },
+        {
+          "id": "13a278f596a2839e1a1c8a47468cb1d49c2581983eaa3588461210c11a219669",
+          "date": "2026-11-10T18:06:33+00:00",
+          "source": "nasa-news",
+          "url": "https://www.nasa.gov/news-release/nasa-to-welcome-expedition-74-astronauts-home-at-space-center-houston/",
+          "signals": [
+            "completed",
+            "launched"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "xbox",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "xbox play anywhere",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        }
+      ]
+    },
+    {
+      "entity": "zoo 2",
+      "items": [
+        {
+          "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+          "date": "2026-10-22T13:00:20+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        },
+        {
+          "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+          "date": "2026-11-05T14:00:34+00:00",
+          "source": "nvidia-blog",
+          "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/",
+          "signals": [
+            "announced",
+            "launched",
+            "released"
+          ]
+        }
+      ]
+    }
+  ],
+  "integrity_errors": [],
+  "shortfalls": [
+    "Size 228 outside target 250-400.",
+    "finance: a source exceeds the approximate 25% cap (30% tolerance).",
+    "research: a source exceeds the approximate 25% cap (30% tolerance).",
+    "research: fewer than half of items are likely/full article texts (19/58).",
+    "Changed-fact candidates require manual confirmation of actual old/new facts; freshness injection and no-context LLM check remain later tasks."
+  ],
+  "verdict": "HOLD - not approved for benchmark construction",
+  "llm_calls": 0,
+  "llm_cost_usd": 0,
+  "c1_changes": [
+    "RSS empty markup content now falls back to a nonempty summary (regression tested).",
+    "Official API HTML body fields now become readable clean text while original JSON is preserved (Europe PMC regression).",
+    "Shared RSS/API HTML cleaner removes navigation, hidden blocks and script/style nodes (regression tested).",
+    "Opt-in include_empty permits auditing empty-body feed records; default C1 behaviour remains to skip them."
+  ]
+}

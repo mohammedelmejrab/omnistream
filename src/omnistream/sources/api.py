@@ -10,6 +10,7 @@ from jsonpath_ng.ext import parse as parse_jsonpath
 
 from omnistream.models import RawItem, Source
 from omnistream.sources import SourceFetchError
+from omnistream.sources.rss import _strip_html
 
 
 def _find(data: Any, path: str) -> list[Any]:
@@ -85,6 +86,14 @@ async def fetch_api(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
         url = _text_value(entry, cfg.url)
         if text is None or url is None:
             continue
+        # Official APIs (e.g. Europe PMC) can return HTML in body fields.
+        # Keep the original JSON below, but emit readable C1 clean text.
+        if re.search(
+            r"</?(?:p|div|h[1-6]|section|script|style|br|strong|em|b|i|span|ul|ol|li|table|blockquote)\b",
+            text,
+            re.IGNORECASE,
+        ):
+            text = _strip_html(text)
         title = (_text_value(entry, cfg.title) if cfg.title else None) or ""
         published = None
         if cfg.date:

@@ -1,0 +1,710 @@
+{
+  "status": "completed manual spot-check",
+  "reviewer": "implementation agent, direct reading; no LLM extraction/judge calls",
+  "seed": 20261113,
+  "manifest_sha256": "edf451ad7b0d322f0474685433365fa0050a315564b0315a003e2a2c922dda03",
+  "items_reviewed": 30,
+  "scope": "First 1100 clean-text characters of each fixed-seed sample item; complete text for shorter summaries. Full-document predicted names restricted to whole-name presence in that prefix. Titles excluded from entity scoring. Validity requires an organisation, person or product referent in context; partial names and aliases counted as valid when unambiguous, duplicates not penalised. Missed-name examples are qualitative, not exhaustive; no recall claim. This is not a held-out NER benchmark.",
+  "predicted_names_reviewed": 138,
+  "valid_prediction_names": 90,
+  "invalid_prediction_names": 48,
+  "name_precision": 0.6521739130434783,
+  "items_with_missed_name_examples": 15,
+  "conclusion": "Organisation anchors are useful, but product recall, alias fragmentation and cover-page/legal boilerplate errors prevent treating raw overlap counts as gold entity-linking labels. Manually validate entities used for future questions.",
+  "items": [
+    {
+      "id": "2ffe9df2063e2be383620fc52127dc32953abea0aca6b1a90fcae7ed0c84bf1b",
+      "index": 1,
+      "source": "nvidia-technical",
+      "predicted_names": [
+        "nvidia"
+      ],
+      "valid_predictions": [
+        "nvidia"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "NVIDIA Cosmos",
+        "Cosmos Framework"
+      ],
+      "quality_note": "Truncated technical summary repeats its opening; Cosmos product names are missed by NER."
+    },
+    {
+      "id": "0633c8f2cf909ec8236dfb15eae101679fe36ff41b633858103e77fd235cbd08",
+      "index": 2,
+      "source": "nvidia-blog",
+      "predicted_names": [],
+      "valid_predictions": [],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Readable long announcement; opening is general semiconductor commentary rather than item-specific facts."
+    },
+    {
+      "id": "f381a9f7d2287f4bfbfcedce29edd600710bd621c33140780eff6ad489f5beeb",
+      "index": 3,
+      "source": "nvidia-technical",
+      "predicted_names": [
+        "ai factory",
+        "kubernetes",
+        "kubernetes recipes",
+        "nvidia",
+        "nvke",
+        "nvkr"
+      ],
+      "valid_predictions": [
+        "kubernetes",
+        "kubernetes recipes",
+        "nvidia",
+        "nvke",
+        "nvkr"
+      ],
+      "invalid_predictions": [
+        "ai factory"
+      ],
+      "missed_name_examples": [
+        "NVIDIA Kubernetes Engine"
+      ],
+      "quality_note": "Truncated engineering summary with concrete product releases; opening repeats and one generic phrase is mislabelled."
+    },
+    {
+      "id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+      "index": 4,
+      "source": "sec-releases",
+      "predicted_names": [
+        "sec",
+        "securities and exchange commission",
+        "zoe financial",
+        "zoe financial inc",
+        "zoe wealth"
+      ],
+      "valid_predictions": [
+        "sec",
+        "securities and exchange commission",
+        "zoe financial",
+        "zoe financial inc",
+        "zoe wealth"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Clean full SEC enforcement release; clear named firm and dated allegation, not a finding of guilt."
+    },
+    {
+      "id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+      "index": 5,
+      "source": "samsung-news",
+      "predicted_names": [
+        "gemini",
+        "gentle monster",
+        "google",
+        "parker",
+        "samsung",
+        "samsung electronics",
+        "warby parker",
+        "wearer"
+      ],
+      "valid_predictions": [
+        "gemini",
+        "gentle monster",
+        "google",
+        "samsung",
+        "samsung electronics",
+        "warby parker"
+      ],
+      "invalid_predictions": [
+        "parker",
+        "wearer"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Readable full product launch with collaborators and a future release date; promotional claims require attribution."
+    },
+    {
+      "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+      "index": 6,
+      "source": "samsung-news",
+      "predicted_names": [
+        "fda",
+        "galaxy ring",
+        "galaxy watch",
+        "korea s ministry of food and drug safety",
+        "ring",
+        "samsung",
+        "samsung electronics",
+        "sleep apnea"
+      ],
+      "valid_predictions": [
+        "fda",
+        "galaxy ring",
+        "galaxy watch",
+        "korea s ministry of food and drug safety",
+        "ring",
+        "samsung",
+        "samsung electronics",
+        "sleep apnea"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "Samsung Health Monitor"
+      ],
+      "quality_note": "Full dated regulatory/product update; distinguishes prior approval from newly available device support."
+    },
+    {
+      "id": "019981258bfa52aaabd6711835e956bb65bd37abb4dd57ef975046ef73fd72c7",
+      "index": 7,
+      "source": "nvidia-blog",
+      "predicted_names": [
+        "minerva",
+        "nvidia"
+      ],
+      "valid_predictions": [
+        "minerva",
+        "nvidia"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Readable full platform launch; promotional inline announcement link remains in prose."
+    },
+    {
+      "id": "8fe3144b550811b7117d30f0081461ef1d61d6181aca59964bb07d8d73fe07a8",
+      "index": 8,
+      "source": "europe-pmc",
+      "predicted_names": [
+        "background objectives prioritizing",
+        "esi",
+        "hajj",
+        "umrah"
+      ],
+      "valid_predictions": [],
+      "invalid_predictions": [
+        "background objectives prioritizing",
+        "esi",
+        "hajj",
+        "umrah"
+      ],
+      "missed_name_examples": [
+        "GPT-5.2"
+      ],
+      "quality_note": "Clean published research abstract about synthetic clinical dialogues; the corpus item itself is a real paper, not generated benchmark data."
+    },
+    {
+      "id": "0d5790a56622735cd9d35817d19f2f1f611d6b001f5a8a8f460482962aa4baa5",
+      "index": 9,
+      "source": "nvidia-blog",
+      "predicted_names": [
+        "3.5 transcribe",
+        "asus",
+        "dlss",
+        "hp",
+        "lenovo",
+        "microsoft",
+        "msi",
+        "nemotron",
+        "nvidia",
+        "phantom blade zero",
+        "rtx spark",
+        "s-game"
+      ],
+      "valid_predictions": [
+        "asus",
+        "dlss",
+        "hp",
+        "lenovo",
+        "microsoft",
+        "msi",
+        "nemotron",
+        "nvidia",
+        "phantom blade zero",
+        "rtx spark",
+        "s-game"
+      ],
+      "invalid_predictions": [
+        "3.5 transcribe"
+      ],
+      "missed_name_examples": [
+        "Dell",
+        "NVIDIA Blackwell RTX",
+        "NVIDIA Grace",
+        "NVIDIA CUDA",
+        "NVIDIA App",
+        "LFM3",
+        "Windows",
+        "Minecraft",
+        "RTX Remix1.6"
+      ],
+      "quality_note": "Substantial hardware/software update with recurring manufacturers and model versions; product NER recall is weak."
+    },
+    {
+      "id": "9dfe7447f2e15f3cdc8107935ade12e84bbb91d7f2e117bed3c751ae2fa0c938",
+      "index": 10,
+      "source": "nvidia-technical",
+      "predicted_names": [
+        "black forest labs"
+      ],
+      "valid_predictions": [
+        "black forest labs"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "FLUX 3 Image Klein"
+      ],
+      "quality_note": "Truncated model-engineering summary repeats its introduction and misses the model name in NER."
+    },
+    {
+      "id": "fd786cfe1cbea7cba8c6b7a7fdc5686e821bf301ce4a75b12d7f1ee6cc3c3941",
+      "index": 11,
+      "source": "nvidia-technical",
+      "predicted_names": [],
+      "valid_predictions": [],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Truncated technical summary; body omits the Holoscan name supplied by the title, limiting item-specific evidence."
+    },
+    {
+      "id": "14e7a4c2cd7c1aa99d7f79718934c568fb452ffe9b4cbd51d3457ed96da27da1",
+      "index": 12,
+      "source": "microsoft-research",
+      "predicted_names": [
+        "magnetar",
+        "microsoft"
+      ],
+      "valid_predictions": [
+        "magnetar",
+        "microsoft"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "Rust",
+        "Go",
+        "C",
+        "Microsoft Research"
+      ],
+      "quality_note": "Full technical research explanation with quantified performance; named language/tool recall is incomplete."
+    },
+    {
+      "id": "0c02d7097be582777533f5c206f10929fa96870bde69b6fcb7692ced8024fede",
+      "index": 13,
+      "source": "nasa-news",
+      "predicted_names": [
+        "curiosity",
+        "curiosity blog",
+        "jpl-caltech",
+        "nasa",
+        "nazca",
+        "planetary mineralogy",
+        "susanne p. schwenzer",
+        "the open university",
+        "utc"
+      ],
+      "valid_predictions": [
+        "curiosity",
+        "jpl-caltech",
+        "nasa",
+        "susanne p. schwenzer",
+        "the open university"
+      ],
+      "invalid_predictions": [
+        "curiosity blog",
+        "nazca",
+        "planetary mineralogy",
+        "utc"
+      ],
+      "missed_name_examples": [
+        "Mastcam",
+        "MSSS"
+      ],
+      "quality_note": "Readable mission update with author and observation date; some navigation/title repetition remains."
+    },
+    {
+      "id": "77e0f3a4dd52b04c24ae81522d0bb0d0468d490f3ef6db56b7843b5829d8fff3",
+      "index": 14,
+      "source": "europe-pmc",
+      "predicted_names": [
+        "mt-dmn",
+        "stable diffusion"
+      ],
+      "valid_predictions": [
+        "stable diffusion"
+      ],
+      "invalid_predictions": [
+        "mt-dmn"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Clean research abstract; concrete Stable Diffusion use, with a neural-network anatomical abbreviation falsely typed as an entity."
+    },
+    {
+      "id": "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+      "index": 15,
+      "source": "microsoft-research",
+      "predicted_names": [
+        "kls",
+        "microsoft"
+      ],
+      "valid_predictions": [
+        "microsoft"
+      ],
+      "invalid_predictions": [
+        "kls"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Readable research claim; KLS is a conjecture, outside requested organisation/person/product types."
+    },
+    {
+      "id": "a38c4413d6248494f6614bb24541f4531a393af35f594bed53d72ff094f4b73e",
+      "index": 16,
+      "source": "nvidia-technical",
+      "predicted_names": [
+        "nccl",
+        "nvidia"
+      ],
+      "valid_predictions": [
+        "nccl",
+        "nvidia"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "NVIDIA Attribution"
+      ],
+      "quality_note": "Truncated diagnostic-tool summary repeats its opening; tool name should be recovered for entity linking."
+    },
+    {
+      "id": "18e81a569cd52be5c5173f3f2373d762793de386c97875fe483ff0e271fab461",
+      "index": 17,
+      "source": "sec-releases",
+      "predicted_names": [
+        "ipo",
+        "n.e",
+        "reg cf",
+        "regulation crowdfunding",
+        "regulation crowdfunding reg cf",
+        "sec",
+        "securities and exchange commission"
+      ],
+      "valid_predictions": [
+        "sec",
+        "securities and exchange commission"
+      ],
+      "invalid_predictions": [
+        "ipo",
+        "n.e",
+        "reg cf",
+        "regulation crowdfunding",
+        "regulation crowdfunding reg cf"
+      ],
+      "missed_name_examples": [
+        "Small Business Capital Formation Advisory Committee"
+      ],
+      "quality_note": "Clean full meeting notice; useful event timing, but regulatory terms and address fragments produce false entity labels."
+    },
+    {
+      "id": "add6a228ed4d9e57f37595604003495291f8664d37120579e610b2b688a984f7",
+      "index": 18,
+      "source": "nvidia-blog",
+      "predicted_names": [
+        "earth2studio",
+        "earthmover",
+        "eu",
+        "eumetsat",
+        "meteosat",
+        "nvidia",
+        "stormscope"
+      ],
+      "valid_predictions": [
+        "earth2studio",
+        "earthmover",
+        "eumetsat",
+        "meteosat",
+        "nvidia",
+        "stormscope"
+      ],
+      "invalid_predictions": [
+        "eu"
+      ],
+      "missed_name_examples": [
+        "NVIDIA Earth-2",
+        "StormScope EU"
+      ],
+      "quality_note": "Full weather-model announcement with dated model additions; promotional inline link and product variants need careful parsing."
+    },
+    {
+      "id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+      "index": 19,
+      "source": "samsung-news",
+      "predicted_names": [
+        "business",
+        "company",
+        "krw",
+        "memory business",
+        "qoq",
+        "samsung",
+        "samsung electronics",
+        "the ds division",
+        "the memory business"
+      ],
+      "valid_predictions": [
+        "memory business",
+        "samsung",
+        "samsung electronics",
+        "the ds division",
+        "the memory business"
+      ],
+      "invalid_predictions": [
+        "business",
+        "company",
+        "krw",
+        "qoq"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Full earnings release is a Finance item within a News-hinted source; bubble label needs review and figures are issuer-reported."
+    },
+    {
+      "id": "08abce7384db4c7bfbd4fff63dc583ce881248036a59f84ae68e26381ea313ad",
+      "index": 20,
+      "source": "europe-pmc",
+      "predicted_names": [
+        "transformer"
+      ],
+      "valid_predictions": [],
+      "invalid_predictions": [
+        "transformer"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Clean research review abstract; broad scope and no named organisation/person/product in inspected prefix."
+    },
+    {
+      "id": "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+      "index": 21,
+      "source": "edgar-microsoft",
+      "predicted_names": [
+        "001-37845",
+        "cfr 240.14a-12",
+        "irs employer identification no",
+        "microsoft",
+        "pre",
+        "pre-commencement",
+        "securities and exchange commission",
+        "the securities exchange act",
+        "the securities exchange act of",
+        "united states",
+        "washington",
+        "written"
+      ],
+      "valid_predictions": [
+        "microsoft",
+        "securities and exchange commission"
+      ],
+      "invalid_predictions": [
+        "001-37845",
+        "cfr 240.14a-12",
+        "irs employer identification no",
+        "pre",
+        "pre-commencement",
+        "the securities exchange act",
+        "the securities exchange act of",
+        "united states",
+        "washington",
+        "written"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Authoritative primary 8-K, but inspected prefix is legal cover-page boilerplate and NER has many false positives."
+    },
+    {
+      "id": "99602e36a5dec8b2f9d9576f72580a0752e9e9c47ff69f83906a392e3322f54e",
+      "index": 22,
+      "source": "nvidia-releases",
+      "predicted_names": [],
+      "valid_predictions": [],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Short truncated summary provides generic agent-computing context while the Vera product is only in the title."
+    },
+    {
+      "id": "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+      "index": 23,
+      "source": "edgar-microsoft",
+      "predicted_names": [
+        "001-37845",
+        "irs employer identification no",
+        "microsoft",
+        "securities and exchange commission",
+        "the securities exchange act",
+        "the securities exchange act of",
+        "united states",
+        "washington"
+      ],
+      "valid_predictions": [
+        "microsoft",
+        "securities and exchange commission"
+      ],
+      "invalid_predictions": [
+        "001-37845",
+        "irs employer identification no",
+        "the securities exchange act",
+        "the securities exchange act of",
+        "united states",
+        "washington"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Authoritative primary 8-K; event date is November 4 while filing date is November 5, and cover-page NER is noisy."
+    },
+    {
+      "id": "be50e4a475ad4c9f5ac64f787fd3a18731288726c9cbfcf246612a508fccff4f",
+      "index": 24,
+      "source": "microsoft-research",
+      "predicted_names": [
+        "harnessed agentic rl",
+        "kubernetes",
+        "microsoft",
+        "verified"
+      ],
+      "valid_predictions": [
+        "kubernetes",
+        "microsoft"
+      ],
+      "invalid_predictions": [
+        "harnessed agentic rl",
+        "verified"
+      ],
+      "missed_name_examples": [
+        "Agent Lightning",
+        "Microsoft Research Asia",
+        "Qwen3.5-9B",
+        "SWE-bench Verified"
+      ],
+      "quality_note": "Full research-framework release with explicit version and benchmark change; NER misses several central product/model names."
+    },
+    {
+      "id": "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22",
+      "index": 25,
+      "source": "samsung-news",
+      "predicted_names": [
+        "armin prommersberger",
+        "bowers wilkins",
+        "dave rogers",
+        "harman",
+        "innovation q",
+        "jbl",
+        "jbl and bowers wilkins",
+        "samsung",
+        "samsung electronics",
+        "the lifestyle division"
+      ],
+      "valid_predictions": [
+        "armin prommersberger",
+        "bowers wilkins",
+        "dave rogers",
+        "harman",
+        "jbl",
+        "samsung",
+        "samsung electronics",
+        "the lifestyle division"
+      ],
+      "invalid_predictions": [
+        "innovation q",
+        "jbl and bowers wilkins"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Readable attributed corporate interview with named people and brands; not independent market reporting."
+    },
+    {
+      "id": "dc4af69a7462cd7986285e0cfffb5c58994584ccdd4f279bc7dbb3a2c11d5486",
+      "index": 26,
+      "source": "nvidia-technical",
+      "predicted_names": [
+        "nvidia",
+        "snapshot"
+      ],
+      "valid_predictions": [
+        "nvidia",
+        "snapshot"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "NVIDIA DSX AI Factory Platform"
+      ],
+      "quality_note": "Truncated technical release with repeated introduction; parent platform name is missed by NER."
+    },
+    {
+      "id": "c88766c52f7261051f3ccebef694e29444279aa81fe2e5df1b9010a6032b2855",
+      "index": 27,
+      "source": "nvidia-releases",
+      "predicted_names": [
+        "aim intelligence",
+        "hyundai motor group",
+        "nvidia",
+        "openshell"
+      ],
+      "valid_predictions": [
+        "aim intelligence",
+        "hyundai motor group",
+        "nvidia",
+        "openshell"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [
+        "NVIDIA NemoClaw",
+        "Starfort"
+      ],
+      "quality_note": "Specific but truncated ecosystem announcement; organisations recur naturally and product-name recall is incomplete."
+    },
+    {
+      "id": "58a3aa221819515c7fba9712174aef6560c9e005b36b28c1e4dcc9c9cb31b721",
+      "index": 28,
+      "source": "samsung-news",
+      "predicted_names": [
+        "harman",
+        "jbl",
+        "samsung"
+      ],
+      "valid_predictions": [
+        "harman",
+        "jbl",
+        "samsung"
+      ],
+      "invalid_predictions": [],
+      "missed_name_examples": [],
+      "quality_note": "Brief infographic introduction; substantive evidence may be in excluded image content, so retain only with caveat."
+    },
+    {
+      "id": "9bd2920f6fee3d473ccd11c07759516a3a077914d7dc1c63b2155419afc1f120",
+      "index": 29,
+      "source": "microsoft-blog",
+      "predicted_names": [
+        "copilot",
+        "frontier",
+        "frontier transformation",
+        "microsoft"
+      ],
+      "valid_predictions": [
+        "copilot",
+        "microsoft"
+      ],
+      "invalid_predictions": [
+        "frontier",
+        "frontier transformation"
+      ],
+      "missed_name_examples": [
+        "Microsoft IQ",
+        "Agent 365"
+      ],
+      "quality_note": "Full strategy announcement mixes named products with broad transformation language; not all prose is factual evidence."
+    },
+    {
+      "id": "ca81f2df3addd0a8a16d9363f72769b0a3d4b83e27354cafa63cfb1b1d981c43",
+      "index": 30,
+      "source": "microsoft-blog",
+      "predicted_names": [
+        "digital",
+        "microsoft",
+        "sovereign cloud"
+      ],
+      "valid_predictions": [
+        "microsoft",
+        "sovereign cloud"
+      ],
+      "invalid_predictions": [
+        "digital"
+      ],
+      "missed_name_examples": [],
+      "quality_note": "Readable full sovereignty announcement; generic terms produce false entities and product aliases remain fragmented."
+    }
+  ]
+}

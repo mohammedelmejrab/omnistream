@@ -1,0 +1,100 @@
+{
+  "confirmed_three_bubble_organisations": [
+    {
+      "entity": "nvidia",
+      "counts": {
+        "news": 40,
+        "finance": 1,
+        "research": 17
+      },
+      "examples": {
+        "news": {
+          "id": "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+          "source": "microsoft-blog",
+          "title": "From AI ambition to business impact",
+          "url": "https://blogs.microsoft.com/blog/2026/11/12/from-ai-ambition-to-business-impact/",
+          "date": "2026-11-12T17:00:03+00:00"
+        },
+        "finance": {
+          "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+          "source": "edgar-nvidia",
+          "title": "NVIDIA CORP: 8-K filed 2026-11-12",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+          "date": "2026-11-12T00:00:00+00:00"
+        },
+        "research": {
+          "id": "6229bab0ec803c2ec070b01994da2d4f42cf1855648ad1a088935e87462321a2",
+          "source": "microsoft-research",
+          "title": "Offloaded inference for real-world physical AI robotics",
+          "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+          "date": "2026-09-23T16:01:36+00:00"
+        }
+      }
+    },
+    {
+      "entity": "microsoft",
+      "counts": {
+        "news": 14,
+        "finance": 4,
+        "research": 18
+      },
+      "examples": {
+        "news": {
+          "id": "dcfca97c5e1931a1a6d8dd21b38437ed1d94b879851dcc75ec5500adf708024a",
+          "source": "microsoft-blog",
+          "title": "Introducing the new Copilot with Home, Code and Autopilot",
+          "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+          "date": "2026-09-25T12:03:50+00:00"
+        },
+        "finance": {
+          "id": "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+          "source": "edgar-microsoft",
+          "title": "MICROSOFT CORP: 8-K filed 2026-10-28",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm",
+          "date": "2026-10-28T00:00:00+00:00"
+        },
+        "research": {
+          "id": "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+          "source": "microsoft-research",
+          "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+          "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+          "date": "2026-09-21T15:30:19+00:00"
+        }
+      }
+    }
+  ],
+  "rejected_three_bubble_identity": {
+    "name": "huang",
+    "reason": "Surname collision: finance Jen-Hsun Huang/Jensen Huang and Research Qiming Huang are different people; do not treat this as a shared person identity. News refers to Jensen Huang.",
+    "item_ids": [
+      "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+      "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+      "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5"
+    ]
+  },
+  "checked_changed_fact_candidate": {
+    "entity": "NVIDIA",
+    "description": "News describes Jensen Huang as NVIDIA founder and CEO at an October 23 Kazakhstan visit; the November 12 8-K reports acceptance of Jen-Hsun Huang resignation effective November 11 and appointment of Colette M. Kress. This is a real dated leadership-change candidate; event date and filing/publication date are distinct. No evaluation question was written.",
+    "items": [
+      {
+        "id": "da5cc1136c7e124d299210ad7d03fe3954cb90fe81c89d4a6b2d56c63abf8207",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+        "published_at": "2026-11-12T00:00:00+00:00",
+        "title": "NVIDIA CORP: 8-K filed 2026-11-12"
+      },
+      {
+        "id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+        "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/",
+        "published_at": "2026-10-23T02:00:13+00:00",
+        "title": "Kazakhstan Expands Compute for Its AI Future"
+      }
+    ]
+  },
+  "source_label_findings": [
+    "Samsung earnings results occur inside the News-hinted Samsung feed; C3/manual bubble labelling is required before source hints are treated as evaluation gold.",
+    "NVIDIA releases feed syndicates many product/blog summaries; it is assigned News, not Finance.",
+    "NVIDIA technical blog contains engineering tutorials and release notes rather than exclusively academic research; retain with caveat.",
+    "NASA news broadens the theme, and some entries have older dates in their body; feed publication recency is not proof of novel facts."
+  ],
+  "provenance_caveat": "Initial reachability probes preceded the complete robots/terms review. Those probe responses are not corpus inputs unless separately fetched by the policy-enforcing collector. The collection client denies blocked sources and never uses the prohibited discovery responses as backfill."
+}

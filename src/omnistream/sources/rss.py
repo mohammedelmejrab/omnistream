@@ -12,10 +12,14 @@ from omnistream.sources import SourceFetchError
 def _strip_html(html: str) -> str:
     # Wrapping in a tag avoids bs4's MarkupResemblesLocatorWarning on plain text.
     soup = BeautifulSoup(f"<div>{html}</div>", "html.parser")
+    for node in soup.select("script,style,nav,footer,header,form,noscript,svg,[hidden]"):
+        node.decompose()
     return " ".join(soup.get_text(" ").split())
 
 
-async def fetch_rss(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
+async def fetch_rss(
+    source: Source, http: httpx.AsyncClient, *, include_empty: bool = False
+) -> list[RawItem]:
     assert source.url is not None
     response = await http.get(source.url, timeout=20.0)
     try:
@@ -38,10 +42,10 @@ async def fetch_rss(source: Source, http: httpx.AsyncClient) -> list[RawItem]:
         )
         content = entry.get("content")
         raw = content[0].get("value", "") if content else ""
-        if not raw:
+        if not _strip_html(raw):
             raw = entry.get("summary", "") or ""
         text = _strip_html(raw)
-        if not text:
+        if not text and not include_empty:
             continue
         parsed = entry.get("published_parsed") or entry.get("updated_parsed")
         published = datetime(*parsed[:6], tzinfo=UTC) if parsed else None
