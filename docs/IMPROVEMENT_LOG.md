@@ -693,3 +693,75 @@ Offline retrieval on eval-v2, own mode, all 60 questions (exact search path):
   vector index path usually falls through to the exact scan (latency only).
 - These are retrieval numbers on synthetic eval-v2 with a graph built by the old model.
   Answer-level and real-data measurement still to come.
+
+### Setback 9 and fixes: first real-data snapshot build exposed two harness gaps
+
+- A held-back freshness item whose question had been excluded from scoring (rq-d-026) made
+  the freshness phase crash (`StopIteration`). Fixed (commit `f331793`): such items are
+  still ingested, the answerability probe is skipped.
+- The ingestion router put 2 of 76 real items in the Unsorted queue (confidence 0.10 and
+  0.45, below the 0.5 threshold), which the freeze check did not expect. Fixed (commit
+  `7108b21`): "unsorted" is a valid end state and is reported, never rescued. One of them
+  (a Mozilla blog post) is the gold item of dev question rq-d-008, so the system genuinely
+  cannot answer it. That is a real router weakness: a product announcement fits none of the
+  three bubble descriptions well.
+- Both failures were flagged INVALID RUN by the new safeguard (change 10) instead of
+  producing fake zeros.
+
+## Results: first answer-level measurements after the fixes (13 Nov 2026)
+
+Both runs completed with 0 unmeasured questions and 0 provider errors. Model
+`deepseek/deepseek-v4.1-flash-1017` with reasoning off; judge `deepseek/deepseek-chat`.
+Correctness is the judge's 0-2 score, averaged.
+
+### Real data, dev split (24 questions; report `docs/eval/real-v2-dev-20261113T132820897538Z.md`)
+
+| Configuration | Correctness, all | Multi-hop (n=6) | Time-sensitive (n=6) | Changed-fact accuracy | Citation faithfulness |
+|---|---|---|---|---|---|
+| own+subagents (full system) | 1.75 | 1.67 | 1.67 | 0.83 | 0.84 |
+| classic+subagents | 1.75 | 1.67 | 1.67 | 0.83 | 0.90 |
+| external (LlamaIndex) | 1.58 | 0.67 | 1.67 | 0.83 | 1.00 |
+| classic | 1.54 | 1.17 | 1.33 | 0.67 | 0.92 |
+| graphiti | 1.04 | 1.00 | 0.67 | 0.33 | 0.61 |
+| own | 0.88 | 0.17 | 0.67 | 0.33 | 0.64 |
+
+- Spec section 8.3, "full system exceeds classic and external by >= 0.3 on multi-hop":
+  +0.50 over classic and +1.00 over external on dev. Met, but on 6 questions only.
+- Freshness: 4 of 4 scored freshness items answerable 25-34 s after injection.
+- Ingestion: 74 written, 2 unsorted (see setback 9).
+- There is no "before the fixes" run on real data; the comparison here is between
+  configurations measured under identical conditions.
+
+### eval-v2, synthetic (60 questions; report `docs/eval/eval-v2-20261113T123043918544Z.md`)
+
+Compared with the 12 Nov run (old model `deepseek-chat`, before any fix). Two things
+changed at once (model and fixes), so the difference is not attributable to the fixes alone;
+the comparison between configurations within each run is the fair one.
+
+| Configuration | Correctness 12 Nov | Correctness 13 Nov | Multi-hop 12 Nov | Multi-hop 13 Nov |
+|---|---|---|---|---|
+| own+subagents (full system) | 0.93 | 1.78 | 0.00 | 1.45 |
+| classic+subagents | 1.47 | 1.73 | 0.90 | 1.40 |
+| classic | 1.37 | 1.28 | 0.50 | 0.40 |
+| external | 1.23 | 1.13 | 0.30 | 0.00 |
+| graphiti | 1.28 | 1.10 | 0.70 | 0.25 |
+| own | 1.10 | 1.12 | 0.20 | 0.25 |
+
+- The full system went from last to first overall. On multi-hop it leads classic by +1.05
+  and external by +1.45 (spec target +0.3 met). Changed-fact accuracy 0.47 -> 0.93.
+- Single-shot own is still weak on multi-hop (0.25); the gain comes from own retrieval
+  inside the subagent loop. Its ranking (Hits@1 0.47) is still well below classic (0.82).
+
+### Cost
+
+OpenRouter usage on 13 Nov for the dev build and both runs: about 3.7 USD (more than the
+1.3 USD estimate; subagent configurations and judging cost more than projected). Balance
+6.07 USD; the key limit leaves about 5.07 USD usable.
+
+### Still open
+
+1. Held-out real test split (55 questions): measure once, at the end.
+2. Merge abbreviations/aliases at ingestion (Finding 2), not yet done.
+3. Single-shot own mode and its ranking.
+4. Router: product announcements fall into Unsorted.
+5. Judge calibration by a human (30 blinded answers exported) is still pending.
