@@ -234,6 +234,13 @@ class SnapshotBuilder:
             if self.manifest.get("frozen"):
                 raise ValueError("frozen snapshot item set is incomplete")
             return False
+        missing_freshness = {
+            i["id"] for i in self.dataset["items"] if i["freshness"]
+        } - self.manifest["freshness"].keys()
+        if missing_freshness:
+            if self.manifest.get("frozen"):
+                raise ValueError("frozen snapshot lacks recorded freshness measurements")
+            return False
         stored = {i.id: i for i in await self.repo.list_items()}
         jobs = await self.repo.list_jobs()
         if len(stored) != len(expected) or any(

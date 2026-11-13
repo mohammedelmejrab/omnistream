@@ -515,6 +515,9 @@ async def test_snapshot_freeze_verifies_database_and_never_ingests(
     builder.manifest["items"] = {
         i["id"]: {"runtime_id": i["id"], "status": "written"} for i in data["items"]
     }
+    builder.manifest["freshness"] = {
+        i["id"]: {} for i in data["items"] if i["freshness"]
+    }
     with pytest.raises(ValueError, match="incomplete"):
         await builder.verify_frozen()
     repo.list_items.return_value = [

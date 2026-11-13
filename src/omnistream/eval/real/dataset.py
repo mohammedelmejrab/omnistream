@@ -163,4 +163,7 @@ def load_real_dataset(split, *, background=None, root=None):
         "items": items,
         "questions": selected_questions,
         "excluded_questions": excluded_questions,
+        "freshness_items_without_scored_question": sorted(
+            set(fresh[split]) - {i for q in selected_questions for i in q["gold"]}
+        ),
     }

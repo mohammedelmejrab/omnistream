@@ -25,6 +25,43 @@ from .report import table, write_report
 from .resources import MemorySampler, UsageMeter, stage
 
 
+async def measure_freshness(builder, dataset, runtime, judge):
+    """Complete held-back ingestion and checkpoint available scored probes."""
+    from .snapshot import save
+
+    for item in (i for i in dataset["items"] if i["freshness"]):
+        if item["id"] in builder.manifest["freshness"]:
+            continue
+        if builder.manifest.get("frozen"):
+            raise ValueError("frozen snapshot lacks recorded freshness measurements")
+        stored = await builder.ingest(item)
+        entry = builder.manifest["items"][item["id"]]
+        question = next(
+            (q for q in dataset["questions"] if item["id"] in q["gold"]),
+            None,
+        )
+        probe = []
+        lag = None
+        if question is not None and stored.status == "written":
+            for _ in range(3):
+                result = await runtime.answer(
+                    question["question"], mode="own", subagents=False
+                )
+                judged = await judge.correctness(question, result.answer.text)
+                probe.append({"answer": result.answer.text, **judged})
+                if judged["score"] == 2 and stored.id in evidence_ids(result):
+                    lag = time.time() - entry["injected_at"]
+                    break
+        builder.manifest["freshness"][item["id"]] = {
+            "write_lag_seconds": entry.get("write_lag_seconds"),
+            "answerable_lag_seconds": lag,
+            "probes": probe,
+        }
+        if question is None:
+            builder.manifest["freshness"][item["id"]]["probe_skipped"] = "no scored question"
+        save(builder.manifest_path, builder.manifest)
+
+
 @dataclass
 class EvalRunSummary:
     id: int
@@ -290,36 +327,7 @@ async def run_evaluation(
             )
             # Inject each held-back update, process through the queue, and probe answerability.
             stage.set("freshness")
-            for item in (i for i in dataset["items"] if i["freshness"]):
-                if item["id"] in builder.manifest["freshness"]:
-                    continue
-                if builder.manifest.get("frozen"):
-                    raise ValueError(
-                        "frozen snapshot lacks recorded freshness measurements"
-                    )
-                stored = await builder.ingest(item)
-                entry = builder.manifest["items"][item["id"]]
-                question = next(
-                    q for q in dataset["questions"] if item["id"] in q["gold"]
-                )
-                probe = []
-                lag = None
-                if stored.status == "written":
-                    for _ in range(3):
-                        result = await runtime.answer(
-                            question["question"], mode="own", subagents=False
-                        )
-                        judged = await judge.correctness(question, result.answer.text)
-                        probe.append({"answer": result.answer.text, **judged})
-                        if judged["score"] == 2 and stored.id in evidence_ids(result):
-                            lag = time.time() - entry["injected_at"]
-                            break
-                builder.manifest["freshness"][item["id"]] = {
-                    "write_lag_seconds": entry.get("write_lag_seconds"),
-                    "answerable_lag_seconds": lag,
-                    "probes": probe,
-                }
-                save(builder.manifest_path, builder.manifest)
+            await measure_freshness(builder, dataset, runtime, judge)
             if hasattr(builder, "verify_frozen"):
                 if not await builder.verify_frozen():
                     raise ValueError("snapshot did not complete; refusing to freeze")

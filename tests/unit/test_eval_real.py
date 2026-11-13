@@ -247,3 +247,99 @@ def test_usage_meter_records_prompt_completion():
     usage = next(iter(meter.summary().values()))
     assert usage["prompt_tokens"] == 20 and usage["completion_tokens"] == 10
     assert usage["calls"] == 1 and usage["cost_usd"] == 0.002
+
+
+def test_real_reports_freshness_without_scored_question(corpus):
+    root, path, annotations = corpus
+    excluded = annotations["questions"][0]
+    excluded["exclude_from_scoring"] = True
+    excluded["exclusion_reason"] = "No reliable answer"
+    scored = dict(excluded, id="scored", type="single", gold=["e"],
+                  exclude_from_scoring=False)
+    annotations["questions"].append(scored)
+    path.write_text(json.dumps(annotations))
+    data = load_dataset("real-v2", split="dev", root=root)
+    assert data["freshness_items_without_scored_question"] == ["a"]
+    assert "a" in data["selected_item_ids"]
+    assert [q["id"] for q in data["questions"]] == ["scored"]
+
+
+async def test_partial_snapshot_resumes_written_freshness_and_freezes(tmp_path, monkeypatch):
+    from omnistream.config import Settings
+    from omnistream.eval import measure_freshness
+    from omnistream.eval.snapshot import SnapshotBuilder, item_digest, save
+
+    # 69 base + 3 freshness items were written; only two probes were checkpointed.
+    data = {
+        "version": "2-real", "corpus": "real-v2",
+        "items": [{"id": str(i), "freshness": i >= 69,
+                   "published_at": "2026-11-01"} for i in range(74)],
+        "questions": [{"gold": [str(i)], "question": str(i)} for i in (69, 70, 72, 73)],
+    }
+    stored = {str(i): SimpleNamespace(id=str(i), status="written") for i in range(72)}
+    repo = SimpleNamespace(
+        get_item=AsyncMock(side_effect=lambda key: stored.get(key)),
+        list_items=AsyncMock(side_effect=lambda: list(stored.values())),
+        list_jobs=AsyncMock(side_effect=lambda: [
+            SimpleNamespace(item_id=key, state="done") for key in stored]),
+    )
+    monkeypatch.setattr("omnistream.eval.snapshot.SentenceTransformerEmbedder", lambda _: None)
+    monkeypatch.setattr("omnistream.eval.snapshot.verify_item_store",
+                        lambda *args: item_digest(data))
+    settings = Settings(_env_file=None, data_dir=str(tmp_path))
+    builder = SnapshotBuilder(settings, repo, data, "real-v2-dev", AsyncMock())
+    builder.manifest["items"] = {
+        key: {"runtime_id": key, "status": "written", "injected_at": 1,
+              "write_lag_seconds": 2} for key in stored
+    }
+    recorded = {key: {"write_lag_seconds": 2, "answerable_lag_seconds": 3}
+                for key in ("69", "70")}
+    builder.manifest["freshness"] = recorded.copy()
+    save(builder.manifest_path, builder.manifest)
+    builder = SnapshotBuilder(settings, repo, data, "real-v2-dev", AsyncMock())
+    assert not await builder.verify_frozen()
+    # Exercise the real ingest resume guard: no intake or worker exists for old items.
+    await builder.base()
+    assert await builder.ingest(data["items"][71]) is stored["71"]
+    original_ingest = builder.ingest
+    newly_ingested = []
+
+    async def ingest(item):
+        key = item["id"]
+        if key in stored:
+            return await original_ingest(item)
+        newly_ingested.append(key)
+        stored[key] = SimpleNamespace(id=key, status="written")
+        builder.manifest["items"][key] = {
+            "runtime_id": key, "status": "written", "injected_at": 1,
+            "write_lag_seconds": 2,
+        }
+        return stored[key]
+
+    builder.ingest = ingest
+    runtime = SimpleNamespace(answer=AsyncMock(side_effect=lambda question, **kwargs:
+        SimpleNamespace(answer=SimpleNamespace(text="answer"), multi_hop=None,
+                        retrieval=None)))
+    judge = SimpleNamespace(correctness=AsyncMock(return_value={"score": 2}))
+    monkeypatch.setattr("omnistream.eval.evidence_ids", lambda result: ["72", "73"])
+    await measure_freshness(builder, data, runtime, judge)
+    assert newly_ingested == ["72", "73"]
+    assert builder.manifest["freshness"]["69"] == recorded["69"]
+    assert builder.manifest["freshness"]["70"] == recorded["70"]
+    assert builder.manifest["freshness"]["71"] == {
+        "write_lag_seconds": 2, "answerable_lag_seconds": None,
+        "probes": [], "probe_skipped": "no scored question",
+    }
+    assert runtime.answer.await_count == judge.correctness.await_count == 2
+    assert await builder.verify_frozen()
+    assert json.loads(builder.manifest_path.read_text())["frozen"] is True
+    await measure_freshness(builder, data, runtime, judge)
+    assert runtime.answer.await_count == 2
+    # A crash after the last write must not freeze ahead of its missing probe.
+    builder.manifest["frozen"] = False
+    del builder.manifest["freshness"]["73"]
+    assert not await builder.verify_frozen()
+    await measure_freshness(builder, data, runtime, judge)
+    assert newly_ingested == ["72", "73"]
+    assert runtime.answer.await_count == 3
+    assert await builder.verify_frozen()
