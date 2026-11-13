@@ -152,3 +152,17 @@ fact already confirmed by reading the items: an NVIDIA blog post of 23 Oct names
 and an SEC filing of 12 Nov reports his resignation and a successor.
 
 Round 2 is recorded as `real-v2`; real-v1 files are kept for the record.
+
+### Setback 3: OpenRouter key reached its spending limit
+
+- During the diagnosis experiments the OpenRouter key stopped working. Checked through
+  OpenRouter's key endpoint: the key has a 5.00 USD limit and 5.008 USD used
+  (0.59 USD of it on 13 Nov). The limit has no automatic reset.
+- Effect: every step that calls the LLM is blocked until the limit is raised. That covers
+  the remaining diagnosis experiments, the entity statistics for the real corpus, graph
+  ingestion and all evaluation runs.
+- Mitigation: the diagnosis was told to finish everything that needs no LLM (router code
+  analysis, graph connectivity, alias splits, seed and ranking traces with local
+  embeddings), to keep the model results already collected, and to make the rest
+  resumable so no work is repeated.
+- Needs the project owner: raise the key's limit on openrouter.ai.
