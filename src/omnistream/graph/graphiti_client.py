@@ -147,6 +147,7 @@ def build_graphiti(
         embedder_client = BgeEmbedderClient(embeddings)
         cross_encoder = LocalCrossEncoder(embeddings)
     llm = GraphitiLLMClient(
+        settings=settings,
         config=LLMConfig(
             api_key=settings.llm_api_key.get_secret_value(),
             model=settings.llm_model,

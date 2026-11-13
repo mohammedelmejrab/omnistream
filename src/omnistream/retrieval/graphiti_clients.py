@@ -30,6 +30,42 @@ from graphiti_core.prompts.models import Message
 from pydantic import BaseModel, ValidationError
 
 from omnistream.embeddings import EmbeddingService
+from omnistream.llm import completion_truncated, reasoning_kwargs
+
+
+class _PolicyCompletions:
+    """Keep Graphiti's upstream request generation and retry loop intact."""
+
+    def __init__(self, completions, settings):
+        self._completions = completions
+        self._settings = settings
+
+    async def create(self, **kwargs):
+        policy = reasoning_kwargs(self._settings)
+        if policy:
+            kwargs["extra_body"] = {
+                **kwargs.get("extra_body", {}),
+                **policy["extra_body"],
+            }
+        response = await self._completions.create(**kwargs)
+        if completion_truncated(response):
+            raise EmptyResponseError(
+                "Graphiti completion truncated (finish_reason=length); re-sample required"
+            )
+        return response
+
+
+class _PolicyClient:
+    def __init__(self, client, settings):
+        from types import SimpleNamespace
+
+        self._client = client
+        self.chat = SimpleNamespace(
+            completions=_PolicyCompletions(client.chat.completions, settings)
+        )
+
+    def __getattr__(self, name):
+        return getattr(self._client, name)
 
 
 class GraphitiLLMClient(OpenAIGenericClient):
@@ -46,6 +82,17 @@ class GraphitiLLMClient(OpenAIGenericClient):
     Non-echo calls retain the original prompt and temperature; no extra
     transport attempts or shared configuration mutations are introduced.
     """
+
+    def __init__(self, *args, settings=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        # No mutation of the injected SDK client; other users retain their policy.
+        if settings is None:
+            from omnistream.config import Settings
+
+            settings = Settings(
+                _env_file=None, llm_base_url=str(getattr(self.client, "base_url", ""))
+            )
+        self.client = _PolicyClient(self.client, settings)
 
     _SCHEMA_ECHO_KEYS = frozenset({"$defs", "properties", "items"})
     _CORRECTION = (

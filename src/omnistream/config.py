@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -42,6 +43,9 @@ class Settings(BaseSettings):
     neo4j_password: SecretStr = Field(SecretStr(""), validation_alias="NEO4J_PASSWORD")
 
     # LLM client (C4 structured client + C5 chat clients share these).
+    llm_reasoning: Literal["off", "low", "medium", "high", "provider_default"] = "off"
+    judge_reasoning: Literal["off", "low", "medium", "high", "provider_default"] = "off"
+    llm_send_reasoning_param: Literal["auto", "always", "never"] = "auto"
     llm_max_concurrency: int = 4
     llm_max_retries: int = Field(default=5, ge=0)
     llm_tokens_per_minute: int = 60  # token bucket: requests per minute

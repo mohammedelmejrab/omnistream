@@ -1,0 +1,127 @@
+{
+  "calls": 8,
+  "rows": [
+    {
+      "path": "parse",
+      "completion_tokens": 6,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "chat",
+      "completion_tokens": 7,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "chat_json",
+      "completion_tokens": 7,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "answer",
+      "completion_tokens": 23,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "chat_with_tools",
+      "completion_tokens": 6,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "judge",
+      "completion_tokens": 7,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "graphiti",
+      "completion_tokens": 7,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    },
+    {
+      "path": "llamaindex",
+      "completion_tokens": 2,
+      "reasoning_tokens": 0,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "parse": {
+      "tokens": 64,
+      "cost_usd": 9.84e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 58,
+      "completion_tokens": 6,
+      "reasoning_tokens": 0
+    },
+    "chat": {
+      "tokens": 20,
+      "cost_usd": 4.305e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 13,
+      "completion_tokens": 7,
+      "reasoning_tokens": 0
+    },
+    "chat_json": {
+      "tokens": 20,
+      "cost_usd": 4.92e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 13,
+      "completion_tokens": 7,
+      "reasoning_tokens": 0
+    },
+    "answer": {
+      "tokens": 75,
+      "cost_usd": 1.728e-05,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 52,
+      "completion_tokens": 23,
+      "reasoning_tokens": 0
+    },
+    "chat_with_tools": {
+      "tokens": 257,
+      "cost_usd": 2.371e-05,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 251,
+      "completion_tokens": 6,
+      "reasoning_tokens": 0
+    },
+    "judge": {
+      "tokens": 20,
+      "cost_usd": 5.275e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 13,
+      "completion_tokens": 7,
+      "reasoning_tokens": 0
+    },
+    "graphiti": {
+      "tokens": 20,
+      "cost_usd": 7.38e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 13,
+      "completion_tokens": 7,
+      "reasoning_tokens": 0
+    },
+    "llamaindex": {
+      "tokens": 9,
+      "cost_usd": 1.77e-06,
+      "calls": 1,
+      "cost_reported_calls": 1,
+      "prompt_tokens": 7,
+      "completion_tokens": 2,
+      "reasoning_tokens": 0
+    }
+  }
+}

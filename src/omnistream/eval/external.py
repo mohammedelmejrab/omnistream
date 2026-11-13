@@ -5,6 +5,8 @@ from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.llms.openai_like import OpenAILike
 from pydantic import PrivateAttr
 
+from omnistream.llm import reasoning_kwargs
+
 
 class LocalEmbedding(BaseEmbedding):
     _service: object = PrivateAttr()
@@ -30,6 +32,7 @@ class ExternalBaseline:
     def __init__(self, settings, items, service):
         llm = OpenAILike(
             model=settings.llm_model,
+            additional_kwargs=reasoning_kwargs(settings),
             api_base=settings.llm_base_url,
             api_key=settings.llm_api_key.get_secret_value(),
             is_chat_model=True,

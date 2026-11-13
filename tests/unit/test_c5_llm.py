@@ -258,7 +258,7 @@ def test_replay_chat_pong(settings, mock_openai):
         fx["request"]["messages"], max_tokens=10
     )
     assert reply.strip().lower() == "pong"
-    assert transport.bodies[0] == fx["request"]
+    assert transport.bodies[0] == {**fx["request"], "reasoning": {"enabled": False}}
 
 
 def test_replay_cited_answer(settings, mock_openai):
@@ -269,7 +269,10 @@ def test_replay_cited_answer(settings, mock_openai):
         max_tokens=50,
     )
     assert "BLUEHERON" in answer and "[1]" in answer
-    assert transport.bodies[0] == fx["request"]  # our prompt matches what was recorded
+    assert transport.bodies[0] == {
+        **fx["request"],
+        "reasoning": {"enabled": False},
+    }  # our prompt matches what was recorded
 
 
 def test_replay_router_json_with_real_code_fence(settings, mock_openai):

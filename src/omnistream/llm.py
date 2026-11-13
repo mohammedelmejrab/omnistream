@@ -21,11 +21,13 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import re
 import time
 from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Any, Literal, TypeVar
+from urllib.parse import urlparse
 
 import openai
 from openai import AsyncOpenAI, OpenAI
@@ -81,6 +83,35 @@ class TokenBucket:
                 await self._sleep((1 - self._tokens) / self._rate)
 
 
+logger = logging.getLogger(__name__)
+
+
+def reasoning_kwargs(settings: Settings) -> dict[str, Any]:
+    """Provider-safe OpenAI request kwargs; never send extensions implicitly."""
+    policy = settings.llm_send_reasoning_param
+    if policy == "never" or (
+        policy == "auto" and urlparse(settings.llm_base_url).hostname != "openrouter.ai"
+    ):
+        return {}
+    value = settings.llm_reasoning
+    if value == "provider_default":
+        return {}
+    reasoning = {"enabled": False} if value == "off" else {"effort": value}
+    return {"extra_body": {"reasoning": reasoning}}
+
+
+def completion_truncated(response: Any) -> bool:
+    truncated = (
+        bool(response.choices)
+        and getattr(response.choices[0], "finish_reason", None) == "length"
+    )
+    if truncated:
+        logger.warning(
+            "LLM completion truncated (finish_reason=length); re-sample required"
+        )
+    return truncated
+
+
 def _build_async_openai(settings: Settings) -> AsyncOpenAI:
     """AsyncOpenAI construction shared by every client style."""
     headers: dict[str, str] = {}
@@ -119,7 +150,9 @@ class LLMClient:
         *,
         client: OpenAI | None = None,
         model: str | None = None,
+        settings: Settings | None = None,
     ) -> None:
+        self._request_settings = settings
         if isinstance(client_or_settings, Settings):
             self._init_chat(client_or_settings, client=client, model=model)
         else:
@@ -142,6 +175,10 @@ class LLMClient:
     ) -> None:
         self._style = "structured"
         self._client = client
+        if self._request_settings is None:
+            self._request_settings = Settings(
+                _env_file=None, llm_base_url=str(getattr(client, "base_url", ""))
+            )
         self._sem = asyncio.Semaphore(max_concurrency)
         self._bucket = TokenBucket(tokens_per_minute, sleep=sleep)
         self._max_retries = max_retries
@@ -157,6 +194,11 @@ class LLMClient:
                     messages=messages,
                     max_tokens=max_tokens,
                     response_format={"type": "json_object"},
+                    **(
+                        reasoning_kwargs(self._request_settings)
+                        if self._request_settings
+                        else {}
+                    ),
                 )
             except (openai.RateLimitError, openai.APIConnectionError) as e:
                 err: Exception = e
@@ -167,7 +209,9 @@ class LLMClient:
             else:
                 if not resp.choices:
                     raise LLMError("model returned no choices")
-                return resp.choices[0].message.content or ""
+                if not completion_truncated(resp):
+                    return resp.choices[0].message.content or ""
+                err = LLMError("completion truncated (finish_reason=length)")
             attempt += 1
             if attempt > self._max_retries:
                 raise LLMError(f"LLM request failed after retries: {err}") from err
@@ -216,6 +260,11 @@ class LLMClient:
                 messages=[
                     {"role": "user", "content": 'Reply with {"ok": true} as JSON.'}
                 ],
+                **(
+                    reasoning_kwargs(self._request_settings)
+                    if self._request_settings
+                    else {}
+                ),
                 max_tokens=32,
                 response_format={"type": "json_object"},
             )
@@ -227,6 +276,11 @@ class LLMClient:
             r = await self._client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": "Call the ping tool."}],
+                **(
+                    reasoning_kwargs(self._request_settings)
+                    if self._request_settings
+                    else {}
+                ),
                 max_tokens=64,
                 tools=[
                     {
@@ -290,6 +344,7 @@ class LLMClient:
         retried here with the same budget, then raised as ``LLMError``.
         """
         params: dict[str, Any] = {
+            **reasoning_kwargs(self.settings),
             "model": model or self.model,
             "messages": list(messages),
             "temperature": temperature,
@@ -300,9 +355,18 @@ class LLMClient:
         attempts = 1 + max(0, self.settings.llm_max_retries)
         for attempt in range(attempts):
             response = self.client.chat.completions.create(**params)
-            if response.choices and response.choices[0].message.content is not None:
+            truncated = completion_truncated(response)
+            if (
+                not truncated
+                and response.choices
+                and response.choices[0].message.content is not None
+            ):
                 return response.choices[0].message.content
-            problem = "no choices" if not response.choices else "an empty message"
+            problem = (
+                "truncated completion (finish_reason=length)"
+                if truncated
+                else ("no choices" if not response.choices else "an empty message")
+            )
             detail = _provider_error(response)
             if attempt + 1 < attempts:
                 _sleep(min(_BACKOFF_MAX_SECONDS, _BACKOFF_BASE_SECONDS * 2**attempt))
@@ -346,11 +410,13 @@ def build_llm_client(settings: Settings) -> LLMClient:
         max_concurrency=settings.llm_max_concurrency,
         tokens_per_minute=settings.llm_tokens_per_minute,
         max_retries=settings.llm_max_retries,
+        settings=settings,
     )
 
 
 def judge_client(settings: Settings | None = None, **kwargs: Any) -> LLMClient:
     settings = settings or get_settings()
+    settings = settings.model_copy(update={"llm_reasoning": settings.judge_reasoning})
     return LLMClient(settings, model=settings.judge_model, **kwargs)
 
 
@@ -402,6 +468,7 @@ class AsyncLLMClient:
         tool_choice: Literal["auto", "none", "required"] | None = None,
     ) -> AssistantTurn:
         params: dict[str, Any] = {
+            **reasoning_kwargs(self.settings),
             "model": model or self.model,
             "messages": list(messages),
             "temperature": temperature,
@@ -417,7 +484,8 @@ class AsyncLLMClient:
         attempts = 1 + max(0, self.settings.llm_max_retries)
         for attempt in range(attempts):
             response = await self.client.chat.completions.create(**params)
-            if response.choices:
+            truncated = completion_truncated(response)
+            if not truncated and response.choices:
                 message = response.choices[0].message
                 if message.content is not None or message.tool_calls:
                     calls = []
@@ -437,7 +505,11 @@ class AsyncLLMClient:
                         tuple(calls),
                         message.model_dump(exclude_none=True),
                     )
-            problem = "no choices" if not response.choices else "an empty message"
+            problem = (
+                "truncated completion (finish_reason=length)"
+                if truncated
+                else ("no choices" if not response.choices else "an empty message")
+            )
             detail = _provider_error(response)
             if attempt + 1 < attempts:
                 await _async_sleep(
