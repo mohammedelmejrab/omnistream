@@ -242,7 +242,7 @@ async def build_graph_writer(
 
     graphiti = build_graphiti(settings, embedder)
     await graphiti.build_indices_and_constraints()
-    ops = Neo4jGraphOps(graphiti.driver, settings.embed_dim, settings.entity_index_name)
+    ops = Neo4jGraphOps(graphiti.driver, settings.embed_dim, settings.entity_index_name, settings.fact_index_name)
     await ops.ensure_schema()
     return GraphWriter(
         graphiti,

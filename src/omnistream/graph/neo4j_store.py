@@ -7,8 +7,11 @@ Query values and limits are parameters; DDL index identifiers are backtick-escap
 
 from __future__ import annotations
 
+import logging
+import re
 from collections.abc import Sequence
 from datetime import UTC, datetime
+from time import perf_counter
 from typing import Any
 
 import numpy as np
@@ -16,6 +19,8 @@ import numpy as np
 from omnistream.config import Settings
 from omnistream.graph.memory_store import _bounds, _seed_bounds
 from omnistream.retrieval.models import Entity, Fact, Subgraph, TimeScope, _utc
+
+logger = logging.getLogger(__name__)
 
 _VALID = """r.grounded = true
 AND (r.valid_at IS NULL OR r.invalid_at IS NULL OR r.valid_at < r.invalid_at)
@@ -95,7 +100,7 @@ def _entity(node: Any) -> Entity:
                 for label in sorted(getattr(node, "labels", data.get("labels", ())))
                 if label != "Entity"
             ),
-            data.get("type") or data.get("entity_type") or "Concept",
+            data.get("type") or data.get("entity_type") or "Entity",
         ),
         bubble=data.get("bubble", data.get("group_id", "")),
         global_id=data.get("global_id"),
@@ -149,12 +154,15 @@ class Neo4jGraphStore:
         fact_index_name: str = "fact_embedding",
         *,
         now=None,
+        exact_search: bool = False,
     ) -> None:
         if not all(
             isinstance(v, str) and v.strip()
             for v in (database, entity_index_name, fact_index_name)
         ):
             raise ValueError("database and index names must be non-empty strings")
+        self.exact_search = exact_search
+        self.search_paths = []
         self.now = now or (lambda: datetime.now(UTC))
         self.driver, self.database = driver, database
         self.entity_index_name, self.fact_index_name = (
@@ -173,6 +181,7 @@ class Neo4jGraphStore:
                 auth=(settings.neo4j_user, settings.neo4j_password.get_secret_value()),
             ),
             entity_index_name=settings.entity_index_name,
+            fact_index_name=getattr(settings, "fact_index_name", "fact_embedding"),
         )
 
     def _run(self, query: str, **parameters: Any) -> list[Any]:
@@ -214,6 +223,54 @@ class Neo4jGraphStore:
         )
         return [_entity(r["e"]) for r in records]
 
+    def name_candidates(
+        self, question: str, *, bubbles: Sequence[str], limit: int = 100
+    ) -> list[Entity]:
+        # A bounded server-side lexical prefilter; fuzzy scoring stays local.
+        tokens = sorted(
+            {t[:3] for t in re.findall(r"\w+", question.casefold()) if len(t) >= 3}
+        )
+        rows = self._run(
+            "MATCH (e:Entity) WHERE e.group_id IN $bubbles "
+            "AND any(t IN $tokens WHERE any(n IN [e.name] + coalesce(e.aliases, []) WHERE toLower(n) CONTAINS t)) "
+            "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e "
+            "ORDER BY e.uuid LIMIT $limit",
+            bubbles=list(bubbles),
+            tokens=tokens,
+            limit=limit,
+        )
+        return [_entity(r["e"]) for r in rows]
+
+    def _cosine_index(self, name: str, kind: str) -> bool:
+        rows = self._run(
+            "SHOW INDEXES YIELD name, type, entityType, labelsOrTypes, properties, state, options "
+            "WHERE name = $name AND type = 'VECTOR' AND entityType = $kind "
+            "RETURN name, state, labelsOrTypes, properties, options",
+            name=name,
+            kind=kind,
+        )
+        if not rows:
+            return False
+        row = rows[0]
+        config = row["options"].get("indexConfig", {})
+        label, prop = (
+            ("RELATES_TO", "fact_embedding")
+            if kind == "RELATIONSHIP"
+            else ("Entity", "name_embedding")
+        )
+        if (
+            row["labelsOrTypes"] != [label]
+            or row["properties"] != [prop]
+            or str(config.get("vector.similarity_function", "")).lower() != "cosine"
+        ):
+            raise ValueError(f"Index {name!r} is not a compatible cosine index")
+        return row["state"] == "ONLINE"
+
+    def _record_path(self, path, started, **details):
+        entry = dict(path=path, seconds=perf_counter() - started, **details)
+        self.search_paths.append(entry)
+        logger.debug("retrieval search %s", entry)
+
     def seed_by_embedding(
         self,
         embedding: np.ndarray,
@@ -228,25 +285,43 @@ class Neo4jGraphStore:
             raise ValueError("embedding must be a finite vector")
         if not top_k or not bubbles:
             return []
-        # Query all indexed entity candidates before filtering, so unrelated
-        # bubbles cannot consume the selected bubbles' top-k budget. Neo4j's
-        # cosine index score is (1 + cosine) / 2; expose the actual cosine.
-        records = self._run(
-            """
-MATCH (candidate:Entity) WITH count(candidate) AS candidate_count
-CALL db.index.vector.queryNodes($index_name, CASE WHEN candidate_count > 0 THEN candidate_count ELSE 1 END,
-                                $embedding) YIELD node, score AS index_score
-WITH node, 2.0 * index_score - 1.0 AS score
-WHERE node.group_id IN $bubbles AND score >= $min_cosine
-RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e, score ORDER BY score DESC, node.uuid LIMIT $top_k
-""",
-            index_name=self.entity_index_name,
-            embedding=vector.tolist(),
-            bubbles=list(bubbles),
-            min_cosine=min_cosine,
-            top_k=top_k,
-        )
-        return [(_entity(r["e"]), float(r["score"])) for r in records]
+        started = perf_counter()
+        projection = "node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e"
+        if self.exact_search or not self._cosine_index(self.entity_index_name, "NODE"):
+            rows = self._run(
+                "MATCH (node:Entity) WHERE node.group_id IN $bubbles AND node.name_embedding IS NOT NULL "
+                "WITH node, vector.similarity.cosine(node.name_embedding, $embedding) AS normalized "
+                "WITH node, 2.0 * normalized - 1.0 AS score WHERE score >= $min_cosine "
+                "RETURN "
+                + projection
+                + ", score ORDER BY round(score, 6) DESC, node.uuid LIMIT $top_k",
+                bubbles=list(bubbles),
+                embedding=vector.tolist(),
+                min_cosine=min_cosine,
+                top_k=top_k,
+            )
+            path = "entity_exact"
+        else:
+            # Finite refill: never request the graph's entire population.
+            for fetch in (top_k * 5, top_k * 15, top_k * 25):
+                rows = self._run(
+                    "CALL db.index.vector.queryNodes($index_name, $fetch, $embedding) YIELD node, score AS normalized "
+                    "WITH node, 2.0 * normalized - 1.0 AS score WHERE node.group_id IN $bubbles AND score >= $min_cosine "
+                    "RETURN "
+                    + projection
+                    + ", score ORDER BY round(score, 6) DESC, node.uuid LIMIT $top_k",
+                    index_name=self.entity_index_name,
+                    fetch=fetch,
+                    embedding=vector.tolist(),
+                    bubbles=list(bubbles),
+                    min_cosine=min_cosine,
+                    top_k=top_k,
+                )
+                if len(rows) >= top_k:
+                    break
+            path = "entity_ann"
+        self._record_path(path, started)
+        return [(_entity(r["e"]), float(r["score"])) for r in rows]
 
     def seed_by_fact_embedding(
         self,
@@ -256,60 +331,69 @@ RETURN node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:Glo
         top_k: int = 10,
         time_scope: TimeScope | None = None,
     ) -> list[tuple[Entity, float]]:
-        """Search relationship vectors; exact fallback needs no schema mutation.
+        """Bounded ANN with group/validity filtering and finite refill.
 
-        Enumerating selected groups is linear in their embedded facts. This is
-        appropriate for small graphs; large deployments need filtered ANN search.
+        Exact replay is scored inside Neo4j; only top-k vectors' endpoints cross
+        Bolt. Missing-index fallback remains read-only and explicitly logged.
         """
-        from omnistream.embeddings import EmbeddingService
-
         _seed_bounds(top_k, -1)
+        vector = np.asarray(embedding, dtype=float)
+        if vector.ndim != 1 or not np.isfinite(vector).all():
+            raise ValueError("embedding must be a finite vector")
         if not top_k or not bubbles:
             return []
-        indices = self._run(
-            "SHOW INDEXES YIELD name, type, entityType, labelsOrTypes, properties, state "
-            "WHERE type = 'VECTOR' AND entityType = 'RELATIONSHIP' "
-            "AND 'RELATES_TO' IN labelsOrTypes AND properties = ['fact_embedding'] "
-            "AND state = 'ONLINE' RETURN name ORDER BY name"
+        started = perf_counter()
+        params = dict(
+            embedding=vector.tolist(),
+            bubbles=list(bubbles),
+            top_k=top_k,
+            **_scope_parameters(time_scope, self.now),
         )
-        if indices:
-            # Retrieve before group/time filtering so other groups cannot consume
-            # the budget. This is still linear; filtered ANN is future scale work.
-            rows = self._run(
-                "MATCH ()-[candidate:RELATES_TO]->() WITH count(candidate) AS n "
-                "CALL db.index.vector.queryRelationships($index_name, CASE WHEN n > 0 THEN n ELSE 1 END, "
-                "$embedding) YIELD relationship AS r, score "
-                "WITH r, 2.0 * score - 1.0 AS score WHERE r.group_id IN $bubbles AND "
-                + _VALID
-                + " RETURN r.uuid AS id, startNode(r).uuid AS subject, endNode(r).uuid AS object, score "
-                "ORDER BY score DESC, id LIMIT $top_k",
-                index_name=indices[0]["name"],
-                embedding=np.asarray(embedding, dtype=float).tolist(),
-                bubbles=list(bubbles),
-                top_k=top_k,
-                **_scope_parameters(time_scope, self.now),
-            )
-            ranked = [(r, r["score"]) for r in rows]
+        suffix = " RETURN r.uuid AS id, startNode(r).uuid AS subject, endNode(r).uuid AS object, score ORDER BY round(score, 6) DESC, id LIMIT $top_k"
+        indexed = (
+            self._cosine_index(self.fact_index_name, "RELATIONSHIP")
+            if not self.exact_search
+            else False
+        )
+        if indexed:
+            for fetch in (top_k * 5, top_k * 15, top_k * 25):
+                rows = self._run(
+                    "CALL db.index.vector.queryRelationships($index_name, $fetch, $embedding) YIELD relationship AS r, score AS normalized "
+                    "WITH r, 2.0 * normalized - 1.0 AS score WHERE r.group_id IN $bubbles AND "
+                    + _VALID
+                    + suffix,
+                    index_name=self.fact_index_name,
+                    fetch=fetch,
+                    **params,
+                )
+                if len(rows) >= top_k:
+                    break
+            path = "fact_ann"
         else:
             rows = self._run(
-                "MATCH (s:Entity)-[r:RELATES_TO]->(o:Entity) WHERE r.group_id IN $bubbles "
-                "AND r.fact_embedding IS NOT NULL AND "
+                "MATCH ()-[r:RELATES_TO]->() WHERE r.group_id IN $bubbles AND r.fact_embedding IS NOT NULL AND "
                 + _VALID
-                + " RETURN r.uuid AS id, r.fact_embedding AS embedding, "
-                "s.uuid AS subject, o.uuid AS object ORDER BY r.uuid",
+                + " WITH r, 2.0 * vector.similarity.cosine(r.fact_embedding, $embedding) - 1.0 AS score"
+                + suffix,
+                **params,
+            )
+            path = "fact_exact" if self.exact_search else "fact_exact_missing_index"
+        ids = sorted({r[key] for r in rows for key in ("subject", "object")})
+        nodes = (
+            self._run(
+                "MATCH (e:Entity) WHERE e.uuid IN $ids AND e.group_id IN $bubbles "
+                "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
+                ids=ids,
                 bubbles=list(bubbles),
-                **_scope_parameters(time_scope, self.now),
             )
-            scores = EmbeddingService.cosine_similarity(
-                embedding, [r["embedding"] for r in rows]
-            )
-            ranked = sorted(
-                zip(rows, scores), key=lambda x: (-float(x[1]), x[0]["id"])
-            )[:top_k]
-        entities = {e.id: e for e in self.entities_in(bubbles)}
+            if ids
+            else []
+        )
+        entities = {e.id: e for e in (_entity(r["e"]) for r in nodes)}
+        self._record_path(path, started, facts=len(rows))
         return [
-            (entities[r[key]], float(score))
-            for r, score in ranked
+            (entities[r[key]], float(r["score"]))
+            for r in rows
             for key in ("subject", "object")
             if r[key] in entities
         ]

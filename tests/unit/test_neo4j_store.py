@@ -59,14 +59,15 @@ EDGE = {
 def test_seed_parameters_mapping_and_entities():
     malicious = "news' OR true //"
     index = "index' malicious"
-    driver = Driver([{"e": NODE, "score": 0.5}], [{"e": NODE}])
+    driver = Driver(*[[{"e": NODE, "score": 0.5}]] * 3, [{"e": NODE}])
     store = Neo4jGraphStore(driver, database="test-db", entity_index_name=index)
+    store._cosine_index = lambda *args: True
     assert isinstance(store, GraphStore)
     result = store.seed_by_embedding(np.array([1.0, 0.0]), bubbles=[malicious])
     assert result[0][0].aliases == ("ACME",) and result[0][1] == 0.5
     query, params = driver.calls[0]
     assert malicious not in query and index not in query
-    assert "2.0 * index_score - 1.0 AS score" in query
+    assert "2.0 * normalized - 1.0 AS score" in query
     assert "db.index.vector.queryNodes" in query and "score >= $min_cosine" in query
     assert "node.group_id IN $bubbles" in query and "LIMIT $top_k" in query
     assert params == {
@@ -75,9 +76,10 @@ def test_seed_parameters_mapping_and_entities():
         "bubbles": [malicious],
         "min_cosine": 0.5,
         "top_k": 5,
+        "fetch": 25,
     }
     assert store.entities_in(["news"])[0].id == "a"
-    assert driver.databases == [{"database": "test-db"}] * 2
+    assert driver.databases == [{"database": "test-db"}] * 4
 
 
 def test_expand_query_bounds_filters_mapping_and_identity():

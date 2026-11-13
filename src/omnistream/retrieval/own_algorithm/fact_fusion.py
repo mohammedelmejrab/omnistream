@@ -1,7 +1,7 @@
 """Step 5 of the ``own`` algorithm (spec C5): fuse fact signals with RRF.
 
 Candidate facts use weighted Reciprocal Rank Fusion (k = 60, weights 2:1:1);
-near-constant auxiliary signals are omitted. This extends spec C5 step 5:
+signals are rounded to six decimal places before ranking. This extends spec C5 step 5:
 
 1. fact score  - question similarity x endpoint PageRank (from step 4)
 2. recency     - ``exp(-lambda * age_days)`` with ``lambda = ln 2 / half_life``
@@ -111,9 +111,8 @@ def fuse_facts(
         )
         for c in candidates
     }
-    # Spec C5 step 5 deviation: weighted RRF prioritizes relevance (2:1:1).
-    # Auxiliary signals with <1% relative standard deviation convey negligible
-    # discrimination. Keep relevance even when all scores are zero for fallback.
+    # Six decimals remove sub-micro-unit floating noise without discarding a
+    # rare but material corroboration signal. Exact rounded ties share rank.
     signals = {
         "fact_score": {c.id: c.fact_score for c in candidates},
         "recency": recency,
@@ -124,13 +123,13 @@ def fuse_facts(
     if not math.isfinite(min_cv) or min_cv < 0:
         raise ValueError("min_cv must be finite and non-negative")
 
+    signals = {
+        name: {i: round(v, 6) for i, v in values.items()}
+        for name, values in signals.items()
+    }
+
     def informative(values):
-        xs = list(values.values())
-        if len(set(xs)) < 2:
-            return False
-        mean = math.fsum(xs) / len(xs)
-        sd = math.sqrt(math.fsum((x - mean) ** 2 for x in xs) / len(xs))
-        return sd / max(abs(mean), 1e-12) >= min_cv
+        return len(set(values.values())) > 1
 
     rankings = {
         name: ranks_from_scores(values)

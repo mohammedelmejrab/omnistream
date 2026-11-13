@@ -24,16 +24,21 @@ class Seed:
 
 
 def is_named_entity(entity: Entity) -> bool:
-    """Conservative name guard: a capitalized token, excluding explicit generic types.
+    """Use ingestion's ontology, independent of spelling, case, or language.
 
-    Concept alone is not a generic marker: named concepts/products can be proper names.
-    This heuristic is language/casing dependent; fact seeds deliberately bypass it.
+    Concept and untyped Entity describe arbitrary phrases. The other shared
+    ontology types represent named entities. SAME_AS alone is insufficient:
+    ingestion can link generic concepts too.
     """
-    return entity.type.casefold() not in {
-        "generic",
-        "genericentity",
-        "generic_type",
-    } and any(token[0].isupper() for token in re.findall(r"[^\W\d_]+", entity.name))
+    return entity.type.casefold() in {
+        "person",
+        "organization",
+        "location",
+        "product",
+        "event",
+        "financialinstrument",
+        "publication",
+    }
 
 
 def seed_entities(
@@ -47,23 +52,27 @@ def seed_entities(
     fuzzy_threshold: float = 90,
     fact_top_k: int = 10,
     time_scope=None,
+    max_seeds: int = 10,
 ) -> list[Seed]:
-    """Seed names plus ten fact-text matches (C5 step 1 extension for P1).
+    """Combine bounded name/fact candidates, capped by distinct identity.
 
-    Ten facts is twice the five-name budget: event descriptions can start at
-    either endpoint. Keep fuzzy names outside that budget, as in the spec.
+    Ten seeds is twice the five-name budget; fuzzy and fact endpoints share
+    this total budget and the ontology eligibility rule.
     """
+    if isinstance(max_seeds, bool) or not isinstance(max_seeds, int) or max_seeds < 0:
+        raise ValueError("max_seeds must be a non-negative integer")
     if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k < 0:
         raise ValueError("top_k must be a non-negative integer")
     if not 0 <= fuzzy_threshold <= 100:
         raise ValueError("fuzzy_threshold must be within [0, 100]")
-    entities = store.entities_in(bubbles)
+    # Bounded candidate pool; stores can match query tokens on the server.
+    entities = store.name_candidates(question, bubbles=bubbles, limit=100)
     seeds = {
         e.id: Seed(e, score, "vector")
         for e, score in store.seed_by_embedding(
             question_embedding,
             bubbles=bubbles,
-            top_k=len(entities),
+            top_k=max(50, top_k * 10),
             min_cosine=min_cosine,
         )
         if is_named_entity(e)
@@ -109,10 +118,12 @@ def seed_entities(
     for entity, score in store.seed_by_fact_embedding(
         question_embedding, bubbles=bubbles, top_k=fact_top_k, time_scope=time_scope
     ):
+        if not is_named_entity(entity) or score <= 0:
+            continue
         previous = seeds.get(entity.id)
         if previous is None or score > previous.score:
             seeds[entity.id] = Seed(entity, score, "fact")
     distinct = {}
     for seed in sorted(seeds.values(), key=lambda s: (-s.score, s.entity.id)):
         distinct.setdefault(seed.entity.global_id or seed.entity.id, seed)
-    return list(distinct.values())
+    return list(distinct.values())[:max_seeds]

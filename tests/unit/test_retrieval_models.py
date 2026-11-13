@@ -161,6 +161,11 @@ class OfflineGraphStore:
     ) -> list[tuple[Entity, float]]:
         return []
 
+    def name_candidates(
+        self, question: str, *, bubbles: Sequence[str], limit: int = 100
+    ) -> list[Entity]:
+        return []
+
     def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
         return []
 

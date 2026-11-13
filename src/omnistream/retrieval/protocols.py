@@ -54,6 +54,12 @@ class GraphStore(Protocol):
         time_scope: TimeScope | None = None,
     ) -> list[tuple[Entity, float]]: ...
 
+    def name_candidates(
+        self, question: str, *, bubbles: Sequence[str], limit: int = 100
+    ) -> list[Entity]:
+        """Return a bounded lexical candidate pool for fuzzy name matching."""
+        ...
+
     def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
         """Return candidates for fuzzy entity-name matching."""
         ...

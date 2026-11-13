@@ -56,10 +56,12 @@ class Neo4jGraphOps:
         driver: Any,
         embed_dim: int,
         entity_index_name: str = "entity_name_embedding",
+        fact_index_name: str = "fact_embedding",
     ) -> None:
         self._driver = driver
         self._dim = embed_dim
         self._entity_index = entity_index_name
+        self._fact_index = fact_index_name
         self._global_index = GLOBAL_INDEX
 
     async def _q(self, query: str, **params: Any) -> list[dict[str, Any]]:
@@ -87,6 +89,33 @@ class Neo4jGraphOps:
             raise ValueError(
                 f"Neo4j index {self._entity_index!r} dimension is {actual}; expected {self._dim}"
             )
+        await self._q(
+            f"CREATE VECTOR INDEX `{self._fact_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
+            "FOR ()-[r:RELATES_TO]-() ON (r.fact_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        fact_rows = await self._q(
+            "SHOW INDEXES YIELD name, entityType, labelsOrTypes, properties, options "
+            "WHERE name = $name RETURN entityType, labelsOrTypes, properties, options",
+            name=self._fact_index,
+        )
+        if (
+            not fact_rows
+            or fact_rows[0]["entityType"] != "RELATIONSHIP"
+            or fact_rows[0]["labelsOrTypes"] != ["RELATES_TO"]
+            or fact_rows[0]["properties"] != ["fact_embedding"]
+            or fact_rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
+            != self._dim
+            or str(
+                fact_rows[0]["options"]
+                .get("indexConfig", {})
+                .get("vector.similarity_function", "")
+            ).lower()
+            != "cosine"
+        ):
+            raise ValueError("Fact vector index missing or incompatible")
         await self._q(
             f"CREATE VECTOR INDEX {GLOBAL_INDEX} IF NOT EXISTS "
             "FOR (g:GlobalEntity) ON (g.name_embedding) "

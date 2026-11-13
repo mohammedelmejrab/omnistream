@@ -68,6 +68,7 @@ class Settings(BaseSettings):
     embedding_device: str | None = None
 
     entity_index_name: str = Field(default="entity_name_embedding", min_length=1)
+    fact_index_name: str = Field(default="fact_embedding", min_length=1)
 
     # Retrieval defaults (C5).
     rrf_k: int = Field(default=60, ge=1)

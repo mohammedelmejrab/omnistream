@@ -1,4 +1,7 @@
-"""End-to-end own retriever: spec C5 steps 1-5."""
+"""Bounded typed fact/name seeds, weighted PPR, version representatives and RRF.
+
+Extends C5 steps 1, 3 and 5; restart remains at seeds, weighted by evidence.
+"""
 
 from __future__ import annotations
 
@@ -11,6 +14,7 @@ from omnistream.retrieval.own_algorithm.fact_fusion import FactCandidate, fuse_f
 from omnistream.retrieval.own_algorithm.pagerank import personalized_pagerank
 from omnistream.retrieval.own_algorithm.scoring import score_facts, seed_paths
 from omnistream.retrieval.own_algorithm.seeding import seed_entities
+from omnistream.retrieval.own_algorithm.versions import fact_versions
 from omnistream.retrieval.protocols import GraphStore
 
 
@@ -49,6 +53,7 @@ class OwnRetriever:
         excluded_bubbles: Sequence[str] = (),
         top_k: int | None = None,
     ) -> RetrievalResult:
+        self.last_version_groups = []
         limit = self.top_k if top_k is None else top_k
         self._validate_top_k(limit)
         if not limit:
@@ -63,16 +68,6 @@ class OwnRetriever:
         )
         if not seeds:
             return RetrievalResult(mode="own")
-        # One seed per real-world identity: seeding both bubble-local copies
-        # hides the SAME_AS path and spends the seed budget on duplicates.
-        identities = set()
-        unique_seeds = []
-        for seed in seeds:
-            identity = seed.entity.global_id or seed.entity.id
-            if identity not in identities:
-                identities.add(identity)
-                unique_seeds.append(seed)
-        seeds = unique_seeds
         ids = [s.entity.id for s in seeds]
         graph = self.store.expand(
             ids,
@@ -82,7 +77,9 @@ class OwnRetriever:
         )
         if not graph.facts:
             return RetrievalResult(mode="own", seeds=tuple(s.entity for s in seeds))
-        ranks = personalized_pagerank(graph, ids)
+        ranks = personalized_pagerank(
+            graph, ids, seed_weights={s.entity.id: max(0.0, s.score) for s in seeds}
+        )
         embeddings = self.store.fact_embeddings([f.id for f in graph.facts])
         missing = [f for f in graph.facts if f.id not in embeddings]
         if missing:
@@ -95,11 +92,15 @@ class OwnRetriever:
         scores = score_facts(graph, ranks, query, embeddings)
         paths = seed_paths(graph, ids)
         facts = {f.id: f for f in graph.facts}
+        self.last_version_groups = fact_versions(
+            graph, embeddings, scope=time_scope, now=self.now()
+        )
+        representatives = [g.representative for g in self.last_version_groups]
         candidates = [
             FactCandidate(
                 f.id, scores[f.id], f.published_at, f.bubble, f.confidence, paths[f.id]
             )
-            for f in graph.facts
+            for f in representatives
         ]
         fused = fuse_facts(
             candidates,

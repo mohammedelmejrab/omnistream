@@ -323,6 +323,24 @@ async def test_c4_ensure_schema_creates_entity_index_with_settings_dimension():
                 (
                     [
                         {
+                            "entityType": "RELATIONSHIP",
+                            "labelsOrTypes": ["RELATES_TO"],
+                            "properties": ["fact_embedding"],
+                            "options": {
+                                "indexConfig": {
+                                    "vector.dimensions": 384,
+                                    "vector.similarity_function": "cosine",
+                                }
+                            },
+                        }
+                    ],
+                    None,
+                    None,
+                ),
+                ([], None, None),
+                (
+                    [
+                        {
                             "name": "existing_global",
                             "options": {"indexConfig": {"vector.dimensions": 384}},
                         }
@@ -352,6 +370,24 @@ async def test_global_linker_uses_existing_equivalent_index():
                 ([], None, None),
                 (
                     [{"options": {"indexConfig": {"vector.dimensions": 384}}}],
+                    None,
+                    None,
+                ),
+                ([], None, None),
+                (
+                    [
+                        {
+                            "entityType": "RELATIONSHIP",
+                            "labelsOrTypes": ["RELATES_TO"],
+                            "properties": ["fact_embedding"],
+                            "options": {
+                                "indexConfig": {
+                                    "vector.dimensions": 384,
+                                    "vector.similarity_function": "cosine",
+                                }
+                            },
+                        }
+                    ],
                     None,
                     None,
                 ),
