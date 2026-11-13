@@ -198,3 +198,50 @@ Decision: approved for building the question set, with these caveats.
 3. Not yet measured, blocked by the API key limit (setback 3): LLM-based entity statistics
    (cross-bubble entities, how many appear under several names).
 4. 101 of the 350 items are dated in the last 4 days of the window (mostly arXiv).
+
+### Finding 4: controlled diagnosis on eval-v2 (commit `a363621`)
+
+Full report: `docs/diagnostics/eval-v2-diagnosis.md`. Each suspected cause was tested by
+changing one thing at a time on the frozen eval-v2 snapshot, with the new model, without
+modifying the system. Spent 0.74 USD before the key limit was hit. 111 of 370 planned
+answer cells were judged; the rest are marked NOT YET MEASURED and can be resumed with
+`python -m omnistream.eval.diagnostics.resume`. Results that needed no LLM are complete.
+
+Same-model baseline on the 20 multi-hop questions: classic 4/20 fully correct,
+graphiti 4/20, own 1/20.
+
+| Suspected cause | Verdict | Evidence |
+|---|---|---|
+| 1. Own mode starts from the wrong entities (seeding) | CONFIRMED, largest | 56 of 100 seeds are generic nodes ("research funding agreement", "manufacturing divisions"). Giving own the correct starting entities raised full evidence coverage from 1/20 to 14/20 questions |
+| 2. Fusion pushes relevant facts out of the top 20 | CONFIRMED | With correct seeds, 5/20 questions still lose a gold item. The best fact by relevance (rank 1) drops to fused rank 21-24 because recency and confidence get equal weight. Confidence is 0.92 for 378 of 381 facts, so it adds noise, not signal |
+| 3. Graph defects (missing entities, wrong merges, alias splits) | CONFIRMED, overlapping | 13/20 questions are exposed to at least one. All 20 abbreviations stated in the texts ("HVM, the abbreviation used by Halvex Mobility") are separate unlinked entities. 2 wrong merges. 19 of 100 sampled facts are wrong (mostly wrong direction or subject). 33% of entities are generic phrases, not names |
+| 4. "Current facts only" filter hides needed historical facts | CONFIRMED | In 3/20 questions the January appointment that identifies a person is filtered out because a later change made it historical |
+| 5. Event-relative time ("immediately before the September recall") | CONFIRMED | All 14 measured time-sensitive failures are this phrasing. The router returns no time scope, so the answer prompt says "prefer the most recent statement" - the opposite of what is asked |
+| Query router leaves out needed bubbles | REJECTED for the new model | With the new model the router omitted a needed bubble in only 4 of 300 trials. Forcing all bubbles did not improve recall. Yesterday's routing finding (Finding 1) was a property of the old model |
+| 500-edge expansion cap | REJECTED | No query reached it |
+| Why classic+subagents does better | NOT YET MEASURED | Code-level reason: classic `search` matches query text against passages, so a search without a company name still finds the right passage. Own `search` needs an entity name to seed from; queries naming no entity land on generic neighbourhoods |
+
+Why graphiti beats own: graphiti searches fact text directly (hybrid search), so it does not
+depend on finding the right starting entity. That is the same weakness as cause 1.
+
+Correction to Finding 1: the router was the most common first failure with the old model
+(`deepseek-chat`), but not with the new one. Router fixes are therefore not a priority.
+
+### Plan for fixes (general mechanisms, not tuned to eval-v2)
+
+1. Seeding: seed from fact text and passages as well as entity names, and stop generic
+   phrases from taking seed slots.
+2. Fusion: weight relevance above recency and confidence.
+3. Graph: merge abbreviations and aliases that the source text states explicitly, during
+   ingestion. Reduce generic entities.
+4. Time: support event-relative questions ("before X") and do not hide historical facts
+   when the question is about the past.
+
+Each fix will be developed on the real-data dev split and checked on eval-v2 as a
+secondary check. The real-data test split is used only for the final measurement.
+
+### Budget
+
+OpenRouter key limit raised to 14 USD by the owner on 13 Nov; 8.99 USD available at this
+point. Plan: measure the ingestion cost on a few real items first, build a small dev
+snapshot for developing fixes, and build the test snapshot once.
