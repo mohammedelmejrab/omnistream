@@ -472,3 +472,61 @@ different results in 6.
   calls had sent no cap, so the provider saw up to 131,072 tokens.
 - Check: run 13 re-aggregated with the fixed code says INVALID RUN, 302 unmeasured pairs,
   all HTTP 402. The original report is kept next to it for the record.
+
+
+### Change 9: own retrieval fixes, round 2 (commit `646beb6`)
+
+- Replaced casing-based name eligibility with the shared ingestion ontology:
+  seven named types seed; Concept/untyped/unknown types do not. Same rule for
+  name/fuzzy/fact endpoints. Language/script counterexamples are covered.
+  Read-only audit: all 283 eval-v2 nodes have SAME_AS (all 94 generic nodes too),
+  so linkage alone is uninformative. Types exclude 52/94 generic and 12/189
+  manually non-generic nodes; 42 generic nodes remain eligible through their
+  ingestion types. Max degree 20; no eval-specific hub threshold was selected.
+- Cap all distinct seed identities at 10; PPR restart mass follows seed scores.
+  Five/fifteen sensitivity is recorded, defaults unchanged after measurement.
+  Names/fuzzy candidates are bounded; fact endpoints are hydrated by UUID only.
+- New C4 snapshots provision configured relationship cosine vector index
+  (384 dimensions by default), IF NOT EXISTS. Fact ANN overfetches 5k/15k/25k,
+  filters group/validity in Cypher, and records paths/times. Exact replay and
+  missing-index fallback score inside Neo4j and transfer only bounded results.
+  Existing indexes are checked by configured name/schema/metric before score
+  conversion. Settings/writer/protocol plumbing was needed for these contracts.
+  Graphiti 0.31.2 supplies edge_name_and_fact fulltext, not this vector index.
+  BM25 considered, left for a separate hybrid ablation. No application DDL run.
+- Before fusion, group fact versions by global endpoint identities and normalized
+  relation (or >=.95 fact cosine within the same endpoint pair), choose latest
+  valid assertion. Preserve full version/provenance objects in diagnostics.
+  Point queries select the version valid then; intervals retain overlapping
+  versions. This does not repair router scopes or wrong ingestion identities.
+- Replace CV-based signal dropping with six-decimal rounding; rare corroboration
+  remains informative. Stable graph ordering and exact-path score/UUID ordering;
+  redundant pipeline dedup removed, pipeline documentation and neutral tests updated.
+- 1,080 offline cells: 60 questions x two route policies x nine configurations.
+  All use local embeddings, frozen clock, blocked LLM SDK calls. Exact-path paired
+  baseline / round1 / round2 recorded-route recall .678/.794/.800, Recall@10
+  .661/.786/.772, full 31/41/39 of 60, MRR .444/.424/.553, Hits@1
+  .267/.183/.350. Freshness MRR .858/.475/1.000. Grouping alone leaves freshness
+  .475; do not attribute the combined gain to that change alone. Historical ANN
+  results remain separate; exact-path differences are not implementation gains.
+- Regressions: paired exact combined worsens at least one metric in 16 current /
+  13 all-bubble cells vs baseline, 14/14 vs round1. Every signed per-cell delta,
+  including historical-reference comparisons, is retained. Full coverage and
+  Recall@10 regressions versus round1 are explicit; no generalization claim.
+- Independent exact replays: 0/44 changed seeds/fact ranks/item ranks (round1
+  previously 6/44). Fact path, 60 uncached queries: ANN mean 49.10 ms, median
+  24.87 ms; exact mean 14.99 ms, median 14.23 ms. Small synthetic graph, concurrent
+  database activity; no large-corpus scaling/latency claim.
+- Validation: full offline 1108 passed, 1 skipped, 22 deselected in 101.30s;
+  retrieval-focused 149 passed; isolated Neo4j container integration including
+  bounded refill 1 passed. Initial old-contract mocks were repaired; concurrent
+  unrelated Judge/token-cap failures on an earlier pass are retained in logs.
+- No commits, paid LLM calls, web searches, .env access, application graph writes,
+  snapshot writes or process termination. E0 historical hash check: 104/105
+  non-ephemeral files match; chroma/chroma.sqlite3 differs since E0 (not a
+  task-start comparison, origin unestablished). This task never opened Chroma.
+  SQLite WAL/SHM sidecars were excluded from that historical check.
+- Report: docs/diagnostics/own-fixes-round2.md. Raw measurements, signal inventory,
+  replays, historical/exact paired deltas and timings: data/diagnostics/own-fixes-round2/.
+  Real-data dev validation and answer-level evaluation remain outstanding;
+  the concurrently owned real snapshot and real test split were not used.
