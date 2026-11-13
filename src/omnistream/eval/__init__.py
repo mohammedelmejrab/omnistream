@@ -16,6 +16,7 @@ from .dataset import parse_rows
 from .metrics import (
     aggregate,
     fatal_provider_error,
+    ingestion_outcomes,
     retrieval_metrics,
     routing_metrics,
     run_validity,
@@ -58,7 +59,9 @@ async def measure_freshness(builder, dataset, runtime, judge):
             "probes": probe,
         }
         if question is None:
-            builder.manifest["freshness"][item["id"]]["probe_skipped"] = "no scored question"
+            builder.manifest["freshness"][item["id"]]["probe_skipped"] = (
+                "no scored question"
+            )
         save(builder.manifest_path, builder.manifest)
 
 
@@ -334,6 +337,9 @@ async def run_evaluation(
             else:
                 builder.manifest["frozen"] = True
                 save(builder.manifest_path, builder.manifest)
+            summary.global_metrics.update(
+                ingestion_outcomes(builder.manifest["items"], questions)
+            )
             mapping = {
                 key: value["runtime_id"]
                 for key, value in builder.manifest["items"].items()
@@ -554,7 +560,7 @@ async def run_evaluation(
                 )
             )
             summary.global_metrics["snapshot_validation"] = (
-                "PASS: matching dataset, exact item set, all written, all queue jobs done"
+                "PASS: matching dataset, exact item set, all written/unsorted, completed queue jobs"
             )
             summary.global_metrics["snapshot_construction_seconds"] = (
                 builder.manifest.get("frozen_at", 0)

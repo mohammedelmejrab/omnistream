@@ -239,14 +239,16 @@ class SnapshotBuilder:
         } - self.manifest["freshness"].keys()
         if missing_freshness:
             if self.manifest.get("frozen"):
-                raise ValueError("frozen snapshot lacks recorded freshness measurements")
+                raise ValueError(
+                    "frozen snapshot lacks recorded freshness measurements"
+                )
             return False
         stored = {i.id: i for i in await self.repo.list_items()}
         jobs = await self.repo.list_jobs()
         if len(stored) != len(expected) or any(
-            e.get("status") != "written"
+            e.get("status") not in ("written", "unsorted")
             or e["runtime_id"] not in stored
-            or stored[e["runtime_id"]].status != "written"
+            or stored[e["runtime_id"]].status != e.get("status")
             or not any(j.item_id == e["runtime_id"] and j.state == "done" for j in jobs)
             for e in entries.values()
         ):
@@ -254,6 +256,11 @@ class SnapshotBuilder:
         digest = verify_item_store(self.path, self.manifest, self.dataset)
         if digest != self.manifest["item_content_sha256"]:
             raise ValueError("snapshot content digest mismatch")
+        self.manifest["unsorted_item_ids"] = {
+            key: {"route_confidence": stored[e["runtime_id"]].route_confidence}
+            for key, e in entries.items()
+            if e["status"] == "unsorted"
+        }
         self.manifest.setdefault("frozen_at", time.time())
         self.manifest["frozen"] = True
         save(self.manifest_path, self.manifest)

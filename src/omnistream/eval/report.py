@@ -88,8 +88,15 @@ def write_report(directory, snapshot, stamp, metrics, results, global_metrics, c
         ],
     )
     validity = run_validity(metrics)
+    unsorted = global_metrics.get("ingestion_unsorted_item_ids", {})
+    gold_questions = sorted(
+        {q for entry in unsorted.values() for q in entry["gold_question_ids"]}
+    )
+    gold_count = sum(bool(entry["gold_question_ids"]) for entry in unsorted.values())
+    counts = global_metrics.get("ingestion_status_counts", {})
     lines = [
         f"# OmniStream evaluation: {snapshot}",
+        f"Ingestion: {counts.get('written', 0)} written, {len(unsorted)} unsorted; gold items unsorted: {gold_count} ({', '.join(gold_questions) or 'none'}). Unsorted items remain outside the graph; route confidences and gold/acceptable evidence dependencies appear in global measurements.",
         "",
         "INVALID RUN"
         if validity["status"] == "invalid"

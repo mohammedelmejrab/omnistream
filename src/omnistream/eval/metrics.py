@@ -299,7 +299,12 @@ def ingestion_routing_metrics(items, entries, groups):
     categories = {}
     for item in items:
         labelled = {groups[b] for b in item["bubbles"]}
-        assigned = set(entries[item["id"]].get("bubbles", []))
+        entry = entries[item["id"]]
+        assigned = (
+            set()
+            if entry.get("status") == "unsorted"
+            else set(entry.get("bubbles", []))
+        )
         extra = len(assigned - labelled)
         exact += assigned == labelled
         primary += labelled <= assigned
@@ -316,4 +321,26 @@ def ingestion_routing_metrics(items, entries, groups):
         "ingestion_over_assignment_rate": extras / n if n else None,
         "ingestion_wrong_routing_rate": wrong / n if n else None,
         "ingestion_over_assignments_by_category": categories,
+    }
+
+
+def ingestion_outcomes(entries, questions):
+    """Expose router misses against the selected scored questions, without rescue."""
+    unsorted = {
+        key: {
+            "route_confidence": entry.get("route_confidence"),
+            "gold_question_ids": [q["id"] for q in questions if key in q["gold"]],
+            "acceptable_evidence_question_ids": [
+                q["id"] for q in questions if key in q.get("acceptable_evidence", [])
+            ],
+        }
+        for key, entry in entries.items()
+        if entry.get("status") == "unsorted"
+    }
+    return {
+        "ingestion_unsorted_count": len(unsorted),
+        "ingestion_unsorted_item_ids": unsorted,
+        "ingestion_status_counts": dict(
+            Counter(e.get("status") for e in entries.values())
+        ),
     }
