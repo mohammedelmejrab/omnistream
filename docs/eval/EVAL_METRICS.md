@@ -18,7 +18,7 @@ Retrieved items are deduplicated in first-retrieval order before scoring (`metri
 ### Recall@k
 - **Meaning:** the share of gold evidence items that appear in the top k retrieved items.
 - **Computation:** `|top-k retrieved ∩ gold| / |gold|`, averaged over questions. Range 0-1, higher is better.
-- **Status:** Recall@10 implemented (`metrics.py:69`, gold only, acceptable evidence not counted). Recall@2, @5 and a full recall@k curve are **to add**; @5 is what HippoRAG 2 reports (passage recall@5), so it is the comparison point for Track A.
+- **Status:** Recall@10 implemented (`metrics.py:69`, gold only, acceptable evidence not counted). Recall@2, @5 and a full recall@k curve are **to add**; HippoRAG 1 reports passage Recall@2 and @5 (Table 2), so these are the comparison points for Track A.
 - **Track A note:** `own` returns facts, not paragraphs. A paragraph counts as retrieved if any retrieved fact points to it as source. The fact-to-paragraph mapping must be defined and reported before running, because it decides the score.
 - **Limits:** a question with several gold items needs all of them for recall 1.0; recall ignores ranking order and ignores wrong items retrieved alongside.
 
@@ -50,8 +50,8 @@ Retrieved items are deduplicated in first-retrieval order before scoring (`metri
 
 ### Exact match (EM) and token F1
 - **Meaning:** string-level agreement with a short gold answer, for questions that have one (MuSiQue).
-- **Computation:** normalize both strings (lowercase, strip punctuation and articles, collapse whitespace); EM = 1 if equal else 0. F1 = harmonic mean of token precision and recall between prediction and gold: `2PR / (P + R)`, with `P = overlap / |pred tokens|`, `R = overlap / |gold tokens|`. When a question has several accepted answers, take the maximum. Range 0-1, higher is better. This is the MuSiQue/HippoRAG 2 convention (token-based F1).
-- **Status:** **to add** in `score_question` (`eval/__init__.py:112`). Needed for comparison against HippoRAG 2's published F1.
+- **Computation:** normalize both strings (lowercase, strip punctuation and articles, collapse whitespace); EM = 1 if equal else 0. F1 = harmonic mean of token precision and recall between prediction and gold: `2PR / (P + R)`, with `P = overlap / |pred tokens|`, `R = overlap / |gold tokens|`. When a question has several accepted answers, take the maximum. Range 0-1, higher is better. HippoRAG 1 reports EM and F1 (Sec. 3.3, Table 4) but does not define normalization; the token-level definition here is ours.
+- **Status:** **to add** in `score_question` (`eval/__init__.py:112`). Needed for comparison against HippoRAG 1's published EM and F1 (Table 4).
 - **Limits:** penalizes correct but verbose answers; use the judge score as the secondary measure.
 
 ### Changed-fact accuracy
@@ -86,7 +86,7 @@ Retrieved items are deduplicated in first-retrieval order before scoring (`metri
 ### Contamination check
 - **Meaning:** whether the model could answer from its own knowledge, which would make retrieval metrics meaningless.
 - **Computation:** the question is asked with no context ("answer from your own knowledge, say you do not know otherwise") and judged for correctness with the same rubric (`judge.py:135`). Reported as the number of closed-book-correct questions; target 0. eval-v2 shows 0 of 60.
-- **Status:** implemented for eval-v2 (fictional facts). **For Track A it will not be 0**: MuSiQue is built from Wikipedia, which models have seen. Report a closed-book (no retrieval) row as the floor, as HippoRAG 2 does ("None": 26.1 F1 on MuSiQue).
+- **Status:** implemented for eval-v2 (fictional facts). **For Track A it will not be 0**: MuSiQue is built from Wikipedia, which models have seen. Report a closed-book (no retrieval) row as the floor, as HippoRAG 1 does (its "None" row, no retrieval: 12.5 EM and 24.1 F1 on MuSiQue, Table 4).
 
 ---
 
@@ -159,8 +159,6 @@ Apply to OmniStream configurations only. Baselines are N/A, not 0.
 
 ### Confidence intervals and significance
 - **To add:** non-parametric bootstrap (resample questions with replacement, 10,000 draws) for 95% intervals on every mean; paired bootstrap or Wilcoxon signed-rank for system-vs-system differences on the same questions. Report n per question type; treat differences inside the interval as ties. Run each system three times to estimate run-to-run variance (indexing paid once).
-- HippoRAG 2 uses a bootstrapped significance test for its comparisons, so this matches the reference.
-
 ---
 
 ## 8. Judge calibration (needed before quoting correctness)
