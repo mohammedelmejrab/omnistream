@@ -233,4 +233,5 @@ uv run ruff check .
 | Contributor | Areas |
 |---|---|
 | **HF5478** | Sources, ingestion pipeline, storage, routing, API |
-| **Mohammed Elmejrab** | Graph, retrieval, agents, evaluation |
+| **Mohammed Elmejrab** | Retrieval, agents, evaluation |
+| **Omar** | Graph |
