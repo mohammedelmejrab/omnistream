@@ -1,6 +1,6 @@
 # OmniStream GraphRAG Evaluation Plan
 
-Status: PLAN. Date: 2026-11-16.
+Status: PLAN. Date: 2026-11-16. Revised 2026-11-17: HippoRAG 2 references replaced with HippoRAG 1.
 Sources: arXiv literature survey
 
 ## 1. Systems under comparison
@@ -13,9 +13,9 @@ Sources: arXiv literature survey
 | 4 | **Own** | `own` | Seeding, 2-hop expansion, PageRank, fact fusion. |
 | 5 | **Own + subagents** | `own+subagents` | One agent per bubble. |
 | 6 | **Classic** (OmniStream diagnostic) | `classic` | OmniStream's own chunk-vector pipeline (Chroma, top-10, own routing, prompts and citations), without graph and WITHOUT subagents. Only `classic` alone; `classic+subagents` is not run. |
-| ref | Published numbers (HippoRAG 2, GraphRAG-Bench) | n/a | Context only, not a like-for-like comparison (see section 6). |
+| ref | Published numbers (HippoRAG, GraphRAG-Bench) | n/a | Context only, not a like-for-like comparison (see section 6). |
 
-DECIDED: the external baselines are naive RAG (`external`) and BM25 only. `classic` (alone, without subagents) is added as a sixth, internal diagnostic system; `classic+subagents` is not run. Published systems (HippoRAG 2 and others) appear only as reference numbers in section 6, never as systems we run.
+DECIDED: the external baselines are naive RAG (`external`) and BM25 only. `classic` (alone, without subagents) is added as a sixth, internal diagnostic system; `classic+subagents` is not run. Published systems (HippoRAG and others) appear only as reference numbers in section 6, never as systems we run.
 
 | Comparison | Isolates |
 |---|---|
@@ -34,8 +34,7 @@ Caveat: `external` uses LlamaIndex's own embedder, chunking and prompt defaults,
 |---|---|---|---|
 | GraphRAG | 2404.16130 | Pairwise LLM judge, global questions | Win rate: comprehensiveness, diversity, empowerment; indexing time |
 | LightRAG | 2410.05779 | Pairwise LLM judge (GPT-4o-mini), answer order alternated | Win rate (4 criteria), tokens and API calls, ablations |
-| HippoRAG | 2405.14831 | Gold-answer multi-hop QA | Recall@2/@5, EM, F1 on MuSiQue, 2Wiki, HotpotQA |
-| HippoRAG 2 | 2502.14802 | Gold QA, 3 task families | Passage recall@5, F1; NQ, PopQA, NarrativeQA, MuSiQue, 2Wiki, HotpotQA, LV-Eval |
+| HippoRAG 1 | 2405.14831 | Gold-passage recall and gold-answer QA on 1,000-question dev sets; candidate corpus = supporting + distractor passages | Passage Recall@2/@5 (Table 2), EM and F1 (Table 4) on MuSiQue, 2Wiki, HotpotQA |
 | GraphRAG-Bench | 2506.05690 | Stage-wise (construction, retrieval, generation) | ACC, ROUGE-L, evidence coverage, faithfulness |
 | RAGChecker | 2408.08067 | Claim-level diagnostics, meta-evaluated vs humans | Claim precision/recall, context utilization, noise sensitivity, hallucination |
 | RAGAS / ARES | 2309.15217 / 2311.09476 | Reference-free | Faithfulness, answer relevance, context relevance; ARES adds PPI confidence intervals |
@@ -80,7 +79,7 @@ Phases in priority order. Each phase has an acceptance check.
 11. DECIDED: global/sensemaking (community detection + community summaries + map-reduce, as in Microsoft GraphRAG) is OUT OF SCOPE. OmniStream has no such mode and none is planned. State this as a limitation in the report. Pairwise win rate is applied to the normal question set only.
 
 ### Phase 5 - Cost and ablations
-12. Indexing cost: unblock the probe (`docs/realdata/real-v2-ingestion-cost.md`), instrument `eval/snapshot.py:155` (`SnapshotBuilder`) for tokens, time, and dollars per 1k documents; also incremental-update cost (LightRAG, HippoRAG 2 report this).
+12. Indexing cost: unblock the probe (`docs/realdata/real-v2-ingestion-cost.md`), instrument `eval/snapshot.py:155` (`SnapshotBuilder`) for tokens, time, and dollars per 1k documents; also incremental-update cost (LightRAG reports this; HippoRAG 1 reports offline indexing cost only, App. G Table 18, and no incremental-update cost).
 13. Answer-level ablations for own: seeding, fusion, PageRank, 2-hop on/off; complete the E1 all-bubble runs. Mirrors LightRAG `-High/-Low` and G-Retriever component ablations.
 
 ### Phase 6 - Final held-out run
@@ -140,67 +139,87 @@ Phases in priority order. Each phase has an acceptance check.
 
 ## 6. Published reference numbers
 
-Only figures verified in the paper text are listed. Table cells were not extractable from the text, so they are marked TODO and must be read from the PDF before citing.
+Only figures verified in the paper are listed. HippoRAG 1 table values were read from the rendered PDF pages (Section 6.3), not from extracted text; any cell that could not be read is marked TODO.
 
 | Source | Setting | Verified figure |
 |---|---|---|
-| HippoRAG 2 (2502.14802) | Llama-3.3-70B reader, top-5 passages, NV-Embed-v2 retriever | HippoRAG 2 has the highest average F1; beats NV-Embed-v2 by 9.5% F1 on 2Wiki and 3.1% on LV-Eval; NV-Embed-v2 beats GTR (T5-base) by 6.6% on average |
-| HippoRAG 2 | Table 2, MuSiQue F1, Llama-3.3-70B-Instruct reader | GritLM-7B 44.8; NV-Embed-v2 45.7; RAPTOR 28.9; GraphRAG 38.5; LightRAG 1.6; HippoRAG 35.1; **HippoRAG 2 48.6**. (Full table in 6.3.) |
-| HippoRAG 2 | Table 3, MuSiQue passage recall@5 | BM25 43.5; Contriever 46.6; GTR 49.1; GTE-Qwen2-7B 63.6; GritLM-7B 65.9; NV-Embed-v2 69.7; RAPTOR 57.8; HippoRAG 51.9 (original paper) / 53.2 (reproduced); **HippoRAG 2 74.7** |
-| HippoRAG 2 | Average F1 over all 7 datasets (Table 2) | NV-Embed-v2 57.0; RAPTOR 48.8; GraphRAG 49.6; HippoRAG 53.1; **HippoRAG 2 59.8** |
-| HippoRAG 2 | Setup | Structure-augmented baselines use Llama-3.3-70B-Instruct to build the graph and NV-Embed-v2 as retriever; dataset statistics (Table 1): MuSiQue has 1,000 queries and 11,656 passages (2Wiki 1,000 / 6,119; HotpotQA 1,000 / 9,811). Sampling procedure not captured; see PDF section 5.2. |
-| HippoRAG 2 | Table 8 (EM/F1, GPT-4o-mini reader) | Not extracted; read from PDF only if needed |
-| HippoRAG (2405.14831) | Single-step vs IRCoT | Claims 10-30x cheaper and 6-13x faster than IRCoT (intro text) |
+| HippoRAG 1 (2405.14831) | Table 2 (p.6), MuSiQue passage recall R@2 / R@5, single-step | BM25 32.3 / 41.2; Contriever 34.8 / 46.6; GTR 37.4 / 49.1; ColBERTv2 37.9 / 49.2; **HippoRAG (ColBERTv2) 40.9 / 51.9**; HippoRAG (Contriever) 41.0 / 52.1 |
+| HippoRAG 1 | Table 4 (p.7), MuSiQue QA EM / F1, top-5 passages as context | None 12.5 / 24.1; ColBERTv2 15.5 / 26.4; **HippoRAG (ColBERTv2) 19.2 / 29.8**; IRCoT (ColBERTv2) 19.1 / 30.5; IRCoT + HippoRAG (ColBERTv2) 21.9 / 33.3 |
+| HippoRAG 1 | Table 3 (p.6), MuSiQue multi-step recall R@2 / R@5 | IRCoT + ColBERTv2 41.7 / 53.7; IRCoT + HippoRAG (ColBERTv2) 45.3 / 57.6 |
+| HippoRAG 1 | Averages over MuSiQue, 2Wiki, HotpotQA | Table 2 R@5: ColBERTv2 65.6, HippoRAG (ColBERTv2) 72.9. Table 4 F1: ColBERTv2 42.5, HippoRAG (ColBERTv2) 48.1 |
+| HippoRAG 1 | Setup (Sec. 3.1, 3.4, App. H, Table 1) | Default LLM GPT-3.5-turbo-1106 (temperature 0) for OpenIE and query NER; retriever Contriever or ColBERTv2; synonymy threshold 0.8 and PPR damping 0.5, tuned on 100 MuSiQue training examples. Dev sets of 1,000 questions per dataset, extracted "as done in previous work" (no further sampling detail). Corpus = all candidate passages (supporting + distractor), following IRCoT: MuSiQue 11,656 passages. QA reader: top-5 passages, 1-shot CoT; the QA LLM is not named separately. |
+| HippoRAG 1 | Cost (App. G, Tables 17-18, p.28) | Online per 1,000 queries: API $ ColBERTv2 0, IRCoT 1-3, HippoRAG 0.1; time 1 / 20-40 / 3 min. Offline per 10,000 passages (GPT-3.5-turbo-1106): API $ 0 / 0 / 15; time 7 / 7 / 60 min |
+| HippoRAG (2405.14831) | Single-step vs IRCoT | Intro (p.2): "10 to 30 times cheaper and 6 to 13 times faster" than IRCoT (abstract says 10-20x); Table 17 gives $0.1 vs $1-3 per 1,000 queries |
 | GraphRAG-Bench (2506.05690) | Table 5, GPT-4o-mini | Vanilla RAG with rerank 58.8 vs 49.3 ACC for a graph method on one fact-retrieval dataset |
 | GraphRAG (2404.16130) | Podcast corpus | Indexing took 281 min |
 
-Comparability warning: those papers use Wikipedia multi-hop QA (MuSiQue, 2Wiki, HotpotQA) with different readers, retrievers, and judges. OmniStream's corpus is streaming news-style with changing facts. Do not place paper numbers in the same table as OmniStream numbers without labelling them "reference, different setting". For a like-for-like check, run `external`, `bm25`, `graphiti`, `own` and `own+subagents` on a MuSiQue slice of n=100 (cost limit; HippoRAG 2 randomly samples 1,000 MuSiQue queries following HippoRAG, HippoRAG 2 reports 1,000 MuSiQue queries over 11,656 passages, so our slice is a different, smaller set unless we sample from theirs; published numbers are listed as-is for context) and compare against HippoRAG 2's reported F1 under the same reader. At n=100 the 95% CI on F1 is roughly +/-10 points, so use bootstrap CIs and paired tests, and do not claim small gaps. Fix the random seed and commit the question ids so the slice is reproducible. MuSiQue only; 2Wiki and HotpotQA are dropped for cost.
+Comparability warning: those papers use Wikipedia multi-hop QA (MuSiQue, 2Wiki, HotpotQA) with different readers, retrievers, and judges. OmniStream's corpus is streaming news-style with changing facts. Do not place paper numbers in the same table as OmniStream numbers without labelling them "reference, different setting". For a like-for-like check, run `external`, `bm25`, `graphiti`, `own` and `own+subagents` on a MuSiQue slice of n=100 (cost limit; HippoRAG 1 uses 1,000 MuSiQue dev questions with all candidate passages, 11,656 passages in total (Table 1), and says only that questions were extracted "as done in previous work" (Sec. 3.1), so our slice is a different, smaller set unless we sample from theirs; published numbers are listed as-is for context) and compare against HippoRAG 1's reported F1 (Table 4) under a matched reader. At n=100 the 95% CI on F1 is roughly +/-10 points, so use bootstrap CIs and paired tests, and do not claim small gaps. Fix the random seed and commit the question ids so the slice is reproducible. MuSiQue only; 2Wiki and HotpotQA are dropped for cost.
 
-### 6.3 HippoRAG 2 published numbers, as reported (arXiv 2502.14802, local copy in `eval papers/`)
+### 6.3 HippoRAG 1 published numbers, as reported (arXiv 2405.14831, local copy in `eval papers/`)
 
-Table 2 - QA F1, Llama-3.3-70B-Instruct reader. Structure-augmented baselines and HippoRAG 2 use Llama-3.3-70B-Instruct for graph building and NV-Embed-v2 as retriever. Dagger = HippoRAG 2 significantly beats the best NV-Embed-v2 baseline (bootstrap, p<0.05).
+Values copied from the rendered PDF pages (text extraction did not return the tables). Each dataset-average column reconciles with its per-dataset columns. Rows not copied are named as omitted.
 
-| Retrieval | NQ | PopQA | MuSiQue | 2Wiki | HotpotQA | LV-Eval | NarrativeQA | Avg |
+Table 1 (p.5) - corpora and extracted KG statistics, 1,000-question dev sets.
+
+| Count | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| Passages (P) | 11,656 | 6,119 | 9,221 |
+| Unique nodes (N) | 91,729 | 42,694 | 82,157 |
+| Unique edges (E) | 21,714 | 7,867 | 17,523 |
+| Unique triples | 107,448 | 50,671 | 98,709 |
+
+Table 2 (p.6) - single-step passage recall, R@2 / R@5. Omitted for length: RAPTOR (ColBERTv2), Proposition, Proposition (ColBERTv2).
+
+| Retrieval | MuSiQue R@2 | MuSiQue R@5 | 2Wiki R@2 | 2Wiki R@5 | HotpotQA R@2 | HotpotQA R@5 | Avg R@2 | Avg R@5 |
 |---|---|---|---|---|---|---|---|---|
-| None | 54.9 | 32.5 | 26.1 | 42.8 | 47.3 | 6.0 | 12.9 | 38.4 |
-| Contriever | 58.9 | 53.1 | 31.3 | 41.9 | 62.3 | 8.1 | 19.7 | 46.9 |
-| BM25 | 59.0 | 49.9 | 28.8 | 51.2 | 63.4 | 5.9 | 18.3 | 47.7 |
-| GTR (T5-base) | 59.9 | 56.2 | 34.6 | 52.8 | 62.8 | 7.1 | 19.9 | 50.4 |
-| GTE-Qwen2-7B-Instruct | 62.0 | 56.3 | 40.9 | 60.0 | 71.0 | 7.1 | 21.3 | 54.9 |
-| GritLM-7B | 61.3 | 55.8 | 44.8 | 60.6 | 73.3 | 9.8 | 23.9 | 56.1 |
-| NV-Embed-v2 (7B) | 61.9 | 55.7 | 45.7 | 61.5 | 75.3 | 9.8 | 25.7 | 57.0 |
-| RAPTOR | 50.7 | 56.2 | 28.9 | 52.1 | 69.5 | 5.0 | 21.4 | 48.8 |
-| GraphRAG | 46.9 | 48.1 | 38.5 | 58.6 | 68.6 | 11.2 | 23.0 | 49.6 |
-| LightRAG | 16.6 | 2.4 | 1.6 | 11.6 | 2.4 | 1.0 | 3.7 | 6.6 |
-| HippoRAG | 55.3 | 55.9 | 35.1 | 71.8 | 63.5 | 8.4 | 16.3 | 53.1 |
-| **HippoRAG 2** | 63.3 (dagger) | 56.2 | 48.6 (dagger) | 71.0 (dagger) | 75.5 | 12.9 (dagger) | 25.9 | **59.8** |
+| BM25 | 32.3 | 41.2 | 51.8 | 61.9 | 55.4 | 72.2 | 46.5 | 58.4 |
+| Contriever | 34.8 | 46.6 | 46.6 | 57.5 | 57.2 | 75.5 | 46.2 | 59.9 |
+| GTR (T5-base) | 37.4 | 49.1 | 60.2 | 67.9 | 59.4 | 73.3 | 52.3 | 63.4 |
+| ColBERTv2 | 37.9 | 49.2 | 59.2 | 68.2 | 64.7 | 79.3 | 53.9 | 65.6 |
+| RAPTOR | 35.7 | 45.3 | 46.3 | 53.8 | 58.1 | 71.2 | 46.7 | 56.8 |
+| **HippoRAG (Contriever)** | 41.0 | 52.1 | 71.5 | 89.5 | 59.0 | 76.2 | 57.2 | 72.6 |
+| **HippoRAG (ColBERTv2)** | 40.9 | 51.9 | 70.7 | 89.1 | 60.5 | 77.7 | 57.4 | 72.9 |
 
-Table 3 - passage recall@5.
+Table 3 (p.6) - multi-step (IRCoT) passage recall, R@2 / R@5.
 
-| Retrieval | NQ | PopQA | MuSiQue | 2Wiki | HotpotQA | Avg |
-|---|---|---|---|---|---|---|
-| BM25 | 56.1 | 35.7 | 43.5 | 65.3 | 74.8 | 55.1 |
-| Contriever | 54.6 | 43.2 | 46.6 | 57.5 | 75.3 | 55.4 |
-| GTR (T5-base) | 63.4 | 49.4 | 49.1 | 67.9 | 73.9 | 60.7 |
-| GTE-Qwen2-7B-Instruct | 74.3 | 50.6 | 63.6 | 74.8 | 89.1 | 70.5 |
-| GritLM-7B | 76.6 | 50.1 | 65.9 | 76.0 | 92.4 | 72.2 |
-| NV-Embed-v2 (7B) | 75.4 | 51.0 | 69.7 | 76.5 | 94.5 | 73.4 |
-| RAPTOR | 68.3 | 48.7 | 57.8 | 66.2 | 86.9 | 65.6 |
-| HippoRAG (original paper) | - | - | 51.9 | 89.1 | 77.7 | - |
-| HippoRAG (reproduced) | 44.4 | 53.8 | 53.2 | 90.4 | 77.3 | 63.8 |
-| **HippoRAG 2** | 78.0 | 51.7 | 74.7 | 90.4 | 96.3 | 78.2 |
+| Retrieval | MuSiQue R@2 | MuSiQue R@5 | 2Wiki R@2 | 2Wiki R@5 | HotpotQA R@2 | HotpotQA R@5 | Avg R@2 | Avg R@5 |
+|---|---|---|---|---|---|---|---|---|
+| IRCoT + BM25 (default) | 34.2 | 44.7 | 61.2 | 75.6 | 65.6 | 79.0 | 53.7 | 66.4 |
+| IRCoT + Contriever | 39.1 | 52.2 | 51.6 | 63.8 | 65.9 | 81.6 | 52.2 | 65.9 |
+| IRCoT + ColBERTv2 | 41.7 | 53.7 | 64.1 | 74.4 | 67.9 | 82.0 | 57.9 | 70.0 |
+| IRCoT + HippoRAG (Contriever) | 43.9 | 56.6 | 75.3 | 93.4 | 65.8 | 82.3 | 61.7 | 77.4 |
+| **IRCoT + HippoRAG (ColBERTv2)** | 45.3 | 57.6 | 75.8 | 93.9 | 67.0 | 83.0 | 62.7 | 78.2 |
 
-Note for our n=100 run: the rows most comparable to our systems are BM25 (our `bm25`), NV-Embed-v2 or GTR (dense naive, closest to `external`), GraphRAG, and HippoRAG/HippoRAG 2 (closest to `own`). Our embedder is a small 384-dim BGE model and our reader is a DeepSeek model, so absolute numbers will differ from these; compare orderings, not values. The PDF text says the sampled datasets are summarized in its Table 1; I did not capture how MuSiQue's 1,000 queries were sampled.
+Table 4 (p.7) - QA EM / F1, top-5 retrieved passages as context.
 
-### 6.1 HippoRAG vs HippoRAG 2 (2405.14831 vs 2502.14802)
+| Retriever | MuSiQue EM | MuSiQue F1 | 2Wiki EM | 2Wiki F1 | HotpotQA EM | HotpotQA F1 | Avg EM | Avg F1 |
+|---|---|---|---|---|---|---|---|---|
+| None | 12.5 | 24.1 | 31.0 | 39.6 | 30.4 | 42.8 | 24.6 | 35.5 |
+| ColBERTv2 | 15.5 | 26.4 | 33.4 | 43.3 | 43.4 | 57.9 | 30.8 | 42.5 |
+| **HippoRAG (ColBERTv2)** | 19.2 | 29.8 | 46.6 | 59.5 | 41.8 | 55.0 | 35.9 | 48.1 |
+| IRCoT (ColBERTv2) | 19.1 | 30.5 | 35.4 | 45.1 | 45.5 | 58.4 | 33.3 | 44.7 |
+| IRCoT + HippoRAG (ColBERTv2) | 21.9 | 33.3 | 47.7 | 62.7 | 45.7 | 59.2 | 38.4 | 51.7 |
 
-Same core idea: build a KG of phrase nodes from LLM-extracted triples, then rank with Personalized PageRank (PPR). HippoRAG 2 changes (from its abstract and sections 4.2-4.5):
-1. **Dense-sparse integration:** passages become nodes in the graph, linked by "contains" edges to their phrases. HippoRAG instead ran graph search and embedding matching separately and simply aggregated their scores.
-2. **Deeper contextualization:** query-to-triple matching, instead of matching only extracted query entities.
-3. **Recognition memory:** retrieved triples are filtered by an LLM before seeding the graph.
-4. **Online retrieval:** seeds are filtered phrase nodes plus all passage nodes, with reset probabilities weighted by a factor tuned on a dev set. Falls back to plain embedding retrieval when no triples survive.
-Motivation stated in the abstract: earlier structure-augmented RAG fell below standard RAG on basic factual QA; HippoRAG 2 aims to be better on factual, sense-making and associative tasks. Result: 48.6 vs 35.1 MuSiQue F1 (same reader, section 6 table).
-Relevance: OmniStream's `own` mode (seeding, 2-hop expansion, PageRank, fact fusion) is the same family, so HippoRAG 2 is the most relevant published reference.
+Tables 17-18 (App. G, p.28) - cost. Online: 1,000 queries, GPT-3.5 Turbo. Offline: 10,000 passages, GPT-3.5 Turbo-1106.
+
+| Measure | ColBERTv2 | IRCoT | HippoRAG |
+|---|---|---|---|
+| Online API cost ($), Table 17 | 0 | 1-3 | 0.1 |
+| Online time (min), Table 17 | 1 | 20-40 | 3 |
+| Offline API cost ($), Table 18 | 0 | 0 | 15 |
+| Offline time (min), Table 18 | 7 | 7 | 60 |
+
+Note for our n=100 run: the rows most comparable to our systems are BM25 (our `bm25`), Contriever or ColBERTv2 single-step (dense naive, closest to `external`), and HippoRAG (Contriever or ColBERTv2, closest to `own`, same PPR family). Our embedder is a small 384-dim BGE model and our reader is a DeepSeek model, so absolute numbers will differ from these; compare orderings, not values. The paper says only that it extracts 1,000 questions from each validation set "as done in previous work" (Sec. 3.1). It does not state how MuSiQue's questions were sampled, so that is not captured here.
+
+### 6.1 HippoRAG 1 mechanism (2405.14831, Sec. 2.3, 3.4, App. F.2)
+
+Offline indexing: an instruction-tuned LLM (GPT-3.5-turbo-1106 by default) extracts named entities from each passage, then runs OpenIE with those entities in the prompt to get triples. The triples form one open KG over the corpus: noun-phrase nodes N and relation edges E. A retrieval encoder (Contriever or ColBERTv2) adds synonymy edges E' between noun-phrase nodes whose embedding cosine exceeds a threshold tau (0.8). A matrix P counts how many times each node appears in each passage.
+
+Online retrieval: the LLM extracts named entities from the query. Each query entity is linked to its most similar KG node (the query nodes). Personalized PageRank runs over the whole KG, restarting only at the query nodes with equal probability, and damping 0.5. Before PPR, each query node's probability is multiplied by its node specificity 1/|P_i|. The resulting node probabilities are multiplied by P to give a passage score, and passages are ranked by it.
+
+Dense retrieval: it enters through entity linking and the synonymy edges, not as score fusion in the main method. The paper's optional "Uncertainty Ensemble" (App. F.2, Tables 13-14) averages HippoRAG and dense passage scores, both normalized to 0-1, only when the query-to-KG entity similarity is below a threshold.
+
+Relevance: OmniStream's `own` mode (seeding, 2-hop expansion, PageRank, fact fusion) is the same family (PPR over a knowledge graph), so HippoRAG 1 is the reference for it.
 
 ### 6.2 Graphiti
 
@@ -220,25 +239,25 @@ Graphiti is the open-source engine behind Zep, described in "Zep: A Temporal Kno
 Decided: naive = `external`; public benchmark = MuSiQue, n=100; global/sensemaking out of scope.
 Still open:
 1. Budget for the full run and a judge from a second model family.
-2. (Decided) Slice: 100 MuSiQue queries, indexing only those queries' own paragraphs (supporting + distractors) as one shared corpus. This is cheaper and an easier retrieval problem than HippoRAG 2's 1,000 queries over 11,656 passages, so published numbers are context only, not a like-for-like target. Fixed seed, commit the question ids. Published numbers are listed as-is in section 6.
+2. (Decided) Slice: 100 MuSiQue queries, indexing only those queries' own paragraphs (supporting + distractors) as one shared corpus. This is cheaper and an easier retrieval problem than HippoRAG 1's setup (1,000 dev questions per dataset with all their candidate passages; 11,656 passages for MuSiQue, Table 1), so published numbers are context only, not a like-for-like target. Fixed seed, commit the question ids. Published numbers are listed as-is in section 6.
 3. (Decided) MuSiQue is loaded directly into each retriever's index, bypassing bubbles and routing, so routing is not a confound and `external` is treated fairly. Paragraphs of the 100 sampled questions plus distractors form the corpus; use one shared corpus for all five systems.
 
-## 8b. `own` vs HippoRAG 2 (read from `retrieval/own_algorithm/`)
+## 8b. `own` vs HippoRAG 1 (read from `retrieval/own_algorithm/`)
 
-| Step | HippoRAG 2 | OmniStream `own` |
+| Step | HippoRAG 1 (2405.14831) | OmniStream `own` |
 |---|---|---|
-| Seeds | Query-to-triple embedding match, LLM triple filter, all passage nodes as extra seeds | Three non-LLM sources: entity-embedding match (cosine >= 0.5, top 5), fuzzy name match against the question (>= 90), and top-10 fact-embedding match. Max 10 seeds, half the budget reserved for fact-derived seeds. Only typed named entities (person, organization, location, product, event, financial instrument, publication) count as name seeds; generic concepts are excluded (`seeding.py:26-41`) |
-| LLM at query time | Yes (triple filter) | None in retrieval |
-| Graph | Phrase + passage nodes over the whole corpus | Graphiti entities/facts, `store.expand()` of the seeds into a bounded subgraph, with SAME_AS links |
-| Ranking | Personalized PageRank on the full graph, restart at phrase and passage nodes | Undirected weighted PPR (damping 0.85) on the expanded subgraph only, restart at seeds only (`pagerank.py`, `pipeline.py`) |
-| Output | Top passages | Top-20 facts. Score = fact-similarity x endpoint PageRank, fused by weighted RRF (k=60, weights 2:1:1) with recency (per-bubble half-life, news 3 days, finance 30, research 365) and source-confidence signals; constant signals are dropped (`fact_fusion.py`) |
-| Time | None | Recency decay, fact versions collapsed to representatives |
+| Seeds | LLM NER on the query (1-shot); each query entity linked to its most similar KG node by retrieval-encoder cosine. No passage seeds, no LLM triple filter | Three non-LLM sources: entity-embedding match (cosine >= 0.5, top 5), fuzzy name match against the question (>= 90), and top-10 fact-embedding match. Max 10 seeds, half the budget reserved for fact-derived seeds. Only typed named entities (person, organization, location, product, event, financial instrument, publication) count as name seeds; generic concepts are excluded (`seeding.py:26-41`) |
+| LLM at query time | Yes, query NER only (App. I, Figure 8); no triple filtering | None in retrieval |
+| Graph | Noun-phrase nodes and OpenIE relation edges over the whole corpus, plus synonymy edges (tau 0.8). No passage nodes; passages attach through matrix P | Graphiti entities/facts, `store.expand()` of the seeds into a bounded subgraph, with SAME_AS links |
+| Ranking | Personalized PageRank on the full graph, damping 0.5, restart at the query nodes; node specificity 1/\|P_i\| applied before PPR; passage score = P x node probability | Undirected weighted PPR (damping 0.85) on the expanded subgraph only, restart at seeds only (`pagerank.py`, `pipeline.py`) |
+| Output | Passages ranked by passage score (top-5 used as QA context) | Top-20 facts. Score = fact-similarity x endpoint PageRank, fused by weighted RRF (k=60, weights 2:1:1) with recency (per-bubble half-life, news 3 days, finance 30, research 365) and source-confidence signals; constant signals are dropped (`fact_fusion.py`) |
+| Time | Not addressed in the paper | Recency decay, fact versions collapsed to representatives |
 
 Consequences for the MuSiQue run:
 1. **Facts, not passages.** Recall@5 and F1 need a map from retrieved facts back to source paragraphs. `Fact`'s docstring says it carries provenance to the original item; the exact field was not checked. Define the mapping before running (a paragraph is retrieved if any retrieved fact points to it) and report it.
-2. **Named-entity seeding.** MuSiQue hops often go through descriptions ("the performer of X") and generic concepts that `is_named_entity` filters out of name seeds; fact-embedding seeds partly compensate. Expect weaker multi-hop recall than HippoRAG 2's concept-level seeding, and report it as a diagnostic rather than a bug.
+2. **Named-entity seeding.** MuSiQue hops often go through descriptions ("the performer of X") and generic concepts that `is_named_entity` filters out of name seeds; fact-embedding seeds partly compensate. HippoRAG 1 also seeds from LLM-extracted query entities, but its nodes are OpenIE noun phrases, so concept phrases can match directly. Its own error analysis puts 48% of MuSiQue errors on NER limits (Table 11). Expect weaker multi-hop recall than HippoRAG 1's phrase-node seeding, and report it as a diagnostic rather than a bug.
 3. **Recency/confidence must be neutral.** MuSiQue paragraphs have no dates or source credibility. Ingest all with the same timestamp and credibility so those RRF signals drop out (`drop_constant`); otherwise recency noise will distort ranking.
-4. **No passage-node bridge.** HippoRAG 2's main gain over HippoRAG is passage nodes plus LLM triple filtering. `own` has neither; an ablation adding either is a candidate experiment, not part of this plan's headline.
+4. **Closer to HippoRAG 1 on structure.** HippoRAG 1 also has no passage nodes and no query-time triple filtering, as `own` does. The remaining differences (fact nodes vs phrase nodes; restart at seeds on an expanded subgraph vs all query nodes on the full graph; recency and confidence fusion) are candidate ablations, not part of this plan's headline.
 
 ## 8c. Cost estimate (MuSiQue n=100, five systems)
 
