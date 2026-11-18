@@ -10,6 +10,8 @@ import networkx as nx
 import numpy as np
 
 from omnistream.embeddings import EmbeddingService
+from omnistream.graph.aliases import types_compatible
+from omnistream.graph.linker import GlobalCandidate
 from omnistream.retrieval.models import Entity, Fact, Subgraph, TimeScope, fact_in_scope
 
 
@@ -227,3 +229,66 @@ class InMemoryGraphStore:
             for i in fact_ids
             if i in self._fact_embeddings
         }
+
+
+class InMemoryGlobalEntityStore:
+    """Deterministic in-memory implementation of the linker's ``GlobalEntityStore``.
+
+    Used by unit tests and the offline writer path; mirrors ``Neo4jGraphOps``'s
+    GlobalEntity methods including exact name/alias lookup.
+    """
+
+    def __init__(self) -> None:
+        self._globals: dict[str, dict] = {}
+        self._links: dict[str, str] = {}
+
+    async def existing_global_entity(self, entity_uuid: str) -> str | None:
+        return self._links.get(entity_uuid)
+
+    async def nearest_global_entities(
+        self, embedding: list[float], type: str, k: int
+    ) -> list[GlobalCandidate]:
+        vec = np.asarray(embedding, dtype=float)
+        rows = [
+            (g, float(EmbeddingService.cosine_similarity(vec, [g["embedding"]])[0]))
+            for g in self._globals.values()
+            if types_compatible(g["type"], type)
+        ]
+        rows.sort(key=lambda row: (-row[1], row[0]["uuid"]))
+        return [
+            GlobalCandidate(g["uuid"], g["name"], g["type"], list(g["aliases"]), score)
+            for g, score in rows[:k]
+        ]
+
+    async def create_global_entity(
+        self, uuid: str, name: str, type: str, embedding: list[float]
+    ) -> None:
+        self._globals[uuid] = {
+            "uuid": uuid,
+            "name": name,
+            "type": type,
+            "aliases": [],
+            "embedding": np.asarray(embedding, dtype=float),
+        }
+
+    async def add_global_alias(self, uuid: str, alias: str) -> None:
+        if alias not in self._globals[uuid]["aliases"]:
+            self._globals[uuid]["aliases"].append(alias)
+
+    async def link_same_as(self, entity_uuid: str, global_uuid: str) -> None:
+        self._links[entity_uuid] = global_uuid
+
+    async def find_global_entity(
+        self, name: str, type: str
+    ) -> GlobalCandidate | None:
+        key = name.strip().casefold()
+        matches = [
+            g
+            for g in self._globals.values()
+            if key in {g["name"].strip().casefold(), *(a.strip().casefold() for a in g["aliases"])}
+            and types_compatible(g["type"], type)
+        ]
+        if len(matches) != 1:
+            return None
+        g = matches[0]
+        return GlobalCandidate(g["uuid"], g["name"], g["type"], list(g["aliases"]))

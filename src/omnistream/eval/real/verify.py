@@ -240,7 +240,9 @@ def near_duplicates(rows, texts, folder):
     settings = Settings(_env_file=None)
     embedder = EmbeddingService(settings=settings)
     fingerprint = hashlib.sha256(
-        ("bge-chunk-1200-mean-v1\n" + "\n".join(r["sha256"] for r in rows)).encode()
+        "\n".join(
+            ["bge-chunk-1200-mean-v1", embedder.index_signature, *(r["sha256"] for r in rows)]
+        ).encode()
     ).hexdigest()
     cache = folder / f"embeddings-{fingerprint}.npy"
     if cache.exists():
@@ -688,7 +690,7 @@ def render_report(result, config, rows, texts, docs):
         "",
         r["near_duplicates"]["method"],
         "",
-        "BGE is local BAAI/bge-small-en-v1.5 through the project EmbeddingService. Normalized-text SHA-256 is also checked independently of canonical URL. Cosine similarity is a review signal, not a calibrated syndication classifier. The JSON includes all candidate pairs, scores and connected clusters.",
+        "BGE runs locally through the project EmbeddingService. Normalized-text SHA-256 is also checked independently of canonical URL. Cosine similarity is a review signal, not a calibrated syndication classifier. The JSON includes all candidate pairs, scores and connected clusters.",
         "",
     ]
     by_id = {row["id"]: row for row in rows}

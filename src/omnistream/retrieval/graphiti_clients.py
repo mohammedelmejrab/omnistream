@@ -271,7 +271,7 @@ _SEARCH_QUERY_MODE: ContextVar[bool] = ContextVar(
 
 
 class LocalEmbedderClient(EmbedderClient):
-    """``EmbedderClient`` backed by the project's local bge-small service.
+    """``EmbedderClient`` backed by the project's local embedding service.
 
     Graphiti's ``EmbedderClient`` interface has no query/document distinction,
     so by default everything is embedded in the document space

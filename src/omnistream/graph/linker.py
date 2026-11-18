@@ -12,6 +12,7 @@ from typing import Protocol
 from rapidfuzz import fuzz, utils
 
 from omnistream.embed import Embedder
+from omnistream.graph.aliases import name_key, names_differ_by_number
 
 ORG_TYPE = "Organization"
 
@@ -54,6 +55,14 @@ class GlobalEntityStore(Protocol):
 
     async def link_same_as(self, entity_uuid: str, global_uuid: str) -> None: ...
 
+    async def find_global_entity(
+        self, name: str, type: str
+    ) -> GlobalCandidate | None:
+        """Exact casefolded match on a GlobalEntity's name or an alias, same type
+        (or either side untyped/unknown).  Returns None when there is no match or
+        when the match is ambiguous (more than one distinct GlobalEntity)."""
+        ...
+
 
 class GlobalEntityLinker:
     def __init__(
@@ -77,12 +86,28 @@ class GlobalEntityLinker:
         type: str,
         embedding: list[float] | None = None,
         add_alias: bool = True,
+        alias_pairs: list[tuple[str, str]] | None = None,
     ) -> str:
-        """Link an Entity node to its GlobalEntity (creating one); returns its uuid."""
+        """Link an Entity node to its GlobalEntity (creating one); returns its uuid.
+
+        ``alias_pairs`` are ``(full, short)`` pairs extracted from the *same*
+        source item/episode text.  When ``name`` equals one side of a pair and the
+        other side already has a GlobalEntity, the entity is linked to that same
+        GlobalEntity instead of relying on embedding/fuzzy matching.  This is
+        order-independent: whichever side of the pair is linked first creates the
+        GlobalEntity, and the second side resolves it by exact name lookup.
+        """
         existing = await self._store.existing_global_entity(entity_uuid)
         if existing is not None:
             return existing
         name = name.strip()
+        # 1. Source-evidenced alias resolution (stronger than embedding).
+        alias_match = await self._resolve_alias(name, type, alias_pairs or ())
+        if alias_match is not None:
+            await self._adopt(name, alias_match, add_alias)
+            await self._store.link_same_as(entity_uuid, alias_match.uuid)
+            return alias_match.uuid
+        # 2. Embedding / fuzzy match, else create.
         if embedding is None:
             [embedding] = await self._embedder.embed([name])
         candidates = await self._store.nearest_global_entities(
@@ -94,11 +119,39 @@ class GlobalEntityLinker:
             await self._store.create_global_entity(global_uuid, name, type, embedding)
         else:
             global_uuid = match.uuid
-            known = {n.casefold() for n in (match.name, *match.aliases)}
-            if add_alias and name.casefold() not in known:
-                await self._store.add_global_alias(global_uuid, name)
+            await self._adopt(name, match, add_alias)
         await self._store.link_same_as(entity_uuid, global_uuid)
         return global_uuid
+
+    async def _adopt(self, name: str, match: GlobalCandidate, add_alias: bool) -> None:
+        """Record ``name`` as an alias of ``match``'s GlobalEntity when unknown."""
+        known = {n.casefold() for n in (match.name, *match.aliases)}
+        if add_alias and name.casefold() not in known:
+            await self._store.add_global_alias(match.uuid, name)
+
+    async def _resolve_alias(
+        self, name: str, type_: str, alias_pairs: list[tuple[str, str]]
+    ) -> GlobalCandidate | None:
+        """Find the GlobalEntity for the *other* side of a source-stated pair.
+
+        Refuses to merge when the two names differ by a number token, and relies
+        on the store's ``find_global_entity`` to refuse ambiguous/type-mismatched
+        lookups (returning None).
+        """
+        key = name_key(name)
+        for full, short in alias_pairs:
+            if key == name_key(full):
+                other = short
+            elif key == name_key(short):
+                other = full
+            else:
+                continue
+            if names_differ_by_number(name, other):
+                continue
+            candidate = await self._store.find_global_entity(other, type_)
+            if candidate is not None:
+                return candidate
+        return None
 
     def _match(
         self, mention: str, type_: str, candidates: list[GlobalCandidate]

@@ -1,0 +1,53 @@
+{
+  "run_id": "alias-merge-20261118T021824Z",
+  "groups": [
+    "real-v2-dev-finance",
+    "real-v2-dev-news",
+    "real-v2-dev-research"
+  ],
+  "created_at": "2026-11-18T02:18:24.193943+00:00",
+  "merges": [
+    {
+      "full": "International Financial Reporting Standards",
+      "short": "IFRS",
+      "surviving_global": "09ae7cd6adcb4d30bad4c2b8624b5acc",
+      "repointed": [
+        {
+          "entity": "e7bdb3d7-478e-4bbd-915d-871fb2191477",
+          "old_global": "cc444756a28b4f57a84d0401c3017305"
+        }
+      ],
+      "aliases_added": [
+        "IFRS"
+      ]
+    },
+    {
+      "full": "Google Cloud Platform",
+      "short": "GCP",
+      "surviving_global": "ed23cda0265d4a3c8c37ea02007e355b",
+      "repointed": [
+        {
+          "entity": "439d59d4-f36c-4281-ad6f-f66aefa27f40",
+          "old_global": "158d1da93ae542d9b62e99e6fc268f90"
+        }
+      ],
+      "aliases_added": [
+        "GCP"
+      ]
+    },
+    {
+      "full": "Enhanced Tracking Protection",
+      "short": "ETP",
+      "surviving_global": "c79183fda4cf4218b3622a30d769223b",
+      "repointed": [
+        {
+          "entity": "996a3688-b381-42e5-a1ef-ebb985d7511e",
+          "old_global": "7d41fdeb99554fe4912e9a4099dabf53"
+        }
+      ],
+      "aliases_added": [
+        "ETP"
+      ]
+    }
+  ]
+}

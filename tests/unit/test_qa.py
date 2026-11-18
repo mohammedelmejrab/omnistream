@@ -62,7 +62,8 @@ class ScriptedLLM:
 
 @pytest.mark.parametrize("mode", ["classic", "graphiti", "own"])
 @pytest.mark.parametrize("subagents", [False, True])
-async def test_six_configurations(settings, mock_openai, mode, subagents):
+@pytest.mark.parametrize("answer_style", ["full", "short"])
+async def test_six_configurations(settings, mock_openai, mode, subagents, answer_style):
     # Opposite strategy verifies explicit on/off always overrides routing.
     router = Router("simple" if subagents else "multi_hop")
     from datetime import UTC, datetime
@@ -70,7 +71,11 @@ async def test_six_configurations(settings, mock_openai, mode, subagents):
     cutoff = datetime(2020, 6, 1, 23, 59, 59, 999999, tzinfo=UTC)
     router.decision = replace(router.decision, time_scope=TimeScope(cutoff, cutoff))
     retriever = ModeRetriever(mode)
-    client, transport = mock_openai(lambda _: "Supported [1] and [2].")
+    short = answer_style == "short"
+    reply = "Supported [1] and [2]."
+    if short:
+        reply = "Answer: June 1982" if subagents else 'Answer: "June 1982". [1] [99]'
+    client, transport = mock_openai(lambda _: reply)
     result = await answer_question(
         "q",
         router=router,
@@ -83,15 +88,25 @@ async def test_six_configurations(settings, mock_openai, mode, subagents):
         subagents=subagents,
         pins=("news",),
         exclude=(),
+        **({"answer_style": "short"} if short else {}),
     )
-    assert "Answer as of 2020-06-01" in transport.bodies[-1]["messages"][0]["content"]
+    prompt = transport.bodies[-1]["messages"][0]["content"]
+    assert "Answer as of 2020-06-01" in prompt
+    if short:
+        assert "shortest possible answer span" in prompt
+        assert "Answer: <span>" in prompt
+        assert "no explanation or citation markers" in prompt
+        assert result.answer.text == "June 1982"
+    else:
+        assert "Cite supported claims inline as [n]" in prompt
+        assert result.answer.text == reply
     assert result.mode == mode
     assert result.routing == router.decision
     assert router.kwargs == {"pins": ("news",), "exclude": ()}
     assert (result.multi_hop is not None) is subagents
     assert result.retrieval.mode == mode
     assert [c.item_id for c in result.answer.citations] == ["item", "item2"]
-    assert result.answer.invalid_citations == ()
+    assert result.answer.invalid_citations == ((99,) if short and not subagents else ())
     assert [f.fact.id for f in result.retrieval.facts] == ["f"]
     assert [c.id for c in result.retrieval.chunks] == ["c"]
     if subagents:
@@ -105,6 +120,7 @@ async def test_six_configurations(settings, mock_openai, mode, subagents):
         assert (
             "Bubble news findings:" in context and "Bubble finance findings:" in context
         )
+        assert ("cite only numbered evidence above" in context) is not short
     else:
         assert retriever.requests == [
             ("q", ("news", "finance"), router.decision.time_scope)

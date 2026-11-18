@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:   5%|▌         | 21/391 [00:00<00:01, 200.23it/s]Loading weights:  11%|█         | 42/391 [00:00<00:02, 138.52it/s]Loading weights:  15%|█▌        | 59/391 [00:00<00:02, 145.78it/s]Loading weights:  20%|█▉        | 77/391 [00:00<00:02, 144.18it/s]Loading weights:  24%|██▎       | 92/391 [00:00<00:02, 133.71it/s]Loading weights:  27%|██▋       | 107/391 [00:00<00:02, 133.85it/s]Loading weights:  31%|███       | 121/391 [00:00<00:02, 127.20it/s]Loading weights: 100%|██████████| 391/391 [00:00<00:00, 420.63it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Error parsing valid_at date, skipping
+Materialized 1 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0
+Error in generating LLM response: Expecting property name enclosed in double quotes: line 1 column 24 (char 23)
+LLM returned summary for unknown entity (first 30 chars): Marj Ardabil
+Materialized 1 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Materialized 1 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0
+Materialized 2 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error in generating LLM response: Unterminated string starting at: line 24 column 14 (char 1548)
+Materialized 1 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error parsing valid_at date, skipping
+Error in generating LLM response: Expecting ',' delimiter: line 1 column 33 (char 32)
+Error parsing valid_at date, skipping
+LLM returned summary for unknown entity (first 30 chars): Peyton List (actress, born 199
+LLM returned summary for unknown entity (first 30 chars): Frederica Henriette of Anhalt-
+LLM returned summary for unknown entity (first 30 chars): Srinagarindra
+LLM returned summary for unknown entity (first 30 chars): Ernest Thompson
+LLM returned summary for unknown entity (first 30 chars): Chandra Saradavara
+LLM returned summary for unknown entity (first 30 chars): On Golden Pond (2001 film)
+LLM returned summary for unknown entity (first 30 chars): Diary of a Wimpy Kid: The Long
+LLM returned summary for unknown entity (first 30 chars): Great Quittacas Pond
+LLM returned summary for unknown entity (first 30 chars): Je vous aime
+LLM returned summary for unknown entity (first 30 chars): David Prowse
+Error parsing valid_at date, skipping
+LLM returned summary for unknown entity (first 30 chars): Lakshmi
+LLM returned invalid duplicate_facts idx values [10] (valid range: 0-9 for EXISTING FACTS)
+Materialized 1 dangling edge endpoint node(s) for group_id=bench-musique-n50-s0

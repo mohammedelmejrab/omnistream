@@ -1,0 +1,114 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:   3%|3         | 13/391 [00:00<00:03, 117.99it/s]Loading weights:   7%|7         | 28/391 [00:00<00:03, 109.54it/s]Loading weights:  10%|#         | 40/391 [00:00<00:03, 96.91it/s] Loading weights:  13%|#2        | 50/391 [00:00<00:04, 80.29it/s]Loading weights:  16%|#5        | 62/391 [00:00<00:03, 90.58it/s]Loading weights:  21%|##        | 82/391 [00:00<00:02, 120.03it/s]Loading weights:  24%|##4       | 95/391 [00:00<00:03, 92.06it/s] Loading weights:  27%|##7       | 106/391 [00:01<00:03, 86.03it/s]Loading weights: 100%|##########| 391/391 [00:01<00:00, 335.62it/s]
+closed_book 2hop__865961_159109: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__554167_451128: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__494659_5385: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__73717_653666: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__34594_160249: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=None
+external 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+external 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+external 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+external 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__494659_5385: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+external 2hop__34594_160249: EM=0.0 F1=0.2857142857142857 R@2=0.0
+external 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+external 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+classic 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+classic 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__494659_5385: EM=1.0 F1=1.0 R@2=0.5
+classic 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+classic 2hop__34594_160249: EM=0.0 F1=0.2857142857142857 R@2=0.0
+classic 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+classic 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+classic 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+graphiti 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+graphiti 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop3__129456_29339_508306_70744: EM=1.0 F1=1.0 R@2=0.5
+graphiti 2hop__494659_5385: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+graphiti 2hop__34594_160249: EM=1.0 F1=1.0 R@2=0.5
+graphiti 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+graphiti 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.6666666666666666
+graphiti 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   3%|3         | 7/201 [00:01<00:31,  6.25it/s]Loading weights:  15%|#4        | 30/201 [00:01<00:05, 31.07it/s]Loading weights:  24%|##3       | 48/201 [00:01<00:02, 51.39it/s]Loading weights:  31%|###1      | 63/201 [00:01<00:02, 67.29it/s]Loading weights:  39%|###8      | 78/201 [00:01<00:01, 81.44it/s]Loading weights: 100%|##########| 201/201 [00:01<00:00, 124.59it/s]
+own 2hop__865961_159109: EM=1.0 F1=1.0 R@2=0.5
+own 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+own 2hop__554167_451128: EM=1.0 F1=1.0 R@2=0.5
+own 4hop3__129456_29339_508306_70744: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+own 2hop__494659_5385: EM=1.0 F1=1.0 R@2=1.0
+own 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+own 2hop__34594_160249: EM=0.0 F1=0.5 R@2=0.5
+own 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+Entity ANN shortfall: 49/50; falling back to exact
+own 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 43/50; falling back to exact
+Entity ANN shortfall: 44/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 44/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+own+subagents 2hop__865961_159109: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+own+subagents 2hop__554167_451128: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 48/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 19/50; falling back to exact
+own+subagents 2hop__494659_5385: EM=1.0 F1=1.0 R@2=1.0
+own+subagents 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 48/50; falling back to exact
+own+subagents 2hop__34594_160249: EM=0.0 F1=0.2857142857142857 R@2=0.5
+own+subagents 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 43/50; falling back to exact
+own+subagents 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own+subagents 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\mehme\omnistream-integrated\.venv\Scripts\omni.exe\__main__.py", line 5, in <module>
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\cli.py", line 246, in main
+    return asyncio.run(run_bench_qa_cli(settings, args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\bench\qa.py", line 654, in run_bench_qa_cli
+    output = await run_bench_qa(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\bench\qa.py", line 630, in run_bench_qa
+    await llm._client.close()
+TypeError: object NoneType can't be used in 'await' expression

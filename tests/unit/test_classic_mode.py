@@ -9,7 +9,7 @@ import pytest
 from chromadb.api.shared_system_client import SharedSystemClient
 from chromadb.config import Settings as ChromaSettings
 
-from omnistream.config import Settings
+from omnistream.config import DEFAULT_EMBEDDING_DIM, Settings
 from omnistream.embeddings import EmbeddingService
 from omnistream.retrieval.classic import (
     ClassicRetriever,
@@ -22,7 +22,7 @@ from omnistream.retrieval.models import Chunk, TimeScope
 
 class Encoder:
     def encode(self, sentences, **kwargs):
-        result = np.zeros((len(sentences), 384))
+        result = np.zeros((len(sentences), DEFAULT_EMBEDDING_DIM))
         for i, text in enumerate(sentences):
             result[i, :2] = [1, float(text) if text.isdigit() else 0]
         return result

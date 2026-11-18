@@ -1,4 +1,4 @@
-"""Local text embedding service (bge-small-en-v1.5 via sentence-transformers)."""
+"""Local text embedding service via sentence-transformers."""
 
 from __future__ import annotations
 
@@ -9,14 +9,22 @@ from typing import Any, Protocol
 
 import numpy as np
 
-from omnistream.config import Settings, get_settings
+from omnistream.config import (
+    DEFAULT_EMBEDDING_DIM,
+    DEFAULT_EMBEDDING_MODEL,
+    Settings,
+    get_settings,
+)
 
 # BGE v1.5 models recommend this instruction prefix for short retrieval queries.
 BGE_QUERY_INSTRUCTION = "Represent this sentence for searching relevant passages: "
 
 # Known embedding models and their output dimensions. Changing the model
 # requires re-indexing, so stores should persist ``index_signature``.
-KNOWN_MODEL_DIMS = {"BAAI/bge-small-en-v1.5": 384}
+KNOWN_MODEL_DIMS = {
+    "BAAI/bge-small-en-v1.5": 384,
+    DEFAULT_EMBEDDING_MODEL: DEFAULT_EMBEDDING_DIM,
+}
 
 
 class Encoder(Protocol):

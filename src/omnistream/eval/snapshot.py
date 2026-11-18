@@ -219,7 +219,7 @@ class SnapshotBuilder:
             update={"data_dir": str(self.path), "llm_max_concurrency": 2}
         )
 
-        self.embedder = SentenceTransformerEmbedder(settings.embed_model)
+        self.embedder = SentenceTransformerEmbedder(settings)
 
         self.groups = {name: f"{self.name}-{name.lower()}" for name in DESCRIPTIONS}
 

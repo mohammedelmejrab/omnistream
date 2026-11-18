@@ -30,12 +30,17 @@ def test_eval_dataset():
 
 
 def test_eval_ranking_metrics():
-    assert retrieval_metrics(["x", "x", "a", "b"], ["a", "b"]) == {
+    base = retrieval_metrics(["x", "x", "a", "b"], ["a", "b"])
+    # Original keys keep their exact values; bench additions are additive.
+    assert {k: base[k] for k in ("recall_at_10", "mrr", "hits_at_1")} == {
         "recall_at_10": 1.0,
         "mrr": 0.5,
         "hits_at_1": 0.0,
     }
-    assert retrieval_metrics([str(i) for i in range(11)], ["10"]) == {
+    assert base["recall_at_2"] == 0.5
+    assert base["recall_at_5"] == base["recall_at_20"] == 1.0
+    eleventh = retrieval_metrics([str(i) for i in range(11)], ["10"])
+    assert {k: eleventh[k] for k in ("recall_at_10", "mrr", "hits_at_1")} == {
         "recall_at_10": 0.0,
         "mrr": 1 / 11,
         "hits_at_1": 0.0,

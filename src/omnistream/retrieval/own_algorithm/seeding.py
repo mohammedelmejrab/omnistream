@@ -20,7 +20,7 @@ class Seed:
 
     entity: Entity
     score: float
-    source: Literal["vector", "fuzzy", "both", "fact"]
+    source: Literal["vector", "fuzzy", "both", "fact", "passage"]
 
 
 def is_named_entity(entity: Entity) -> bool:
@@ -53,6 +53,7 @@ def seed_entities(
     fact_top_k: int = 10,
     time_scope=None,
     max_seeds: int = 10,
+    passage_seeds: Sequence[Seed] = (),
     generic_fact_weight: float = 0.5,
 ) -> list[Seed]:
     """Combine bounded name/fact candidates, capped by distinct identity.
@@ -156,7 +157,11 @@ def seed_entities(
     # This symmetric share is declared independently of evaluation outcomes.
     reserved = unique(facts)[: (max_seeds + 1) // 2]
     selected = {s.entity.global_id or s.entity.id: s for s in reserved}
-    for seed in unique(lexical + facts):
+    # Reserve up to three passage identities inside the existing ten-slot cap.
+    for seed in unique(passage_seeds)[:3]:
+        if len(selected) < max_seeds:
+            selected.setdefault(seed.entity.global_id or seed.entity.id, seed)
+    for seed in unique([*lexical, *facts, *passage_seeds]):
         identity = seed.entity.global_id or seed.entity.id
         if identity in selected:
             if seed.score > selected[identity].score:

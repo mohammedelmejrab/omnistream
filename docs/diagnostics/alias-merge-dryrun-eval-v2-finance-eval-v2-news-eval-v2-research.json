@@ -1,0 +1,436 @@
+{
+  "summary": {
+    "groups": [
+      "eval-v2-finance",
+      "eval-v2-news",
+      "eval-v2-research"
+    ],
+    "pairs_found": 20,
+    "merges": 0,
+    "same_as_edges_to_change": 0,
+    "already_merged": 20,
+    "missing_side": 0,
+    "refused_type_conflict": 0,
+    "refused_number_token": 0,
+    "refused_ambiguity": 0
+  },
+  "pairs": [
+    {
+      "full": "Tesselmere Controls",
+      "short": "TMC",
+      "source": "f304fc071e2a5b0cc7a8550458749aba591fd10e0d31ed3ce07dcd7b9f21518a",
+      "full_entities": [
+        "1f01ae54-7698-4457-9bf1-f5a8ea241b76",
+        "40ac00f6-a84b-4467-9c6c-67a1d7b6f30f",
+        "d5b02979-d52c-4e34-8ee2-1bcf27d4c683"
+      ],
+      "short_entities": [
+        "07ef0e9c-262e-4f89-93a3-735932aadede",
+        "2e2fd4d3-99ca-48cd-a595-623e316610d8",
+        "406afbbd-858b-46df-aa3c-76f4f6f4ede7"
+      ],
+      "full_global": "7fe0725b0c1c4b98861599dca7a4c678",
+      "short_global": "7fe0725b0c1c4b98861599dca7a4c678",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Opal Ridge Laboratory",
+      "short": "ORL",
+      "source": "f304fc071e2a5b0cc7a8550458749aba591fd10e0d31ed3ce07dcd7b9f21518a",
+      "full_entities": [
+        "1993261c-51b1-4467-b6c0-cd55c051e141",
+        "4ad844ba-d852-41e7-8a44-1d413562a370",
+        "accec28b-3948-4a2b-a6b0-0058aa2a7a76"
+      ],
+      "short_entities": [
+        "7f28b665-5487-4d45-af8e-03823f240428"
+      ],
+      "full_global": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+      "short_global": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Aldervane Transit",
+      "short": "AVT",
+      "source": "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32",
+      "full_entities": [
+        "34fbf09d-ccca-41f1-a8ad-e173abbf29bd",
+        "692902c9-8e34-4dd6-abee-98c61ff6e883",
+        "f990a473-f1e2-4d86-ba2b-ec8f396667d9"
+      ],
+      "short_entities": [
+        "3e691c03-0b34-465a-a20a-6b55cc607521",
+        "9699d7b8-f9fc-45eb-a958-c3848d725e41",
+        "a7cada0c-5342-4a74-841e-d6686d8c2dea"
+      ],
+      "full_global": "5b52d3cd22ad447cab79b17430e1eb05",
+      "short_global": "5b52d3cd22ad447cab79b17430e1eb05",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Ochre Hollow Institute",
+      "short": "OHI",
+      "source": "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32",
+      "full_entities": [
+        "cc9cfb28-7eb6-41de-b0b7-9a8334571db5",
+        "ffa57ed5-0fb2-4646-b7ff-4ddb2031f5b0"
+      ],
+      "short_entities": [
+        "3b94588a-cf27-4987-9093-0d77a8bf0793"
+      ],
+      "full_global": "4cb70390b2b3441db8b1134977007a24",
+      "short_global": "4cb70390b2b3441db8b1134977007a24",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Halvex Mobility",
+      "short": "HVM",
+      "source": "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+      "full_entities": [
+        "64940738-5511-47a5-82cc-ecf9ed27e6d7",
+        "92a5e94c-f32b-4f0a-9320-1d4f6b9dc792",
+        "c95b4293-c060-46c2-83db-33e291adbfbf"
+      ],
+      "short_entities": [
+        "2db6d60f-2f3c-4a7f-9786-465f2281326f",
+        "f7c806ae-5ea3-4aa4-837c-d0ac1c9ae702",
+        "fcae51c8-533a-4c4c-8e82-94eec8f58205"
+      ],
+      "full_global": "2cbff3f5273c4ff3a675b7233974cf05",
+      "short_global": "2cbff3f5273c4ff3a675b7233974cf05",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Cobalt Reach Laboratory",
+      "short": "CRL",
+      "source": "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+      "full_entities": [
+        "1bd55056-2c4e-45d9-a9fe-2be8937912f2",
+        "6d25f2cc-7f5e-47f8-a845-fa9f5cb219a2"
+      ],
+      "short_entities": [
+        "ff04a6e7-6f5b-4c55-8896-02df07914d74"
+      ],
+      "full_global": "c0fc66150a3e4a60b69c3be4ad53aa21",
+      "short_global": "c0fc66150a3e4a60b69c3be4ad53aa21",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Quenara Devices",
+      "short": "QND",
+      "source": "f0987f025f874e89d0d16934590d4fafa1bf977d8db75680f268ddfbc0edba2d",
+      "full_entities": [
+        "0faac254-b721-4985-9913-f36be4408763",
+        "192bc8f3-3e8e-49ac-a91f-5829a8af8bb6",
+        "6a34326e-418b-4b1b-985a-d5e09bd2f5b8"
+      ],
+      "short_entities": [
+        "859849f9-05a8-4f0c-96e0-bc8035b44702",
+        "a5d17354-2265-49bd-af02-bc333638fee5"
+      ],
+      "full_global": "4d39ee4608f0478184268aed75f10927",
+      "short_global": "4d39ee4608f0478184268aed75f10927",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Indigo Vale Centre",
+      "short": "IVC",
+      "source": "f0987f025f874e89d0d16934590d4fafa1bf977d8db75680f268ddfbc0edba2d",
+      "full_entities": [
+        "252c8ad5-6704-400b-a510-2bd1593392f8",
+        "668cbe46-cb35-41f1-a7ce-121d3d8038f7",
+        "c88f59ac-5349-4ccb-8dd5-207c453421d2"
+      ],
+      "short_entities": [
+        "2d4adebd-353b-4ffb-8796-0b593763c7bf",
+        "ecefb371-f922-4aee-b8cb-98e676717049"
+      ],
+      "full_global": "9b45a4c58310455a995be53379bd2d7d",
+      "short_global": "9b45a4c58310455a995be53379bd2d7d",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Vespergate Works",
+      "short": "VGW",
+      "source": "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+      "full_entities": [
+        "537a6f0f-d4b6-4036-8527-8473db245f7d",
+        "e362129b-8799-4dac-a3d3-33822f6cdab2",
+        "f4acd68c-c281-422b-8b9f-fe26951e2a0f"
+      ],
+      "short_entities": [
+        "cb8c434c-dabd-40b8-8841-8ea32f1532f7",
+        "fb12b069-df82-4b77-a37f-fb8f59e17fe3"
+      ],
+      "full_global": "59c60d5fbbfd4cb198aa5fb5967684d3",
+      "short_global": "59c60d5fbbfd4cb198aa5fb5967684d3",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Copper Fen Institute",
+      "short": "CFI",
+      "source": "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+      "full_entities": [
+        "179d1b96-8136-475a-8bc1-ba2d4d9c3ae3",
+        "34474cba-667d-454c-b531-5a54937f5a79",
+        "4b1af338-0ef1-46cb-b838-222ab9260f90"
+      ],
+      "short_entities": [
+        "8bdc1bef-ff1f-49ba-a2d9-a5658fb27ae0",
+        "b7a6cef1-7519-4263-95ee-faec22365aae"
+      ],
+      "full_global": "ed334280ff0340b6864d03b5d43759c6",
+      "short_global": "ed334280ff0340b6864d03b5d43759c6",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Ravenspire Instruments",
+      "short": "RSI",
+      "source": "68f6d1a1c4024e18e4e9e831c06d7169f1aa50c3ae97e8c939697170224cabb1",
+      "full_entities": [
+        "0827e0ee-c180-4815-a4af-3d38bf7df7f2",
+        "a5b9ac37-c60d-4dcc-bb10-a6b9edc48bee",
+        "e46b892f-8264-4d09-8aae-742f9688d5ea"
+      ],
+      "short_entities": [
+        "5c7b0dde-5c4d-488f-ae84-04877f7ec43c",
+        "d7370899-46ef-4a0c-9a2f-164ee73e25f0",
+        "e81318cf-d9e2-4a87-82c2-5afa79be94b5"
+      ],
+      "full_global": "e7ff20ba015f46a59d87ec55e9d63657",
+      "short_global": "e7ff20ba015f46a59d87ec55e9d63657",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Silver Marsh Laboratory",
+      "short": "SML",
+      "source": "68f6d1a1c4024e18e4e9e831c06d7169f1aa50c3ae97e8c939697170224cabb1",
+      "full_entities": [
+        "e53eddde-c07c-4bae-9600-c1429f53120b"
+      ],
+      "short_entities": [
+        "0a39ea00-6940-46ac-b459-251047bd2c27",
+        "417071a4-ac0c-4808-9b86-c75966de5c0b"
+      ],
+      "full_global": "a02fa6c92dbb463483c6ba0a612e99be",
+      "short_global": "a02fa6c92dbb463483c6ba0a612e99be",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Pellucid Forge",
+      "short": "PCF",
+      "source": "30a87fd269da48692873961f1b8f99f664951dd56c6be7449b9318a2643a4905",
+      "full_entities": [
+        "8b1c472e-095d-48e6-95b2-7616d8d1c2ee",
+        "993821c5-3f4d-4acd-a539-9d32b8524ac4",
+        "e9c12b9b-c865-4fbe-a99a-969da2028607"
+      ],
+      "short_entities": [
+        "0bd43f16-8634-40de-8978-71a42c18b68b",
+        "85fe9d79-fcd4-4612-977a-1a256ac5a65f",
+        "8af68cc1-9f46-4619-8208-39ffa30b71ac"
+      ],
+      "full_global": "e40da88bedad4db9b8c13f4b1a68d82f",
+      "short_global": "e40da88bedad4db9b8c13f4b1a68d82f",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Violet Strand Centre",
+      "short": "VSC",
+      "source": "30a87fd269da48692873961f1b8f99f664951dd56c6be7449b9318a2643a4905",
+      "full_entities": [
+        "bea2c5fe-ec77-46d2-9552-a9f117b78e18",
+        "ebf0618f-41c8-4428-9c14-59720feb99d5"
+      ],
+      "short_entities": [
+        "a435b952-6d0c-4d49-97ec-10fd2fd4bb5c",
+        "b9e0e258-eb2c-4d3f-828b-0470e7373988"
+      ],
+      "full_global": "ee3e22dd279f448fb20f5fa24f607197",
+      "short_global": "ee3e22dd279f448fb20f5fa24f607197",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Brindle Arc",
+      "short": "BDA",
+      "source": "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+      "full_entities": [
+        "06c86c4f-f311-44e2-8eac-f17150c8f7c2",
+        "4c390e2e-b820-4733-92a0-9ff1cd31e1f5",
+        "ebcd475b-9a86-48b4-b00d-f6ef2f3684ab"
+      ],
+      "short_entities": [
+        "9202a2c0-f734-4480-acdc-b6241920c4a0",
+        "df3c36f5-c870-4200-a1ed-b23dfb87b345",
+        "fcb9bb06-8a37-4278-95fb-21ef24eae456"
+      ],
+      "full_global": "e32f37a96b7940c4b7ec2ffa89200bb3",
+      "short_global": "e32f37a96b7940c4b7ec2ffa89200bb3",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Sable Meridian Centre",
+      "short": "SMC",
+      "source": "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+      "full_entities": [
+        "1797b2cb-297f-4042-96fe-c7c4a486c542",
+        "d7acb653-0cf7-4f84-bdfd-38e4b3102533",
+        "fa192f2c-754c-44cf-951f-a481db8d256b"
+      ],
+      "short_entities": [
+        "5c5aae14-9714-49fb-9787-42e347c1ac7c",
+        "61fb8f1a-869e-4120-8b00-e91fa3fc0e50"
+      ],
+      "full_global": "ab73861509814b36930835bab826e34c",
+      "short_global": "ab73861509814b36930835bab826e34c",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Nacreline Systems",
+      "short": "NLS",
+      "source": "e54dd8cb1055286c3f45b24fe19c5d87995ecc4cf4643624358806b5db3a751e",
+      "full_entities": [
+        "103e7598-d6da-484c-aaf6-f7ee275ab18e",
+        "4f6f4e56-bc59-497a-8646-fd8ac23465dc"
+      ],
+      "short_entities": [
+        "4f3e1ea3-eb44-4d9b-a0f1-acaf5a3fd4e6",
+        "8275edc0-3c43-4e02-9419-ee2e2a2d8734"
+      ],
+      "full_global": "93f82a1eea024f9a87e042a9b0d177de",
+      "short_global": "93f82a1eea024f9a87e042a9b0d177de",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Juniper Basin Institute",
+      "short": "JBI",
+      "source": "e54dd8cb1055286c3f45b24fe19c5d87995ecc4cf4643624358806b5db3a751e",
+      "full_entities": [
+        "20dacb29-87a4-402b-be34-8e96ac76b1a5",
+        "a72afce1-a309-484a-a215-fe4737daedd2"
+      ],
+      "short_entities": [
+        "2e6f296d-b389-4365-9f9f-6668267a4222",
+        "bd1ea588-6a74-4c5e-86cd-9ba565d2f1f7"
+      ],
+      "full_global": "9d3b3436198b4c858619e9b12bab6471",
+      "short_global": "9d3b3436198b4c858619e9b12bab6471",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Oxbriar Robotics",
+      "short": "OBR",
+      "source": "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+      "full_entities": [
+        "65c2cb49-6679-4ead-8ff4-6af2e40f6c79",
+        "7361856e-2e21-470d-a1f9-fbfda5046064",
+        "f67021d0-6f2e-4bd3-985d-024dd3a79c3f"
+      ],
+      "short_entities": [
+        "0aa7e1cf-fe6a-479f-99f6-053ce09740de",
+        "b145caa2-5f13-4578-bd04-d4d74ccf2a83",
+        "bbdc537f-4655-41e9-ab30-8970bf73550d"
+      ],
+      "full_global": "312a3437e6b6414e8863cc32f0605ca4",
+      "short_global": "312a3437e6b6414e8863cc32f0605ca4",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    },
+    {
+      "full": "Ivory Delta Laboratory",
+      "short": "IDL",
+      "source": "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+      "full_entities": [
+        "89e3a372-285d-4f3d-8569-ed97b925fb97",
+        "edc265e8-cc68-46d1-afef-98e02b2241fc",
+        "fd87b6c4-f378-4c8e-b4fa-e95da1adc708"
+      ],
+      "short_entities": [
+        "26e2bcd2-4909-4c08-a71f-08094503e16b",
+        "7bc44786-7462-4ae7-bb06-d37687112860"
+      ],
+      "full_global": "60b1c30ea0e149338c30a1689cb620ea",
+      "short_global": "60b1c30ea0e149338c30a1689cb620ea",
+      "full_type": "Organization",
+      "short_type": "Organization",
+      "decision": "already_merged",
+      "same_as_edges_changed": 0,
+      "reason": "already share a GlobalEntity"
+    }
+  ]
+}

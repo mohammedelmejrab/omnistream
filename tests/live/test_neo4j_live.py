@@ -23,7 +23,6 @@ from omnistream.retrieval.own_algorithm.pipeline import OwnRetriever
 
 pytestmark = pytest.mark.live
 
-DIM = 384
 NOW = datetime(2025, 5, 1, 12, 0, tzinfo=UTC)
 INDEX = "entity_name_embedding"
 
@@ -34,8 +33,8 @@ def _delete_group(driver, *groups: str) -> None:
         driver.execute_query("MATCH (n {group_id: $g}) DETACH DELETE n", g=group)
 
 
-def _unit(axis: int) -> list[float]:
-    vector = np.zeros(DIM, dtype=float)
+def _unit(axis: int, dim: int) -> list[float]:
+    vector = np.zeros(dim, dtype=float)
     vector[axis] = 1.0
     return vector.tolist()
 
@@ -63,8 +62,8 @@ def driver(live_settings):
 
 
 @pytest.fixture(scope="module")
-def entity_vector_index(driver):
-    """Ensure the 384-dim entity name vector index exists; drop it if we made it."""
+def entity_vector_index(driver, live_settings):
+    """Ensure the configured-dimension entity index exists; drop it if we made it."""
     existing = {
         record["name"] for record in driver.execute_query("SHOW INDEXES YIELD name")[0]
     }
@@ -72,7 +71,8 @@ def entity_vector_index(driver):
     if created:
         driver.execute_query(
             "CREATE VECTOR INDEX entity_name_embedding FOR (n:Entity) ON (n.name_embedding) "
-            "OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}}"
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, `vector.similarity_function`: 'cosine'}}",
+            dim=live_settings.embedding_dim,
         )
     yield INDEX
     if created:
@@ -80,7 +80,7 @@ def entity_vector_index(driver):
 
 
 @pytest.fixture
-def store_graph(driver, entity_vector_index):
+def store_graph(driver, entity_vector_index, live_settings):
     """A small two-bubble graph; yields (group, other, ids) and cleans up.
 
     Every node and edge UUID is unique to this run: ``Neo4jGraphStore.expand``
@@ -142,13 +142,14 @@ def store_graph(driver, entity_vector_index):
         group=group,
         other=other,
         **ids,
-        ea=_unit(0),
-        eb=_unit(1),
-        ec=_unit(2),
-        ed=_unit(4),
-        ex=_unit(3),
+        ea=_unit(0, live_settings.embedding_dim),
+        eb=_unit(1, live_settings.embedding_dim),
+        ec=_unit(2, live_settings.embedding_dim),
+        ed=_unit(4, live_settings.embedding_dim),
+        ex=_unit(3, live_settings.embedding_dim),
         fe1=(
-            (np.array([1.0, 1.0, 0.0, 0.0]) / np.sqrt(2.0)).tolist() + [0.0] * (DIM - 4)
+            (np.array([1.0, 1.0, 0.0, 0.0]) / np.sqrt(2.0)).tolist()
+            + [0.0] * (live_settings.embedding_dim - 4)
         ),
         published=NOW - timedelta(days=2),
         valid=datetime(2025, 1, 1, tzinfo=UTC),
@@ -159,7 +160,9 @@ def store_graph(driver, entity_vector_index):
 
 
 @pytest.mark.live
-def test_entities_and_seed_by_embedding(driver, entity_vector_index, store_graph):
+def test_entities_and_seed_by_embedding(
+    driver, entity_vector_index, store_graph, live_settings
+):
     group, other, ids = store_graph
     store = Neo4jGraphStore(driver)
     a, b, c, d, x = (ids[key] for key in ("a", "b", "c", "d", "x"))
@@ -178,23 +181,34 @@ def test_entities_and_seed_by_embedding(driver, entity_vector_index, store_graph
 
     # Vector seeding: only the query-identical entity passes the cosine filter.
     seeds = store.seed_by_embedding(
-        np.asarray(_unit(0)), bubbles=[group], top_k=5, min_cosine=0.9
+        np.asarray(_unit(0, live_settings.embedding_dim)),
+        bubbles=[group],
+        top_k=5,
+        min_cosine=0.9,
     )
     assert [(e.id, round(score, 4)) for e, score in seeds] == [(a, 1.0)]
     # A query in an empty bubble group returns nothing.
     assert (
-        store.seed_by_embedding(np.asarray(_unit(0)), bubbles=["no-such-bubble"]) == []
+        store.seed_by_embedding(
+            np.asarray(_unit(0, live_settings.embedding_dim)),
+            bubbles=["no-such-bubble"],
+        )
+        == []
     )
     # A dissimilar query is rejected by min_cosine.
     assert (
-        store.seed_by_embedding(np.asarray(_unit(50)), bubbles=[group], min_cosine=0.9)
+        store.seed_by_embedding(
+            np.asarray(_unit(50, live_settings.embedding_dim)),
+            bubbles=[group],
+            min_cosine=0.9,
+        )
         == []
     )
 
 
 @pytest.mark.live
 def test_expand_neighbors_facts_about_and_embeddings(
-    driver, entity_vector_index, store_graph
+    driver, entity_vector_index, store_graph, live_settings
 ):
     group, _other, ids = store_graph
     store = Neo4jGraphStore(driver)
@@ -257,7 +271,8 @@ def test_expand_neighbors_facts_about_and_embeddings(
     assert set(embeddings) == {f1}
     np.testing.assert_allclose(
         embeddings[f1],
-        (np.array([1.0, 1.0, 0.0, 0.0]) / np.sqrt(2.0)).tolist() + [0.0] * (DIM - 4),
+        (np.array([1.0, 1.0, 0.0, 0.0]) / np.sqrt(2.0)).tolist()
+        + [0.0] * (live_settings.embedding_dim - 4),
         atol=1e-6,
     )
 

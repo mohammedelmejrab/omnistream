@@ -39,6 +39,10 @@ specification see [`omnistream-rag-specification.md`](omnistream-rag-specificati
 | **Orchestrated subagents** | One subagent per bubble runs in parallel, then the orchestrator merges the results. |
 | **Hybrid retrieval** | Classic, sparse, hybrid and graph retrieval, combined with Reciprocal Rank Fusion. |
 | **Cited answers** | Every merged answer carries citations back to its sources. |
+| **Own graph retrieval** | Passage-anchored seeding, 2-hop expansion, PageRank and weighted RRF, with an optional local cross-encoder reranker. |
+| **Alias merging** | Abbreviations and aliases (for example "WHO" and "World Health Organization") are linked at ingestion; existing graphs can be merged and reverted with a manifest. |
+| **Local embeddings** | `BAAI/bge-large-en-v1.5` (1024-dim) runs on the local GPU; no embedding API is needed. |
+| **Multi-hop benchmarks** | Loaders and EM/F1 + passage Recall@k scoring for MuSiQue, 2WikiMultiHopQA and HotpotQA (HippoRAG 2 subsets). |
 | ⏳ **Per-bubble half-life** | Each bubble has its own half-life setting (seeded at 3, 30 and 365 days). |
 | **Snapshot replay** | Record a snapshot and re-inject it through intake for repeatable runs. |
 | **Evaluation harness** | LLM-judge evaluation runs, plus a real-data corpus builder. |
@@ -76,6 +80,38 @@ flowchart LR
     D3 --> M
     M --> ANS[Cited answer]
 ```
+
+## Results so far
+
+Full logs: [`docs/IMPROVEMENT_LOG.md`](docs/IMPROVEMENT_LOG.md); raw reports: [`docs/eval/bench/`](docs/eval/bench/).
+
+### Retrieval check (HippoRAG protocol, full corpora, 300 questions, passage Recall@2 / @5)
+
+| Retriever | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| BM25 (ours) | 33.8 / 44.7 | 55.5 / 63.7 | 56.3 / 73.3 |
+| BM25 (HippoRAG 1 paper) | 32.3 / 41.2 | 51.8 / 61.9 | 55.4 / 72.2 |
+| HippoRAG 1, ColBERTv2 (paper) | 40.9 / 51.9 | **70.7 / 89.1** | 60.5 / 77.7 |
+| **bge-large-en-v1.5 (ours, local GPU)** | **41.2 / 55.7** | 64.8 / 71.3 | **75.2 / 87.7** |
+
+Our BM25 reproduces the published BM25 within about 3 points, which validates the harness.
+
+### End-to-end QA: MuSiQue, 50 questions (seed 0), 928-passage slice corpus
+
+Short answers, SQuAD-normalised EM / token F1, answering model `deepseek/deepseek-v4.1-flash-1017`.
+
+| Configuration | EM | F1 | Recall@2 | Recall@10 | Cost ($) |
+|---|---|---|---|---|---|
+| Closed book (no retrieval) | 10.0 | 13.1 | - | - | 0.001 |
+| External (LlamaIndex) | 20.0 | 24.4 | 45.5 | 45.5 | 0.003 |
+| Classic RAG | 36.0 | 44.0 | 45.5 | 78.8 | 0.017 |
+| Graphiti | 34.0 | 40.0 | 43.7 | 72.3 | 0.025 |
+| Own retrieval | 34.0 | 38.6 | **52.5** | 77.5 | 0.024 |
+| **Own retrieval + subagents** | **48.0** | **60.2** | 45.3 | **83.2** | 0.300 |
+
+95% bootstrap intervals are about +-13 EM points at n=50. Published HippoRAG 1 MuSiQue QA (EM / F1:
+HippoRAG 19.2 / 29.8, IRCoT + HippoRAG 21.9 / 33.3) uses the full 11,656-passage corpus and 1,000
+questions, so it is context, not a like-for-like comparison.
 
 ## Requirements
 
@@ -119,6 +155,11 @@ uv run omni serve                 # start API + UI at http://127.0.0.1:8000
 uv run omni replay <snapshot>     # re-inject a recorded snapshot through intake
 uv run omni eval --snapshot <name> --dataset eval-v2 --split dev
 uv run omni realdata collect --name real-v2   # build the real-data corpus
+
+# multi-hop benchmarks (data from the HippoRAG 2 release under data/bench/hipporag)
+uv run omni eval bench-retrieval --dataset musique --n 300            # retrieval-only check, no LLM
+uv run omni eval bench-ingest --dataset musique --n 50 --corpus slice  # build the benchmark graph
+uv run omni eval bench-qa --dataset musique --n 50 --snapshot bench-musique-n50-s0
 ```
 
 <details>
@@ -131,6 +172,8 @@ uv run omni realdata collect --name real-v2   # build the real-data corpus
 | `omni replay <snapshot>` | Re-injects a recorded snapshot in polled order. |
 | `omni eval` | Requires `--snapshot`. `--dataset` accepts `eval-v1`, `eval-v2` or `real-v2`. |
 | `omni realdata collect` | Requires `--name`. Optional `--since` and `--until`. |
+| `omni eval bench-ingest` | Resumable. `--limit-passages N` for a cost probe, `--dry-run` for counts only. |
+| `omni eval bench-qa` | Scores closed_book, external, classic, graphiti, own and own+subagents. `--limit-questions N` then `--resume` to extend. |
 
 </details>
 

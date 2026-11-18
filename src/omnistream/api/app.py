@@ -348,7 +348,7 @@ async def build_components(
     if embedder is None:
         from omnistream.embed import SentenceTransformerEmbedder
 
-        embedder = SentenceTransformerEmbedder(settings.embed_model)
+        embedder = SentenceTransformerEmbedder(settings)
     if llm is None:
         from omnistream.llm import build_llm_client
 

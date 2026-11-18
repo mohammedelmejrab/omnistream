@@ -1,5 +1,6 @@
 """Deterministic metrics. Items are deduplicated in first-retrieval order."""
 
+import math
 import re
 from collections import Counter
 from statistics import mean
@@ -59,6 +60,22 @@ def run_validity(metrics):
     }
 
 
+def _ndcg_at_k(ranked, gold, k):
+    """Binary-relevance nDCG over gold items with ``log2(i + 1)`` discount."""
+    if not gold:
+        return 0.0
+    dcg = sum(
+        1 / math.log2(position + 1)
+        for position, item in enumerate(ranked[:k], 1)
+        if item in gold
+    )
+    ideal = sum(
+        1 / math.log2(position + 1)
+        for position in range(1, min(len(gold), k) + 1)
+    )
+    return dcg / ideal
+
+
 def retrieval_metrics(retrieved, gold, acceptable=()):
     ranked = list(dict.fromkeys(retrieved))
     gold = set(gold)
@@ -67,6 +84,10 @@ def retrieval_metrics(retrieved, gold, acceptable=()):
     )
     return {
         "recall_at_10": len(set(ranked[:10]) & gold) / len(gold) if gold else 0.0,
+        "recall_at_2": len(set(ranked[:2]) & gold) / len(gold) if gold else 0.0,
+        "recall_at_5": len(set(ranked[:5]) & gold) / len(gold) if gold else 0.0,
+        "recall_at_20": len(set(ranked[:20]) & gold) / len(gold) if gold else 0.0,
+        "ndcg_at_10": _ndcg_at_k(ranked, gold, 10),
         "mrr": 1 / rank if rank else 0.0,
         "hits_at_1": float(rank == 1),
     }
@@ -88,6 +109,10 @@ def aggregate(results):
         metrics = {}
         for key in (
             "recall_at_10",
+            "recall_at_2",
+            "recall_at_5",
+            "recall_at_20",
+            "ndcg_at_10",
             "mrr",
             "hits_at_1",
             "correctness",

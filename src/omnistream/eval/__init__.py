@@ -142,6 +142,12 @@ async def score_question(
         "latency_seconds": elapsed,
         **retrieval_metrics(retrieved, gold, acceptable),
     }
+    short_answers = question.get("short_answers") or []
+    if short_answers:
+        from .bench.metrics import exact_match, token_f1
+
+        result["exact_match"] = exact_match(answer, short_answers)
+        result["token_f1"] = token_f1(answer, short_answers)
     result.update(
         routing_metrics(selected, question["expected_bubbles"])
         if configuration != "external"
@@ -480,6 +486,10 @@ async def run_evaluation(
                             "question": question["question"],
                             "correctness": None,
                             "recall_at_10": None,
+                            "recall_at_2": None,
+                            "recall_at_5": None,
+                            "recall_at_20": None,
+                            "ndcg_at_10": None,
                             "mrr": None,
                             "hits_at_1": None,
                             "routing_recall": None,

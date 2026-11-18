@@ -10,6 +10,7 @@ ingestion path always embeds in.
 import asyncio
 from typing import Protocol
 
+from omnistream.config import Settings
 from omnistream.embeddings import EmbeddingService
 
 
@@ -28,9 +29,13 @@ class SentenceTransformerEmbedder:
     """
 
     def __init__(
-        self, model_name: str, *, service: EmbeddingService | None = None
+        self, model_name: str | Settings, *, service: EmbeddingService | None = None
     ) -> None:
-        self.service = service or EmbeddingService(model_name=model_name)
+        self.service = service or (
+            EmbeddingService(model_name)
+            if isinstance(model_name, Settings)
+            else EmbeddingService(model_name=model_name)
+        )
 
     async def embed(self, texts: list[str]) -> list[list[float]]:
         vectors = await asyncio.to_thread(self.service.embed_documents, texts)

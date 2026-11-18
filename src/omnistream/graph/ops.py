@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Protocol
 
+from omnistream.graph.aliases import types_compatible
 from omnistream.graph.linker import GlobalCandidate
 
 GLOBAL_INDEX = "global_entity_embedding"
@@ -340,6 +341,26 @@ class Neo4jGraphOps:
             e=entity_uuid,
             g=global_uuid,
         )
+
+    async def find_global_entity(
+        self, name: str, type: str
+    ) -> GlobalCandidate | None:
+        """Exact casefolded GlobalEntity lookup by name or alias, same type
+        (or either side untyped/unknown); None when absent or ambiguous."""
+        rows = await self._q(
+            "MATCH (g:GlobalEntity) "
+            "WHERE toLower(g.name) = toLower($name) "
+            "OR toLower($name) IN [x IN coalesce(g.aliases, []) | toLower(x)] "
+            "RETURN g.uuid AS uuid, g.name AS name, g.type AS type, "
+            "g.aliases AS aliases ORDER BY g.uuid",
+            name=name.strip(),
+        )
+        matches = [
+            GlobalCandidate(r["uuid"], r["name"], r.get("type") or "", list(r["aliases"] or []))
+            for r in rows
+            if types_compatible(r.get("type") or "", type)
+        ]
+        return matches[0] if len(matches) == 1 else None
 
     async def bubble_graph(
         self, group_id: str, limit: int = 50, *, include_historical: bool = False

@@ -75,6 +75,8 @@ def settings() -> Settings:
     """Settings isolated from the developer's real .env and environment."""
     return Settings(
         _env_file=None,
+        embedding_model="BAAI/bge-small-en-v1.5",
+        embedding_dim=DIM,
         llm_base_url="https://openrouter.ai/api/v1",
         llm_api_key="test-key",
         llm_model="deepseek/deepseek-chat",

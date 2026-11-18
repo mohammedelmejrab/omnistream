@@ -48,8 +48,8 @@ def test_defaults_without_env_file(clean_env):
     # Spec §13.2: the DeepSeek endpoint, blank model until configured.
     assert s.llm_base_url == "https://api.deepseek.com/v1"
     assert s.llm_model == ""
-    assert s.embedding_model == "BAAI/bge-small-en-v1.5"
-    assert s.embedding_dim == 384
+    assert s.embedding_model == "BAAI/bge-large-en-v1.5"
+    assert s.embedding_dim == 1024
     assert s.rrf_k == 60
     assert s.judge_model == s.llm_model
     assert s.neo4j_password.get_secret_value() == ""
@@ -76,7 +76,7 @@ def test_settings_isolated_from_ambient_environment():
     assert "OMNI_EMBEDDING_DIM" not in os.environ
     assert "LLM_API_KEY" not in os.environ
     assert not get_settings().has_llm_credentials
-    assert Settings().embedding_dim == 384
+    assert Settings().embedding_dim == 1024
 
 
 def test_invalid_rrf_k_rejected(clean_env):

@@ -16,7 +16,9 @@ from chromadb.errors import InternalError, NotFoundError
 
 from omnistream.embeddings import EmbeddingService
 from omnistream.retrieval.models import Chunk, RetrievalResult, TimeScope, _utc
+from omnistream.retrieval.own_algorithm.rerank import WINDOW, rerank
 
+EMBEDDING_SIGNATURE_KEY = "embedding_signature"
 _CLIENT_LOCK = threading.RLock()
 
 
@@ -89,6 +91,18 @@ def collection_name(bubble: str) -> str:
     return "bubble_" + hashlib.sha256(bubble.encode()).hexdigest()
 
 
+def check_chunk_collection(collection, signature: str | None) -> None:
+    metadata = collection.metadata or {}
+    space = metadata.get("hnsw:space")
+    if space is None:
+        space = (collection.configuration.get("hnsw") or {}).get("space")
+    if space != "cosine":
+        raise ValueError("collection must use cosine space")
+    stored = metadata.get(EMBEDDING_SIGNATURE_KEY)
+    if stored is not None and signature is not None and stored != signature:
+        raise ValueError(f"collection uses embeddings {stored!r}, expected {signature!r}")
+
+
 def add_chunks(
     client: Any, embedder: EmbeddingService, bubble: str, chunks: Sequence[Chunk]
 ) -> None:
@@ -103,10 +117,9 @@ def add_chunks(
     collection = client.get_or_create_collection(
         name,
         embedding_function=None,
-        metadata={"hnsw:space": "cosine"},
+        metadata={"hnsw:space": "cosine", EMBEDDING_SIGNATURE_KEY: embedder.index_signature},
     )
-    if (collection.metadata or {}).get("hnsw:space") != "cosine":
-        raise ValueError("collection must use cosine space")
+    check_chunk_collection(collection, embedder.index_signature)
     metadata = []
     for chunk in chunks:
         entry = {"item_id": chunk.item_id, "bubble": bubble}
@@ -133,7 +146,10 @@ class ClassicRetriever:
 
     mode = "classic"
 
-    def __init__(self, client: Any, embedder: EmbeddingService) -> None:
+    def __init__(
+        self, client: Any, embedder: EmbeddingService, *, reranker=None
+    ) -> None:
+        self.reranker = reranker
         self.client = client
         self.embedder = embedder
 
@@ -163,8 +179,7 @@ class ClassicRetriever:
                 continue
             if not collection.count():
                 continue
-            if (collection.metadata or {}).get("hnsw:space") != "cosine":
-                raise ValueError("collection must use cosine space")
+            check_chunk_collection(collection, self.embedder.index_signature)
             for attempt in range(2):
                 try:
                     result = collection.query(
@@ -220,7 +235,7 @@ class ClassicRetriever:
                 )
         chunks.sort(key=lambda c: (-c.score, c.bubble, c.id))
         # Preserve the similarity top-k candidate set; time only changes its order.
-        candidates = chunks[:limit]
+        candidates = chunks[: max(limit, WINDOW) if self.reranker else limit]
         candidates.sort(
             key=lambda c: (
                 -(c.score + _publication_boost(c.published_at, time_scope)),
@@ -228,7 +243,9 @@ class ClassicRetriever:
                 c.id,
             )
         )
-        return RetrievalResult(mode="classic", chunks=tuple(candidates))
+        if self.reranker:
+            candidates = rerank(question, candidates, lambda c: c.text, self.reranker)
+        return RetrievalResult(mode="classic", chunks=tuple(candidates[:limit]))
 
 
 def _publication_boost(published: datetime | None, scope: TimeScope | None) -> float:

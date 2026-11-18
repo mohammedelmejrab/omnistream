@@ -765,3 +765,149 @@ OpenRouter usage on 13 Nov for the dev build and both runs: about 3.7 USD (more 
 3. Single-shot own mode and its ranking.
 4. Router: product announcements fall into Unsorted.
 5. Judge calibration by a human (30 blinded answers exported) is still pending.
+
+## 18 Nov 2026: closing the gap to HippoRAG (items 1-7 of the plan)
+
+Goal: measure ourselves on MuSiQue, 2WikiMultiHopQA and HotpotQA, and fix the causes that keep
+our own retrieval behind HippoRAG. Decision by the project owner: HippoRAG is NOT re-run by us;
+published numbers are used as a labelled reference. All development measurements below are on
+dev data (eval-v2, benchmark dev subsets); the real-v2 test split is still untouched.
+
+### Item 7: benchmark loaders and metrics
+
+- Data: HippoRAG 2's own released subsets (Hugging Face `osunlp/HippoRAG_2`), 1,000 questions per
+  dataset with corpora of 11,656 (MuSiQue), 6,119 (2Wiki) and 9,811 (HotpotQA) passages, stored
+  under `data/bench/hipporag/` with SHA-256 sums. Gold passages follow HippoRAG 2's
+  `get_gold_docs` rule; 0 unmatched gold passages on all three corpora; no duplicate passages.
+- New package `src/omnistream/eval/bench/` (loaders, SQuAD-standard EM/F1, Recall@k, nDCG,
+  bootstrap CIs) and `omni eval bench-retrieval`. `retrieval_metrics` gained recall@2/5/20 and
+  nDCG@10 (existing keys unchanged); `score_question` adds EM/F1 when a question has short answers.
+- Harness check: our BM25 lands within 1-3 points of the published BM25 rows (HippoRAG 1 Table 2).
+
+Retrieval-only check, 300 questions per dataset (seed 0), full corpora, R@2 / R@5:
+
+| Dataset | bge-small (ours) | BM25 (ours) | BM25 (published) | ColBERTv2 (published) | HippoRAG 1 (published) |
+|---|---|---|---|---|---|
+| MuSiQue | 36.6 / 50.7 | 33.8 / 44.7 | 32.3 / 41.2 | 37.9 / 49.2 | 40.9 / 51.9 |
+| 2Wiki | 63.4 / 68.8 | 55.5 / 63.7 | 51.8 / 61.9 | 59.2 / 68.2 | 70.7 / 89.1 |
+| HotpotQA | see bench reports | 56.3 / 73.3 | 55.4 / 72.2 | 64.7 / 79.3 | 60.5 / 77.7 |
+
+Finding: plain bge-small already matches ColBERTv2; the large HippoRAG 1 gap is 2Wiki R@5
+(about 20 points), which plain retrieval cannot close (graph/alias work is needed there).
+
+### Item 6: short-answer mode
+
+`runtime.answer(..., answer_style="short")` asks for the bare answer span and strips wrappers and
+citation markers (`extract_short_answer`); sources stay available as structured data. Full mode
+is byte-for-byte unchanged.
+
+### Item 4: passage-anchored seeds (round 4, `docs/diagnostics/own-fixes-round4.md`)
+
+New seed source: top-5 dense chunks -> their episodes -> mentioned named entities, weighted by
+reciprocal rank and node specificity (1 / number of episodes mentioning the entity, as in
+HippoRAG). Constants declared before measuring. Flag `OMNI_OWN_SEED_MODE`.
+Result: with all bubbles, multi-hop full coverage 1/20 -> 10/20; with recorded routes 5/20 -> 6/20
+but single-question Hits@1 fell 5/15 -> 0/15 (setback, see item 5).
+
+### Item 5: Hits@1 diagnosis and local reranking (round 5, `docs/diagnostics/own-fixes-round5.md`)
+
+- Cause of the Hits@1 collapse, verified by single-factor counterfactuals: the passage seeds
+  change both the PageRank mass and the set of candidate facts entering RRF; in one case a
+  distractor won through a better recency rank. No general graph-scoring change was justified.
+- Fix: optional cross-encoder rerank of the top 30 candidates (flags `OMNI_OWN_RERANK`,
+  `OMNI_CLASSIC_RERANK`, default off). About 3 s extra per own query on CPU.
+
+### Item 2: source-evidenced alias and abbreviation merging
+
+- Cause (from the 13 Nov diagnosis): all 20 source-stated abbreviations in eval-v2 were separate
+  entities, because the embedding candidate search never surfaces "AVT" for "Aldervane Transit".
+- Fix: `graph/aliases.py` extracts pairs stated in the same source ("Full Name (ABBR)", "known
+  as", "a.k.a.", "formerly", ...); the linker resolves the other side by exact name/alias lookup.
+  No merge on initials alone, none across a number token, tickers not treated as aliases.
+- Backfill tool `eval/diagnostics/alias_merge.py` (dry run / apply / revert, manifests in
+  `docs/diagnostics/`). Dry run: eval-v2 20/20 pairs, 0 refusals; real-v2-dev 3 merges.
+- Setback: the first `--apply` failed on invalid Cypher (`x NOT IN list`) after partly
+  re-pointing links without a manifest. The Neo4j volume was restored from the backup taken just
+  before (`~/.omnistream/backups/neo4j-data-2026-11-18-before-alias-fix.tgz`), the query was fixed
+  (`NOT x IN list`), and apply / revert / re-apply were verified on the real database.
+
+### Combined effect on eval-v2 (offline, 60 questions, recorded routes, LLM calls blocked)
+
+| Own variant | Multi-hop full | Overall full | R@10 | Hits@1 |
+|---|---|---|---|---|
+| round 3 (start of day) | 5/20 | 42/60 | 0.831 | 23/60 |
+| passage seeds + specificity + rerank | 9/20 | 44/60 | 0.856 | 39/60 |
+| same, after alias merges | 11/20 | 45/60 | 0.864 | 40/60 |
+| classic + rerank (control) | 7/20 | 47/60 | 0.892 | 49/60 |
+
+Classic is unchanged by the alias merges, as expected (it does not use the graph). Own retrieval
+now leads classic on multi-hop full coverage (11 vs 7) but still trails it on Hits@1.
+Defaults are unchanged (`round3`, rerank off) until answer-level checks are done.
+
+### Item 1: stronger embedder (retrieval-only, 300 questions per dataset, full corpora, GPU)
+
+A separate GPU venv (`~/.omnistream/venv-gpu`, torch 2.7.1+cu118, RTX 3060 6 GB) is used only for
+benchmark embedding, so the main venv stays untouched. R@2 / R@5:
+
+| Dataset | bge-small | bge-large-en-v1.5 | Qwen3-Embedding-0.6B | HippoRAG 1 (published) | ColBERTv2 (published) |
+|---|---|---|---|---|---|
+| MuSiQue | 36.6 / 50.7 | 41.2 / 55.7 | 40.6 / 54.2 | 40.9 / 51.9 | 37.9 / 49.2 |
+| 2Wiki | 63.4 / 68.8 | 64.8 / 71.3 | 63.5 / 68.8 | 70.7 / 89.1 | 59.2 / 68.2 |
+| HotpotQA | 71.0 / 83.7 | 75.2 / 87.7 | 64.8 / 78.3 | 60.5 / 77.7 | 64.7 / 79.3 |
+
+bge-large is best on all three. Plain bge-large retrieval already exceeds published HippoRAG 1 on
+MuSiQue and HotpotQA; 2Wiki stays the gap (graph and alias work). Decision (project owner): switch
+the system to bge-large before the paid benchmark run. Backups taken first
+(`neo4j-data-2026-11-18-after-alias-before-bge-large.tgz`, snapshot Chroma copies).
+
+### Benchmark QA pipeline and cost probe
+
+- `omni eval bench-ingest` loads a benchmark slice into one `Bench` bubble (router bypassed, fixed
+  date and credibility so recency/confidence signals drop out); `omni eval bench-qa` scores
+  closed_book, external, classic, graphiti, own and own+subagents with short answers (EM, F1,
+  passage R@2/R@5, cost, latency), resumable, INVALID above 10% unmeasured.
+- Setback: `python -m omnistream.cli` does nothing (the module has no `__main__` guard); use `omni`.
+- Cost probe, 30 MuSiQue passages through Graphiti: 748k tokens, $0.087, about $0.0029 per passage.
+  OpenRouter key: $5.05 left. Decision (project owner): run 50 questions (about 880 passages,
+  about $2.6 to build plus about $0.4 to answer) rather than 100.
+
+### Item 1 applied: system migrated to bge-large (1024-dim)
+
+- `graph/reembed.py` re-embedded 1,704 Entity names, 1,291 GlobalEntity names, 2,070 facts, 10
+  routing descriptions and 788 Chroma chunks (all snapshots), and rebuilt the three Neo4j vector
+  indexes at 1024 dims. Verified: no 384-dim vectors left; smoke query works without LLM calls.
+- Thresholds were not retuned (`docs/diagnostics/bge-large-thresholds.md`): at the 0.88 linker
+  threshold, 0 of 1,415 sampled same-type negatives pass under either model.
+- eval-v2 offline (recorded routes), bge-small -> bge-large: passage_specificity+rerank multi-hop
+  full 11 -> 12/20, R@10 .864 -> .886; round3 Hits@1 .350 -> .483; classic slightly lower
+  (R@10 .867 -> .861). eval-v2 is small and synthetic; the benchmark gains are the stronger evidence.
+- Benchmark run settings, declared before the paid run: own uses
+  `OMNI_OWN_SEED_MODE=passage_specificity` and `OMNI_OWN_RERANK=on` (best on eval-v2 under both
+  routings); classic stays at its default (no rerank). MuSiQue 50 questions, seed 0, slice corpus of
+  928 passages, snapshot `bench-musique-n50-s0`. The 30-passage probe group `bench-musique-n100-s0`
+  is left in Neo4j unused.
+
+### MuSiQue end-to-end QA (50 questions, slice corpus)
+
+Ingest: 928/928 passages written, 26.6M tokens, $3.69 (about $0.004 per passage, above the
+probe's estimate). QA run: $0.37 in total. Report:
+`docs/eval/bench/qa-musique-n50-s0-20261118T160657Z.{md,json}`. Settings exactly as declared above.
+
+| Configuration | EM | F1 | R@2 | R@5 | R@10 | latency (s) | cost ($) |
+|---|---|---|---|---|---|---|---|
+| closed_book | 10.0 | 13.1 | - | - | - | 0.9 | 0.001 |
+| external | 20.0 | 24.4 | 45.5 | 45.5 | 45.5 | 1.1 | 0.003 |
+| classic | 36.0 | 44.0 | 45.5 | 68.0 | 78.8 | 9.7 | 0.017 |
+| graphiti | 34.0 | 40.0 | 43.7 | 62.0 | 72.3 | 16.8 | 0.025 |
+| own | 34.0 | 38.6 | **52.5** | 68.2 | 77.5 | 19.0 | 0.024 |
+| own+subagents | **48.0** | **60.2** | 45.3 | 62.7 | **83.2** | 52.7 | 0.300 |
+
+- 95% bootstrap CIs are wide at n=50 (EM roughly +-13 points). own vs classic EM is a tie; own has
+  the best R@2 (+7 points over classic); own+subagents is the best answerer (+12 EM over classic,
+  CIs barely overlap) at 18x the cost of own.
+- Reference, HippoRAG 1 Table 4 (full 1,000-question benchmark, full corpus, GPT-3.5 reader):
+  None 12.5/24.1, ColBERTv2 15.5/26.4, HippoRAG 19.2/29.8, IRCoT+HippoRAG 21.9/33.3.
+  Not a like-for-like comparison: our slice corpus has 928 passages (not 11,656) and a newer
+  reader. The closed-book row (10.0 vs 12.5) suggests the reader alone is not the source of the gap.
+- Setbacks fixed: `bench-qa` crashed on exit awaiting a synchronous `close()`; `--resume` refused to
+  extend a `--limit-questions 10` run to 50. Both fixed in `eval/bench/qa.py` with a unit test.

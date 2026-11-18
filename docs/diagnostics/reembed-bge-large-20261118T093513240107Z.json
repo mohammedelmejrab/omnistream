@@ -1,0 +1,2332 @@
+{
+  "dry_run": false,
+  "groups": "all",
+  "target": "BAAI/bge-large-en-v1.5:1024",
+  "graph_before": [
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 27
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 2
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 20
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 31
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 13
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 40
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 30
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 69
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 3
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 2
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 16
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 4
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 67
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 21
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 81
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 46
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 46
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 37
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 24
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 11
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 20
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 61
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 42
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 36
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 142
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 90
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 23
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 25
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 14
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 25
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 39
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 38
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 90
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 133
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 69
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 11
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 4
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 67
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 27
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "GlobalEntity"
+      ],
+      "group_id": null,
+      "property": "name_embedding",
+      "dimension": 384,
+      "count": 1291
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 214
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 214
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 52
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 52
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 47
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 47
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 71
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 71
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 162
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 2
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 164
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 132
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 1
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 133
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 84
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 84
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 528
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 2
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 530
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 531
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 531
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 244
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "fact_embedding",
+      "dimension": 384,
+      "count": 244
+    }
+  ],
+  "indexes_before": [
+    {
+      "name": "entity_name_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Entity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 384,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    },
+    {
+      "name": "fact_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "RELATIONSHIP",
+      "labelsOrTypes": [
+        "RELATES_TO"
+      ],
+      "properties": [
+        "fact_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 384,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    },
+    {
+      "name": "global_entity_name_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "GlobalEntity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 384,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    }
+  ],
+  "chroma_before": {
+    "data\\chroma": null,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-musique-n100-s0\\chroma": [
+      {
+        "name": "bubble_bench-musique-n100-s0",
+        "dimension": 384,
+        "count": 32,
+        "signature": null
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v1\\chroma": [
+      {
+        "name": "bubble_eval-v1-finance",
+        "dimension": 384,
+        "count": 40,
+        "signature": null
+      },
+      {
+        "name": "bubble_eval-v1-news",
+        "dimension": 384,
+        "count": 26,
+        "signature": null
+      },
+      {
+        "name": "bubble_eval-v1-research",
+        "dimension": 384,
+        "count": 30,
+        "signature": null
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v2\\chroma": [
+      {
+        "name": "bubble_eval-v2-finance",
+        "dimension": 384,
+        "count": 54,
+        "signature": null
+      },
+      {
+        "name": "bubble_eval-v2-news",
+        "dimension": 384,
+        "count": 40,
+        "signature": null
+      },
+      {
+        "name": "bubble_eval-v2-research",
+        "dimension": 384,
+        "count": 29,
+        "signature": null
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\real-v2-dev\\chroma": [
+      {
+        "name": "bubble_real-v2-dev-finance",
+        "dimension": 384,
+        "count": 322,
+        "signature": null
+      },
+      {
+        "name": "bubble_real-v2-dev-news",
+        "dimension": 384,
+        "count": 139,
+        "signature": null
+      },
+      {
+        "name": "bubble_real-v2-dev-research",
+        "dimension": 384,
+        "count": 76,
+        "signature": null
+      }
+    ]
+  },
+  "bubble_descriptions_before": {
+    "data\\omnistream.db": [],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-musique-n100-s0\\state.db": [
+      {
+        "id": "bench-musique-n100-s0",
+        "dimension": 384
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v1\\state.db": [
+      {
+        "id": "eval-v1-finance",
+        "dimension": 384
+      },
+      {
+        "id": "eval-v1-news",
+        "dimension": 384
+      },
+      {
+        "id": "eval-v1-research",
+        "dimension": 384
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v2\\state.db": [
+      {
+        "id": "eval-v2-finance",
+        "dimension": 384
+      },
+      {
+        "id": "eval-v2-news",
+        "dimension": 384
+      },
+      {
+        "id": "eval-v2-research",
+        "dimension": 384
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\real-v2-dev\\state.db": [
+      {
+        "id": "real-v2-dev-finance",
+        "dimension": 384
+      },
+      {
+        "id": "real-v2-dev-news",
+        "dimension": 384
+      },
+      {
+        "id": "real-v2-dev-research",
+        "dimension": 384
+      }
+    ]
+  },
+  "graph_updated": {
+    "Entity.name_embedding": 1704,
+    "GlobalEntity.name_embedding": 1291,
+    "Community.name_embedding": 0,
+    "RELATES_TO.fact_embedding": 2070
+  },
+  "graph_after": [
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 27
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 2
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 20
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 31
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 13
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 40
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 30
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Concept"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 69
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 3
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 2
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 9
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 16
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Event"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 4
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 67
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "FinancialInstrument"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 21
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 81
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 46
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 46
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Location"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 37
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 24
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 11
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 20
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 61
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 42
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 36
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 142
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 90
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Organization"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 23
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 8
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 25
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 14
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 25
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 39
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 38
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Person"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 10
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 90
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 133
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Product"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 69
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 11
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 5
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 4
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 67
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 27
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "Entity",
+        "Publication"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 12
+    },
+    {
+      "kind": "NODE",
+      "labels": [
+        "GlobalEntity"
+      ],
+      "group_id": null,
+      "property": "name_embedding",
+      "dimension": 1024,
+      "count": 1291
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 214
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "bench-musique-n100-s0",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 214
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 52
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-finance",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 52
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 47
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-news",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 47
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 71
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v1-research",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 71
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 162
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 2
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-finance",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 164
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 132
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 1
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-news",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 133
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 84
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "eval-v2-research",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 84
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 528
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "credibilities",
+      "dimension": 2,
+      "count": 2
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-finance",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 530
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 531
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-news",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 531
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "credibilities",
+      "dimension": 1,
+      "count": 244
+    },
+    {
+      "kind": "RELATIONSHIP",
+      "labels": [
+        "RELATES_TO"
+      ],
+      "group_id": "real-v2-dev-research",
+      "property": "fact_embedding",
+      "dimension": 1024,
+      "count": 244
+    }
+  ],
+  "indexes_after": [
+    {
+      "name": "entity_name_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Entity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 1024,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    },
+    {
+      "name": "fact_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "RELATIONSHIP",
+      "labelsOrTypes": [
+        "RELATES_TO"
+      ],
+      "properties": [
+        "fact_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 1024,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    },
+    {
+      "name": "global_entity_embedding",
+      "type": "VECTOR",
+      "state": "ONLINE",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "GlobalEntity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "options": {
+        "indexConfig": {
+          "vector.dimensions": 1024,
+          "vector.hnsw.m": 16,
+          "vector.quantization.enabled": true,
+          "vector.similarity_function": "COSINE",
+          "vector.hnsw.ef_construction": 100
+        },
+        "indexProvider": "vector-2.0"
+      }
+    }
+  ],
+  "graph_seconds": 307.756,
+  "chroma_updated": {
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-musique-n100-s0\\chroma": {
+      "bubble_bench-musique-n100-s0": 32
+    },
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v1\\chroma": {
+      "bubble_eval-v1-finance": 40,
+      "bubble_eval-v1-news": 26,
+      "bubble_eval-v1-research": 30
+    },
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v2\\chroma": {
+      "bubble_eval-v2-finance": 54,
+      "bubble_eval-v2-news": 40,
+      "bubble_eval-v2-research": 29
+    },
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\real-v2-dev\\chroma": {
+      "bubble_real-v2-dev-finance": 322,
+      "bubble_real-v2-dev-news": 139,
+      "bubble_real-v2-dev-research": 76
+    }
+  },
+  "chroma_after": {
+    "data\\chroma": null,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-musique-n100-s0\\chroma": [
+      {
+        "name": "bubble_bench-musique-n100-s0",
+        "dimension": 1024,
+        "count": 32,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v1\\chroma": [
+      {
+        "name": "bubble_eval-v1-finance",
+        "dimension": 1024,
+        "count": 40,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v1-news",
+        "dimension": 1024,
+        "count": 26,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v1-research",
+        "dimension": 1024,
+        "count": 30,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v2\\chroma": [
+      {
+        "name": "bubble_eval-v2-finance",
+        "dimension": 1024,
+        "count": 54,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v2-news",
+        "dimension": 1024,
+        "count": 40,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v2-research",
+        "dimension": 1024,
+        "count": 29,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\real-v2-dev\\chroma": [
+      {
+        "name": "bubble_real-v2-dev-finance",
+        "dimension": 1024,
+        "count": 322,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_real-v2-dev-news",
+        "dimension": 1024,
+        "count": 139,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_real-v2-dev-research",
+        "dimension": 1024,
+        "count": 76,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ]
+  },
+  "chroma_seconds": 747.775,
+  "bubble_descriptions_updated": {
+    "data\\omnistream.db": 0,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-musique-n100-s0\\state.db": 1,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v1\\state.db": 3,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\eval-v2\\state.db": 3,
+    "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\real-v2-dev\\state.db": 3
+  },
+  "bubble_descriptions_seconds": 1.119,
+  "status": "complete",
+  "seconds": 1136.601
+}

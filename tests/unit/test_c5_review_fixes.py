@@ -120,6 +120,7 @@ async def test_runtime_close_waits_or_cancels_inflight(
     entered, release = asyncio.Event(), asyncio.Event()
 
     async def answer(*args, **kwargs):
+        assert kwargs["answer_style"] == "short"
         entered.set()
         await release.wait()
         assert not graph.driver.close.called
@@ -137,7 +138,7 @@ async def test_runtime_close_waits_or_cancels_inflight(
         async_llm,
     )
     rt.close_timeout = 0.02
-    answering = asyncio.create_task(rt.answer("q"))
+    answering = asyncio.create_task(rt.answer("q", answer_style="short"))
     await entered.wait()
     closing = asyncio.create_task(rt.close())
     await asyncio.sleep(0)

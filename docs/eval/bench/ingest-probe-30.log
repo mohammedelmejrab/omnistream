@@ -1,0 +1,34 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  46%|████▌     | 91/199 [00:00<00:00, 894.02it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1694.60it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Bench ingest bench-musique-n100-s0: 0 already written, 0 skipped, ingesting 30 of 1767 pending
+[1/30] musique-20: written | running total: 17821 tokens, $0.0019
+[2/30] musique-21: written | running total: 29616 tokens, $0.0028
+[3/30] musique-22: written | running total: 56001 tokens, $0.0063
+[4/30] musique-23: written | running total: 80639 tokens, $0.0093
+[5/30] musique-24: written | running total: 97729 tokens, $0.0124
+[6/30] musique-25: written | running total: 105045 tokens, $0.0132
+[7/30] musique-26: written | running total: 145343 tokens, $0.0179
+[8/30] musique-27: written | running total: 180088 tokens, $0.0219
+[9/30] musique-28: written | running total: 212007 tokens, $0.0261
+[10/30] musique-29: written | running total: 241313 tokens, $0.0293
+[11/30] musique-30: written | running total: 257456 tokens, $0.0308
+[12/30] musique-31: written | running total: 297834 tokens, $0.0350
+[13/30] musique-32: written | running total: 316295 tokens, $0.0372
+[14/30] musique-33: written | running total: 343471 tokens, $0.0401
+[15/30] musique-34: written | running total: 362645 tokens, $0.0428
+[16/30] musique-35: written | running total: 386627 tokens, $0.0451
+[17/30] musique-36: written | running total: 408408 tokens, $0.0468
+[18/30] musique-37: written | running total: 424105 tokens, $0.0488
+[19/30] musique-38: written | running total: 441053 tokens, $0.0509
+[20/30] musique-39: written | running total: 478919 tokens, $0.0542
+[21/30] musique-40: written | running total: 493345 tokens, $0.0565
+[22/30] musique-41: written | running total: 515012 tokens, $0.0590
+[23/30] musique-42: written | running total: 553409 tokens, $0.0638
+[24/30] musique-45: written | running total: 581640 tokens, $0.0668
+[25/30] musique-46: written | running total: 592410 tokens, $0.0674
+[26/30] musique-47: written | running total: 616928 tokens, $0.0707
+[27/30] musique-50: written | running total: 646930 tokens, $0.0748
+[28/30] musique-51: written | running total: 667334 tokens, $0.0770
+[29/30] musique-52: written | running total: 723307 tokens, $0.0851
+[30/30] musique-53: written | running total: 748368 tokens, $0.0873
+Bench ingest complete: 30/1767 written, 1737 pending | total 748368 tokens, $0.0873

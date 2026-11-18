@@ -269,7 +269,14 @@ def test_eval_v2_reference_and_acceptable_evidence():
                 q["gold"],
                 q["acceptable_evidence"],
             )
-            assert m == {"recall_at_10": 1, "mrr": 1, "hits_at_1": 1}
+            # Original keys keep their exact values; bench additions are additive.
+            assert {k: m[k] for k in ("recall_at_10", "mrr", "hits_at_1")} == {
+                "recall_at_10": 1,
+                "mrr": 1,
+                "hits_at_1": 1,
+            }
+            assert m["recall_at_20"] == 1
+            assert "recall_at_2" in m and "ndcg_at_10" in m
             assert (
                 retrieval_metrics(
                     q["acceptable_evidence"], q["gold"], q["acceptable_evidence"]

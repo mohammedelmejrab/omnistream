@@ -20,10 +20,13 @@ def corpus(tmp_path):
 
 
 def test_acceptable_evidence_changes_rank_but_not_gold_recall():
-    assert retrieval_metrics(["alternative", "noise", "gold"], ["gold"], ["alternative"]) == {
+    ranked = retrieval_metrics(["alternative", "noise", "gold"], ["gold"], ["alternative"])
+    # Original keys keep their exact values; bench additions are additive.
+    assert {k: ranked[k] for k in ("recall_at_10", "mrr", "hits_at_1")} == {
         "recall_at_10": 1.0, "mrr": 1.0, "hits_at_1": 1.0,
     }
-    assert retrieval_metrics(["alternative"], ["gold"], ["alternative"]) == {
+    ranked = retrieval_metrics(["alternative"], ["gold"], ["alternative"])
+    assert {k: ranked[k] for k in ("recall_at_10", "mrr", "hits_at_1")} == {
         "recall_at_10": 0.0, "mrr": 1.0, "hits_at_1": 1.0,
     }
 

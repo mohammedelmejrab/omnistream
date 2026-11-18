@@ -1,0 +1,443 @@
+{
+  "summary": {
+    "groups": [
+      "real-v2-dev-finance",
+      "real-v2-dev-news",
+      "real-v2-dev-research"
+    ],
+    "pairs_found": 27,
+    "merges": 3,
+    "same_as_edges_to_change": 3,
+    "already_merged": 0,
+    "missing_side": 24,
+    "refused_type_conflict": 0,
+    "refused_number_token": 0,
+    "refused_ambiguity": 0
+  },
+  "pairs": [
+    {
+      "full": "Annual Contract Value",
+      "short": "ACV",
+      "source": "e1cbf5f7b66acff44fb780f9440f12d410a03c579b764a07f2029c4ca285cf6f",
+      "full_entities": [
+        "dcac2fef-de23-41e0-98fc-5bb3e6b13722"
+      ],
+      "short_entities": [],
+      "full_global": "932d650cb95449d09f0b9ec9d61af041",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "International Financial Reporting Standards",
+      "short": "IFRS",
+      "source": "ca5bcebb133bd630bb6bfadf4418727d88802b1180771399741789fcec6efce8",
+      "full_entities": [
+        "43497ace-af33-4dde-9a1f-51e5aacf023e",
+        "5ba584e1-687e-43b4-97d6-c67e98316ccf"
+      ],
+      "short_entities": [
+        "e7bdb3d7-478e-4bbd-915d-871fb2191477"
+      ],
+      "full_global": "09ae7cd6adcb4d30bad4c2b8624b5acc",
+      "short_global": "cc444756a28b4f57a84d0401c3017305",
+      "full_type": "Concept",
+      "short_type": "Concept",
+      "decision": "merge",
+      "same_as_edges_changed": 1,
+      "reason": ""
+    },
+    {
+      "full": "Conditional Similarity Networks",
+      "short": "CSN",
+      "source": "968db49029cf666abc728ae3f9e0c9b9da7666fe221ec79be5f83f04aa9f9625",
+      "full_entities": [
+        "24dfd56b-bdfe-4730-be9f-3379cec10d36"
+      ],
+      "short_entities": [],
+      "full_global": "2d25db2ec24a47c693a36b4f75956385",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "The Competition and Markets Authority",
+      "short": "CMA",
+      "source": "461c1687e8f6b35c35593c08c7de4f2424f431a96bf92d9c910e7db048d8522d",
+      "full_entities": [],
+      "short_entities": [
+        "3cbe5351-12c8-4710-b040-fb4648e90354"
+      ],
+      "full_global": null,
+      "short_global": "9e29527954944418a9368e4bcb620653",
+      "full_type": null,
+      "short_type": "Organization",
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Google Cloud Platform",
+      "short": "GCP",
+      "source": "ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e",
+      "full_entities": [
+        "5d6a10d7-c84c-4710-9ca7-2d7c5c7db197",
+        "cbc322aa-4b14-44f9-963c-de20d1cbe3e4"
+      ],
+      "short_entities": [
+        "439d59d4-f36c-4281-ad6f-f66aefa27f40"
+      ],
+      "full_global": "ed23cda0265d4a3c8c37ea02007e355b",
+      "short_global": "158d1da93ae542d9b62e99e6fc268f90",
+      "full_type": "Product",
+      "short_type": "Product",
+      "decision": "merge",
+      "same_as_edges_changed": 1,
+      "reason": ""
+    },
+    {
+      "full": "Traffic Acquisition Costs",
+      "short": "TAC",
+      "source": "ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Super Intelligence",
+      "short": "SI",
+      "source": "f9390960d76da1162a74ef63871f0796704731d11ef21e5187aa70361792be48",
+      "full_entities": [
+        "dbbb6a35-2749-4f30-9b10-78eb4e37e108"
+      ],
+      "short_entities": [],
+      "full_global": "2ffaafa661ed4559922da5297dc8506a",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Strategic Market Status",
+      "short": "SMS",
+      "source": "af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a",
+      "full_entities": [
+        "800602a4-9d0f-403f-be65-fc3b8643fb05"
+      ],
+      "short_entities": [],
+      "full_global": "9ab6b1c6b5d34dec9948e873b1482a66",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "The Digital Markets Board Committee",
+      "short": "DMBC",
+      "source": "af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Enhanced Tracking Protection",
+      "short": "ETP",
+      "source": "68908872a9acd81a9cf8e52a9a1efc92a3d140f0ca5a88486433ce31a6d88b28",
+      "full_entities": [
+        "2fe5e7bf-7407-4429-8c03-caaaaa03d712"
+      ],
+      "short_entities": [
+        "996a3688-b381-42e5-a1ef-ebb985d7511e"
+      ],
+      "full_global": "c79183fda4cf4218b3622a30d769223b",
+      "short_global": "7d41fdeb99554fe4912e9a4099dabf53",
+      "full_type": "Product",
+      "short_type": "Product",
+      "decision": "merge",
+      "same_as_edges_changed": 1,
+      "reason": ""
+    },
+    {
+      "full": "Securities and Exchange Commission",
+      "short": "SEC",
+      "source": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "full_entities": [
+        "6cf62780-a118-4c2d-9507-8877ba67d624"
+      ],
+      "short_entities": [],
+      "full_global": "b0eb0a0a75924cab893166ffd4eff2f0",
+      "short_global": null,
+      "full_type": "Organization",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Pacific Time",
+      "short": "PT",
+      "source": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Qualcomm CDMA Technologies",
+      "short": "QCT",
+      "source": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "full_entities": [],
+      "short_entities": [
+        "699e07d6-7abc-440e-944b-8312135143f3"
+      ],
+      "full_global": null,
+      "short_global": "fc3fef30215347928cade4e544e547b2",
+      "full_type": null,
+      "short_type": "Organization",
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Qualcomm Technology Licensing",
+      "short": "QTL",
+      "source": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "full_entities": [],
+      "short_entities": [
+        "27b8d9f0-abc5-43b4-a581-44f953fba8d9"
+      ],
+      "full_global": null,
+      "short_global": "931d2b01336f43119384647f5e25f2ac",
+      "full_type": null,
+      "short_type": "Organization",
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Qualcomm Strategic Initiatives",
+      "short": "QSI",
+      "source": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "full_entities": [],
+      "short_entities": [
+        "babfa182-5c4e-4223-a0ec-cd15c31f9e0e"
+      ],
+      "full_global": null,
+      "short_global": "cb7d87bd22794cefbf7b6564911708c3",
+      "full_type": null,
+      "short_type": "Organization",
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Mathematical Sciences Research Institute",
+      "short": "MSRI",
+      "source": "f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "International Congress of Mathematicians",
+      "short": "ICM",
+      "source": "f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "European Economic Area",
+      "short": "EEA",
+      "source": "b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b",
+      "full_entities": [
+        "0bf73241-1261-4495-be12-188d7574a256"
+      ],
+      "short_entities": [],
+      "full_global": "fe75e6d43b7d41678f8351c7e65c8a59",
+      "short_global": null,
+      "full_type": "Location",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Digital Markets Act",
+      "short": "DMA",
+      "source": "b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b",
+      "full_entities": [
+        "51038c8d-a26f-4bf0-8308-9e9201d79280"
+      ],
+      "short_entities": [],
+      "full_global": "998a5a8c3bc945eda730f3e135c7a135",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "The Device Solutions",
+      "short": "DS",
+      "source": "f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Digital Appliances",
+      "short": "DA",
+      "source": "f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Device Solutions",
+      "short": "DS",
+      "source": "f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2",
+      "full_entities": [],
+      "short_entities": [],
+      "full_global": null,
+      "short_global": null,
+      "full_type": null,
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing full entity side"
+    },
+    {
+      "full": "Data Center and AI",
+      "short": "DCAI",
+      "source": "a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee",
+      "full_entities": [
+        "7a5b97e7-62a0-45ef-b160-06a806b05d61"
+      ],
+      "short_entities": [],
+      "full_global": "3b4a797ba20e433daf82e5ce531e764d",
+      "short_global": null,
+      "full_type": "Organization",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Oracle Cloud Infrastructure",
+      "short": "OCI",
+      "source": "a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee",
+      "full_entities": [
+        "bb08d4cc-ac88-47bc-8972-d26b14869c85"
+      ],
+      "short_entities": [],
+      "full_global": "0b9607e00c254d9ca89a356e6a535ef4",
+      "short_global": null,
+      "full_type": "Product",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Computer Fraud and Abuse Act",
+      "short": "CFAA",
+      "source": "e539399e2503eafcf154fb95965148288a818b208a25555376af4204608c2fc4",
+      "full_entities": [
+        "c09d82f2-3305-4783-96e8-7f7ec056b773"
+      ],
+      "short_entities": [],
+      "full_global": "87d71fbb8117413f86cb7bbe22bed7c1",
+      "short_global": null,
+      "full_type": "Concept",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Technology Licensing Agreements",
+      "short": "TLA",
+      "source": "c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153",
+      "full_entities": [
+        "38c94044-b9f3-45dc-b244-487f3fafde19"
+      ],
+      "short_entities": [],
+      "full_global": "60f8909a561e4fcf9186126ad039f5dc",
+      "short_global": null,
+      "full_type": "Publication",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    },
+    {
+      "full": "Architecture License Agreements",
+      "short": "ALA",
+      "source": "c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153",
+      "full_entities": [
+        "832e6788-7c1d-4ca9-b35d-4477c904f2a2"
+      ],
+      "short_entities": [],
+      "full_global": "3e6265cc689b44bea24424380b6c39ef",
+      "short_global": null,
+      "full_type": "Publication",
+      "short_type": null,
+      "decision": "missing_side",
+      "same_as_edges_changed": 0,
+      "reason": "missing short entity side"
+    }
+  ]
+}

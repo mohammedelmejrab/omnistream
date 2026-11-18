@@ -17,11 +17,14 @@ from omnistream.embeddings import EmbeddingService
 from omnistream.graph.neo4j_store import Neo4jGraphStore
 from omnistream.items import RepositoryItemStore
 from omnistream.llm import AsyncLLMClient, LLMClient
-from omnistream.qa import answer_question
+from omnistream.qa import QAResult, answer_question
+from omnistream.retrieval.citations import AnswerStyle
 from omnistream.retrieval.classic import ClassicRetriever, make_chroma_client
 from omnistream.retrieval.graphiti_mode import GraphitiRetriever
 from omnistream.retrieval.modes import RetrievalDispatcher
+from omnistream.retrieval.own_algorithm.passages import PassageSource
 from omnistream.retrieval.own_algorithm.pipeline import OwnRetriever
+from omnistream.retrieval.own_algorithm.rerank import local_encoder
 from omnistream.retrieval.router import QueryRouter
 
 
@@ -62,15 +65,26 @@ class QueryRuntime:
         self.catalog = RepositoryBubbleCatalog(repo)
         self.router = QueryRouter(llm, embeddings, self.catalog, now=now)
         self.items = RepositoryItemStore(repo, Path(settings.data_dir))
+        classic = ClassicRetriever(
+            chroma, embeddings,
+            reranker=local_encoder if settings.classic_rerank == "on" else None,
+        )
         self.dispatcher = RetrievalDispatcher(
             {
-                "classic": ClassicRetriever(chroma, embeddings),
+                "classic": classic,
                 "graphiti": graphiti,
                 "own": OwnRetriever(
                     graph,
                     embeddings,
                     now=now,
                     half_lives=CatalogHalfLives(self.catalog),
+                    reranker=local_encoder if settings.own_rerank == "on" else None,
+                    passage_source=(
+                        PassageSource(ClassicRetriever(chroma, embeddings), graph)
+                        if settings.own_seed_mode != "round3"
+                        else None
+                    ),
+                    specificity_restart=settings.own_seed_mode == "passage_specificity",
                 ),
             },
             "own",
@@ -95,7 +109,16 @@ class QueryRuntime:
                 )
             self._schema_checked = True
 
-    async def answer(self, question, *, mode=None, subagents=None, pin=(), exclude=()):
+    async def answer(
+        self,
+        question,
+        *,
+        mode=None,
+        subagents=None,
+        pin=(),
+        exclude=(),
+        answer_style: AnswerStyle = "full",
+    ) -> QAResult:
         if self._closed:
             raise RuntimeError("query runtime is closed")
 
@@ -114,6 +137,7 @@ class QueryRuntime:
                 subagents=subagents,
                 pins=pin,
                 exclude=exclude,
+                answer_style=answer_style,
             )
 
         task = asyncio.create_task(run())

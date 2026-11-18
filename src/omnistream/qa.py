@@ -10,7 +10,12 @@ from dataclasses import dataclass, replace
 from omnistream.agents import MultiHopResult, SubagentFindings, run_subagents
 from omnistream.config import Settings
 from omnistream.llm import AsyncLLMClient, LLMClient
-from omnistream.retrieval.citations import CitedAnswer, build_context, generate_answer
+from omnistream.retrieval.citations import (
+    AnswerStyle,
+    CitedAnswer,
+    build_context,
+    generate_answer,
+)
 from omnistream.retrieval.merge import Conflict
 from omnistream.retrieval.models import (
     RetrievalMode,
@@ -118,6 +123,7 @@ async def answer_question(
     exclude: Sequence[str] = (),
     subagents: bool | None = None,
     specific_item_id: str | None = None,
+    answer_style: AnswerStyle = "full",
 ) -> QAResult:
     """Explicit subagents on/off overrides routing; dispatcher supplies default mode.
 
@@ -249,8 +255,11 @@ async def answer_question(
             for bubble, answer in answers.items()
         ]
         sections = []
+        cite_hint = (
+            "" if answer_style == "short" else " (cite only numbered evidence above)"
+        )
         if joins:
-            lines = ["Joined findings (cite only numbered evidence above):"]
+            lines = [f"Joined findings{cite_hint}:"]
             for join in joins:
                 members = sorted(join.bubbles, key=position.__getitem__)
                 lines.append(
@@ -265,8 +274,7 @@ async def answer_question(
             sections.append("\n".join(lines))
         if notes:
             sections.append(
-                "Supplementary bubble notes "
-                "(cite only numbered evidence above):\n" + "\n".join(notes)
+                f"Supplementary bubble notes{cite_hint}:\n" + "\n".join(notes)
             )
         if sections:
             context = replace(
@@ -280,6 +288,7 @@ async def answer_question(
         time_scope=routing.time_scope,
         temporal_relation=routing.temporal_relation,
         anchor_event=routing.anchor_event,
+        answer_style=answer_style,
     )
     return QAResult(
         answer, routing, selected, result, multi_hop, specific, context.conflicts

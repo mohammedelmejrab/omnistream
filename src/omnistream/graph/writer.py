@@ -15,6 +15,7 @@ from pydantic import BaseModel
 from omnistream.config import Settings
 from omnistream.db import Repository
 from omnistream.db.tables import ItemRow
+from omnistream.graph.aliases import extract_alias_pairs
 from omnistream.graph.chunks import ChunkStore
 from omnistream.graph.graphiti_client import ENTITY_TYPES
 from omnistream.graph.grounding import is_grounded
@@ -161,7 +162,10 @@ class GraphWriter:
         result.entities_new += len(new_nodes)
         result.entities_ungrounded += len(ungrounded)
 
-        # 3. Global linking.
+        # 3. Global linking. Source-stated aliases are extracted once per item so
+        #    an abbreviation and its full name link to the same GlobalEntity even
+        #    when the embedding search would not surface the counterpart.
+        alias_pairs = extract_alias_pairs(grounding_text)
         for node in new_nodes:
             await self._linker.link(
                 node.uuid,
@@ -169,6 +173,7 @@ class GraphWriter:
                 _entity_type(node.labels),
                 node.name_embedding,
                 add_alias=node.uuid not in ungrounded,
+                alias_pairs=alias_pairs,
             )
 
         # Edges asserted by this episode vs. old edges Graphiti merely invalidated.

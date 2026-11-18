@@ -19,6 +19,10 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_ENV_FILE = PROJECT_ROOT / ".env"
 
 
+DEFAULT_EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"
+DEFAULT_EMBEDDING_DIM = 1024
+
+
 class Settings(BaseSettings):
     """Runtime configuration.
 
@@ -58,11 +62,11 @@ class Settings(BaseSettings):
 
     # Embeddings (always local, spec section 5).
     embedding_model: str = Field(
-        "BAAI/bge-small-en-v1.5",
+        DEFAULT_EMBEDDING_MODEL,
         validation_alias=AliasChoices("OMNI_EMBEDDING_MODEL", "OMNI_EMBED_MODEL"),
     )
     embedding_dim: int = Field(
-        384, validation_alias=AliasChoices("OMNI_EMBEDDING_DIM", "OMNI_EMBED_DIM")
+        DEFAULT_EMBEDDING_DIM, validation_alias=AliasChoices("OMNI_EMBEDDING_DIM", "OMNI_EMBED_DIM")
     )
     embedding_batch_size: int = 32
     embedding_device: str | None = None
@@ -71,6 +75,9 @@ class Settings(BaseSettings):
     fact_index_name: str = Field(default="fact_embedding", min_length=1)
 
     # Retrieval defaults (C5).
+    own_rerank: Literal["off", "on"] = "off"
+    classic_rerank: Literal["off", "on"] = "off"
+    own_seed_mode: Literal["round3", "passage", "passage_specificity"] = "round3"
     rrf_k: int = Field(default=60, ge=1)
     subagent_max_tool_calls: int = Field(default=6, ge=1)
     subagent_timeout_seconds: float = Field(default=60.0, gt=0)

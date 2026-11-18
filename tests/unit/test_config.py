@@ -30,8 +30,8 @@ def test_defaults(clean_env):
     assert s.llm_base_url == "https://api.deepseek.com/v1"
     assert s.neo4j_uri == "bolt://localhost:7687"
     assert s.neo4j_user == "neo4j"
-    assert s.embedding_model == "BAAI/bge-small-en-v1.5"
-    assert s.embed_dim == 384
+    assert s.embedding_model == "BAAI/bge-large-en-v1.5"
+    assert s.embed_dim == 1024
     assert s.default_credibility == 0.5
     assert s.poll_interval_minutes == 15
     assert s.max_items_per_hour == 30

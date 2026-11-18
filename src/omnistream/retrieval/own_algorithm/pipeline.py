@@ -12,6 +12,7 @@ from omnistream.embeddings import EmbeddingService
 from omnistream.retrieval.models import RetrievalResult, ScoredFact, TimeScope
 from omnistream.retrieval.own_algorithm.fact_fusion import FactCandidate, fuse_facts
 from omnistream.retrieval.own_algorithm.pagerank import personalized_pagerank
+from omnistream.retrieval.own_algorithm.rerank import WINDOW, rerank
 from omnistream.retrieval.own_algorithm.scoring import score_facts, seed_paths
 from omnistream.retrieval.own_algorithm.seeding import seed_entities
 from omnistream.retrieval.own_algorithm.versions import fact_versions
@@ -30,6 +31,9 @@ class OwnRetriever:
         half_lives: Mapping[str, float] | None = None,
         top_k: int = 20,
         k: int = 60,
+        reranker=None,
+        passage_source=None,
+        specificity_restart: bool = False,
     ) -> None:
         self._validate_top_k(top_k)
         if isinstance(k, bool) or not isinstance(k, int) or k < 0:
@@ -37,6 +41,9 @@ class OwnRetriever:
         self.store, self.embedder = store, embedder
         self.now = now or (lambda: datetime.now(UTC))
         self.half_lives = half_lives if half_lives is not None else {}
+        self.reranker = reranker
+        self.passage_source = passage_source
+        self.specificity_restart = specificity_restart
         self.top_k, self.k = top_k, k
 
     @staticmethod
@@ -59,11 +66,18 @@ class OwnRetriever:
         if not limit:
             return RetrievalResult(mode="own")
         query = self.embedder.embed_query(question)
+        allowed = [b for b in bubbles if b not in excluded_bubbles]
+        options = {}
+        if self.passage_source is not None:
+            options["passage_seeds"] = self.passage_source.seeds(
+                question, allowed, time_scope
+            )
         seeds = seed_entities(
             question,
             query,
             self.store,
-            bubbles=[b for b in bubbles if b not in excluded_bubbles],
+            bubbles=allowed,
+            **options,
             time_scope=time_scope,
         )
         if not seeds:
@@ -77,9 +91,10 @@ class OwnRetriever:
         )
         if not graph.facts:
             return RetrievalResult(mode="own", seeds=tuple(s.entity for s in seeds))
-        ranks = personalized_pagerank(
-            graph, ids, seed_weights={s.entity.id: max(0.0, s.score) for s in seeds}
-        )
+        weights = {s.entity.id: max(0.0, s.score) for s in seeds}
+        if self.specificity_restart and self.passage_source is not None:
+            weights = self.passage_source.restart_weights(seeds)
+        ranks = personalized_pagerank(graph, ids, seed_weights=weights)
         embeddings = self.store.fact_embeddings([f.id for f in graph.facts])
         missing = [f for f in graph.facts if f.id not in embeddings]
         if missing:
@@ -107,8 +122,12 @@ class OwnRetriever:
             now=self.now(),
             half_lives=self.half_lives,
             k=self.k,
-            top_n=limit,
+            top_n=max(limit, WINDOW) if self.reranker else limit,
         )
+        if self.reranker:
+            fused = rerank(
+                question, fused, lambda f: facts[f.fact.id].text, self.reranker
+            )[:limit]
         return RetrievalResult(
             mode="own",
             seeds=tuple(s.entity for s in seeds),

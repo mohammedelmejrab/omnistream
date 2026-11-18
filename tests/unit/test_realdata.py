@@ -305,14 +305,15 @@ def test_bge_duplicate_candidates_and_cache(tmp_path, monkeypatch):
     calls = []
 
     class Embedder:
-        index_signature = "test:384"
+        model_name = "test"
 
-        def __init__(self, **_):
-            pass
+        def __init__(self, settings):
+            self.dim = settings.embedding_dim
+            self.index_signature = f"{self.model_name}:{self.dim}"
 
         def embed_documents(self, segments):
             calls.append(segments)
-            matrix = np.zeros((len(segments), 384), dtype=np.float32)
+            matrix = np.zeros((len(segments), self.dim), dtype=np.float32)
             matrix[:, 0] = 1
             return matrix
 
@@ -329,6 +330,11 @@ def test_bge_duplicate_candidates_and_cache(tmp_path, monkeypatch):
         == result
     )
     assert len(calls) == 1
+
+    monkeypatch.setattr(Embedder, "model_name", "replacement")
+    replacement = near_duplicates(rows, ["A long story", "A syndicated story"], tmp_path)
+    assert replacement["model"] != result["model"]
+    assert len(calls) == 2
 
 
 @pytest.mark.asyncio

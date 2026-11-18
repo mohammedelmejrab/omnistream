@@ -7,10 +7,42 @@ import pytest
 from omnistream.items import FileItemStore
 from omnistream.retrieval.citations import (
     build_context,
+    extract_short_answer,
     generate_answer,
     parse_citations,
 )
 from omnistream.retrieval.models import Chunk, Fact, RetrievalResult, ScoredFact
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [
+        ("", ""),
+        (" \n\t ", ""),
+        ("Diego Maradona", "Diego Maradona"),
+        ("\n ANSWER :\n June 1982. \t", "June 1982"),
+        ("The answer is Yes.", "Yes"),
+        ("the answer is: no [2].", "no"),
+        ('"Answer: The answer is: “June 1982.”" [1][2].', "June 1982"),
+        ("Answer: ‘Diego Maradona’ [3-5, 9] .", "Diego Maradona"),
+        ("Answer: '3.14.' [1, 2]", "3.14"),
+        ("[1] Answer: Washington, D.C. [2]", "Washington, D.C"),
+        ("New [1] York[2].", "New York"),
+        ("The answer island", "The answer island"),
+        ("Answer Key", "Answer Key"),
+        ("The answer ising", "The answer ising"),
+        ("What is the answer: a title?", "What is the answer: a title?"),
+        ("'Twas the Night", "'Twas the Night"),
+        ("“Led Zeppelin'", "“Led Zeppelin'"),
+        ("O'Connor [disambiguation].", "O'Connor [disambiguation]"),
+        ("São  Paulo", "São  Paulo"),
+        ("Answer: [1].", ""),
+        ("Answer: ''", ""),
+        ("Answer: June 1982. The treaty followed.", "June 1982. The treaty followed"),
+    ],
+)
+def test_extract_short_answer(raw, expected):
+    assert extract_short_answer(raw) == expected
 
 
 def result():

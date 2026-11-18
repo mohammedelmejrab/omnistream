@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 
-from omnistream.config import Settings
+from omnistream.config import DEFAULT_EMBEDDING_MODEL, Settings
 from omnistream.db import Repository
 from omnistream.db.repository import bubble_half_life
 from omnistream.ingest.intake import Intake
@@ -71,7 +71,7 @@ async def seed(
     if embedder is None:
         from omnistream.embed import SentenceTransformerEmbedder
 
-        embedder = SentenceTransformerEmbedder(settings.embed_model)
+        embedder = SentenceTransformerEmbedder(settings)
     service = BubbleService(repo, embedder)
     try:
         have = {b.id for b in await repo.list_bubbles()}
@@ -166,17 +166,44 @@ def main(argv: list[str] | None = None) -> int:
     ev.add_argument(
         "eval_action",
         nargs="?",
-        choices=["calibrate", "calibration-report", "verify-snapshot"],
+        choices=[
+            "calibrate",
+            "calibration-report",
+            "verify-snapshot",
+            "bench-retrieval",
+            "bench-ingest",
+            "bench-qa",
+        ],
     )
-    ev.add_argument("--dataset", choices=["eval-v1", "eval-v2", "real-v2"])
+    ev.add_argument(
+        "--dataset",
+        choices=["eval-v1", "eval-v2", "real-v2", "musique", "2wiki", "2wikimultihopqa", "hotpotqa"],
+    )
     ev.add_argument("--split", choices=["dev", "test"])
     ev.add_argument("--background", type=int)
     ev.add_argument("--run", default="latest")
     ev.add_argument("--rows", default="all")
-    ev.add_argument("--snapshot", required=True)
+    ev.add_argument("--snapshot")
     ev.add_argument("--rebuild", action="store_true")
     ev.add_argument("--resume", nargs="?", const="latest")
     ev.add_argument("--limit", type=int)
+    # bench-retrieval options (retrieval-only, no LLM, no snapshot needed);
+    # bench-ingest defaults to the slice corpus, bench-qa reads its binding
+    # from the snapshot manifest, so the default here is None.
+    ev.add_argument("--n", type=int)
+    ev.add_argument("--seed", type=int, default=0)
+    ev.add_argument("--corpus", choices=["full", "slice"])
+    ev.add_argument("--retriever", choices=["dense", "bm25"], default="dense")
+    ev.add_argument("--model", default=DEFAULT_EMBEDDING_MODEL)
+    ev.add_argument("--device", choices=["cpu", "cuda"])
+    ev.add_argument("--batch-size", type=int, default=32)
+    ev.add_argument("--bench-root", default="data/bench/hipporag")
+    ev.add_argument("--no-cache", action="store_true")
+    ev.add_argument("--manifest")
+    ev.add_argument("--out", default="docs/eval/bench")
+    ev.add_argument("--limit-passages", type=int)
+    ev.add_argument("--limit-questions", type=int)
+    ev.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
     if args.command == "realdata":
         # Corpus tooling never reads .env or connects to production stores.
@@ -191,6 +218,39 @@ def main(argv: list[str] | None = None) -> int:
             result = verify(args.name)
             print(f"{result['verdict']}: {result['accepted']} items")
         return 0
+    if args.command == "eval":
+        if args.eval_action == "bench-retrieval":
+            from omnistream.eval.bench.retrieval_check import run_bench_retrieval_cli
+
+            return run_bench_retrieval_cli(args)
+        if args.eval_action in ("bench-ingest", "bench-qa"):
+            # Corpus tooling never reads .env secrets itself; Settings() loads
+            # them for the LLM/Neo4j clients exactly like the main harness.
+            from omnistream.eval.bench.datasets import (
+                DATASET_ALIASES,
+                DATASET_FILES,
+            )
+
+            if not args.dataset or DATASET_ALIASES.get(args.dataset, args.dataset) not in DATASET_FILES:
+                parser.error(
+                    "bench-ingest/bench-qa require a bench --dataset "
+                    "(musique, 2wiki or hotpotqa)"
+                )
+            settings = Settings()
+            if args.eval_action == "bench-ingest":
+                from omnistream.eval.bench.ingest import run_bench_ingest_cli
+
+                return asyncio.run(run_bench_ingest_cli(settings, args))
+            from omnistream.eval.bench.qa import run_bench_qa_cli
+
+            return asyncio.run(run_bench_qa_cli(settings, args))
+        if not args.snapshot:
+            parser.error("the following argument is required: --snapshot")
+        if args.dataset and args.dataset not in ("eval-v1", "eval-v2", "real-v2"):
+            parser.error(
+                f"argument --dataset: invalid choice {args.dataset!r} "
+                "(bench datasets are only valid with 'bench-retrieval')"
+            )
     settings = Settings()
     if args.command == "eval":
         if args.eval_action:

@@ -4,8 +4,13 @@ import asyncio
 from datetime import datetime
 from pathlib import Path
 
-from omnistream.embed import Embedder
-from omnistream.retrieval.classic import collection_name, make_chroma_client
+from omnistream.embed import Embedder, SentenceTransformerEmbedder
+from omnistream.retrieval.classic import (
+    EMBEDDING_SIGNATURE_KEY,
+    check_chunk_collection,
+    collection_name,
+    make_chroma_client,
+)
 from omnistream.sources.documents import split_episodes
 
 
@@ -14,6 +19,11 @@ class ChunkStore:
         self._client = make_chroma_client(Path(data_dir) / "chroma")
         self._embedder = embedder
         self._chunk_tokens = chunk_tokens
+        self._signature = (
+            embedder.service.index_signature
+            if isinstance(embedder, SentenceTransformerEmbedder)
+            else None
+        )
 
     async def add(
         self,
@@ -35,9 +45,13 @@ class ChunkStore:
         }
 
         def upsert() -> None:
+            metadata = {"hnsw:space": "cosine"}
+            if self._signature is not None:
+                metadata[EMBEDDING_SIGNATURE_KEY] = self._signature
             col = self._client.get_or_create_collection(
-                collection_name(bubble_id), metadata={"hnsw:space": "cosine"}
+                collection_name(bubble_id), embedding_function=None, metadata=metadata
             )
+            check_chunk_collection(col, self._signature)
             col.upsert(
                 ids=[f"{item_id}:{i}" for i in range(len(chunks))],
                 documents=chunks,
