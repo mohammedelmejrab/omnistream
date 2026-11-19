@@ -1,0 +1,5 @@
+{
+  "url": "https://feeds.finance.yahoo.com/robots.txt",
+  "status": 200,
+  "body": "User-agent: *\nDisallow: /\n"
+}

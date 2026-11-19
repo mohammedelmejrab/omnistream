@@ -1,0 +1,5 @@
+{
+  "url": "https://www.nasa.gov/robots.txt",
+  "status": 200,
+  "body": "User-agent: usasearch\nCrawl-delay: 1\nAllow: /\n\nUser-agent: *\nAllow: /"
+}

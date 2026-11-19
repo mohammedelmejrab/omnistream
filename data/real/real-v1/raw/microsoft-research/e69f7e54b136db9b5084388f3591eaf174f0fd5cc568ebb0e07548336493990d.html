@@ -1,0 +1,111 @@
+<figure class="wp-block-image size-full"><img alt="Example of a retrosynthesis tree. For a single target molecule, many disconnections are possible, which introduces a high branching factor. The figure shows many incomplete routes in pale colors that contrast a completed route, which connects all the way from the target molecule to purchasable building blocks. " class="wp-image-1186908" height="788" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/RetroChimera-BlogHeroFeature-1400x788-1.jpg" width="1400" /></figure>
+
+
+
+<div class="wp-block-msr-immersive-section alignfull row" style="padding-bottom: 0; padding-top: 0;">
+	
+	<div class="container">
+		<div class="wp-block-msr-immersive-section__inner wp-block-msr-immersive-section__inner--narrow">
+			<div class="wp-block-columns mb-10 pb-1 pr-1 is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h2 class="wp-block-heading h3" id="at-a-glance">At a glance</h2>
+
+
+
+<ul class="wp-block-list">
+<li>We report on the recent publication of our retrosynthesis model RetroChimera in the journal <em><a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://www.nature.com/articles/s41586-026-11160-9" rel="noopener noreferrer" target="_blank">Nature<span class="sr-only"> (opens in new tab)</span></a></em>.</li>
+
+
+
+<li>The paper describes the model’s architecture as well as extensive validation studies, including the model’s ability to recall rare reaction types, and successful zero-shot transfer and fine-tuning on proprietary datasets.</li>
+
+
+
+<li>We open-source RetroChimera’s implementation and weights in the hope that it will enable researchers to accelerate development of new medicinally relevant molecules and advanced materials.&nbsp;</li>
+</ul>
+</div>
+</div>		</div>
+	</div>
+
+	</div>
+
+
+
+<p class="wp-block-paragraph">Developing new medicines and materials requires making new molecules but planning how to make them is still largely manual, time-consuming, and costly. RetroChimera automatically proposes high-quality synthesis routes. The model combines two strong models with complementary strengths, learning how to rank their proposals to produce better predictions than either alone. In blind tests, PhD-level chemists prefer RetroChimera’s individual reaction predictions over preceding models and recorded literature reactions.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Custom-made molecules are unlocking advances in modern medicine, smart materials, and sustainable agriculture. Yet, progress is slowed by chemical synthesis—the time-consuming process of making new molecules from simpler building blocks in the lab. In addition, synthesis is a significant driver of drug development costs. So even as computational methods make it possible to explore large numbers of novel molecules, finding practical ways to synthesize them remains a critical challenge.&nbsp;</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img alt="Figure 1: 
+
+Example of a retrosynthesis tree. For a single target molecule, many disconnections are possible, which introduces a high branching factor. The figure shows many incomplete routes in pale colors that contrast a completed route, which connects all the way from the target molecule to purchasable building blocks. " class="wp-image-1186740" height="900" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/FIG-1_retrochimera-retrosynthesis-structure-nodes.png" style="width: 690px; height: auto;" width="2160" /><figcaption class="wp-element-caption">Figure 1: Planning a synthesis by working backward. Retrosynthesis starts with a target molecule and proposes successive disconnections into simpler precursors until purchasable building blocks are reached. The highlighted path shows a complete synthesis route; pale branches illustrate alternatives explored along the way. Circles represent molecules and squares represent reactions. For clarity, only a few branches are illustrated, with chemical structures shown for the target, one intermediate, and selected building blocks.&nbsp;</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">Retrosynthesis approaches this problem by working backwards from a target molecule, breaking it down step by step into simpler precursors (Figure 1). This process is comparable to playing strategic board games like chess and Go. It involves contemplating a wide range of possible immediate moves, or&nbsp;individual disconnections, while also requiring high-level strategic thinking to reach the end-to-end synthesis plan. However, the number of possible moves in retrosynthesis is much larger than in board games, and it is not obvious which moves would be available for a given molecule. Existing systems face major challenges, including recalling rare but strategically important reactions, robustness beyond the training distribution, and aligning with chemists’ expectations. As a result, retrosynthesis&nbsp;often requires highly specialized expertise, which hinders scaling and automation of scientific discovery.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img alt="Figure 2: 
+
+Outline of the RetroChimera workflow. RetroChimera takes a single target molecule, its sub-models give predictions for a disconnection, and learned voting gives a ranked output. " class="wp-image-1186741" height="964" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/FIG-2_retrochimera-figure-1c-scaled.png" style="width: 722px; height: auto;" width="2560" /><figcaption class="wp-element-caption">Figure 2: Our framework for ensemble-based retrosynthesis with learned re-ranking which underpins RetroChimera. The ensemble receives a target molecule as the input, which is then processed by the sub-models. The model outputs are aggregated using a learning-to-rank strategy. While in this work we only investigate deep learning models as prediction sources (solid boxes), it is possible to add additional sources, for example calls to reaction databases or human-in-the-loop queries (dashed box).&nbsp;</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">In a paper recently published in the journal <em><a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://www.nature.com/articles/s41586-026-11160-9" rel="noopener noreferrer" target="_blank">Nature<span class="sr-only"> (opens in new tab)</span></a></em>, we present <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://github.com/microsoft/retrochimera" rel="noopener noreferrer" target="_blank"><em>RetroChimera</em><span class="sr-only"> (opens in new tab)</span></a>, a new framework for retrosynthesis prediction. It is built around two models (Figure 2). <em>R-SMILES 2</em>, a Transformer-based de-novo model, predicts precursor molecules directly from the input molecule. This gives it the flexibility to learn reaction patterns directly from data. However, its unconstrained generation can also make it prone to hallucination.</p>
+
+
+
+<p class="wp-block-paragraph"><em>NeuralLoc</em>, in contrast, is a graph neural network- (GNN) based model that encodes both the target molecule and reaction templates as graphs. It selects reaction templates and predicts where they should be applied to the target molecule. Its predictions are grounded in reaction patterns extracted from the training data, so it tends to produce more accurate and reliable outputs. But it’s more constrained when encountering reactions not covered by the template library.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">These differences actually turn out to be a strength. Rather than making the same kinds of predictions, the two models capture complementary patterns in chemistry and specialize in different reaction types. R-SMILES 2 performs particularly well on reactions that involve large changes over the course of the reaction, while NeuralLoc excels in reactions of low precedence and those involving more localized changes.</p>
+
+
+
+<p class="wp-block-paragraph">RetroChimera combines the ranked predictions of both sub-models using a learned ensembling strategy. Each model assigns a learned, rank-dependent vote to each predicted reactant set, and votes are added when both models propose the same reaction. By learning how much to trust each model at different ranks, RetroChimera can leverage their complementary strengths, approximately matching the better-performing sub-model across reaction classes.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="Figure 3:  
+
+Outputs of RetroChimera and other models were ranked by PhD-level expert chemists. Retrosynthetic disconnections predicted by RetroChimera had the highest acceptance rate (left). A single incorrect prediction already invalidates an entire synthesis route. As a result, routes suggested by RetroChimera had 90% acceptance rate by experts, while only 20-50% of those predicted by its sub-models or a baseline were deemed acceptable by chemists (right). " class="wp-image-1186742" height="743" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/FIG-3_retrochimera-solve_rate_figure_blogpost2-scaled.png" width="2560" /><figcaption class="wp-element-caption">Figure 3: Expert assessment of multistep synthesis routes. Left: Ratings of individual reaction steps. Right: Complete routes accepted or rejected for ten challenging targets. RetroChimera succeeded on nine targets, versus five for the de novo model, four for the editing model, and two for NeuralSym, a strong baseline model.&nbsp;</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">As a result, RetroChimera performs strongly across both common and rare reaction classes and produces retrosynthesis predictions that better align with chemists’ judgment (Figure 3). In blind tests, expert chemists preferred disconnections of complex molecules suggested by RetroChimera over those obtained from its constituent sub-models, as well as those from more established approaches, and even from the test set itself.</p>
+
+
+
+<p class="wp-block-paragraph">We believe RetroChimera could help researchers identify promising synthesis route more efficiently, supporting faster design-make-test cycle across molecular science applications, including drug discovery and design of smart materials. RetroChimera could enable chemists to assess more—and more complex—candidate molecules at large scale. Paired with increasing levels of laboratory automation, we expect further acceleration toward closed-loop, self-improving systems for synthesis planning and execution.&nbsp;&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">RetroChimera is available on <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://github.com/microsoft/retrochimera" rel="noopener noreferrer" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span></a> (MIT license) and accessible via <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://ai.azure.com/catalog/models/RetroChimera" rel="noopener noreferrer" target="_blank">Microsoft Foundry<span class="sr-only"> (opens in new tab)</span></a>. For instructions on how to access the checkpoint, we refer to the GitHub repository.</p>
+
+
+
+<p class="wp-block-paragraph">We invite the broader chemistry community to experiment with RetroChimera, helping us identify its strengths and shortcomings so we can enhance it in the future. We are looking forward to hearing how it performs on various targets you care about!</p>
+
+
+
+<p class="wp-block-paragraph">For a deeper look at the findings, including evaluation experiments with our external research collaborators, see the full <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://www.nature.com/articles/s41586-026-11160-9" rel="noopener noreferrer" target="_blank">Nature publication<span class="sr-only"> (opens in new tab)</span></a> and the accompanying <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://aka.ms/AA13geyg" rel="noopener noreferrer" target="_blank">Microsoft Source article<span class="sr-only"> (opens in new tab)</span></a>. </p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-fe48e5de wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.microsoft.com/en-us/research/publication/chemist-aligned-retrosynthesis-by-ensembling-diverse-inductive-bias-models/">Publication</a></div>
+
+
+
+<div class="wp-block-button is-style-fill-github"><a class="wp-block-button__link wp-element-button" href="https://github.com/microsoft/retrochimera" rel="noopener" target="_blank">OSS repository</a></div>
+
+
+
+<div class="wp-block-button is-style-outline is-style-outline--3"><a class="wp-block-button__link wp-element-button" href="https://ai.azure.com/catalog/models/RetroChimera" rel="noopener" target="_blank">Microsoft Foundry</a></div>
+</div>
+<span class="sr-only" id="label-external-link">Opens in a new tab</span><p>The post <a href="https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/">Improving synthesis prediction of small molecules at scale with RetroChimera</a> appeared first on <a href="https://www.microsoft.com/en-us/research">Microsoft Research</a>.</p>

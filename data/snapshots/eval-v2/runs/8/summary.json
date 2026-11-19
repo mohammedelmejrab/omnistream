@@ -1,0 +1,2301 @@
+{
+  "id": 8,
+  "snapshot": "eval-v2",
+  "rows": [
+    "classic",
+    "own",
+    "own+subagents"
+  ],
+  "status": "completed",
+  "metrics": {
+    "classic": {
+      "recall_at_10": 0.6333333333333333,
+      "mrr": 0.65,
+      "hits_at_1": 0.6,
+      "correctness": 0.4,
+      "routing_recall": 0.9333333333333333,
+      "routing_precision": 0.8333333333333334,
+      "latency_seconds": 36.04555047999602,
+      "citation_faithfulness_micro": 1.0,
+      "citation_faithfulness": 0.8,
+      "citation_faithfulness_macro": 0.8,
+      "changed_fact_accuracy": 0.0,
+      "errors": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "questions": 5,
+      "by_type": {
+        "single": {
+          "recall_at_10": 0.0,
+          "mrr": 0.0,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 0.5,
+          "latency_seconds": 78.06814149999991,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": 0.0,
+          "citation_faithfulness_macro": 0.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "multi_hop": {
+          "recall_at_10": 0.5833333333333333,
+          "mrr": 0.625,
+          "hits_at_1": 0.5,
+          "correctness": 0,
+          "routing_recall": 0.8333333333333333,
+          "routing_precision": 0.8333333333333333,
+          "latency_seconds": 42.70961939999688,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 2
+        },
+        "time_sensitive": {
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "hits_at_1": 1.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 8.211017199995695,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": 0.0,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "freshness": {
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "hits_at_1": 1.0,
+          "correctness": 2,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 8.529354899990722,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        }
+      },
+      "judge_tokens": 7400,
+      "judge_cost_usd": 0.0030620255,
+      "tokens": 8935,
+      "cost_usd": 0.0033544323
+    },
+    "own": {
+      "recall_at_10": 0.26666666666666666,
+      "mrr": 0.4,
+      "hits_at_1": 0.4,
+      "correctness": 0.2,
+      "routing_recall": 0.8666666666666667,
+      "routing_precision": 0.8333333333333334,
+      "latency_seconds": 15.840895739995176,
+      "citation_faithfulness_micro": 1.0,
+      "citation_faithfulness": 0.6,
+      "citation_faithfulness_macro": 0.6,
+      "changed_fact_accuracy": 0.0,
+      "errors": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "questions": 5,
+      "by_type": {
+        "single": {
+          "recall_at_10": 0.0,
+          "mrr": 0.0,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 0.5,
+          "latency_seconds": 8.65235639999446,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": 0.0,
+          "citation_faithfulness_macro": 0.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "multi_hop": {
+          "recall_at_10": 0.16666666666666666,
+          "mrr": 0.5,
+          "hits_at_1": 0.5,
+          "correctness": 0,
+          "routing_recall": 0.6666666666666666,
+          "routing_precision": 0.8333333333333333,
+          "latency_seconds": 22.41765289999603,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 2
+        },
+        "time_sensitive": {
+          "recall_at_10": 0.0,
+          "mrr": 0.0,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 7.580327399991802,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": 0.0,
+          "citation_faithfulness_macro": 0.0,
+          "changed_fact_accuracy": 0.0,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "freshness": {
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "hits_at_1": 1.0,
+          "correctness": 1,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 18.13648909999756,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        }
+      },
+      "judge_tokens": 3527,
+      "judge_cost_usd": 0.0014109489,
+      "tokens": 10239,
+      "cost_usd": 0.003827949000000001
+    },
+    "own+subagents": {
+      "recall_at_10": 0.2,
+      "mrr": 0.21666666666666667,
+      "hits_at_1": 0.2,
+      "correctness": 0.4,
+      "routing_recall": 0.7666666666666666,
+      "routing_precision": 0.8,
+      "latency_seconds": 27.34372648000135,
+      "citation_faithfulness_micro": 0.8333333333333334,
+      "citation_faithfulness": 0.5333333333333333,
+      "citation_faithfulness_macro": 0.5333333333333333,
+      "changed_fact_accuracy": 0.0,
+      "errors": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "questions": 5,
+      "by_type": {
+        "single": {
+          "recall_at_10": 0.0,
+          "mrr": 0.0,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 0.5,
+          "latency_seconds": 17.46822510000493,
+          "citation_faithfulness_micro": 0.0,
+          "citation_faithfulness": 0.0,
+          "citation_faithfulness_macro": 0.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "multi_hop": {
+          "recall_at_10": 0.0,
+          "mrr": 0.041666666666666664,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 0.41666666666666663,
+          "routing_precision": 0.75,
+          "latency_seconds": 40.078731950001384,
+          "citation_faithfulness_micro": 0.8571428571428571,
+          "citation_faithfulness": 0.8333333333333333,
+          "citation_faithfulness_macro": 0.8333333333333333,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 2
+        },
+        "time_sensitive": {
+          "recall_at_10": 0.0,
+          "mrr": 0.0,
+          "hits_at_1": 0.0,
+          "correctness": 0,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 19.96632399999362,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": 0.0,
+          "citation_faithfulness_macro": 0.0,
+          "changed_fact_accuracy": 0.0,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        },
+        "freshness": {
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "hits_at_1": 1.0,
+          "correctness": 2,
+          "routing_recall": 1.0,
+          "routing_precision": 1.0,
+          "latency_seconds": 19.12661940000544,
+          "citation_faithfulness_micro": 1.0,
+          "citation_faithfulness": 1.0,
+          "citation_faithfulness_macro": 1.0,
+          "changed_fact_accuracy": null,
+          "errors": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "questions": 1
+        }
+      },
+      "judge_tokens": 5332,
+      "judge_cost_usd": 0.0023284026,
+      "tokens": 95692,
+      "cost_usd": 0.027266855000000007
+    }
+  },
+  "results": [
+    {
+      "configuration": "classic",
+      "question_id": "v2-q01",
+      "type": "single",
+      "question": "How much research funding did Halvex Mobility commit on February 7?",
+      "reference_answer": "8.4 million crowns",
+      "answer": "There is no context provided to determine how much research funding Halvex Mobility committed on February 7. Insufficient evidence.",
+      "retrieved_item_ids": [],
+      "gold_item_ids": [
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct information about the research funding committed by Halvex Mobility on February 7. The reference answer specifies '8.4 million crowns,' which is not mentioned in the response. Therefore, the answer is incorrect.",
+      "faithful_citations": 0,
+      "citation_count": 0,
+      "citation_judgements": [],
+      "latency_seconds": 78.06814149999991,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 0.5,
+      "citation_faithfulness": 0.0
+    },
+    {
+      "configuration": "classic",
+      "question_id": "v2-q03",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September brake seal recall?",
+      "reference_answer": "Cobalt Reach Laboratory",
+      "answer": "The manufacturer whose chief resigned following the September brake seal recall is Halvex Mobility (HVM) [1]. However, the provided context does not mention any research funding agreement or grant involving Halvex Mobility. \n\nIn contrast, the context does describe research funding agreements between:\n- Vespergate Works (VGW) and Copper Fen Institute (CFI) [6]\n- Ravenspire Instruments (RSI) and Silver Marsh Laboratory (SML) [8]\n\nBut neither of these manufacturers (VGW or RSI) are associated with the brake seal recall - VGW had a pressure relay recall [5], and RSI had a control fuse recall [7].\n\nTherefore, there is insufficient evidence in the provided context to identify which research institution received a grant from Halvex Mobility (HVM). The context does not mention any such agreement involving HVM.",
+      "retrieved_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "232d5d94c4e716c3db3f7b8cd144f93e9c17b1b88df0a6ace3f683f74f9f44a3",
+        "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454",
+        "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e",
+        "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f",
+        "68f6d1a1c4024e18e4e9e831c06d7169f1aa50c3ae97e8c939697170224cabb1"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "News",
+        "Research",
+        "Finance"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The submitted answer does not correctly identify the research institution that received a grant from the manufacturer whose chief resigned following the September brake seal recall. The reference answer is 'Cobalt Reach Laboratory', which is not mentioned in the submitted answer. The answer provided discusses unrelated manufacturers and institutions, failing to address the key fact required by the question.",
+      "faithful_citations": 5,
+      "citation_count": 5,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The manufacturer whose chief resigned following the September brake seal recall is Halvex Mobility (HVM) .",
+          "supported": true,
+          "rationale": "The original text explicitly states that Halvex Mobility (HVM) recalled its vehicle modules due to a defective brake seal in September, and the chief executive (referred to as the HVM chief) resigned following the recall on September 11. This directly supports the claim that the manufacturer whose chief resigned following the September brake seal recall is Halvex Mobility (HVM)."
+        },
+        {
+          "numbers": [
+            6
+          ],
+          "claim": "- Vespergate Works (VGW) and Copper Fen Institute (CFI)",
+          "supported": true,
+          "rationale": "The original text explicitly states that Vespergate Works (VGW) signed a research funding agreement with Copper Fen Institute (CFI), which directly supports the claim that these two entities are related in the context of the agreement. The verified spans confirm this relationship, making the claim entailed by the source."
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "claim": "- Ravenspire Instruments (RSI) and Silver Marsh Laboratory (SML)",
+          "supported": true,
+          "rationale": "The claim mentions Ravenspire Instruments (RSI) and Silver Marsh Laboratory (SML), which are explicitly referenced in the original text. The text confirms that RSI, the abbreviation for Ravenspire Instruments, signed a research funding agreement with Silver Marsh Laboratory (SML) on February 7. This directly supports the claim, as the union of the cited sources entails the factual content asserted in the claim."
+        },
+        {
+          "numbers": [
+            5,
+            7
+          ],
+          "claim": "But neither of these manufacturers (VGW or RSI) are associated with the brake seal recall - VGW had a pressure relay recall , and RSI had a control fuse recall .",
+          "supported": true,
+          "rationale": "The original text explicitly states that Vespergate Works (VGW) had a recall due to a defective pressure relay and Ravenspire Instruments (RSI) had a recall due to a defective control fuse. The claim correctly asserts that neither manufacturer is associated with a brake seal recall, as the text only mentions recalls for a pressure relay (VGW) and control fuse (RSI). The verified spans fully support the claim's factual content about the nature of each manufacturer's recall."
+        }
+      ],
+      "latency_seconds": 79.56035610000254,
+      "recall_at_10": 0.5,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 1.0,
+      "routing_precision": 0.6666666666666666,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "classic",
+      "question_id": "v2-q04",
+      "type": "multi_hop",
+      "question": "What experimental membrane did the laboratory backed by the company affected by the brake seal recall develop?",
+      "reference_answer": "Wispcoil",
+      "answer": "The laboratory backed by Halvex Mobility, the company affected by the brake seal recall, developed **Morrowcell**. This is evidenced by the abstract from JBI, which reports the development of Morrowcell [7]. Halvex Mobility is mentioned in the context of the brake seal recall [8], and there is no direct evidence linking Halvex Mobility to any other membrane development in the provided context.",
+      "retrieved_item_ids": [
+        "d4370efe5129437613624461467f5fdd4f9748a01679856f7eb69ecafb58869b",
+        "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0",
+        "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+        "80cd1ffaba5056e350e9f2c89236be68334eb0163854d7031f3326ef79719bd5",
+        "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b",
+        "8d7b3e41495db3b6c70a07e7361d687d9c1d9b9c0202ea3c18ca5eff8a46cbe5",
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "d6732bbe54ac00a744af86ba81a0cb79d3177859954bf679945873a7351a09e9",
+        "ebf5c36d9126076a12eb18e82a6959fdc0abdfcb89530d496351f7494f5131b7"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "News"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer incorrectly identifies the experimental membrane as 'Morrowcell' instead of the correct 'Wispcoil'. This discrepancy directly contradicts the key fact provided in the reference answer. Therefore, the answer does not meet the criteria for accuracy based on the supplied fictional reference.",
+      "faithful_citations": 2,
+      "citation_count": 2,
+      "citation_judgements": [
+        {
+          "numbers": [
+            7
+          ],
+          "claim": "This is evidenced by the abstract from JBI, which reports the development of Morrowcell .",
+          "supported": true,
+          "rationale": "The claim states that the abstract from JBI reports the development of Morrowcell. The verified spans explicitly mention that 'Investigators at JBI report development of Morrowcell, an experimental energy membrane,' which directly supports the claim. The additional details in the verified spans about the experimental nature, controlled trials, and other aspects of Morrowcell do not contradict the claim and are not required to support it, as the claim only asserts the development of Morrowcell."
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "claim": "Halvex Mobility is mentioned in the context of the brake seal recall , and there is no direct evidence linking Halvex Mobility to any other membrane development in the provided context.",
+          "supported": true,
+          "rationale": "The claim states that Halvex Mobility is mentioned in the context of a brake seal recall, which is directly supported by the verified text: 'Halvex Mobility recalled its vehicle modules after inspectors identified a defective brake seal.' The claim also correctly notes there is no mention of Halvex Mobility's involvement in membrane development in the provided context, as the text only discusses the brake seal recall and its aftermath."
+        }
+      ],
+      "latency_seconds": 5.858882699991227,
+      "recall_at_10": 0.6666666666666666,
+      "mrr": 0.25,
+      "hits_at_1": 0.0,
+      "routing_recall": 0.6666666666666666,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "classic",
+      "question_id": "v2-q05",
+      "type": "time_sensitive",
+      "question": "Who led Halvex Mobility immediately before the September recall?",
+      "reference_answer": "Iona Pelwick",
+      "answer": "The context does not explicitly name the individual who led Halvex Mobility (HVM) immediately before the September recall. The notice refers to the outgoing chief executive only as \"the HVM chief\" and states that no replacement was named at the time of the recall [1]. \n\nHowever, the timeline suggests:\n1. The recall was announced on September 9, with the chief executive resigning on September 11 [1].\n2. Sefu Daram was appointed as the new chief executive on September 18 [2].\n3. Later, Iona Pelwick became chief executive on January 12 [3].\n\nThus, the unnamed \"HVM chief\" referenced in [1] was the leader immediately before the September recall, but their identity is not provided in the available evidence.",
+      "retrieved_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "9cb0afddbb35dcc56d76c43e7570f6357b0d506afd38d0942a9765915b5c1854",
+        "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+        "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+        "1b6ea7349035a4a02a29c872143cd6a5ceed39c849a4c3cb35ccc9e5530c325a",
+        "e00238913f33390a1a25696a0c232aba82f6b749468f24fd0e81a8981df96835",
+        "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454",
+        "3e48839792fb439decbab5628cd04eb8c00d766c0fd7c778bde59e075567d651",
+        "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e",
+        "b9c205f643e447a65697d51219c050ea388dd6843bd0a7b10cbe1ca78b634691"
+      ],
+      "gold_item_ids": [
+        "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+      ],
+      "selected_bubbles": [
+        "News"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not correctly identify Iona Pelwick as the leader of Halvex Mobility immediately before the September recall, as required by the reference answer. The response acknowledges the lack of explicit information and makes an incorrect inference about the timeline, failing to provide the key fact from the reference.",
+      "faithful_citations": 5,
+      "citation_count": 5,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The notice refers to the outgoing chief executive only as \"the HVM chief\" and states that no replacement was named at the time of the recall .",
+          "supported": true,
+          "rationale": "The original text explicitly states that 'The notice refers to that officer as the HVM chief and does not name a replacement,' which directly supports the claim that the notice refers to the outgoing chief executive as 'the HVM chief' and that no replacement was named at the time of the recall."
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The recall was announced on September 9, with the chief executive resigning on September 11 .",
+          "supported": true,
+          "rationale": "The original text explicitly states that Halvex Mobility recalled its vehicle modules on September 9 and that the chief executive resigned following the recall on September 11. These details directly support the claim that 'The recall was announced on September 9, with the chief executive resigning on September 11.' The factual content of the claim is fully entailed by the cited source."
+        },
+        {
+          "numbers": [
+            2
+          ],
+          "claim": "Sefu Daram was appointed as the new chief executive on September 18 .",
+          "supported": true,
+          "rationale": "The claim 'Sefu Daram was appointed as the new chief executive on September 18' is fully supported by the original text, which explicitly states 'Resolution adopted September 18: Sefu Daram is appointed chief executive of Halvex Mobility, effective at the close of this meeting.' The date and the appointment are directly mentioned, confirming the factual content of the claim."
+        },
+        {
+          "numbers": [
+            3
+          ],
+          "claim": "Later, Iona Pelwick became chief executive on January 12 .",
+          "supported": true,
+          "rationale": "The original text explicitly states that 'The board of Halvex Mobility appointed Iona Pelwick as chief executive effective January 12.' This directly supports the claim that 'Later, Iona Pelwick became chief executive on January 12.' The factual content of the claim is fully entailed by the cited source, and no additional details from the source are required to validate the claim."
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "Thus, the unnamed \"HVM chief\" referenced in  was the leader immediately before the September recall, but their identity is not provided in the available evidence.",
+          "supported": true,
+          "rationale": "The original text explicitly states that 'The chief executive resigned following the recall on September 11. The notice refers to that officer as the HVM chief and does not name a replacement.' This directly supports the claim that the unnamed 'HVM chief' referenced was the leader immediately before the September recall and that their identity is not provided in the available evidence."
+        }
+      ],
+      "latency_seconds": 8.211017199995695,
+      "recall_at_10": 1.0,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "classic",
+      "question_id": "v2-q07",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Wispcoil?",
+      "reference_answer": "AX-49",
+      "answer": "The November replication archive for Wispcoil is identified by the accession **AX-49** [1].",
+      "retrieved_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d",
+        "cb2dbd1fe7bf33dcb8ddca19e462d1075ad71f51fd547669e3c624648234a9ba",
+        "7c425d3b79474145618a5776dad48650c0c102a8adb0a8fa731923248529f355",
+        "cd58c2568a2598c10b71a51ab4af7f1c3b12e3fc7eaf57097d3a12a985ab1e44",
+        "7fda660739521ea9154b88f27a11c66c848a5fdab3fc957161f8100d50df0e92",
+        "63eff39ff7c2b5c875d01bacab706f7336a7463b45735c0465664d43359f9e23",
+        "291df6b5bf56e8768871f6457098d528d1479bbd7f351ae080077d148fba34fc",
+        "5e82973268cc70848c506ce1d28507100fcdf5317d40ee2aa2e07a4c0a3301c5",
+        "efa583b36e516cd08d9625adbd61929afb31a39a1e7d892119ed7f97d23a9403",
+        "e903cd7ece3e2914e1e97092f8f12e0bbbadb7eec89d23eb57bedf94c8072cc3"
+      ],
+      "gold_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d"
+      ],
+      "selected_bubbles": [
+        "Research"
+      ],
+      "correctness": 2,
+      "judge_rationale": "The answer correctly identifies the accession as AX-49, which matches the reference answer and includes all key facts.",
+      "faithful_citations": 1,
+      "citation_count": 1,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The November replication archive for Wispcoil is identified by the accession **AX-49** .",
+          "supported": true,
+          "rationale": "The original text explicitly states that 'The CRL team deposited the replication archive for Wispcoil under accession AX-49,' which directly supports the claim that 'The November replication archive for Wispcoil is identified by the accession AX-49.' The date 'November 2' in the original text also aligns with the 'November' timeframe mentioned in the claim, further confirming the entailment."
+        }
+      ],
+      "latency_seconds": 8.529354899990722,
+      "recall_at_10": 1.0,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "own",
+      "question_id": "v2-q01",
+      "type": "single",
+      "question": "How much research funding did Halvex Mobility commit on February 7?",
+      "reference_answer": "8.4 million crowns",
+      "answer": "There is no context provided to determine how much research funding Halvex Mobility committed on February 7. Insufficient evidence.",
+      "retrieved_item_ids": [],
+      "gold_item_ids": [
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct amount of research funding committed by Halvex Mobility on February 7, which is 8.4 million crowns according to the reference. The response claims insufficient evidence, which is incorrect.",
+      "faithful_citations": 0,
+      "citation_count": 0,
+      "citation_judgements": [],
+      "latency_seconds": 8.65235639999446,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 0.5,
+      "citation_faithfulness": 0.0
+    },
+    {
+      "configuration": "own",
+      "question_id": "v2-q03",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September brake seal recall?",
+      "reference_answer": "Cobalt Reach Laboratory",
+      "answer": "The context does not provide sufficient evidence to answer this question. While multiple research funding agreements are mentioned [1][2][6], none of the passages connect any manufacturer's chief resigning after a brake seal recall to these grants. The September brake seal recall event itself is not referenced in any of the provided context passages. Therefore, I cannot identify which research institution (if any) received a grant under these circumstances based on the given information.",
+      "retrieved_item_ids": [
+        "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32",
+        "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+        "d8e5eb320c39575edc97ec4f0a43f5d34b8b1874ccf2c18fe65539ac15bfd8aa",
+        "f304fc071e2a5b0cc7a8550458749aba591fd10e0d31ed3ce07dcd7b9f21518a"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "News",
+        "Finance"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not identify the correct research institution, Cobalt Reach Laboratory, as specified in the reference answer. Instead, it claims insufficient evidence, which is incorrect given the fictional reference. The key fact 'Cobalt Reach Laboratory' is missing, and the response does not align with the required time scope or context.",
+      "faithful_citations": 3,
+      "citation_count": 3,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1,
+            2,
+            6
+          ],
+          "claim": "While multiple research funding agreements are mentioned , none of the passages connect any manufacturer's chief resigning after a brake seal recall to these grants.",
+          "supported": true,
+          "rationale": "The claim states that none of the passages connect any manufacturer's chief resigning after a brake seal recall to the mentioned research funding agreements. The verified spans and the original text only mention research funding agreements between various companies and laboratories, with no mention of any resignations or brake seal recalls. Therefore, the claim is supported as the text does not contain any information connecting the funding agreements to such events."
+        }
+      ],
+      "latency_seconds": 21.847563499992248,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 0.6666666666666666,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "own",
+      "question_id": "v2-q05",
+      "type": "time_sensitive",
+      "question": "Who led Halvex Mobility immediately before the September recall?",
+      "reference_answer": "Iona Pelwick",
+      "answer": "There is insufficient evidence in the provided context to answer this question. Without any numbered passages to reference, I cannot determine who led Halvex Mobility before the September recall.",
+      "retrieved_item_ids": [],
+      "gold_item_ids": [
+        "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+      ],
+      "selected_bubbles": [
+        "News"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct information about who led Halvex Mobility immediately before the September recall. The reference answer specifies 'Iona Pelwick' as the leader, but the submitted answer claims insufficient evidence, which is incorrect based on the provided fictional reference.",
+      "faithful_citations": 0,
+      "citation_count": 0,
+      "citation_judgements": [],
+      "latency_seconds": 7.580327399991802,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 0.0
+    },
+    {
+      "configuration": "own",
+      "question_id": "v2-q04",
+      "type": "multi_hop",
+      "question": "What experimental membrane did the laboratory backed by the company affected by the brake seal recall develop?",
+      "reference_answer": "Wispcoil",
+      "answer": "The provided context does not contain any information about experimental membranes developed by laboratories or any mention of a brake seal recall affecting companies. The passages only describe research funding agreements, payment conditions, and record-keeping requirements between various entities [1][2][3][4][5]. Insufficient evidence exists to answer this question.",
+      "retrieved_item_ids": [
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+        "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+        "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14"
+      ],
+      "selected_bubbles": [
+        "Research"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct experimental membrane, 'Wispcoil,' as specified in the reference answer. Instead, it states that the context does not contain any relevant information, which is incorrect based on the reference. Therefore, the score is 0.",
+      "faithful_citations": 5,
+      "citation_count": 5,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "claim": "The passages only describe research funding agreements, payment conditions, and record-keeping requirements between various entities .",
+          "supported": true,
+          "rationale": "The verified spans explicitly describe research funding agreements between various entities (HVM and CRL, OBR and IDL, BDA and SMC), including details about payment conditions (tranches subject to audited spending) and record-keeping requirements (recipient must retain experimental records for inspection). These elements directly support the claim's assertion about the content of the passages."
+        }
+      ],
+      "latency_seconds": 22.98774229999981,
+      "recall_at_10": 0.3333333333333333,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 0.3333333333333333,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "own",
+      "question_id": "v2-q07",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Wispcoil?",
+      "reference_answer": "AX-49",
+      "answer": "The accession that identifies the replication archive for Wispcoil is **AX-49**, as stated in [1]: \"The CRL team deposited the replication archive for Wispcoil under accession AX-49.\" There is no mention of a \"November\" replication archive in the provided context.",
+      "retrieved_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d",
+        "291df6b5bf56e8768871f6457098d528d1479bbd7f351ae080077d148fba34fc",
+        "efa583b36e516cd08d9625adbd61929afb31a39a1e7d892119ed7f97d23a9403",
+        "5e82973268cc70848c506ce1d28507100fcdf5317d40ee2aa2e07a4c0a3301c5",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+      ],
+      "gold_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d"
+      ],
+      "selected_bubbles": [
+        "Research"
+      ],
+      "correctness": 1,
+      "judge_rationale": "The answer correctly identifies the accession AX-49 for the replication archive of Wispcoil, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is part of the question. Therefore, the answer is partially correct but incomplete.",
+      "faithful_citations": 1,
+      "citation_count": 1,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The accession that identifies the replication archive for Wispcoil is **AX-49**, as stated in : \"The CRL team deposited the replication archive for Wispcoil under accession AX-49.\" There is no mention of a \"November\" replication archive in the provided context.",
+          "supported": true,
+          "rationale": "The claim accurately states that the replication archive for Wispcoil is identified by accession AX-49, which is directly supported by the verified span: 'The CRL team deposited the replication archive for Wispcoil under accession AX-49.' The claim also correctly notes the absence of any mention of a 'November' replication archive in the provided context, as the date 'November 2' is part of the data deposit information but not specifically tied to the replication archive's identification."
+        }
+      ],
+      "latency_seconds": 18.13648909999756,
+      "recall_at_10": 1.0,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "v2-q01",
+      "type": "single",
+      "question": "How much research funding did Halvex Mobility commit on February 7?",
+      "reference_answer": "8.4 million crowns",
+      "answer": "There is no available evidence in the provided context to determine whether Halvex Mobility committed any research funding on February 7 [bubble eval-v2-research findings, bubble eval-v2-finance findings]. The only financial transaction mentioned is the June purchase agreement involving Vespergate Works [1], with no reference to Halvex Mobility or specific funding commitments on that date. \n\nIf you have additional details about this alleged funding commitment, further research could be conducted. Currently, the evidence is insufficient to support any claims about Halvex Mobility's research funding on February 7.",
+      "retrieved_item_ids": [
+        "412e42fb13bc1e3bc707c311a0ccf16f4ae91eae13103664f8b4c8d89ab9d999"
+      ],
+      "gold_item_ids": [
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "Finance"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct information about Halvex Mobility's research funding on February 7. Instead, it states that there is no available evidence, which contradicts the reference answer of '8.4 million crowns'. The key fact '8.4 million crowns' is missing from the answer, and the response incorrectly claims insufficient evidence. Therefore, the score is 0.",
+      "faithful_citations": 0,
+      "citation_count": 1,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The only financial transaction mentioned is the June purchase agreement involving Vespergate Works , with no reference to Halvex Mobility or specific funding commitments on that date.",
+          "supported": false,
+          "rationale": "The claim states that there is no reference to Halvex Mobility or specific funding commitments on the date of the June purchase agreement. However, the original text does not mention Halvex Mobility at all, nor does it discuss any funding commitments. Since the claim is about the absence of certain information, and that absence is confirmed by the original text, the claim is not supported because it incorrectly asserts a negative that cannot be verified from the provided text. The original text only discusses the termination of the June purchase agreement between Vespergate Works and Dovetail Quay 5, and does not mention Halvex Mobility or any funding commitments."
+        }
+      ],
+      "latency_seconds": 17.46822510000493,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 0.5,
+      "citation_faithfulness": 0.0
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "v2-q03",
+      "type": "multi_hop",
+      "question": "Which research institution received a grant from the manufacturer whose chief resigned following the September brake seal recall?",
+      "reference_answer": "Cobalt Reach Laboratory",
+      "answer": "The manufacturer involved in the brake seal recall is **Halvex Mobility** [12]. Following the recall, **Sefu Daram** was appointed as the new chief executive of Halvex Mobility on September 18, 2026 [11]. \n\nHowever, the evidence does not indicate that Halvex Mobility provided any grants to research institutions. The only grant mentioned in the context is from **Oxbriar Robotics** to **Ivory Delta Laboratory** [5], which is unrelated to Halvex Mobility or the brake seal recall. \n\nTherefore, there is insufficient evidence to link any research institution grant to the manufacturer (Halvex Mobility) whose chief resigned after the September brake seal recall.",
+      "retrieved_item_ids": [
+        "efa583b36e516cd08d9625adbd61929afb31a39a1e7d892119ed7f97d23a9403",
+        "ab2ff7e413f705980d631a9cac4001a1bdcd2ab1c2e300b6d2ba439721b99494",
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d",
+        "6605566a366d50bc4cb3278dae9b2371ae6a61815aa0c9568a1ae8a8fb39214d",
+        "291df6b5bf56e8768871f6457098d528d1479bbd7f351ae080077d148fba34fc",
+        "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+        "5e82973268cc70848c506ce1d28507100fcdf5317d40ee2aa2e07a4c0a3301c5",
+        "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+        "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+        "9cb0afddbb35dcc56d76c43e7570f6357b0d506afd38d0942a9765915b5c1854",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "232d5d94c4e716c3db3f7b8cd144f93e9c17b1b88df0a6ace3f683f74f9f44a3",
+        "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e",
+        "1b6ea7349035a4a02a29c872143cd6a5ceed39c849a4c3cb35ccc9e5530c325a",
+        "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f",
+        "d59fa8dddd06ec1f2f94a4c1d023ff44cd967d37b8bdd8ee5aa1243fc67a5801",
+        "62f827a6f203cb04a8154654a2dcab73125b9ccf9282ab80ebd596fd96d47ed6",
+        "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+      ],
+      "selected_bubbles": [
+        "Research",
+        "News"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer incorrectly identifies the manufacturer as Halvex Mobility and fails to mention Cobalt Reach Laboratory, the correct research institution that received the grant. The provided information about Oxbriar Robotics and Ivory Delta Laboratory is irrelevant to the question, which specifically asks about the manufacturer involved in the brake seal recall and its associated grant recipient.",
+      "faithful_citations": 2,
+      "citation_count": 3,
+      "citation_judgements": [
+        {
+          "numbers": [
+            12
+          ],
+          "claim": "The manufacturer involved in the brake seal recall is **Halvex Mobility** .",
+          "supported": true,
+          "rationale": "The claim states that Halvex Mobility is the manufacturer involved in the brake seal recall. The original text explicitly mentions 'Halvex Mobility recalled its vehicle modules after inspectors identified a defective brake seal,' which directly supports the claim. The verified span also confirms this information."
+        },
+        {
+          "numbers": [
+            11
+          ],
+          "claim": "Following the recall, **Sefu Daram** was appointed as the new chief executive of Halvex Mobility on September 18, 2026 .",
+          "supported": true,
+          "rationale": "The original text explicitly states that 'Resolution adopted September 18: Sefu Daram is appointed chief executive of Halvex Mobility,' which directly supports the claim that 'Following the recall, Sefu Daram was appointed as the new chief executive of Halvex Mobility on September 18, 2026.' The mention of 'rebuilding safety procedures after the September recall' further aligns with the claim's context of the appointment following a recall. The factual content of the claim is fully entailed by the cited source."
+        },
+        {
+          "numbers": [
+            5
+          ],
+          "claim": "The only grant mentioned in the context is from **Oxbriar Robotics** to **Ivory Delta Laboratory** , which is unrelated to Halvex Mobility or the brake seal recall.",
+          "supported": false,
+          "rationale": "The claim states that the only grant mentioned is from Oxbriar Robotics to Ivory Delta Laboratory, and that it is unrelated to Halvex Mobility or the brake seal recall. However, the original text does not mention Halvex Mobility or a brake seal recall at all, so there is no information to support or contradict the claim about their relation to the grant. The original text does confirm that the grant is from Oxbriar Robotics to Ivory Delta Laboratory, which supports part of the claim, but the claim's assertion about unrelatedness to Halvex Mobility or the brake seal recall cannot be verified from the given text."
+        }
+      ],
+      "latency_seconds": 49.85649679999915,
+      "recall_at_10": 0.0,
+      "mrr": 0.08333333333333333,
+      "hits_at_1": 0.0,
+      "routing_recall": 0.5,
+      "routing_precision": 0.5,
+      "citation_faithfulness": 0.6666666666666666
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "v2-q05",
+      "type": "time_sensitive",
+      "question": "Who led Halvex Mobility immediately before the September recall?",
+      "reference_answer": "Iona Pelwick",
+      "answer": "Based on the provided context and supplementary notes, there is no evidence available to determine who led Halvex Mobility immediately before the September recall. The search did not yield any relevant results, and without additional context or details, it is not possible to provide an answer [Bubble eval-v2-news findings]. If more information becomes available, further exploration could be conducted.",
+      "retrieved_item_ids": [],
+      "gold_item_ids": [
+        "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+      ],
+      "selected_bubbles": [
+        "News"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct information about who led Halvex Mobility immediately before the September recall. The reference answer specifies 'Iona Pelwick' as the leader, but the submitted answer claims there is no evidence available to determine this, which is incorrect based on the reference.",
+      "faithful_citations": 0,
+      "citation_count": 0,
+      "citation_judgements": [],
+      "latency_seconds": 19.96632399999362,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 0.0
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "v2-q04",
+      "type": "multi_hop",
+      "question": "What experimental membrane did the laboratory backed by the company affected by the brake seal recall develop?",
+      "reference_answer": "Wispcoil",
+      "answer": "The provided context does not contain any information about an experimental membrane developed by a laboratory backed by a company affected by a brake seal recall. The passages detail funding agreements and payment conditions between various organizations (Oxbriar Robotics, Ivory Delta Laboratory, VGW, Copper Fen Institute, Brindle Arc, and Sable Meridian Centre) [1][2][3][4], but no mention is made of experimental membranes or brake seal recalls. \n\nEvidence is insufficient to answer this question based on the given context.",
+      "retrieved_item_ids": [
+        "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+        "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+      ],
+      "gold_item_ids": [
+        "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+        "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14"
+      ],
+      "selected_bubbles": [
+        "Research"
+      ],
+      "correctness": 0,
+      "judge_rationale": "The answer does not provide the correct experimental membrane, 'Wispcoil', as specified in the reference answer. Instead, it states that the context does not contain any information about an experimental membrane or a brake seal recall, which is incorrect based on the reference. Therefore, the answer is scored 0.",
+      "faithful_citations": 4,
+      "citation_count": 4,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "claim": "The passages detail funding agreements and payment conditions between various organizations (Oxbriar Robotics, Ivory Delta Laboratory, VGW, Copper Fen Institute, Brindle Arc, and Sable Meridian Centre) , but no mention is made of experimental membranes or brake seal recalls.",
+          "supported": true,
+          "rationale": "The claim states that the passages detail funding agreements and payment conditions between various organizations (Oxbriar Robotics, Ivory Delta Laboratory, VGW, Copper Fen Institute, Brindle Arc, and Sable Meridian Centre) but do not mention experimental membranes or brake seal recalls. The verified spans confirm the funding agreements between the mentioned organizations, and the original text does not contain any mention of experimental membranes or brake seal recalls, supporting the claim's accuracy."
+        }
+      ],
+      "latency_seconds": 30.300967100003618,
+      "recall_at_10": 0.0,
+      "mrr": 0.0,
+      "hits_at_1": 0.0,
+      "routing_recall": 0.3333333333333333,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "v2-q07",
+      "type": "freshness",
+      "question": "What accession identifies the November replication archive for Wispcoil?",
+      "reference_answer": "AX-49",
+      "answer": "The November replication archive for Wispcoil is identified under accession **AX-49** [1]. This is supported by the CRL team's deposition record and the bubble note evaluation with high credibility (0.92). \n\nConflicting claims about other replication archives exist (e.g., Thistledrive under BK-26 [2], Pebbleflux under NZ-53 [3], Emberfoil under ER-35 [4]), but these do not pertain to Wispcoil.",
+      "retrieved_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d",
+        "291df6b5bf56e8768871f6457098d528d1479bbd7f351ae080077d148fba34fc",
+        "efa583b36e516cd08d9625adbd61929afb31a39a1e7d892119ed7f97d23a9403",
+        "5e82973268cc70848c506ce1d28507100fcdf5317d40ee2aa2e07a4c0a3301c5",
+        "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+        "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+        "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+      ],
+      "gold_item_ids": [
+        "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d"
+      ],
+      "selected_bubbles": [
+        "Research"
+      ],
+      "correctness": 2,
+      "judge_rationale": "The answer correctly identifies the November replication archive for Wispcoil as AX-49, which matches the reference answer and includes all key facts. The additional information about conflicting claims does not detract from the correctness of the answer regarding the requested time scope.",
+      "faithful_citations": 4,
+      "citation_count": 4,
+      "citation_judgements": [
+        {
+          "numbers": [
+            1
+          ],
+          "claim": "The November replication archive for Wispcoil is identified under accession **AX-49** .",
+          "supported": true,
+          "rationale": "The claim that the November replication archive for Wispcoil is identified under accession AX-49 is directly supported by the verified span 'The CRL team deposited the replication archive for Wispcoil under accession AX-49.' This statement explicitly confirms the accession number mentioned in the claim."
+        },
+        {
+          "numbers": [
+            2,
+            3,
+            4
+          ],
+          "claim": "Conflicting claims about other replication archives exist (e.g., Thistledrive under BK-26 , Pebbleflux under NZ-53 , Emberfoil under ER-35 ), but these do not pertain to Wispcoil.",
+          "supported": true,
+          "rationale": "The claim asserts that conflicting claims about other replication archives exist, specifically mentioning Thistledrive under BK-26, Pebbleflux under NZ-53, and Emberfoil under ER-35, and that these do not pertain to Wispcoil. The verified spans from the original text confirm that replication archives for Thistledrive, Pebbleflux, and Emberfoil were deposited under the respective accession numbers BK-26, NZ-53, and ER-35. The claim does not assert any specific details about Wispcoil, and the original text does not mention Wispcoil, which aligns with the claim's assertion that these archives do not pertain to Wispcoil. Therefore, the factual content of the claim is entailed by the union of the cited sources."
+        }
+      ],
+      "latency_seconds": 19.12661940000544,
+      "recall_at_10": 1.0,
+      "mrr": 1.0,
+      "hits_at_1": 1.0,
+      "routing_recall": 1.0,
+      "routing_precision": 1.0,
+      "citation_faithfulness": 1.0
+    }
+  ],
+  "global_metrics": {
+    "judge_calibration": {
+      "status": "pending human labels",
+      "n": 30,
+      "labelled": 0
+    },
+    "judge_model": "deepseek/deepseek-chat",
+    "answering_model": "deepseek/deepseek-chat",
+    "judge_equals_answering_model": true,
+    "contamination": {
+      "n": 5,
+      "fully_correct": 0,
+      "nonzero": 0,
+      "results": [
+        {
+          "question_id": "v2-q01",
+          "answer": "I do not know the specific amount of research funding Halvex Mobility committed on February 7. For accurate details, I recommend checking official announcements, press releases, or financial reports from Halvex Mobility.",
+          "score": 0,
+          "rationale": "The answer does not provide the specific amount of research funding committed by Halvex Mobility on February 7, which is the key fact required. The answer abstains from providing the correct information."
+        },
+        {
+          "question_id": "v2-q03",
+          "answer": "I do not have information on a specific research institution that received a grant from a manufacturer whose chief resigned following a September brake seal recall. If you have more details or context, I might be able to assist further.",
+          "score": 0,
+          "rationale": "The answer does not provide the correct research institution, Cobalt Reach Laboratory, as specified in the reference answer. Instead, it states a lack of information and requests further details, which does not align with the key facts required."
+        },
+        {
+          "question_id": "v2-q04",
+          "answer": "I do not have specific information about a laboratory backed by a company affected by a brake seal recall or any experimental membrane it may have developed. If you have more context or details, I might be able to assist further.",
+          "score": 0,
+          "rationale": "The answer does not provide the correct experimental membrane developed by the laboratory backed by the company affected by the brake seal recall, which is 'Wispcoil' according to the reference. The answer abstains from providing the required information, making it incorrect."
+        },
+        {
+          "question_id": "v2-q05",
+          "answer": "I do not have information on Halvex Mobility or its leadership prior to the September recall. If this is a fictional or lesser-known entity, I would not have details about it. Let me know if you'd like assistance with something else!",
+          "score": 0,
+          "rationale": "The answer does not provide the correct information about who led Halvex Mobility before the September recall, which is Iona Pelwick according to the reference. The response indicates a lack of knowledge on the subject, which does not meet the criteria for a correct answer."
+        },
+        {
+          "question_id": "v2-q07",
+          "answer": "I do not know the specific accession that identifies the November replication archive for Wispcoil. For accurate information, you would need to consult Wispcoil's official records or documentation related to their archives.",
+          "score": 0,
+          "rationale": "The answer does not provide the correct accession identifier 'AX-49' for the November replication archive for Wispcoil. Instead, it states a lack of knowledge and suggests consulting official records, which does not align with the reference answer."
+        }
+      ]
+    },
+    "application_peak_rss_bytes": 765923328,
+    "neo4j_peak_bytes": 1423781658.624,
+    "peak_memory_bytes": 2187557502.976,
+    "memory_sampling_errors": [],
+    "usage_by_stage": {
+      "contamination": {
+        "tokens": 1717,
+        "cost_usd": 0.0008453949,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "classic": {
+        "tokens": 8935,
+        "cost_usd": 0.0033544323,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "classic:judge": {
+        "tokens": 7400,
+        "cost_usd": 0.0030620255,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "own": {
+        "tokens": 10239,
+        "cost_usd": 0.003827949000000001,
+        "calls": 41,
+        "cost_reported_calls": 41
+      },
+      "own:judge": {
+        "tokens": 3527,
+        "cost_usd": 0.0014109489,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "own+subagents": {
+        "tokens": 95692,
+        "cost_usd": 0.027266855000000007,
+        "calls": 53,
+        "cost_reported_calls": 53
+      },
+      "own+subagents:judge": {
+        "tokens": 5332,
+        "cost_usd": 0.0023284026,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "audit": {
+        "tokens": 1361,
+        "cost_usd": 0.0007870634,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "audit_sample_size": 100,
+    "audit_entity_count": 283,
+    "duplicate_entity_rate": 0.05,
+    "ungrounded_entity_rate": 0.0,
+    "grounding_flag_missing": 0,
+    "audit_pairs": [
+      {
+        "left": "d2618490-cc83-447f-9833-7d4200df21e0",
+        "right": "5cfb5a2b-8267-4fb0-a4d1-046a7550ba86",
+        "left_name": "supplier",
+        "right_name": "supplier",
+        "cosine": 1.0,
+        "same": true,
+        "rationale": "Both entities are labeled as 'supplier', indicating they refer to the same generic concept of a supplier."
+      },
+      {
+        "left": "4ce12a91-4cc3-43ac-8aa2-d782dc3f83d1",
+        "right": "f7b8382d-0ec6-40c8-8760-ec0be21d05dd",
+        "left_name": "6.25 million crowns",
+        "right_name": "12.6 million crowns",
+        "cosine": 0.9131450057029724,
+        "same": false,
+        "rationale": "The values '6.25 million crowns' and '12.6 million crowns' are not the same because they represent different numerical amounts. The first value is approximately half of the second value, indicating they refer to distinct quantities."
+      },
+      {
+        "left": "1797b2cb-297f-4042-96fe-c7c4a486c542",
+        "right": "d7acb653-0cf7-4f84-bdfd-38e4b3102533",
+        "left_name": "Sable Meridian Centre",
+        "right_name": "Sable Meridian Centre",
+        "cosine": 1.0,
+        "same": true,
+        "rationale": "Both names are identical, referring to the same entity."
+      },
+      {
+        "left": "1797b2cb-297f-4042-96fe-c7c4a486c542",
+        "right": "fa192f2c-754c-44cf-951f-a481db8d256b",
+        "left_name": "Sable Meridian Centre",
+        "right_name": "Sable Meridian Centre",
+        "cosine": 1.0,
+        "same": true,
+        "rationale": "The names 'Sable Meridian Centre' and 'Sable Meridian Centre' are identical in spelling and structure, indicating they refer to the same entity."
+      },
+      {
+        "left": "ac62b1f3-e7f3-46e7-8f4c-be019a80afb1",
+        "right": "04f1e981-e736-475f-a63a-1b4574a0c819",
+        "left_name": "Dovetail Quay 2",
+        "right_name": "Dovetail Quay 3",
+        "cosine": 0.8877055644989014,
+        "same": false,
+        "rationale": "The names 'Dovetail Quay 2' and 'Dovetail Quay 3' differ in their numerical identifiers ('2' vs. '3'). These identifiers suggest distinct entities, likely separate locations or units within the same complex or area."
+      },
+      {
+        "left": "3a3b49c2-41e6-418d-9ee3-b1d744f0d4d4",
+        "right": "07ef0e9c-262e-4f89-93a3-735932aadede",
+        "left_name": "TMC chief",
+        "right_name": "TMC",
+        "cosine": 0.8872036933898926,
+        "same": true,
+        "rationale": "The term 'TMC chief' refers to the leader or head of the TMC (Trinamool Congress), which is a political party in India. 'TMC' is the abbreviation of the party itself. Since 'TMC chief' is a specific role within the TMC, it inherently refers to the same entity as 'TMC' in the context of political leadership. Therefore, they refer to the same real identity."
+      },
+      {
+        "left": "3a3b49c2-41e6-418d-9ee3-b1d744f0d4d4",
+        "right": "2e2fd4d3-99ca-48cd-a595-623e316610d8",
+        "left_name": "TMC chief",
+        "right_name": "TMC",
+        "cosine": 0.8872036933898926,
+        "same": true,
+        "rationale": "The term 'TMC chief' likely refers to the leader or head of the TMC (Trinamool Congress), which is a political party in India. Since 'TMC' is the abbreviation for Trinamool Congress, 'TMC chief' and 'TMC' refer to the same entity in this context, with 'TMC chief' specifying the leader of the organization."
+      },
+      {
+        "left": "3a3b49c2-41e6-418d-9ee3-b1d744f0d4d4",
+        "right": "406afbbd-858b-46df-aa3c-76f4f6f4ede7",
+        "left_name": "TMC chief",
+        "right_name": "TMC",
+        "cosine": 0.8872036933898926,
+        "same": true,
+        "rationale": "TMC chief refers to the leader of TMC, which is the same as TMC when considering the organization and its leadership as representing the same entity."
+      },
+      {
+        "left": "ada68412-e1ae-45b3-9619-e5ffe0815951",
+        "right": "91119330-8c06-4670-b91c-aeaa7b66b45e",
+        "left_name": "manufacturing divisions",
+        "right_name": "manufacturing divisions",
+        "cosine": 1.0,
+        "same": true,
+        "rationale": "Both entity names are identical, referring to the same concept of 'manufacturing divisions'."
+      },
+      {
+        "left": "f8a04d73-fb4a-460f-a5d5-71ee3b8e9f6d",
+        "right": "6a657da4-98f9-42ec-84af-b4c42a0dc6e5",
+        "left_name": "company secretary",
+        "right_name": "company secretary",
+        "cosine": 0.9999999403953552,
+        "same": true,
+        "rationale": "Both entities are explicitly identified as 'company secretary', which is a specific role within a company. Since the titles are identical and there is no indication of aliases or differing contexts, they refer to the same real identity."
+      },
+      {
+        "left": "f8a04d73-fb4a-460f-a5d5-71ee3b8e9f6d",
+        "right": "c56a3b67-36d8-442c-afe2-3d620f419805",
+        "left_name": "company secretary",
+        "right_name": "company secretary",
+        "cosine": 0.9999999403953552,
+        "same": true,
+        "rationale": "Both entity names are identical and refer to the same role or position, 'company secretary'."
+      },
+      {
+        "left": "f7b8382d-0ec6-40c8-8760-ec0be21d05dd",
+        "right": "4ce12a91-4cc3-43ac-8aa2-d782dc3f83d1",
+        "left_name": "12.6 million crowns",
+        "right_name": "6.25 million crowns",
+        "cosine": 0.9131450057029724,
+        "same": false,
+        "rationale": "The values '12.6 million crowns' and '6.25 million crowns' are numerically different and do not refer to the same amount of currency."
+      }
+    ],
+    "ingestion_item_usage": {
+      "0-leader": {
+        "tokens": 15020,
+        "cost_usd": 0.0059892606999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "1-leader": {
+        "tokens": 25497,
+        "cost_usd": 0.008921736699999998,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "2-leader": {
+        "tokens": 31246,
+        "cost_usd": 0.011325272099999999,
+        "calls": 19,
+        "cost_reported_calls": 19
+      },
+      "3-leader": {
+        "tokens": 27163,
+        "cost_usd": 0.0093742635,
+        "calls": 15,
+        "cost_reported_calls": 15
+      },
+      "4-leader": {
+        "tokens": 29629,
+        "cost_usd": 0.0151361527,
+        "calls": 11,
+        "cost_reported_calls": 11
+      },
+      "5-leader": {
+        "tokens": 34461,
+        "cost_usd": 0.012198417200000002,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "6-leader": {
+        "tokens": 35196,
+        "cost_usd": 0.0116417017,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "7-leader": {
+        "tokens": 22321,
+        "cost_usd": 0.0079904907,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "8-leader": {
+        "tokens": 20670,
+        "cost_usd": 0.0070086449,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "9-leader": {
+        "tokens": 31083,
+        "cost_usd": 0.010252543000000001,
+        "calls": 15,
+        "cost_reported_calls": 15
+      },
+      "0-funding": {
+        "tokens": 24394,
+        "cost_usd": 0.008702639499999998,
+        "calls": 13,
+        "cost_reported_calls": 13
+      },
+      "1-funding": {
+        "tokens": 18102,
+        "cost_usd": 0.005991695700000001,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "2-funding": {
+        "tokens": 48125,
+        "cost_usd": 0.0170801582,
+        "calls": 25,
+        "cost_reported_calls": 25
+      },
+      "3-funding": {
+        "tokens": 53793,
+        "cost_usd": 0.019323630400000003,
+        "calls": 26,
+        "cost_reported_calls": 26
+      },
+      "4-funding": {
+        "tokens": 49228,
+        "cost_usd": 0.0171308642,
+        "calls": 23,
+        "cost_reported_calls": 23
+      },
+      "5-funding": {
+        "tokens": 45311,
+        "cost_usd": 0.015120499499999999,
+        "calls": 20,
+        "cost_reported_calls": 20
+      },
+      "6-funding": {
+        "tokens": 41650,
+        "cost_usd": 0.014317926299999997,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "7-funding": {
+        "tokens": 59126,
+        "cost_usd": 0.019887685600000003,
+        "calls": 29,
+        "cost_reported_calls": 29
+      },
+      "8-funding": {
+        "tokens": 48203,
+        "cost_usd": 0.0160865774,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "9-funding": {
+        "tokens": 51884,
+        "cost_usd": 0.017581377600000003,
+        "calls": 23,
+        "cost_reported_calls": 23
+      },
+      "0-study": {
+        "tokens": 16239,
+        "cost_usd": 0.005269319999999999,
+        "calls": 7,
+        "cost_reported_calls": 7
+      },
+      "1-study": {
+        "tokens": 16499,
+        "cost_usd": 0.0049859558,
+        "calls": 6,
+        "cost_reported_calls": 6
+      },
+      "2-study": {
+        "tokens": 20471,
+        "cost_usd": 0.007259124599999999,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "3-study": {
+        "tokens": 21652,
+        "cost_usd": 0.0075291154,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "4-study": {
+        "tokens": 17315,
+        "cost_usd": 0.0053173394,
+        "calls": 7,
+        "cost_reported_calls": 7
+      },
+      "5-study": {
+        "tokens": 18901,
+        "cost_usd": 0.0058438788,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "6-study": {
+        "tokens": 23799,
+        "cost_usd": 0.0079714881,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "7-study": {
+        "tokens": 19170,
+        "cost_usd": 0.0061548545,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "8-study": {
+        "tokens": 19388,
+        "cost_usd": 0.006294423,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "9-study": {
+        "tokens": 20724,
+        "cost_usd": 0.0067480809999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "0-deal": {
+        "tokens": 33302,
+        "cost_usd": 0.010762730599999997,
+        "calls": 15,
+        "cost_reported_calls": 15
+      },
+      "1-deal": {
+        "tokens": 19477,
+        "cost_usd": 0.006395543000000001,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "2-deal": {
+        "tokens": 36473,
+        "cost_usd": 0.011948025700000002,
+        "calls": 16,
+        "cost_reported_calls": 16
+      },
+      "3-deal": {
+        "tokens": 18172,
+        "cost_usd": 0.0058107944,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "4-deal": {
+        "tokens": 29473,
+        "cost_usd": 0.009575703799999998,
+        "calls": 15,
+        "cost_reported_calls": 15
+      },
+      "5-deal": {
+        "tokens": 21069,
+        "cost_usd": 0.0072231738000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "6-deal": {
+        "tokens": 17316,
+        "cost_usd": 0.0057656553,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "7-deal": {
+        "tokens": 51742,
+        "cost_usd": 0.016924734099999998,
+        "calls": 22,
+        "cost_reported_calls": 22
+      },
+      "8-deal": {
+        "tokens": 19651,
+        "cost_usd": 0.0066443542,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "9-deal": {
+        "tokens": 22233,
+        "cost_usd": 0.007251127700000001,
+        "calls": 11,
+        "cost_reported_calls": 11
+      },
+      "0-recall": {
+        "tokens": 26798,
+        "cost_usd": 0.0091837819,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "1-recall": {
+        "tokens": 19914,
+        "cost_usd": 0.006510576300000001,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "2-recall": {
+        "tokens": 18810,
+        "cost_usd": 0.0065078304,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "3-recall": {
+        "tokens": 18312,
+        "cost_usd": 0.0060522067999999995,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "4-recall": {
+        "tokens": 41206,
+        "cost_usd": 0.014539563000000005,
+        "calls": 19,
+        "cost_reported_calls": 19
+      },
+      "5-recall": {
+        "tokens": 28634,
+        "cost_usd": 0.0091968768,
+        "calls": 13,
+        "cost_reported_calls": 13
+      },
+      "6-recall": {
+        "tokens": 37948,
+        "cost_usd": 0.0129371937,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "7-recall": {
+        "tokens": 30076,
+        "cost_usd": 0.0101236336,
+        "calls": 14,
+        "cost_reported_calls": 14
+      },
+      "8-recall": {
+        "tokens": 10507,
+        "cost_usd": 0.003722559,
+        "calls": 6,
+        "cost_reported_calls": 6
+      },
+      "9-recall": {
+        "tokens": 22658,
+        "cost_usd": 0.007456949,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "0-appointment": {
+        "tokens": 48442,
+        "cost_usd": 0.0164326498,
+        "calls": 22,
+        "cost_reported_calls": 22
+      },
+      "1-appointment": {
+        "tokens": 43649,
+        "cost_usd": 0.0150838663,
+        "calls": 20,
+        "cost_reported_calls": 20
+      },
+      "2-appointment": {
+        "tokens": 27270,
+        "cost_usd": 0.008978112699999999,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "3-appointment": {
+        "tokens": 44525,
+        "cost_usd": 0.015181692500000002,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "4-appointment": {
+        "tokens": 36418,
+        "cost_usd": 0.012171446999999998,
+        "calls": 16,
+        "cost_reported_calls": 16
+      },
+      "5-appointment": {
+        "tokens": 22039,
+        "cost_usd": 0.0071860707999999995,
+        "calls": 11,
+        "cost_reported_calls": 11
+      },
+      "6-appointment": {
+        "tokens": 49232,
+        "cost_usd": 0.017098794599999998,
+        "calls": 23,
+        "cost_reported_calls": 23
+      },
+      "7-appointment": {
+        "tokens": 46578,
+        "cost_usd": 0.0163017941,
+        "calls": 21,
+        "cost_reported_calls": 21
+      },
+      "8-appointment": {
+        "tokens": 60336,
+        "cost_usd": 0.019672079600000003,
+        "calls": 26,
+        "cost_reported_calls": 26
+      },
+      "9-appointment": {
+        "tokens": 41892,
+        "cost_usd": 0.014238812200000001,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "0-cancel": {
+        "tokens": 26753,
+        "cost_usd": 0.009144722499999999,
+        "calls": 13,
+        "cost_reported_calls": 13
+      },
+      "1-cancel": {
+        "tokens": 15920,
+        "cost_usd": 0.005192684800000001,
+        "calls": 7,
+        "cost_reported_calls": 7
+      },
+      "2-cancel": {
+        "tokens": 31478,
+        "cost_usd": 0.010541054999999999,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "3-cancel": {
+        "tokens": 14972,
+        "cost_usd": 0.0051423883,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "4-cancel": {
+        "tokens": 21424,
+        "cost_usd": 0.0073406849,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "5-cancel": {
+        "tokens": 19018,
+        "cost_usd": 0.0065442499,
+        "calls": 7,
+        "cost_reported_calls": 7
+      },
+      "6-cancel": {
+        "tokens": 34101,
+        "cost_usd": 0.011590920499999997,
+        "calls": 16,
+        "cost_reported_calls": 16
+      },
+      "7-cancel": {
+        "tokens": 53540,
+        "cost_usd": 0.0177404651,
+        "calls": 25,
+        "cost_reported_calls": 25
+      },
+      "8-cancel": {
+        "tokens": 22095,
+        "cost_usd": 0.0070537159,
+        "calls": 11,
+        "cost_reported_calls": 11
+      },
+      "9-cancel": {
+        "tokens": 23943,
+        "cost_usd": 0.0083471792,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "0-decoy": {
+        "tokens": 25331,
+        "cost_usd": 0.008754323,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "1-decoy": {
+        "tokens": 42728,
+        "cost_usd": 0.013616695599999997,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "2-decoy": {
+        "tokens": 54232,
+        "cost_usd": 0.0184191472,
+        "calls": 24,
+        "cost_reported_calls": 24
+      },
+      "3-decoy": {
+        "tokens": 39579,
+        "cost_usd": 0.013032645399999999,
+        "calls": 16,
+        "cost_reported_calls": 16
+      },
+      "4-decoy": {
+        "tokens": 45257,
+        "cost_usd": 0.015362594100000002,
+        "calls": 19,
+        "cost_reported_calls": 19
+      },
+      "5-decoy": {
+        "tokens": 32358,
+        "cost_usd": 0.0107784485,
+        "calls": 14,
+        "cost_reported_calls": 14
+      },
+      "6-decoy": {
+        "tokens": 40356,
+        "cost_usd": 0.0128704122,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "7-decoy": {
+        "tokens": 44516,
+        "cost_usd": 0.0147914815,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "8-decoy": {
+        "tokens": 26666,
+        "cost_usd": 0.0089717008,
+        "calls": 12,
+        "cost_reported_calls": 12
+      },
+      "9-decoy": {
+        "tokens": 19124,
+        "cost_usd": 0.006460317499999999,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "0-fresh": {
+        "tokens": 22167,
+        "cost_usd": 0.0077752907000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "1-fresh": {
+        "tokens": 26684,
+        "cost_usd": 0.009264280599999999,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "2-fresh": {
+        "tokens": 19808,
+        "cost_usd": 0.0065304974,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "3-fresh": {
+        "tokens": 40093,
+        "cost_usd": 0.013832027800000002,
+        "calls": 18,
+        "cost_reported_calls": 18
+      },
+      "4-fresh": {
+        "tokens": 22494,
+        "cost_usd": 0.007433197999999999,
+        "calls": 11,
+        "cost_reported_calls": 11
+      },
+      "5-fresh": {
+        "tokens": 24860,
+        "cost_usd": 0.008727976500000002,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "6-fresh": {
+        "tokens": 20361,
+        "cost_usd": 0.0070805931,
+        "calls": 9,
+        "cost_reported_calls": 9
+      },
+      "7-fresh": {
+        "tokens": 23075,
+        "cost_usd": 0.0077808294000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "8-fresh": {
+        "tokens": 25425,
+        "cost_usd": 0.008923729799999999,
+        "calls": 10,
+        "cost_reported_calls": 10
+      },
+      "9-fresh": {
+        "tokens": 21711,
+        "cost_usd": 0.0069285525,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "ingestion_routing_accuracy": 0.6333333333333333,
+    "snapshot_validation": "PASS: matching dataset, exact item set, all written, all queue jobs done",
+    "snapshot_construction_seconds": 11357.69895029068,
+    "ingestion_status_counts": {
+      "written": 90,
+      "unsorted": 0,
+      "failed": 0
+    },
+    "freshness_questions": {
+      "v2-q07": {
+        "0-fresh": {
+          "write_lag_seconds": 85.55763530731201,
+          "answerable_lag_seconds": null,
+          "probes": [
+            {
+              "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November date in the provided context.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession as AX-49, which is one of the key facts. However, it fails to confirm the November date, which is part of the required scope. Therefore, the score is 1 for partially correct information."
+            },
+            {
+              "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November replication archive in the provided context.",
+              "score": 0,
+              "rationale": "The answer incorrectly states that there is no mention of a November replication archive, which contradicts the reference answer that specifies AX-49 as the identifier for the November replication archive. Therefore, the answer does not meet the required criteria for accuracy."
+            },
+            {
+              "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no evidence in the provided context to suggest that this archive is specifically from November, so the month cannot be confirmed.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession number AX-49 for the Wispcoil replication archive, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+            }
+          ]
+        }
+      },
+      "v2-q14": {
+        "1-fresh": {
+          "write_lag_seconds": 105.7998960018158,
+          "answerable_lag_seconds": null,
+          "probes": [
+            {
+              "answer": "Based on the provided context, the accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context shows that:\n- JBI deposited the Morrowcell replication archive under accession QD-18 [1]\n- Morrowcell is an experimental energy membrane developed by JBI [3]\n\nNo other accessions or dates are provided for Morrowcell in the given passages.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession QD-18 for the Morrowcell replication archive, which aligns with the key fact in the reference. However, it fails to address the specific November date mentioned in the question, which is a required detail. Therefore, the answer is partially correct but incomplete."
+            },
+            {
+              "answer": "Based on the provided context, the replication archive for Morrowcell is identified by accession QD-18 [1]. There is no mention of a November date in the context, so the evidence is insufficient to confirm whether QD-18 corresponds to a November archive. \n\nThe only other replication archive mentioned is AX-49 for Wispcoil [2], which is unrelated to Morrowcell.",
+              "score": 0,
+              "rationale": "The answer incorrectly states that there is no mention of a November date in the context, which contradicts the question's explicit request for the November replication archive. The answer also fails to confirm the correct accession QD-18 for the November archive, despite it being the key fact in the reference. Therefore, the answer does not meet the required criteria for correctness."
+            },
+            {
+              "answer": "The accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no evidence provided to suggest that this accession is specifically for November, so the claim cannot be further supported regarding the month.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession QD-18 but fails to confirm the November scope as required by the question, thus missing a key fact."
+            }
+          ]
+        }
+      },
+      "v2-q21": {
+        "2-fresh": {
+          "write_lag_seconds": 54.39514493942261,
+          "answerable_lag_seconds": 104.58164548873901,
+          "probes": [
+            {
+              "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1]. This is supported by the context stating \"The SMC team deposited the replication archive for Kiteglass under accession VT-73\" and explicitly noting \"VT-73 is the accession identifier for Kiteglass.\" There is no mention of a November date in the provided context.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the Kiteglass replication archive, which is one of the key facts. However, it fails to mention the November date scope as requested in the question, which is a required key fact. Therefore, the answer is partially correct but incomplete."
+            },
+            {
+              "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1].",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the November replication archive for Kiteglass, matching the reference answer and key facts provided."
+            }
+          ]
+        }
+      },
+      "v2-q28": {
+        "3-fresh": {
+          "write_lag_seconds": 95.03437066078186,
+          "answerable_lag_seconds": 113.57055187225342,
+          "probes": [
+            {
+              "answer": "The replication archive for Thistledrive is identified by accession BK-26 [1]. \n\nThe archive includes:\n- Instrument settings [1]\n- A description of excluded samples [1]\n- Anonymized batch measurements (preferred) [1]\n\nEach file in the archive is accompanied by a checksum, and the archive helps maintain reproducibility of published analyses [1]. The IDL team deposited this archive, with Neri Solvek having supervised the instrument calibration at IDL [2].",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession 'BK-26' for the November replication archive for Thistledrive, which matches the key fact provided in the reference answer. The additional details about the archive's contents and the role of the IDL team, while not part of the key facts, do not detract from the correctness of the answer."
+            }
+          ]
+        }
+      },
+      "v2-q35": {
+        "4-fresh": {
+          "write_lag_seconds": 76.70427918434143,
+          "answerable_lag_seconds": 97.20936155319214,
+          "probes": [
+            {
+              "answer": "The November replication archive for Rillmesh is identified by accession SM-91 [1]. \n\n(Note: While [2] provides details about replication archives generally, it specifically refers to Thistledrive under accession BK-26, not Rillmesh. The information about Rillmesh's accession comes solely from [1].)",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession SM-91 as the identifier for the November replication archive for Rillmesh, which matches the reference answer and includes the key fact. The additional note clarifies the source of the information, reinforcing the accuracy of the response."
+            }
+          ]
+        }
+      },
+      "v2-q40": {
+        "5-fresh": {
+          "write_lag_seconds": 123.54164361953735,
+          "answerable_lag_seconds": 139.83367276191711,
+          "probes": [
+            {
+              "answer": "The November replication archive for Emberfoil is identified by accession **ER-35** [1].",
+              "score": 2,
+              "rationale": "The answer correctly identifies the November replication archive for Emberfoil as ER-35, matching the reference answer and including all key facts."
+            }
+          ]
+        }
+      },
+      "v2-q45": {
+        "6-fresh": {
+          "write_lag_seconds": 79.96994113922119,
+          "answerable_lag_seconds": 141.75370621681213,
+          "probes": [
+            {
+              "answer": "The replication archive for Driftloom is identified by accession **UP-62**, as deposited by the ORL team [2]. \n\n(Note: While the question specifies \"November,\" the context does not provide a deposition date for Driftloom's archive, only for Thistledrive's archive in November [1]. The accession identifier itself is confirmed in [2].)",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession **UP-62** for Driftloom's replication archive, which aligns with the key fact in the reference. However, it fails to confirm the November time scope explicitly, as noted in the answer itself. Since the question specifically asks for the November replication archive, the omission of this detail results in a partial score."
+            },
+            {
+              "answer": "The November replication archive for Driftloom is identified by the accession **UP-62**. This is supported by [2], which states that the replication archive for Driftloom has the accession identifier UP-62.",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession for the November replication archive for Driftloom as UP-62, which matches the reference answer and includes the key fact."
+            }
+          ]
+        }
+      },
+      "v2-q50": {
+        "7-fresh": {
+          "write_lag_seconds": 101.51304984092712,
+          "answerable_lag_seconds": 179.64773964881897,
+          "probes": [
+            {
+              "answer": "Based on the provided context, the replication archive for Glimmerpod is identified under accession CW-14 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context also shows that:\n- Thistledrive's replication archive is under BK-26 [2]\n- Emberfoil's replication archive is under ER-35 [3]\n\nNo other accessions are mentioned for Glimmerpod in the provided passages.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession CW-14 for the Glimmerpod replication archive, which aligns with the reference answer. However, it fails to confirm the November date, which is a key fact in the question. The additional information about Thistledrive and Emberfoil is irrelevant to the question and does not contribute to the score. Therefore, the answer is partially correct but incomplete."
+            },
+            {
+              "answer": "The accession that identifies the replication archive for Glimmerpod is **CW-14** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession as CW-14, which is the key fact required by the reference answer. The mention of the month being unconfirmed does not detract from the correctness of the provided key fact."
+            }
+          ]
+        }
+      },
+      "v2-q55": {
+        "8-fresh": {
+          "write_lag_seconds": 112.03412389755249,
+          "answerable_lag_seconds": 223.63267922401428,
+          "probes": [
+            {
+              "answer": "The replication archive for Frostweave is identified by accession JF-87 [1]. \n\nThere is no evidence in the provided context about when this archive was deposited (e.g., November or any other month), so I cannot confirm the month of deposition. The only information available is the accession number JF-87 for Frostweave's replication archive.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession number JF-87 for Frostweave's replication archive, which is a key fact. However, it fails to confirm the November time scope, which is explicitly requested in the question. Therefore, the answer is partially correct but incomplete."
+            },
+            {
+              "answer": "The replication archive for Frostweave is identified by the accession **JF-87** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the key fact in the reference. However, it incorrectly states that there is no mention of a \"November\" replication archive, which contradicts the question's explicit request for the November replication archive. Since the answer partially meets the requirements but misses the specific time scope, it scores 1."
+            },
+            {
+              "answer": "The replication archive for Frostweave is identified by accession **JF-87** [1]. \n\nThere is no evidence in the provided context about a \"November\" replication archive specifically; the only mentioned Frostweave replication archive is under accession JF-87. If the question implies there are multiple archives for Frostweave (e.g., one for November), the context does not support this claim. Only one Frostweave replication archive is documented, with no temporal distinctions. \n\nFor completeness:\n- Thistledrive's replication archive is under **BK-26** [2]\n- Emberfoil's replication archive is under **ER-35** [3]",
+              "score": 2,
+              "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the reference answer. While the answer notes the absence of specific temporal distinctions (e.g., November) in the context, it accurately provides the requested accession, fulfilling the key fact requirement."
+            }
+          ]
+        }
+      },
+      "v2-q60": {
+        "9-fresh": {
+          "write_lag_seconds": 63.6337354183197,
+          "answerable_lag_seconds": null,
+          "probes": [
+            {
+              "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence provided in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession as NZ-53, which is a key fact from the reference. However, it incorrectly states that the month cannot be confirmed, which is part of the required scope in the question. Therefore, the answer is partially correct but misses a required fact."
+            },
+            {
+              "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+              "score": 0,
+              "rationale": "The answer correctly identifies the accession NZ-53 but fails to confirm the November replication archive, which is a key fact in the question. Since the answer does not fully address the requested time scope, it scores 0."
+            },
+            {
+              "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the provided context to suggest that this replication archive is specifically for November, as the month is not mentioned in any of the passages.",
+              "score": 1,
+              "rationale": "The answer correctly identifies the accession NZ-53 for the replication archive of Pebbleflux, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+            }
+          ]
+        }
+      }
+    },
+    "freshness_method": "Recorded injection wall-clock to written and first grounded, judge-correct answer probe during snapshot construction; frozen snapshots reuse these measurements without re-ingestion. Probe lag is an upper bound.",
+    "freshness": {
+      "0-fresh": {
+        "write_lag_seconds": 85.55763530731201,
+        "answerable_lag_seconds": null,
+        "probes": [
+          {
+            "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November date in the provided context.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession as AX-49, which is one of the key facts. However, it fails to confirm the November date, which is part of the required scope. Therefore, the score is 1 for partially correct information."
+          },
+          {
+            "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November replication archive in the provided context.",
+            "score": 0,
+            "rationale": "The answer incorrectly states that there is no mention of a November replication archive, which contradicts the reference answer that specifies AX-49 as the identifier for the November replication archive. Therefore, the answer does not meet the required criteria for accuracy."
+          },
+          {
+            "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no evidence in the provided context to suggest that this archive is specifically from November, so the month cannot be confirmed.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession number AX-49 for the Wispcoil replication archive, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+          }
+        ]
+      },
+      "1-fresh": {
+        "write_lag_seconds": 105.7998960018158,
+        "answerable_lag_seconds": null,
+        "probes": [
+          {
+            "answer": "Based on the provided context, the accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context shows that:\n- JBI deposited the Morrowcell replication archive under accession QD-18 [1]\n- Morrowcell is an experimental energy membrane developed by JBI [3]\n\nNo other accessions or dates are provided for Morrowcell in the given passages.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession QD-18 for the Morrowcell replication archive, which aligns with the key fact in the reference. However, it fails to address the specific November date mentioned in the question, which is a required detail. Therefore, the answer is partially correct but incomplete."
+          },
+          {
+            "answer": "Based on the provided context, the replication archive for Morrowcell is identified by accession QD-18 [1]. There is no mention of a November date in the context, so the evidence is insufficient to confirm whether QD-18 corresponds to a November archive. \n\nThe only other replication archive mentioned is AX-49 for Wispcoil [2], which is unrelated to Morrowcell.",
+            "score": 0,
+            "rationale": "The answer incorrectly states that there is no mention of a November date in the context, which contradicts the question's explicit request for the November replication archive. The answer also fails to confirm the correct accession QD-18 for the November archive, despite it being the key fact in the reference. Therefore, the answer does not meet the required criteria for correctness."
+          },
+          {
+            "answer": "The accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no evidence provided to suggest that this accession is specifically for November, so the claim cannot be further supported regarding the month.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession QD-18 but fails to confirm the November scope as required by the question, thus missing a key fact."
+          }
+        ]
+      },
+      "2-fresh": {
+        "write_lag_seconds": 54.39514493942261,
+        "answerable_lag_seconds": 104.58164548873901,
+        "probes": [
+          {
+            "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1]. This is supported by the context stating \"The SMC team deposited the replication archive for Kiteglass under accession VT-73\" and explicitly noting \"VT-73 is the accession identifier for Kiteglass.\" There is no mention of a November date in the provided context.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the Kiteglass replication archive, which is one of the key facts. However, it fails to mention the November date scope as requested in the question, which is a required key fact. Therefore, the answer is partially correct but incomplete."
+          },
+          {
+            "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1].",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the November replication archive for Kiteglass, matching the reference answer and key facts provided."
+          }
+        ]
+      },
+      "3-fresh": {
+        "write_lag_seconds": 95.03437066078186,
+        "answerable_lag_seconds": 113.57055187225342,
+        "probes": [
+          {
+            "answer": "The replication archive for Thistledrive is identified by accession BK-26 [1]. \n\nThe archive includes:\n- Instrument settings [1]\n- A description of excluded samples [1]\n- Anonymized batch measurements (preferred) [1]\n\nEach file in the archive is accompanied by a checksum, and the archive helps maintain reproducibility of published analyses [1]. The IDL team deposited this archive, with Neri Solvek having supervised the instrument calibration at IDL [2].",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession 'BK-26' for the November replication archive for Thistledrive, which matches the key fact provided in the reference answer. The additional details about the archive's contents and the role of the IDL team, while not part of the key facts, do not detract from the correctness of the answer."
+          }
+        ]
+      },
+      "4-fresh": {
+        "write_lag_seconds": 76.70427918434143,
+        "answerable_lag_seconds": 97.20936155319214,
+        "probes": [
+          {
+            "answer": "The November replication archive for Rillmesh is identified by accession SM-91 [1]. \n\n(Note: While [2] provides details about replication archives generally, it specifically refers to Thistledrive under accession BK-26, not Rillmesh. The information about Rillmesh's accession comes solely from [1].)",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession SM-91 as the identifier for the November replication archive for Rillmesh, which matches the reference answer and includes the key fact. The additional note clarifies the source of the information, reinforcing the accuracy of the response."
+          }
+        ]
+      },
+      "5-fresh": {
+        "write_lag_seconds": 123.54164361953735,
+        "answerable_lag_seconds": 139.83367276191711,
+        "probes": [
+          {
+            "answer": "The November replication archive for Emberfoil is identified by accession **ER-35** [1].",
+            "score": 2,
+            "rationale": "The answer correctly identifies the November replication archive for Emberfoil as ER-35, matching the reference answer and including all key facts."
+          }
+        ]
+      },
+      "6-fresh": {
+        "write_lag_seconds": 79.96994113922119,
+        "answerable_lag_seconds": 141.75370621681213,
+        "probes": [
+          {
+            "answer": "The replication archive for Driftloom is identified by accession **UP-62**, as deposited by the ORL team [2]. \n\n(Note: While the question specifies \"November,\" the context does not provide a deposition date for Driftloom's archive, only for Thistledrive's archive in November [1]. The accession identifier itself is confirmed in [2].)",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession **UP-62** for Driftloom's replication archive, which aligns with the key fact in the reference. However, it fails to confirm the November time scope explicitly, as noted in the answer itself. Since the question specifically asks for the November replication archive, the omission of this detail results in a partial score."
+          },
+          {
+            "answer": "The November replication archive for Driftloom is identified by the accession **UP-62**. This is supported by [2], which states that the replication archive for Driftloom has the accession identifier UP-62.",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession for the November replication archive for Driftloom as UP-62, which matches the reference answer and includes the key fact."
+          }
+        ]
+      },
+      "7-fresh": {
+        "write_lag_seconds": 101.51304984092712,
+        "answerable_lag_seconds": 179.64773964881897,
+        "probes": [
+          {
+            "answer": "Based on the provided context, the replication archive for Glimmerpod is identified under accession CW-14 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context also shows that:\n- Thistledrive's replication archive is under BK-26 [2]\n- Emberfoil's replication archive is under ER-35 [3]\n\nNo other accessions are mentioned for Glimmerpod in the provided passages.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession CW-14 for the Glimmerpod replication archive, which aligns with the reference answer. However, it fails to confirm the November date, which is a key fact in the question. The additional information about Thistledrive and Emberfoil is irrelevant to the question and does not contribute to the score. Therefore, the answer is partially correct but incomplete."
+          },
+          {
+            "answer": "The accession that identifies the replication archive for Glimmerpod is **CW-14** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession as CW-14, which is the key fact required by the reference answer. The mention of the month being unconfirmed does not detract from the correctness of the provided key fact."
+          }
+        ]
+      },
+      "8-fresh": {
+        "write_lag_seconds": 112.03412389755249,
+        "answerable_lag_seconds": 223.63267922401428,
+        "probes": [
+          {
+            "answer": "The replication archive for Frostweave is identified by accession JF-87 [1]. \n\nThere is no evidence in the provided context about when this archive was deposited (e.g., November or any other month), so I cannot confirm the month of deposition. The only information available is the accession number JF-87 for Frostweave's replication archive.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession number JF-87 for Frostweave's replication archive, which is a key fact. However, it fails to confirm the November time scope, which is explicitly requested in the question. Therefore, the answer is partially correct but incomplete."
+          },
+          {
+            "answer": "The replication archive for Frostweave is identified by the accession **JF-87** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the key fact in the reference. However, it incorrectly states that there is no mention of a \"November\" replication archive, which contradicts the question's explicit request for the November replication archive. Since the answer partially meets the requirements but misses the specific time scope, it scores 1."
+          },
+          {
+            "answer": "The replication archive for Frostweave is identified by accession **JF-87** [1]. \n\nThere is no evidence in the provided context about a \"November\" replication archive specifically; the only mentioned Frostweave replication archive is under accession JF-87. If the question implies there are multiple archives for Frostweave (e.g., one for November), the context does not support this claim. Only one Frostweave replication archive is documented, with no temporal distinctions. \n\nFor completeness:\n- Thistledrive's replication archive is under **BK-26** [2]\n- Emberfoil's replication archive is under **ER-35** [3]",
+            "score": 2,
+            "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the reference answer. While the answer notes the absence of specific temporal distinctions (e.g., November) in the context, it accurately provides the requested accession, fulfilling the key fact requirement."
+          }
+        ]
+      },
+      "9-fresh": {
+        "write_lag_seconds": 63.6337354183197,
+        "answerable_lag_seconds": null,
+        "probes": [
+          {
+            "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence provided in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession as NZ-53, which is a key fact from the reference. However, it incorrectly states that the month cannot be confirmed, which is part of the required scope in the question. Therefore, the answer is partially correct but misses a required fact."
+          },
+          {
+            "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+            "score": 0,
+            "rationale": "The answer correctly identifies the accession NZ-53 but fails to confirm the November replication archive, which is a key fact in the question. Since the answer does not fully address the requested time scope, it scores 0."
+          },
+          {
+            "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the provided context to suggest that this replication archive is specifically for November, as the month is not mentioned in any of the passages.",
+            "score": 1,
+            "rationale": "The answer correctly identifies the accession NZ-53 for the replication archive of Pebbleflux, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+          }
+        ]
+      }
+    },
+    "freshness_max_lag_seconds": null,
+    "freshness_answerable_count": 7,
+    "freshness_target_seconds": 1200,
+    "total_tokens": 134203,
+    "total_cost_usd": 0.04288307160000001,
+    "judge_usage_by_configuration": {
+      "classic": {
+        "tokens": 7400,
+        "cost_usd": 0.0030620255,
+        "calls": 17,
+        "cost_reported_calls": 17
+      },
+      "own": {
+        "tokens": 3527,
+        "cost_usd": 0.0014109489,
+        "calls": 8,
+        "cost_reported_calls": 8
+      },
+      "own+subagents": {
+        "tokens": 5332,
+        "cost_usd": 0.0023284026,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "success_criteria": {
+      "classic: query routing recall": {
+        "value": 0.9333333333333333,
+        "target": 0.9,
+        "status": "PASS"
+      },
+      "classic: query routing precision": {
+        "value": 0.8333333333333334,
+        "target": 0.7,
+        "status": "PASS"
+      },
+      "classic: citation faithfulness": {
+        "value": 0.8,
+        "target": 0.9,
+        "status": "FAIL"
+      },
+      "classic: changed-fact accuracy": {
+        "value": 0.0,
+        "target": 0.8,
+        "status": "FAIL"
+      },
+      "classic: MRR / Hits@1 reported": {
+        "value": [
+          0.65,
+          0.6
+        ],
+        "target": "reported",
+        "status": "PASS"
+      },
+      "own: query routing recall": {
+        "value": 0.8666666666666667,
+        "target": 0.9,
+        "status": "FAIL"
+      },
+      "own: query routing precision": {
+        "value": 0.8333333333333334,
+        "target": 0.7,
+        "status": "PASS"
+      },
+      "own: citation faithfulness": {
+        "value": 0.6,
+        "target": 0.9,
+        "status": "FAIL"
+      },
+      "own: changed-fact accuracy": {
+        "value": 0.0,
+        "target": 0.8,
+        "status": "FAIL"
+      },
+      "own: MRR / Hits@1 reported": {
+        "value": [
+          0.4,
+          0.4
+        ],
+        "target": "reported",
+        "status": "PASS"
+      },
+      "own+subagents: query routing recall": {
+        "value": 0.7666666666666666,
+        "target": 0.9,
+        "status": "FAIL"
+      },
+      "own+subagents: query routing precision": {
+        "value": 0.8,
+        "target": 0.7,
+        "status": "PASS"
+      },
+      "own+subagents: citation faithfulness": {
+        "value": 0.5333333333333333,
+        "target": 0.9,
+        "status": "FAIL"
+      },
+      "own+subagents: changed-fact accuracy": {
+        "value": 0.0,
+        "target": 0.8,
+        "status": "FAIL"
+      },
+      "own+subagents: MRR / Hits@1 reported": {
+        "value": [
+          0.21666666666666667,
+          0.2
+        ],
+        "target": "reported",
+        "status": "PASS"
+      },
+      "graphiti: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED"
+      },
+      "own: multi-hop recall improvement": {
+        "value": -0.41666666666666663,
+        "target": 1e-12,
+        "status": "FAIL"
+      },
+      "own+subagents: multi-hop recall improvement": {
+        "value": -0.5833333333333333,
+        "target": 1e-12,
+        "status": "FAIL"
+      },
+      "Full system multi-hop correctness gain vs classic": {
+        "value": 0,
+        "target": 0.3,
+        "status": "FAIL"
+      },
+      "Full system multi-hop correctness gain vs external": {
+        "value": null,
+        "target": 0.3,
+        "status": "UNMEASURED"
+      },
+      "ingestion_routing_accuracy": {
+        "value": 0.6333333333333333,
+        "target": 0.85,
+        "status": "FAIL"
+      },
+      "duplicate_entity_rate": {
+        "value": 0.05,
+        "target": 0.05,
+        "status": "PASS"
+      },
+      "peak_memory_bytes": {
+        "value": 2187557502.976,
+        "target": 4294967296,
+        "status": "PASS"
+      },
+      "freshness max answerable lag seconds": {
+        "value": null,
+        "target": 1200,
+        "status": "FAIL",
+        "reason": "Not all ten injected items became answerable"
+      },
+      "entity audit sample size": {
+        "value": 100,
+        "target": 100,
+        "status": "PASS"
+      },
+      "ungrounded entity rate reported": {
+        "value": 0.0,
+        "target": "reported",
+        "status": "PASS"
+      }
+    }
+  },
+  "report_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T042405204307Z.md",
+  "csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T042405204307Z.questions.csv",
+  "configurations_csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T042405204307Z.configurations.csv"
+}

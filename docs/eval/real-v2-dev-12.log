@@ -1,0 +1,1038 @@
+Run 12: 0 completed pairs; checkpoint C:\Users\mehme\omnistream-integrated\data\snapshots\real-v2-dev\runs\12
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Ingested 1/76: 93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017 (written)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge c9d525c6-e260-4846-aaeb-ad979b0af3c6
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 957d6bc7-a0ae-4cbc-a318-3e22b180a116
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 6e49d955-7273-4106-b474-00309add10ce
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 4dc49150-6508-487e-854c-8ed6bbc8681b
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge bc8df21a-042e-4132-8763-e3536881e0e8
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 571f4e5a-4413-453e-ae68-fcf6997b6398
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 478f934b-1128-4251-bdd3-dd2558f54781
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge fa84cfa1-33f8-4455-9ec4-4b15950414fd
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge b843686c-d93a-49de-b7b5-59efff547574
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge ad91e99d-c2bd-4f5f-8225-84a8a845a2f1
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge 2a6be11b-4a87-4c89-b58f-c8572668dfc0
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Failed to extract timestamps for edge c0cd5482-734f-40df-a62a-2b89d7e4e92c
+Traceback (most recent call last):
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\utils\maintenance\edge_operations.py", line 814, in _extract_edge_timestamps
+    llm_response = await generate_prompt_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\graphiti_types.py", line 162, in generate_prompt_response
+    return await llm_client.generate_response(legacy_prompt(context), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 225, in generate_response
+    return await self._generate_response_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 232, in async_wrapped
+    return await copy(fn, *args, **kwargs)  # type: ignore[type-var]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 126, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 171, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\_utils.py", line 130, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\__init__.py", line 462, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 130, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\client.py", line 146, in _generate_response_with_retry
+    return await self._generate_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 112, in _generate_response
+    parsed = await super()._generate_response(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\graphiti_core\llm_client\openai_generic_client.py", line 157, in _generate_response
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\retrieval\graphiti_clients.py", line 50, in create
+    response = await self._completions.create(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\resources.py", line 50, in async_
+    result = await meter.async_(client, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 3414, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 2085, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mehme\omnistream-integrated\.venv\Lib\site-packages\openai\_base_client.py", line 1870, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 2/76: abdb6870e58e5fd3d4fe78331b46811327c412ea9304543badc53d26266768c2 (written)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 794add4a04e1cb249cc25f131eda9818f3646c74d334e70e7250b26b0ef5f521 attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 794add4a04e1cb249cc25f131eda9818f3646c74d334e70e7250b26b0ef5f521 attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 794add4a04e1cb249cc25f131eda9818f3646c74d334e70e7250b26b0ef5f521 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 3/76: e1eb2e3747448f44f6939458dea6ed041943e62b6d87b0acfb430221eef69b0e (failed)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item dd426e5152407fef517e58f5e79b5bc651ff025e646cd0c41ad844dc73761133 attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item dd426e5152407fef517e58f5e79b5bc651ff025e646cd0c41ad844dc73761133 attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item dd426e5152407fef517e58f5e79b5bc651ff025e646cd0c41ad844dc73761133 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 4/76: ef70a0662c5714d2a0ae1174851dcf7b67bf2d0bf2fde9c4cc36c1c3755c43e6 (failed)
+item e28877c91f593a43415b7990351c7dfde2fafd7f683ccd9874a82d77b27bdd19 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item e28877c91f593a43415b7990351c7dfde2fafd7f683ccd9874a82d77b27bdd19 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item e28877c91f593a43415b7990351c7dfde2fafd7f683ccd9874a82d77b27bdd19 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 5/76: 7a4b80e2e778f3a9ef1aa9d633bab26a50d7425b315d80e1b5ea54780ea276c2 (failed)
+item b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 6/76: d3ebd0012e800aaa6ea8a9fdb1558e474cefb414f58a52ec4640e30aab9e3af8 (failed)
+item 23a003dc8819db358ccaf5a22bd0905b1fb9b1dec3bd29cc1e84fa4db0907221 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 23a003dc8819db358ccaf5a22bd0905b1fb9b1dec3bd29cc1e84fa4db0907221 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 23a003dc8819db358ccaf5a22bd0905b1fb9b1dec3bd29cc1e84fa4db0907221 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 7/76: 90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549 (failed)
+item f4ce14e6fb9a87a2c270e2f90f7c3f28a56455b9de0b33b6a589e57d480c29bd attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f4ce14e6fb9a87a2c270e2f90f7c3f28a56455b9de0b33b6a589e57d480c29bd attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f4ce14e6fb9a87a2c270e2f90f7c3f28a56455b9de0b33b6a589e57d480c29bd failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 8/76: 321561f3ed881e6ce4981b3ece28e394a904037bb5a085db9a4bcd738b0b6e85 (failed)
+item bff9353ee2344c6bae19c577e9096dd951679b48c1a41fae8f2e71295ae507b2 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item bff9353ee2344c6bae19c577e9096dd951679b48c1a41fae8f2e71295ae507b2 attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item bff9353ee2344c6bae19c577e9096dd951679b48c1a41fae8f2e71295ae507b2 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 9/76: cbca4caf7812befeea30708db0c8b051ffca45803a3ee9bbef97893757cf3bc2 (failed)
+item f9390960d76da1162a74ef63871f0796704731d11ef21e5187aa70361792be48 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f9390960d76da1162a74ef63871f0796704731d11ef21e5187aa70361792be48 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f9390960d76da1162a74ef63871f0796704731d11ef21e5187aa70361792be48 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 10/76: 510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17 (failed)
+item 8a8ac997dbcb8179a8e986affbefebd5d5303d427726e59a9e8255f78fac5b54 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 8a8ac997dbcb8179a8e986affbefebd5d5303d427726e59a9e8255f78fac5b54 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 8a8ac997dbcb8179a8e986affbefebd5d5303d427726e59a9e8255f78fac5b54 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 11/76: 7fb6f8e1e2f0fede8f8dd96e3264859ac0f568165572f01182924099c2aa077c (failed)
+item 8774061655774577fd0f300f56a13f29c8358481e3051ed25c148c929aaa829d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 8774061655774577fd0f300f56a13f29c8358481e3051ed25c148c929aaa829d attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 8774061655774577fd0f300f56a13f29c8358481e3051ed25c148c929aaa829d failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 12/76: 43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b (failed)
+item b0589a3dd1988131cf06c0fb85d1452cd758dac730a52b6f3c8203ea28e03e8d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item b0589a3dd1988131cf06c0fb85d1452cd758dac730a52b6f3c8203ea28e03e8d attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item b0589a3dd1988131cf06c0fb85d1452cd758dac730a52b6f3c8203ea28e03e8d failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 13/76: fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c (failed)
+item 11acff17434161badfd6b6b7cbcc6df7aa1bdc13626f4a092d9f2452818a3e93 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 11acff17434161badfd6b6b7cbcc6df7aa1bdc13626f4a092d9f2452818a3e93 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 11acff17434161badfd6b6b7cbcc6df7aa1bdc13626f4a092d9f2452818a3e93 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 14/76: b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd (failed)
+item e1cbf5f7b66acff44fb780f9440f12d410a03c579b764a07f2029c4ca285cf6f attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item e1cbf5f7b66acff44fb780f9440f12d410a03c579b764a07f2029c4ca285cf6f attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item e1cbf5f7b66acff44fb780f9440f12d410a03c579b764a07f2029c4ca285cf6f failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 15/76: 5b0d68ba5fbfcf62570d6c0f77b8d83c446568890edc85525c411cf09a3b9a04 (failed)
+item 5ddd7daf311035860f9b51d52524ddb4d427a0b3d59ccd61e5b29e867660f166 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 5ddd7daf311035860f9b51d52524ddb4d427a0b3d59ccd61e5b29e867660f166 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 5ddd7daf311035860f9b51d52524ddb4d427a0b3d59ccd61e5b29e867660f166 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 16/76: d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073 (failed)
+item 68908872a9acd81a9cf8e52a9a1efc92a3d140f0ca5a88486433ce31a6d88b28 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 68908872a9acd81a9cf8e52a9a1efc92a3d140f0ca5a88486433ce31a6d88b28 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 68908872a9acd81a9cf8e52a9a1efc92a3d140f0ca5a88486433ce31a6d88b28 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 17/76: 054e8d678a39b5e5b399c61e32faeda1ee103fbfaf5ba199dbc7b4aed2488a12 (failed)
+item f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 18/76: 0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99 (failed)
+item 7e0a8e1302366777a0501c5557241224e6d3919230c6ff2823984c251b0f8019 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 7e0a8e1302366777a0501c5557241224e6d3919230c6ff2823984c251b0f8019 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 7e0a8e1302366777a0501c5557241224e6d3919230c6ff2823984c251b0f8019 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 19/76: e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573 (failed)
+item 9e40110c31329ea85add31ac9e272cbaf6dac2a143cf2fa16087c110ad2769b1 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 9e40110c31329ea85add31ac9e272cbaf6dac2a143cf2fa16087c110ad2769b1 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 9e40110c31329ea85add31ac9e272cbaf6dac2a143cf2fa16087c110ad2769b1 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 20/76: c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22 (failed)
+item c9db3a5067a1b4b633b394dd5e4a223627e8e778bc53855d0da3c1fd7a33de2f attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item c9db3a5067a1b4b633b394dd5e4a223627e8e778bc53855d0da3c1fd7a33de2f attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item c9db3a5067a1b4b633b394dd5e4a223627e8e778bc53855d0da3c1fd7a33de2f failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 21/76: af9cec61b351f14d2aba82c0615d6d585a86364aea640f42993a650daf868f24 (failed)
+item 996e19abf5d54ffb14a0d7c4ed79fa0ad7c7792c2270a4800efd563195c0c056 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 996e19abf5d54ffb14a0d7c4ed79fa0ad7c7792c2270a4800efd563195c0c056 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item 996e19abf5d54ffb14a0d7c4ed79fa0ad7c7792c2270a4800efd563195c0c056 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 22/76: 6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19 (failed)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item dc0c126bcc50f964ad5143dcd8d2d229f94c61caf496bf1b326d1afed864ba3a attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Ingested 23/76: 35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff (written)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item f67329eb835cfffb845452c644af6e657396ed4b8486635d0a9dcb696a253a20 attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item f67329eb835cfffb845452c644af6e657396ed4b8486635d0a9dcb696a253a20 attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item f67329eb835cfffb845452c644af6e657396ed4b8486635d0a9dcb696a253a20 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 24/76: 509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e (failed)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 80027ecd9a7dcb36636937115f36b0c83a42fc49d6386c96795d32b827ef9873 attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 80027ecd9a7dcb36636937115f36b0c83a42fc49d6386c96795d32b827ef9873 attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item 80027ecd9a7dcb36636937115f36b0c83a42fc49d6386c96795d32b827ef9873 failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 25/76: 57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943 (failed)
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e attempt 1 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e attempt 2 failed (APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+Error in generating LLM response: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+item ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e failed after 3 attempts: APIStatusError: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.
+Ingested 26/76: f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9 (failed)
+item 6ba62ad3d11f36406f20ab742e406521592dcc02f4a8bf2d8d1ef79d48331b88 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 6ba62ad3d11f36406f20ab742e406521592dcc02f4a8bf2d8d1ef79d48331b88 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 6ba62ad3d11f36406f20ab742e406521592dcc02f4a8bf2d8d1ef79d48331b88 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 27/76: 092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f (failed)
+item a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request would exceed your available credits given your current in-flight requests. Retry after in-flight requests settle, or add credits.); retrying
+item a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 28/76: fc43365ad835e7d7d715fe5bb6701f3fbbcf7038bbe5ed53b4022627a565861d (failed)
+Error in generating LLM response: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+item f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2 attempt 1 failed (APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+Error in generating LLM response: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+item f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2 attempt 2 failed (APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+Error in generating LLM response: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+item f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2 failed after 3 attempts: APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 29/76: 5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f (failed)
+item a3df7d529853bf09fb394f0e055eddeb278b068b8e921d2b287a52903f18e1d3 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item a3df7d529853bf09fb394f0e055eddeb278b068b8e921d2b287a52903f18e1d3 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item a3df7d529853bf09fb394f0e055eddeb278b068b8e921d2b287a52903f18e1d3 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 30/76: 8813ba810174959c6fae37bf17ae4ecb9b6c5c306eaa17d8708cc4fd74bb3834 (failed)
+item cbc5c10e604e3cf4ab9caaa1f59380c6d84e850949de94e5b6293da1ca9560bb attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item cbc5c10e604e3cf4ab9caaa1f59380c6d84e850949de94e5b6293da1ca9560bb attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 458. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item cbc5c10e604e3cf4ab9caaa1f59380c6d84e850949de94e5b6293da1ca9560bb failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 458. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 31/76: e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428 (failed)
+item 07f08fbcdf3210b4afc2c6c0a649e476efddce4f04918e6a88fdf0997964e670 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 07f08fbcdf3210b4afc2c6c0a649e476efddce4f04918e6a88fdf0997964e670 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 07f08fbcdf3210b4afc2c6c0a649e476efddce4f04918e6a88fdf0997964e670 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 32/76: 1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c (failed)
+item c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 372. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 298. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 33/76: b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2 (failed)
+item 5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 440. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 34/76: f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18 (failed)
+item 8879c163c489a01cf12904b2bec617d9de8994ed93ff616a3a9a7dda441bfed1 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 372. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 8879c163c489a01cf12904b2bec617d9de8994ed93ff616a3a9a7dda441bfed1 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 458. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 8879c163c489a01cf12904b2bec617d9de8994ed93ff616a3a9a7dda441bfed1 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 35/76: 04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171 (failed)
+item 6d546d24998756dd00c15b5e4c8803e438f745a690bb0e5efc0253532819cc8a attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 218. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 6d546d24998756dd00c15b5e4c8803e438f745a690bb0e5efc0253532819cc8a attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 541. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 6d546d24998756dd00c15b5e4c8803e438f745a690bb0e5efc0253532819cc8a failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 36/76: 839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc (failed)
+item 5109350a8ba34b727283ce332252b5f22875471c527ec42f41bf22099e198eb9 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 298. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 5109350a8ba34b727283ce332252b5f22875471c527ec42f41bf22099e198eb9 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 5109350a8ba34b727283ce332252b5f22875471c527ec42f41bf22099e198eb9 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 458. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 37/76: 62dae3fa9fdbfc1e285d25e8a2311ff6d9cd1063c7adbfeddd900f7f8b695601 (failed)
+item af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 268. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 352. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 298. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 38/76: 532cf528c4a38417cb72dbffd16869bdbbd330f3ea4b195eac7b51eb7961d162 (failed)
+item e539399e2503eafcf154fb95965148288a818b208a25555376af4204608c2fc4 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item e539399e2503eafcf154fb95965148288a818b208a25555376af4204608c2fc4 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 218. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item e539399e2503eafcf154fb95965148288a818b208a25555376af4204608c2fc4 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 218. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 39/76: 8a420c89e39394a457ce9afc154d53cab671514ad6fcf75c7e80561f05e2faa1 (failed)
+item c95f8d397fa7ff00a424d7d83912e06301e34669be76decfb7369d3b2635d4f4 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c95f8d397fa7ff00a424d7d83912e06301e34669be76decfb7369d3b2635d4f4 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c95f8d397fa7ff00a424d7d83912e06301e34669be76decfb7369d3b2635d4f4 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 40/76: 23e20026a4c06e9e316bfbc84039bebae86f1ada98c1fc4549db9382a2c55415 (failed)
+item c267eaf4588917c66855a129556d8c6ee1b6d5f9b490ef0b0f24a6cd18b20116 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 105. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c267eaf4588917c66855a129556d8c6ee1b6d5f9b490ef0b0f24a6cd18b20116 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 218. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c267eaf4588917c66855a129556d8c6ee1b6d5f9b490ef0b0f24a6cd18b20116 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 132. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 41/76: f67d2b7fe89fe2bcca2180f6aa1502531b8ed761e01ea624c8a04720b925230d (failed)
+item 59fecd573af7ee7b568b0c9462ed0d571bd6cee5e31cd2d44dd794e6d00dbe83 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 218. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 59fecd573af7ee7b568b0c9462ed0d571bd6cee5e31cd2d44dd794e6d00dbe83 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 59fecd573af7ee7b568b0c9462ed0d571bd6cee5e31cd2d44dd794e6d00dbe83 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 298. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 42/76: d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354 (failed)
+item 89f78d6ec068af0186c4859452ebfc8b528fae5d3a97ffd283c10b7f87a3aaf1 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 268. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 89f78d6ec068af0186c4859452ebfc8b528fae5d3a97ffd283c10b7f87a3aaf1 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 89f78d6ec068af0186c4859452ebfc8b528fae5d3a97ffd283c10b7f87a3aaf1 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 105. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 43/76: 8cde6de9ac503b5c55b786748d3052338dbe65ba6f16695bff16ee2c56f9b053 (failed)
+item c067cb824337572ee58a761a8c10260ad7802817edbcedfe000bdd9915e33cb2 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 174. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c067cb824337572ee58a761a8c10260ad7802817edbcedfe000bdd9915e33cb2 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item c067cb824337572ee58a761a8c10260ad7802817edbcedfe000bdd9915e33cb2 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 94. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 44/76: 8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3 (failed)
+item 31e3d9ee50f7ba631578b4442c494c26f35267bff16e53b16a0dbe46972e6e67 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 132. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 31e3d9ee50f7ba631578b4442c494c26f35267bff16e53b16a0dbe46972e6e67 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 31e3d9ee50f7ba631578b4442c494c26f35267bff16e53b16a0dbe46972e6e67 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 268. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 45/76: f51e164a1d7a7af4a6455211e50ca5c4f2c784bf505e98046ee49262941abf62 (failed)
+item b836206bce563803235a9403effe680fecdb8883f8a56e6c8c63b55fb6f78e95 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 132. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item b836206bce563803235a9403effe680fecdb8883f8a56e6c8c63b55fb6f78e95 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 132. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item b836206bce563803235a9403effe680fecdb8883f8a56e6c8c63b55fb6f78e95 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 268. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 46/76: 2ad289c95b532abebb4d28a2c9ebcb8e1feb663de82c4321b5952a269df7d3ff (failed)
+item 9188f815ff0d7d7d9b0c632d32d4d3375781328e2634c24b1f47cfba46e0c40d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 9188f815ff0d7d7d9b0c632d32d4d3375781328e2634c24b1f47cfba46e0c40d attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 9188f815ff0d7d7d9b0c632d32d4d3375781328e2634c24b1f47cfba46e0c40d failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 118. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 47/76: 2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb (failed)
+item 0151110879fdeae06a7b6cabceaaef144ad4ed5e7a16eaad94f50123272c5d85 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 132. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 0151110879fdeae06a7b6cabceaaef144ad4ed5e7a16eaad94f50123272c5d85 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 105. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 0151110879fdeae06a7b6cabceaaef144ad4ed5e7a16eaad94f50123272c5d85 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 48/76: 1ff30f2fbafc9172867581931c6bd586a774ec345dc01331f06c3110dabbb6e7 (failed)
+item ca5bcebb133bd630bb6bfadf4418727d88802b1180771399741789fcec6efce8 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 118. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item ca5bcebb133bd630bb6bfadf4418727d88802b1180771399741789fcec6efce8 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item ca5bcebb133bd630bb6bfadf4418727d88802b1180771399741789fcec6efce8 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 49/76: 8faa6a570793c3ac0fadfeed24a0aa5b685f16baf40aaa2b6958aa2e9ef81be3 (failed)
+item feab2d446a0a123f648b820570050d7c281e0815896e644874807728d900b10f attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item feab2d446a0a123f648b820570050d7c281e0815896e644874807728d900b10f attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item feab2d446a0a123f648b820570050d7c281e0815896e644874807728d900b10f failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 50/76: f8b9ae043c403e0ffb915e3e4859f7ece21744b70de935c813e074aaa033026b (failed)
+item ed1c82c2181fa900544010cafea54e4c0cd5fbacedcd028ed152cea4d762b2b7 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item ed1c82c2181fa900544010cafea54e4c0cd5fbacedcd028ed152cea4d762b2b7 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 162. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item ed1c82c2181fa900544010cafea54e4c0cd5fbacedcd028ed152cea4d762b2b7 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 118. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 51/76: 03018bb6e10503e95c6a82ad17c86d0c77c363a8cf10a6f5e303a9c9081b4724 (failed)
+item ead098bae72e610d520cada379b3a1a53705e7f0806a068e8d16fff6497a019a attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item ead098bae72e610d520cada379b3a1a53705e7f0806a068e8d16fff6497a019a attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item ead098bae72e610d520cada379b3a1a53705e7f0806a068e8d16fff6497a019a failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 52/76: f7860b035016f1b681bbacc3f319e27bcea9c3d120cd1318d8ee31f2331ea525 (failed)
+item 461c1687e8f6b35c35593c08c7de4f2424f431a96bf92d9c910e7db048d8522d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 461c1687e8f6b35c35593c08c7de4f2424f431a96bf92d9c910e7db048d8522d attempt 2 failed (LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit); retrying
+item 461c1687e8f6b35c35593c08c7de4f2424f431a96bf92d9c910e7db048d8522d failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 53/76: d02369ad64bc04f34a4d2a50cb97c8bcb8de31f300e3b017e4763f406fb1d99b (failed)
+item 7818dd82edc58dd14c0aec18292cf730310626d58ff1443b40f6a03dc7b5d690 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 7818dd82edc58dd14c0aec18292cf730310626d58ff1443b40f6a03dc7b5d690 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 7818dd82edc58dd14c0aec18292cf730310626d58ff1443b40f6a03dc7b5d690 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 54/76: 95c4aa817985eb91b67b17003299b3e443dd8efb6c148b123286e05afc3b0f89 (failed)
+item 87b5770cad9cc7bb4c456b01e88dbf84254c4e3a660565ece3404fdfdaeee6e0 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 87b5770cad9cc7bb4c456b01e88dbf84254c4e3a660565ece3404fdfdaeee6e0 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 87b5770cad9cc7bb4c456b01e88dbf84254c4e3a660565ece3404fdfdaeee6e0 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 4096 tokens, but can only afford 146. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+Ingested 55/76: a0704f24827c00cb63018e0a83125066e67172950ffa154c80756d1bbb639d5c (failed)
+item 35e204ca7145a5cc39453947f9f5fe913e9118e3f7b153f85821f9871db388ed attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 35e204ca7145a5cc39453947f9f5fe913e9118e3f7b153f85821f9871db388ed attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 35e204ca7145a5cc39453947f9f5fe913e9118e3f7b153f85821f9871db388ed failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 56/76: db9ea866803b8d8ed413a70159f316e12d7cd5c85dc3ba01debd91d352bc9537 (failed)
+item bcc2eea407f4d883143d7ce81fa9b4e4f49df53063829995c7939b3b03d7a65c attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item bcc2eea407f4d883143d7ce81fa9b4e4f49df53063829995c7939b3b03d7a65c attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item bcc2eea407f4d883143d7ce81fa9b4e4f49df53063829995c7939b3b03d7a65c failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 57/76: 0c60c54bc96a6464ba50c4bd68395015d7b6bc9cfa17691d54b9d946da70a458 (failed)
+item c6b37996f7b9a674fe6dd0b5bceb93544566d86540d7aee7db5defc3c8b92327 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item c6b37996f7b9a674fe6dd0b5bceb93544566d86540d7aee7db5defc3c8b92327 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item c6b37996f7b9a674fe6dd0b5bceb93544566d86540d7aee7db5defc3c8b92327 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 58/76: 759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f (failed)
+item 4620eae470dfdbdc7c24edc3a6a01e7052abb0c86930d601f03099cf30746ca6 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 4620eae470dfdbdc7c24edc3a6a01e7052abb0c86930d601f03099cf30746ca6 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 4620eae470dfdbdc7c24edc3a6a01e7052abb0c86930d601f03099cf30746ca6 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 59/76: 843c7285d6f8a56638de83a2867e255d2016b3bbba55aee686ba845127647432 (failed)
+item 968db49029cf666abc728ae3f9e0c9b9da7666fe221ec79be5f83f04aa9f9625 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 968db49029cf666abc728ae3f9e0c9b9da7666fe221ec79be5f83f04aa9f9625 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 968db49029cf666abc728ae3f9e0c9b9da7666fe221ec79be5f83f04aa9f9625 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 60/76: 50f9e45bf23a7cb7446aa83d146f1e97cc29640628c41e7adf58b98863907fb4 (failed)
+item 9accfcecd537f16d5f28f23e64db451db295a2d757f3e0e0a794800c138901ee attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 9accfcecd537f16d5f28f23e64db451db295a2d757f3e0e0a794800c138901ee attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 9accfcecd537f16d5f28f23e64db451db295a2d757f3e0e0a794800c138901ee failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 61/76: 0eb65778cbbe8c86b037cfec718db242eb57583f287272a043247cf603e2ed72 (failed)
+item d8eb7cd4ffd97f93cc02e6d639982aeb748418327db0c0a4da8e1d942c578b4c attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item d8eb7cd4ffd97f93cc02e6d639982aeb748418327db0c0a4da8e1d942c578b4c attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item d8eb7cd4ffd97f93cc02e6d639982aeb748418327db0c0a4da8e1d942c578b4c failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 62/76: 69cf9e2de96e8504cb30e3263c301d07194bf4b4f36dbcbe4b770b7a285d6768 (failed)
+item 71b10683276a2b19fb114759bfccfbc0625a3599330cb3a09c940f6ad0c88f2c attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 71b10683276a2b19fb114759bfccfbc0625a3599330cb3a09c940f6ad0c88f2c attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 71b10683276a2b19fb114759bfccfbc0625a3599330cb3a09c940f6ad0c88f2c failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 63/76: 503b3b4db0f3795c18f047d2e1e6806da393ebea9d2bcf3727790ed2062b0ad0 (failed)
+item cd5c814fddb89079220c4adc7e96f0ca16473bc5dffefa1996e61108f7d0240d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item cd5c814fddb89079220c4adc7e96f0ca16473bc5dffefa1996e61108f7d0240d attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item cd5c814fddb89079220c4adc7e96f0ca16473bc5dffefa1996e61108f7d0240d failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 64/76: 4c4dc338ea9a270ad0c6737f6c53aac04e83ce26753850de9ca2469f0a246649 (failed)
+item db3fa0026068bcf1f0fc83163506f980099be85e378ed20630fc9893bc27cba9 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item db3fa0026068bcf1f0fc83163506f980099be85e378ed20630fc9893bc27cba9 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item db3fa0026068bcf1f0fc83163506f980099be85e378ed20630fc9893bc27cba9 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 65/76: c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae (failed)
+item 53c21bc497b1caa6010dfa4df9b61a153cc25d4cbb2c2854ebfa3bfacdd656a5 attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 53c21bc497b1caa6010dfa4df9b61a153cc25d4cbb2c2854ebfa3bfacdd656a5 attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 53c21bc497b1caa6010dfa4df9b61a153cc25d4cbb2c2854ebfa3bfacdd656a5 failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 66/76: 097fdf4af9c2d7a65c2cea8a7c1ea2741f0ede3ad371085862ddb2d361047026 (failed)
+item c9021687e04f6c53c5114b9d615bbca1204207810c6a8eb50208753626a212fe attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item c9021687e04f6c53c5114b9d615bbca1204207810c6a8eb50208753626a212fe attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item c9021687e04f6c53c5114b9d615bbca1204207810c6a8eb50208753626a212fe failed after 3 attempts: LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Ingested 67/76: 1f9eb8688ffab83a42b7c51bb63ce3f0a7cc967bacb608f02cb32d26077f882a (failed)
+item 8e3c3db6370eaf67cf6aca9af958d33288430005892d1cbf1ca00db90d47736d attempt 1 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying
+item 8e3c3db6370eaf67cf6aca9af958d33288430005892d1cbf1ca00db90d47736d attempt 2 failed (LLMError: LLM request failed: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits); retrying

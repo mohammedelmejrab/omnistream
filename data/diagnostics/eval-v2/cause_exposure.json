@@ -1,0 +1,38 @@
+{
+  "missing_discriminator": [
+    "v2-q03",
+    "v2-q04",
+    "v2-q17",
+    "v2-q24",
+    "v2-q37",
+    "v2-q42",
+    "v2-q47",
+    "v2-q52"
+  ],
+  "wrong_named_identity": [
+    "v2-q17",
+    "v2-q18",
+    "v2-q48",
+    "v2-q53",
+    "v2-q58"
+  ],
+  "alias_connectivity_failure": [
+    "v2-q04",
+    "v2-q11"
+  ],
+  "structural_union": [
+    "v2-q03",
+    "v2-q04",
+    "v2-q11",
+    "v2-q17",
+    "v2-q18",
+    "v2-q24",
+    "v2-q37",
+    "v2-q42",
+    "v2-q47",
+    "v2-q48",
+    "v2-q52",
+    "v2-q53",
+    "v2-q58"
+  ]
+}

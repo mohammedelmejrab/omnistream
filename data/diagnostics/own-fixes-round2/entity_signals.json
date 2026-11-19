@@ -1,0 +1,2769 @@
+[
+  {
+    "id": "0047aaa2-69fc-40f5-9b36-674fcafa8b08",
+    "name": "registration record",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "04f1e981-e736-475f-a63a-1b4574a0c819",
+    "name": "Dovetail Quay 3",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "054b4526-3e8d-4347-8d45-7738e5a86047",
+    "name": "Pebbleflux",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "0619b95b-c8f8-4eca-a1de-57783de8cac3",
+    "name": "the board's original supporting schedule",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "06c86c4f-f311-44e2-8eac-f17150c8f7c2",
+    "name": "Brindle Arc",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 8,
+    "linked": true
+  },
+  {
+    "id": "07ef0e9c-262e-4f89-93a3-735932aadede",
+    "name": "TMC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "0827e0ee-c180-4815-a4af-3d38bf7df7f2",
+    "name": "Ravenspire Instruments",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 9,
+    "linked": true
+  },
+  {
+    "id": "08bad194-9dfc-42ca-b13f-249688749c7c",
+    "name": "defective pressure relay",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "0a39ea00-6940-46ac-b459-251047bd2c27",
+    "name": "SML",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "0aa7e1cf-fe6a-479f-99f6-053ce09740de",
+    "name": "OBR",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "0bd43f16-8634-40de-8978-71a42c18b68b",
+    "name": "PCF",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "0f3833a7-e437-49f5-b0d4-83b3484585e0",
+    "name": "defective coolant valve",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "0faac254-b721-4985-9913-f36be4408763",
+    "name": "Quenara Devices",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "1004ea0b-a2fa-491b-833a-b011cc0f9dff",
+    "name": "public webcast",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "103e7598-d6da-484c-aaf6-f7ee275ab18e",
+    "name": "Nacreline Systems",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "10c1e1ee-7557-487a-a600-7dd703338ae5",
+    "name": "19.45 million crowns",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "10ef16a2-79f6-4d6e-b59a-86559f0bd377",
+    "name": "industry newsletter",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "10fdae95-07fc-4bc6-aa25-0e30ed9596bc",
+    "name": "investment filing",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "12d4ea7a-0da7-4567-91a7-d3483cac6c92",
+    "name": "Thistledrive",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "16c53593-82ad-4fc9-b579-6aad1fd2c0f7",
+    "name": "Omar Vesk",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "1797b2cb-297f-4042-96fe-c7c4a486c542",
+    "name": "Sable Meridian Centre",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "179d1b96-8136-475a-8bc1-ba2d4d9c3ae3",
+    "name": "Copper Fen Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "17bb57a3-842a-42f6-aa37-6de3414ffc53",
+    "name": "replacement transaction",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "17f186cb-1f1f-469b-a9d5-834d0ae183b0",
+    "name": "Iona Pelwick",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "192bc8f3-3e8e-49ac-a91f-5829a8af8bb6",
+    "name": "Quenara Devices",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 9,
+    "linked": true
+  },
+  {
+    "id": "1993261c-51b1-4467-b6c0-cd55c051e141",
+    "name": "Opal Ridge Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "19f90978-b38d-46db-992a-bc83a3d9b890",
+    "name": "Talia Muren",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "1abf8a65-dc26-4f5e-aca4-b98a9bf14fe3",
+    "name": "Iona Pelwick",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "1bd55056-2c4e-45d9-a9fe-2be8937912f2",
+    "name": "Cobalt Reach Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "1c121eef-5a1d-4cc0-9d99-7f1dec101700",
+    "name": "Enzo Nalik",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "1c98f4e1-31b2-4e0a-83fc-92132c633755",
+    "name": "September product inspection",
+    "labels": [
+      "Entity",
+      "Event"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "1ce9f152-bb3e-42a2-a918-622c75b39bbb",
+    "name": "investment filing dated June 3",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "1d0ec604-f3ad-496e-9659-8da58d54a707",
+    "name": "corporate register",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "1d831bcc-f978-4b16-95d5-9af7aacd1f93",
+    "name": "electronic index",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "1d8a5653-594a-48be-af4a-894ad852a530",
+    "name": "Brindle Arch",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "1f01ae54-7698-4457-9bf1-f5a8ea241b76",
+    "name": "Tesselmere Controls",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 12,
+    "linked": true
+  },
+  {
+    "id": "1f3cbb34-e50c-49d6-ad57-5e65d8cf3512",
+    "name": "Ada Wurfen",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "1f4ca52a-5cbe-43e3-b65d-5d549212a636",
+    "name": "provisional purchase agreement",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 13,
+    "linked": true
+  },
+  {
+    "id": "208df33f-c1e0-4bd2-ba58-43b6cc3f1392",
+    "name": "Glimmerpod",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "20dacb29-87a4-402b-be34-8e96ac76b1a5",
+    "name": "Juniper Basin Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "252c8ad5-6704-400b-a510-2bd1593392f8",
+    "name": "Indigo Vale Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "26e2bcd2-4909-4c08-a71f-08094503e16b",
+    "name": "IDL",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "29daed91-4a26-4f28-bd89-bd7a32b1a1dd",
+    "name": "Pia Ashuno",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "2a222b09-0055-46d4-a4eb-228e9d7241f8",
+    "name": "interim operations committee",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 9,
+    "linked": true
+  },
+  {
+    "id": "2aff6f0b-631a-4d63-ac35-2f6dd1d1f729",
+    "name": "refundable deposit",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "2b90de10-1186-4a2c-822c-aaac1e70df55",
+    "name": "Nacrelane Services",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "2d4adebd-353b-4ffb-8796-0b593763c7bf",
+    "name": "IVC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "2db6d60f-2f3c-4a7f-9786-465f2281326f",
+    "name": "HVM",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "2ddf88e0-3922-4a86-a273-3bbec93702e1",
+    "name": "directors",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "2e2fd4d3-99ca-48cd-a595-623e316610d8",
+    "name": "TMC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "2e6f296d-b389-4365-9f9f-6668267a4222",
+    "name": "JBI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "30ca6fee-78c1-4929-bc6e-cd9ec9b2cb15",
+    "name": "Yara Penlo",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "30fb75f1-ddd6-4533-a42f-44bbb26ccf87",
+    "name": "independent measurement",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "3247cf5d-ae97-4afb-a5ad-cc25c740db93",
+    "name": "QND chief",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3282cdf2-3ec4-42f9-88ac-6695fb24dbdb",
+    "name": "Dovetail Quay 8",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "333286be-8c84-4d5a-98d3-6770fddf6739",
+    "name": "directors",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "34474cba-667d-454c-b531-5a54937f5a79",
+    "name": "Copper Fen Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "34fbf09d-ccca-41f1-a8ad-e173abbf29bd",
+    "name": "Aldervane Transit",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 20,
+    "linked": true
+  },
+  {
+    "id": "3524586f-6acb-4858-a409-c0b49c50ec7e",
+    "name": "Vespergait Foods",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "37773bc2-ec84-46cf-9c9c-6f4bc9c081e5",
+    "name": "Uma Cevran",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "3a3b49c2-41e6-418d-9ee3-b1d744f0d4d4",
+    "name": "TMC chief",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3a7e1b37-aa18-472d-afec-f7f605a48162",
+    "name": "Arun Kelso",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3ae00e03-4019-45e9-9ad9-21af5cabb697",
+    "name": "Leda Quorin",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3b94588a-cf27-4987-9093-0d77a8bf0793",
+    "name": "OHI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "3d4f8277-86b5-49b7-89e2-d684659e55ca",
+    "name": "Jori Anvek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3d68704a-061c-480e-b94e-085a10720067",
+    "name": "September product inspection",
+    "labels": [
+      "Entity",
+      "Event"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "3e691c03-0b34-465a-a20a-6b55cc607521",
+    "name": "AVT",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "3e9daae8-b61a-4b51-9321-2ef942cbd6cc",
+    "name": "Arun Kelso",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "3f3dfd2a-b0c1-4bf8-b547-c19e0b38c46a",
+    "name": "expenditure review",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "4067b333-3fb1-4424-b11f-ce3132620ec0",
+    "name": "Talia Muren",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "406afbbd-858b-46df-aa3c-76f4f6f4ede7",
+    "name": "TMC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "40ac00f6-a84b-4467-9c6c-67a1d7b6f30f",
+    "name": "Tesselmere Controls",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "417071a4-ac0c-4808-9b86-c75966de5c0b",
+    "name": "SML",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "445938d3-7cab-42bf-b8ac-f8315459eeeb",
+    "name": "research funding agreement",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "4697a6e6-899d-4950-bff2-0640edaf3521",
+    "name": "Aldervain Travel",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "46cc64a9-5e16-4119-b338-47f43e771f21",
+    "name": "accession AX-49",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "48a81338-f6f5-402d-aa05-e08b3dd903bb",
+    "name": "signing authority",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "4991acd8-d70e-4130-b4e0-45a5370a2497",
+    "name": "excluded samples",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "49a8227e-d04e-4003-ad47-84115b446805",
+    "name": "replication studies",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "4ad844ba-d852-41e7-8a44-1d413562a370",
+    "name": "Opal Ridge Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "4b1af338-0ef1-46cb-b838-222ab9260f90",
+    "name": "Copper Fen Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "4c2de943-4b3b-4fb8-97ac-d2e6aacf4843",
+    "name": "replacement parts",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "4c390e2e-b820-4733-92a0-9ff1cd31e1f5",
+    "name": "Brindle Arc",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 8,
+    "linked": true
+  },
+  {
+    "id": "4ce12a91-4cc3-43ac-8aa2-d782dc3f83d1",
+    "name": "6.25 million crowns",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "4f3e1ea3-eb44-4d9b-a0f1-acaf5a3fd4e6",
+    "name": "NLS",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "4f6f4e56-bc59-497a-8646-fd8ac23465dc",
+    "name": "Nacreline Systems",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "4fb0f70c-ad80-466e-8ad7-c68a312faa63",
+    "name": "Dovetail Quay 7",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "5200db47-befb-4750-adaf-8e9a39491801",
+    "name": "research funding agreement",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "523ae394-96d4-4fd1-83a9-e29dde3c638e",
+    "name": "provisional purchase agreement",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "537a6f0f-d4b6-4036-8527-8473db245f7d",
+    "name": "Vespergate Works",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "53c3f038-90a2-42ac-8f83-b2bb2b91ba7d",
+    "name": "Wispcoil",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "53fe50cc-673e-4f15-9053-b896525f10db",
+    "name": "refundable deposit",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "54d941cc-8a32-4762-a7bf-9e31dd776e62",
+    "name": "Resolution adopted September 18",
+    "labels": [
+      "Entity",
+      "Event"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "564d5493-8a97-4feb-b8d0-f256ff6c3937",
+    "name": "parent company",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "580bcb16-bdde-420b-b08a-a194ad30a891",
+    "name": "remuneration resolution",
+    "labels": [
+      "Entity",
+      "Concept"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "5882e797-26a3-4e52-b7cb-963ab9918f47",
+    "name": "BDA chief",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "58aa6b4a-2a97-4214-8a32-401b57b8e02d",
+    "name": "Kofi Zelan",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "59c2fb63-bc13-4f73-a00c-eabd0c2b0e24",
+    "name": "Dovetail Quay 5",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "5aab26b5-b1c4-4bfb-84d2-a8835f30992f",
+    "name": "Remi Basun",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "5ae01ebf-3845-40e5-973e-81447243c86f",
+    "name": "ER-35",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "5b750fa6-184a-427a-a526-541f493a33fe",
+    "name": "checksum",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "5c5aae14-9714-49fb-9787-42e347c1ac7c",
+    "name": "SMC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "5c7b0dde-5c4d-488f-ae84-04877f7ec43c",
+    "name": "RSI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "5cfb5a2b-8267-4fb0-a4d1-046a7550ba86",
+    "name": "supplier",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "5d8a3bb5-e234-4167-8249-52ee412cfa9a",
+    "name": "annual governance documents",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "5e5761be-a52d-4c7b-a13f-63f00e9f74fa",
+    "name": "Yara Penlo",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "61415094-11cd-41d4-91c3-e54a8ee33bca",
+    "name": "parent company",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "61787ed1-5144-45c9-a461-d2d14ce18f41",
+    "name": "safety committee",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 11,
+    "linked": true
+  },
+  {
+    "id": "61fb8f1a-869e-4120-8b00-e91fa3fc0e50",
+    "name": "SMC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "61ff7453-8f41-4427-a79f-55fb4d05296c",
+    "name": "Yara Penlo",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "64940738-5511-47a5-82cc-ecf9ed27e6d7",
+    "name": "Halvex Mobility",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 15,
+    "linked": true
+  },
+  {
+    "id": "655fccf9-4a4f-44d7-a8cd-d47bb13e3341",
+    "name": "Sefu Daram",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "65c2cb49-6679-4ead-8ff4-6af2e40f6c79",
+    "name": "Oxbriar Robotics",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 7,
+    "linked": true
+  },
+  {
+    "id": "65cd9ae0-49a7-4df2-9a96-0ffec1d7e0f6",
+    "name": "electronic index",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "668cbe46-cb35-41f1-a7ce-121d3d8038f7",
+    "name": "Indigo Vale Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "66d1a0d6-45c7-419c-a4cf-1b6e4acc1f72",
+    "name": "Davi Ornek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "67f5a768-2b47-424b-ab43-09791a774f6e",
+    "name": "Dovetail Quay 8",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "692902c9-8e34-4dd6-abee-98c61ff6e883",
+    "name": "Aldervane Transit",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "6a0dec4f-f3af-402c-8db5-f866183d100c",
+    "name": "Mina Tolvik",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "6a34326e-418b-4b1b-985a-d5e09bd2f5b8",
+    "name": "Quenara Devices",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "6a657da4-98f9-42ec-84af-b4c42a0dc6e5",
+    "name": "company secretary",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "6c82905b-007e-4404-ab7e-dfad06e959d1",
+    "name": "Pia Ashuno",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "6d25f2cc-7f5e-47f8-a845-fa9f5cb219a2",
+    "name": "Cobalt Reach Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "6f3bf7e2-811b-417b-b893-6a2caa75147b",
+    "name": "early market newsletter",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "6f70e2cc-6ce7-4f27-9d7a-8ce635ac8882",
+    "name": "Tesselmar Construction",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "702e97ed-3439-4b4f-81f3-bd642edbefc3",
+    "name": "Frostweave",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "72b44243-6da1-484e-9c23-2e8ce66f916f",
+    "name": "closing obligations",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "7361856e-2e21-470d-a1f9-fbfda5046064",
+    "name": "Oxbriar Robotics",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "759f9239-a494-4a14-a675-0e1df41fb1c4",
+    "name": "Vespergait Foods",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "76d871f8-b7d2-4e65-bc11-e4286a7e7a27",
+    "name": "Zora Fendel",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "77139963-3e9f-4fc8-8291-050b2b7956b2",
+    "name": "Brindle Arch",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "7bc44786-7462-4ae7-bb06-d37687112860",
+    "name": "IDL",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "7d311b2b-46ef-43d5-8781-054bed225379",
+    "name": "Pellucent Foundry",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "7d65ccbd-7307-42b9-876a-b3f8a3efa22c",
+    "name": "Neri Solvek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "7ea156c8-5772-4d66-9df1-c032509992a6",
+    "name": "supplier records",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "7f28b665-5487-4d45-af8e-03823f240428",
+    "name": "ORL",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "8149d24e-d77c-4039-bfa2-87eaa8ce5ee9",
+    "name": "OBR chief",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "8275edc0-3c43-4e02-9419-ee2e2a2d8734",
+    "name": "NLS",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "859849f9-05a8-4f0c-96e0-bc8035b44702",
+    "name": "QND",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "85fe9d79-fcd4-4612-977a-1a256ac5a65f",
+    "name": "PCF",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "8868cb9c-9dcf-47d4-b828-f50a36494cd6",
+    "name": "Resolution adopted September 18",
+    "labels": [
+      "Entity",
+      "Event"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "894e43c5-3e2a-46f3-9276-48524616afc9",
+    "name": "Aldervain Travel",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "89e3a372-285d-4f3d-8569-ed97b925fb97",
+    "name": "Ivory Delta Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "8aa98e1e-3271-4f5f-af2c-4eb4cadfb364",
+    "name": "correction log",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "8af68cc1-9f46-4619-8208-39ffa30b71ac",
+    "name": "PCF",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "8b1c472e-095d-48e6-95b2-7616d8d1c2ee",
+    "name": "Pellucid Forge",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "8b5b8e2e-acd0-44a8-9bb4-f22a43ff3a14",
+    "name": "Neri Solvek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "8b907e23-1be6-435f-a284-43198c4c43c6",
+    "name": "Dovetail Quay 9",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "8bdc1bef-ff1f-49ba-a2d9-a5658fb27ae0",
+    "name": "CFI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "8ce2b385-7115-454c-b763-d4e316e5e218",
+    "name": "replication archive",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 12,
+    "linked": true
+  },
+  {
+    "id": "90515ce5-28e9-4bf4-90f3-c2d966a109d6",
+    "name": "Ada Wurfen",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "90e12a41-84b0-4b6f-9461-eacb20c4722c",
+    "name": "Ochre Hollow Institute (OHI)",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "90f63448-53aa-4803-b1f8-c6e02bd783e7",
+    "name": "DATA DEPOSIT",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "91119330-8c06-4670-b91c-aeaa7b66b45e",
+    "name": "manufacturing divisions",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "9202a2c0-f734-4480-acdc-b6241920c4a0",
+    "name": "BDA",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "92a5e94c-f32b-4f0a-9320-1d4f6b9dc792",
+    "name": "Halvex Mobility",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 8,
+    "linked": true
+  },
+  {
+    "id": "93d224ab-d404-44ad-ba5c-efbe3f794542",
+    "name": "VT-73",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "949932bc-e882-4dec-8738-7d24da9bff3b",
+    "name": "Quenaro Digital",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "95c5e7f7-6fd8-4a32-a595-0a2a9451fdba",
+    "name": "authors' laboratory software",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "9699d7b8-f9fc-45eb-a958-c3848d725e41",
+    "name": "AVT",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "98325284-01b4-4570-90c8-f19b60f25459",
+    "name": "Eben Rusk",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "993821c5-3f4d-4acd-a539-9d32b8524ac4",
+    "name": "Pellucid Forge",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 8,
+    "linked": true
+  },
+  {
+    "id": "9b811904-c3fa-4617-bf31-d94b45d87b8b",
+    "name": "BK-26",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "9c7bde9e-0eba-4a4e-87dd-bc9e21bb1cfb",
+    "name": "dedicated telephone service",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "9e5b1836-2d6d-4368-b700-d8c2482c30b2",
+    "name": "Dovetail Quay 1",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 8,
+    "linked": true
+  },
+  {
+    "id": "a07d6964-bd20-4004-914a-7af743402587",
+    "name": "assembly line",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "a1b92a97-80ba-420f-966e-a36d55bdb301",
+    "name": "interim operations committee",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 9,
+    "linked": true
+  },
+  {
+    "id": "a279446a-f5b4-4869-9e4c-80813e821573",
+    "name": "Davi Ornek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "a435b952-6d0c-4d49-97ec-10fd2fd4bb5c",
+    "name": "VSC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "a49a7794-cb03-4c39-bae0-8b4edfd21831",
+    "name": "due diligence work",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "a5b9ac37-c60d-4dcc-bb10-a6b9edc48bee",
+    "name": "Ravenspire Instruments",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "a5d17354-2265-49bd-af02-bc333638fee5",
+    "name": "QND",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "a64d5577-cffb-453d-8317-b60a7ebc8b04",
+    "name": "Dovetail Quay 6",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "a6b6bf51-6a86-4cfd-b148-b417e2e68a82",
+    "name": "ANALYST NOTE",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "a72afce1-a309-484a-a215-fe4737daedd2",
+    "name": "Juniper Basin Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "a7cada0c-5342-4a74-841e-d6686d8c2dea",
+    "name": "AVT",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "a7de17d6-b673-45c3-ba8b-3e6dedc0edd1",
+    "name": "ordinary supply contracts",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "a8e74651-069f-49e7-b2e9-d651c5043922",
+    "name": "Ravenspear Insurance",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "a991f865-1a03-4ab1-aea7-45aea6808e3d",
+    "name": "Rillmesh",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "ab61a944-0173-410b-8e50-6e793ffd442e",
+    "name": "UP-62",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ab83fae7-db62-4507-ab05-17594b63d3c0",
+    "name": "signing authority",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ac148339-10c9-4eef-8fc0-c497b99f8a63",
+    "name": "Halvek Materials",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "ac62b1f3-e7f3-46e7-8f4c-be019a80afb1",
+    "name": "Dovetail Quay 2",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "accec28b-3948-4a2b-a6b0-0058aa2a7a76",
+    "name": "Opal Ridge Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "ada68412-e1ae-45b3-9619-e5ffe0815951",
+    "name": "manufacturing divisions",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "af39d2f9-ceea-44fe-8685-4996e55739cc",
+    "name": "Leda Quorin",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "b06faf01-1a67-4775-aef4-389b237383d1",
+    "name": "Morrowcell",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "b07c3fda-4f13-4dc7-8281-ee7e538bfd8b",
+    "name": "ordinary supply contracts",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "b09d4c9e-1490-45d9-9680-d0e8652a4b9a",
+    "name": "experimental records",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "b1152a13-5616-4059-95fe-ed75ac032f59",
+    "name": "public webcast",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "b145caa2-5f13-4578-bd04-d4d74ccf2a83",
+    "name": "OBR",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "b4d06859-4aa5-4131-a604-50faf7095713",
+    "name": "SM-91",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "b7a6cef1-7519-4263-95ee-faec22365aae",
+    "name": "CFI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "b8e9845f-44c4-41a2-9b56-50005f01a0d9",
+    "name": "power connector",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "b9e0e258-eb2c-4d3f-828b-0470e7373988",
+    "name": "VSC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "ba9fb748-c8cf-4da7-8cb7-b7b32920a06c",
+    "name": "publisher",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ba9fbeb0-a3a3-4490-ab7b-0b50b1cd33e7",
+    "name": "AVT chief",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "bba95073-134a-48a8-9189-81cde336e0b3",
+    "name": "staff costs",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "bbaf8b98-a42c-4a1b-936b-25dba14ebb1b",
+    "name": "anonymized batch measurements",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "bbdc537f-4655-41e9-ab30-8970bf73550d",
+    "name": "OBR",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "bc0a9987-401e-46ac-b1ff-6e1bd5bb3ac3",
+    "name": "expenditure review",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "bce70073-fecf-4e6f-8f65-4a687f5b055f",
+    "name": "Neri Solvek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "bd1ea588-6a74-4c5e-86cd-9ba565d2f1f7",
+    "name": "JBI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "bd529148-b5c0-4a45-a972-977b8609a4a6",
+    "name": "Quenaro Digital",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "be07507b-4778-4db1-8727-20a020865555",
+    "name": "CW-14",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "be0ba39f-452a-4e7d-854b-d2210a9a23eb",
+    "name": "axle collar",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "be397d7e-f0ce-4d14-9af1-4b376c5d916e",
+    "name": "reporting period",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "bea2c5fe-ec77-46d2-9552-a9f117b78e18",
+    "name": "Violet Strand Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "bfbd49a3-7ab5-48d8-9fbf-359e049958d0",
+    "name": "commercial product performance",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "c12c1a39-a1f1-4b17-afee-a1d79ef6aa33",
+    "name": "SAFETY WIRE",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c27d734b-7b52-4798-862e-0b8c78f2a8cf",
+    "name": "public webcast",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c2bf20b3-9ce2-4065-ad6c-6d562cfa7be4",
+    "name": "Sana Ulrich",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c56a3b67-36d8-442c-afe2-3d620f419805",
+    "name": "company secretary",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "c690c3e3-cb0c-4361-8853-e511e5ec9d7d",
+    "name": "steering pin",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "c7d90a44-3d56-46ab-b95b-cea3a9d67329",
+    "name": "next scheduled meeting",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c8810afc-58a9-41c0-81d4-277eb62951a9",
+    "name": "remuneration resolution",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c88f59ac-5349-4ccb-8dd5-207c453421d2",
+    "name": "Indigo Vale Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c95b4293-c060-46c2-83db-33e291adbfbf",
+    "name": "Halvex Mobility",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "c9757c54-28e6-40a0-849b-29e3bb769076",
+    "name": "Mina Tolvik",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "c9ce1498-e3bd-49aa-b079-2d0ee37022a4",
+    "name": "accession identifier",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "c9d33cf9-944c-4ead-97b9-a8ed2374e775",
+    "name": "export deliveries",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ca1b4fb5-03c0-4e69-81a9-3b2173459c0d",
+    "name": "Uma Cevran",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "cb8c434c-dabd-40b8-8841-8ea32f1532f7",
+    "name": "VGW",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "cc9cfb28-7eb6-41de-b0b7-9a8334571db5",
+    "name": "Ochre Hollow Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "ccc387d2-f3f1-4332-8334-992b954d0d9b",
+    "name": "Dovetail Quay 4",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "ccc5e73e-63bb-4134-8878-5b64c2a3853b",
+    "name": "June purchase agreement",
+    "labels": [
+      "Entity",
+      "Event"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "d2618490-cc83-447f-9833-7d4200df21e0",
+    "name": "supplier",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "d4032882-1a35-4717-9c6d-d5ca53eeb0d6",
+    "name": "Tesselmar Construction",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "d5b02979-d52c-4e34-8ee2-1bcf27d4c683",
+    "name": "Tesselmere Controls",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 17,
+    "linked": true
+  },
+  {
+    "id": "d7237cf4-704f-4c4b-bdbb-6c6216e27dcf",
+    "name": "vehicle modules",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "d7370899-46ef-4a0c-9a2f-164ee73e25f0",
+    "name": "RSI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "d768893b-530e-4f86-b7fc-9b88b296d663",
+    "name": "control fuse",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "d7acb653-0cf7-4f84-bdfd-38e4b3102533",
+    "name": "Sable Meridian Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "d8211c35-703d-44b1-8217-4490853481fb",
+    "name": "laboratory equipment",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "dc801763-20d5-4be0-bc5b-2bd75f73d70a",
+    "name": "19.45 million crowns",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "dd1d2181-8846-4ca1-893e-5c2fb8a62209",
+    "name": "Sefu Daram",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "dd782f92-bc05-4028-8183-c4f389e35d44",
+    "name": "Nacrelane Services",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "deee5459-cd90-4f0a-8aad-de7bb7006e24",
+    "name": "instrument settings",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "df3c36f5-c870-4200-a1ed-b23dfb87b345",
+    "name": "BDA",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e362129b-8799-4dac-a3d3-33822f6cdab2",
+    "name": "Vespergate Works",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "e39a1822-0439-4071-bb8f-aa7ca161572b",
+    "name": "Talia Muren",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e3f36ab7-f7e2-4c42-996e-9a7378241c0b",
+    "name": "advisory costs",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e46b892f-8264-4d09-8aae-742f9688d5ea",
+    "name": "Ravenspire Instruments",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "e53eddde-c07c-4bae-9600-c1429f53120b",
+    "name": "Silver Marsh Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "e65780a1-5fde-440e-8fa4-e93ebf5e6bfc",
+    "name": "Emberfoil",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "e6d0669c-1ca1-4930-a0af-cb987a540a80",
+    "name": "accession NZ-53",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e81318cf-d9e2-4a87-82c2-5afa79be94b5",
+    "name": "RSI",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e9718209-e227-4a86-af1b-55a8d0bcd796",
+    "name": "Mina Tolvik",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "e9c12b9b-c865-4fbe-a99a-969da2028607",
+    "name": "Pellucid Forge",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "ea123075-6de2-4674-a993-177a5a5e53fa",
+    "name": "financial statements",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "ea4dac1e-215c-4ce9-b164-b6756fb26fd4",
+    "name": "Dovetail Quay 8",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 6,
+    "linked": true
+  },
+  {
+    "id": "ea9cb33f-9475-44a8-b7ff-791b73d1a569",
+    "name": "early market newsletter",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "eb35e3df-1931-4061-a135-803a61ff4020",
+    "name": "published analyses",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ebcd475b-9a86-48b4-b00d-f6ef2f3684ab",
+    "name": "Brindle Arc",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "ebf0618f-41c8-4428-9c14-59720feb99d5",
+    "name": "Violet Strand Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "ecefb371-f922-4aee-b8cb-98e676717049",
+    "name": "IVC",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "edc265e8-cc68-46d1-afef-98e02b2241fc",
+    "name": "Ivory Delta Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ee457faf-8686-4af3-ab8c-5f9f38a4c28b",
+    "name": "Remi Basun",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 4,
+    "linked": true
+  },
+  {
+    "id": "eeacb2b2-a964-44e3-82e1-2a3bbd9563f2",
+    "name": "Jori Anvek",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "f00aca72-65d6-411f-9f29-dfd330d13cf2",
+    "name": "Accountants",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "f056260e-bb8e-4eae-ab4f-b970d30e11a3",
+    "name": "JF-87",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "f19c5a5f-924e-4bdc-b55d-7ab43624e35f",
+    "name": "QD-18",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "f2ee3d7b-23cc-4304-9dcc-0093b38f077d",
+    "name": "October deadline",
+    "labels": [
+      "Entity",
+      "Publication"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "f4acd68c-c281-422b-8b9f-fe26951e2a0f",
+    "name": "Vespergate Works",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 10,
+    "linked": true
+  },
+  {
+    "id": "f67021d0-6f2e-4bd3-985d-024dd3a79c3f",
+    "name": "Oxbriar Robotics",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 6,
+    "linked": true
+  },
+  {
+    "id": "f72d76da-01f5-4fcd-a4b8-899657693cd5",
+    "name": "Kiteglass",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "f7b8382d-0ec6-40c8-8760-ec0be21d05dd",
+    "name": "12.6 million crowns",
+    "labels": [
+      "Entity",
+      "FinancialInstrument"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "f7c806ae-5ea3-4aa4-837c-d0ac1c9ae702",
+    "name": "HVM",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "f8a04d73-fb4a-460f-a5d5-71ee3b8e9f6d",
+    "name": "company secretary",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 5,
+    "linked": true
+  },
+  {
+    "id": "f917d376-5a3a-4c6e-8860-4773f8385358",
+    "name": "Driftloom",
+    "labels": [
+      "Entity",
+      "Product"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "f990a473-f1e2-4d86-ba2b-ec8f396667d9",
+    "name": "Aldervane Transit",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "f9d61ba5-8eda-4582-aba3-39d6e0b01437",
+    "name": "Oxbrier Logistics",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "fa192f2c-754c-44cf-951f-a481db8d256b",
+    "name": "Sable Meridian Centre",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "fae67a1e-6db9-46c0-8901-a3c93e30728d",
+    "name": "Dovetail Quay 3",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "fb12b069-df82-4b77-a37f-fb8f59e17fe3",
+    "name": "VGW",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "fb6310d0-12bb-45f2-9da1-08267de59848",
+    "name": "Oxbrier Logistics",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "fbba65be-40f5-4af2-aadc-f250cc1fa5ae",
+    "name": "Omar Vesk",
+    "labels": [
+      "Entity",
+      "Person"
+    ],
+    "degree": 2,
+    "linked": true
+  },
+  {
+    "id": "fcae51c8-533a-4c4c-8e82-94eec8f58205",
+    "name": "HVM",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "fcb9bb06-8a37-4278-95fb-21ef24eae456",
+    "name": "BDA",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 0,
+    "linked": true
+  },
+  {
+    "id": "fd87b6c4-f378-4c8e-b4fa-e95da1adc708",
+    "name": "Ivory Delta Laboratory",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 6,
+    "linked": true
+  },
+  {
+    "id": "fdcb978c-f36e-4170-bd33-61cbe16df693",
+    "name": "rebuilding safety procedures",
+    "labels": [
+      "Entity"
+    ],
+    "degree": 1,
+    "linked": true
+  },
+  {
+    "id": "ff04a6e7-6f5b-4c55-8896-02df07914d74",
+    "name": "CRL",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 3,
+    "linked": true
+  },
+  {
+    "id": "ffa57ed5-0fb2-4646-b7ff-4ddb2031f5b0",
+    "name": "Ochre Hollow Institute",
+    "labels": [
+      "Entity",
+      "Organization"
+    ],
+    "degree": 1,
+    "linked": true
+  }
+]

@@ -1,0 +1,2181 @@
+{
+  "id": 16,
+  "snapshot": "real-v2-dev",
+  "rows": [
+    "external",
+    "classic",
+    "graphiti",
+    "own",
+    "own+subagents",
+    "classic+subagents"
+  ],
+  "status": "invalid",
+  "metrics": {
+    "external": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    },
+    "classic": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    },
+    "graphiti": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    },
+    "own": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    },
+    "own+subagents": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    },
+    "classic+subagents": {
+      "recall_at_10": null,
+      "mrr": null,
+      "hits_at_1": null,
+      "correctness": null,
+      "routing_recall": null,
+      "routing_precision": null,
+      "latency_seconds": null,
+      "citation_faithfulness_micro": null,
+      "citation_faithfulness": null,
+      "citation_faithfulness_macro": null,
+      "changed_fact_accuracy": null,
+      "errors": 24,
+      "unmeasured": 24,
+      "unmeasured_share": 1.0,
+      "error_types": {
+        "ValueError": 24
+      },
+      "judge_error_types": {},
+      "provider_error_pairs": 0,
+      "measured": 0,
+      "correctness_errors": 0,
+      "faithfulness_errors": 0,
+      "zero_citation_answers": 0,
+      "abstentions": 0,
+      "questions": 24,
+      "by_type": {
+        "single": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 8,
+          "unmeasured": 8,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 8
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 8
+        },
+        "multi_hop": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "time_sensitive": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 6,
+          "unmeasured": 6,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 6
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 6
+        },
+        "freshness": {
+          "recall_at_10": null,
+          "mrr": null,
+          "hits_at_1": null,
+          "correctness": null,
+          "routing_recall": null,
+          "routing_precision": null,
+          "latency_seconds": null,
+          "citation_faithfulness_micro": null,
+          "citation_faithfulness": null,
+          "citation_faithfulness_macro": null,
+          "changed_fact_accuracy": null,
+          "errors": 4,
+          "unmeasured": 4,
+          "unmeasured_share": 1.0,
+          "error_types": {
+            "ValueError": 4
+          },
+          "judge_error_types": {},
+          "provider_error_pairs": 0,
+          "measured": 0,
+          "correctness_errors": 0,
+          "faithfulness_errors": 0,
+          "zero_citation_answers": 0,
+          "abstentions": 0,
+          "questions": 4
+        }
+      },
+      "judge_tokens": null,
+      "judge_cost_usd": null,
+      "tokens": null,
+      "cost_usd": null
+    }
+  },
+  "results": [
+    {
+      "configuration": "external",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "external",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "graphiti",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "own+subagents",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-001",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-002",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-003",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-004",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-005",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-006",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-007",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-008",
+      "type": "single",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-009",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-010",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-012",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-014",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-015",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-016",
+      "type": "multi_hop",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-017",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-018",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-019",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-020",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-021",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-022",
+      "type": "time_sensitive",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-023",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-024",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-025",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    },
+    {
+      "configuration": "classic+subagents",
+      "question_id": "rq-d-027",
+      "type": "freshness",
+      "unmeasured": true,
+      "error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion"
+    }
+  ],
+  "global_metrics": {
+    "fatal_error": "ValueError: snapshot is incomplete: refusing automatic re-ingestion",
+    "run_validity": {
+      "status": "invalid",
+      "unmeasured_limit": 0.1,
+      "invalid_configurations": [
+        "external",
+        "classic",
+        "graphiti",
+        "own",
+        "own+subagents",
+        "classic+subagents"
+      ],
+      "error_types": {
+        "ValueError": 144
+      },
+      "provider_error_pairs": 0,
+      "judge_error_types": {},
+      "unmeasured_pairs": 144
+    },
+    "usage_by_stage": {
+      "ingestion:9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd": {
+        "tokens": 28310,
+        "cost_usd": 0.0038223062000000006,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 27137,
+        "completion_tokens": 1173,
+        "reasoning_tokens": 0
+      },
+      "freshness": {
+        "tokens": 7530,
+        "cost_usd": 0.00131743372,
+        "calls": 20,
+        "cost_reported_calls": 20,
+        "prompt_tokens": 6906,
+        "completion_tokens": 624,
+        "reasoning_tokens": 0
+      },
+      "ingestion:a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703": {
+        "tokens": 37107,
+        "cost_usd": 0.0060523362,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 36310,
+        "completion_tokens": 797,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_tokens": 72947,
+    "total_cost_usd": 0.011192076120000002,
+    "judge_usage_by_configuration": {
+      "external": null,
+      "classic": null,
+      "graphiti": null,
+      "own": null,
+      "own+subagents": null,
+      "classic+subagents": null
+    },
+    "application_peak_rss_bytes": 829534208,
+    "neo4j_peak_bytes": 2232309252.096,
+    "peak_memory_bytes": 3061843460.096,
+    "memory_sampling_errors": [],
+    "success_criteria": {
+      "external: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "external: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "external: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic: query routing recall": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic: query routing precision": {
+        "value": null,
+        "target": 0.7,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: query routing recall": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: query routing precision": {
+        "value": null,
+        "target": 0.7,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: query routing recall": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: query routing precision": {
+        "value": null,
+        "target": 0.7,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: query routing recall": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: query routing precision": {
+        "value": null,
+        "target": 0.7,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic+subagents: query routing recall": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic+subagents: query routing precision": {
+        "value": null,
+        "target": 0.7,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic+subagents: citation faithfulness": {
+        "value": null,
+        "target": 0.9,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic+subagents: changed-fact accuracy": {
+        "value": null,
+        "target": 0.8,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "classic+subagents: MRR / Hits@1 reported": {
+        "value": [
+          null,
+          null
+        ],
+        "target": "reported",
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "graphiti: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "own+subagents: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "Full system multi-hop correctness gain vs classic": {
+        "value": null,
+        "target": 0.3,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "Full system multi-hop correctness gain vs external": {
+        "value": null,
+        "target": 0.3,
+        "status": "UNMEASURED",
+        "reason": "Configuration exceeds 10% unmeasured pairs"
+      },
+      "ingestion_routing_accuracy": {
+        "value": null,
+        "target": 0.85,
+        "status": "UNMEASURED"
+      },
+      "duplicate_entity_rate": {
+        "value": null,
+        "target": 0.05,
+        "status": "UNMEASURED"
+      },
+      "peak_memory_bytes": {
+        "value": 3061843460.096,
+        "target": 4294967296,
+        "status": "PASS"
+      },
+      "freshness max answerable lag seconds": {
+        "value": null,
+        "target": 1200,
+        "status": "UNMEASURED"
+      },
+      "ungrounded entity rate reported": {
+        "value": null,
+        "target": "reported",
+        "status": "UNMEASURED"
+      }
+    }
+  },
+  "report_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\real-v2-dev-20261113T132158811059Z.md",
+  "csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\real-v2-dev-20261113T132158811059Z.questions.csv",
+  "configurations_csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\real-v2-dev-20261113T132158811059Z.configurations.csv"
+}

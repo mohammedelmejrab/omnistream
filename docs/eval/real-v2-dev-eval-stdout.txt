@@ -1,0 +1,14 @@
+Run 16: 0 completed pairs; checkpoint C:\Users\mehme\omnistream-integrated\data\snapshots\real-v2-dev\runs\16
+Ingested 75/76: 9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd (written)
+Ingested 76/76: a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703 (written)
+Evaluation failed: ValueError: snapshot is incomplete: refusing automatic re-ingestion
+Provider calls stopped; remaining pairs UNMEASURED: ValueError: snapshot is incomplete: refusing automatic re-ingestion
+| Configuration | recall_at_10 | mrr | hits_at_1 | correctness | routing_recall | routing_precision | citation_faithfulness | citation_faithfulness_micro | correctness_errors | faithfulness_errors | zero_citation_answers | abstentions | changed_fact_accuracy | latency_seconds | tokens | cost_usd | judge_tokens | judge_cost_usd | errors |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| external | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+| classic | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+| graphiti | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+| own | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+| own+subagents | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+| classic+subagents | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | 0 | 0 | 0 | 0 | N/A | N/A | N/A | N/A | N/A | N/A | 24 |
+Report: C:\Users\mehme\omnistream-integrated\docs\eval\real-v2-dev-20261113T132158811059Z.md

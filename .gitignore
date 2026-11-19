@@ -6,11 +6,9 @@ __pycache__/
 .ruff_cache/
 .DS_Store
 .env
-data/
+# SQLite transient files
+*.db-shm
+*.db-wal
 
-# run logs
-docs/eval/*.log
-docs/eval/*stdout.txt
-docs/eval/*stderr.txt
 .env.*
 !.env.example

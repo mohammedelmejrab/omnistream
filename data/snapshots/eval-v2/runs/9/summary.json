@@ -1,0 +1,78 @@
+{
+  "id": 9,
+  "snapshot": "eval-v2",
+  "rows": [
+    "classic"
+  ],
+  "status": "failed",
+  "metrics": {},
+  "results": [],
+  "global_metrics": {
+    "fatal_error": "AuthError: {neo4j_code: Neo.ClientError.Security.Unauthorized} {message: The client is unauthorized due to authentication failure.} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Unexpected error has occurred. See debug log for details.}",
+    "usage_by_stage": {},
+    "total_tokens": 0,
+    "total_cost_usd": null,
+    "judge_usage_by_configuration": {
+      "classic": null
+    },
+    "application_peak_rss_bytes": 208867328,
+    "neo4j_peak_bytes": 1425929142.272,
+    "peak_memory_bytes": 1634796470.272,
+    "memory_sampling_errors": [],
+    "success_criteria": {
+      "graphiti: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED"
+      },
+      "own: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED"
+      },
+      "own+subagents: multi-hop recall improvement": {
+        "value": null,
+        "target": 1e-12,
+        "status": "UNMEASURED"
+      },
+      "Full system multi-hop correctness gain vs classic": {
+        "value": null,
+        "target": 0.3,
+        "status": "UNMEASURED"
+      },
+      "Full system multi-hop correctness gain vs external": {
+        "value": null,
+        "target": 0.3,
+        "status": "UNMEASURED"
+      },
+      "ingestion_routing_accuracy": {
+        "value": null,
+        "target": 0.85,
+        "status": "UNMEASURED"
+      },
+      "duplicate_entity_rate": {
+        "value": null,
+        "target": 0.05,
+        "status": "UNMEASURED"
+      },
+      "peak_memory_bytes": {
+        "value": 1634796470.272,
+        "target": 4294967296,
+        "status": "PASS"
+      },
+      "freshness max answerable lag seconds": {
+        "value": null,
+        "target": 1200,
+        "status": "UNMEASURED"
+      },
+      "ungrounded entity rate reported": {
+        "value": null,
+        "target": "reported",
+        "status": "UNMEASURED"
+      }
+    }
+  },
+  "report_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T044200320071Z.md",
+  "csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T044200320071Z.questions.csv",
+  "configurations_csv_path": "C:\\Users\\mehme\\omnistream-integrated\\docs\\eval\\eval-v2-20261112T044200320071Z.configurations.csv"
+}

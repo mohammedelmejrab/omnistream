@@ -1,0 +1,759 @@
+{
+  "definition": "Common-noun descriptions, roles (including acronym-qualified chiefs) and document/event labels; excludes proper names, specific monetary amounts and accession identifiers. Reviewed over the full node-name inventory.",
+  "count": 94,
+  "denominator": 283,
+  "entities": [
+    {
+      "id": "0047aaa2-69fc-40f5-9b36-674fcafa8b08",
+      "name": "registration record",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "ed569c3f49d8483a8905e5bfdfb9605e",
+      "aliases": []
+    },
+    {
+      "id": "0619b95b-c8f8-4eca-a1de-57783de8cac3",
+      "name": "the board's original supporting schedule",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "18c38556dbcb4716bb93c8c5b7009970",
+      "aliases": []
+    },
+    {
+      "id": "08bad194-9dfc-42ca-b13f-249688749c7c",
+      "name": "defective pressure relay",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "c78de3b2358542f7aa24af27e75d84dd",
+      "aliases": []
+    },
+    {
+      "id": "0f3833a7-e437-49f5-b0d4-83b3484585e0",
+      "name": "defective coolant valve",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "247d4dcd85034ab4bd8afa839545ef2a",
+      "aliases": []
+    },
+    {
+      "id": "1004ea0b-a2fa-491b-833a-b011cc0f9dff",
+      "name": "public webcast",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "e86ae625b8974345a793e84d7b462456",
+      "aliases": []
+    },
+    {
+      "id": "10ef16a2-79f6-4d6e-b59a-86559f0bd377",
+      "name": "industry newsletter",
+      "type": "Publication",
+      "bubble": "eval-v2-finance",
+      "global_id": "91302576667a48a58c1aa3c0a2b3eaff",
+      "aliases": []
+    },
+    {
+      "id": "10fdae95-07fc-4bc6-aa25-0e30ed9596bc",
+      "name": "investment filing",
+      "type": "Publication",
+      "bubble": "eval-v2-news",
+      "global_id": "a8f426af92104b1990ce27694a902852",
+      "aliases": []
+    },
+    {
+      "id": "17bb57a3-842a-42f6-aa37-6de3414ffc53",
+      "name": "replacement transaction",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "e432f123a4794e22a1e073449c060f2c",
+      "aliases": []
+    },
+    {
+      "id": "1c98f4e1-31b2-4e0a-83fc-92132c633755",
+      "name": "September product inspection",
+      "type": "Event",
+      "bubble": "eval-v2-news",
+      "global_id": "782da8e9e1ee4c85a2988722c4b2a44b",
+      "aliases": []
+    },
+    {
+      "id": "1ce9f152-bb3e-42a2-a918-622c75b39bbb",
+      "name": "investment filing dated June 3",
+      "type": "Publication",
+      "bubble": "eval-v2-finance",
+      "global_id": "da3ef9d2f2d0479a9c1bd38d142cae31",
+      "aliases": []
+    },
+    {
+      "id": "1d0ec604-f3ad-496e-9659-8da58d54a707",
+      "name": "corporate register",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "434325bb43834cf097984417832f581e",
+      "aliases": []
+    },
+    {
+      "id": "1d831bcc-f978-4b16-95d5-9af7aacd1f93",
+      "name": "electronic index",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "31ecdc376ac44226b0eec8c8726267c2",
+      "aliases": []
+    },
+    {
+      "id": "1f4ca52a-5cbe-43e3-b65d-5d549212a636",
+      "name": "provisional purchase agreement",
+      "type": "Publication",
+      "bubble": "eval-v2-finance",
+      "global_id": "cbac46474f3d4462b17c184c89875175",
+      "aliases": []
+    },
+    {
+      "id": "2a222b09-0055-46d4-a4eb-228e9d7241f8",
+      "name": "interim operations committee",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "d7dda281a0f446e7b5fec881d5c2bf8d",
+      "aliases": []
+    },
+    {
+      "id": "2aff6f0b-631a-4d63-ac35-2f6dd1d1f729",
+      "name": "refundable deposit",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "3df4dce313ca46ecad5d858d5d05226e",
+      "aliases": []
+    },
+    {
+      "id": "2ddf88e0-3922-4a86-a273-3bbec93702e1",
+      "name": "directors",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "67e240adc90248b78dfd2decd542ffb4",
+      "aliases": []
+    },
+    {
+      "id": "30fb75f1-ddd6-4533-a42f-44bbb26ccf87",
+      "name": "independent measurement",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "71e15c6ae6cc45018fe8c646295fe884",
+      "aliases": []
+    },
+    {
+      "id": "3247cf5d-ae97-4afb-a5ad-cc25c740db93",
+      "name": "QND chief",
+      "type": "Person",
+      "bubble": "eval-v2-news",
+      "global_id": "d3d6449e2b46485693da974b40e0bd0d",
+      "aliases": []
+    },
+    {
+      "id": "333286be-8c84-4d5a-98d3-6770fddf6739",
+      "name": "directors",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "67e240adc90248b78dfd2decd542ffb4",
+      "aliases": []
+    },
+    {
+      "id": "3a3b49c2-41e6-418d-9ee3-b1d744f0d4d4",
+      "name": "TMC chief",
+      "type": "Person",
+      "bubble": "eval-v2-news",
+      "global_id": "e3b679222e4a44a0882c5e48e3502251",
+      "aliases": []
+    },
+    {
+      "id": "3d68704a-061c-480e-b94e-085a10720067",
+      "name": "September product inspection",
+      "type": "Event",
+      "bubble": "eval-v2-finance",
+      "global_id": "6b3f6d031e2b4f168e23d738f8b8e9dd",
+      "aliases": []
+    },
+    {
+      "id": "3f3dfd2a-b0c1-4bf8-b547-c19e0b38c46a",
+      "name": "expenditure review",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "be0f7696bcf249d2906638bf2d43052f",
+      "aliases": []
+    },
+    {
+      "id": "445938d3-7cab-42bf-b8ac-f8315459eeeb",
+      "name": "research funding agreement",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "7fd111cf23d444aeb79053be3512e583",
+      "aliases": []
+    },
+    {
+      "id": "46cc64a9-5e16-4119-b338-47f43e771f21",
+      "name": "accession AX-49",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "f74f0e996e4d44a6935c8c358fe97470",
+      "aliases": []
+    },
+    {
+      "id": "48a81338-f6f5-402d-aa05-e08b3dd903bb",
+      "name": "signing authority",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "72264c1a2337479a90bdd26110620a22",
+      "aliases": []
+    },
+    {
+      "id": "4991acd8-d70e-4130-b4e0-45a5370a2497",
+      "name": "excluded samples",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "5c1891df2f0b45b3b06fba3593e06a4d",
+      "aliases": []
+    },
+    {
+      "id": "49a8227e-d04e-4003-ad47-84115b446805",
+      "name": "replication studies",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "9791f3ad97614e5897a1b07485cd51d6",
+      "aliases": []
+    },
+    {
+      "id": "4c2de943-4b3b-4fb8-97ac-d2e6aacf4843",
+      "name": "replacement parts",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "ff8deb4dc6194e30a33c662c16151d22",
+      "aliases": []
+    },
+    {
+      "id": "5200db47-befb-4750-adaf-8e9a39491801",
+      "name": "research funding agreement",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "7fd111cf23d444aeb79053be3512e583",
+      "aliases": []
+    },
+    {
+      "id": "523ae394-96d4-4fd1-83a9-e29dde3c638e",
+      "name": "provisional purchase agreement",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "cbac46474f3d4462b17c184c89875175",
+      "aliases": []
+    },
+    {
+      "id": "53fe50cc-673e-4f15-9053-b896525f10db",
+      "name": "refundable deposit",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "3df4dce313ca46ecad5d858d5d05226e",
+      "aliases": []
+    },
+    {
+      "id": "54d941cc-8a32-4762-a7bf-9e31dd776e62",
+      "name": "Resolution adopted September 18",
+      "type": "Event",
+      "bubble": "eval-v2-finance",
+      "global_id": "4277107e9dd6459aa2802920fcf8706d",
+      "aliases": []
+    },
+    {
+      "id": "564d5493-8a97-4feb-b8d0-f256ff6c3937",
+      "name": "parent company",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "8ac1e49fba824fafa6019aa5fd8b39e3",
+      "aliases": []
+    },
+    {
+      "id": "580bcb16-bdde-420b-b08a-a194ad30a891",
+      "name": "remuneration resolution",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "30a358cf6d1e4fb0a31507ebdd57bb2f",
+      "aliases": []
+    },
+    {
+      "id": "5882e797-26a3-4e52-b7cb-963ab9918f47",
+      "name": "BDA chief",
+      "type": "Person",
+      "bubble": "eval-v2-news",
+      "global_id": "a4eecdb943b740c999dd31223e64ddda",
+      "aliases": []
+    },
+    {
+      "id": "5b750fa6-184a-427a-a526-541f493a33fe",
+      "name": "checksum",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "4ec5522d2fe445f4b1b38a04638ffbfb",
+      "aliases": []
+    },
+    {
+      "id": "5cfb5a2b-8267-4fb0-a4d1-046a7550ba86",
+      "name": "supplier",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "8495a1e829424adfb0cdd73097eaa954",
+      "aliases": []
+    },
+    {
+      "id": "5d8a3bb5-e234-4167-8249-52ee412cfa9a",
+      "name": "annual governance documents",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "e8d0ff63b14b4ec7a9fb25d35a07b0f2",
+      "aliases": []
+    },
+    {
+      "id": "61415094-11cd-41d4-91c3-e54a8ee33bca",
+      "name": "parent company",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "8ac1e49fba824fafa6019aa5fd8b39e3",
+      "aliases": []
+    },
+    {
+      "id": "61787ed1-5144-45c9-a461-d2d14ce18f41",
+      "name": "safety committee",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "e10c031b04be4ac0b533318175abec00",
+      "aliases": []
+    },
+    {
+      "id": "65cd9ae0-49a7-4df2-9a96-0ffec1d7e0f6",
+      "name": "electronic index",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "31ecdc376ac44226b0eec8c8726267c2",
+      "aliases": []
+    },
+    {
+      "id": "6a657da4-98f9-42ec-84af-b4c42a0dc6e5",
+      "name": "company secretary",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "81f33ee8e5934b66bcd671df0c4685d1",
+      "aliases": []
+    },
+    {
+      "id": "6f3bf7e2-811b-417b-b893-6a2caa75147b",
+      "name": "early market newsletter",
+      "type": "Publication",
+      "bubble": "eval-v2-news",
+      "global_id": "d73485d7401747168b4c94b6730defb8",
+      "aliases": []
+    },
+    {
+      "id": "72b44243-6da1-484e-9c23-2e8ce66f916f",
+      "name": "closing obligations",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "db522729ce2b4b4493995a2c5606fc79",
+      "aliases": []
+    },
+    {
+      "id": "7ea156c8-5772-4d66-9df1-c032509992a6",
+      "name": "supplier records",
+      "type": "Publication",
+      "bubble": "eval-v2-news",
+      "global_id": "d11d242d7af347349738a2f148c6d292",
+      "aliases": []
+    },
+    {
+      "id": "8149d24e-d77c-4039-bfa2-87eaa8ce5ee9",
+      "name": "OBR chief",
+      "type": "Person",
+      "bubble": "eval-v2-news",
+      "global_id": "ca5e7da6595f4f03ad6f6ca349db5d50",
+      "aliases": []
+    },
+    {
+      "id": "8868cb9c-9dcf-47d4-b828-f50a36494cd6",
+      "name": "Resolution adopted September 18",
+      "type": "Event",
+      "bubble": "eval-v2-news",
+      "global_id": "4277107e9dd6459aa2802920fcf8706d",
+      "aliases": []
+    },
+    {
+      "id": "8aa98e1e-3271-4f5f-af2c-4eb4cadfb364",
+      "name": "correction log",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "dc482fe250694609b4286ccc071071e7",
+      "aliases": []
+    },
+    {
+      "id": "8ce2b385-7115-454c-b763-d4e316e5e218",
+      "name": "replication archive",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "5d5a3357188c4584af5f6bcd7ebf6ff4",
+      "aliases": []
+    },
+    {
+      "id": "90f63448-53aa-4803-b1f8-c6e02bd783e7",
+      "name": "DATA DEPOSIT",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "fc2127828a9a46dea64ae048d04c3051",
+      "aliases": []
+    },
+    {
+      "id": "91119330-8c06-4670-b91c-aeaa7b66b45e",
+      "name": "manufacturing divisions",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "fa02eae4313f41398996e0b011b118b5",
+      "aliases": []
+    },
+    {
+      "id": "95c5e7f7-6fd8-4a32-a595-0a2a9451fdba",
+      "name": "authors' laboratory software",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "6ad1e70582084d7b97133fc37478817f",
+      "aliases": []
+    },
+    {
+      "id": "9c7bde9e-0eba-4a4e-87dd-bc9e21bb1cfb",
+      "name": "dedicated telephone service",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "2c1bfaa45ec942ec9b015667cb5c630b",
+      "aliases": []
+    },
+    {
+      "id": "a07d6964-bd20-4004-914a-7af743402587",
+      "name": "assembly line",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "9ccf3596d1a14e2bb71b5bcfb7abf518",
+      "aliases": []
+    },
+    {
+      "id": "a1b92a97-80ba-420f-966e-a36d55bdb301",
+      "name": "interim operations committee",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "d7dda281a0f446e7b5fec881d5c2bf8d",
+      "aliases": []
+    },
+    {
+      "id": "a49a7794-cb03-4c39-bae0-8b4edfd21831",
+      "name": "due diligence work",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "10f9f6ec67174fd6be529f7cfc4bb5ab",
+      "aliases": []
+    },
+    {
+      "id": "a6b6bf51-6a86-4cfd-b148-b417e2e68a82",
+      "name": "ANALYST NOTE",
+      "type": "Publication",
+      "bubble": "eval-v2-research",
+      "global_id": "70b8a26221dc4843bc5b741b9ebe77f8",
+      "aliases": []
+    },
+    {
+      "id": "a7de17d6-b673-45c3-ba8b-3e6dedc0edd1",
+      "name": "ordinary supply contracts",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "7903b99d29d048849268c2eef7a21ab6",
+      "aliases": []
+    },
+    {
+      "id": "ab83fae7-db62-4507-ab05-17594b63d3c0",
+      "name": "signing authority",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "72264c1a2337479a90bdd26110620a22",
+      "aliases": []
+    },
+    {
+      "id": "ada68412-e1ae-45b3-9619-e5ffe0815951",
+      "name": "manufacturing divisions",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "c47b54e5b60e4292a4eecc5d085cd2e6",
+      "aliases": []
+    },
+    {
+      "id": "b07c3fda-4f13-4dc7-8281-ee7e538bfd8b",
+      "name": "ordinary supply contracts",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "7903b99d29d048849268c2eef7a21ab6",
+      "aliases": []
+    },
+    {
+      "id": "b09d4c9e-1490-45d9-9680-d0e8652a4b9a",
+      "name": "experimental records",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "d930bdef39124193bbf3d6f6c792f692",
+      "aliases": []
+    },
+    {
+      "id": "b1152a13-5616-4059-95fe-ed75ac032f59",
+      "name": "public webcast",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "e86ae625b8974345a793e84d7b462456",
+      "aliases": []
+    },
+    {
+      "id": "b8e9845f-44c4-41a2-9b56-50005f01a0d9",
+      "name": "power connector",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "869da6ba503644e5a7a8328bc7a7a32a",
+      "aliases": []
+    },
+    {
+      "id": "ba9fb748-c8cf-4da7-8cb7-b7b32920a06c",
+      "name": "publisher",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "540c03cacef746fe9d5543ae11dd4db8",
+      "aliases": []
+    },
+    {
+      "id": "ba9fbeb0-a3a3-4490-ab7b-0b50b1cd33e7",
+      "name": "AVT chief",
+      "type": "Person",
+      "bubble": "eval-v2-news",
+      "global_id": "5af024a89737487fa7ad5e7ca204c980",
+      "aliases": []
+    },
+    {
+      "id": "bba95073-134a-48a8-9189-81cde336e0b3",
+      "name": "staff costs",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "e3212335a43c414eacc4acf3fa2fe23a",
+      "aliases": []
+    },
+    {
+      "id": "bbaf8b98-a42c-4a1b-936b-25dba14ebb1b",
+      "name": "anonymized batch measurements",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "0d9a2d04cc4e4a9184a8ba83bf9281b0",
+      "aliases": []
+    },
+    {
+      "id": "bc0a9987-401e-46ac-b1ff-6e1bd5bb3ac3",
+      "name": "expenditure review",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "be0f7696bcf249d2906638bf2d43052f",
+      "aliases": []
+    },
+    {
+      "id": "be0ba39f-452a-4e7d-854b-d2210a9a23eb",
+      "name": "axle collar",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "2b744460046a472d90d09525f905b1d5",
+      "aliases": []
+    },
+    {
+      "id": "be397d7e-f0ce-4d14-9af1-4b376c5d916e",
+      "name": "reporting period",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "22d48be72dd74e73b936f27e2e1d87ce",
+      "aliases": []
+    },
+    {
+      "id": "bfbd49a3-7ab5-48d8-9fbf-359e049958d0",
+      "name": "commercial product performance",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "08aa5b7e2b22477ca34851a6ab651429",
+      "aliases": []
+    },
+    {
+      "id": "c12c1a39-a1f1-4b17-afee-a1d79ef6aa33",
+      "name": "SAFETY WIRE",
+      "type": "Publication",
+      "bubble": "eval-v2-news",
+      "global_id": "12efb839b86343aab02ac0e15dd64330",
+      "aliases": []
+    },
+    {
+      "id": "c27d734b-7b52-4798-862e-0b8c78f2a8cf",
+      "name": "public webcast",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "e86ae625b8974345a793e84d7b462456",
+      "aliases": []
+    },
+    {
+      "id": "c56a3b67-36d8-442c-afe2-3d620f419805",
+      "name": "company secretary",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "81f33ee8e5934b66bcd671df0c4685d1",
+      "aliases": []
+    },
+    {
+      "id": "c690c3e3-cb0c-4361-8853-e511e5ec9d7d",
+      "name": "steering pin",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "76a8ccab1502419f85a1fff788830d92",
+      "aliases": []
+    },
+    {
+      "id": "c7d90a44-3d56-46ab-b95b-cea3a9d67329",
+      "name": "next scheduled meeting",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "75ae642df0ea4ab7853ae79cf6738250",
+      "aliases": []
+    },
+    {
+      "id": "c8810afc-58a9-41c0-81d4-277eb62951a9",
+      "name": "remuneration resolution",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "30a358cf6d1e4fb0a31507ebdd57bb2f",
+      "aliases": []
+    },
+    {
+      "id": "c9ce1498-e3bd-49aa-b079-2d0ee37022a4",
+      "name": "accession identifier",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "a30fb0dcefa24a258bffc865c19d1931",
+      "aliases": []
+    },
+    {
+      "id": "c9d33cf9-944c-4ead-97b9-a8ed2374e775",
+      "name": "export deliveries",
+      "type": "Concept",
+      "bubble": "eval-v2-news",
+      "global_id": "f35b74b678964405a5db44320b555162",
+      "aliases": []
+    },
+    {
+      "id": "d2618490-cc83-447f-9833-7d4200df21e0",
+      "name": "supplier",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "af498d2ab6e94e61a8027019d60d261a",
+      "aliases": []
+    },
+    {
+      "id": "d7237cf4-704f-4c4b-bdbb-6c6216e27dcf",
+      "name": "vehicle modules",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "61d4c0e1b7174bbc9abb62f35e7c6dc9",
+      "aliases": []
+    },
+    {
+      "id": "d768893b-530e-4f86-b7fc-9b88b296d663",
+      "name": "control fuse",
+      "type": "Product",
+      "bubble": "eval-v2-news",
+      "global_id": "0dc7ae759d09456daab77aab629bb6b7",
+      "aliases": []
+    },
+    {
+      "id": "d8211c35-703d-44b1-8217-4490853481fb",
+      "name": "laboratory equipment",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "f018b66949294f3c815abcd3c40568ff",
+      "aliases": []
+    },
+    {
+      "id": "deee5459-cd90-4f0a-8aad-de7bb7006e24",
+      "name": "instrument settings",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "9936fd38cdde412f9e28fc38b5eaf835",
+      "aliases": []
+    },
+    {
+      "id": "e3f36ab7-f7e2-4c42-996e-9a7378241c0b",
+      "name": "advisory costs",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "80926aa964ae453b95f9953a66325296",
+      "aliases": []
+    },
+    {
+      "id": "e6d0669c-1ca1-4930-a0af-cb987a540a80",
+      "name": "accession NZ-53",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "1e4e370e4a2540ee98c494bd0f58e87e",
+      "aliases": []
+    },
+    {
+      "id": "ea123075-6de2-4674-a993-177a5a5e53fa",
+      "name": "financial statements",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "c33c35738e6c48c28a9d34a6feb1b1cc",
+      "aliases": []
+    },
+    {
+      "id": "ea9cb33f-9475-44a8-b7ff-791b73d1a569",
+      "name": "early market newsletter",
+      "type": "Publication",
+      "bubble": "eval-v2-finance",
+      "global_id": "d73485d7401747168b4c94b6730defb8",
+      "aliases": []
+    },
+    {
+      "id": "eb35e3df-1931-4061-a135-803a61ff4020",
+      "name": "published analyses",
+      "type": "Concept",
+      "bubble": "eval-v2-research",
+      "global_id": "808c52e3319047e589a538260fb74d37",
+      "aliases": []
+    },
+    {
+      "id": "f00aca72-65d6-411f-9f29-dfd330d13cf2",
+      "name": "Accountants",
+      "type": "Organization",
+      "bubble": "eval-v2-finance",
+      "global_id": "ffc8d3d25a684bd9bd4c26e3271a7bae",
+      "aliases": []
+    },
+    {
+      "id": "f2ee3d7b-23cc-4304-9dcc-0093b38f077d",
+      "name": "October deadline",
+      "type": "Publication",
+      "bubble": "eval-v2-finance",
+      "global_id": "b1e4a6aacd4a467fbdc8443866a6cab5",
+      "aliases": []
+    },
+    {
+      "id": "f8a04d73-fb4a-460f-a5d5-71ee3b8e9f6d",
+      "name": "company secretary",
+      "type": "Organization",
+      "bubble": "eval-v2-news",
+      "global_id": "69a3e96d9ef94d688cc1e8599a8b0980",
+      "aliases": []
+    },
+    {
+      "id": "fdcb978c-f36e-4170-bd33-61cbe16df693",
+      "name": "rebuilding safety procedures",
+      "type": "Concept",
+      "bubble": "eval-v2-finance",
+      "global_id": "cae9342c5e8a4b21819066a598dc6e59",
+      "aliases": []
+    }
+  ]
+}

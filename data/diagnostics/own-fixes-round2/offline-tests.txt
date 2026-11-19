@@ -1,0 +1,210 @@
+........................................................................ [  6%]
+...............................................................FF....... [ 13%]
+........................................................................ [ 19%]
+........................................................................ [ 26%]
+........................................................................ [ 32%]
+........................................................................ [ 39%]
+........................................................................ [ 45%]
+........................................................................ [ 52%]
+........................................................................ [ 59%]
+............................s........................................... [ 65%]
+.........F.............................................................. [ 72%]
+........................................................................ [ 78%]
+........................................................................ [ 85%]
+........................................................................ [ 91%]
+........................................................................ [ 98%]
+..................                                                       [100%]
+================================== FAILURES ===================================
+_____ test_c4_ensure_schema_creates_entity_index_with_settings_dimension ______
+
+    async def test_c4_ensure_schema_creates_entity_index_with_settings_dimension():
+        from omnistream.graph.ops import Neo4jGraphOps
+    
+        driver = SimpleNamespace(
+            execute_query=AsyncMock(
+                side_effect=[
+                    ([], None, None),
+                    (
+                        [{"options": {"indexConfig": {"vector.dimensions": 384}}}],
+                        None,
+                        None,
+                    ),
+                    ([], None, None),
+                    (
+                        [
+                            {
+                                "name": "existing_global",
+                                "options": {"indexConfig": {"vector.dimensions": 384}},
+                            }
+                        ],
+                        None,
+                        None,
+                    ),
+                    ([], None, None),
+                    ([], None, None),
+                ]
+            )
+        )
+>       await Neo4jGraphOps(driver, 384, "custom`entities").ensure_schema()
+
+tests\unit\test_c4_c5_adapters.py:338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <omnistream.graph.ops.Neo4jGraphOps object at 0x000001A6ADDB07A0>
+
+    async def ensure_schema(self) -> None:
+        await self._q(
+            f"CREATE VECTOR INDEX `{self._entity_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
+            "FOR (e:Entity) ON (e.name_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        rows = await self._q(
+            "SHOW INDEXES YIELD name, options WHERE name = $name RETURN options",
+            name=self._entity_index,
+        )
+        actual = (
+            rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
+            if rows
+            else None
+        )
+        if actual != self._dim:
+            raise ValueError(
+                f"Neo4j index {self._entity_index!r} dimension is {actual}; expected {self._dim}"
+            )
+        await self._q(
+            f"CREATE VECTOR INDEX `{self._fact_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
+            "FOR ()-[r:RELATES_TO]-() ON (r.fact_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        fact_rows = await self._q(
+            "SHOW INDEXES YIELD name, entityType, labelsOrTypes, properties, options "
+            "WHERE name = $name RETURN entityType, labelsOrTypes, properties, options",
+            name=self._fact_index,
+        )
+>       if not fact_rows or fact_rows[0]["entityType"] != "RELATIONSHIP" or fact_rows[0]["labelsOrTypes"] != ["RELATES_TO"] or fact_rows[0]["properties"] != ["fact_embedding"] or fact_rows[0]["options"].get("indexConfig", {}).get("vector.dimensions") != self._dim or str(fact_rows[0]["options"].get("indexConfig", {}).get("vector.similarity_function", "")).lower() != "cosine":
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'entityType'
+
+src\omnistream\graph\ops.py:104: KeyError
+______________ test_global_linker_uses_existing_equivalent_index ______________
+
+    async def test_global_linker_uses_existing_equivalent_index():
+        from omnistream.graph.ops import Neo4jGraphOps
+    
+        driver = SimpleNamespace(
+            execute_query=AsyncMock(
+                side_effect=[
+                    ([], None, None),
+                    (
+                        [{"options": {"indexConfig": {"vector.dimensions": 384}}}],
+                        None,
+                        None,
+                    ),
+                    ([], None, None),
+                    (
+                        [
+                            {
+                                "name": "existing`global",
+                                "options": {"indexConfig": {"vector.dimensions": 384}},
+                            }
+                        ],
+                        None,
+                        None,
+                    ),
+                    ([], None, None),
+                    ([], None, None),
+                    ([], None, None),
+                ]
+            )
+        )
+        ops = Neo4jGraphOps(driver, 384)
+>       await ops.ensure_schema()
+
+tests\unit\test_c4_c5_adapters.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <omnistream.graph.ops.Neo4jGraphOps object at 0x000001A6ADDB1E50>
+
+    async def ensure_schema(self) -> None:
+        await self._q(
+            f"CREATE VECTOR INDEX `{self._entity_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
+            "FOR (e:Entity) ON (e.name_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        rows = await self._q(
+            "SHOW INDEXES YIELD name, options WHERE name = $name RETURN options",
+            name=self._entity_index,
+        )
+        actual = (
+            rows[0]["options"].get("indexConfig", {}).get("vector.dimensions")
+            if rows
+            else None
+        )
+        if actual != self._dim:
+            raise ValueError(
+                f"Neo4j index {self._entity_index!r} dimension is {actual}; expected {self._dim}"
+            )
+        await self._q(
+            f"CREATE VECTOR INDEX `{self._fact_index.replace(chr(96), chr(96) * 2)}` IF NOT EXISTS "
+            "FOR ()-[r:RELATES_TO]-() ON (r.fact_embedding) "
+            "OPTIONS {indexConfig: {`vector.dimensions`: $dim, "
+            "`vector.similarity_function`: 'cosine'}}",
+            dim=self._dim,
+        )
+        fact_rows = await self._q(
+            "SHOW INDEXES YIELD name, entityType, labelsOrTypes, properties, options "
+            "WHERE name = $name RETURN entityType, labelsOrTypes, properties, options",
+            name=self._fact_index,
+        )
+>       if not fact_rows or fact_rows[0]["entityType"] != "RELATIONSHIP" or fact_rows[0]["labelsOrTypes"] != ["RELATES_TO"] or fact_rows[0]["properties"] != ["fact_embedding"] or fact_rows[0]["options"].get("indexConfig", {}).get("vector.dimensions") != self._dim or str(fact_rows[0]["options"].get("indexConfig", {}).get("vector.similarity_function", "")).lower() != "cosine":
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'entityType'
+
+src\omnistream\graph\ops.py:104: KeyError
+__________________ test_seed_parameters_mapping_and_entities __________________
+
+    def test_seed_parameters_mapping_and_entities():
+        malicious = "news' OR true //"
+        index = "index' malicious"
+        driver = Driver([{"e": NODE, "score": 0.5}], [{"e": NODE}])
+        store = Neo4jGraphStore(driver, database="test-db", entity_index_name=index)
+        assert isinstance(store, GraphStore)
+>       result = store.seed_by_embedding(np.array([1.0, 0.0]), bubbles=[malicious])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\unit\test_neo4j_store.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\omnistream\graph\neo4j_store.py:268: in seed_by_embedding
+    if self.exact_search or not self._cosine_index(self.entity_index_name, "NODE"):
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <omnistream.graph.neo4j_store.Neo4jGraphStore object at 0x000001A6B9A04440>
+name = "index' malicious", kind = 'NODE'
+
+    def _cosine_index(self, name: str, kind: str) -> bool:
+        rows = self._run(
+            "SHOW INDEXES YIELD name, type, entityType, labelsOrTypes, properties, state, options "
+            "WHERE name = $name AND type = 'VECTOR' AND entityType = $kind "
+            "RETURN name, state, labelsOrTypes, properties, options",
+            name=name, kind=kind,
+        )
+        if not rows:
+            return False
+        row = rows[0]
+>       config = row["options"].get("indexConfig", {})
+                 ^^^^^^^^^^^^^^
+E       KeyError: 'options'
+
+src\omnistream\graph\neo4j_store.py:248: KeyError
+=========================== short test summary info ===========================
+FAILED tests/unit/test_c4_c5_adapters.py::test_c4_ensure_schema_creates_entity_index_with_settings_dimension
+FAILED tests/unit/test_c4_c5_adapters.py::test_global_linker_uses_existing_equivalent_index
+FAILED tests/unit/test_neo4j_store.py::test_seed_parameters_mapping_and_entities
+3 failed, 1094 passed, 1 skipped, 22 deselected in 101.74s (0:01:41)

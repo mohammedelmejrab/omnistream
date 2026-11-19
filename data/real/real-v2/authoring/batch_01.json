@@ -1,0 +1,757 @@
+[
+ {
+  "id": "rq-t-016",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "Who took over as board chair on the day the executive who held a public fireside chat with Kazakhstan's AI minister in Astana on 23 October 2026 stepped down?",
+  "reference_answer": "Harvey C. Jones",
+  "key_facts": [
+   "Harvey C. Jones (also acceptable: Harvey Jones)",
+   "appointed Chair of the Board on 11 November 2026"
+  ],
+  "gold": [
+   "c7708a09",
+   "da5cc113"
+  ],
+  "evidence": [
+   {
+    "item_id": "c7708a09",
+    "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+    "establishes": "The Astana visitor and fireside-chat speaker is Jensen Huang of NVIDIA"
+   },
+   {
+    "item_id": "da5cc113",
+    "quote": "accepted the resignation of Jen-Hsun Huang",
+    "establishes": "The 8-K reports the same person, under his legal name, resigning on 11 Nov 2026"
+   },
+   {
+    "item_id": "da5cc113",
+    "quote": "the Board appointed Harvey C. Jones, age 73, as Chair of the Board",
+    "establishes": "Jones became Chair the same day"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [
+   "6efa7d34"
+  ],
+  "notes": "The press-release exhibit 6efa7d34 states the same facts using the name 'Jensen Huang'; it is an acceptable alternative to da5cc113 but does not exercise the alias. Colette Kress (interim CEO) is the tempting wrong answer.",
+  "surface_forms": [
+   "Jensen Huang",
+   "Jen-Hsun Huang"
+  ]
+ },
+ {
+  "id": "rq-t-017",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "A November 2026 paper benchmarks a one-sided expert-parallel all-to-all for mixture-of-experts inference on one GPU generation. According to the vendor's own post on memory codesign, by roughly how much did HBM capacity per GPU grow between the Ultra version of that generation and the platform that follows it?",
+  "reference_answer": "Roughly 3%",
+  "key_facts": [
+   "about 3% (roughly 3 percent)"
+  ],
+  "gold": [
+   "c2cadf01",
+   "4f4e68d2"
+  ],
+  "evidence": [
+   {
+    "item_id": "c2cadf01",
+    "quote": "On Blackwell GPUs, NVLinkOneSided completes dispatch and combine",
+    "establishes": "The paper's benchmark hardware is the Blackwell generation"
+   },
+   {
+    "item_id": "4f4e68d2",
+    "quote": "HBM capacity per GPU rose roughly 3%",
+    "establishes": "From Blackwell Ultra to Vera Rubin, HBM per GPU rose about 3%"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "03018bb6",
+   "d1ccfe31"
+  ],
+  "notes": "03018bb6 and d1ccfe31 also use Blackwell GPUs but are about other methods. The 30x figure in the same sentence is throughput per dollar, not HBM capacity."
+ },
+ {
+  "id": "rq-t-018",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "The US Supreme Court decision that EFF says ended corporate liability under the Alien Tort Statute was named after a networking company. Which outside chief executive joined that company's board in October 2026?",
+  "reference_answer": "Girish D. Rishi, CEO of Cognite Holding B.V.",
+  "key_facts": [
+   "Girish D. Rishi (Girish Rishi)",
+   "CEO of Cognite"
+  ],
+  "gold": [
+   "6bbb2a8b",
+   "8dcb1e89"
+  ],
+  "evidence": [
+   {
+    "item_id": "6bbb2a8b",
+    "quote": "recent ruling in Cisco Systems, Inc. v. Doe I dealt the law a final blow",
+    "establishes": "The case is Cisco Systems, Inc. v. Doe I"
+   },
+   {
+    "item_id": "8dcb1e89",
+    "quote": "appointed Girish D. Rishi, CEO of Cognite Holding B.V., as a member",
+    "establishes": "Cisco's board appointed Rishi, effective 9 Oct 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Cisco's November results items do not mention the appointment."
+ },
+ {
+  "id": "rq-t-019",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "On 20 October 2026 the UK competition authority opened a consultation on requiring one handset maker to open up contactless (NFC) access. What revenue did that company report for its fiscal quarter ended 26 September 2026?",
+  "reference_answer": "$114.5 billion",
+  "key_facts": [
+   "$114.5 billion (USD 114.5bn)"
+  ],
+  "gold": [
+   "378b27e8",
+   "30589f0e"
+  ],
+  "evidence": [
+   {
+    "item_id": "378b27e8",
+    "quote": "consultation on a proposed NFC access conduct requirement in relation to Apple",
+    "establishes": "The NFC consultation of 20 Oct 2026 concerns Apple's mobile platform"
+   },
+   {
+    "item_id": "30589f0e",
+    "quote": "The Company posted quarterly revenue of $114.5 billion",
+    "establishes": "Apple's fiscal Q4 2026 revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "9fcaeedc"
+  ],
+  "notes": "The parallel CMA page on Google's mobile platform (9fcaeedc) has no NFC consultation."
+ },
+ {
+  "id": "rq-t-020",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "At the October 2026 OCP Global Summit one hyperscaler was credited with advancing open AI networking together with NVIDIA on Spectrum-X Ethernet SuperNICs. How large a charge did that hyperscaler book in the third quarter of 2026 for its agreement with state attorneys general?",
+  "reference_answer": "$9.89 billion",
+  "key_facts": [
+   "$9.89 billion charge"
+  ],
+  "gold": [
+   "99e3e5da",
+   "99de9e9e"
+  ],
+  "evidence": [
+   {
+    "item_id": "99e3e5da",
+    "quote": "Meta and NVIDIA advanced open AI networking with NVIDIA Spectrum-X Ethernet SuperNIC",
+    "establishes": "The hyperscaler is Meta"
+   },
+   {
+    "item_id": "99de9e9e",
+    "quote": "includes a $9.89 billion charge related to this agreement",
+    "establishes": "Meta's Q3 2026 costs include a $9.89bn charge for the attorneys-general agreement"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The total settlement is up to about $18.59bn; the question asks for the Q3 charge only."
+ },
+ {
+  "id": "rq-t-021",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "Three companies joined NVIDIA in publishing version 0.7 of the Open Data Center Specification; one of them is a rival processor designer. How much did that designer agree to pay for World Labs, and in what form?",
+  "reference_answer": "Approximately $8.2 billion, paid in shares of its common stock",
+  "key_facts": [
+   "approximately $8.2 billion",
+   "paid in shares of common stock (all-stock)"
+  ],
+  "gold": [
+   "99e3e5da",
+   "76535d0b"
+  ],
+  "evidence": [
+   {
+    "item_id": "99e3e5da",
+    "quote": "At OCP, NVIDIA joined AMD, Google and Meta",
+    "establishes": "The three co-publishers are AMD, Google and Meta; AMD is the processor designer"
+   },
+   {
+    "item_id": "76535d0b",
+    "quote": "total purchase price of approximately $8.2 billion to be paid in shares",
+    "establishes": "Advanced Micro Devices, Inc. agreed to acquire World Labs for about $8.2bn in stock"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [
+   "b64c2e06"
+  ],
+  "notes": "The 8-K body refers to the registrant as 'Advanced Micro Devices, Inc. (the Company)'. The AMD earnings release b64c2e06 mentions the World Labs agreement without the price.",
+  "surface_forms": [
+   "AMD",
+   "Advanced Micro Devices, Inc."
+  ]
+ },
+ {
+  "id": "rq-t-022",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "NVIDIA says its own supply-chain organisation deploys specialised agents through a partner's Foundry and ontology products. What U.S. commercial revenue did that partner report for the quarter ended 30 September 2026?",
+  "reference_answer": "$984 million",
+  "key_facts": [
+   "$984 million U.S. commercial revenue"
+  ],
+  "gold": [
+   "f9343678",
+   "6c9efc49"
+  ],
+  "evidence": [
+   {
+    "item_id": "f9343678",
+    "quote": "supply chain organization is using Agent Knowledge Foundation through Palantir Foundry",
+    "establishes": "The partner is Palantir"
+   },
+   {
+    "item_id": "6c9efc49",
+    "quote": "29% quarter-over-quarter to $984 million",
+    "establishes": "Palantir's Q3 2026 U.S. commercial revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "U.S. government revenue was $953m and total U.S. revenue $1.937bn; only $984m is the commercial figure."
+ },
+ {
+  "id": "rq-t-023",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "EFF's records on Medicare's AI prior-authorisation pilot show that the vendor Zyter runs on another firm's software infrastructure. What full-year 2026 revenue range did that other firm guide to in early November 2026?",
+  "reference_answer": "Between $8.530 billion and $8.534 billion",
+  "key_facts": [
+   "$8.530 - $8.534 billion",
+   "also acceptable: about 91% year-over-year growth"
+  ],
+  "gold": [
+   "4d5cc1c4",
+   "6c9efc49"
+  ],
+  "evidence": [
+   {
+    "item_id": "4d5cc1c4",
+    "quote": "a vendor that uses Palantir software infrastructure",
+    "establishes": "Zyter uses Palantir software infrastructure"
+   },
+   {
+    "item_id": "6c9efc49",
+    "quote": "raising our revenue guidance to between $8.530 - $8.534 billion",
+    "establishes": "Palantir's raised FY2026 revenue guidance"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The same release gives the guidance as 91% Y/Y growth in its headline."
+ },
+ {
+  "id": "rq-t-024",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "One data-platform vendor is letting customers run NVIDIA's Kumo Engine and Kumo Relational models inside its notebook environment. What net proceeds did that vendor estimate from the convertible notes it priced on 28 September 2026?",
+  "reference_answer": "Approximately $3.70 billion (about $4.24 billion if the purchasers' options are exercised in full)",
+  "key_facts": [
+   "approximately $3.70 billion net proceeds"
+  ],
+  "gold": [
+   "f9343678",
+   "d210bc08"
+  ],
+  "evidence": [
+   {
+    "item_id": "f9343678",
+    "quote": "Snowflake is enabling customers to use the NVIDIA Kumo Engine and Kumo Relational",
+    "establishes": "The vendor is Snowflake"
+   },
+   {
+    "item_id": "d210bc08",
+    "quote": "net proceeds from the offering will be approximately $3.70 billion",
+    "establishes": "Snowflake's estimated net proceeds"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "017deb85",
+   "7a4b80e2"
+  ],
+  "notes": "$3.75bn is the gross principal amount, not net proceeds; the launch release 017deb85 gives no proceeds estimate."
+ },
+ {
+  "id": "rq-t-025",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "TSMC's board approved buying stock in the developer of the model that scored highest on the ExpertCrowd-SWE coding benchmark. What ceiling did the board set on that purchase, and at what price will the shares be bought?",
+  "reference_answer": "Not more than US$500 million, at the company's initial public offering price per share",
+  "key_facts": [
+   "not to exceed US$500 million",
+   "at the IPO price per share",
+   "developer is Anthropic"
+  ],
+  "gold": [
+   "a1da460c",
+   "6d389204",
+   "af60f5ac"
+  ],
+  "evidence": [
+   {
+    "item_id": "a1da460c",
+    "quote": "Claude Opus 5.5 (67.3%) and GPT-6 Astra (63.7%) lead",
+    "establishes": "Claude Opus 5.5 has the top score on EC-SWE"
+   },
+   {
+    "item_id": "6d389204",
+    "quote": "Anthropic’s Claude Fable 5.1, Opus 5.5, Sonnet 5.5, and Haiku 5.5",
+    "establishes": "Opus 5.5 is an Anthropic model"
+   },
+   {
+    "item_id": "af60f5ac",
+    "quote": "Anthropic, PBC at its per share initial public offering price",
+    "establishes": "TSMC will buy Anthropic common shares at the IPO price"
+   },
+   {
+    "item_id": "af60f5ac",
+    "quote": "in an amount not to exceed US$500 million to acquire Anthropic",
+    "establishes": "Cap of US$500 million"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "Three-item chain. The paper never names Anthropic; the Amazon release supplies the product-to-company link. The runner-up's developer (OpenAI) has the same US$500m cap but for preferred stock, not IPO-priced common shares.",
+  "surface_forms": [
+   "Claude Opus 5.5",
+   "Anthropic, PBC"
+  ]
+ },
+ {
+  "id": "rq-t-026",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "Amazon's third-quarter 2026 release says its Continuum vulnerability tool is being brought into three coding agents. One of those agents was tested as a marker of handwritten university exam papers. How strongly did its total marks correlate with the human examiner's?",
+  "reference_answer": "r = 0.97",
+  "key_facts": [
+   "Pearson r = 0.97",
+   "also acceptable: mean absolute error 0.85 marks"
+  ],
+  "gold": [
+   "6d389204",
+   "95530714"
+  ],
+  "evidence": [
+   {
+    "item_id": "6d389204",
+    "quote": "bringing Continuum into Anthropic’s Claude Code, OpenAI’s Codex, and AWS’s Kiro",
+    "establishes": "The three agents are Claude Code, Codex and Kiro"
+   },
+   {
+    "item_id": "95530714",
+    "quote": "agreed strongly with human grading on totals (r = 0.97; MAE = 0.85 marks)",
+    "establishes": "Claude Code's agreement with the human grader"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance",
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "f2134f2f",
+   "9eacbdd9"
+  ],
+  "notes": "f2134f2f and 9eacbdd9 mention Claude Code but are not grading studies. ICC = 0.96 is test-retest consistency, not agreement with the human."
+ },
+ {
+  "id": "rq-t-027",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "A reinforcement-fine-tuned small language model for analog circuit optimisation was shown to transfer to one foundry's commercial 65 nm process design kit. In that foundry's third-quarter 2026 results, what share of wafer revenue came from 2-nanometer?",
+  "reference_answer": "8%",
+  "key_facts": [
+   "8% of total wafer revenue"
+  ],
+  "gold": [
+   "dd3202e0",
+   "80b4295f"
+  ],
+  "evidence": [
+   {
+    "item_id": "dd3202e0",
+    "quote": "This transfer extends to a commercial TSMC 65 nm CMOS PDK",
+    "establishes": "The foundry is TSMC"
+   },
+   {
+    "item_id": "80b4295f",
+    "quote": "shipments of 2-nanometer accounted for 8% of total wafer revenue",
+    "establishes": "2nm share in 3Q26"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "3nm was 33%, 5nm 28%, 7nm 10%."
+ },
+ {
+  "id": "rq-t-028",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "Researchers trained a generative quantum eigensolver with a Heron-class processor in the loop at up to 70 qubits. By how much does the company that makes that processor now expect its free cash flow to rise in 2026?",
+  "reference_answer": "By more than $1 billion year over year",
+  "key_facts": [
+   "more than $1 billion year-over-year increase in free cash flow"
+  ],
+  "gold": [
+   "27a499f3",
+   "b622243b"
+  ],
+  "evidence": [
+   {
+    "item_id": "27a499f3",
+    "quote": "with the IBM Heron processor ibm_kobe inside the loop",
+    "establishes": "The processor is IBM's"
+   },
+   {
+    "item_id": "b622243b",
+    "quote": "we now expect free cash flow to increase by more than $1 billion year-over-year",
+    "establishes": "IBM's raised FCF outlook"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "23512c6f"
+  ],
+  "notes": "Year-to-date free cash flow of $7.8bn is a different figure."
+ },
+ {
+  "id": "rq-t-029",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "The FTC and 22 states accuse an online retailer of secretly inflating prices in its search-advertising auctions. What growth in advertising revenue does that retailer itself expect for the fourth quarter of 2026?",
+  "reference_answer": "Year-over-year growth in the high teens (percent)",
+  "key_facts": [
+   "high teens year-over-year growth"
+  ],
+  "gold": [
+   "0e8e1a03",
+   "6d389204"
+  ],
+  "evidence": [
+   {
+    "item_id": "0e8e1a03",
+    "quote": "sued Amazon in the Western District of Washington",
+    "establishes": "The retailer is Amazon"
+   },
+   {
+    "item_id": "6d389204",
+    "quote": "advertising revenue to grow in the high teens in fourth quarter 2026",
+    "establishes": "Amazon's Q4 2026 advertising outlook"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Q3 advertising growth was 12% excluding FX; the question asks for the Q4 expectation."
+ },
+ {
+  "id": "rq-t-030",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "The strongest agent in the Embodied First Exam robotics benchmark runs on a model whose developer is one of five organisations named as running workloads on AMD's first Helios rack-scale systems. Which GPU series powers those systems?",
+  "reference_answer": "AMD Instinct MI450 Series GPUs",
+  "key_facts": [
+   "Instinct MI450 Series"
+  ],
+  "gold": [
+   "7b9fc55d",
+   "6d389204",
+   "b64c2e06"
+  ],
+  "evidence": [
+   {
+    "item_id": "7b9fc55d",
+    "quote": "the strongest of eight agents, GPT-6 Astra in Codex",
+    "establishes": "The strongest agent uses GPT-6 Astra"
+   },
+   {
+    "item_id": "6d389204",
+    "quote": "OpenAI’s GPT-6 Astra, GPT-6 Sol, GPT-6 Luna, and GPT-6.1 Sol",
+    "establishes": "GPT-6 Astra is an OpenAI model"
+   },
+   {
+    "item_id": "b64c2e06",
+    "quote": "powered by AMD Instinct MI450 Series GPUs",
+    "establishes": "Helios systems (run by Anthropic, Meta, Microsoft, OpenAI, OCI) use Instinct MI450"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "Three-item chain; the paper does not name OpenAI. The Helios systems also use 6th Gen EPYC CPUs, but the question asks for the GPU series. Weakness: the AMD release alone answers the final clause once Helios is named.",
+  "surface_forms": [
+   "GPT-6 Astra",
+   "OpenAI"
+  ]
+ },
+ {
+  "id": "rq-t-031",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "The company whose software underpins Zyter, one of the vendors in Medicare's WISeR programme, also appears in the SEC's fiscal-2026 enforcement summary. What did the SEC's settled order say had happened in connection with that company's shares?",
+  "reference_answer": "A California resident allegedly defrauded investors in a private fund that invested in the company's pre-IPO shares",
+  "key_facts": [
+   "California resident",
+   "defrauded investors in a private fund",
+   "fund invested in pre-IPO shares of Palantir"
+  ],
+  "gold": [
+   "4d5cc1c4",
+   "0b99019f"
+  ],
+  "evidence": [
+   {
+    "item_id": "4d5cc1c4",
+    "quote": "a vendor that uses Palantir software infrastructure",
+    "establishes": "Zyter's software infrastructure is Palantir's"
+   },
+   {
+    "item_id": "0b99019f",
+    "quote": "private fund that invested in pre-IPO shares of Palantir Technologies, Inc.",
+    "establishes": "SEC settled order about a fund holding pre-IPO Palantir shares"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Palantir itself was not charged; the order concerns a fund manager."
+ },
+ {
+  "id": "rq-t-032",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "The device maker that added an 'Exclude Apps' control for its AI assistant in iOS 27.2 reported fiscal fourth-quarter results on 2 November 2026. Who is quoted in that release as its chief executive?",
+  "reference_answer": "John Ternus",
+  "key_facts": [
+   "John Ternus"
+  ],
+  "gold": [
+   "692eaf47",
+   "30589f0e"
+  ],
+  "evidence": [
+   {
+    "item_id": "692eaf47",
+    "quote": "introduced a new setting to “Exclude Apps” from Siri AI",
+    "establishes": "The iOS 27.2 setting is Apple's"
+   },
+   {
+    "item_id": "30589f0e",
+    "quote": "said John Ternus, Apple’s CEO",
+    "establishes": "Apple's CEO in the Q4 FY2026 release"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Kevan Parekh is the CFO quoted in the same release. The answer differs from older general knowledge, so the release is needed."
+ },
+ {
+  "id": "rq-t-033",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "A contextual-bandit controller for choosing quantum error-mitigation techniques was validated on noise models from eight real devices of a single vendor. To how many directors did that vendor enlarge its board on 1 October 2026?",
+  "reference_answer": "Fourteen",
+  "key_facts": [
+   "14 directors (fourteen)"
+  ],
+  "gold": [
+   "23512c6f",
+   "4ed129d7"
+  ],
+  "evidence": [
+   {
+    "item_id": "23512c6f",
+    "quote": "On noise models from eight real IBM devices",
+    "establishes": "The devices are IBM's"
+   },
+   {
+    "item_id": "4ed129d7",
+    "quote": "amended to increase the number of directors to fourteen",
+    "establishes": "International Business Machines Corporation raised its board size to fourteen"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [
+   "27a499f3",
+   "68bc4819"
+  ],
+  "notes": "The press-release exhibit 68bc4819 announces Frank Baker's election but does not give the board size. The 8-K body also uses the short form 'IBM', so this alias is the mildest of the set.",
+  "surface_forms": [
+   "IBM",
+   "International Business Machines Corporation"
+  ]
+ },
+ {
+  "id": "rq-t-034",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "Among the model builders NVIDIA lists as recently shipping NVFP4 checkpoints, one is a social-media company. What were that company's capital expenditures in the third quarter of 2026?",
+  "reference_answer": "$34.91 billion",
+  "key_facts": [
+   "$34.91 billion (including principal payments on finance leases)"
+  ],
+  "gold": [
+   "4f4e68d2",
+   "99de9e9e"
+  ],
+  "evidence": [
+   {
+    "item_id": "4f4e68d2",
+    "quote": "Meta Muse Spark from Meta",
+    "establishes": "The social-media company in the NVFP4 list is Meta"
+   },
+   {
+    "item_id": "99de9e9e",
+    "quote": "including principal payments on finance leases, were $34.91 billion",
+    "establishes": "Meta's Q3 2026 capital expenditures"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Other builders in the list (Black Forest Labs, Thinking Machines Lab, Reflection, StepFun) are not social-media companies."
+ },
+ {
+  "id": "rq-t-035",
+  "split": "test",
+  "type": "multi_hop",
+  "question": "NVIDIA names a Californian university among its partners at the 2026 Conference on Robot Learning. How many main-conference papers is that university's AI research lab presenting there?",
+  "reference_answer": "33",
+  "key_facts": [
+   "33 main-conference papers"
+  ],
+  "gold": [
+   "162280b6",
+   "fd7933fb"
+  ],
+  "evidence": [
+   {
+    "item_id": "162280b6",
+    "quote": "RLWRLD , UC Berkeley , Walden Robotics and the University of Washington",
+    "establishes": "UC Berkeley is the Californian university partner"
+   },
+   {
+    "item_id": "fd7933fb",
+    "quote": "33 Main-conference papers",
+    "establishes": "BAIR lists 33 main-conference papers at CoRL 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "The lab page also lists 4 late-breaking posters and 10 orals and spotlights; those are different counts.",
+  "surface_forms": [
+   "UC Berkeley",
+   "BAIR"
+  ]
+ }
+]

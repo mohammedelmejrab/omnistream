@@ -1,0 +1,946 @@
+[
+  {
+    "id": "70b6f0318659e76c576dc2b4f160b4212b80d2e21c3593f2cae6e4925be79a2e",
+    "source_id": "nvidia-blog",
+    "title": "A New Dawn in the Cloud: \u2018Warhammer 40,000: Dawn of War IV\u2019 Is Coming to GeForce NOW",
+    "published_at": "2026-11-12 14:00:59.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\46ea70a779082462e73013bb23e88ff988733e9a1e8b72b8d3e2832216a796d7.txt",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-warhammer-dawn-of-war-iv-coming/"
+  },
+  {
+    "id": "f7dd32495ac08e59ff39920ae726ab2127bf0ece662fd53bb41b544016fb7bee",
+    "source_id": "nvidia-blog",
+    "title": "NVIDIA Expands Open Source Commitment With OpenShell Contribution and New AI Infrastructure",
+    "published_at": "2026-11-10 16:00:03.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\8dd93777e5c3d110dfc48f0cbdea94bcc074044e3950bb5c351fe3e98531bc76.txt",
+    "url": "https://blogs.nvidia.com/blog/open-source-openshell-infrastructure/"
+  },
+  {
+    "id": "162280b6537a6ba3dcd5c57cb41a427719616d69198202c0d78ca43c340159ec",
+    "source_id": "nvidia-blog",
+    "title": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+    "published_at": "2026-11-09 14:00:01.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\6f596c4d8f8909c0333930de178ec960c88a9fe4196338c981cb9b5c3736a44a.txt",
+    "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/"
+  },
+  {
+    "id": "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354",
+    "source_id": "nvidia-blog",
+    "title": "NVIDIA Announces New Planned Investments in Korean Startups at the MSIT-NVIDIA AI Startup Partnership Forum",
+    "published_at": "2026-11-09 08:00:53.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\6c1104708252d3f05ba48339ff23931759f3d774bce65691008c4c2f1c34b042.txt",
+    "url": "https://blogs.nvidia.com/blog/korean-startup-investments-msit/"
+  },
+  {
+    "id": "b1d8a75091c36324034616760696e66a4c5d08a6b5d0816ac7712a24c2f85929",
+    "source_id": "nvidia-blog",
+    "title": "Korea Advances Physical AI Across Industries With NVIDIA",
+    "published_at": "2026-11-09 05:00:40.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\3aebe17407aa23621a47f00fdf4bb9aca091ac3e58fad6e5c303f18e42725368.txt",
+    "url": "https://blogs.nvidia.com/blog/korea-physical-ai-ecosystem/"
+  },
+  {
+    "id": "06f8118b96a2da061188910e968126a33892f2e06f9997bba3a1f6f9422d1b34",
+    "source_id": "nvidia-blog",
+    "title": "Korea\u2019s AI Ecosystem Advances and Secures Agentic AI With NVIDIA",
+    "published_at": "2026-11-09 05:00:39.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\4a137e31420e779ab70d39716fd7358539e7a16f999bcdfae49b5eb63c32b8bf.txt",
+    "url": "https://blogs.nvidia.com/blog/korea-secure-agentic-ai/"
+  },
+  {
+    "id": "4fb838d7856a77b1653e1c86e8311a5bcb1258b2b9e0f73b33bee1b66eb24afa",
+    "source_id": "nvidia-blog",
+    "title": "From Chips to Skills, NVIDIA and Korea Expand Sovereign AI Collaboration",
+    "published_at": "2026-11-09 05:00:04.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\e0942263a07cd8bdeb2ccc881c967015748f2879c117af8ad098aa74ff578fdb.txt",
+    "url": "https://blogs.nvidia.com/blog/korea-sovereign-ai-collaboration/"
+  },
+  {
+    "id": "a6358b68ffdc9224713c5faa69a10d9dbc15f1bd6d60bd3a5070e19620c6ba56",
+    "source_id": "nvidia-blog",
+    "title": "NVIDIA Dynamo Recipes Bring Korea\u2019s Leading Open Models to Production",
+    "published_at": "2026-11-09 05:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\436acfb0a4713f3c5a7fd286200937191faa738b64c7738a50b571f23960377e.txt",
+    "url": "https://blogs.nvidia.com/blog/nvidia-dynamo-korea-open-models/"
+  },
+  {
+    "id": "5141612f9aee29b3de808d7adcc41e00872ed9a2ba415aa6eae780e1f5608297",
+    "source_id": "nvidia-blog",
+    "title": "How NVIDIA Open Source Tools Are Helping Researchers Build Next-Generation 6G Networks",
+    "published_at": "2026-11-06 16:00:35.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\bb7242042aa299d9b3a4c1b37e420e77a90df0b0618ec96e28d01acc0b3d2216.txt",
+    "url": "https://blogs.nvidia.com/blog/telco-open-source-tools-research-6g-networks/"
+  },
+  {
+    "id": "53a2559144dcd9a151fdc9a77940ac16178941568afe7d37cb975e0a5f507a02",
+    "source_id": "nvidia-blog",
+    "title": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+    "published_at": "2026-11-05 20:00:41.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\71a2c22e2d104b151d6eda041756d066668a3874584e3a809d79e51891d907b9.txt",
+    "url": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/"
+  },
+  {
+    "id": "91cb3b365dacc497e6b8d85adc4776af4186ad7305c136c9fbb4e103045ef5c4",
+    "source_id": "nvidia-blog",
+    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+    "published_at": "2026-11-05 17:00:35.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\9d61006d4f823fed75a3d5c66eb1021b973c176419059d65d044872ce80282d0.txt",
+    "url": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/"
+  },
+  {
+    "id": "4e764a474ce29b03ba6069b889106e09e8e809d1368e5b7031f25654df1bb1b2",
+    "source_id": "nvidia-blog",
+    "title": "The Wizard of Open Weights: Chris Alexiuk Makes AI Easy With Open Models",
+    "published_at": "2026-11-05 16:00:05.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\9c551f6556199677d867d8ca703202d2c5d521d5ac15698d7a5c3b66a8dd1c94.txt",
+    "url": "https://blogs.nvidia.com/blog/nvidia-life-chris-alexiuk/"
+  },
+  {
+    "id": "4f4e68d2920712b67e0446669b0c51698cbcef7d4006e0334a9f5879210d1876",
+    "source_id": "nvidia-blog",
+    "title": "More Performance From Every Byte: How Full-Stack Codesign Solves AI\u2019s Memory Challenge",
+    "published_at": "2026-11-05 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\05e26a270e34eede0d7a0f7a6d27a7920b68c119a7e37351ab89d3101941101b.txt",
+    "url": "https://blogs.nvidia.com/blog/memory-full-stack-codesign/"
+  },
+  {
+    "id": "4729dbddfbc0e8991109a7aba0386da7e12b30a53670d23d88a92803660c5b43",
+    "source_id": "nvidia-blog",
+    "title": "\u2018Hogwarts Legacy\u2019 Gets a Magical NVIDIA DLSS 5 Upgrade on GeForce NOW",
+    "published_at": "2026-11-05 14:00:34.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\6a2031aebbc3642885a22f7fd66d1b1bbb45aca9bc44e8083c68b5a6662bc15e.txt",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-hogwarts-legacy-dlss-5/"
+  },
+  {
+    "id": "0633c8f2cf909ec8236dfb15eae101679fe36ff41b633858103e77fd235cbd08",
+    "source_id": "nvidia-blog",
+    "title": "AI Is Changing How Semiconductor Fabs Work \u2014 and Engineers Are Moving Faster Because of It",
+    "published_at": "2026-11-03 16:00:45.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\ada00b78342d3e8c37ca827fb6c3e82b800f3d7bff1b270ebac5419244fc960d.txt",
+    "url": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/"
+  },
+  {
+    "id": "2c5c9457110dc41291f8dc43f41cbf3bed499e4472c40376468d3516231c8ed1",
+    "source_id": "nvidia-blog",
+    "title": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
+    "published_at": "2026-11-03 07:00:12.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\b96b1cfb36529b0bdae2ab2298cc592eb6edd3c4ba3ee37ef3116b7140b63e30.txt",
+    "url": "https://blogs.nvidia.com/blog/cities-physical-agentic-ai-applications/"
+  },
+  {
+    "id": "ff9d9dec0b5987197a07850305fb9a701e2e2643bb93ecf93fb4428c747564b3",
+    "source_id": "nvidia-blog",
+    "title": "Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals",
+    "published_at": "2026-10-30 15:00:10.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\78ec3add275a0571295c4bed97563d15ab51906f649b08ab1da06737469bf91f.txt",
+    "url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/"
+  },
+  {
+    "id": "d4b078838b480fcdf2d5440cbd958f76b746030cea6e06454c09d079d2a4ff3c",
+    "source_id": "nvidia-blog",
+    "title": "Slice Into GFN Thursday: \u2018Phantom Blade Zero\u2019 Launches on GeForce NOW",
+    "published_at": "2026-10-29 13:00:16.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\890470ba402b5f309e5db5a5c8ee01722c33a62136a9d761bf0ae89ac993fc62.txt",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/"
+  },
+  {
+    "id": "0d5790a56622735cd9d35817d19f2f1f611d6b001f5a8a8f460482962aa4baa5",
+    "source_id": "nvidia-blog",
+    "title": "Thin, Light and Built for Everything: NVIDIA RTX Spark Windows Laptops Gain New Models, Agent Tools and Games",
+    "published_at": "2026-10-28 15:00:46.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\5a0c7143e645f083ef2e97dd3788b914acdc0bd8386d6b89962dbb724b195526.txt",
+    "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/"
+  },
+  {
+    "id": "f12932f30b43b888f890a7fa2f5e73ba8ade0980d75b040dee8370a669aba135",
+    "source_id": "nvidia-blog",
+    "title": "How AI Is Changing the Pace of Discovery for Millions Living With Dementia",
+    "published_at": "2026-10-27 15:00:20.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\cba58dff531ec63e4690553d929b3e1b7c055049f9fdfca78c17bedc87817c86.txt",
+    "url": "https://blogs.nvidia.com/blog/open-source-ai-tools-cbrain-dementia/"
+  },
+  {
+    "id": "c7708a0929b01374ff889e603fe9946a34b825bc478f266e3950bd019472f2a5",
+    "source_id": "nvidia-blog",
+    "title": "Kazakhstan Expands Compute for Its AI Future",
+    "published_at": "2026-10-23 02:00:13.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\bebcedd220cbbb683826923513552691f3d606c8787642341f62431427d5240c.txt",
+    "url": "https://blogs.nvidia.com/blog/kazakhstan-ai-compute-ecosystem/"
+  },
+  {
+    "id": "019981258bfa52aaabd6711835e956bb65bd37abb4dd57ef975046ef73fd72c7",
+    "source_id": "nvidia-blog",
+    "title": "NVIDIA Unveils Minerva to Bring End-to-End Observability for AI Factories",
+    "published_at": "2026-10-22 15:00:02.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\aaa67d2b38fdf0394659a4a6059855ad9951e691722e94b7a693a06ea71e502f.txt",
+    "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure/"
+  },
+  {
+    "id": "36723e8d587ef6c44027fc869996e1ee9a76b55c6eb983b3d5bf1bc52ab5c236",
+    "source_id": "nvidia-blog",
+    "title": "Cloud Deployment Incoming: \u2018Call of Duty: Modern Warfare 4\u2019 Arrives on GeForce NOW",
+    "published_at": "2026-10-22 13:00:20.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\17111836506ee3070408f9ff67548ed9a3278d077a9f030dbd3c30ca4af2223a.txt",
+    "url": "https://blogs.nvidia.com/blog/geforce-now-thursday-call-of-duty-modern-warfare-4/"
+  },
+  {
+    "id": "bdefeeef7a588495c5e9758329597315da488ef0d5d71ee2d4e63705e8b11ba9",
+    "source_id": "nvidia-blog",
+    "title": "Leading European Financial Services Organizations Embrace Open Models to Build Proprietary Intelligence",
+    "published_at": "2026-10-22 05:00:56.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\67f646d4f3689a764e8b2b065067c664b6a45702acd613b7267322019a5c0a7b.txt",
+    "url": "https://blogs.nvidia.com/blog/european-financial-services-organizations-open-models-proprietary-intelligence/"
+  },
+  {
+    "id": "012ef7f2208cd41431c0ebae81e646a93c5096f5a46cefdc1bb986afe2bd51c2",
+    "source_id": "nvidia-blog",
+    "title": "NVIDIA Cosmos Opens New Tools to Train, Evaluate and Deploy World Models",
+    "published_at": "2026-10-22 05:00:27.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\e310b1c35dc96338881361cdb035a1748e258b97148139b08910087f0ef6b88d.txt",
+    "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/"
+  },
+  {
+    "id": "e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573",
+    "source_id": "nvidia-blog",
+    "title": "How Companies Are Using NVIDIA DSX to Break the Power Bottleneck",
+    "published_at": "2026-10-22 05:00:25.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nvidia-blog\\76227b87124fa8afbad22bc6f12223c152bbcf5f610f2a0dcf61d3e3e6bc5ba7.txt",
+    "url": "https://blogs.nvidia.com/blog/dsx-power/"
+  },
+  {
+    "id": "a10e605161385b47171d929c40c348c3731471737e78cfeb8fc0948953dadb3d",
+    "source_id": "microsoft-blog",
+    "title": "From AI ambition to business impact",
+    "published_at": "2026-11-12 17:00:03.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\b074ebf56d5e68e98c6d41c1d89cafefaf05e04c04728a97573218d2f5a04c45.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/11/12/from-ai-ambition-to-business-impact/"
+  },
+  {
+    "id": "d36750f823f521a1de4eedaf13521fd16f7e4de9a07ad00188b542ce7d8e89fd",
+    "source_id": "microsoft-blog",
+    "title": "Scaling AI value without losing control: Lessons from Frontier Firms",
+    "published_at": "2026-11-12 16:00:02.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\2a9ca51a7124d760851d55497dcad6e5f8fca3a9bbc4b95995a772fea19d21ee.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/11/12/scaling-ai-value-without-losing-control-lessons-from-frontier-firms/"
+  },
+  {
+    "id": "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f",
+    "source_id": "microsoft-blog",
+    "title": "Introducing the Microsoft Copilot harness: Unlocking the potential of truly multi-model agentic work",
+    "published_at": "2026-10-28 16:51:35.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\d202a7107ab36fcc1fb0a0be606656ea950bc3f6a47e783b86da08d382a0a631.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work/"
+  },
+  {
+    "id": "9bd2920f6fee3d473ccd11c07759516a3a077914d7dc1c63b2155419afc1f120",
+    "source_id": "microsoft-blog",
+    "title": "The platform approach to becoming Frontier",
+    "published_at": "2026-10-27 16:01:38.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\dff627c499b17641d082075564cd0ee61dc51be026e22190d7874ffba657ecc0.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/27/the-platform-approach-to-becoming-frontier/"
+  },
+  {
+    "id": "a0b47f12214e402a9e87895dd762dbea7a802dcf480f5b87e7ec4c7b8185a19a",
+    "source_id": "microsoft-blog",
+    "title": "Introducing a Voluntary Exit Offer",
+    "published_at": "2026-10-26 15:33:56.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\ae19a7a0bbab815922bf43364413bfb472e6b895c36f6ee58461fe0d1f4f0a6c.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/"
+  },
+  {
+    "id": "ca81f2df3addd0a8a16d9363f72769b0a3d4b83e27354cafa63cfb1b1d981c43",
+    "source_id": "microsoft-blog",
+    "title": "Advancing digital sovereignty with greater control and choice",
+    "published_at": "2026-10-20 08:20:02.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\bb1549afbcf2888fdd1980c7ea23d1c625a464d44741a170aa32294c27e915ab.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/"
+  },
+  {
+    "id": "97d302404e3aea46ddcc30baf338203269ad4cca66533d5a7754a8b172aeef7b",
+    "source_id": "microsoft-blog",
+    "title": "Securing the agentic insider",
+    "published_at": "2026-10-19 13:00:02.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\4bb68d86beb5d75727b33d5e9066e79171563aa9f9807c5617c0f2460442d4e4.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/19/securing-the-agentic-insider/"
+  },
+  {
+    "id": "820a528105d33fb3e04fc6de1794dd40fbb4d18c0c2df73da67ebc071516d6f3",
+    "source_id": "microsoft-blog",
+    "title": "Microsoft to expand Azure Maia system to multi-gigawatt deployments",
+    "published_at": "2026-10-12 13:01:29.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\094a4c2db559fc538b7789763f449cf7d6071e0ae0b4f487455f14cf01508e91.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/"
+  },
+  {
+    "id": "38e066dd24f46d25a2ef35f225135012a50d02afa8d6c1f24f9d67a92c83d857",
+    "source_id": "microsoft-blog",
+    "title": "Microsoft 365 and LinkedIn leadership update",
+    "published_at": "2026-10-01 15:03:27.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\96f636103b95cd3a40f832b766173ce274f44aa46c795a52e0144e6645b21575.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/10/01/microsoft-365-and-linkedin-leadership-update/"
+  },
+  {
+    "id": "9bbefdb5ca52671045a234ecd43faa3a366a3c0ba3cf4e3e7a2fb64610ca2dbf",
+    "source_id": "microsoft-blog",
+    "title": "New Microsoft data innovations unlock what only your business knows",
+    "published_at": "2026-09-29 06:30:04.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\fc88e6d530d37fa8d86ea625146b6d6a6ed0d5bf56383da8222fb3350d278514.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/09/28/new-microsoft-data-innovations-unlock-what-only-your-business-knows/"
+  },
+  {
+    "id": "dcfca97c5e1931a1a6d8dd21b38437ed1d94b879851dcc75ec5500adf708024a",
+    "source_id": "microsoft-blog",
+    "title": "Introducing the new Copilot with Home, Code and Autopilot",
+    "published_at": "2026-09-25 12:03:50.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-blog\\2cb7239a986f90f5d25f2ddc3691021db19b084123f8a9658689454560c234c5.txt",
+    "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+  },
+  {
+    "id": "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+    "source_id": "samsung-news",
+    "title": "Samsung Announces December Release for Intelligent Eyewear, Bringing a Smarter Way To See the World",
+    "published_at": "2026-11-12 23:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\46f7fa7e5316d17eca0122a57618e508fd9b0a60c2f2b3083417b76a09a7f4cb.txt",
+    "url": "https://news.samsung.com/global/samsung-announces-december-release-for-intelligent-eyewear-bringing-a-smarter-way-to-see-the-world"
+  },
+  {
+    "id": "73eb92764ef9659fb44b00f774453e84b4a6a45cbdd55bc185b3a558a8c41f4c",
+    "source_id": "samsung-news",
+    "title": "Finding the Perfect TV: A Guide to Samsung TVs",
+    "published_at": "2026-11-12 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\a5ff5408fa8ec9c1296ad9799674c5a2751fcdba64ae2ebd2ac05b7d4ebb6382.txt",
+    "url": "https://news.samsung.com/global/finding-the-perfect-tv-a-guide-to-samsung-tvs"
+  },
+  {
+    "id": "f43b93a225c93de337030fc91279682ee393daaa74efc5ac3bdb6cd201a9b15b",
+    "source_id": "samsung-news",
+    "title": "Samsung and IOC Back Young Innovators at Africa\u2019s First Olympic Games",
+    "published_at": "2026-11-11 14:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\a2dc53863328913484165d3a83313c1b7e2e0c7574425f1e97f3e4ed36eca43f.txt",
+    "url": "https://news.samsung.com/global/samsung-and-ioc-back-young-innovators-at-africas-first-olympic-games"
+  },
+  {
+    "id": "1c37cfdd3cf4c75318759cece476c1651ae98e3e42d208c008c898d1153b7e9e",
+    "source_id": "samsung-news",
+    "title": "Samsung Gallery Makes It Easier To Access Photos and Videos Across Galaxy Devices",
+    "published_at": "2026-11-10 21:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\4099227052dbd701413159ffb1b4496dec8c544ee7becbef5bda3d251301d8ef.txt",
+    "url": "https://news.samsung.com/global/samsung-gallery-makes-it-easier-to-access-photos-and-videos-across-galaxy-devices"
+  },
+  {
+    "id": "62dae3fa9fdbfc1e285d25e8a2311ff6d9cd1063c7adbfeddd900f7f8b695601",
+    "source_id": "samsung-news",
+    "title": "Beyond the Medal: Samsung Helps Young Athletes Explore What Comes Next at Dakar 2026",
+    "published_at": "2026-11-05 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\3fe3e8b6a8c102ca46771431bab8962aee1cd737fa0da559be645aa52d1b79b1.txt",
+    "url": "https://news.samsung.com/global/beyond-the-medal-samsung-helps-young-athletes-explore-what-comes-next-at-dakar-2026"
+  },
+  {
+    "id": "bb1b6f52276714063ad5a40a2441725919db5e94c3140425ff944f59a1be595a",
+    "source_id": "samsung-news",
+    "title": "Upgraded Sleep Apnea Feature Now Available on Galaxy Ring Following Regulatory Approvals From US FDA and Korea MFDS",
+    "published_at": "2026-11-03 21:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\5f96e26c86aebfde610629c36330e50569254914d98a1ec80d4a5d79615c75ee.txt",
+    "url": "https://news.samsung.com/global/upgraded-sleep-apnea-feature-now-available-on-galaxy-ring-following-regulatory-approvals-from-us-fda-and-korea-mfds"
+  },
+  {
+    "id": "ae651a05a41f50b8af51d5204ac96e9daab58d320415fa9719a51c2efac81a1b",
+    "source_id": "samsung-news",
+    "title": "[Video] Inside the Tech: Samsung Micro RGB TV",
+    "published_at": "2026-11-03 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\aec6fcf8bb50430393e589e2107e45cc725e1b3cffdb3912293fb1ca2847854c.txt",
+    "url": "https://news.samsung.com/global/video-inside-the-tech-samsung-micro-rgb-tv"
+  },
+  {
+    "id": "fbadb309b7346f3749de964ab2a035b69c3907fdf3f81fe3ee3256a9c1de0025",
+    "source_id": "samsung-news",
+    "title": "Samsung Champions Young Olympians at Dakar 2026, First-Ever Olympic Event on African Continent",
+    "published_at": "2026-11-02 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\9c7fe936fb7326b9d64c4913196cc8c6252b2520a8ea63ce2577f2f985760e4d.txt",
+    "url": "https://news.samsung.com/global/samsung-champions-young-olympians-at-dakar-2026-first-ever-olympic-event-on-african-continent"
+  },
+  {
+    "id": "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+    "source_id": "samsung-news",
+    "title": "Samsung Electronics Announces Third Quarter 2026 Results",
+    "published_at": "2026-10-29 10:10:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\82a9390ed7fb4d57e1d213ae1bd5728f9dcf14b03a956eb2daa8da6a0d2ad2e1.txt",
+    "url": "https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results"
+  },
+  {
+    "id": "5fea45fa65d96ad6a74aa657dc78ac6cf03806522ecc925b85c2578fefd61c54",
+    "source_id": "samsung-news",
+    "title": "Samsung Ranks No. 5 in Interbrand\u2019s \u2018Best Global Brands 2026\u2019 for Seventh Consecutive Year",
+    "published_at": "2026-10-28 13:39:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\9111e91b99c8f2c74c5208a973fb8960a23e68f6da11d2e513695beefea8a42c.txt",
+    "url": "https://news.samsung.com/global/samsung-ranks-no-5-in-interbrands-best-global-brands-2026-for-seventh-consecutive-year"
+  },
+  {
+    "id": "f2ab86448cb46008a6050feedfeedabee50ae1784f43a33e9de08056824ef0a9",
+    "source_id": "samsung-news",
+    "title": "[Hands-On] Comfort, Convenience, and More: A Day With Galaxy Buds On",
+    "published_at": "2026-10-27 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\fca890b5c6c4680a1dfe54fa8427847805c69810a940358eb96563df9833b9eb.txt",
+    "url": "https://news.samsung.com/global/hands-on-comfort-convenience-and-more-a-day-with-galaxy-buds-on"
+  },
+  {
+    "id": "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22",
+    "source_id": "samsung-news",
+    "title": "[Interview] Sound That Connects: 80 Years of Audio and the Future of Connected Experiences",
+    "published_at": "2026-10-26 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\cbe59b80b0b4b5cd4f5facf63e0576f89e78547a6bd807e0309e9e89bdb84aa6.txt",
+    "url": "https://news.samsung.com/global/interview-sound-that-connects-80-years-of-audio-and-the-future-of-connected-experiences"
+  },
+  {
+    "id": "2cbc3555d01ff5ef0022568e2b139f7b4da70e7d9372a24f475de565600360b2",
+    "source_id": "samsung-news",
+    "title": "Inside JBL Playback Gallery: 80 Years of Sound Innovation",
+    "published_at": "2026-10-23 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\3373c6d03ba6abdacaac5f6a4669f828b4830cfc178b032286b2800ae73193d3.txt",
+    "url": "https://news.samsung.com/global/inside-jbl-playback-gallery-80-years-of-sound-innovation"
+  },
+  {
+    "id": "58a3aa221819515c7fba9712174aef6560c9e005b36b28c1e4dcc9c9cb31b721",
+    "source_id": "samsung-news",
+    "title": "[Infographic] 80 Years of JBL: From Studios and Stages to Everyday Life",
+    "published_at": "2026-10-21 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\6914a4e493a79373474e2b24f6e1923a93a00026ff0a097ad83b7605bf113078.txt",
+    "url": "https://news.samsung.com/global/infographic-80-years-of-jbl-from-studios-and-stages-to-everyday-life"
+  },
+  {
+    "id": "dbc214e3b5ec5451005a3eb6c4259a39ef411dea10471d3bf88ec692f80146fa",
+    "source_id": "samsung-news",
+    "title": "\u201cDiscover New Ways to Live Smarter\u201d: Samsung Electronics Launches Samsung Week 2026 in 63 Countries",
+    "published_at": "2026-10-21 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\1e03219161a8b473ef30835bb4bb826eab794be7ffd4a3e3b46b54fecb285311.txt",
+    "url": "https://news.samsung.com/global/discover-new-ways-to-live-smarter-samsung-electronics-launches-samsung-week-2026-in-63-countries"
+  },
+  {
+    "id": "dede5f92a20dfb35372a60140d898fd049bfc988729b34e718386ab74328a502",
+    "source_id": "samsung-news",
+    "title": "[Photo] Inside Samsung\u2019s \u2018Design Is an Act of Love\u2019 Exhibition at Seoul Design Week 2026",
+    "published_at": "2026-10-21 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\c12a9d15252e8f0becc71733d0635fcea72afbe7e7db15a9677039c4772b3e02.txt",
+    "url": "https://news.samsung.com/global/photo-inside-samsungs-design-is-an-act-of-love-exhibition-at-seoul-design-week-2026"
+  },
+  {
+    "id": "065869c7c1369c5b0dbd18a6abe9d4be735e2d47deba0a9a96b0f854fa0d76c4",
+    "source_id": "samsung-news",
+    "title": "Tailored for Every Home: Samsung \u201cThe Brief\u201d Goes Global With AI-Powered Home Appliances",
+    "published_at": "2026-10-20 08:00:31.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\55ddfef6e07bfdc9a3e027729d011a19d209fae93a2664cc16ead8505d5ea4ae.txt",
+    "url": "https://news.samsung.com/global/tailored-for-every-home-samsung-the-brief-goes-global-with-ai-powered-home-appliances"
+  },
+  {
+    "id": "a7a734777df5b5c84084ab2b323098e7264141c3b8b30af151f46051f69080a1",
+    "source_id": "samsung-news",
+    "title": "Samsung Art Store Unveils Curated Collection From Art Basel Paris 2026",
+    "published_at": "2026-10-20 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\b3c3d1c896583d3b16459332a00c2f1adb97ccf9da305031dc01822287dbe25b.txt",
+    "url": "https://news.samsung.com/global/samsung-art-store-unveils-curated-collection-from-art-basel-paris-2026"
+  },
+  {
+    "id": "7fb6f8e1e2f0fede8f8dd96e3264859ac0f568165572f01182924099c2aa077c",
+    "source_id": "samsung-news",
+    "title": "Samsung Electronics Expands SSD Brand Campaign Across Global Landmarks",
+    "published_at": "2026-10-19 17:20:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\b2be981e16701c91ac2191db1f6c048c6e2e20de713c75230c72d2b971e716ae.txt",
+    "url": "https://news.samsung.com/global/samsung-electronics-expands-ssd-brand-campaign-across-global-landmarks"
+  },
+  {
+    "id": "12ae8b94e1822892ff777ff0de2be42434e27c924771db9b83c239d381682dfa",
+    "source_id": "samsung-news",
+    "title": "Samsung Presents \u2018Design Is an Act of Love\u2019 at Seoul Design Week 2026",
+    "published_at": "2026-10-15 10:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\7496b6c0a6cf45adc31389fefa88f204303acd719bc0e0cf4c8c49d23849473b.txt",
+    "url": "https://news.samsung.com/global/samsung-presents-design-is-an-act-of-love-at-seoul-design-week-2026"
+  },
+  {
+    "id": "3fe84c029058621f233ae53c3a5296bee2e28c71a1b7cac898ab1eda093a8402",
+    "source_id": "samsung-news",
+    "title": "From Smart City to Race Circuit: Samsung\u2019s The Wall in Control Rooms",
+    "published_at": "2026-10-15 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\fef86d8c6bd14258ea686e55de726fed8a09982ae643f3c42d416042b6a36425.txt",
+    "url": "https://news.samsung.com/global/from-smart-city-to-race-circuit-samsungs-the-wall-in-control-rooms"
+  },
+  {
+    "id": "3cf3688d183d6881463d67d8dd68fe60246e94dcb7402f1ae3daf90e32ab476b",
+    "source_id": "samsung-news",
+    "title": "Samsung Hosts Silicon Valley Future Wireless Summit 2026",
+    "published_at": "2026-10-15 06:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\488c4e348635260dc080416766caa2d7500549877dca695be52bb47550bb70c7.txt",
+    "url": "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026"
+  },
+  {
+    "id": "4d77ae64cac32fc833c83ee21873c3f8a19fe50b3ea488e374ba74740e91b8bb",
+    "source_id": "samsung-news",
+    "title": "Samsung Expands Language Support Across AI Experiences on Galaxy",
+    "published_at": "2026-10-14 21:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\aa1c6f1e84e33176834aa9db16cf269d36be90840f3d3ea2fcf0a83da8de2630.txt",
+    "url": "https://news.samsung.com/global/samsung-expands-language-support-across-ai-experiences-on-galaxy"
+  },
+  {
+    "id": "9dede30b51cb0c4b154b9b348b5e5303320d06c0ca4a03a37f68547ecb31a5da",
+    "source_id": "samsung-news",
+    "title": "Samsung Health Makes Sleep Coaching Easier To Start and Tailors Weekly Guidance",
+    "published_at": "2026-10-14 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\d5cd4953cae3442739a2377463826ffc882bfb8435c2efc6bc4a2dd085203f8c.txt",
+    "url": "https://news.samsung.com/global/samsung-health-makes-sleep-coaching-easier-to-start-and-tailors-weekly-guidance"
+  },
+  {
+    "id": "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+    "source_id": "samsung-news",
+    "title": "Samsung Electronics Announces Earnings Guidance for Third Quarter 2026",
+    "published_at": "2026-10-08 07:49:06.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\c323a099bdf8266a755b79709abffb86bc20343513c855585361537eeaeac3e6.txt",
+    "url": "https://news.samsung.com/global/samsung-electronics-announces-earnings-guidance-for-third-quarter-2026"
+  },
+  {
+    "id": "68bd6afadaea5f865497443d82a21e2ef9bb708dfd3dd0c871e159a41800bee1",
+    "source_id": "samsung-news",
+    "title": "Samsung Art Store Expands Its Collection With 30 Exclusive Works From the British Museum",
+    "published_at": "2026-10-06 08:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\samsung-news\\3c21f97a85c1d093a97a8b0babb91ffb1cea03fa33433f3622d26932a0f986e2.txt",
+    "url": "https://news.samsung.com/global/samsung-art-store-expands-its-collection-with-30-exclusive-works-from-the-british-museum"
+  },
+  {
+    "id": "0b99019fac565aed8ff3d6351ea1122ef3cf884b3ff8ed494a13f017b9d87673",
+    "source_id": "sec-releases",
+    "title": "SEC Announces Enforcement Annual Results for Fiscal Year 2026",
+    "published_at": "2026-11-10 16:15:35.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\d43bc66bc5c4b6556300b47b759bd7a62f21a351f4583bce364e98e5946b3419.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-113-sec-announces-enforcement-annual-results-fiscal-year-2026"
+  },
+  {
+    "id": "8c4e7a8f3c674cf510a625e5fa9b55b47c70f5197821b954507e9920b74051a2",
+    "source_id": "sec-releases",
+    "title": "SEC Adopts Amendments to Update Definitions of Small Entity for Investment Companies and Investment Advisers",
+    "published_at": "2026-11-04 16:28:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\f746d9d5a8340f3ee3a5afafb6a551ee016f071ec45bd8aeb42b7338e893cec4.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-112-sec-adopts-amendments-update-definitions-small-entity-investment-companies-investment-advisers"
+  },
+  {
+    "id": "2b9dc50b9ae6189b7cb0f87344880bfaa7590cb4fbd647a802c8787188138324",
+    "source_id": "sec-releases",
+    "title": "SEC Issues Exemptive Relief from Treasury Clearing Requirements for Certain Inter-Affiliate and Non-U.S. Repo Transactions",
+    "published_at": "2026-10-30 19:30:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\11c7c831eced8005f31eaf2fa20adcbaa57ae01145f955d86d0a93fc723f70e7.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-111-sec-issues-exemptive-relief-treasury-clearing-requirements-certain-inter-affiliate-non-us-repo"
+  },
+  {
+    "id": "0cc91334623978a158d8953956f855f3acd88e198b1cb4cf73c2ede460a36fef",
+    "source_id": "sec-releases",
+    "title": "Two Entities Charged in $130 Million Fraud Scheme That Used False SEC Filings to Boost Investor Confidence",
+    "published_at": "2026-10-29 16:42:37.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\bfcc15c3bf10d0192b2532e6cb522c96a0dfdfa9075597053199a1d98e269557.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence"
+  },
+  {
+    "id": "adb6bb8bc0896d8c572acbbcb4d34718c0c069ab40f9032e47a03ccd9cba4ec1",
+    "source_id": "sec-releases",
+    "title": "SEC Announces Fiscal Year 2027 Examination Priorities",
+    "published_at": "2026-10-23 14:10:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\9e5bf7d53da9960ebc59eafeee5fd5d142261c9faaeea466999f332b79604da2.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-109-sec-announces-fiscal-year-2027-examination-priorities"
+  },
+  {
+    "id": "a54d2de30f19c57e99a265446b567caea6e29289eb95462fc19ff37d1cff8334",
+    "source_id": "sec-releases",
+    "title": "SEC and AMF Announce Supervisory MOU To Enhance Cooperation for Investment Advisers and Investment Service Providers",
+    "published_at": "2026-10-20 13:25:16.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\ea9d5a79d83e78ec0a451c72a8a931e3004f09b05b077c18c13416a35be635c7.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-108-sec-amf-announce-supervisory-mou-enhance-cooperation-investment-advisers-investment-service"
+  },
+  {
+    "id": "2d143c39470b0f55547594b56df1ad48d55fa6a3e73e1b5ae91faf334d5e4516",
+    "source_id": "sec-releases",
+    "title": "SEC, FSA Hold Autumn Financial Regulatory Dialogue",
+    "published_at": "2026-10-20 12:51:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\88d81007af7b8fc1d8519e2d27dec9bb6af4e43f868d18072b5d485fbbbcf723.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-107-sec-fsa-hold-autumn-financial-regulatory-dialogue"
+  },
+  {
+    "id": "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+    "source_id": "sec-releases",
+    "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
+    "published_at": "2026-10-19 17:19:43.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\89658f3ed474c61b5b575020b7661d01bfca183242bd416cdd6e6aa0d384fde8.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence"
+  },
+  {
+    "id": "18e81a569cd52be5c5173f3f2373d762793de386c97875fe483ff0e271fab461",
+    "source_id": "sec-releases",
+    "title": "SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding",
+    "published_at": "2026-10-14 14:30:47.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\706acfda883cd660e0fc9aaaa610af76fbd62f7c7d77567f56a51566b15efd06.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding"
+  },
+  {
+    "id": "4c3dfd6917dca9a6f7530f30d8c27a6374c74a4d45b2319b607e9d0fc7b8b0f1",
+    "source_id": "sec-releases",
+    "title": "SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds",
+    "published_at": "2026-10-09 14:59:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\f33535ac171514cc3b9690bc2f8aab38e9c4fa9009a0faae88f391a953f95c8d.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds"
+  },
+  {
+    "id": "0ba8238342bfea495e808d5e3d438ec318b82fa6fb38f42dbafbf9ce736fd991",
+    "source_id": "sec-releases",
+    "title": "SEC Seeks Final Judgment Against Former Western Asset Co-CIO Ken Leech in Cherry Picking Case",
+    "published_at": "2026-10-06 20:30:24.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\abea9d1593b323c2690154188101a4e897b89478ff5110b6c1851d28db558733.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-103-sec-seeks-final-judgment-against-former-western-asset-co-cio-ken-leech-cherry-picking-case"
+  },
+  {
+    "id": "6af16faa3ac75f9f3408e486c6ece0c87527fca38478f7edc0798bb6cea0c4a4",
+    "source_id": "sec-releases",
+    "title": "SEC to Host Virtual National Compliance Outreach Seminar for Investment Companies and Investment Advisers",
+    "published_at": "2026-10-06 14:37:55.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\1bae982cbd0aac2478979ad6930a67eb4a2889a11fec1fc2580ec890aa62b917.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers"
+  },
+  {
+    "id": "c8d953a6e45e3976e9b0e556ac175a113220fe703f51589a0a18d6a2dad0c1ed",
+    "source_id": "sec-releases",
+    "title": "SEC Coordinates with Global Financial Regulators to Raise Fraud Awareness During World Investor Week",
+    "published_at": "2026-10-05 12:47:36.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\1e821913b50e8c53369bda52e876e640de1e13ce9dcf20920ab4c5ac54d82703.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-101-sec-coordinates-global-financial-regulators-raise-fraud-awareness-during-world-investor-week"
+  },
+  {
+    "id": "a22c6fc64eb5720c606615ceffaed0eeb39b7c29f96aa7d0e1b633e943f604a7",
+    "source_id": "sec-releases",
+    "title": "SEC Proposal Would Address How Investment Advisers and Funds Can Custody Crypto Assets Under the Federal Securities Laws",
+    "published_at": "2026-10-01 16:16:07.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\711ffac981e86c63c9f3ba8070564a6c6d3b45c5a035e542bdbc32e4b66fe062.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-100-sec-proposal-would-address-how-investment-advisers-funds-can-custody-crypto-assets-under-federal"
+  },
+  {
+    "id": "f7429fe451311af0442cff964b7324099a02fe973aee99f6bdf5ae9b957a5e18",
+    "source_id": "sec-releases",
+    "title": "SEC\u2019s Division of Examinations Announces New Exam Handbook",
+    "published_at": "2026-10-01 15:03:35.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\12101262f94d337777415602bc2eef701a5b7f2002b3d62124ac0b0ee25c42c0.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-99-secs-division-examinations-announces-new-exam-handbook"
+  },
+  {
+    "id": "fab257f0e98d944f35ecf9ebf3451b617d2e202aa9812dc020cebd0b8933effe",
+    "source_id": "sec-releases",
+    "title": "SEC Charges Meyer Global Management and Its CEO With Defrauding Retail Investors in Private Funds That Held Interests in SpaceX and Other Pre-IPO Securities",
+    "published_at": "2026-09-30 18:30:01.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\ed729968c60c4db983804beee368761db7d744e9a56d32ab14116c97e0441f07.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-98-sec-charges-meyer-global-management-its-ceo-defrauding-retail-investors-private-funds-held-interests"
+  },
+  {
+    "id": "a06b66b0b5ce86f4f0f48c502a7a9026afe2a1fc591aae48111ca8f5751ab0bf",
+    "source_id": "sec-releases",
+    "title": "SEC Charges Two Individuals With Orchestrating Fraud Scheme That Targeted Veterans",
+    "published_at": "2026-09-30 16:42:15.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\089bcf66c4af29732100c2ceba401161a4e16d74073e2d14e83b76cf9474ef9c.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-97-sec-charges-two-individuals-orchestrating-fraud-scheme-targeted-veterans"
+  },
+  {
+    "id": "13a5e44ad63dc6c77af8bbebcbae42e43fdfd8533ef7ec2b2c37c443fbe3533b",
+    "source_id": "sec-releases",
+    "title": "SEC Proposes Amendments to Expand Responsible Retailization of Private Markets",
+    "published_at": "2026-09-30 15:45:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\603e2f9c638345b87de24fe5d05d6a2a6c46d670c8754a4a6c341f65aed2a2e8.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-96-sec-proposes-amendments-expand-responsible-retailization-private-markets"
+  },
+  {
+    "id": "e7241da13d8e5e6b849d94cbb2208781e22313d6d0f51f0d975197ac431d6ba4",
+    "source_id": "sec-releases",
+    "title": "SEC Charges Multiple Entities in Fraud Schemes Totaling at Least $15 Million That Used WhatsApp and Other Platforms to Lure Investors",
+    "published_at": "2026-09-29 13:55:53.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\a1bc0e4e2feb421363e2418300fec319af373fd73d000d74f3cea942eb7ad9a2.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-95-sec-charges-multiple-entities-fraud-schemes-totaling-least-15-million-used-whatsapp-other-platforms"
+  },
+  {
+    "id": "233392c77e81be53babb8c459fe74beb5bf30376bfb8e6821a3f27916a9a23b4",
+    "source_id": "sec-releases",
+    "title": "SEC Charges Registered Investment Adviser Zoe Financial for Failure to Disclose Conflict of Interest",
+    "published_at": "2026-09-28 17:46:30.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\e02fee236b66a66b3b08e943d754f98ba62dfd4a9f5f0077fe814f1c442bd36c.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-94-sec-charges-registered-investment-adviser-zoe-financial-failure-disclose-conflict-interest"
+  },
+  {
+    "id": "9294de0c2d6e2d11fcd628d632318e167116710e60f833f47c088c10ca87d9d5",
+    "source_id": "sec-releases",
+    "title": "SEC Publishes Updated Market Statistics, Highlighting Increase in IPOs and Proceeds Raised",
+    "published_at": "2026-09-23 18:27:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\ec979764e52a25c2a7508a9341c201de121ebc1a74308e9c04cd2aeba6d2b52a.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-93-sec-publishes-updated-market-statistics-highlighting-increase-ipos-proceeds-raised"
+  },
+  {
+    "id": "7f207a76773540d5b311e8a45558eac01264f0923b5aef092a03d608649c56c8",
+    "source_id": "sec-releases",
+    "title": "SEC Charges South Florida Resident and His Company for Alleged Investment Scheme Defrauding Law Enforcement",
+    "published_at": "2026-09-23 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\sec-releases\\81ce91d9adcb94192423efc489fdddcd3da28bdafb066d863b5dddd000951275.txt",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-92-sec-charges-south-florida-resident-his-company-alleged-investment-scheme-defrauding-law-enforcement"
+  },
+  {
+    "id": "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+    "source_id": "microsoft-research",
+    "title": "Microsoft Research Focus \u2013 Edition #98",
+    "published_at": "2026-11-12 21:31:57.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\6519dd48590bde7965390b13b2826de7e518c4586691f9c259c1c1aef97717ab.txt",
+    "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-98/"
+  },
+  {
+    "id": "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae",
+    "source_id": "microsoft-research",
+    "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+    "published_at": "2026-11-10 20:52:56.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\1c7a1d951e6c52add3d95e2e427c22469ced9e40872bcae12e304f0111650463.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/"
+  },
+  {
+    "id": "0d1c4470ce9cca719de1a68021d2ba56150a5d2fb61a4245bebc4dee8e68448a",
+    "source_id": "microsoft-research",
+    "title": "Formally verifying agent-written full-stack web apps with PDD Kit",
+    "published_at": "2026-11-05 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\5119dd3dfe99893e0374bc28e46a23c09730f13914198a4ecd785830b9e495b3.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/formally-verifying-agent-written-full-stack-web-apps-with-pdd-kit/"
+  },
+  {
+    "id": "2fcd97dc2a0ea255e970a0e3101b09dee2b40f3a91d838586bf7836fee1cb63d",
+    "source_id": "microsoft-research",
+    "title": "Learn the rules: The hacker mindset",
+    "published_at": "2026-11-03 17:14:38.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\1725ea8b6977629d8e7a2d52623214fc7eb9af9afe88c4a632ea3afd1392310c.txt",
+    "url": "https://www.microsoft.com/en-us/research/podcast/learn-the-rules-the-hacker-mindset/"
+  },
+  {
+    "id": "4e3f7c1cedcc50e5fda275e13be3505f56fa75499c4e92b3733fb5fb76404fab",
+    "source_id": "microsoft-research",
+    "title": "From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence",
+    "published_at": "2026-10-30 13:05:28.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\7f85fd4ac83792d7b7456770471f247a00eda8e8acdf2ae7f1b5aa5e1f345dd1.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/"
+  },
+  {
+    "id": "2bd73c14019c05a6e0248016eab6d751f1a0820e6b94310d8ba8f05e8deabdce",
+    "source_id": "microsoft-research",
+    "title": "Microsoft Research Focus \u2013 Edition #97",
+    "published_at": "2026-10-29 19:19:16.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\8103eaf802dedfb0a0790ce7c016c045811d52529f48f32a3667d8f35c092ff3.txt",
+    "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/"
+  },
+  {
+    "id": "4daf6932e66f7ac6757117303f7a9af5a17ef09e02ecd18ebe31d3fced4aea18",
+    "source_id": "microsoft-research",
+    "title": "Flint-interactive: A language for creating interactive data visualizations",
+    "published_at": "2026-10-22 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\9a02c4308c9cf4d6b6ac2f2a2ed0f087c57efcfd060e806a971e34593fa36902.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/"
+  },
+  {
+    "id": "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+    "source_id": "microsoft-research",
+    "title": "Solving a 31-year-old grand challenge in mathematics \u2013 the KLS conjecture",
+    "published_at": "2026-10-21 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\f503376208abeaa3537cbcb193020551d64248d3a03ab5c4c386698d72d0e894.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/"
+  },
+  {
+    "id": "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd",
+    "source_id": "microsoft-research",
+    "title": "Called to serve: Tech, research, and positive impact",
+    "published_at": "2026-10-20 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\66d6bad75b553996bdcd7db93c6fbe8596da9a8c8d9998b4e3b9e670436017ed.txt",
+    "url": "https://www.microsoft.com/en-us/research/podcast/called-to-serve-tech-research-and-positive-impact-with-chris-white/"
+  },
+  {
+    "id": "37ba6be81a06cae1a488ce79a00e8d60bca8c534edf2f356e9f9b9b029585cae",
+    "source_id": "microsoft-research",
+    "title": "Proof-based general-purpose computing with Magnetar",
+    "published_at": "2026-10-15 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\4c229237fce0ce8a88911b8b6b3889efe207c75bd440a528a6f1de8abc98c872.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/"
+  },
+  {
+    "id": "42a606a922d9dbf2761e44590564f2834435262358694cffa4fdf44b4a6e5e6a",
+    "source_id": "microsoft-research",
+    "title": "Simulating student learning for better AI tutoring",
+    "published_at": "2026-10-12 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\bc34612b894ef31073c4715ee751bc541724eb03678f5505866bdb45898ad3bf.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/"
+  },
+  {
+    "id": "796f85accd3273903f02d8da1f4200e0b13163e2f1713014b29d2c74ef0a188b",
+    "source_id": "microsoft-research",
+    "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+    "published_at": "2026-10-07 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\865c8dbea58f3dba1068e6799d8de73016b85c94f0a5119db16ad1e53089cab8.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/"
+  },
+  {
+    "id": "eaf3b2d2638c832bdf17569746e79bc96370f461a9b3c434358bd5729510cf29",
+    "source_id": "microsoft-research",
+    "title": "What AI gets wrong and what failure teaches us",
+    "published_at": "2026-10-06 16:19:06.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\6a71628463d6d3848b7c035a1e7d98bf10c554e826ad7ee76bc5831501f3a706.txt",
+    "url": "https://www.microsoft.com/en-us/research/podcast/what-ai-gets-wrong-and-what-failure-teaches-us/"
+  },
+  {
+    "id": "ebc9a0451f76baca43774ffeca595435590daacf30ecff9948c36e6b926524c4",
+    "source_id": "microsoft-research",
+    "title": "Forecasting space weather risks on power grids",
+    "published_at": "2026-09-30 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\6540706c718f1ba1fd52d2d5d9381265112dc5874a59c02afd3fa90ba4cf700c.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/"
+  },
+  {
+    "id": "23dfec4e532907617981bf4618beadb06cb45e771e87ca3e8534f479783cd7b1",
+    "source_id": "microsoft-research",
+    "title": "Introducing Quine: An AI research system designed for the complexity of biology",
+    "published_at": "2026-09-29 14:00:02.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\198d0a5ec8e984d02d60803a62a8b1f4b9f128cddf91752b456320f23b212b58.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/"
+  },
+  {
+    "id": "82a6946052a6393ab7e15da514216bf77b9b73caa59b52d9579ab1fa161c9896",
+    "source_id": "microsoft-research",
+    "title": "One year in: How Microsoft Research Asia \u2013 Singapore is advancing research, partnership and talent for real-world impact",
+    "published_at": "2026-09-28 21:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\732ce503634600cf2420f47717b8898147b8a935c987d04c24508d5741babc30.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/"
+  },
+  {
+    "id": "0d3692e26888fb6f0252767f52fdce0c065ff9773ad8b4d870f4d97c9de410ab",
+    "source_id": "microsoft-research",
+    "title": "Offloaded inference for real-world physical AI robotics",
+    "published_at": "2026-09-23 16:01:36.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\35ee676fa5796c8b71aa37310bfe6381684c7009255dbbfd2fd76433ce5159ad.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/"
+  },
+  {
+    "id": "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+    "source_id": "microsoft-research",
+    "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+    "published_at": "2026-09-21 15:30:19.000000",
+    "text_path": "data\\real\\real-v2\\raw\\microsoft-research\\e69f7e54b136db9b5084388f3591eaf174f0fd5cc568ebb0e07548336493990d.txt",
+    "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/"
+  },
+  {
+    "id": "fd7933fb4e2efd78dbd589bde0d7ea156221ca94605679b322f6bf83adcb4c2e",
+    "source_id": "bair-research",
+    "title": "BAIR at CoRL 2026",
+    "published_at": "2026-11-09 09:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\bair-research\\c1e088dd01c8bb6df12f660da2c29ee3fbc35d4da97077928494d7eb45b41f51.txt",
+    "url": "http://bair.berkeley.edu/blog/2026/11/09/bair-at-corl-2026/"
+  },
+  {
+    "id": "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486",
+    "source_id": "federal-reserve",
+    "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+    "published_at": "2026-11-12 18:30:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\federal-reserve\\b37ec7d169209cfcf371dd0dd84a2fd42691744818bed6c027fab1abbc139b0d.txt",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm"
+  },
+  {
+    "id": "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+    "source_id": "federal-reserve",
+    "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+    "published_at": "2026-11-12 17:45:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\federal-reserve\\5eec6c2ee3a25418febc524349618c391fd13a0cbf684789901dc801ac51e3e1.txt",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm"
+  },
+  {
+    "id": "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+    "source_id": "federal-reserve",
+    "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+    "published_at": "2026-11-12 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\federal-reserve\\e68461450dcdbf42519e1e4445901dfda1e3711247424b48dd818141543fbc8a.txt",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm"
+  },
+  {
+    "id": "f51e164a1d7a7af4a6455211e50ca5c4f2c784bf505e98046ee49262941abf62",
+    "source_id": "federal-reserve",
+    "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
+    "published_at": "2026-11-09 21:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\federal-reserve\\929a3dc7fc57ddd5a7c4106e060e9e4e5f0194ad04f6630a122eb86601c313ad.txt",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm"
+  },
+  {
+    "id": "273cfc5cf237997e74c2e72be94e77ef1ecbaeb53c782c66392e1665dad26c28",
+    "source_id": "federal-reserve",
+    "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+    "published_at": "2026-11-05 16:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\federal-reserve\\3c1807039ec71f645019e6da0eccd22db294e6eb3837fecff592c31f08f8b0db.txt",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm"
+  },
+  {
+    "id": "63e2ed86a67e34c0e8f2dbb7c9552d0287fea99cca3b39e84ca4a22b18ee0817",
+    "source_id": "ftc-news",
+    "title": "FTC and 17 States Secure $63 Million Settlement with Family Dollar Stores in Price Transparency Win for Consumers",
+    "published_at": "2026-11-12 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\ac159d314671f39daf4ed7f3b9725cb6bf7b41ee4a9a0034a356c6765aae241b.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/11/ftc-17-states-secure-63-million-settlement-family-dollar-stores-price-transparency-win-consumers"
+  },
+  {
+    "id": "7340e37cb40391312630f35c6140ed71e1eea36b6fcb5caecb02d3d4dff72f34",
+    "source_id": "ftc-news",
+    "title": "Five States Join FTC Lawsuit Alleging Hims and Hers Engaged in Deceptive and Unlawful Privacy Practices",
+    "published_at": "2026-11-10 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\36ab8baa3407ff64024153b8ad1ec955cde5397bc4491e17ede46b5a01c85e48.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/11/five-states-join-ftc-lawsuit-alleging-hims-hers-engaged-deceptive-unlawful-privacy-practices"
+  },
+  {
+    "id": "6a522775f165b4df05318e73224d7217bd0f41977c8d190800710bd160443969",
+    "source_id": "ftc-news",
+    "title": "FTC Secures Settlement with Stream Auto Outlet, Advancing Price Transparency for Auto-Buying Consumers",
+    "published_at": "2026-11-09 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\ce03860b435431d32e20338260d76fe6c50145388c71c9ddb5c7955924f28c2a.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/11/ftc-secures-settlement-stream-auto-outlet-advancing-price-transparency-auto-buying-consumers"
+  },
+  {
+    "id": "426a8ced86facb1213fcb506ec0ec5df52bc06254dbace2b11b678326eca1738",
+    "source_id": "ftc-news",
+    "title": "Progress Residential and Owner Pretium Partners to Pay $49.75 Million to Settle FTC and States\u2019 Charges Over Deceptive Rental Pricing Practices and Other Unlawful Conduct",
+    "published_at": "2026-11-06 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\5da32ea3568a0b240c8ddfe0632942cb7e8fc6e8d8f65d5f8021e82152db550e.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/11/progress-residential-owner-pretium-partners-pay-4975-million-settle-ftc-states-charges-over"
+  },
+  {
+    "id": "0e8e1a038107f533fff2af164e6c69aa9b35227f98e74293f9ba6862a0dd5c85",
+    "source_id": "ftc-news",
+    "title": "New Details Emerge in Amazon Ads Auction-Rigging Case",
+    "published_at": "2026-11-05 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\037f449784c2a7e5b9e64de18fdbfaadc632ffa38e27b0442e297100ca0acee4.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/11/new-details-emerge-amazon-ads-auction-rigging-case"
+  },
+  {
+    "id": "013189ac88aaba62bd50c8f935bb925872f9e2536f9d3d80f523ec35998e5bab",
+    "source_id": "ftc-news",
+    "title": "FTC and States Take Action Against Toast Inc. over Hidden and Unauthorized Fees, Deceptive Subscription and Cancellation Practices and Other Unlawful Conduct",
+    "published_at": "2026-10-29 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\50afd29150c08fe26a67056f198d158a5c6f714ce3db03e81e5dbb7e51e9dddd.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-states-take-action-against-toast-inc-over-hidden-unauthorized-fees-deceptive-subscription"
+  },
+  {
+    "id": "070822f6f878742e394428f8d91f538f5ced2e66a456f14356dfdbace87720dd",
+    "source_id": "ftc-news",
+    "title": "FTC Highlights Efforts to Combat Imposter Scams and Protect Consumers",
+    "published_at": "2026-10-29 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\ftc-news\\f621a2466c2204856f02d69db0eb5f05f05e4c5217a0f453d2709e5dc7bc1d6c.txt",
+    "url": "https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-highlights-efforts-combat-imposter-scams-protect-consumers"
+  },
+  {
+    "id": "e3902348bf2908c44a5adc65ed63953568c1fbca3fa437b66290cade02434908",
+    "source_id": "nist-news",
+    "title": "NIST Report Provides Guidelines for Transition to Post-Quantum Cryptography Standards",
+    "published_at": "2026-10-27 12:00:00.000000",
+    "text_path": "data\\real\\real-v2\\raw\\nist-news\\7662b2d6cd9ad48d372e8744104308627328f7b182071c05fbae426b30a7a80f.txt",
+    "url": "https://www.nist.gov/news-events/news/2026/10/nist-report-provides-guidelines-transition-post-quantum-cryptography"
+  },
+  {
+    "id": "097fdf4af9c2d7a65c2cea8a7c1ea2741f0ede3ad371085862ddb2d361047026",
+    "source_id": "eff-deeplinks",
+    "title": "\ud83e\udd15 Medicare's AI Experiment | EFFector 38.20",
+    "published_at": "2026-11-11 18:32:37.000000",
+    "text_path": "data\\real\\real-v2\\raw\\eff-deeplinks\\c4664748421453a93405637c7b8cb2b69976a5195ba5dac612904fcf87f03a70.txt",
+    "url": "https://www.eff.org/deeplinks/2026/11/medicares-ai-experiment-effector-3820"
+  }
+]

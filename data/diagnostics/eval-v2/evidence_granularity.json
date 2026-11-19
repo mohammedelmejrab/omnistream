@@ -1,0 +1,3597 @@
+[
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.6666666666666666
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "b43cca7d7c994ca077ac9de483323d355a4eaefa2c4446334e9b623909c68f99",
+      "e84cbcf29ee1990f404c029ba1f5fe07ba13ddf07bf8d29709d57846c1955447"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "8d7b3e41495db3b6c70a07e7361d687d9c1d9b9c0202ea3c18ca5eff8a46cbe5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.3333333333333333
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "2f835f16b5e5ef15e6d73cbe229a59f141017b4487e34c1b4ba829b22a4ead74",
+      "5bf39e54b0f722a1446a8da2f787da8c1968f55c0c8516fa23e0216b9cdbdcb5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "d3fba92d24f80ef3b7dc71cf19212a071c60614d83f406539f8a4edc0faddfd3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b",
+      "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "0dafc4b234f3430caa1a8bfb95b9620dc8b3e9e68d58cd3018b1bcb53305c81d",
+      "4485cb47141eac9f760a18a0402f6d36c160cf888005226f42a258e0f762f373"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454",
+      "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "8cc687d0cee41ab0eab4b0850bde92e0ccd3722495777b701ab51efec26122bd",
+      "ee596b6310f5b66ab75d66c0bacf4fde72315bd9863e418dc923640340cdecac"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7",
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "00607bafc0a939b53cda3908fc0d2f1cf7c8aed4f37752deaf807e45a224e0ca",
+      "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3a89ca832ae60eb2e5763c25322c0cc28b0bd0dcaa02f89886a6202c96a8692f",
+      "412e42fb13bc1e3bc707c311a0ccf16f4ae91eae13103664f8b4c8d89ab9d999"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "00607bafc0a939b53cda3908fc0d2f1cf7c8aed4f37752deaf807e45a224e0ca",
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "232d5d94c4e716c3db3f7b8cd144f93e9c17b1b88df0a6ace3f683f74f9f44a3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+      "f69402d75576d3770ea4140a33d9f7d125ab75eefaa909831e4e46b10f873168"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+      "714f462c2a72dcf650c1ae3db9d9847a6a302217cfd96ca1ed6b32d8bf040f69"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+      "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "345de31e863d5b64635df1b1a68c60d98bd2e7398ad6fad9b9bd7beaa0636db3",
+      "d6732bbe54ac00a744af86ba81a0cb79d3177859954bf679945873a7351a09e9"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1b6ea7349035a4a02a29c872143cd6a5ceed39c849a4c3cb35ccc9e5530c325a"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "62f827a6f203cb04a8154654a2dcab73125b9ccf9282ab80ebd596fd96d47ed6"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "9ceeeb1c52e899753763a248c384465dcad4068872dcdf4c849e923eafd62ec9",
+      "e00238913f33390a1a25696a0c232aba82f6b749468f24fd0e81a8981df96835"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "804c95c59cd0a237943cf0391d73bbe6d4747b884c12a7bdffb388402c11a427",
+      "a57fda24c36ed64e1f9a30fa0afc98176007086f2e76dadcd363262ca971eef2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "ef5206bac0a28f7f2f5d2e5a01b7ff30b9e00613c38754a9e101b214918589df"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "37e32d8eb7bc813ecfc3869716331c0dfbef9ee5d76d2c234f9843819faacd04"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "9a5d5d51339534b500f02b414f9edba95247a381253083d2eeb7b4063350fd5a",
+      "dea74b7d2ed37c6bd54af256ebab09ac5be72f6d5207ad23260d8ef9d666cb67"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+      "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "b43cca7d7c994ca077ac9de483323d355a4eaefa2c4446334e9b623909c68f99"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "8d7b3e41495db3b6c70a07e7361d687d9c1d9b9c0202ea3c18ca5eff8a46cbe5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.6666666666666666
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "2f835f16b5e5ef15e6d73cbe229a59f141017b4487e34c1b4ba829b22a4ead74",
+      "5bf39e54b0f722a1446a8da2f787da8c1968f55c0c8516fa23e0216b9cdbdcb5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "d3fba92d24f80ef3b7dc71cf19212a071c60614d83f406539f8a4edc0faddfd3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b",
+      "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "4485cb47141eac9f760a18a0402f6d36c160cf888005226f42a258e0f762f373"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454",
+      "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7",
+      "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3e4bd37bc725d044fac8eff6721f8cc6830938f6f2e5edac42e5684507873241",
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7",
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "8cc687d0cee41ab0eab4b0850bde92e0ccd3722495777b701ab51efec26122bd",
+      "ee596b6310f5b66ab75d66c0bacf4fde72315bd9863e418dc923640340cdecac"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+      "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3a89ca832ae60eb2e5763c25322c0cc28b0bd0dcaa02f89886a6202c96a8692f",
+      "412e42fb13bc1e3bc707c311a0ccf16f4ae91eae13103664f8b4c8d89ab9d999"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "232d5d94c4e716c3db3f7b8cd144f93e9c17b1b88df0a6ace3f683f74f9f44a3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+      "ebf5c36d9126076a12eb18e82a6959fdc0abdfcb89530d496351f7494f5131b7"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e",
+      "f304fc071e2a5b0cc7a8550458749aba591fd10e0d31ed3ce07dcd7b9f21518a"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+      "f69402d75576d3770ea4140a33d9f7d125ab75eefaa909831e4e46b10f873168"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+      "714f462c2a72dcf650c1ae3db9d9847a6a302217cfd96ca1ed6b32d8bf040f69"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+      "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "345de31e863d5b64635df1b1a68c60d98bd2e7398ad6fad9b9bd7beaa0636db3",
+      "d6732bbe54ac00a744af86ba81a0cb79d3177859954bf679945873a7351a09e9"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1b6ea7349035a4a02a29c872143cd6a5ceed39c849a4c3cb35ccc9e5530c325a",
+      "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "9ceeeb1c52e899753763a248c384465dcad4068872dcdf4c849e923eafd62ec9",
+      "e00238913f33390a1a25696a0c232aba82f6b749468f24fd0e81a8981df96835"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "62f827a6f203cb04a8154654a2dcab73125b9ccf9282ab80ebd596fd96d47ed6"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "d4370efe5129437613624461467f5fdd4f9748a01679856f7eb69ecafb58869b",
+      "ef5206bac0a28f7f2f5d2e5a01b7ff30b9e00613c38754a9e101b214918589df"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "804c95c59cd0a237943cf0391d73bbe6d4747b884c12a7bdffb388402c11a427",
+      "a57fda24c36ed64e1f9a30fa0afc98176007086f2e76dadcd363262ca971eef2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "37e32d8eb7bc813ecfc3869716331c0dfbef9ee5d76d2c234f9843819faacd04",
+      "80cd1ffaba5056e350e9f2c89236be68334eb0163854d7031f3326ef79719bd5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "9a5d5d51339534b500f02b414f9edba95247a381253083d2eeb7b4063350fd5a",
+      "dea74b7d2ed37c6bd54af256ebab09ac5be72f6d5207ad23260d8ef9d666cb67"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.3333333333333333
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "b43cca7d7c994ca077ac9de483323d355a4eaefa2c4446334e9b623909c68f99"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.3333333333333333
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "2f835f16b5e5ef15e6d73cbe229a59f141017b4487e34c1b4ba829b22a4ead74",
+      "5bf39e54b0f722a1446a8da2f787da8c1968f55c0c8516fa23e0216b9cdbdcb5"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "4485cb47141eac9f760a18a0402f6d36c160cf888005226f42a258e0f762f373"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "8cc687d0cee41ab0eab4b0850bde92e0ccd3722495777b701ab51efec26122bd",
+      "ee596b6310f5b66ab75d66c0bacf4fde72315bd9863e418dc923640340cdecac"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7",
+      "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+      "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "3a89ca832ae60eb2e5763c25322c0cc28b0bd0dcaa02f89886a6202c96a8692f",
+      "412e42fb13bc1e3bc707c311a0ccf16f4ae91eae13103664f8b4c8d89ab9d999"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+      "f69402d75576d3770ea4140a33d9f7d125ab75eefaa909831e4e46b10f873168"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "714f462c2a72dcf650c1ae3db9d9847a6a302217cfd96ca1ed6b32d8bf040f69"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "e00238913f33390a1a25696a0c232aba82f6b749468f24fd0e81a8981df96835"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "a57fda24c36ed64e1f9a30fa0afc98176007086f2e76dadcd363262ca971eef2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "37e32d8eb7bc813ecfc3869716331c0dfbef9ee5d76d2c234f9843819faacd04"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "dea74b7d2ed37c6bd54af256ebab09ac5be72f6d5207ad23260d8ef9d666cb67"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.6666666666666666
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "b43cca7d7c994ca077ac9de483323d355a4eaefa2c4446334e9b623909c68f99"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.5
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [
+      "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+      "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "e54dd8cb1055286c3f45b24fe19c5d87995ecc4cf4643624358806b5db3a751e"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 1.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [
+      "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "e54dd8cb1055286c3f45b24fe19c5d87995ecc4cf4643624358806b5db3a751e"
+    ],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.6666666666666666
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q06",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q05",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q12",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q13",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q19",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q20",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q26",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q27",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q34",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q33",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q39",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q44",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q49",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q54",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "question_id": "v2-q59",
+    "type": "time_sensitive",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q03",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q04",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q11",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q10",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q17",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q18",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q24",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q25",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q31",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q32",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q37",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q38",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q42",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q43",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q47",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q48",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q52",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q53",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q58",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "question_id": "v2-q57",
+    "type": "multi_hop",
+    "gold_in_primary_context": [],
+    "gold_credited_only_via_secondary_provenance": [],
+    "primary_recall_any": 0.0
+  }
+]

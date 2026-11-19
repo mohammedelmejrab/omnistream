@@ -1,0 +1,812 @@
+Run 14: 0 completed pairs; checkpoint C:\Users\mehme\omnistream-integrated\data\snapshots\eval-v2\runs\14
+Contamination check 10/60
+Contamination check 20/60
+Contamination check 30/60
+Contamination check 40/60
+Contamination check 50/60
+Contamination check 60/60
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+external v2-q03/60: correctness=0 recall@10=0.5
+external v2-q01/60: correctness=2 recall@10=1.0
+external v2-q05/60: correctness=0 recall@10=0.5
+external v2-q04/60: correctness=0 recall@10=0.0
+external v2-q02/60: correctness=2 recall@10=1.0
+external v2-q07/60: correctness=2 recall@10=1.0
+external v2-q08/60: correctness=2 recall@10=1.0
+external v2-q06/60: correctness=2 recall@10=1.0
+external v2-q09/60: correctness=2 recall@10=1.0
+external v2-q10/60: correctness=0 recall@10=0.5
+external v2-q12/60: correctness=0 recall@10=0.5
+external v2-q11/60: correctness=0 recall@10=0.3333333333333333
+external v2-q13/60: correctness=2 recall@10=1.0
+external v2-q14/60: correctness=2 recall@10=1.0
+external v2-q16/60: correctness=2 recall@10=1.0
+external v2-q15/60: correctness=2 recall@10=1.0
+external v2-q17/60: correctness=0 recall@10=0.5
+external v2-q18/60: correctness=0 recall@10=0.5
+external v2-q19/60: correctness=0 recall@10=0.5
+external v2-q20/60: correctness=2 recall@10=1.0
+external v2-q21/60: correctness=2 recall@10=1.0
+external v2-q22/60: correctness=2 recall@10=1.0
+external v2-q24/60: correctness=0 recall@10=0.5
+external v2-q23/60: correctness=0 recall@10=0.0
+external v2-q26/60: correctness=0 recall@10=0.5
+external v2-q25/60: correctness=0 recall@10=0.0
+external v2-q28/60: correctness=2 recall@10=1.0
+external v2-q27/60: correctness=2 recall@10=1.0
+external v2-q30/60: correctness=2 recall@10=1.0
+external v2-q29/60: correctness=2 recall@10=1.0
+external v2-q32/60: correctness=0 recall@10=0.0
+external v2-q31/60: correctness=0 recall@10=0.5
+external v2-q34/60: correctness=2 recall@10=1.0
+external v2-q33/60: correctness=0 recall@10=0.5
+external v2-q35/60: correctness=2 recall@10=1.0
+external v2-q36/60: correctness=2 recall@10=1.0
+external v2-q38/60: correctness=0 recall@10=0.0
+external v2-q37/60: correctness=0 recall@10=0.5
+external v2-q40/60: correctness=2 recall@10=1.0
+external v2-q39/60: correctness=2 recall@10=1.0
+external v2-q41/60: correctness=2 recall@10=1.0
+external v2-q42/60: correctness=0 recall@10=0.5
+external v2-q43/60: correctness=0 recall@10=0.5
+external v2-q44/60: correctness=2 recall@10=1.0
+external v2-q46/60: correctness=2 recall@10=1.0
+external v2-q45/60: correctness=2 recall@10=1.0
+external v2-q47/60: correctness=0 recall@10=0.5
+external v2-q48/60: correctness=0 recall@10=0.5
+external v2-q50/60: correctness=2 recall@10=1.0
+external v2-q49/60: correctness=2 recall@10=1.0
+external v2-q52/60: correctness=0 recall@10=0.5
+external v2-q51/60: correctness=2 recall@10=1.0
+external v2-q53/60: correctness=0 recall@10=0.5
+external v2-q54/60: correctness=2 recall@10=1.0
+external v2-q55/60: correctness=2 recall@10=1.0
+external v2-q56/60: correctness=2 recall@10=1.0
+external v2-q57/60: correctness=0 recall@10=0.5
+external v2-q58/60: correctness=0 recall@10=0.5
+external v2-q60/60: correctness=2 recall@10=1.0
+external v2-q59/60: correctness=2 recall@10=1.0
+classic v2-q01/60: correctness=2 recall@10=1.0
+classic v2-q03/60: correctness=0 recall@10=0.5
+classic v2-q04/60: correctness=0 recall@10=0.6666666666666666
+classic v2-q05/60: correctness=0 recall@10=1.0
+classic v2-q02/60: correctness=2 recall@10=1.0
+classic v2-q07/60: correctness=2 recall@10=1.0
+classic v2-q06/60: correctness=2 recall@10=1.0
+classic v2-q08/60: correctness=2 recall@10=1.0
+classic v2-q09/60: correctness=2 recall@10=1.0
+classic v2-q10/60: correctness=0 recall@10=0.5
+classic v2-q11/60: correctness=0 recall@10=0.3333333333333333
+classic v2-q12/60: correctness=0 recall@10=1.0
+classic v2-q14/60: correctness=2 recall@10=1.0
+classic v2-q13/60: correctness=2 recall@10=1.0
+classic v2-q16/60: correctness=2 recall@10=1.0
+classic v2-q15/60: correctness=2 recall@10=1.0
+classic v2-q18/60: correctness=2 recall@10=1.0
+classic v2-q17/60: correctness=0 recall@10=0.5
+classic v2-q20/60: correctness=2 recall@10=1.0
+classic v2-q19/60: correctness=0 recall@10=1.0
+classic v2-q21/60: correctness=2 recall@10=1.0
+classic v2-q22/60: correctness=2 recall@10=1.0
+classic v2-q23/60: correctness=2 recall@10=1.0
+classic v2-q24/60: correctness=0 recall@10=0.5
+classic v2-q25/60: correctness=0 recall@10=0.5
+classic v2-q26/60: correctness=0 recall@10=1.0
+classic v2-q28/60: correctness=2 recall@10=1.0
+classic v2-q27/60: correctness=2 recall@10=1.0
+classic v2-q30/60: correctness=2 recall@10=1.0
+classic v2-q29/60: correctness=2 recall@10=1.0
+classic v2-q32/60: correctness=2 recall@10=1.0
+classic v2-q31/60: correctness=0 recall@10=0.5
+classic v2-q34/60: correctness=2 recall@10=1.0
+classic v2-q33/60: correctness=0 recall@10=1.0
+classic v2-q35/60: correctness=2 recall@10=1.0
+classic v2-q36/60: correctness=2 recall@10=1.0
+classic v2-q38/60: correctness=0 recall@10=0.5
+classic v2-q37/60: correctness=0 recall@10=0.5
+classic v2-q40/60: correctness=2 recall@10=1.0
+classic v2-q39/60: correctness=2 recall@10=1.0
+classic v2-q41/60: correctness=2 recall@10=1.0
+classic v2-q42/60: correctness=0 recall@10=0.5
+classic v2-q44/60: correctness=2 recall@10=1.0
+classic v2-q43/60: correctness=2 recall@10=1.0
+classic v2-q45/60: correctness=2 recall@10=1.0
+classic v2-q46/60: correctness=2 recall@10=1.0
+classic v2-q47/60: correctness=0 recall@10=0.5
+classic v2-q48/60: correctness=2 recall@10=1.0
+classic v2-q50/60: correctness=2 recall@10=1.0
+classic v2-q49/60: correctness=1 recall@10=1.0
+classic v2-q52/60: correctness=0 recall@10=0.5
+classic v2-q51/60: correctness=2 recall@10=1.0
+classic v2-q53/60: correctness=0 recall@10=0.5
+classic v2-q54/60: correctness=2 recall@10=1.0
+classic v2-q55/60: correctness=2 recall@10=1.0
+classic v2-q56/60: correctness=2 recall@10=1.0
+classic v2-q57/60: correctness=0 recall@10=0.5
+classic v2-q58/60: correctness=0 recall@10=0.5
+classic v2-q60/60: correctness=2 recall@10=1.0
+classic v2-q59/60: correctness=2 recall@10=1.0
+graphiti v2-q01/60: correctness=2 recall@10=1.0
+graphiti v2-q03/60: correctness=0 recall@10=0.5
+graphiti v2-q05/60: correctness=0 recall@10=1.0
+graphiti v2-q04/60: correctness=0 recall@10=0.6666666666666666
+graphiti v2-q07/60: correctness=2 recall@10=1.0
+graphiti v2-q02/60: correctness=2 recall@10=1.0
+graphiti v2-q06/60: correctness=2 recall@10=0.5
+graphiti v2-q08/60: correctness=2 recall@10=1.0
+graphiti v2-q09/60: correctness=2 recall@10=1.0
+graphiti v2-q10/60: correctness=0 recall@10=0.5
+graphiti v2-q12/60: correctness=0 recall@10=1.0
+graphiti v2-q11/60: correctness=0 recall@10=0.3333333333333333
+graphiti v2-q14/60: correctness=0 recall@10=1.0
+graphiti v2-q13/60: correctness=2 recall@10=1.0
+graphiti v2-q15/60: correctness=2 recall@10=1.0
+graphiti v2-q16/60: correctness=2 recall@10=1.0
+graphiti v2-q18/60: correctness=0 recall@10=1.0
+graphiti v2-q17/60: correctness=0 recall@10=0.5
+graphiti v2-q20/60: correctness=2 recall@10=0.5
+graphiti v2-q19/60: correctness=0 recall@10=1.0
+graphiti v2-q22/60: correctness=0 recall@10=1.0
+graphiti v2-q21/60: correctness=2 recall@10=1.0
+graphiti v2-q23/60: correctness=2 recall@10=1.0
+graphiti v2-q24/60: correctness=0 recall@10=0.5
+graphiti v2-q25/60: correctness=0 recall@10=0.5
+graphiti v2-q26/60: correctness=0 recall@10=1.0
+graphiti v2-q27/60: correctness=2 recall@10=1.0
+graphiti v2-q28/60: correctness=2 recall@10=1.0
+graphiti v2-q30/60: correctness=2 recall@10=1.0
+graphiti v2-q29/60: correctness=2 recall@10=1.0
+graphiti v2-q32/60: correctness=0 recall@10=0.5
+graphiti v2-q31/60: correctness=0 recall@10=0.5
+graphiti v2-q34/60: correctness=2 recall@10=1.0
+graphiti v2-q33/60: correctness=2 recall@10=1.0
+graphiti v2-q36/60: correctness=2 recall@10=1.0
+graphiti v2-q35/60: correctness=2 recall@10=1.0
+graphiti v2-q38/60: correctness=0 recall@10=1.0
+graphiti v2-q37/60: correctness=0 recall@10=0.5
+graphiti v2-q39/60: correctness=2 recall@10=1.0
+graphiti v2-q40/60: correctness=2 recall@10=1.0
+graphiti v2-q41/60: correctness=2 recall@10=1.0
+graphiti v2-q42/60: correctness=0 recall@10=0.5
+graphiti v2-q44/60: correctness=2 recall@10=1.0
+graphiti v2-q43/60: correctness=0 recall@10=0.5
+graphiti v2-q45/60: correctness=2 recall@10=1.0
+graphiti v2-q46/60: correctness=0 recall@10=1.0
+graphiti v2-q47/60: correctness=0 recall@10=1.0
+graphiti v2-q48/60: correctness=1 recall@10=1.0
+graphiti v2-q49/60: correctness=2 recall@10=1.0
+graphiti v2-q50/60: correctness=0 recall@10=1.0
+graphiti v2-q51/60: correctness=2 recall@10=1.0
+graphiti v2-q52/60: correctness=0 recall@10=0.5
+graphiti v2-q53/60: correctness=2 recall@10=1.0
+graphiti v2-q54/60: correctness=2 recall@10=1.0
+graphiti v2-q55/60: correctness=1 recall@10=1.0
+graphiti v2-q56/60: correctness=2 recall@10=1.0
+graphiti v2-q58/60: correctness=2 recall@10=1.0
+graphiti v2-q57/60: correctness=0 recall@10=0.5
+graphiti v2-q59/60: correctness=2 recall@10=1.0
+graphiti v2-q60/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+own v2-q01/60: correctness=2 recall@10=1.0
+own v2-q03/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+own v2-q05/60: correctness=0 recall@10=1.0
+own v2-q04/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+own v2-q02/60: correctness=2 recall@10=1.0
+own v2-q07/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+own v2-q06/60: correctness=2 recall@10=0.5
+own v2-q08/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+own v2-q09/60: correctness=2 recall@10=1.0
+own v2-q10/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+own v2-q11/60: correctness=0 recall@10=0.3333333333333333
+own v2-q12/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 33/50; falling back to exact
+own v2-q13/60: correctness=2 recall@10=1.0
+own v2-q14/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+own v2-q16/60: correctness=2 recall@10=1.0
+own v2-q15/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+own v2-q18/60: correctness=0 recall@10=0.5
+own v2-q17/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+own v2-q19/60: correctness=0 recall@10=1.0
+own v2-q20/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+own v2-q22/60: correctness=2 recall@10=1.0
+own v2-q21/60: correctness=1 recall@10=1.0
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 38/50; falling back to exact
+own v2-q23/60: correctness=2 recall@10=1.0
+own v2-q24/60: correctness=0 recall@10=0.0
+Entity ANN shortfall: 3/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+own v2-q25/60: correctness=0 recall@10=0.5
+own v2-q26/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+own v2-q28/60: correctness=2 recall@10=1.0
+own v2-q27/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+own v2-q30/60: correctness=2 recall@10=1.0
+own v2-q29/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+own v2-q31/60: correctness=0 recall@10=0.5
+own v2-q32/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+own v2-q34/60: correctness=2 recall@10=1.0
+own v2-q33/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+own v2-q35/60: correctness=2 recall@10=1.0
+own v2-q36/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+own v2-q37/60: correctness=0 recall@10=0.5
+own v2-q38/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+own v2-q40/60: correctness=2 recall@10=1.0
+own v2-q39/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+own v2-q41/60: correctness=2 recall@10=1.0
+own v2-q42/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+own v2-q44/60: correctness=2 recall@10=1.0
+own v2-q43/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+own v2-q46/60: correctness=2 recall@10=1.0
+own v2-q45/60: correctness=1 recall@10=1.0
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+own v2-q47/60: correctness=0 recall@10=0.5
+own v2-q48/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+own v2-q50/60: correctness=0 recall@10=1.0
+own v2-q49/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 30/50; falling back to exact
+own v2-q51/60: correctness=2 recall@10=1.0
+own v2-q52/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 3/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+own v2-q53/60: correctness=2 recall@10=1.0
+own v2-q54/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+own v2-q56/60: correctness=2 recall@10=1.0
+own v2-q55/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+own v2-q58/60: correctness=1 recall@10=1.0
+own v2-q57/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+own v2-q59/60: correctness=2 recall@10=1.0
+own v2-q60/60: correctness=0 recall@10=1.0
+Entity ANN shortfall: 20/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 48/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Fact ANN shortfall: 5/10; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+own+subagents v2-q01/60: correctness=2 recall@10=1.0
+own+subagents v2-q03/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+own+subagents v2-q05/60: correctness=2 recall@10=1.0
+own+subagents v2-q04/60: correctness=0 recall@10=0.3333333333333333
+Entity ANN shortfall: 33/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+own+subagents v2-q07/60: correctness=1 recall@10=1.0
+own+subagents v2-q02/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 25/50; falling back to exact
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+Entity ANN shortfall: 49/50; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+own+subagents v2-q08/60: correctness=2 recall@10=1.0
+own+subagents v2-q06/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Fact ANN shortfall: 6/10; falling back to exact
+Entity ANN shortfall: 25/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+own+subagents v2-q09/60: correctness=2 recall@10=1.0
+own+subagents v2-q10/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Fact ANN shortfall: 2/10; falling back to exact
+own+subagents v2-q12/60: correctness=2 recall@10=1.0
+own+subagents v2-q11/60: correctness=0 recall@10=0.3333333333333333
+Entity ANN shortfall: 41/50; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 48/50; falling back to exact
+Entity ANN shortfall: 33/50; falling back to exact
+own+subagents v2-q14/60: correctness=2 recall@10=1.0
+own+subagents v2-q13/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 25/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+own+subagents v2-q16/60: correctness=2 recall@10=1.0
+own+subagents v2-q15/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 21/50; falling back to exact
+Fact ANN shortfall: 7/10; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Fact ANN shortfall: 2/10; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+own+subagents v2-q17/60: correctness=2 recall@10=0.0
+own+subagents v2-q18/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+own+subagents v2-q19/60: correctness=2 recall@10=1.0
+own+subagents v2-q20/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+own+subagents v2-q21/60: correctness=2 recall@10=1.0
+own+subagents v2-q22/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 42/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 43/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+own+subagents v2-q23/60: correctness=2 recall@10=1.0
+own+subagents v2-q24/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Fact ANN shortfall: 5/10; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+own+subagents v2-q26/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 9/10; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Fact ANN shortfall: 9/10; falling back to exact
+own+subagents v2-q25/60: correctness=0 recall@10=0.5
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+own+subagents v2-q27/60: correctness=2 recall@10=1.0
+own+subagents v2-q28/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 19/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+own+subagents v2-q30/60: correctness=2 recall@10=1.0
+own+subagents v2-q29/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 30/50; falling back to exact
+Fact ANN shortfall: 4/10; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 6/10; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 2/10; falling back to exact
+Entity ANN shortfall: 49/50; falling back to exact
+own+subagents v2-q32/60: correctness=0 recall@10=0.0
+own+subagents v2-q31/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+own+subagents v2-q33/60: correctness=2 recall@10=1.0
+own+subagents v2-q34/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Fact ANN shortfall: 9/10; falling back to exact
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 25/50; falling back to exact
+own+subagents v2-q35/60: correctness=2 recall@10=1.0
+own+subagents v2-q36/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 23/50; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Fact ANN shortfall: 5/10; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+Fact ANN shortfall: 4/10; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 6/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+own+subagents v2-q38/60: correctness=0 recall@10=0.0
+own+subagents v2-q37/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 23/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+own+subagents v2-q40/60: correctness=2 recall@10=1.0
+own+subagents v2-q39/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 7/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+own+subagents v2-q41/60: correctness=2 recall@10=1.0
+own+subagents v2-q42/60: correctness=1 recall@10=0.5
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Fact ANN shortfall: 5/10; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Fact ANN shortfall: 7/10; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+own+subagents v2-q44/60: correctness=2 recall@10=1.0
+own+subagents v2-q43/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+own+subagents v2-q45/60: correctness=2 recall@10=1.0
+own+subagents v2-q46/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 37/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 4/10; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Fact ANN shortfall: 3/10; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+own+subagents v2-q48/60: correctness=2 recall@10=0.0
+own+subagents v2-q47/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+own+subagents v2-q50/60: correctness=2 recall@10=1.0
+own+subagents v2-q49/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 13/50; falling back to exact
+Fact ANN shortfall: 6/10; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 19/50; falling back to exact
+Fact ANN shortfall: 4/10; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 2/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Fact ANN shortfall: 6/10; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+own+subagents v2-q51/60: correctness=2 recall@10=1.0
+own+subagents v2-q52/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 25/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 28/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Fact ANN shortfall: 9/10; falling back to exact
+Entity ANN shortfall: 21/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+own+subagents v2-q54/60: correctness=1 recall@10=1.0
+own+subagents v2-q53/60: correctness=2 recall@10=0.5
+Entity ANN shortfall: 48/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 26/50; falling back to exact
+Fact ANN shortfall: 8/10; falling back to exact
+Entity ANN shortfall: 33/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+own+subagents v2-q55/60: correctness=2 recall@10=1.0
+own+subagents v2-q56/60: correctness=2 recall@10=1.0
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 3/50; falling back to exact
+Fact ANN shortfall: 2/10; falling back to exact
+Entity ANN shortfall: 22/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Fact ANN shortfall: 9/10; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+Entity ANN shortfall: 0/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Fact ANN shortfall: 1/10; falling back to exact
+own+subagents v2-q58/60: correctness=2 recall@10=1.0
+own+subagents v2-q57/60: correctness=2 recall@10=0.0
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+own+subagents v2-q59/60: correctness=2 recall@10=1.0
+own+subagents v2-q60/60: correctness=2 recall@10=1.0
+classic+subagents v2-q01/60: correctness=2 recall@10=1.0
+classic+subagents v2-q03/60: correctness=2 recall@10=0.5
+classic+subagents v2-q05/60: correctness=2 recall@10=1.0
+classic+subagents v2-q04/60: correctness=0 recall@10=0.6666666666666666
+classic+subagents v2-q02/60: correctness=2 recall@10=1.0
+classic+subagents v2-q07/60: correctness=0 recall@10=1.0
+classic+subagents v2-q06/60: correctness=2 recall@10=1.0
+classic+subagents v2-q08/60: correctness=2 recall@10=1.0
+classic+subagents v2-q09/60: correctness=2 recall@10=1.0
+classic+subagents v2-q10/60: correctness=2 recall@10=0.5
+classic+subagents v2-q11/60: correctness=0 recall@10=0.3333333333333333
+classic+subagents v2-q12/60: correctness=2 recall@10=1.0
+classic+subagents v2-q14/60: correctness=2 recall@10=1.0
+classic+subagents v2-q13/60: correctness=2 recall@10=1.0
+classic+subagents v2-q16/60: correctness=2 recall@10=1.0
+classic+subagents v2-q15/60: correctness=2 recall@10=1.0
+classic+subagents v2-q17/60: correctness=0 recall@10=0.5
+classic+subagents v2-q18/60: correctness=2 recall@10=0.5
+classic+subagents v2-q19/60: correctness=2 recall@10=1.0
+classic+subagents v2-q20/60: correctness=2 recall@10=1.0
+classic+subagents v2-q21/60: correctness=2 recall@10=1.0
+classic+subagents v2-q22/60: correctness=2 recall@10=1.0
+classic+subagents v2-q23/60: correctness=2 recall@10=1.0
+classic+subagents v2-q24/60: correctness=2 recall@10=0.5
+classic+subagents v2-q26/60: correctness=0 recall@10=1.0
+classic+subagents v2-q25/60: correctness=1 recall@10=0.5
+classic+subagents v2-q28/60: correctness=2 recall@10=1.0
+classic+subagents v2-q27/60: correctness=2 recall@10=1.0
+classic+subagents v2-q30/60: correctness=2 recall@10=1.0
+classic+subagents v2-q29/60: correctness=2 recall@10=1.0
+classic+subagents v2-q32/60: correctness=2 recall@10=0.0
+classic+subagents v2-q31/60: correctness=2 recall@10=0.5
+classic+subagents v2-q34/60: correctness=2 recall@10=1.0
+classic+subagents v2-q33/60: correctness=2 recall@10=1.0
+classic+subagents v2-q35/60: correctness=2 recall@10=1.0
+classic+subagents v2-q36/60: correctness=2 recall@10=1.0
+classic+subagents v2-q38/60: correctness=0 recall@10=0.0
+classic+subagents v2-q37/60: correctness=1 recall@10=0.5
+classic+subagents v2-q40/60: correctness=2 recall@10=1.0
+classic+subagents v2-q39/60: correctness=2 recall@10=1.0
+classic+subagents v2-q41/60: correctness=2 recall@10=1.0
+classic+subagents v2-q42/60: correctness=2 recall@10=0.5
+classic+subagents v2-q44/60: correctness=2 recall@10=1.0
+classic+subagents v2-q43/60: correctness=0 recall@10=0.5
+classic+subagents v2-q45/60: correctness=2 recall@10=1.0
+classic+subagents v2-q46/60: correctness=2 recall@10=1.0
+classic+subagents v2-q47/60: correctness=2 recall@10=0.5
+classic+subagents v2-q48/60: correctness=2 recall@10=1.0
+classic+subagents v2-q50/60: correctness=2 recall@10=1.0
+classic+subagents v2-q49/60: correctness=2 recall@10=1.0
+classic+subagents v2-q51/60: correctness=2 recall@10=1.0
+classic+subagents v2-q52/60: correctness=2 recall@10=0.5
+classic+subagents v2-q54/60: correctness=2 recall@10=1.0
+classic+subagents v2-q53/60: correctness=2 recall@10=0.5
+classic+subagents v2-q56/60: correctness=2 recall@10=1.0
+classic+subagents v2-q55/60: correctness=2 recall@10=1.0
+classic+subagents v2-q58/60: correctness=2 recall@10=1.0
+classic+subagents v2-q57/60: correctness=2 recall@10=0.0
+classic+subagents v2-q60/60: correctness=2 recall@10=1.0
+classic+subagents v2-q59/60: correctness=2 recall@10=1.0
+| Configuration | recall_at_10 | mrr | hits_at_1 | correctness | routing_recall | routing_precision | citation_faithfulness | citation_faithfulness_micro | correctness_errors | faithfulness_errors | zero_citation_answers | abstentions | changed_fact_accuracy | latency_seconds | tokens | cost_usd | judge_tokens | judge_cost_usd | errors |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| external | 0.7389 | 0.8667 | 0.8167 | 1.1333 | N/A | N/A | 0.7667 | 0.7667 | 0 | 0 | 0 | 0 | 0.6667 | 1.0130 | 26073 | 0.0043 | 47628 | 0.0196 | 0 |
+| classic | 0.8667 | 0.8873 | 0.8167 | 1.2833 | 0.9806 | 0.8583 | 0.9535 | 0.9550 | 0 | 0 | 0 | 0 | 0.6000 | 3.7868 | 139152 | 0.0241 | 119266 | 0.0466 | 0 |
+| graphiti | 0.8667 | 0.6921 | 0.4833 | 1.1000 | 0.9722 | 0.8556 | 0.7024 | 0.5899 | 0 | 0 | 0 | 0 | 0.7333 | 12.7737 | 209982 | 0.0378 | 83137 | 0.0352 | 0 |
+| own | 0.8306 | 0.6485 | 0.4667 | 1.1167 | 0.9722 | 0.8556 | 0.7615 | 0.6986 | 0 | 0 | 0 | 0 | 0.8000 | 11.1305 | 180447 | 0.0331 | 70523 | 0.0314 | 0 |
+| own+subagents | 0.7944 | 0.6386 | 0.4833 | 1.7833 | 0.9806 | 0.8639 | 0.8612 | 0.8116 | 0 | 0 | 0 | 0 | 0.9333 | 24.1684 | 6776727 | 0.8085 | 175649 | 0.0730 | 0 |
+| classic+subagents | 0.8250 | 0.8655 | 0.8000 | 1.7333 | 0.9722 | 0.8611 | 0.9176 | 0.8966 | 0 | 0 | 1 | 0 | 0.9333 | 14.9173 | 2886468 | 0.3686 | 232050 | 0.0905 | 0 |
+Report: C:\Users\mehme\omnistream-integrated\docs\eval\eval-v2-20261113T123043918544Z.md

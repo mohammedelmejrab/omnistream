@@ -1,0 +1,2 @@
+Poincaré–Lindstedt method
+In perturbation theory, the Poincaré – Lindstedt method or Lindstedt – Poincaré method is a technique for uniformly approximating periodic solutions to ordinary differential equations, when regular perturbation approaches fail. The method removes secular terms—terms growing without bound—arising in the straightforward application of perturbation theory to weakly nonlinear problems with finite oscillatory solutions. The method is named after Henri Poincaré, and Anders Lindstedt.

@@ -1,0 +1,165 @@
+<figure class="wp-block-image size-large"><img alt="A conceptual diagram of the feedback loop required to improve an AI tutor. The middle part of the figure shows that a human teacher gives guidance to a real student and receives the student’s feedback, but this feedback is slow, costly, sparse, and hard to scale. On the right panel of the figure, an AI student simulator is trained from real student feedback and serves as a fast proxy for the student during tutor development." class="wp-image-1185955" height="576" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/StudentSim-BlogHeroFeature-1400x788-1-1024x576.jpg" width="1024" /></figure>
+
+
+
+<div class="wp-block-msr-immersive-section alignfull row" style="padding-bottom: 0; padding-top: 0;">
+	
+	<div class="container">
+		<div class="wp-block-msr-immersive-section__inner wp-block-msr-immersive-section__inner--narrow">
+			<div class="wp-block-columns mb-10 pb-1 pr-1 is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h2 class="wp-block-heading h3" id="at-a-glance">At a glance</h2>
+
+
+
+<ul class="wp-block-list">
+<li>StudentSim is a research system for evaluating and improving AI tutors before they are tested with real learners; it is not a product, is not deployed in classrooms, and is not intended to replace teachers</li>
+
+
+
+<li>AI tutoring tools need feedback from students to improve, but collecting that feedback through human studies is slow, costly, and difficult to scale&nbsp;</li>
+
+
+
+<li>StudentSim trains personalized AI student simulators from publicly available, de-identified learner records, with one simulator adapted to each student&nbsp;</li>
+
+
+
+<li>The work evaluates simulators along two education-grounded dimensions: whether they respond like a specific student, and whether they update after tutor guidance&nbsp;</li>
+
+
+
+<li>Across chess, second-language English writing, and mathematics, StudentSim outperforms leading baselines and provides a useful feedback signal for training an AI tutor&nbsp;</li>
+</ul>
+</div>
+</div>		</div>
+	</div>
+
+	</div>
+
+
+
+<p class="wp-block-paragraph">In research settings, teams are exploring how AI-powered tutoring systems can help explain a math problem, suggest an edit to a writing assignment, or guide a learner through a chess position. Yet the quality of teaching cannot be measured only from the tutor’s answer. A tutor needs to know what happens after the guidance reaches a student. Did the student correct the original mistake? Did the hint help them reason toward the answer, or did it give away too much? Would a different student need a different kind of support? In today’s AI tutor research, answering these questions often requires real learner studies. Those studies are valuable, but they are slow and costly to run, which makes it hard to use student feedback during fast model iteration.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.microsoft.com/en-us/research/publication/studentsim-training-llm-based-student-simulators/">StudentSim</a> is an AI system that creates personalized simulators of individual students, modeling how they answer questions and how their answers change after receiving a tutor’s guidance. The goal is to make student feedback more available during AI tutor development. This research also introduces StudentSimEval, a benchmark and evaluation protocol spanning chess, second-language English writing, and mathematics. </p>
+
+
+
+<p class="wp-block-paragraph">Importantly, the goal is not to replace teachers or classroom learning. Instead, StudentSim helps researchers evaluate and improve AI tutoring systems during the research and development process before testing them with real learners. The research uses only publicly available learner datasets released for research use with de-identified records; no personally identifying information is used at any stage.&nbsp;</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="**Alt text:** A conceptual diagram of the feedback loop required to improve an AI tutor. The middle part of the figure shows that a human teacher gives guidance to a real student and receives the student’s feedback, but this feedback is slow, costly, sparse, and hard to scale. On the right panel of the figure, an AI student simulator is trained from real student feedback and serves as a fast proxy for the student during tutor development." class="wp-image-1186104" height="1467" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/fig-1_motivation_StudentSim_Updated-scaled.jpg" width="2560" /><figcaption class="wp-element-caption"><em>Figure 1:</em> <em>AI tutors need feedback from students to improve. Student simulators can approximate part of that feedback during research-stage training and evaluation.</em> <em>They</em> <em>provide an early-stage research signal, not a replacement for testing with real learners.</em></figcaption></figure>
+
+
+
+<h2 class="wp-block-heading" id="measuring-what-a-student-simulator-needs-to-do">Measuring what a student simulator needs to do</h2>
+
+
+
+<p class="wp-block-paragraph">A simple way&nbsp;to build a student simulator is to ask a large language model to role-play a learner. For example, a prompt might say, “You are an elementary-school student who struggles with math.” The model can change its tone and express uncertainty. The harder part is preserving the learner’s actual ability boundary. A model may speak in a young student’s voice while still relying on knowledge and reasoning far beyond that student’s level. For training an AI tutor, this can produce misleading feedback: the tutor may appear effective because the simulated student is too capable.</p>
+
+
+
+<p class="wp-block-paragraph">Traditional student modeling approaches face&nbsp;a different limitation. Knowledge tracing and behavior prediction models are grounded in real learning records and can estimate a student’s current knowledge, skills, and learning habits. Many of these models, however, were not designed to take natural-language tutor guidance as input. They can help describe what a student has done, but they do not always tell us how a student would respond to a particular explanation, hint, or Socratic question.</p>
+
+
+
+<p class="wp-block-paragraph">StudentSim&nbsp;defines the target through two dimensions inspired by education research. Educators often distinguish what a learner can do independently from what they can do with support. Vygotsky’s zone of proximal development captures this gap between current independent performance and performance with guidance.&nbsp;StudentSim&nbsp;turns this idea into two evaluation goals. <em>Behavioral fidelity</em> measures whether a simulator matches a specific student’s&nbsp;recorded responses on held-out problems. <em>Guidance responsiveness</em> measures whether the simulator updates its response after reading tutor guidance.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img alt="  **Alt text:** Diagram defining the two evaluation criteria used for student simulators. The upper portion shows a problem, “minus 7.3 times 5 equals what.” The lower portion compares a real student and an AI simulator. Both initially answer 36.5, then receive guidance and revise their answer to negative 36.5. Asking whether a simulator’s responses match the recorded student answers is behavioral fidelity. Matching the guidance-induced change is guidance responsiveness." class="wp-image-1186107" height="1686" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/fig-2_metrics_StudentSim_Updated-scaled.jpg" style="width: 776px; height: auto;" width="2560" /><figcaption class="wp-element-caption"><em><em>Figure 2: StudentSimEval evaluates whether a simulator matches a student’s independent behavior and whether it responds to guidance.</em>&nbsp;</em></figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">These two goals are complementary. A simulator that only matches past student behavior may be useful for prediction, but it does not show whether a teaching intervention helped. A simulator that always follows the tutor may respond fluently, but it may fail to represent a particular student’s strengths, weaknesses, and likely mistakes. AI tutor training needs both signals: the learner’s starting point and how guidance affects the learner’s performance.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading" id="training-personalized-simulators-from-sparse-student-records">Training personalized simulators from sparse student records</h2>
+
+
+
+<p class="wp-block-paragraph">StudentSimEval is built entirely from publicly available learner datasets that are released for research use with de-identified records. The records carry no personally identifying information, and each personalized simulator is trained only on the de-identified records of the student it represents.</p>
+
+
+
+<p class="wp-block-paragraph">Real student data is often sparse at the individual level. A learner may contribute only a small number of essays, answers, or interactions. Training a separate simulator from scratch for each student would risk overfitting and would require each model to relearn common patterns in the domain. &nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">StudentSim uses a two-stage training pipeline. In the first stage, the model trains on records pooled across many students in the same domain. This stage learns common response formats, common errors, and common ways students revise after guidance. In the second stage, the model is specialized on one student’s own records, producing a personalized simulator for that student.&nbsp;</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt=" **Alt text:** A two-stage pipeline for training personalized StudentSim models from sparse student records. At the top, several students each have limited examples of question-answer interactions and answer revisions following tutor guidance. In the middle, stage one training, records from all students are pooled to learn shared behavioral patterns, including the space of possible responses, common mistakes, and typical revisions after guidance. At the bottom, stage two training, the model is adapted separately to each student’s records, producing one personalized simulator per student." class="wp-image-1186136" height="1556" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/fig-3_training_pipeline_StudentSim_Updated-scaled.jpg" width="2560" /><figcaption class="wp-element-caption"><em><em>Figure 3: StudentSim first learns shared student behavior from pooled records, then adapts to each student’s own data.</em>&nbsp;</em></figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">The evaluation covers three domains with different response types. In chess, the simulator predicts a player’s next move and how that player may revise after coaching. In second-language English writing, it generates essays with error patterns matching a learner and predicts corrections after teacher feedback. In mathematics, it predicts a student’s multiple-choice answer and whether the student updates after an explanation. Across these domains, StudentSimEval uses the same principle: compare all methods on the same per-student training records and the same held-out evaluation records.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">StudentSim&nbsp;outperforms leading baselines across the three domains. In chess, for example,&nbsp;StudentSim&nbsp;reaches behavioral fidelity of 0.5150 and guidance responsiveness of 0.9067. GPT-5.4 reaches 0.2316 and 0.7186, respectively. Maia2, a chess-specific human move prediction model, reaches 0.4535 and 0.2721. The comparison illustrates the difference between the baseline families: GPT-5.4 can respond to guidance but does not reliably match a specific student’s behavior, while Maia2 predicts human chess moves more closely but lacks a natural-language guidance pathway.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized"><img alt=" **Alt text:** Scatter plot comparing three student simulation approaches on behavioral fidelity, shown on the horizontal axis, and guidance responsiveness, shown on the vertical axis. StudentSim is positioned in the upper-right at approximately 0.51 fidelity and 0.91 responsiveness. A prompted GPT-5.4 model has lower fidelity, approximately 0.23, and moderate responsiveness, approximately 0.72. Maia2, a state-tracking model, has moderate fidelity, approximately 0.45, but low responsiveness, approximately 0.27. The plot shows that StudentSim performs strongly on both criteria." class="wp-image-1186116" height="1073" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/fig-4_performance_StudentSim_Updated.png" style="width: 402px; height: auto;" width="1233" /><figcaption class="wp-element-caption"><em>Figure 4: In chess, StudentSim improves both behavioral fidelity and guidance responsiveness compared with leading baselines.</em></figcaption></figure>
+
+
+
+<h2 class="wp-block-heading" id="using-simulated-feedback-to-improve-ai-tutors">Using simulated feedback to improve AI tutors</h2>
+
+
+
+<p class="wp-block-paragraph">The research also tests whether a trained student simulator can provide feedback for tutor optimization. In a chess tutor reinforcement learning study, the tutor receives a position and a real student’s previous wrong move, then generates guidance. The student simulator&#8217;s own parameters are held fixed during this process, and it reads the guidance and produces a revised move. The reward is based on the improvement in move quality from the student’s previous move to the simulator’s revised move, using Stockfish as an independent chess engine signal.  </p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="  **Alt text:** Diagram of reinforcement learning for an AI chess tutor using StudentSim as the feedback source. Each episode begins with a real student’s chess position and previous incorrect move. The AI tutor receives this context and generates guidance describing what and how to teach. A frozen, personalized AI student simulator reads the guidance and produces a revised move. The reward equals the improvement in chess evaluation from the student’s original move to the revised move, and this reward updates the AI tutor policy while the simulator remains fixed." class="wp-image-1186119" height="740" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/fig-5_rl_setup_StudentSim_Updated-scaled.jpg" width="2560" /><figcaption class="wp-element-caption"><em>Figure 5: StudentSim can provide feedback during AI tutor reinforcement learning by estimating how a student response changes after guidance.</em></figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">The study compares three conditions: a supervised fine-tuned tutor with no reinforcement learning, a tutor trained with GPT-5.4 as the simulated student reward source, and a tutor trained with&nbsp;StudentSim&nbsp;as the reward source. All conditions use the same tutor policy, supervised starting point, and&nbsp;reinforcement learning setup. Human chess experts then evaluate the&nbsp;tutor&nbsp;responses blind to condition.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The&nbsp;StudentSim&nbsp;reward produces the highest-rated tutor on all reported dimensions. The tutor trained with&nbsp;StudentSim&nbsp;reaches 90.5% accuracy, compared with 75.7% for the no-RL baseline and 71.6% for the GPT-5.4 reward condition. It also receives higher ratings for&nbsp;guidance&nbsp;quality and personalization. The result is a proof of&nbsp;concept&nbsp;that student simulators trained on real learner data can provide useful feedback for improving AI tutors.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading" id="looking-ahead">Looking ahead</h2>
+
+
+
+<p class="wp-block-paragraph">StudentSim&nbsp;does not remove the need for real learners in education research. Human studies&nbsp;remain&nbsp;essential for measuring learning outcomes, safety, usability, and classroom fit. The role of student simulators is earlier in the development process: they can help researchers test tutor strategies, compare models, and refine training signals before moving to more expensive studies with real students.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The broader direction is to build AI tutor systems that learn from student reactions, not only from expert-written explanations or static correctness labels.&nbsp;StudentSim&nbsp;shows one path: use real learning records to train personalized simulators, evaluate those simulators on both independent behavior and response to guidance, and use them as scalable feedback sources for tutor training. Future work can extend this approach to longer learning trajectories,&nbsp;additional&nbsp;subjects, richer student profiles, and studies that connect simulated feedback with real learning outcomes.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">The paper and the StudentSim training and evaluation code, including the StudentSimEval protocol, are publicly available.</p>
+
+
+
+<h2 class="wp-block-heading" id="sources">Sources</h2>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.microsoft.com/en-us/research/publication/studentsim-training-llm-based-student-simulators/">Paper</a></div>
+
+
+
+<div class="wp-block-button is-style-fill-github"><a class="wp-block-button__link wp-element-button" href="https://github.com/microsoft/StudentSim" rel="noreferrer noopener" target="_blank">Code</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph"></p>
+<span class="sr-only" id="label-external-link">Opens in a new tab</span><p>The post <a href="https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/">Simulating student learning for better AI tutoring</a> appeared first on <a href="https://www.microsoft.com/en-us/research">Microsoft Research</a>.</p>

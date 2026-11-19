@@ -1,0 +1,1227 @@
+[
+ {
+  "id": "rq-t-001",
+  "split": "test",
+  "type": "single",
+  "question": "What is the most Broadcom could owe, undiscounted, under the residual-value backstop for AI racks that it disclosed in late October 2026?",
+  "reference_answer": "Approximately $43 billion",
+  "key_facts": [
+   "approximately $43 billion maximum potential liability"
+  ],
+  "gold": [
+   "904be74c"
+  ],
+  "evidence": [
+   {
+    "item_id": "904be74c",
+    "quote": "on an undiscounted basis, is approximately $43 billion",
+    "establishes": "Maximum potential liability under the Backstop"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "72.5% is the share of outstanding lease amounts used in the liability formula, not the cap."
+ },
+ {
+  "id": "rq-t-002",
+  "split": "test",
+  "type": "single",
+  "question": "How many Marvell shares will holders receive for each Lumentum share under the merger agreed in November 2026?",
+  "reference_answer": "4.500 shares of Marvell common stock per Lumentum share",
+  "key_facts": [
+   "4.500 (4.5) Marvell shares per Lumentum share"
+  ],
+  "gold": [
+   "f22f6cac"
+  ],
+  "evidence": [
+   {
+    "item_id": "f22f6cac",
+    "quote": "a fixed exchange ratio of 4.500 shares of Marvell common stock",
+    "establishes": "Fixed exchange ratio"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "c4bbb8b3"
+  ],
+  "notes": "75ee4f31 (the 8-K body) states the same ratio; either item supports the answer."
+ },
+ {
+  "id": "rq-t-003",
+  "split": "test",
+  "type": "single",
+  "question": "What total revenue did Oracle set as its long-term outlook for fiscal 2030 at its 2026 Investor Day?",
+  "reference_answer": "$225 billion or more",
+  "key_facts": [
+   "$225 billion+ total revenue in FY30"
+  ],
+  "gold": [
+   "acb0bb57"
+  ],
+  "evidence": [
+   {
+    "item_id": "acb0bb57",
+    "quote": "Set long-term outlook for FY30 of $225 billion+ in total revenue",
+    "establishes": "FY30 revenue outlook"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The fiscal 2027 outlook of at least $90 billion is a different year."
+ },
+ {
+  "id": "rq-t-004",
+  "split": "test",
+  "type": "single",
+  "question": "In Arm's quarter ended 30 September 2026, how much licence and other revenue did it record, and how fast did that line grow?",
+  "reference_answer": "$773 million, up 50% year over year",
+  "key_facts": [
+   "$773 million",
+   "50% growth"
+  ],
+  "gold": [
+   "ed092e93"
+  ],
+  "evidence": [
+   {
+    "item_id": "ed092e93",
+    "quote": "License and other revenue grew 50% to $773 million",
+    "establishes": "Licence and other revenue for Q2 FYE27"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Royalty revenue was $670 million (+8%); total revenue $1.44 billion."
+ },
+ {
+  "id": "rq-t-005",
+  "split": "test",
+  "type": "single",
+  "question": "How many depositary shares did Meta agree to sell in its October 2026 mandatory convertible preferred offering, and what fraction of a preferred share does each represent?",
+  "reference_answer": "250,000,000 depositary shares, each a 1/20th interest in a share of 6.50% Series A Mandatory Convertible Preferred Stock",
+  "key_facts": [
+   "250,000,000 (250 million) depositary shares",
+   "1/20th interest each"
+  ],
+  "gold": [
+   "a86bd392"
+  ],
+  "evidence": [
+   {
+    "item_id": "a86bd392",
+    "quote": "agreed to issue and sell 250,000,000 Series A depositary shares",
+    "establishes": "Number of depositary shares"
+   },
+   {
+    "item_id": "a86bd392",
+    "quote": "each representing a 1/20th interest in a share of 6.50% Series A Mandatory",
+    "establishes": "Fraction represented"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The 37,500,000 figure is the underwriters' over-allotment option."
+ },
+ {
+  "id": "rq-t-006",
+  "split": "test",
+  "type": "single",
+  "question": "When the Justice Department closed its review of FOX's purchase of Roku, for how long did FOX commit to keep carrying other companies' content on Roku?",
+  "reference_answer": "At least 3 years",
+  "key_facts": [
+   "at least 3 years"
+  ],
+  "gold": [
+   "939a45ab"
+  ],
+  "evidence": [
+   {
+    "item_id": "939a45ab",
+    "quote": "continue carrying non-FOX content on Roku for a period of at least 3 years",
+    "establishes": "FOX's carriage commitment"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": ""
+ },
+ {
+  "id": "rq-t-007",
+  "split": "test",
+  "type": "single",
+  "question": "In the Hawaii defence-contract case to which a former Army civilian official pleaded guilty in October 2026, how large was the bribe he had agreed to accept, and over what period?",
+  "reference_answer": "Approximately $1.25 million over five years",
+  "key_facts": [
+   "approximately $1.25 million",
+   "over five years"
+  ],
+  "gold": [
+   "60ce7dcd"
+  ],
+  "evidence": [
+   {
+    "item_id": "60ce7dcd",
+    "quote": "to accept a bribe of approximately $1.25 million over five years",
+    "establishes": "Size of the agreed bribe"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "He ultimately received about $55,000; the question asks for the agreed amount."
+ },
+ {
+  "id": "rq-t-008",
+  "split": "test",
+  "type": "single",
+  "question": "According to NIST's October 2026 report on moving to post-quantum cryptography, by which years must federal high-value assets migrate under Executive Order 14412?",
+  "reference_answer": "By 2030 for key establishment and by 2031 for digital signatures",
+  "key_facts": [
+   "2030 for key establishment",
+   "2031 for digital signatures"
+  ],
+  "gold": [
+   "7a85fbb1"
+  ],
+  "evidence": [
+   {
+    "item_id": "7a85fbb1",
+    "quote": "to migrate by 2030 for key establishment and 2031 for digital signatures",
+    "establishes": "Accelerated federal deadlines"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "2035 is the earlier general target from National Security Memorandum 10."
+ },
+ {
+  "id": "rq-t-009",
+  "split": "test",
+  "type": "single",
+  "question": "Which two US states did federal appeals courts clear in October 2026 to start enforcing laws that age-gate young people's access to social media?",
+  "reference_answer": "Florida and Georgia",
+  "key_facts": [
+   "Florida",
+   "Georgia"
+  ],
+  "gold": [
+   "185889d3"
+  ],
+  "evidence": [
+   {
+    "item_id": "185889d3",
+    "quote": "will allow Florida and Georgia to start enforcing laws that will age-gate",
+    "establishes": "The two states"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": ""
+ },
+ {
+  "id": "rq-t-010",
+  "split": "test",
+  "type": "single",
+  "question": "Which two entities did the SEC charge on 29 October 2026 over a 'wealth-sharing program' that relied on false SEC filings, and roughly how much did they raise?",
+  "reference_answer": "BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd; more than $130 million",
+  "key_facts": [
+   "BG Wealth Sharing Ltd",
+   "DSJ Exchange Pty Ltd",
+   "more than $130 million"
+  ],
+  "gold": [
+   "0cc91334"
+  ],
+  "evidence": [
+   {
+    "item_id": "0cc91334",
+    "quote": "BG Wealth Sharing Ltd and DSJ Exchange Pty Ltd",
+    "establishes": "The two charged entities"
+   },
+   {
+    "item_id": "0cc91334",
+    "quote": "helped them raise more than $130 million",
+    "establishes": "Amount raised"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": ""
+ },
+ {
+  "id": "rq-t-011",
+  "split": "test",
+  "type": "single",
+  "question": "What share of test lines does the lattice-based hidden Markov model for Ottoman aruz scansion get fully right?",
+  "reference_answer": "77.6%",
+  "key_facts": [
+   "77.6% of test lines"
+  ],
+  "gold": [
+   "cefc0930"
+  ],
+  "evidence": [
+   {
+    "item_id": "cefc0930",
+    "quote": "it scans 77.6% of the test lines fully correctly",
+    "establishes": "Held-out scansion accuracy"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "26.8%, 55.0% and 63.6% are the baselines (rule-based scanner, neural tagger, few-shot LLM)."
+ },
+ {
+  "id": "rq-t-012",
+  "split": "test",
+  "type": "single",
+  "question": "In the zero-search reinforcement-learning study of Slay the Spire 2, what win rate do the released policies reach at Ascension 10 averaged across the five characters?",
+  "reference_answer": "8.05%",
+  "key_facts": [
+   "8.05% win rate at Ascension 10"
+  ],
+  "gold": [
+   "37222495"
+  ],
+  "evidence": [
+   {
+    "item_id": "37222495",
+    "quote": "the released policies win 8.05% averaged over the five characters",
+    "establishes": "A10 win rate over 12,800 held-out games"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "80.2% is the Ascension 0 figure; 8.2% is on a different 2,000-game comparison panel."
+ },
+ {
+  "id": "rq-t-013",
+  "split": "test",
+  "type": "single",
+  "question": "How early, relative to the end of a spoken word, does the Earlybird streaming recogniser get the median word right on clean audiobook speech?",
+  "reference_answer": "90 ms before the speaker finishes the word",
+  "key_facts": [
+   "90 ms before the word ends"
+  ],
+  "gold": [
+   "be81cefa"
+  ],
+  "evidence": [
+   {
+    "item_id": "be81cefa",
+    "quote": "the median word is predicted correctly 90 ms before the speaker finishes it",
+    "establishes": "Median lead time on LibriSpeech test-clean"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Other released models emit the word 90 to 400 ms after it ends."
+ },
+ {
+  "id": "rq-t-014",
+  "split": "test",
+  "type": "single",
+  "question": "Where did the single-policy vision-language-action entry finish on the final leaderboard of the 2026 BEHAVIOR Challenge, and what did it score across all 100 tasks?",
+  "reference_answer": "9th place, with a score (Q) of 0.392",
+  "key_facts": [
+   "9th place",
+   "0.392 across all 100 tasks"
+  ],
+  "gold": [
+   "9509c40e"
+  ],
+  "evidence": [
+   {
+    "item_id": "9509c40e",
+    "quote": "We placed 9th on the final leaderboard",
+    "establishes": "Leaderboard position"
+   },
+   {
+    "item_id": "9509c40e",
+    "quote": "across all 100 tasks it scores 0.392",
+    "establishes": "Score on all 100 tasks"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "0.371 is the score on the 50 tasks shared with 2025."
+ },
+ {
+  "id": "rq-t-015",
+  "split": "test",
+  "type": "single",
+  "question": "In the study of the 'RSI Tax' on recursive self-improvement, what portion of that tax is taken up by verification for the three costly methods examined?",
+  "reference_answer": "74.8% to 93.6%",
+  "key_facts": [
+   "74.8-93.6% of the aggregate RSI Tax"
+  ],
+  "gold": [
+   "0b4d895e"
+  ],
+  "evidence": [
+   {
+    "item_id": "0b4d895e",
+    "quote": "verification accounts for 74.8--93.6% of the aggregate RSI Tax",
+    "establishes": "Verification share"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "65.6-71.0% is the token saving of the bounded-note baseline, a different quantity."
+ },
+ {
+  "id": "rq-t-036",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "Who currently serves as NVIDIA's chief executive, and on what basis?",
+  "reference_answer": "Colette M. Kress, as interim Chief Executive Officer (she remains CFO)",
+  "key_facts": [
+   "Colette M. Kress (Colette Kress)",
+   "interim CEO"
+  ],
+  "gold": [
+   "c7708a09",
+   "da5cc113"
+  ],
+  "evidence": [
+   {
+    "item_id": "c7708a09",
+    "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+    "establishes": "Old state: Jensen Huang was CEO on 23 Oct 2026"
+   },
+   {
+    "item_id": "da5cc113",
+    "quote": "to serve as interim Chief Executive Officer",
+    "establishes": "New state: Kress appointed interim CEO on 11 Nov 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-11)",
+  "alias_bridge": false,
+  "distractors": [
+   "66b41ebe"
+  ],
+  "notes": "Verified changed fact. Many October items still call Jensen Huang the CEO. 6efa7d34 states the same new fact."
+ },
+ {
+  "id": "rq-t-037",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "As of 1 November 2026, who was NVIDIA's chief executive?",
+  "reference_answer": "Jensen Huang (Jen-Hsun Huang)",
+  "key_facts": [
+   "Jensen Huang (also: Jen-Hsun Huang)"
+  ],
+  "gold": [
+   "c7708a09",
+   "da5cc113"
+  ],
+  "evidence": [
+   {
+    "item_id": "c7708a09",
+    "quote": "NVIDIA founder and CEO Jensen Huang visited Astana",
+    "establishes": "Huang was CEO on 23 Oct 2026"
+   },
+   {
+    "item_id": "da5cc113",
+    "quote": "accepted the resignation of Jen-Hsun Huang",
+    "establishes": "His resignation was accepted only on 11 Nov 2026, after the as-of date"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": "as of 2026-11-01",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact. Answering 'Colette Kress' is the stale-direction error."
+ },
+ {
+  "id": "rq-t-038",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "What is the latest monthly revenue figure TSMC has reported, and which month does it cover?",
+  "reference_answer": "About NT$586.89 billion, for October 2026",
+  "key_facts": [
+   "NT$586.89 billion",
+   "October 2026"
+  ],
+  "gold": [
+   "5a093fbb",
+   "259893e2"
+  ],
+  "evidence": [
+   {
+    "item_id": "5a093fbb",
+    "quote": "revenue for September 2026 was approximately NT$511.86 billion",
+    "establishes": "Old state: September 2026 revenue"
+   },
+   {
+    "item_id": "259893e2",
+    "quote": "revenue for October 2026 was approximately NT$586.89 billion",
+    "establishes": "New state: October 2026 revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-10)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact (TSMC monthly)."
+ },
+ {
+  "id": "rq-t-039",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "As of 20 October 2026, what cumulative revenue had TSMC reported for 2026 so far?",
+  "reference_answer": "About NT$3,898.73 billion, for January through September 2026",
+  "key_facts": [
+   "NT$3,898.73 billion",
+   "January through September 2026"
+  ],
+  "gold": [
+   "5a093fbb",
+   "259893e2"
+  ],
+  "evidence": [
+   {
+    "item_id": "5a093fbb",
+    "quote": "Revenue for January through September 2026 totaled T$3,898.73 billion",
+    "establishes": "Year-to-date revenue as reported on 8 Oct 2026"
+   },
+   {
+    "item_id": "259893e2",
+    "quote": "Revenue for January through October 2026 totaled NT$4,485.62 billion",
+    "establishes": "Superseding figure published 10 Nov 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "as of 2026-10-20",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact (TSMC monthly). The source text prints 'T$' (a typo for NT$) in the September release."
+ },
+ {
+  "id": "rq-t-040",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "Before TSMC published its October 2026 revenue, what month-on-month change did its most recent monthly report show?",
+  "reference_answer": "A decrease of 0.6% (September 2026 versus August 2026)",
+  "key_facts": [
+   "decrease of 0.6 percent",
+   "September versus August 2026"
+  ],
+  "gold": [
+   "5a093fbb",
+   "259893e2"
+  ],
+  "evidence": [
+   {
+    "item_id": "5a093fbb",
+    "quote": "a decrease of 0.6 percent from August 2026",
+    "establishes": "September report: month-on-month change"
+   },
+   {
+    "item_id": "259893e2",
+    "quote": "an increase of 14.7 percent from September 2026",
+    "establishes": "The October report that superseded it"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "before 2026-11-10",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact (TSMC monthly)."
+ },
+ {
+  "id": "rq-t-041",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "TSMC's third-quarter 2026 figures were first published without board sign-off. What is their approval status after the board's November meeting?",
+  "reference_answer": "Approved: the board approved the 2026 third-quarter Business Report and Financial Statements at its meeting on 10 November 2026",
+  "key_facts": [
+   "approved by the Board of Directors",
+   "10 November 2026"
+  ],
+  "gold": [
+   "80b4295f",
+   "af60f5ac"
+  ],
+  "evidence": [
+   {
+    "item_id": "80b4295f",
+    "quote": "3Q2026 figures have not been approved by Board of Directors",
+    "establishes": "Old state on 15 Oct 2026"
+   },
+   {
+    "item_id": "af60f5ac",
+    "quote": "Approved the 2026 third quarter Business Report and Financial Statements",
+    "establishes": "New state on 10 Nov 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-10)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading; not in the verified changed-facts file. Not a monthly-figure question."
+ },
+ {
+  "id": "rq-t-042",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "What is the current GeForce NOW status of 'World of Warcraft: Forever'?",
+  "reference_answer": "It launched on Wednesday 4 November 2026 and is streaming on GeForce NOW",
+  "key_facts": [
+   "launched 4 November 2026",
+   "now streaming on GeForce NOW"
+  ],
+  "gold": [
+   "d4b07883",
+   "4729dbdd"
+  ],
+  "evidence": [
+   {
+    "item_id": "d4b07883",
+    "quote": "World of Warcraft: Forever arrives Wednesday, Nov. 4 at 3 p.m. PST",
+    "establishes": "Old state: scheduled"
+   },
+   {
+    "item_id": "4729dbdd",
+    "quote": "launched Wednesday, Nov. 4, and is streaming on GeForce NOW",
+    "establishes": "New state: launched and streaming"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": "latest (after 2026-11-05)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact."
+ },
+ {
+  "id": "rq-t-043",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "NVIDIA first said only that the 64GB DGX Spark would arrive 'this month'. What firm availability date did it give later?",
+  "reference_answer": "Friday, 23 October 2026",
+  "key_facts": [
+   "23 October 2026 (Friday, Oct. 23)"
+  ],
+  "gold": [
+   "e3d671e8",
+   "a91dcd5b"
+  ],
+  "evidence": [
+   {
+    "item_id": "e3d671e8",
+    "quote": "Coming this month, NVIDIA DGX Spark will be available with 64GB",
+    "establishes": "Old state on 2 Oct: no date"
+   },
+   {
+    "item_id": "a91dcd5b",
+    "quote": "DGX Spark 64GB available on Friday, Oct. 23",
+    "establishes": "New state on 21 Oct: firm date"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": "latest (after 2026-10-21)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. A vague plan replaced by a specific date."
+ },
+ {
+  "id": "rq-t-044",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "How much of Snowflake's September 2026 convertible offering ended up in the notes due 2031, compared with what was first proposed?",
+  "reference_answer": "$1.75 billion, down from the $2.2 billion first proposed",
+  "key_facts": [
+   "$1.75 billion final 2031 tranche",
+   "$2.2 billion originally proposed"
+  ],
+  "gold": [
+   "017deb85",
+   "d210bc08"
+  ],
+  "evidence": [
+   {
+    "item_id": "017deb85",
+    "quote": "and $2.2 billion aggregate principal amount of its 0.00% Convertible Senior Notes due 2031",
+    "establishes": "Proposed 2031 tranche"
+   },
+   {
+    "item_id": "d210bc08",
+    "quote": "and $1.75 billion aggregate principal amount of its 0.00% Convertible Senior Notes due 2031",
+    "establishes": "Priced 2031 tranche"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after pricing on 2026-09-28)",
+  "alias_bridge": false,
+  "distractors": [
+   "7a4b80e2"
+  ],
+  "notes": "Found by reading. Both press releases carry the same date (28 Sep) and were filed together on 2 Oct, so the ordering comes from 'proposed' versus 'priced', not from the publication date. 7a4b80e2 confirms the final amounts."
+ },
+ {
+  "id": "rq-t-045",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "As of 8 November 2026, what was the longest-dated tranche in the most recent senior notes offering Meta had completed?",
+  "reference_answer": "$2.75 billion of 7.500% Senior Notes due 2056",
+  "key_facts": [
+   "7.500% Senior Notes due 2056",
+   "$2,750,000,000"
+  ],
+  "gold": [
+   "5fa2f857",
+   "ea94630d"
+  ],
+  "evidence": [
+   {
+    "item_id": "5fa2f857",
+    "quote": "$2,750,000,000 aggregate principal amount of its 7.500% Senior Notes due 2056",
+    "establishes": "Longest tranche of the offering completed 5 Nov 2026"
+   },
+   {
+    "item_id": "ea94630d",
+    "quote": "aggregate principal amount of its 6.400% Senior Notes due 2065",
+    "establishes": "A later euro offering (12 Nov) now supersedes it"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "as of 2026-11-08",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. After 12 Nov the answer becomes the 6.400% euro notes due 2065."
+ },
+ {
+  "id": "rq-t-046",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "Oracle told investors in October 2026 that it would cap new capital raising through fiscal 2030 at $20 billion. How much of that has it now raised, and how?",
+  "reference_answer": "All $20 billion: $10 billion of common stock (86,206,897 shares) and $10 billion of notes, both closed on 4 November 2026",
+  "key_facts": [
+   "$10 billion of common stock",
+   "$10 billion of notes",
+   "closed 4 November 2026"
+  ],
+  "gold": [
+   "acb0bb57",
+   "16e9a090"
+  ],
+  "evidence": [
+   {
+    "item_id": "acb0bb57",
+    "quote": "Committed to limiting additional capital raises through FY30 to $20 billion",
+    "establishes": "Old state: a plan"
+   },
+   {
+    "item_id": "16e9a090",
+    "quote": "The Common Stock Offering closed on November 4, 2026",
+    "establishes": "New state: equity raised"
+   },
+   {
+    "item_id": "16e9a090",
+    "quote": "Issuance of $10 Billion Aggregate Principal Amount of Notes",
+    "establishes": "New state: debt raised"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-04)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. Plan announced, then executed."
+ },
+ {
+  "id": "rq-t-047",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "Which announced acquisitions does AMD still have pending?",
+  "reference_answer": "World Labs and Taalas",
+  "key_facts": [
+   "World Labs",
+   "Taalas"
+  ],
+  "gold": [
+   "76535d0b",
+   "b64c2e06"
+  ],
+  "evidence": [
+   {
+    "item_id": "76535d0b",
+    "quote": "to acquire all of the equity interests in World Labs Technologies, Inc.",
+    "establishes": "Old state (28 Sep): one pending deal"
+   },
+   {
+    "item_id": "b64c2e06",
+    "quote": "AMD announced an agreement to acquire Taalas",
+    "establishes": "New state (3 Nov): a second pending deal"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-03)",
+  "alias_bridge": false,
+  "distractors": [
+   "c88e556c"
+  ],
+  "notes": "Found by reading. The slide deck c88e556c also lists both as proposed acquisitions. Neither is reported as closed in the corpus."
+ },
+ {
+  "id": "rq-t-048",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "How many directors sit on Marvell's board following its latest appointments?",
+  "reference_answer": "Ten",
+  "key_facts": [
+   "ten directors (10)"
+  ],
+  "gold": [
+   "f22f6cac",
+   "5ee625bf"
+  ],
+  "evidence": [
+   {
+    "item_id": "f22f6cac",
+    "quote": "which currently consists of seven directors",
+    "establishes": "Old state on 2 Nov 2026"
+   },
+   {
+    "item_id": "5ee625bf",
+    "quote": "Board from seven to ten directors",
+    "establishes": "New state on 12 Nov 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-12)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. 830d165f states the same increase."
+ },
+ {
+  "id": "rq-t-049",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "As of 5 November 2026, how many directors did Marvell's board have?",
+  "reference_answer": "Seven",
+  "key_facts": [
+   "seven directors (7)"
+  ],
+  "gold": [
+   "f22f6cac",
+   "830d165f"
+  ],
+  "evidence": [
+   {
+    "item_id": "f22f6cac",
+    "quote": "which currently consists of seven directors",
+    "establishes": "State on 2 Nov 2026"
+   },
+   {
+    "item_id": "830d165f",
+    "quote": "increase in the size of the Board from seven (7) to ten (10) members",
+    "establishes": "The increase took effect only on 12 Nov 2026"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "as of 2026-11-05",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. Three Lumentum directors join only when the merger closes, which had not happened."
+ },
+ {
+  "id": "rq-t-050",
+  "split": "test",
+  "type": "time_sensitive",
+  "question": "What total size had Snowflake announced for its convertible notes placement before the deal was upsized?",
+  "reference_answer": "$3.5 billion",
+  "key_facts": [
+   "$3.5 billion originally announced"
+  ],
+  "gold": [
+   "d210bc08",
+   "017deb85"
+  ],
+  "evidence": [
+   {
+    "item_id": "d210bc08",
+    "quote": "upsized from the previously announced offering size of $3.5 billion",
+    "establishes": "The earlier announced size"
+   },
+   {
+    "item_id": "017deb85",
+    "quote": "$1.3 billion aggregate principal amount",
+    "establishes": "The launch release: $1.3bn of 2029 notes plus $2.2bn of 2031 notes"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "before pricing on 2026-09-28",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. The final size was $3.75 billion."
+ },
+ {
+  "id": "rq-t-051",
+  "split": "test",
+  "type": "freshness",
+  "question": "To what level did Cisco raise its expectation for AI infrastructure revenue from hyperscalers in fiscal 2027?",
+  "reference_answer": "$9 billion",
+  "key_facts": [
+   "$9B in FY27"
+  ],
+  "gold": [
+   "b2727e77"
+  ],
+  "evidence": [
+   {
+    "item_id": "b2727e77",
+    "quote": "AI infrastructure revenue from hyperscalers to $9B in FY27",
+    "establishes": "Raised FY27 expectation"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 12 Nov 2026. The figure appears in no other item."
+ },
+ {
+  "id": "rq-t-052",
+  "split": "test",
+  "type": "freshness",
+  "question": "What is the largest single tranche in the notes Apple issued on 9 November 2026?",
+  "reference_answer": "$2.0 billion of 5.350% Notes due 2036",
+  "key_facts": [
+   "$2,000,000,000",
+   "5.350% Notes due 2036"
+  ],
+  "gold": [
+   "957e8680"
+  ],
+  "evidence": [
+   {
+    "item_id": "957e8680",
+    "quote": "$2,000,000,000 aggregate principal amount of its 5.350% Notes due 2036",
+    "establishes": "Largest tranche"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 9 Nov 2026."
+ },
+ {
+  "id": "rq-t-053",
+  "split": "test",
+  "type": "freshness",
+  "question": "How many inter partes review petitions were filed at the Patent Trial and Appeal Board in the third quarter of 2026, and how does that compare with a year earlier?",
+  "reference_answer": "97 petitions, down from 327 in the same period of 2025",
+  "key_facts": [
+   "97 IPR petitions in Q3 2026",
+   "327 in Q3 2025"
+  ],
+  "gold": [
+   "b8b52c86"
+  ],
+  "evidence": [
+   {
+    "item_id": "b8b52c86",
+    "quote": "only 97 IPR petitions were filed at the PTAB, compared to 327 petitions",
+    "establishes": "Petition counts"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 9 Nov 2026."
+ },
+ {
+  "id": "rq-t-054",
+  "split": "test",
+  "type": "freshness",
+  "question": "In the Chatbot Arena study of rising evaluator standards, how fast does the share of 'both are bad' votes climb for pairs of unchanged models?",
+  "reference_answer": "By 1.71 percentage points a month (on a mean of 17.1%)",
+  "key_facts": [
+   "1.71 percentage points per month"
+  ],
+  "gold": [
+   "c161a652"
+  ],
+  "evidence": [
+   {
+    "item_id": "c161a652",
+    "quote": "rises by 1.71 percentage points a month on a mean of 17.1%",
+    "establishes": "Monthly drift"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026. 1.91 points a month is the 2024-only rate."
+ },
+ {
+  "id": "rq-t-055",
+  "split": "test",
+  "type": "freshness",
+  "question": "On ARE-bench, on what proportion of tasks does the strongest frontier model pass every checklist item?",
+  "reference_answer": "66.2% of tasks",
+  "key_facts": [
+   "66.2%"
+  ],
+  "gold": [
+   "bc277f19"
+  ],
+  "evidence": [
+   {
+    "item_id": "bc277f19",
+    "quote": "the strongest passes every checklist item on only 66.2% of tasks",
+    "establishes": "Best full-pass rate"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026."
+ },
+ {
+  "id": "rq-t-056",
+  "split": "test",
+  "type": "freshness",
+  "question": "In the comparison of branch-and-bound and A* on resource-constrained project scheduling, how many of the 480 benchmark instances does each method prove optimal?",
+  "reference_answer": "A* (with additional pruning rules) proves all 480; best-first branch-and-bound proves 445",
+  "key_facts": [
+   "A*: 480 of 480",
+   "best-first B&B: 445"
+  ],
+  "gold": [
+   "0c025868"
+  ],
+  "evidence": [
+   {
+    "item_id": "0c025868",
+    "quote": "proves optimality for all 480 instances, compared with 445 for best-first B&B",
+    "establishes": "Instances proved optimal"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026."
+ },
+ {
+  "id": "rq-t-057",
+  "split": "test",
+  "type": "freshness",
+  "question": "How accurately does the ForeSight analytical model predict GPU kernel execution time, and how does the best earlier model compare?",
+  "reference_answer": "Mean absolute percentage error of 8.3%, against 14.1% for the best baseline",
+  "key_facts": [
+   "MAPE 8.3%",
+   "14.1% for the best baseline"
+  ],
+  "gold": [
+   "27b21c79"
+  ],
+  "evidence": [
+   {
+    "item_id": "27b21c79",
+    "quote": "mean absolute percentage error (MAPE) of 8.3%, compared with 14.1% for the best baseline",
+    "establishes": "Kernel-time prediction error"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026. 2.0% is its error on end-to-end vLLM inference time."
+ },
+ {
+  "id": "rq-t-058",
+  "split": "test",
+  "type": "freshness",
+  "question": "What amortised time per input does the MOAI framework for encrypted transformer inference report on a single GPU?",
+  "reference_answer": "2.36 minutes per input",
+  "key_facts": [
+   "2.36 minutes"
+  ],
+  "gold": [
+   "cd9a0000"
+  ],
+  "evidence": [
+   {
+    "item_id": "cd9a0000",
+    "quote": "an amortized time of 2.36 minutes per input on a single GPU environment",
+    "establishes": "Amortised inference time"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026."
+ },
+ {
+  "id": "rq-t-059",
+  "split": "test",
+  "type": "freshness",
+  "question": "What weighted-average Safe-Pass@1 and Safe-Pass@3 does TopoVerus reach across its seven Verus proof-repair benchmarks?",
+  "reference_answer": "61.6% Safe-Pass@1 and 72.2% Safe-Pass@3",
+  "key_facts": [
+   "61.6% Safe-Pass@1",
+   "72.2% Safe-Pass@3"
+  ],
+  "gold": [
+   "358b6cdc"
+  ],
+  "evidence": [
+   {
+    "item_id": "358b6cdc",
+    "quote": "TopoVerus achieves 61.6%/72.2% weighted-average Safe-Pass@1/Safe-Pass@3",
+    "establishes": "Headline results on 471 problems"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026."
+ },
+ {
+  "id": "rq-t-060",
+  "split": "test",
+  "type": "freshness",
+  "question": "By how much does GemAtlas cut the average simulation error across the four GPUs it was tested on?",
+  "reference_answer": "Mean absolute percentage error falls from 31.69% to 22.24%",
+  "key_facts": [
+   "from 31.69%",
+   "to 22.24%"
+  ],
+  "gold": [
+   "db84505a"
+  ],
+  "evidence": [
+   {
+    "item_id": "db84505a",
+    "quote": "reduces the mean absolute percentage error (MAPE) from 31.69% to 22.24%",
+    "establishes": "Average MAPE reduction"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026. 34.04% to 23.98% is the figure for real-world LLM operators only."
+ }
+]

@@ -1,0 +1,23 @@
+{
+  "url": "https://finance.yahoo.com/rss/headline?s=NVDA,MSFT,GOOG,AMD,INTC,IBM",
+  "status": 301,
+  "body_b64": "PEhUTUw+CjxIRUFEPgo8VElUTEU+RG9jdW1lbnQgSGFzIE1vdmVkPC9USVRMRT4KPC9IRUFEPgoKPEJPRFkgQkdDT0xPUj0id2hpdGUiIEZHQ09MT1I9ImJsYWNrIj4KPEgxPkRvY3VtZW50IEhhcyBNb3ZlZDwvSDE+CjxIUj4KCjxGT05UIEZBQ0U9IkhlbHZldGljYSxBcmlhbCI+PEI+CkRlc2NyaXB0aW9uOiBUaGUgZG9jdW1lbnQgeW91IHJlcXVlc3RlZCBoYXMgbW92ZWQgdG8gYSBuZXcgbG9jYXRpb24uICBUaGUgbmV3IGxvY2F0aW9uIGlzICJodHRwczovL2ZlZWRzLmZpbmFuY2UueWFob28uY29tL3Jzcy8yLjAvaGVhZGxpbmU/cz1OVkRBLE1TRlQsR09PRyxBTUQsSU5UQyxJQk0mcmVnaW9uPVVTJmxhbmc9ZW4tVVMiLgo8L0I+PC9GT05UPgo8SFI+CjwvQk9EWT4K",
+  "headers": {
+    "date": "Thu, 12 Nov 2026 23:54:39 GMT",
+    "connection": "keep-alive",
+    "strict-transport-security": "max-age=31536000",
+    "server": "ATS",
+    "cache-control": "no-store",
+    "location": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=NVDA,MSFT,GOOG,AMD,INTC,IBM&region=US&lang=en-US",
+    "content-type": "text/html",
+    "content-language": "en",
+    "content-security-policy": "frame-ancestors 'self' https://*.builtbygirls.com https://*.rivals.com https://*.intheknow.com https://*.autoblog.com https://*.techcrunch.com https://*.yahoo.com https://*.aol.com https://*.huffingtonpost.com https://*.oath.com https://*.search.yahoo.com https://*.pnr.ouryahoo.com https://pnr.ouryahoo.com https://*.search.aol.com https://*.search.huffpost.com https://*.onesearch.com https://*.verizonmedia.com https://*.publishing.oath.com https://*.autoblog.com; sandbox allow-forms allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation; report-uri https://csp.yahoo.com/beacon/csp?src=ats&site=finance&region=US&lang=en-US&device=desktop&yrid=2omf5m1lfckdv&partner=;",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "x-frame-options": "SAMEORIGIN",
+    "content-length": "381",
+    "age": "0"
+  },
+  "at": "2026-11-12T23:54:39.945787+00:00"
+}

@@ -1,0 +1,330 @@
+{
+  "indexes": [
+    {
+      "name": "community_group_id",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "community_name",
+      "type": "FULLTEXT",
+      "entityType": "NODE",
+      "properties": [
+        "name",
+        "group_id"
+      ]
+    },
+    {
+      "name": "community_uuid",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "created_at_edge_index",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "created_at"
+      ]
+    },
+    {
+      "name": "created_at_entity_index",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "created_at"
+      ]
+    },
+    {
+      "name": "created_at_episodic_index",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "created_at"
+      ]
+    },
+    {
+      "name": "edge_name_and_fact",
+      "type": "FULLTEXT",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "name",
+        "fact",
+        "group_id"
+      ]
+    },
+    {
+      "name": "entity_group_id",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "entity_name_embedding",
+      "type": "VECTOR",
+      "entityType": "NODE",
+      "properties": [
+        "name_embedding"
+      ]
+    },
+    {
+      "name": "entity_name_key",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "name_key"
+      ]
+    },
+    {
+      "name": "entity_uuid",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "episode_content",
+      "type": "FULLTEXT",
+      "entityType": "NODE",
+      "properties": [
+        "content",
+        "source",
+        "source_description",
+        "group_id"
+      ]
+    },
+    {
+      "name": "episode_group_id",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "episode_uuid",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "expired_at_edge_index",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "expired_at"
+      ]
+    },
+    {
+      "name": "fact_embedding",
+      "type": "VECTOR",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "fact_embedding"
+      ]
+    },
+    {
+      "name": "global_entity_name_embedding",
+      "type": "VECTOR",
+      "entityType": "NODE",
+      "properties": [
+        "name_embedding"
+      ]
+    },
+    {
+      "name": "global_entity_uuid",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "has_episode_group_id",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "has_episode_uuid",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "has_member_uuid",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "index_343aff4e",
+      "type": "LOOKUP",
+      "entityType": "NODE",
+      "properties": null
+    },
+    {
+      "name": "index_f7700477",
+      "type": "LOOKUP",
+      "entityType": "RELATIONSHIP",
+      "properties": null
+    },
+    {
+      "name": "invalid_at_edge_index",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "invalid_at"
+      ]
+    },
+    {
+      "name": "mention_group_id",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "mention_uuid",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "name_edge_index",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "name": "name_entity_index",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "name": "next_episode_group_id",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "next_episode_uuid",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "node_name_and_summary",
+      "type": "FULLTEXT",
+      "entityType": "NODE",
+      "properties": [
+        "name",
+        "summary",
+        "group_id"
+      ]
+    },
+    {
+      "name": "relation_group_id",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "relation_uuid",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "saga_group_id",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "group_id"
+      ]
+    },
+    {
+      "name": "saga_name",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "name"
+      ]
+    },
+    {
+      "name": "saga_uuid",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "uuid"
+      ]
+    },
+    {
+      "name": "valid_at_edge_index",
+      "type": "RANGE",
+      "entityType": "RELATIONSHIP",
+      "properties": [
+        "valid_at"
+      ]
+    },
+    {
+      "name": "valid_at_episodic_index",
+      "type": "RANGE",
+      "entityType": "NODE",
+      "properties": [
+        "valid_at"
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "name": "db.index.vector.queryNodes",
+      "signature": "db.index.vector.queryNodes(indexName :: STRING, numberOfNearestNeighbours :: INTEGER, query :: ANY) :: (node :: NODE, score :: FLOAT)"
+    },
+    {
+      "name": "db.index.vector.queryRelationships",
+      "signature": "db.index.vector.queryRelationships(indexName :: STRING, numberOfNearestNeighbours :: INTEGER, query :: ANY) :: (relationship :: RELATIONSHIP, score :: FLOAT)"
+    }
+  ],
+  "components": [
+    {
+      "name": "Neo4j Kernel",
+      "versions": [
+        "5.26.33"
+      ]
+    }
+  ]
+}

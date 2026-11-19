@@ -1,0 +1,5 @@
+{
+  "url": "https://home.treasury.gov/robots.txt",
+  "status": 200,
+  "body": "User-agent: *\nAllow: /\n\nSitemap: https://home.treasury.gov/sitemap.xml\n"
+}

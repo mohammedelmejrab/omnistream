@@ -1,0 +1,4 @@
+Run 5: 0 completed pairs; checkpoint C:\Users\mehme\omnistream-integrated\data\snapshots\eval-v1\runs\5
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2181.88it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+classic q02/60: correctness=2 recall@10=1.000

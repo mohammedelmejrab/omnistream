@@ -1,0 +1,5 @@
+{
+  "url": "https://blog.ml.cmu.edu/robots.txt",
+  "status": 200,
+  "body": "User-agent: * \nCrawl-Delay: 20\n"
+}

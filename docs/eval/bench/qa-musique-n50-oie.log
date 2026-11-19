@@ -1,0 +1,424 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:   2%|1         | 6/391 [00:00<00:10, 37.93it/s]Loading weights:   3%|2         | 10/391 [00:00<00:14, 26.31it/s]Loading weights:   3%|3         | 13/391 [00:00<00:13, 27.41it/s]Loading weights:   5%|4         | 18/391 [00:00<00:11, 33.84it/s]Loading weights:   9%|8         | 34/391 [00:00<00:05, 66.50it/s]Loading weights:  10%|#         | 41/391 [00:00<00:06, 54.64it/s]Loading weights:  13%|#3        | 52/391 [00:01<00:05, 63.10it/s]Loading weights: 100%|##########| 391/391 [00:01<00:00, 360.67it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+closed_book 2hop__865961_159109: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__554167_451128: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__494659_5385: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__73717_653666: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__34594_160249: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__55463_19033: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__57638_72467: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__699454_831637_91775: EM=1.0 F1=1.0 R@2=None
+closed_book 3hop1__691197_15840_36014: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__857_846_7798: EM=0.0 F1=0.5 R@2=None
+closed_book 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__798544_514761_594810: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__10620_79092: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__46571_87694_124169: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__771477_149987: EM=0.0 F1=0.6666666666666666 R@2=None
+closed_book 2hop__57638_615257: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__219456_87295: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__478978_124498: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__128608_82341: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop2__855821_223623_162182: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__313670_42197_18397: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__73069_88165: EM=1.0 F1=1.0 R@2=None
+closed_book 2hop__56806_7298: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__5658_25002: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__353836_80026: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop2__14777_8533_9331: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__17854_17873: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__587048_621800: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__547045_131879: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__818692_113442: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__418091_15840_36002: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__140514_2053_5289: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__525242_52835: EM=0.0 F1=0.0 R@2=None
+closed_book 2hop__50936_90973: EM=1.0 F1=1.0 R@2=None
+closed_book 3hop1__857_846_7713: EM=0.0 F1=0.0 R@2=None
+closed_book 3hop1__139787_88110_77129: EM=0.0 F1=0.4 R@2=None
+closed_book 2hop__797443_120537: EM=0.0 F1=0.5 R@2=None
+closed_book 2hop__61714_89309: EM=0.0 F1=0.3333333333333333 R@2=None
+closed_book 2hop__665660_135481: EM=1.0 F1=1.0 R@2=None
+closed_book 2hop__166824_185403: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=None
+closed_book 4hop1__788226_32392_823060_610794: EM=0.0 F1=0.5 R@2=None
+closed_book 2hop__59133_512508: EM=1.0 F1=1.0 R@2=None
+external 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+external 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+external 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+external 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__494659_5385: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+external 2hop__34594_160249: EM=0.0 F1=0.2857142857142857 R@2=0.0
+external 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+external 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+external 2hop__55463_19033: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__57638_72467: EM=0.0 F1=0.0 R@2=0.0
+external 3hop1__699454_831637_91775: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 3hop1__691197_15840_36014: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 3hop1__857_846_7798: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+external 3hop1__798544_514761_594810: EM=0.0 F1=0.0 R@2=0.6666666666666666
+external 2hop__10620_79092: EM=0.0 F1=0.0 R@2=0.0
+external 3hop1__46571_87694_124169: EM=1.0 F1=1.0 R@2=0.3333333333333333
+external 2hop__771477_149987: EM=0.0 F1=0.0 R@2=1.0
+external 2hop__57638_615257: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__219456_87295: EM=1.0 F1=1.0 R@2=1.0
+external 2hop__478978_124498: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__128608_82341: EM=0.0 F1=0.5 R@2=0.5
+external 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=0.0
+external 3hop2__855821_223623_162182: EM=0.0 F1=0.4 R@2=0.6666666666666666
+external 3hop1__313670_42197_18397: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 2hop__73069_88165: EM=1.0 F1=1.0 R@2=1.0
+external 2hop__56806_7298: EM=0.0 F1=0.0 R@2=1.0
+external 2hop__5658_25002: EM=1.0 F1=1.0 R@2=1.0
+external 2hop__353836_80026: EM=0.0 F1=0.0 R@2=0.0
+external 3hop2__14777_8533_9331: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 2hop__17854_17873: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__587048_621800: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__547045_131879: EM=0.0 F1=0.0 R@2=0.5
+external 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=0.25
+external 2hop__818692_113442: EM=1.0 F1=1.0 R@2=1.0
+external 3hop1__418091_15840_36002: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 3hop1__140514_2053_5289: EM=0.0 F1=0.0 R@2=0.3333333333333333
+external 2hop__525242_52835: EM=1.0 F1=1.0 R@2=1.0
+external 2hop__50936_90973: EM=1.0 F1=1.0 R@2=0.5
+external 3hop1__857_846_7713: EM=0.0 F1=0.0 R@2=0.0
+external 3hop1__139787_88110_77129: EM=1.0 F1=1.0 R@2=0.6666666666666666
+external 2hop__797443_120537: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__61714_89309: EM=0.0 F1=0.0 R@2=0.5
+external 2hop__665660_135481: EM=1.0 F1=1.0 R@2=1.0
+external 2hop__166824_185403: EM=0.0 F1=0.0 R@2=0.5
+external 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=0.5
+external 4hop1__788226_32392_823060_610794: EM=0.0 F1=0.5 R@2=0.25
+external 2hop__59133_512508: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+classic 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__494659_5385: EM=1.0 F1=1.0 R@2=0.5
+classic 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+classic 2hop__34594_160249: EM=0.0 F1=0.2857142857142857 R@2=0.0
+classic 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+classic 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+classic 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+classic 2hop__55463_19033: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__57638_72467: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop1__699454_831637_91775: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 3hop1__691197_15840_36014: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 3hop1__857_846_7798: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop1__798544_514761_594810: EM=0.0 F1=0.8571428571428571 R@2=0.6666666666666666
+classic 2hop__10620_79092: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop1__46571_87694_124169: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 2hop__771477_149987: EM=0.0 F1=0.0 R@2=1.0
+classic 2hop__57638_615257: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__219456_87295: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__478978_124498: EM=1.0 F1=1.0 R@2=0.5
+classic 2hop__128608_82341: EM=1.0 F1=1.0 R@2=0.5
+classic 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop2__855821_223623_162182: EM=0.0 F1=0.4 R@2=0.6666666666666666
+classic 3hop1__313670_42197_18397: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 2hop__73069_88165: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__56806_7298: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__5658_25002: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__353836_80026: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop2__14777_8533_9331: EM=0.0 F1=0.8 R@2=0.3333333333333333
+classic 2hop__17854_17873: EM=0.0 F1=0.14285714285714285 R@2=0.5
+classic 2hop__587048_621800: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__547045_131879: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=0.25
+classic 2hop__818692_113442: EM=1.0 F1=1.0 R@2=1.0
+classic 3hop1__418091_15840_36002: EM=0.0 F1=0.1111111111111111 R@2=0.3333333333333333
+classic 3hop1__140514_2053_5289: EM=1.0 F1=1.0 R@2=0.3333333333333333
+classic 2hop__525242_52835: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__50936_90973: EM=1.0 F1=1.0 R@2=0.5
+classic 3hop1__857_846_7713: EM=0.0 F1=0.0 R@2=0.0
+classic 3hop1__139787_88110_77129: EM=0.0 F1=0.4 R@2=0.6666666666666666
+classic 2hop__797443_120537: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__61714_89309: EM=0.0 F1=0.0 R@2=0.5
+classic 2hop__665660_135481: EM=1.0 F1=1.0 R@2=1.0
+classic 2hop__166824_185403: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=0.5
+classic 4hop1__788226_32392_823060_610794: EM=0.0 F1=0.5 R@2=0.25
+classic 2hop__59133_512508: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+graphiti 2hop__554167_451128: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.3333333333333333 R@2=0.5
+graphiti 2hop__494659_5385: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__73717_653666: EM=1.0 F1=1.0 R@2=1.0
+graphiti 2hop__34594_160249: EM=0.0 F1=0.0 R@2=0.0
+graphiti 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+graphiti 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+graphiti 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+graphiti 2hop__55463_19033: EM=0.0 F1=0.0 R@2=0.0
+graphiti 2hop__57638_72467: EM=0.0 F1=0.0 R@2=0.0
+graphiti 3hop1__699454_831637_91775: EM=0.0 F1=0.8888888888888888 R@2=0.0
+graphiti 3hop1__691197_15840_36014: EM=0.0 F1=0.4 R@2=0.6666666666666666
+graphiti 3hop1__857_846_7798: EM=0.0 F1=0.0 R@2=0.3333333333333333
+graphiti 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+graphiti 3hop1__798544_514761_594810: EM=0.0 F1=0.0 R@2=0.3333333333333333
+graphiti 2hop__10620_79092: EM=0.0 F1=0.0 R@2=0.0
+graphiti 3hop1__46571_87694_124169: EM=0.0 F1=0.0 R@2=0.3333333333333333
+graphiti 2hop__771477_149987: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__57638_615257: EM=0.0 F1=0.0 R@2=0.0
+graphiti 2hop__219456_87295: EM=0.0 F1=0.0 R@2=1.0
+graphiti 2hop__478978_124498: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__128608_82341: EM=1.0 F1=1.0 R@2=1.0
+graphiti 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=0.0
+graphiti 3hop2__855821_223623_162182: EM=0.0 F1=0.4 R@2=0.3333333333333333
+graphiti 3hop1__313670_42197_18397: EM=0.0 F1=0.0 R@2=0.6666666666666666
+graphiti 2hop__73069_88165: EM=1.0 F1=1.0 R@2=0.5
+graphiti 2hop__56806_7298: EM=0.0 F1=0.0 R@2=1.0
+graphiti 2hop__5658_25002: EM=1.0 F1=1.0 R@2=1.0
+graphiti 2hop__353836_80026: EM=1.0 F1=1.0 R@2=0.5
+graphiti 3hop2__14777_8533_9331: EM=0.0 F1=0.8 R@2=0.6666666666666666
+graphiti 2hop__17854_17873: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__587048_621800: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__547045_131879: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=0.25
+graphiti 2hop__818692_113442: EM=1.0 F1=1.0 R@2=0.5
+graphiti 3hop1__418091_15840_36002: EM=0.0 F1=0.5714285714285714 R@2=0.3333333333333333
+graphiti 3hop1__140514_2053_5289: EM=0.0 F1=0.0 R@2=0.6666666666666666
+graphiti 2hop__525242_52835: EM=1.0 F1=1.0 R@2=1.0
+graphiti 2hop__50936_90973: EM=0.0 F1=0.0 R@2=0.5
+graphiti 3hop1__857_846_7713: EM=1.0 F1=1.0 R@2=0.3333333333333333
+graphiti 3hop1__139787_88110_77129: EM=1.0 F1=1.0 R@2=0.6666666666666666
+graphiti 2hop__797443_120537: EM=0.0 F1=0.0 R@2=0.5
+graphiti 2hop__61714_89309: EM=0.0 F1=0.0 R@2=0.0
+graphiti 2hop__665660_135481: EM=0.0 F1=0.4 R@2=0.5
+graphiti 2hop__166824_185403: EM=0.0 F1=0.0 R@2=0.5
+graphiti 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=0.25
+graphiti 4hop1__788226_32392_823060_610794: EM=0.0 F1=0.5 R@2=0.25
+graphiti 2hop__59133_512508: EM=0.0 F1=0.0 R@2=0.0
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   6%|5         | 12/201 [00:00<00:01, 95.86it/s]Loading weights:  11%|#         | 22/201 [00:00<00:02, 77.18it/s]Loading weights: 100%|##########| 201/201 [00:00<00:00, 711.13it/s]
+own 2hop__865961_159109: EM=0.0 F1=0.0 R@2=0.5
+own 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+own 2hop__554167_451128: EM=1.0 F1=1.0 R@2=0.5
+own 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.3333333333333333 R@2=0.5
+Entity ANN shortfall: 45/50; falling back to exact
+Entity ANN shortfall: 17/50; falling back to exact
+own 2hop__494659_5385: EM=1.0 F1=1.0 R@2=1.0
+own 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+own 2hop__34594_160249: EM=0.0 F1=0.5 R@2=0.5
+own 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.5
+own 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.0
+Fact ANN shortfall: 0/10; falling back to exact
+own 2hop__55463_19033: EM=1.0 F1=1.0 R@2=0.0
+own 2hop__57638_72467: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 40/50; falling back to exact
+own 3hop1__699454_831637_91775: EM=0.0 F1=0.0 R@2=0.6666666666666666
+own 3hop1__691197_15840_36014: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own 3hop1__857_846_7798: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 34/50; falling back to exact
+own 3hop1__798544_514761_594810: EM=0.0 F1=0.0 R@2=0.6666666666666666
+own 2hop__10620_79092: EM=0.0 F1=0.0 R@2=0.0
+Entity ANN shortfall: 16/50; falling back to exact
+own 3hop1__46571_87694_124169: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own 2hop__771477_149987: EM=0.0 F1=0.0 R@2=1.0
+Entity ANN shortfall: 5/50; falling back to exact
+own 2hop__57638_615257: EM=1.0 F1=1.0 R@2=1.0
+own 2hop__219456_87295: EM=0.0 F1=0.0 R@2=1.0
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+own 2hop__478978_124498: EM=1.0 F1=1.0 R@2=1.0
+own 2hop__128608_82341: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 41/50; falling back to exact
+own 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=0.0
+own 3hop2__855821_223623_162182: EM=0.0 F1=0.4 R@2=0.6666666666666666
+own 3hop1__313670_42197_18397: EM=0.0 F1=0.0 R@2=0.6666666666666666
+own 2hop__73069_88165: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 25/50; falling back to exact
+own 2hop__56806_7298: EM=0.0 F1=0.0 R@2=1.0
+own 2hop__5658_25002: EM=1.0 F1=1.0 R@2=1.0
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 44/50; falling back to exact
+own 2hop__353836_80026: EM=0.0 F1=0.0 R@2=0.5
+own 3hop2__14777_8533_9331: EM=0.0 F1=0.0 R@2=0.0
+Entity ANN shortfall: 26/50; falling back to exact
+own 2hop__17854_17873: EM=0.0 F1=0.0 R@2=0.5
+own 2hop__587048_621800: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 6/50; falling back to exact
+own 2hop__547045_131879: EM=0.0 F1=0.0 R@2=0.5
+own 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 19/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+own 2hop__818692_113442: EM=1.0 F1=1.0 R@2=1.0
+own 3hop1__418091_15840_36002: EM=0.0 F1=0.0 R@2=0.3333333333333333
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+own 3hop1__140514_2053_5289: EM=0.0 F1=0.0 R@2=0.6666666666666666
+own 2hop__525242_52835: EM=1.0 F1=1.0 R@2=1.0
+Entity ANN shortfall: 16/50; falling back to exact
+own 2hop__50936_90973: EM=1.0 F1=1.0 R@2=0.0
+own 3hop1__857_846_7713: EM=0.0 F1=0.0 R@2=0.6666666666666666
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+own 3hop1__139787_88110_77129: EM=1.0 F1=1.0 R@2=0.6666666666666666
+own 2hop__797443_120537: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 42/50; falling back to exact
+own 2hop__61714_89309: EM=0.0 F1=0.0 R@2=0.5
+own 2hop__665660_135481: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 38/50; falling back to exact
+own 2hop__166824_185403: EM=0.0 F1=0.0 R@2=0.5
+own 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 19/50; falling back to exact
+own 4hop1__788226_32392_823060_610794: EM=0.0 F1=0.4 R@2=0.5
+own 2hop__59133_512508: EM=0.0 F1=0.0 R@2=0.0
+Entity ANN shortfall: 25/50; falling back to exact
+own+subagents 2hop__865961_159109: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 4hop3__474028_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 11/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+own+subagents 2hop__554167_451128: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 4hop3__129456_29339_508306_70744: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 30/50; falling back to exact
+Entity ANN shortfall: 24/50; falling back to exact
+Entity ANN shortfall: 43/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+own+subagents 2hop__494659_5385: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 2hop__73717_653666: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 2hop__34594_160249: EM=1.0 F1=1.0 R@2=0.0
+own+subagents 4hop2__567956_39078_8987_8974: EM=0.0 F1=0.5 R@2=0.25
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+own+subagents 3hop1__857_846_7791: EM=0.0 F1=0.0 R@2=0.0
+own+subagents 4hop3__270458_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 41/50; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+Fact ANN shortfall: 0/10; falling back to exact
+own+subagents 2hop__55463_19033: EM=1.0 F1=1.0 R@2=0.0
+own+subagents 2hop__57638_72467: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 38/50; falling back to exact
+Entity ANN shortfall: 45/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+own+subagents 3hop1__699454_831637_91775: EM=1.0 F1=1.0 R@2=0.3333333333333333
+own+subagents 3hop1__691197_15840_36014: EM=0.0 F1=0.4 R@2=0.3333333333333333
+Entity ANN shortfall: 19/50; falling back to exact
+own+subagents 3hop1__857_846_7798: EM=0.0 F1=0.6666666666666666 R@2=0.0
+own+subagents 4hop3__238811_88460_30152_20999: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 47/50; falling back to exact
+Entity ANN shortfall: 34/50; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+own+subagents 3hop1__798544_514761_594810: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own+subagents 2hop__10620_79092: EM=0.0 F1=0.0 R@2=0.0
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 29/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+own+subagents 3hop1__46571_87694_124169: EM=0.0 F1=0.0 R@2=0.3333333333333333
+own+subagents 2hop__771477_149987: EM=0.0 F1=0.6666666666666666 R@2=1.0
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 18/50; falling back to exact
+own+subagents 2hop__57638_615257: EM=0.0 F1=0.0 R@2=0.5
+own+subagents 2hop__219456_87295: EM=1.0 F1=1.0 R@2=1.0
+Entity ANN shortfall: 25/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+Entity ANN shortfall: 9/50; falling back to exact
+own+subagents 2hop__478978_124498: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 2hop__128608_82341: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 1/50; falling back to exact
+own+subagents 3hop1__632623_160713_77246: EM=0.0 F1=0.0 R@2=0.0
+own+subagents 3hop2__855821_223623_162182: EM=1.0 F1=1.0 R@2=0.6666666666666666
+Entity ANN shortfall: 39/50; falling back to exact
+own+subagents 3hop1__313670_42197_18397: EM=1.0 F1=1.0 R@2=0.3333333333333333
+own+subagents 2hop__73069_88165: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 17/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+own+subagents 2hop__56806_7298: EM=0.0 F1=0.0 R@2=0.5
+own+subagents 2hop__5658_25002: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 8/50; falling back to exact
+own+subagents 2hop__353836_80026: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 3hop2__14777_8533_9331: EM=0.0 F1=0.0 R@2=0.3333333333333333
+Entity ANN shortfall: 9/50; falling back to exact
+Entity ANN shortfall: 12/50; falling back to exact
+own+subagents 2hop__17854_17873: EM=0.0 F1=0.625 R@2=0.5
+own+subagents 2hop__587048_621800: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 33/50; falling back to exact
+own+subagents 2hop__547045_131879: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 4hop1__47210_53706_795904_580996: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 10/50; falling back to exact
+Entity ANN shortfall: 23/50; falling back to exact
+own+subagents 2hop__818692_113442: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 3hop1__418091_15840_36002: EM=0.0 F1=0.6 R@2=0.3333333333333333
+Entity ANN shortfall: 26/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+Entity ANN shortfall: 36/50; falling back to exact
+own+subagents 3hop1__140514_2053_5289: EM=1.0 F1=1.0 R@2=0.3333333333333333
+own+subagents 2hop__525242_52835: EM=1.0 F1=1.0 R@2=0.5
+Entity ANN shortfall: 12/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+Entity ANN shortfall: 31/50; falling back to exact
+own+subagents 2hop__50936_90973: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 3hop1__857_846_7713: EM=1.0 F1=1.0 R@2=0.0
+Entity ANN shortfall: 23/50; falling back to exact
+Entity ANN shortfall: 27/50; falling back to exact
+Entity ANN shortfall: 33/50; falling back to exact
+Entity ANN shortfall: 13/50; falling back to exact
+Entity ANN shortfall: 14/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+Entity ANN shortfall: 15/50; falling back to exact
+own+subagents 3hop1__139787_88110_77129: EM=0.0 F1=0.4 R@2=0.6666666666666666
+own+subagents 2hop__797443_120537: EM=0.0 F1=0.0 R@2=0.5
+Entity ANN shortfall: 35/50; falling back to exact
+Entity ANN shortfall: 40/50; falling back to exact
+Entity ANN shortfall: 20/50; falling back to exact
+own+subagents 2hop__61714_89309: EM=0.0 F1=0.0 R@2=0.5
+own+subagents 2hop__665660_135481: EM=1.0 F1=1.0 R@2=1.0
+Entity ANN shortfall: 8/50; falling back to exact
+Entity ANN shortfall: 4/50; falling back to exact
+Entity ANN shortfall: 32/50; falling back to exact
+Entity ANN shortfall: 39/50; falling back to exact
+own+subagents 2hop__166824_185403: EM=0.0 F1=0.0 R@2=0.5
+own+subagents 4hop1__749065_698949_157828_162309: EM=0.0 F1=0.0 R@2=0.25
+Entity ANN shortfall: 6/50; falling back to exact
+Entity ANN shortfall: 5/50; falling back to exact
+Entity ANN shortfall: 16/50; falling back to exact
+Entity ANN shortfall: 41/50; falling back to exact
+own+subagents 4hop1__788226_32392_823060_610794: EM=1.0 F1=1.0 R@2=0.5
+own+subagents 2hop__59133_512508: EM=0.0 F1=0.0 R@2=0.0
+JSON: docs\eval\bench\qa-musique-n50-s0-20261118T184931Z.json
+Markdown: docs\eval\bench\qa-musique-n50-s0-20261118T184931Z.md
+closed_book: EM=0.1000 [0.0200, 0.2000] F1=0.1580 [0.0760, 0.2533] R@2=n/a status=valid
+external: EM=0.2000 [0.1000, 0.3200] F1=0.2437 [0.1400, 0.3580] R@2=0.4550 [0.3717, 0.5433] status=valid
+classic: EM=0.3600 [0.2200, 0.5000] F1=0.4399 [0.3124, 0.5689] R@2=0.4550 [0.3717, 0.5433] status=valid
+graphiti: EM=0.1800 [0.0800, 0.3000] F1=0.2759 [0.1687, 0.3897] R@2=0.4283 [0.3500, 0.5100] status=valid
+own: EM=0.3000 [0.1800, 0.4400] F1=0.3427 [0.2200, 0.4727] R@2=0.5117 [0.4283, 0.5967] status=valid
+own+subagents: EM=0.4600 [0.3200, 0.6000] F1=0.5372 [0.4050, 0.6635] R@2=0.3950 [0.3300, 0.4633] status=valid

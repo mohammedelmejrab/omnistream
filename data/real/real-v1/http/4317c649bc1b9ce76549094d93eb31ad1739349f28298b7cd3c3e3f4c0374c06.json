@@ -1,0 +1,24 @@
+{
+  "url": "https://rss.arxiv.org/rss/cs.AI",
+  "status": 200,
+  "body_b64": "PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPHJzcyB4bWxuczphcnhpdj0iaHR0cDovL2FyeGl2Lm9yZy9zY2hlbWFzL2F0b20iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6YXRvbT0iaHR0cDovL3d3dy53My5vcmcvMjAwNS9BdG9tIiB4bWxuczpjb250ZW50PSJodHRwOi8vcHVybC5vcmcvcnNzLzEuMC9tb2R1bGVzL2NvbnRlbnQvIiB2ZXJzaW9uPSIyLjAiPgogIDxjaGFubmVsPgogICAgPHRpdGxlPmNzLkFJIHVwZGF0ZXMgb24gYXJYaXYub3JnPC90aXRsZT4KICAgIDxsaW5rPmh0dHA6Ly9yc3MuYXJ4aXYub3JnL3Jzcy9jcy5BSTwvbGluaz4KICAgIDxkZXNjcmlwdGlvbj5jcy5BSSB1cGRhdGVzIG9uIHRoZSBhclhpdi5vcmcgZS1wcmludCBhcmNoaXZlLjwvZGVzY3JpcHRpb24+CiAgICA8YXRvbTpsaW5rIGhyZWY9Imh0dHA6Ly9yc3MuYXJ4aXYub3JnL3Jzcy9jcy5BSSIgcmVsPSJzZWxmIiB0eXBlPSJhcHBsaWNhdGlvbi9yc3MreG1sIi8+CiAgICA8ZG9jcz5odHRwOi8vd3d3LnJzc2JvYXJkLm9yZy9yc3Mtc3BlY2lmaWNhdGlvbjwvZG9jcz4KICAgIDxsYW5ndWFnZT5lbi11czwvbGFuZ3VhZ2U+CiAgICA8bGFzdEJ1aWxkRGF0ZT5UaHUsIDEyIE5vdiAyMDI2IDA1OjAwOjAwICswMDAwPC9sYXN0QnVpbGREYXRlPgogICAgPG1hbmFnaW5nRWRpdG9yPnJzcy1oZWxwQGFyeGl2Lm9yZzwvbWFuYWdpbmdFZGl0b3I+CiAgICA8cHViRGF0ZT5UaHUsIDEyIE5vdiAyMDI2IDAwOjAwOjAwIC0wNTAwPC9wdWJEYXRlPgogICAgPHNraXBEYXlzPgogICAgICA8ZGF5PlN1bmRheTwvZGF5PgogICAgICA8ZGF5PlNhdHVyZGF5PC9kYXk+CiAgICA8L3NraXBEYXlzPgogIDwvY2hhbm5lbD4KPC9yc3M+Cg==",
+  "headers": {
+    "connection": "keep-alive",
+    "content-length": "892",
+    "content-type": "application/rss+xml",
+    "etag": "12cc48a13d2a1e68f8378be7d3039dc2c451d4a52c21a3773b17f5efe8ee8e70",
+    "cache-control": "max-age=86399",
+    "x-cloud-trace-context": "7fcdecc92a6e79707fea65689e48ed00",
+    "server": "Google Frontend",
+    "via": "1.1 google, 1.1 varnish, 1.1 varnish",
+    "accept-ranges": "bytes",
+    "date": "Thu, 12 Nov 2026 23:58:15 GMT",
+    "age": "68295",
+    "x-served-by": "cache-lga-kjfk8660059-LGA, cache-fra-etou8220135-FRA",
+    "x-cache": "MISS, HIT",
+    "x-cache-hits": "0, 38",
+    "x-timer": "S1794527895.189497,VS0,VE0",
+    "strict-transport-security": "max-age=300"
+  },
+  "at": "2026-11-12T23:58:15.209045+00:00"
+}

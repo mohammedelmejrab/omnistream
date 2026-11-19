@@ -1,0 +1,890 @@
+[
+ {
+  "id": "rq-d-001",
+  "split": "dev",
+  "type": "single",
+  "question": "What range of total net sales did ASML guide to for the fourth quarter of 2026?",
+  "reference_answer": "Between EUR 14.2 billion and EUR 15.2 billion",
+  "key_facts": [
+   "EUR 14.2-15.2 billion (€14.2bn to €15.2bn)"
+  ],
+  "gold": [
+   "cbca4caf"
+  ],
+  "evidence": [
+   {
+    "item_id": "cbca4caf",
+    "quote": "ASML expects Q4 2026 total net sales between €14.2 billion and €15.2 billion",
+    "establishes": "Q4 2026 sales guidance"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The full-year 2026 guide (EUR 44-45 billion) is a different figure."
+ },
+ {
+  "id": "rq-d-002",
+  "split": "dev",
+  "type": "single",
+  "question": "What enterprise value and per-share cash price did Salesforce agree for Braze in October 2026?",
+  "reference_answer": "About $5.66 billion enterprise value; $47.50 in cash per Braze Class A share",
+  "key_facts": [
+   "approximately $5.66 billion enterprise value",
+   "$47.50 cash per share"
+  ],
+  "gold": [
+   "fe02a290"
+  ],
+  "evidence": [
+   {
+    "item_id": "fe02a290",
+    "quote": "for approximately $5.66 billion in enterprise value",
+    "establishes": "Deal value"
+   },
+   {
+    "item_id": "fe02a290",
+    "quote": "will receive $47.50 in cash per share",
+    "establishes": "Per-share consideration"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": ""
+ },
+ {
+  "id": "rq-d-003",
+  "split": "dev",
+  "type": "single",
+  "question": "Who will succeed Dell Technologies' retiring general counsel as chief legal officer, and from when?",
+  "reference_answer": "Christopher Garcia, effective 1 February 2027",
+  "key_facts": [
+   "Christopher Garcia",
+   "effective 1 February 2027"
+  ],
+  "gold": [
+   "d0d4e232"
+  ],
+  "evidence": [
+   {
+    "item_id": "d0d4e232",
+    "quote": "the Board of Directors appointed Christopher Garcia",
+    "establishes": "Successor named"
+   },
+   {
+    "item_id": "d0d4e232",
+    "quote": "effective as of February 1, 2027",
+    "establishes": "Effective date"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Richard Rothberg is the retiring executive. Both quotes come from the same short 8-K."
+ },
+ {
+  "id": "rq-d-004",
+  "split": "dev",
+  "type": "single",
+  "question": "What growth rate did HPE set for its Data Center Networking revenue at its September 2026 networking investor day, and through which fiscal year?",
+  "reference_answer": "A low-to-high 50s percent CAGR through fiscal 2029",
+  "key_facts": [
+   "low-to-high 50s percent CAGR",
+   "through fiscal 2029"
+  ],
+  "gold": [
+   "e1eb2e37"
+  ],
+  "evidence": [
+   {
+    "item_id": "e1eb2e37",
+    "quote": "Data Center Networking revenue to grow at a low-to-high 50s percent CAGR",
+    "establishes": "DCN growth target"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Routing has its own target (low-to-high 20s percent CAGR)."
+ },
+ {
+  "id": "rq-d-005",
+  "split": "dev",
+  "type": "single",
+  "question": "What revenue did Micron report for its fiscal year 2026, which ended 3 September 2026?",
+  "reference_answer": "$133.19 billion",
+  "key_facts": [
+   "$133.19 billion (versus $37.38 billion the year before)"
+  ],
+  "gold": [
+   "ef70a066"
+  ],
+  "evidence": [
+   {
+    "item_id": "ef70a066",
+    "quote": "Revenue of $133.19 billion versus $37.38 billion for the prior year",
+    "establishes": "FY2026 revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "$54.23 billion is fiscal Q4 only."
+ },
+ {
+  "id": "rq-d-006",
+  "split": "dev",
+  "type": "single",
+  "question": "How much more precipitation variance does the best symbolic-distillation equation for the South Asian monsoon explain than the common buoyancy-based diagnostic?",
+  "reference_answer": "1.5 times as much",
+  "key_facts": [
+   "1.5 times"
+  ],
+  "gold": [
+   "759f3904"
+  ],
+  "evidence": [
+   {
+    "item_id": "759f3904",
+    "quote": "Our best equation explains 1.5 times as much precipitation variance",
+    "establishes": "Variance explained relative to the buoyancy diagnostic"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "'About 85% of neural network skill' is a different comparison."
+ },
+ {
+  "id": "rq-d-007",
+  "split": "dev",
+  "type": "single",
+  "question": "On the Pyrite protein-ligand pose-ranking benchmark, what accuracies do the two LLM-based agents reach?",
+  "reference_answer": "Up to 67% for PyriteReasoner and up to 74% for PyriteFeaturizer",
+  "key_facts": [
+   "PyriteReasoner 67%",
+   "PyriteFeaturizer 74%"
+  ],
+  "gold": [
+   "69cf9e2d"
+  ],
+  "evidence": [
+   {
+    "item_id": "69cf9e2d",
+    "quote": "These agents achieve up to 67% and 74% accuracy, respectively",
+    "establishes": "Agent accuracies (in the order PyriteReasoner, PyriteFeaturizer)"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": ""
+ },
+ {
+  "id": "rq-d-008",
+  "split": "dev",
+  "type": "single",
+  "question": "How many active watch tasks can a Firefox Smart Window user keep at once?",
+  "reference_answer": "Up to 15",
+  "key_facts": [
+   "15 active tasks"
+  ],
+  "gold": [
+   "6e8793cc"
+  ],
+  "evidence": [
+   {
+    "item_id": "6e8793cc",
+    "quote": "You can have up to 15 active tasks at a time",
+    "establishes": "Task limit"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "The same post says tasks pause after 60 days without a matching change; 90 days is a different threshold."
+ },
+ {
+  "id": "rq-d-009",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "The chip platform inside Samsung's intelligent eyewear, due in December 2026, comes from which company, and what GAAP revenues did that company report for its fiscal 2026?",
+  "reference_answer": "Qualcomm; $43.1 billion",
+  "key_facts": [
+   "Qualcomm (Snapdragon AR1 Gen 1)",
+   "fiscal 2026 GAAP revenues of $43.1 billion"
+  ],
+  "gold": [
+   "7174e2bb",
+   "f8764769"
+  ],
+  "evidence": [
+   {
+    "item_id": "7174e2bb",
+    "quote": "Powered by the Snapdragon® AR1 Gen 1 Platform",
+    "establishes": "The eyewear uses a Snapdragon platform"
+   },
+   {
+    "item_id": "7174e2bb",
+    "quote": "Snapdragon is a trademark or registered trademark of Qualcomm Incorporated",
+    "establishes": "Snapdragon belongs to Qualcomm"
+   },
+   {
+    "item_id": "f8764769",
+    "quote": "Fiscal 2026 GAAP Revenues: $43.1 billion",
+    "establishes": "Qualcomm's FY2026 revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Not an alias question: the eyewear item names Qualcomm in its trademark footnote."
+ },
+ {
+  "id": "rq-d-010",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "A diagnostic text-to-video judge released in November 2026 was found to match one proprietary frontier model. What total principal of euro-denominated notes did that model's developer close in November 2026?",
+  "reference_answer": "EUR 6 billion",
+  "key_facts": [
+   "€6 billion aggregate principal amount",
+   "closed 5 November 2026"
+  ],
+  "gold": [
+   "1ff30f2f",
+   "f436d43a",
+   "839e05d9"
+  ],
+  "evidence": [
+   {
+    "item_id": "1ff30f2f",
+    "quote": "while matching the frontier proprietary Gemini 4 Argon",
+    "establishes": "The proprietary model is Gemini 4 Argon"
+   },
+   {
+    "item_id": "f436d43a",
+    "quote": "Gemini 4 Argon and Carbon are now leading at the frontier",
+    "establishes": "Alphabet's results claim Gemini 4 Argon as its model"
+   },
+   {
+    "item_id": "839e05d9",
+    "quote": "closed its underwritten public offering of €6 billion aggregate principal amount",
+    "establishes": "Alphabet's euro notes offering"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "Three-item chain. Neither the paper nor the notes 8-K names the other's entity; the earnings release links the model to Alphabet.",
+  "surface_forms": [
+   "Gemini 4 Argon",
+   "Alphabet Inc."
+  ]
+ },
+ {
+  "id": "rq-d-011",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "EFF objected to a chatbot that Google switched on for 150 million K-12 students in August 2026. In a November 2026 audio-reasoning diagnostic, what accuracy did a flash version of that chatbot reach once both the rule and the acoustic observations were supplied?",
+  "reference_answer": "98.5%",
+  "key_facts": [
+   "98.5%"
+  ],
+  "gold": [
+   "23e20026",
+   "8e63b58e"
+  ],
+  "evidence": [
+   {
+    "item_id": "23e20026",
+    "quote": "activated AI chatbot Gemini for 150 million K-12 students on Google Classroom",
+    "establishes": "The chatbot is Gemini"
+   },
+   {
+    "item_id": "8e63b58e",
+    "quote": "In a preliminary evaluation of Gemini-3.8-flash",
+    "establishes": "AuDiR evaluates Gemini-3.8-flash"
+   },
+   {
+    "item_id": "8e63b58e",
+    "quote": "98.5% with the observations also supplied",
+    "establishes": "Accuracy with rule plus observations"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "29.3% (nothing supplied), 31.3% (rule only) and 23.9% (no audio) are the other conditions."
+ },
+ {
+  "id": "rq-d-012",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "The tabular foundation model evaluated for predicting firms' next-year earnings changes comes from a corporate research lab. How fast did the cloud business of that lab's parent company grow in the quarter ended 30 September 2026?",
+  "reference_answer": "103%, to $30.7 billion",
+  "key_facts": [
+   "103% growth",
+   "$30.7 billion Google Cloud revenue"
+  ],
+  "gold": [
+   "2c5be933",
+   "f436d43a"
+  ],
+  "evidence": [
+   {
+    "item_id": "2c5be933",
+    "quote": "We compare Google Research's TabFM with a fine-tuned",
+    "establishes": "TabFM is from Google Research"
+   },
+   {
+    "item_id": "f436d43a",
+    "quote": "Google Cloud delivered record growth as revenues increased 103% to $30.7 billion",
+    "establishes": "Alphabet's Google Cloud growth"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "The parent relation (Google is part of Alphabet) is stated in the release ('CEO of Google and Alphabet').",
+  "surface_forms": [
+   "Google Research",
+   "Alphabet Inc."
+  ]
+ },
+ {
+  "id": "rq-d-013",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "The model platform through which Microsoft Research distributes its RetroChimera retrosynthesis model was chosen in October 2026 to host an agent harness. Which team built that harness?",
+  "reference_answer": "The GitHub engineering team (the Microsoft Copilot harness)",
+  "key_facts": [
+   "GitHub engineering team",
+   "Microsoft Copilot harness"
+  ],
+  "gold": [
+   "93a879f7",
+   "092ccea5"
+  ],
+  "evidence": [
+   {
+    "item_id": "93a879f7",
+    "quote": "accessible via Microsoft Foundry",
+    "establishes": "RetroChimera is distributed through Microsoft Foundry"
+   },
+   {
+    "item_id": "092ccea5",
+    "quote": "making that harness available through Microsoft Foundry",
+    "establishes": "The Copilot harness is offered through Foundry"
+   },
+   {
+    "item_id": "092ccea5",
+    "quote": "the GitHub engineering team built a best-in-class, truly multi-model harness",
+    "establishes": "GitHub engineering built it"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Weak point: the harness post alone answers 'who built the harness offered on Foundry'; the research item only identifies the platform."
+ },
+ {
+  "id": "rq-d-014",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "Mozilla says one operating-system vendor respects users' browser choice only when the law forces it to. What revenue did that vendor's Devices and Consumer segment report for the quarter ended 30 September 2026, and how did it change?",
+  "reference_answer": "$15.484 billion, down 3% year over year",
+  "key_facts": [
+   "$15,484 million (about $15.5 billion)",
+   "down 3%"
+  ],
+  "gold": [
+   "d3ebd001",
+   "509b5324"
+  ],
+  "evidence": [
+   {
+    "item_id": "d3ebd001",
+    "quote": "Microsoft will respect user choice only when it is forced to",
+    "establishes": "The vendor is Microsoft"
+   },
+   {
+    "item_id": "509b5324",
+    "quote": "Devices and Consumer $15,484 $16,001 (3)%",
+    "establishes": "Segment revenue and change"
+   }
+  ],
+  "expected_bubbles": [
+   "News",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "57761b28"
+  ],
+  "notes": "57761b28 explains the new segment structure but gives no Q1 FY27 figures."
+ },
+ {
+  "id": "rq-d-015",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "Researchers at one company found that a backdoor could reprogram dormant neurons so that an AI agent runs malicious actions. What revenue did that company's cloud business report for the quarter ended 30 September 2026?",
+  "reference_answer": "$63.9 billion (Microsoft Cloud), up 30%",
+  "key_facts": [
+   "Microsoft Cloud revenue $63.9 billion",
+   "growth of 30%"
+  ],
+  "gold": [
+   "c95ca17e",
+   "509b5324"
+  ],
+  "evidence": [
+   {
+    "item_id": "c95ca17e",
+    "quote": "a backdoor technique that can reprogram dormant neurons in an AI model",
+    "establishes": "Microsoft researchers describe the backdoor"
+   },
+   {
+    "item_id": "509b5324",
+    "quote": "Microsoft Cloud revenue of $63.9 billion",
+    "establishes": "Microsoft Cloud revenue"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Total company revenue ($92.3 billion) and Agents and Infra ($76.8 billion) are distractors within the same release."
+ },
+ {
+  "id": "rq-d-016",
+  "split": "dev",
+  "type": "multi_hop",
+  "question": "A November 2026 IFRS compliance benchmark adapted its sentence embeddings on one regulator's electronic filings. For which date did that regulator schedule a public roundtable on machine-understandable data?",
+  "reference_answer": "9 November 2026",
+  "key_facts": [
+   "9 November 2026"
+  ],
+  "gold": [
+   "8faa6a57",
+   "510738e2"
+  ],
+  "evidence": [
+   {
+    "item_id": "8faa6a57",
+    "quote": "BERT masked language modeling on SEC EDGAR filings",
+    "establishes": "The filings are from SEC EDGAR"
+   },
+   {
+    "item_id": "510738e2",
+    "quote": "will host a roundtable on November 9, 2026",
+    "establishes": "The Securities and Exchange Commission's roundtable date"
+   }
+  ],
+  "expected_bubbles": [
+   "Research",
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": true,
+  "distractors": [],
+  "notes": "The roundtable release never uses 'EDGAR'; the paper never spells out the commission's name.",
+  "surface_forms": [
+   "SEC EDGAR",
+   "Securities and Exchange Commission"
+  ]
+ },
+ {
+  "id": "rq-d-017",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "What was Samsung Electronics' consolidated revenue for the third quarter of 2026?",
+  "reference_answer": "KRW 195.3 trillion (reported 29 October 2026)",
+  "key_facts": [
+   "KRW 195.3 trillion"
+  ],
+  "gold": [
+   "90445a7a",
+   "5bef2525"
+  ],
+  "evidence": [
+   {
+    "item_id": "90445a7a",
+    "quote": "Consolidated Sales: Approximately 195 trillion Korean won",
+    "establishes": "Old: 8 Oct estimate of about KRW 195 trillion"
+   },
+   {
+    "item_id": "5bef2525",
+    "quote": "KRW 195.3 trillion in consolidated revenue",
+    "establishes": "New: reported result"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": "latest (after 2026-10-29)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact. An answer of 'approximately 195 trillion' uses the superseded estimate."
+ },
+ {
+  "id": "rq-d-018",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "As of 20 October 2026, what was the most recent quarterly operating profit Samsung Electronics had actually reported (not estimated)?",
+  "reference_answer": "KRW 89.49 trillion, for the second quarter of 2026",
+  "key_facts": [
+   "KRW 89.49 trillion",
+   "Q2 2026"
+  ],
+  "gold": [
+   "90445a7a",
+   "5bef2525"
+  ],
+  "evidence": [
+   {
+    "item_id": "90445a7a",
+    "quote": "Operating profit 89.49 12.17",
+    "establishes": "Q2 2026 actual operating profit (Q3 was only guidance then)"
+   },
+   {
+    "item_id": "5bef2525",
+    "quote": "Operating profit reached KRW 107.4 trillion",
+    "establishes": "Q3 actual published later, on 29 Oct"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": "as of 2026-10-20",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Verified changed fact. KRW 107.40 trillion was only an estimate on that date."
+ },
+ {
+  "id": "rq-d-019",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "Before Samsung published its full third-quarter 2026 results, what operating-profit range had it guided to?",
+  "reference_answer": "KRW 107.3 trillion to 107.5 trillion (midpoint about 107.40 trillion)",
+  "key_facts": [
+   "107.3-107.5 trillion won"
+  ],
+  "gold": [
+   "90445a7a",
+   "5bef2525"
+  ],
+  "evidence": [
+   {
+    "item_id": "90445a7a",
+    "quote": "Operating Profit: 107.3 trillion to 107.5 trillion Korean won",
+    "establishes": "Guided range"
+   },
+   {
+    "item_id": "5bef2525",
+    "quote": "Operating profit reached KRW 107.4 trillion",
+    "establishes": "The reported figure that replaced it"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": "before 2026-10-29",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading, linked to the verified Samsung entries."
+ },
+ {
+  "id": "rq-d-020",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "What revenue did Supermicro report for its first quarter of fiscal 2027?",
+  "reference_answer": "$19.9 billion (net sales, reported 3 November 2026)",
+  "key_facts": [
+   "$19.9 billion net sales"
+  ],
+  "gold": [
+   "43f3b1ec",
+   "e6a19626"
+  ],
+  "evidence": [
+   {
+    "item_id": "43f3b1ec",
+    "quote": "estimated to be in the range of $18.5 billion to $19.5 billion",
+    "establishes": "Old: preliminary range of 20 Oct"
+   },
+   {
+    "item_id": "e6a19626",
+    "quote": "Net sales of $19.9 billion versus $11.1 billion in Q4'26",
+    "establishes": "New: reported figure"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "latest (after 2026-11-03)",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. The final figure lies above the preliminary range."
+ },
+ {
+  "id": "rq-d-021",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "As of 25 October 2026, what revenue did Supermicro expect for the quarter ended 30 September 2026?",
+  "reference_answer": "$18.5 billion to $19.5 billion (preliminary estimate)",
+  "key_facts": [
+   "$18.5-19.5 billion"
+  ],
+  "gold": [
+   "43f3b1ec",
+   "e6a19626"
+  ],
+  "evidence": [
+   {
+    "item_id": "43f3b1ec",
+    "quote": "estimated to be in the range of $18.5 billion to $19.5 billion",
+    "establishes": "Preliminary estimate of 20 Oct"
+   },
+   {
+    "item_id": "e6a19626",
+    "quote": "Net sales of $19.9 billion versus $11.1 billion in Q4'26",
+    "establishes": "Actual published only on 3 Nov"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "as of 2026-10-25",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading. The original guidance ($14.5-15.5 billion) had already been superseded by then."
+ },
+ {
+  "id": "rq-d-022",
+  "split": "dev",
+  "type": "time_sensitive",
+  "question": "Before its final first-quarter fiscal 2027 results, what gross margin had Supermicro estimated for that quarter?",
+  "reference_answer": "12.0% to 12.5%",
+  "key_facts": [
+   "12.0%-12.5% estimated gross margin"
+  ],
+  "gold": [
+   "43f3b1ec",
+   "e6a19626"
+  ],
+  "evidence": [
+   {
+    "item_id": "43f3b1ec",
+    "quote": "Gross margins are estimated to be in the range of 12.0% to 12.5%",
+    "establishes": "Preliminary gross margin"
+   },
+   {
+    "item_id": "e6a19626",
+    "quote": "Gross margin of 12.7% versus 17.5% in Q4'26",
+    "establishes": "Reported 12.7%"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": "before 2026-11-03",
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Found by reading."
+ },
+ {
+  "id": "rq-d-023",
+  "split": "dev",
+  "type": "freshness",
+  "question": "Which of the Federal Open Market Committee's tentatively scheduled 2027 meetings will not end with the usual policy announcement, and why?",
+  "reference_answer": "The 26-27 October 2027 meeting, which will be dedicated to broad monetary policy strategy issues",
+  "key_facts": [
+   "October 26-27, 2027",
+   "dedicated to monetary policy strategy"
+  ],
+  "gold": [
+   "6f669344"
+  ],
+  "evidence": [
+   {
+    "item_id": "6f669344",
+    "quote": "except the October 26-27 meeting",
+    "establishes": "Exception to the usual announcement"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 12 Nov 2026."
+ },
+ {
+  "id": "rq-d-024",
+  "split": "dev",
+  "type": "freshness",
+  "question": "What average price increase will the Federal Reserve Banks' established payment services see in 2027?",
+  "reference_answer": "About 1.4% on average",
+  "key_facts": [
+   "estimated 1.4 percent average price increase"
+  ],
+  "gold": [
+   "6c5f9d64"
+  ],
+  "evidence": [
+   {
+    "item_id": "6c5f9d64",
+    "quote": "an estimated 1.4 percent average price increase for established, mature services",
+    "establishes": "2027 price change"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 12 Nov 2026. 101.5 percent is the expected cost-recovery rate."
+ },
+ {
+  "id": "rq-d-025",
+  "split": "dev",
+  "type": "freshness",
+  "question": "Against whom did the Federal Reserve Board announce a consent prohibition on 12 November 2026, and for what conduct?",
+  "reference_answer": "Katilyn M. Robinson, a former United Community Bank employee, for misappropriating customer funds",
+  "key_facts": [
+   "Katilyn M. Robinson",
+   "misappropriation of customer funds"
+  ],
+  "gold": [
+   "a80f73b9"
+  ],
+  "evidence": [
+   {
+    "item_id": "a80f73b9",
+    "quote": "Consent prohibition against Katilyn M. Robinson",
+    "establishes": "Named individual"
+   },
+   {
+    "item_id": "a80f73b9",
+    "quote": "Misappropriation of customer funds",
+    "establishes": "Conduct"
+   }
+  ],
+  "expected_bubbles": [
+   "Finance"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 12 Nov 2026."
+ },
+ {
+  "id": "rq-d-026",
+  "split": "dev",
+  "type": "freshness",
+  "question": "On what date did the UK's Technology Transfer Block Exemption Order 2026 come into force?",
+  "reference_answer": "1 May 2026",
+  "key_facts": [
+   "1 May 2026"
+  ],
+  "gold": [
+   "6f93879f"
+  ],
+  "evidence": [
+   {
+    "item_id": "6f93879f",
+    "quote": "1 May 2026 Technology Transfer Block Exemption Order (TTBEO) 2026 comes into force",
+    "establishes": "Entry into force"
+   }
+  ],
+  "expected_bubbles": [
+   "News"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [
+   "f7860b03",
+   "d02369ad"
+  ],
+  "notes": "Published 10 Nov 2026. The two companion CMA items name the order but not the date."
+ },
+ {
+  "id": "rq-d-027",
+  "split": "dev",
+  "type": "freshness",
+  "question": "At what clock frequency do six SkipLane zero-skipping CNN engines run on a PYNQ-Z2 board?",
+  "reference_answer": "140 MHz",
+  "key_facts": [
+   "140 MHz",
+   "using 21.1k LUTs"
+  ],
+  "gold": [
+   "9b2692ab"
+  ],
+  "evidence": [
+   {
+    "item_id": "9b2692ab",
+    "quote": "Six engines meet 140 MHz on a PYNQ-Z2 using 21.1k LUTs",
+    "establishes": "Clock frequency and resources"
+   }
+  ],
+  "expected_bubbles": [
+   "Research"
+  ],
+  "time_scope": null,
+  "alias_bridge": false,
+  "distractors": [],
+  "notes": "Published 10 Nov 2026."
+ }
+]

@@ -1,0 +1,158 @@
+{
+  "indexes": [
+    {
+      "name": "entity_name_embedding",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Entity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "state": "ONLINE",
+      "dimension": 1024,
+      "similarity": "COSINE"
+    },
+    {
+      "name": "fact_embedding",
+      "entityType": "RELATIONSHIP",
+      "labelsOrTypes": [
+        "RELATES_TO"
+      ],
+      "properties": [
+        "fact_embedding"
+      ],
+      "state": "ONLINE",
+      "dimension": 1024,
+      "similarity": "COSINE"
+    },
+    {
+      "name": "global_entity_embedding",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "GlobalEntity"
+      ],
+      "properties": [
+        "name_embedding"
+      ],
+      "state": "ONLINE",
+      "dimension": 1024,
+      "similarity": "COSINE"
+    }
+  ],
+  "nodes_with_384": 0,
+  "relationships_with_384": 0,
+  "chroma": {
+    "data\\chroma": null,
+    "data\\snapshots\\bench-musique-n100-s0\\chroma": [
+      {
+        "name": "bubble_bench-musique-n100-s0",
+        "dimension": 1024,
+        "count": 32,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "data\\snapshots\\eval-v1\\chroma": [
+      {
+        "name": "bubble_eval-v1-finance",
+        "dimension": 1024,
+        "count": 40,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v1-news",
+        "dimension": 1024,
+        "count": 26,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v1-research",
+        "dimension": 1024,
+        "count": 30,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "data\\snapshots\\eval-v2\\chroma": [
+      {
+        "name": "bubble_eval-v2-finance",
+        "dimension": 1024,
+        "count": 54,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v2-news",
+        "dimension": 1024,
+        "count": 40,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_eval-v2-research",
+        "dimension": 1024,
+        "count": 29,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ],
+    "data\\snapshots\\real-v2-dev\\chroma": [
+      {
+        "name": "bubble_real-v2-dev-finance",
+        "dimension": 1024,
+        "count": 322,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_real-v2-dev-news",
+        "dimension": 1024,
+        "count": 139,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      },
+      {
+        "name": "bubble_real-v2-dev-research",
+        "dimension": 1024,
+        "count": 76,
+        "signature": "BAAI/bge-large-en-v1.5:1024"
+      }
+    ]
+  },
+  "routing_vectors": {
+    "data\\omnistream.db": [],
+    "data\\snapshots\\bench-musique-n100-s0\\state.db": [
+      1024
+    ],
+    "data\\snapshots\\eval-v1\\state.db": [
+      1024,
+      1024,
+      1024
+    ],
+    "data\\snapshots\\eval-v2\\state.db": [
+      1024,
+      1024,
+      1024
+    ],
+    "data\\snapshots\\real-v2-dev\\state.db": [
+      1024,
+      1024,
+      1024
+    ]
+  },
+  "smoke": {
+    "question": "How much research funding did Halvex Mobility commit on February 7?",
+    "modes": {
+      "classic": {
+        "facts": 0,
+        "chunks": 5
+      },
+      "own": {
+        "facts": 5,
+        "chunks": 0
+      },
+      "graphiti": {
+        "facts": 5,
+        "chunks": 0
+      }
+    }
+  },
+  "chroma_payloads_match_backup": {
+    "eval-v2": true,
+    "real-v2-dev": true
+  }
+}

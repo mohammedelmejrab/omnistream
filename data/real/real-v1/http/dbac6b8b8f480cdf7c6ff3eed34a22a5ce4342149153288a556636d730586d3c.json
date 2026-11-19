@@ -1,0 +1,5 @@
+{
+  "url": "https://export.arxiv.org/robots.txt",
+  "status": 200,
+  "body": "User-agent: * \nDisallow: /"
+}

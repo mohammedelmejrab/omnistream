@@ -1,0 +1,1584 @@
+{
+  "dataset_sha256": "c7483a11f80d548ee71a09ec0d56b3dc11359471d5d3f17ca7239f05f28ee4e3",
+  "items": {
+    "0-ceo-old": {
+      "runtime_id": "46302f797e4bf1605ae76e3b7aa27fcb3e6bdcc77d939efbef92688f489307fc",
+      "injected_at": 1794434090.2106016,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 67.49417161941528
+    },
+    "1-ceo-old": {
+      "runtime_id": "3ba6b9e354dc4da024cba59ab120a5d45689a1e3f0b9838a5a3c76a5a3d3f3e9",
+      "injected_at": 1794434157.7127879,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 48.447946071624756
+    },
+    "2-ceo-old": {
+      "runtime_id": "42474ba3aff6d88b0e3ef543c3d88b660829edb8f93e0e5f08858898b866632d",
+      "injected_at": 1794434236.4364705,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 2,
+      "write_lag_seconds": 40.94268989562988,
+      "usage": {
+        "tokens": 11913,
+        "cost_usd": 0.0041926046,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "3-ceo-old": {
+      "runtime_id": "57c6ca171e8d86af9e3d1239edfeb0a6dbdf96b71829e3e0b4fcd26a3c58d908",
+      "injected_at": 1794434277.3878865,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 39.904221534729004,
+      "usage": {
+        "tokens": 12617,
+        "cost_usd": 0.0042507752,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "4-ceo-old": {
+      "runtime_id": "6536896247bf0eea78f995bcb6b475c2fac906d81b431baff24e90fc9fbd7530",
+      "injected_at": 1794434317.3051538,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 62.116594314575195,
+      "usage": {
+        "tokens": 16539,
+        "cost_usd": 0.005667676799999999,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "5-ceo-old": {
+      "runtime_id": "5953c563e4d017915261b57590da413017fb1820afa1a6f81683f13c9e23ea24",
+      "injected_at": 1794434379.4292543,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 31.433144569396973,
+      "usage": {
+        "tokens": 13086,
+        "cost_usd": 0.004157185000000001,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "6-ceo-old": {
+      "runtime_id": "5c313d7b3887aee11d3f0564ce4440ea505c0ebde39919bfef2a88b10945f8ba",
+      "injected_at": 1794434410.8815954,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 105.40028691291809,
+      "usage": {
+        "tokens": 17334,
+        "cost_usd": 0.0062178375,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "7-ceo-old": {
+      "runtime_id": "0a2b6f16e8a4c0d7fe01b5adf6184085b627b73ba397675f438424a2c0f586d1",
+      "injected_at": 1794434516.288897,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news",
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 53.19637203216553,
+      "usage": {
+        "tokens": 18813,
+        "cost_usd": 0.0064680332999999994,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "8-ceo-old": {
+      "runtime_id": "6ca57418591df1b476e664ab9b174dbb4512349353e5785ccb9ef7b72f47f2ee",
+      "injected_at": 1794434569.4958835,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 51.055994510650635,
+      "usage": {
+        "tokens": 16791,
+        "cost_usd": 0.0056398529,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "9-ceo-old": {
+      "runtime_id": "cef94fd9d1239d97a95b3ccbb4776b9d6a58f2413510fe6af6de06d867a633db",
+      "injected_at": 1794434620.5593827,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 63.1862735748291,
+      "usage": {
+        "tokens": 18988,
+        "cost_usd": 0.0063388051999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "0-fund": {
+      "runtime_id": "4b2ce55bbb4200c739047d48f57597e1d7a843671cc1c8f893df88fa5f5dd0db",
+      "injected_at": 1794434683.7531617,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research",
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 116.00756597518921,
+      "usage": {
+        "tokens": 19093,
+        "cost_usd": 0.0068270266,
+        "calls": 13,
+        "cost_reported_calls": 13
+      }
+    },
+    "1-fund": {
+      "runtime_id": "90209f7d82826db1636063d6acb5d484537fc6ae68bc255d87800e7ee4c40e13",
+      "injected_at": 1794434799.7662914,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 90.26995134353638,
+      "usage": {
+        "tokens": 25989,
+        "cost_usd": 0.009214481600000001,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "2-fund": {
+      "runtime_id": "f3a7736264ea5397c623c7c81a61b9eb0becb3f3acf217d54bab701348103cfc",
+      "injected_at": 1794434890.0403612,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 124.75355458259583,
+      "usage": {
+        "tokens": 29686,
+        "cost_usd": 0.0104738205,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "3-fund": {
+      "runtime_id": "efddb72b4d36af5ab8a34442588bbd6aed6b65614d67afd70153cd5c9c87b446",
+      "injected_at": 1794435014.8019462,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news",
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 156.02753281593323,
+      "usage": {
+        "tokens": 48019,
+        "cost_usd": 0.0159603895,
+        "calls": 23,
+        "cost_reported_calls": 23
+      }
+    },
+    "4-fund": {
+      "runtime_id": "4273a5ad9b03e732a88b0eb806cda7fe75326e003a573c40f8080a36e3b8d303",
+      "injected_at": 1794435170.8403866,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 160.40190315246582,
+      "usage": {
+        "tokens": 35531,
+        "cost_usd": 0.0127155992,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "5-fund": {
+      "runtime_id": "cb4a20b5c81ae7e3270f7b438950dad792d09db4da02d81d41ff2302328de3c6",
+      "injected_at": 1794435331.2475643,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 105.50366425514221,
+      "usage": {
+        "tokens": 30830,
+        "cost_usd": 0.010552513799999998,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "6-fund": {
+      "runtime_id": "a1dad82afc1c3d5b18e8396f3df54d752b1c8483e1629adc4ff80646c8337668",
+      "injected_at": 1794435436.758821,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance",
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 104.07966947555542,
+      "usage": {
+        "tokens": 33827,
+        "cost_usd": 0.0113320761,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "7-fund": {
+      "runtime_id": "9cd560022d5df08f9e1f1e4a3a1ed6c74a0914c10d2679b31527fe5196b5b3bc",
+      "injected_at": 1794435540.8466518,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research",
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 78.72572922706604,
+      "usage": {
+        "tokens": 35070,
+        "cost_usd": 0.0121600671,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "8-fund": {
+      "runtime_id": "af35e3b99142e5c4ec76edc86bb34351961911185f368118657efe7932e23607",
+      "injected_at": 1794435619.5800266,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 79.8157103061676,
+      "usage": {
+        "tokens": 24651,
+        "cost_usd": 0.008541156,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "9-fund": {
+      "runtime_id": "875c4e4eb583bedb09ab9b4fd59f93db97d8dd94d8618670107b2cb49003ac36",
+      "injected_at": 1794435699.4033613,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research",
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 2,
+      "write_lag_seconds": 80.21782684326172,
+      "usage": {
+        "tokens": 32201,
+        "cost_usd": 0.010699573499999998,
+        "calls": 14,
+        "cost_reported_calls": 14
+      }
+    },
+    "0-research": {
+      "runtime_id": "7aa17418fd492ce51bd54ff43d5066ab7b5d9f7ffb8faa5fa5c2f19cb3a6733e",
+      "injected_at": 1794435779.6270332,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 21.451515913009644,
+      "usage": {
+        "tokens": 14923,
+        "cost_usd": 0.0045686587,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "1-research": {
+      "runtime_id": "0be80049a095e18567eeafb0c8ed009031132c3edb733f698fb9c2b0d7ff7e3e",
+      "injected_at": 1794435801.0900812,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.182300567626953,
+      "usage": {
+        "tokens": 16265,
+        "cost_usd": 0.0050567429,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "2-research": {
+      "runtime_id": "8d57d5531d166a91e4c5ce66553d5460cded2feeb6c478c96fd293e9d4c8fdea",
+      "injected_at": 1794435826.2790377,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 46.575597286224365,
+      "usage": {
+        "tokens": 17575,
+        "cost_usd": 0.0057173784,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "3-research": {
+      "runtime_id": "77734ca6000a309d740d3042ccb4968e4db067419bd6b9d6c4d113cb2cc8e23e",
+      "injected_at": 1794435872.8621378,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.28109383583069,
+      "usage": {
+        "tokens": 18861,
+        "cost_usd": 0.0061318175,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "4-research": {
+      "runtime_id": "4c7d5733ebd9aa00e2d77d47218327b9e120b8ad968160a2920f968a1d065c4c",
+      "injected_at": 1794435913.1512017,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 21.71409249305725,
+      "usage": {
+        "tokens": 16198,
+        "cost_usd": 0.0049635128,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "5-research": {
+      "runtime_id": "bdb19a300ad87f44d32529fc028de4a5d6b11c060387276b17d04bbefb3df796",
+      "injected_at": 1794435934.8734632,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 46.46844530105591,
+      "usage": {
+        "tokens": 14173,
+        "cost_usd": 0.0046340971,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "6-research": {
+      "runtime_id": "210402fd6621d1a326355ee5358279830f32d5b46d3c40d0c6a1e6d99df1897d",
+      "injected_at": 1794435981.350961,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 45.40303039550781,
+      "usage": {
+        "tokens": 19152,
+        "cost_usd": 0.0064411733,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "7-research": {
+      "runtime_id": "f197a3b31873afeee7f96cdd6a665d16a773146082630190f7117d52acd7a908",
+      "injected_at": 1794436026.7604935,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.668174505233765,
+      "usage": {
+        "tokens": 17400,
+        "cost_usd": 0.005569169499999999,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "8-research": {
+      "runtime_id": "40ea3389115cf6d2f7044d42b05772ce83ca826ef7ffff7802d89a1b6dc5ddae",
+      "injected_at": 1794436067.4376726,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 38.66518306732178,
+      "usage": {
+        "tokens": 17328,
+        "cost_usd": 0.0055398773,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "9-research": {
+      "runtime_id": "b358f66418bb98f0dabbfebe02fea0514f8f95d725b5c952d467ae3b6cbaaebe",
+      "injected_at": 1794436106.111056,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 26.18489170074463,
+      "usage": {
+        "tokens": 16090,
+        "cost_usd": 0.0051430665,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "0-rumor": {
+      "runtime_id": "7761bafad4f5bae9b5bf566ec65766336e1432da32d1857033794b88a256881d",
+      "injected_at": 1794436132.3034565,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 46.62893843650818,
+      "usage": {
+        "tokens": 17473,
+        "cost_usd": 0.0060441452,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "1-rumor": {
+      "runtime_id": "6c78b9a183c201d87a756534974e78823837f31e04f26d62609387bdd2d911eb",
+      "injected_at": 1794436178.9389005,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 88.67376327514648,
+      "usage": {
+        "tokens": 20172,
+        "cost_usd": 0.0071023,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "2-rumor": {
+      "runtime_id": "ab7daeda54d2a703ef11e35c9885501cc83dbd008ca6aca01187aa6ec7541c3e",
+      "injected_at": 1794436267.620169,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 91.18783521652222,
+      "usage": {
+        "tokens": 25925,
+        "cost_usd": 0.008695976,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "3-rumor": {
+      "runtime_id": "0a81b32db82dad3cf36e7c872cd4a6e14119f4eb9201eeedab4c7e75919679d5",
+      "injected_at": 1794436358.81551,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 50.858047008514404,
+      "usage": {
+        "tokens": 15428,
+        "cost_usd": 0.0052692244,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "4-rumor": {
+      "runtime_id": "125078e9c0ca9a80e52f29a73909ebc97172e273a8a74500fd8513eb8986d290",
+      "injected_at": 1794436409.680625,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 89.73244738578796,
+      "usage": {
+        "tokens": 20721,
+        "cost_usd": 0.0074463011,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "0-ceo-new": {
+      "runtime_id": "7a5e28ff0ca268a2981383d0447f47a9ab6dbeb81354c17b76e7fa8c0687ec7b",
+      "injected_at": 1794436499.4201467,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 80.41718864440918,
+      "usage": {
+        "tokens": 20543,
+        "cost_usd": 0.0068087774,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "1-ceo-new": {
+      "runtime_id": "a30a925fa3cc00545a250126727e5ed8b694c47f1a451d711594282906650c7f",
+      "injected_at": 1794436579.845844,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 41.46172738075256,
+      "usage": {
+        "tokens": 17620,
+        "cost_usd": 0.0057882573,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "2-ceo-new": {
+      "runtime_id": "2c5c0a3af87ee91de12921bae4dde0c9c09b4930b5cb6bd3b3685afeb76da045",
+      "injected_at": 1794436621.3141387,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 53.72626495361328,
+      "usage": {
+        "tokens": 20155,
+        "cost_usd": 0.0068448088,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "3-ceo-new": {
+      "runtime_id": "9b1776ba2402aa40a8a0bc0f5ad283ef4d1bb27e632b90d25390035f808fa4e2",
+      "injected_at": 1794436675.0488575,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 70.85930943489075,
+      "usage": {
+        "tokens": 19301,
+        "cost_usd": 0.0065494795,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "4-ceo-new": {
+      "runtime_id": "fd59deffc58891b681b1aaf275cc414c0b6ee63728ac78d83537fea86f643dac",
+      "injected_at": 1794436745.9157157,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 23.312652111053467,
+      "usage": {
+        "tokens": 16344,
+        "cost_usd": 0.0051240397,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "5-ceo-new": {
+      "runtime_id": "47f8ac23e25755e4abd5c2105b3b7740de0bbac740ddc203e12bf9b681cebd5a",
+      "injected_at": 1794436769.2415564,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 38.46617770195007,
+      "usage": {
+        "tokens": 16409,
+        "cost_usd": 0.0050672304,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "6-ceo-new": {
+      "runtime_id": "edfba442508d5b3e4aa8d677d83fa4121a24e2967d99013828e86943fe414c1c",
+      "injected_at": 1794436807.715797,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 91.42480659484863,
+      "usage": {
+        "tokens": 26188,
+        "cost_usd": 0.008585402399999999,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "7-ceo-new": {
+      "runtime_id": "912d63eee006d247c821226e6605e05559cc19e43f5524830be4c870dd456451",
+      "injected_at": 1794436899.1451106,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 43.726840019226074,
+      "usage": {
+        "tokens": 16535,
+        "cost_usd": 0.0051822095,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "8-ceo-new": {
+      "runtime_id": "9d78ca2feb5845985cd7cae298543946e8c8b8341a2f5a8c63906945a18011a0",
+      "injected_at": 1794436942.8790221,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 60.69170165061951,
+      "usage": {
+        "tokens": 21077,
+        "cost_usd": 0.006980236800000001,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "9-ceo-new": {
+      "runtime_id": "744d8e13f210d7757351457bc51b65e735408a6b6248322ebe86f01d4e48e9c8",
+      "injected_at": 1794437003.576629,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 71.80913853645325,
+      "usage": {
+        "tokens": 21085,
+        "cost_usd": 0.0072783462999999994,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "0-target-old": {
+      "runtime_id": "b06f2a6c9b24653c3d5183b9734d0b7f06db7de2706daffc8b0053ca39293de7",
+      "injected_at": 1794437075.3917098,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 30.322611570358276,
+      "usage": {
+        "tokens": 10508,
+        "cost_usd": 0.0036446177,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "1-target-old": {
+      "runtime_id": "63082f31abab06352edea659acafe770b6ee85b0d1b816fb90d544aff1a566f4",
+      "injected_at": 1794437105.7213216,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 86.48264861106873,
+      "usage": {
+        "tokens": 14544,
+        "cost_usd": 0.005378421299999999,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "2-target-old": {
+      "runtime_id": "8a9db544d062b81b5bdd233698dd0f2faf1b60ac555a7bfe521ebfd4b904c503",
+      "injected_at": 1794437192.2105181,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 11.541219472885132,
+      "usage": {
+        "tokens": 8806,
+        "cost_usd": 0.0028826129,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "3-target-old": {
+      "runtime_id": "a162e59ca249d94b53b493a341aaecdc2edeecab89912e11950ed6255c4308dd",
+      "injected_at": 1794437203.7593598,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 38.32379078865051,
+      "usage": {
+        "tokens": 10500,
+        "cost_usd": 0.0036166824,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "4-target-old": {
+      "runtime_id": "edd2018b9d6e770bbb08119ec431c55b201090e1687212395890ee350418e7a3",
+      "injected_at": 1794437242.088288,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 9.748453855514526,
+      "usage": {
+        "tokens": 8754,
+        "cost_usd": 0.0027836405,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "5-target-old": {
+      "runtime_id": "3cc3454fbd62865ad32b90940b09440a1d77d70d296ad85a3e19090aaeb3dfed",
+      "injected_at": 1794437251.844248,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 11.828532695770264,
+      "usage": {
+        "tokens": 8732,
+        "cost_usd": 0.0028515920999999996,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "6-target-old": {
+      "runtime_id": "cf5be9aaaae7bc14bf724ed4189a2fe4217aa9f75e9986aa5d2acfb35bef3fe5",
+      "injected_at": 1794437263.6802826,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 65.38477778434753,
+      "usage": {
+        "tokens": 13068,
+        "cost_usd": 0.0048344057,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "7-target-old": {
+      "runtime_id": "c9b0d2f128557aa52a97421d5577281946eb88fa29e96ecef7767f6fd94b3a3b",
+      "injected_at": 1794437329.0715957,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 70.14746022224426,
+      "usage": {
+        "tokens": 14424,
+        "cost_usd": 0.0053421508,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "8-target-old": {
+      "runtime_id": "75d9a0461ce719ee648f14a8cff8ae714839baaf7d988a107310cdb950a44434",
+      "injected_at": 1794437399.2245598,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.07016086578369,
+      "usage": {
+        "tokens": 16272,
+        "cost_usd": 0.005188142,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "9-target-old": {
+      "runtime_id": "0dd2deb8d5a15dd142e5f1e7befdd5d41c13b0b9515cf4448fe62e4b132c3645",
+      "injected_at": 1794437439.3027203,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 8.837607860565186,
+      "usage": {
+        "tokens": 7274,
+        "cost_usd": 0.0023745127,
+        "calls": 4,
+        "cost_reported_calls": 4
+      }
+    },
+    "0-target-new": {
+      "runtime_id": "19ddc828dad80dacb20b5920b5b0a3dd7da309d8c2b7e171a37f131cdf49a3e0",
+      "injected_at": 1794437448.1475148,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 10.016716003417969,
+      "usage": {
+        "tokens": 7308,
+        "cost_usd": 0.0022906384,
+        "calls": 4,
+        "cost_reported_calls": 4
+      }
+    },
+    "1-target-new": {
+      "runtime_id": "dcd9128a31fd9e356a56369ca02269d72e2ff082ec0d2b0b2b18947ee2886cd7",
+      "injected_at": 1794437458.1697361,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 43.92123889923096,
+      "usage": {
+        "tokens": 10545,
+        "cost_usd": 0.0036846914,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "2-target-new": {
+      "runtime_id": "23c1a2fe1bf67798a4038dad77a1d9fa112c9079cc679c15c2d5086197bb375e",
+      "injected_at": 1794437502.0969892,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 28.887535095214844,
+      "usage": {
+        "tokens": 9073,
+        "cost_usd": 0.0030707224000000003,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "3-target-new": {
+      "runtime_id": "490e48576df48da79e573511b0d04ba5251ca816fac04a3f2529be708225ba0d",
+      "injected_at": 1794437530.991522,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 49.665345430374146,
+      "usage": {
+        "tokens": 10586,
+        "cost_usd": 0.0036827945,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "4-target-new": {
+      "runtime_id": "0f719c4bbf982ccd0e3a1d174d8256bd0ed7ae7d61003bedf81c7c263b4c43c6",
+      "injected_at": 1794437580.6654058,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 31.460543870925903,
+      "usage": {
+        "tokens": 9067,
+        "cost_usd": 0.0031985931,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "5-target-new": {
+      "runtime_id": "928db41b35b09d2f47162c92975bbf1ade1e8522209a016e0c4f31a06c69fe2f",
+      "injected_at": 1794437612.132997,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 52.8480110168457,
+      "usage": {
+        "tokens": 10628,
+        "cost_usd": 0.0036098676999999995,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "6-target-new": {
+      "runtime_id": "06d08cac1bf3250cdb27108b188e66d4314689c12b4bc34cb1dea4d0877d316e",
+      "injected_at": 1794437664.9880052,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 57.58952331542969,
+      "usage": {
+        "tokens": 15561,
+        "cost_usd": 0.005296533799999999,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "7-target-new": {
+      "runtime_id": "7f2173326fd02e53d8f63538d54622830d65b51bf6bb79ac072494ad263ff7d4",
+      "injected_at": 1794437722.5845268,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 10.943964004516602,
+      "usage": {
+        "tokens": 7394,
+        "cost_usd": 0.0023076816,
+        "calls": 4,
+        "cost_reported_calls": 4
+      }
+    },
+    "8-target-new": {
+      "runtime_id": "1b74d67cd480be9116b9540ebd139443d6c6c6ecd1cc186d193fa06ec435d638",
+      "injected_at": 1794437733.5354939,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 21.741891860961914,
+      "usage": {
+        "tokens": 9177,
+        "cost_usd": 0.0030812544,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "9-target-new": {
+      "runtime_id": "daa320260e46af462e2273d073d7b45b54cf95874cb4829d255948da7322f9e4",
+      "injected_at": 1794437755.2854908,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 75.92545700073242,
+      "usage": {
+        "tokens": 24188,
+        "cost_usd": 0.0083416001,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "0-acquisition-planned": {
+      "runtime_id": "dcf752b64dfe86f54fc154ae43b7b714b2ef4bfea4f7c4e18a73fc3763d9e108",
+      "injected_at": 1794437831.2210217,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.088274240493774,
+      "usage": {
+        "tokens": 12955,
+        "cost_usd": 0.0041476006,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "1-acquisition-planned": {
+      "runtime_id": "e0fb5ddb250c29c73cb54214e9d27c2726d37fac1d92ae50d88cafa11e3e02cf",
+      "injected_at": 1794437858.3158019,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 48.96073031425476,
+      "usage": {
+        "tokens": 18226,
+        "cost_usd": 0.005838792,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "2-acquisition-planned": {
+      "runtime_id": "45bbc8ae541b5e1b7ce298a867c54062c0c3bcadc9c49b75cd787cd9b2aa5dd8",
+      "injected_at": 1794437907.285455,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 104.91352462768555,
+      "usage": {
+        "tokens": 22168,
+        "cost_usd": 0.007952269,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "3-acquisition-planned": {
+      "runtime_id": "dfbfec4a28ac157aee433aac93c42fc43a9c7aa681e695e6ec82941ff9be97dd",
+      "injected_at": 1794438012.2080417,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 92.27503228187561,
+      "usage": {
+        "tokens": 19613,
+        "cost_usd": 0.0066671989999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "4-acquisition-planned": {
+      "runtime_id": "e50f3e067d2d0031586c943522928a7b31006b240c1f2d1aa1ce1bc2d3bc04cc",
+      "injected_at": 1794438104.491628,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 43.623162269592285,
+      "usage": {
+        "tokens": 18185,
+        "cost_usd": 0.0061381652,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "0-acquisition-outcome": {
+      "runtime_id": "b11eb602c008f84d1076785b1481e94e5919ff2e6b584dd9ea0294f9674069ad",
+      "injected_at": 1794438148.1227968,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 23.57763171195984,
+      "usage": {
+        "tokens": 9256,
+        "cost_usd": 0.0032253187000000003,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "1-acquisition-outcome": {
+      "runtime_id": "cadfc4bf7e1949620dec24fd227867b42985d3037f0679c55e45563e7145a75c",
+      "injected_at": 1794438171.709482,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 62.78202724456787,
+      "usage": {
+        "tokens": 12881,
+        "cost_usd": 0.004544088399999999,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "2-acquisition-outcome": {
+      "runtime_id": "a0ae736272ebe010d7079190d5604209480184220f27983d11cc80a6ce9a8ece",
+      "injected_at": 1794438234.5015676,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 57.93529033660889,
+      "usage": {
+        "tokens": 10623,
+        "cost_usd": 0.0036651144,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "3-acquisition-outcome": {
+      "runtime_id": "a6de2250912caa96f9ff45ddb9a8ab2a881dc0d634a5847a5b82ee92f33d96d3",
+      "injected_at": 1794438292.4443638,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 71.71066546440125,
+      "usage": {
+        "tokens": 12041,
+        "cost_usd": 0.0042015311,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "4-acquisition-outcome": {
+      "runtime_id": "982a0b93c5e92b5ab69d86142ba60edc743a081de2e694d9f42e15e1da83113e",
+      "injected_at": 1794438364.1657863,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 54.86634802818298,
+      "usage": {
+        "tokens": 9208,
+        "cost_usd": 0.003245203,
+        "calls": 5,
+        "cost_reported_calls": 5
+      }
+    },
+    "0-fresh": {
+      "runtime_id": "c3f7a7eaf8c81f250403449a060a25f2021086e31c288ab40d43971a6d2c2690",
+      "injected_at": 1794438419.1433156,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 44.350916147232056,
+      "usage": {
+        "tokens": 17540,
+        "cost_usd": 0.0055852874,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "1-fresh": {
+      "runtime_id": "3f8605741ff0496bb85a63212bad0d97a84dcdb0c664a12ffd9e316cec9fb82b",
+      "injected_at": 1794438481.73897,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 100.30481743812561,
+      "usage": {
+        "tokens": 23464,
+        "cost_usd": 0.0080792307,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "2-fresh": {
+      "runtime_id": "117be6e6990ed0bde322dcc00f80f868a3f3d80844de50148b6616ed8db13cdf",
+      "injected_at": 1794438624.0244987,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 44.02088141441345,
+      "usage": {
+        "tokens": 11959,
+        "cost_usd": 0.0041059461000000005,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "3-fresh": {
+      "runtime_id": "99afc884230b3a2621c076752084ac43a5141075db21ed8d83d4dd53fe27fbb7",
+      "injected_at": 1794438739.2549112,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 52.9053430557251,
+      "usage": {
+        "tokens": 21072,
+        "cost_usd": 0.0068340551999999995,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "4-fresh": {
+      "runtime_id": "48bd8610b919322750261e77ad871aaa7b2b9bcc93a26abe54f4f4854a5daa7f",
+      "injected_at": 1794438804.4504948,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 51.36820721626282,
+      "usage": {
+        "tokens": 17793,
+        "cost_usd": 0.005561578,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "5-fresh": {
+      "runtime_id": "9c20db3f92d0ef5186e102ee0fe61e08c1e31ff6ad7f7f0b355070e98a25f6dd",
+      "injected_at": 1794438873.3849785,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 67.64011073112488,
+      "usage": {
+        "tokens": 21933,
+        "cost_usd": 0.0074267743,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "6-fresh": {
+      "runtime_id": "e13ac2e2b61b67e35e45e4f3d27d5367770897d26578eb0f57176d0478070fd8",
+      "injected_at": 1794438958.809665,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 67.13214921951294,
+      "usage": {
+        "tokens": 23634,
+        "cost_usd": 0.007716551500000001,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "7-fresh": {
+      "runtime_id": "0db84e373f2854f0fa0da45a00add6dd1a71bec49b6f10fc3162fba29b54fd89",
+      "injected_at": 1794439042.4520183,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 2,
+      "write_lag_seconds": 152.03811240196228,
+      "usage": {
+        "tokens": 41660,
+        "cost_usd": 0.013770100099999998,
+        "calls": 19,
+        "cost_reported_calls": 19
+      }
+    },
+    "8-fresh": {
+      "runtime_id": "32f9f9acfbf7ea3c92af41580114fb723140f66bafd61f69fc9a4c202b35eb7c",
+      "injected_at": 1794439221.1677651,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 59.14500331878662,
+      "usage": {
+        "tokens": 19204,
+        "cost_usd": 0.0061338557,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "9-fresh": {
+      "runtime_id": "64d481ec379d1bd46bc8fb818d1978f8215fdb8e37de26405cb40974d189ec39",
+      "injected_at": 1794439306.7197065,
+      "status": "written",
+      "bubbles": [
+        "eval-v1-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 50.38708567619324,
+      "usage": {
+        "tokens": 20586,
+        "cost_usd": 0.0066305424,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    }
+  },
+  "frozen": true,
+  "freshness": {
+    "0-fresh": {
+      "write_lag_seconds": 44.350916147232056,
+      "answerable_lag_seconds": 62.58066725730896,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Velquora Prism is ORV-9301-K, as assigned by Velquora Institute on November 11, 2026 [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Velquora Prism as ORV-9301-K, which matches the reference answer. The additional detail about the assignment by Velquora Institute on November 11, 2026, while not part of the key facts, does not detract from the correctness of the response."
+        }
+      ]
+    },
+    "1-fresh": {
+      "write_lag_seconds": 100.30481743812561,
+      "answerable_lag_seconds": 142.27774214744568,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Nerovex Prism is ORV-9302-K, as documented by the Nerovex Institute on November 11, 2026 [1].",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession code 'ORV-9302-K' assigned to Nerovex Prism, which matches the reference answer. However, it includes additional information about the Nerovex Institute and a specific date (November 11, 2026) that was not requested or supported by the key facts provided. Therefore, it scores 1 for partially correct information."
+        },
+        {
+          "answer": "The newly published accession code assigned to Nerovex Prism is ORV-9302-K, as documented on November 11, 2026 [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Nerovex Prism as ORV-9302-K, which matches the reference answer. The inclusion of the date November 11, 2026, while not a key fact, does not detract from the correctness of the key fact provided."
+        }
+      ]
+    },
+    "2-fresh": {
+      "write_lag_seconds": 44.02088141441345,
+      "answerable_lag_seconds": null,
+      "probes": [
+        {
+          "answer": "The context does not provide evidence of a newly published accession code for Talvindra Prism. While [1] mentions an accession code (ORV-9303-K) assigned to Talvindra Prism, there is no indication that this code was newly published in the given passages. The only newly published accession code mentioned is ORV-9302-K for Nerovex Prism on November 11, 2026 [2]. \n\nFor Talvindra Prism, we only know:\n- It was assigned code ORV-9303-K [1]\n- It was developed by Talvindra Institute [3]\n- Its development is documented in the Orvellan record series [1]",
+          "score": 0,
+          "rationale": "The answer incorrectly states that there is no evidence of a newly published accession code for Talvindra Prism, despite the reference answer explicitly providing 'ORV-9303-K' as the correct code. The answer also introduces irrelevant information about Nerovex Prism, which is not part of the question. Therefore, the response fails to correctly identify the key fact and is scored 0."
+        },
+        {
+          "answer": "The context does not provide evidence of a newly published accession code assigned to Talvindra Prism. The only accession code mentioned for Talvindra Prism is ORV-9303-K, which was assigned by Talvindra Institute [1]. There is no indication that this code was newly published or assigned recently. Therefore, the evidence is insufficient to identify a newly published accession code for Talvindra Prism.",
+          "score": 0,
+          "rationale": "The answer incorrectly states that there is no evidence of a newly published accession code for Talvindra Prism, despite the reference answer clearly stating 'ORV-9303-K' as the correct code. The answer also introduces extraneous information about the Talvindra Institute, which is not relevant to the question. Therefore, the answer does not meet the required criteria for accuracy and completeness."
+        },
+        {
+          "answer": "The context does not provide evidence of a newly published accession code assigned to Talvindra Prism. The only accession code mentioned for Talvindra Prism is ORV-9303-K, which was assigned by Talvindra Institute [1]. There is no indication that this code was newly published or assigned recently. Therefore, the evidence is insufficient to identify a newly published accession code for Talvindra Prism.",
+          "score": 0,
+          "rationale": "The answer does not correctly identify the newly published accession code assigned to Talvindra Prism as ORV-9303-K, which is the key fact required. Instead, it incorrectly states that the evidence is insufficient, despite the reference explicitly providing the correct code. Therefore, the answer is incorrect."
+        }
+      ]
+    },
+    "3-fresh": {
+      "write_lag_seconds": 52.9053430557251,
+      "answerable_lag_seconds": 65.18479871749878,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Orquessa Prism is ORV-9304-K, as documented in the Orvellan record series by Orquessa Institute on November 11, 2026 [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Orquessa Prism as ORV-9304-K, which matches the reference answer and includes all key facts."
+        }
+      ]
+    },
+    "4-fresh": {
+      "write_lag_seconds": 51.36820721626282,
+      "answerable_lag_seconds": 68.92590141296387,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Zenvoria Prism is **ORV-9305-K**, as documented on November 11, 2026 [1].",
+          "score": 2,
+          "rationale": "The answer correctly states the newly published accession code assigned to Zenvoria Prism as ORV-9305-K, which matches the reference answer and includes all key facts."
+        }
+      ]
+    },
+    "5-fresh": {
+      "write_lag_seconds": 67.64011073112488,
+      "answerable_lag_seconds": 85.41888308525085,
+      "probes": [
+        {
+          "answer": "Based on the context, the newly published accession code assigned to Pelquorin Prism is **ORV-9306-K**, as assigned by Pelquorin Institute [1]. \n\n(Note: While the context states this was \"previously unpublished,\" the question asks for the newly published code, and this is the only accession code mentioned for Pelquorin Prism in the provided passages.)",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Pelquorin Prism as ORV-9306-K, matching the reference answer and including all key facts."
+        }
+      ]
+    },
+    "6-fresh": {
+      "write_lag_seconds": 67.13214921951294,
+      "answerable_lag_seconds": 83.63000798225403,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Morvessa Prism is ORV-9307-K, as documented in the fictional Orvellan record series [2][5]. This was assigned by Morvessa Institute on November 11, 2026, and is noted as the first publication of this code [2].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Morvessa Prism as ORV-9307-K, which matches the reference answer and includes all key facts."
+        }
+      ]
+    },
+    "7-fresh": {
+      "write_lag_seconds": 152.03811240196228,
+      "answerable_lag_seconds": 178.7024986743927,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Quentavra Prism is ORV-9308-K, as documented in the fictional Orvellan record series [1][4]. \n\n(Note: While [1] states the code was \"previously unpublished,\" the context implies it was subsequently published in the Orvellan series, given that [4] confirms Quentavra Institute's bulletin belongs to that series. No conflicting claims exist about this assignment.)",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Quentavra Prism as ORV-9308-K, which matches the reference answer. The explanation also aligns with the fictional context provided, confirming the code's publication in the Orvellan record series. All key facts are accurately included."
+        }
+      ]
+    },
+    "8-fresh": {
+      "write_lag_seconds": 59.14500331878662,
+      "answerable_lag_seconds": 85.5328471660614,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Drelvona Prism is ORV-9309-K, as documented in the Orvellan record series on November 11, 2026 [1][4]. This was the first publication of this code [1].",
+          "score": 1,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Drelvona Prism as ORV-9309-K, which matches the reference answer. However, it includes additional information about the documentation date and the first publication of the code, which were not requested or part of the key facts. Therefore, the answer is partially correct but includes extraneous details."
+        },
+        {
+          "answer": "The newly published accession code assigned to Drelvona Prism is ORV-9309-K, as documented in the Orvellan record series on November 11, 2026 [1][4]. This was the first publication of this code [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Drelvona Prism as ORV-9309-K, which matches the reference answer and includes all key facts."
+        }
+      ]
+    },
+    "9-fresh": {
+      "write_lag_seconds": 50.38708567619324,
+      "answerable_lag_seconds": 69.89997005462646,
+      "probes": [
+        {
+          "answer": "The newly published accession code assigned to Xelquira Prism is ORV-9310-K. This is evidenced by the Xelquira Institute assigning the previously unpublished accession code ORV-9310-K to Xelquira Prism [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the newly published accession code assigned to Xelquira Prism as ORV-9310-K, which matches the reference answer and includes the key fact. The explanation provided also supports the correctness of the answer."
+        }
+      ]
+    }
+  },
+  "dataset": "eval-v1",
+  "item_content_sha256": "13a4a0f75917bbf99741098f9e679c2ebdb9d6dfd918dd3ca7f09d9da5fdd85d"
+}

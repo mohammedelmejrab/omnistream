@@ -1,0 +1,719 @@
+{
+  "kind": "bench-ingest",
+  "dataset": "musique",
+  "n": 100,
+  "seed": 0,
+  "corpus": "slice",
+  "question_ids": [
+    "3hop1__9285_5188_23307",
+    "3hop1__136129_87694_124169",
+    "2hop__865961_159109",
+    "2hop__629030_56873",
+    "3hop1__321720_650651_7262",
+    "4hop3__474028_88460_30152_20999",
+    "2hop__215896_460425",
+    "3hop2__132957_133264_40768",
+    "2hop__92385_2072",
+    "2hop__554167_451128",
+    "4hop3__129456_29339_508306_70744",
+    "2hop__494659_5385",
+    "2hop__73717_653666",
+    "2hop__34594_160249",
+    "2hop__15416_58040",
+    "4hop2__567956_39078_8987_8974",
+    "3hop2__304722_230978_63959",
+    "2hop__82910_75184",
+    "3hop1__857_846_7791",
+    "2hop__386236_350892",
+    "2hop__846921_160249",
+    "2hop__161507_77849",
+    "4hop3__270458_88460_30152_20999",
+    "2hop__55463_19033",
+    "3hop1__254856_400692_51423",
+    "2hop__57638_72467",
+    "3hop1__699454_831637_91775",
+    "3hop1__691197_15840_36014",
+    "3hop2__222979_380281_40768",
+    "3hop1__622497_160088_821792",
+    "2hop__559076_55984",
+    "3hop1__857_846_7798",
+    "3hop1__617062_127905_67954",
+    "4hop3__238811_88460_30152_20999",
+    "3hop1__798544_514761_594810",
+    "2hop__10620_79092",
+    "2hop__848156_130869",
+    "3hop1__46571_87694_124169",
+    "2hop__771477_149987",
+    "2hop__50199_59409",
+    "4hop1__277409_49925_13759_736921",
+    "2hop__347_59409",
+    "2hop__57638_615257",
+    "2hop__219456_87295",
+    "2hop__478978_124498",
+    "2hop__678516_179720",
+    "2hop__128608_82341",
+    "4hop1__833841_378185_282674_759393",
+    "3hop1__632623_160713_77246",
+    "2hop__591435_51329",
+    "3hop2__855821_223623_162182",
+    "2hop__71755_463572",
+    "2hop__253612_110882",
+    "3hop1__390673_228453_10972",
+    "3hop1__313670_42197_18397",
+    "2hop__37656_160040",
+    "2hop__73069_88165",
+    "2hop__56806_7298",
+    "4hop2__161602_426860_88460_21074",
+    "3hop1__857_846_7794",
+    "2hop__5658_25002",
+    "2hop__684287_78303",
+    "3hop2__569322_467331_162182",
+    "2hop__2613_59409",
+    "2hop__353836_80026",
+    "3hop1__90327_73181_68042",
+    "3hop2__14777_8533_9331",
+    "3hop1__248929_160713_77246",
+    "4hop1__89530_624859_355213_203322",
+    "2hop__17854_17873",
+    "2hop__587048_621800",
+    "2hop__547045_131879",
+    "4hop1__47210_53706_795904_580996",
+    "3hop2__607269_467331_162182",
+    "2hop__818692_113442",
+    "2hop__72686_83769",
+    "2hop__776637_87295",
+    "3hop1__418091_15840_36002",
+    "3hop1__857241_503371_21711",
+    "2hop__632234_122868",
+    "3hop1__140514_2053_5289",
+    "2hop__403060_92763",
+    "2hop__525242_52835",
+    "2hop__50936_90973",
+    "4hop1__370129_621192_10659_59955",
+    "2hop__81682_707195",
+    "2hop__123214_22402",
+    "4hop2__161602_474028_88460_63559",
+    "2hop__73760_712629",
+    "3hop1__857_846_7713",
+    "3hop1__139787_88110_77129",
+    "2hop__797443_120537",
+    "2hop__61714_89309",
+    "2hop__665660_135481",
+    "2hop__166824_185403",
+    "3hop1__497845_629431_124169",
+    "4hop1__749065_698949_157828_162309",
+    "2hop__256553_617289",
+    "3hop1__426806_42197_18397",
+    "4hop1__788226_32392_823060_610794"
+  ],
+  "question_count": 100,
+  "unmatched_gold": 0,
+  "passage_count": 1767,
+  "group_id": "bench-musique-n100-s0",
+  "bubble_name": "Bench",
+  "published_at": "2026-01-01T00:00:00Z",
+  "credibility": 0.8,
+  "construction_started_at": 1794969835.2900777,
+  "passages": {
+    "musique-20": {
+      "runtime_id": "b13c506c4fadd11653cf95e5fb07749288d9f6d715014617becf25d28863c81e",
+      "source_id": "bench-musique-n100-s0--musique-20",
+      "injected_at": 1794969938.8169222,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 42.05932927131653,
+      "usage": {
+        "tokens": 17821,
+        "cost_usd": 0.0018613060400000003,
+        "calls": 19,
+        "cost_reported_calls": 19,
+        "prompt_tokens": 15569,
+        "completion_tokens": 2252,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-21": {
+      "runtime_id": "3d631aa6bfbf57b6718d17735ee7ff1fd57fb963a206f57888d102f9cd76ef51",
+      "source_id": "bench-musique-n100-s0--musique-21",
+      "injected_at": 1794969980.8858852,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 7.0172438621521,
+      "usage": {
+        "tokens": 11795,
+        "cost_usd": 0.0009723220000000001,
+        "calls": 7,
+        "cost_reported_calls": 7,
+        "prompt_tokens": 11066,
+        "completion_tokens": 729,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-22": {
+      "runtime_id": "1a3a283ff547294d37f5f00e791cac5e5989af5c7130c4e29572f996c1ede35a",
+      "source_id": "bench-musique-n100-s0--musique-22",
+      "injected_at": 1794969987.9115477,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 37.40934205055237,
+      "usage": {
+        "tokens": 26385,
+        "cost_usd": 0.0034872079199999993,
+        "calls": 23,
+        "cost_reported_calls": 23,
+        "prompt_tokens": 24831,
+        "completion_tokens": 1554,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-23": {
+      "runtime_id": "5d25bec01719dc7d6830bdfe06a9c52d53a0d97797994f5d96f6583771f900a1",
+      "source_id": "bench-musique-n100-s0--musique-23",
+      "injected_at": 1794970025.329378,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 18.65996551513672,
+      "usage": {
+        "tokens": 24638,
+        "cost_usd": 0.0030150686000000007,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 23039,
+        "completion_tokens": 1599,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-24": {
+      "runtime_id": "7b64fc929cfe4dd2f6aa9021bfebde16bec38ecfd8113109337f0eda1ab33e1a",
+      "source_id": "bench-musique-n100-s0--musique-24",
+      "injected_at": 1794970043.9993649,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 30.739282846450806,
+      "usage": {
+        "tokens": 17090,
+        "cost_usd": 0.0030312392,
+        "calls": 13,
+        "cost_reported_calls": 13,
+        "prompt_tokens": 16277,
+        "completion_tokens": 813,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-25": {
+      "runtime_id": "a103bd8a7b88f226f5ae7b2ed8b926e816f893e6018ee3ab81d1f93adbf5f10d",
+      "source_id": "bench-musique-n100-s0--musique-25",
+      "injected_at": 1794970074.748007,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 3.972115993499756,
+      "usage": {
+        "tokens": 7316,
+        "cost_usd": 0.000827995,
+        "calls": 4,
+        "cost_reported_calls": 4,
+        "prompt_tokens": 7013,
+        "completion_tokens": 303,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-26": {
+      "runtime_id": "5c62442472201127ce85215e387651672d89bd87007dfe3b0e5b168db7436f73",
+      "source_id": "bench-musique-n100-s0--musique-26",
+      "injected_at": 1794970078.731444,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 28.634424209594727,
+      "usage": {
+        "tokens": 40298,
+        "cost_usd": 0.0046676140000000005,
+        "calls": 24,
+        "cost_reported_calls": 24,
+        "prompt_tokens": 36645,
+        "completion_tokens": 3653,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-27": {
+      "runtime_id": "f9dcddabfa1d654e622c176d3569920a36ee1eea212b292e110928a9ba5c53ca",
+      "source_id": "bench-musique-n100-s0--musique-27",
+      "injected_at": 1794970107.3751593,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 30.855934381484985,
+      "usage": {
+        "tokens": 34745,
+        "cost_usd": 0.003990613400000001,
+        "calls": 23,
+        "cost_reported_calls": 23,
+        "prompt_tokens": 31983,
+        "completion_tokens": 2762,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-28": {
+      "runtime_id": "6c52bf95b2d7b290ab4ec0cb2fd14fc8aa7540d825f0f67bfd84879e38dfe07b",
+      "source_id": "bench-musique-n100-s0--musique-28",
+      "injected_at": 1794970138.2452502,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 23.406221866607666,
+      "usage": {
+        "tokens": 31919,
+        "cost_usd": 0.0042326066,
+        "calls": 17,
+        "cost_reported_calls": 17,
+        "prompt_tokens": 29823,
+        "completion_tokens": 2096,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-29": {
+      "runtime_id": "fe5bd75ef33da59b36776b2fd7515ba99169963f95e368658c807f54cc6f45b1",
+      "source_id": "bench-musique-n100-s0--musique-29",
+      "injected_at": 1794970161.6604867,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 21.28789258003235,
+      "usage": {
+        "tokens": 29306,
+        "cost_usd": 0.00325243864,
+        "calls": 16,
+        "cost_reported_calls": 16,
+        "prompt_tokens": 27387,
+        "completion_tokens": 1919,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-30": {
+      "runtime_id": "146b38dd4e6b9ab10ef954cee9b477da671f663b99618a8da250baab0d473f71",
+      "source_id": "bench-musique-n100-s0--musique-30",
+      "injected_at": 1794970182.9543855,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 8.147348880767822,
+      "usage": {
+        "tokens": 16143,
+        "cost_usd": 0.0014459980000000002,
+        "calls": 7,
+        "cost_reported_calls": 7,
+        "prompt_tokens": 15410,
+        "completion_tokens": 733,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-31": {
+      "runtime_id": "8261e89ffdb18df6dcdac9284a67eeb61472a6295f9a938ff0d2daeccb66b8fd",
+      "source_id": "bench-musique-n100-s0--musique-31",
+      "injected_at": 1794970191.1084945,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 26.420836210250854,
+      "usage": {
+        "tokens": 40378,
+        "cost_usd": 0.00419400876,
+        "calls": 29,
+        "cost_reported_calls": 29,
+        "prompt_tokens": 37639,
+        "completion_tokens": 2739,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-32": {
+      "runtime_id": "236d6abaad758160f292bdbe59c4622017193e1702fcd53845dae4dbabe01c77",
+      "source_id": "bench-musique-n100-s0--musique-32",
+      "injected_at": 1794970217.537621,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 8.289355754852295,
+      "usage": {
+        "tokens": 18461,
+        "cost_usd": 0.002208528,
+        "calls": 8,
+        "cost_reported_calls": 8,
+        "prompt_tokens": 17410,
+        "completion_tokens": 1051,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-33": {
+      "runtime_id": "208a099701a237f7311b4e832619df70a3cf3453e4c14c96570c71847132462d",
+      "source_id": "bench-musique-n100-s0--musique-33",
+      "injected_at": 1794970225.8341644,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 18.385616779327393,
+      "usage": {
+        "tokens": 27176,
+        "cost_usd": 0.00294882688,
+        "calls": 14,
+        "cost_reported_calls": 14,
+        "prompt_tokens": 25667,
+        "completion_tokens": 1509,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-34": {
+      "runtime_id": "32b7fa9a44d430948f54f6845fa496ae9fbb217a51b863528c5e0e592666d745",
+      "source_id": "bench-musique-n100-s0--musique-34",
+      "injected_at": 1794970244.226769,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 14.765082597732544,
+      "usage": {
+        "tokens": 19174,
+        "cost_usd": 0.0026383700000000006,
+        "calls": 9,
+        "cost_reported_calls": 9,
+        "prompt_tokens": 18292,
+        "completion_tokens": 882,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-35": {
+      "runtime_id": "46470b313d9d33e9b6571432b72c1ecb1c03025f3517e2d92f52ba052aa93ebe",
+      "source_id": "bench-musique-n100-s0--musique-35",
+      "injected_at": 1794970258.9998603,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 20.16965103149414,
+      "usage": {
+        "tokens": 23982,
+        "cost_usd": 0.002333647,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 22512,
+        "completion_tokens": 1470,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-36": {
+      "runtime_id": "600fa9835f09228678da61bf912f1a97aecfabfbf13b65d84f31edd0347be018",
+      "source_id": "bench-musique-n100-s0--musique-36",
+      "injected_at": 1794970279.177012,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 10.992825269699097,
+      "usage": {
+        "tokens": 21781,
+        "cost_usd": 0.0017096713999999998,
+        "calls": 9,
+        "cost_reported_calls": 9,
+        "prompt_tokens": 20692,
+        "completion_tokens": 1089,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-37": {
+      "runtime_id": "f7ff2b439e623a3bb85d531dacb0e862906c1420f70d6bdc19bea5c7987c74c4",
+      "source_id": "bench-musique-n100-s0--musique-37",
+      "injected_at": 1794970290.1763446,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 11.919204950332642,
+      "usage": {
+        "tokens": 15697,
+        "cost_usd": 0.002003601,
+        "calls": 7,
+        "cost_reported_calls": 7,
+        "prompt_tokens": 15187,
+        "completion_tokens": 510,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-38": {
+      "runtime_id": "5e127cdfa6af9e5cfb5aacd1a90125123be1fa21f7ace052dc77ab1ea65d94da",
+      "source_id": "bench-musique-n100-s0--musique-38",
+      "injected_at": 1794970302.1037457,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 5.6883673667907715,
+      "usage": {
+        "tokens": 16948,
+        "cost_usd": 0.0020569936,
+        "calls": 8,
+        "cost_reported_calls": 8,
+        "prompt_tokens": 16170,
+        "completion_tokens": 778,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-39": {
+      "runtime_id": "4ffe95d82d5cd69add3abee149c63e0d08d921efdfce2acc141d96c4a6c3109a",
+      "source_id": "bench-musique-n100-s0--musique-39",
+      "injected_at": 1794970307.8015888,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 26.029003143310547,
+      "usage": {
+        "tokens": 37866,
+        "cost_usd": 0.0033210577999999995,
+        "calls": 29,
+        "cost_reported_calls": 29,
+        "prompt_tokens": 35554,
+        "completion_tokens": 2312,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-40": {
+      "runtime_id": "3ee3f0d0bf39b0f15506851b42170411c2eab7cc72fb95e48bef14c7f8cf28bc",
+      "source_id": "bench-musique-n100-s0--musique-40",
+      "injected_at": 1794970333.8389006,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 15.158348083496094,
+      "usage": {
+        "tokens": 14426,
+        "cost_usd": 0.0022817740000000003,
+        "calls": 9,
+        "cost_reported_calls": 9,
+        "prompt_tokens": 13960,
+        "completion_tokens": 466,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-41": {
+      "runtime_id": "20664f9af4ee47228abba6e8a97446e64413de3ce5235f841a987cd28cf6a996",
+      "source_id": "bench-musique-n100-s0--musique-41",
+      "injected_at": 1794970349.0042505,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 20.61401605606079,
+      "usage": {
+        "tokens": 21667,
+        "cost_usd": 0.00248532008,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 20708,
+        "completion_tokens": 959,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-42": {
+      "runtime_id": "5b8b29cf1a7d6b305f3403763826c7c7afc19363aea8275f34a05a46c9c338a1",
+      "source_id": "bench-musique-n100-s0--musique-42",
+      "injected_at": 1794970369.627775,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 29.045264959335327,
+      "usage": {
+        "tokens": 38397,
+        "cost_usd": 0.004796714,
+        "calls": 22,
+        "cost_reported_calls": 22,
+        "prompt_tokens": 36046,
+        "completion_tokens": 2351,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-45": {
+      "runtime_id": "456bd978c6845f196d5bfaf89a69c7e011df5f98ff973e62b542d801ce2876b1",
+      "source_id": "bench-musique-n100-s0--musique-45",
+      "injected_at": 1794970398.6805508,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 21.730804204940796,
+      "usage": {
+        "tokens": 28231,
+        "cost_usd": 0.003045114999999999,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 26629,
+        "completion_tokens": 1602,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-46": {
+      "runtime_id": "4324756d85492bc89536a67376a6498a93aeab514700db746f3e95ae480ac66d",
+      "source_id": "bench-musique-n100-s0--musique-46",
+      "injected_at": 1794970420.4189742,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 5.437861680984497,
+      "usage": {
+        "tokens": 10770,
+        "cost_usd": 0.000565309,
+        "calls": 4,
+        "cost_reported_calls": 4,
+        "prompt_tokens": 10625,
+        "completion_tokens": 145,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-47": {
+      "runtime_id": "e01964ab35ac57d60ef487286ce9471d7c3d39b156b5cca49ade4630e293df2a",
+      "source_id": "bench-musique-n100-s0--musique-47",
+      "injected_at": 1794970425.8670774,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 29.09571933746338,
+      "usage": {
+        "tokens": 24518,
+        "cost_usd": 0.0033032267999999997,
+        "calls": 17,
+        "cost_reported_calls": 17,
+        "prompt_tokens": 23071,
+        "completion_tokens": 1447,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-50": {
+      "runtime_id": "e31d687dae25cdfde685ce36e655ba8d94d7f7271d0b805095674c4921ada142",
+      "source_id": "bench-musique-n100-s0--musique-50",
+      "injected_at": 1794970454.9710226,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 18.896356105804443,
+      "usage": {
+        "tokens": 30002,
+        "cost_usd": 0.004130209520000001,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 27837,
+        "completion_tokens": 2165,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-51": {
+      "runtime_id": "a2faa42abd6cc351a9ca4d955a89fe841c47df6c96e4386b9e626c9c32451716",
+      "source_id": "bench-musique-n100-s0--musique-51",
+      "injected_at": 1794970473.8763113,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 19.849369764328003,
+      "usage": {
+        "tokens": 20404,
+        "cost_usd": 0.00216086104,
+        "calls": 10,
+        "cost_reported_calls": 10,
+        "prompt_tokens": 19433,
+        "completion_tokens": 971,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-52": {
+      "runtime_id": "2d5f86574076704b15bceb1c6d18cc3428150e800af6c0015d1cc02a89c682c2",
+      "source_id": "bench-musique-n100-s0--musique-52",
+      "injected_at": 1794970493.7311919,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 33.233948945999146,
+      "usage": {
+        "tokens": 55973,
+        "cost_usd": 0.008102394959999999,
+        "calls": 30,
+        "cost_reported_calls": 30,
+        "prompt_tokens": 51690,
+        "completion_tokens": 4283,
+        "reasoning_tokens": 0
+      }
+    },
+    "musique-53": {
+      "runtime_id": "615340a2d5a77890f00ea2feecc24e1e3c2523a4f2acc264aa79d9d8248267bd",
+      "source_id": "bench-musique-n100-s0--musique-53",
+      "injected_at": 1794970526.9724357,
+      "status": "written",
+      "bubbles": [
+        "bench-musique-n100-s0"
+      ],
+      "route_confidence": 1.0,
+      "write_lag_seconds": 29.096837520599365,
+      "usage": {
+        "tokens": 25061,
+        "cost_usd": 0.0022105541999999996,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 23820,
+        "completion_tokens": 1241,
+        "reasoning_tokens": 0
+      }
+    }
+  }
+}

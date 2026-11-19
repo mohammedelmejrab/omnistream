@@ -1,0 +1,377 @@
+Run 13: 0 completed pairs; checkpoint C:\Users\mehme\omnistream-integrated\data\snapshots\eval-v2\runs\13
+Contamination check 10/60
+Contamination check 20/60
+Contamination check 30/60
+Contamination check 40/60
+Contamination check 50/60
+Contamination check 60/60
+external v2-q01/60: correctness=None recall@10=1.000
+external v2-q03/60: correctness=None recall@10=0.500
+external v2-q05/60: correctness=None recall@10=0.500
+external v2-q04/60: correctness=0 recall@10=0.000
+external v2-q07/60: correctness=None recall@10=1.000
+external v2-q02/60: correctness=None recall@10=1.000
+external v2-q08/60: correctness=None recall@10=1.000
+external v2-q06/60: correctness=None recall@10=1.000
+external v2-q10/60: correctness=None recall@10=0.500
+external v2-q09/60: correctness=None recall@10=1.000
+external v2-q11/60: correctness=None recall@10=0.333
+external v2-q12/60: correctness=0 recall@10=0.500
+external v2-q14/60: correctness=None recall@10=1.000
+external v2-q13/60: correctness=None recall@10=1.000
+external v2-q15/60: correctness=None recall@10=1.000
+external v2-q16/60: correctness=None recall@10=1.000
+external v2-q18/60: correctness=None recall@10=0.500
+external v2-q17/60: correctness=None recall@10=0.500
+external v2-q19/60: correctness=None recall@10=0.500
+external v2-q20/60: correctness=None recall@10=1.000
+external v2-q21/60: correctness=None recall@10=1.000
+external v2-q22/60: correctness=None recall@10=1.000
+external v2-q23/60: correctness=None recall@10=0.000
+external v2-q24/60: correctness=None recall@10=0.500
+external v2-q26/60: correctness=None recall@10=0.500
+external v2-q25/60: correctness=None recall@10=0.000
+external v2-q27/60: correctness=None recall@10=1.000
+external v2-q28/60: correctness=None recall@10=1.000
+external v2-q30/60: correctness=None recall@10=1.000
+external v2-q29/60: correctness=None recall@10=1.000
+external v2-q31/60: correctness=None recall@10=0.500
+external v2-q32/60: correctness=None recall@10=0.000
+external v2-q34/60: correctness=None recall@10=1.000
+external v2-q33/60: correctness=None recall@10=0.500
+external v2-q36/60: correctness=None recall@10=1.000
+external v2-q35/60: correctness=None recall@10=1.000
+external v2-q37/60: correctness=None recall@10=0.500
+external v2-q38/60: correctness=None recall@10=0.000
+external v2-q40/60: correctness=None recall@10=1.000
+external v2-q39/60: correctness=None recall@10=1.000
+external v2-q42/60: correctness=None recall@10=0.500
+external v2-q41/60: correctness=None recall@10=1.000
+external v2-q44/60: correctness=None recall@10=1.000
+external v2-q43/60: correctness=None recall@10=0.500
+external v2-q46/60: correctness=None recall@10=1.000
+external v2-q45/60: correctness=None recall@10=1.000
+external v2-q47/60: correctness=None recall@10=0.500
+external v2-q48/60: correctness=None recall@10=0.500
+external v2-q49/60: correctness=None recall@10=1.000
+external v2-q50/60: correctness=None recall@10=1.000
+external v2-q51/60: correctness=None recall@10=1.000
+external v2-q52/60: correctness=None recall@10=0.500
+external v2-q53/60: correctness=None recall@10=0.500
+external v2-q54/60: correctness=None recall@10=1.000
+external v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+external v2-q55/60: correctness=None recall@10=1.000
+external v2-q58/60: correctness=None recall@10=0.500
+external v2-q57/60: correctness=None recall@10=0.500
+external v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+external v2-q60/60: correctness=None recall@10=1.000
+classic v2-q03/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q01/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q04/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q05/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q07/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q02/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q06/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q08/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q10/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q09/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q11/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q12/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+classic v2-q13/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q14/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q15/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q16/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+classic v2-q18/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q17/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q20/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q19/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q22/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q21/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q23/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q24/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q25/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q26/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q27/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q28/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q29/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q30/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q32/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q31/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q34/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q33/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q36/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q35/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q37/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q38/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q40/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q39/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q42/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q41/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q44/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q43/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q45/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q46/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q48/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q47/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+classic v2-q49/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q50/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q52/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q51/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q54/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q53/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q55/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q57/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q58/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q60/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q01/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q03/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q04/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q05/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q07/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q02/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q08/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q06/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q09/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q10/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q12/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q11/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q14/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q13/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q16/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q15/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q18/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q17/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q20/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q19/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q21/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q22/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q24/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q23/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q26/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q25/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q28/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q27/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q30/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q29/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q31/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q32/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q34/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q33/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q36/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q35/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q38/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q37/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q40/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q39/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q42/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q41/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q44/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q43/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q46/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q45/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q48/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q47/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q49/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q50/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q51/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q52/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q53/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q54/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q55/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+graphiti v2-q58/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q57/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+graphiti v2-q60/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q03/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q01/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q05/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q04/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q07/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q02/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q06/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q08/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q10/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q09/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q12/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q11/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q13/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q14/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q15/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q16/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q18/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q17/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q19/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q20/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q21/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q22/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q23/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q24/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q26/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q25/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q28/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q27/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q29/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q30/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q31/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q32/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q34/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q33/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q36/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q35/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q38/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q37/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q40/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q39/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q42/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q41/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q43/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q44/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q45/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q46/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q47/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q48/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q49/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q50/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q51/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q52/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own v2-q53/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q54/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q55/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q58/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q57/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q60/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q01/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q03/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q04/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q05/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q07/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q02/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q06/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q08/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q10/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q09/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q12/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q11/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q14/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q13/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q16/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q15/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q18/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q17/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q20/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q19/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q22/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q21/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q24/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q23/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q26/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q25/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q28/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q27/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q30/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q29/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q32/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q31/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q34/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q33/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q35/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q36/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q37/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q38/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q40/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q39/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+own+subagents v2-q41/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q42/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q44/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q43/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q45/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q46/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q47/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q48/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q49/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q50/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q52/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q51/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q53/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q54/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q55/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q58/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q57/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+own+subagents v2-q60/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q01/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q03/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q04/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q05/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q02/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q07/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q08/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q06/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q10/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q09/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q12/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q11/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q14/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q13/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q15/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q16/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q18/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q17/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q19/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q20/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q21/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q22/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q23/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q24/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q26/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q25/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q28/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q27/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q29/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q30/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q32/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q31/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q33/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q34/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q35/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q36/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q37/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q38/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q40/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q39/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - This request requires more credits, or fewer max_tokens. You requested up to 131072 tokens, but can only afford 47. To increase, visit https://openrouter.ai/workspaces/default/keys/43f6ddd05f5af07b6b767c11c1a3173a35e5c8eaba725c206ca5cfb917487971 and adjust the key's total limit
+classic+subagents v2-q41/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q42/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q44/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q43/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q45/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q46/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q47/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q48/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q50/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q49/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q51/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q52/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q53/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q54/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q55/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q56/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q58/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q57/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q59/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+classic+subagents v2-q60/60: correctness=0 recall@10=0.000 ERROR APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+Evaluation failed: APIStatusError: Error code: 402 - Insufficient credits. Add more using https://openrouter.ai/settings/credits
+| Configuration | recall_at_10 | mrr | hits_at_1 | correctness | routing_recall | routing_precision | citation_faithfulness | citation_faithfulness_micro | correctness_errors | faithfulness_errors | zero_citation_answers | abstentions | changed_fact_accuracy | latency_seconds | tokens | cost_usd | judge_tokens | judge_cost_usd | errors |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| external | 0.7056 | 0.8333 | 0.7833 | 0 | N/A | N/A | 0.0000 | 0.0000 | 56 | 57 | 2 | 2 | 0.0000 | 1.9480 | 25198 | 0.0019 | 1121 | 0.0004 | 59 |
+| classic | 0.0000 | 0.0000 | 0.0000 | 0 | 0.0000 | 0.0000 | 0.0000 | N/A | 0 | 0 | 60 | 60 | 0.0000 | 0.0481 | N/A | N/A | N/A | N/A | 60 |
+| graphiti | 0.0000 | 0.0000 | 0.0000 | 0 | 0.0000 | 0.0000 | 0.0000 | N/A | 0 | 0 | 60 | 60 | 0.0000 | 0.0508 | N/A | N/A | N/A | N/A | 60 |
+| own | 0.0000 | 0.0000 | 0.0000 | 0 | 0.0000 | 0.0000 | 0.0000 | N/A | 0 | 0 | 60 | 60 | 0.0000 | 0.0456 | N/A | N/A | N/A | N/A | 60 |
+| own+subagents | 0.0000 | 0.0000 | 0.0000 | 0 | 0.0000 | 0.0000 | 0.0000 | N/A | 0 | 0 | 60 | 60 | 0.0000 | 0.0476 | N/A | N/A | N/A | N/A | 60 |
+| classic+subagents | 0.0000 | 0.0000 | 0.0000 | 0 | 0.0000 | 0.0000 | 0.0000 | N/A | 0 | 0 | 60 | 60 | 0.0000 | 0.0439 | N/A | N/A | N/A | N/A | 60 |
+Report: C:\Users\mehme\omnistream-integrated\docs\eval\eval-v2-20261113T111606165577Z.md

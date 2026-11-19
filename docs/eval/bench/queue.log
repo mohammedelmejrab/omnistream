@@ -1,0 +1,14 @@
+2026-11-19T10:32:54 hotpotqa ingest finished
+2026-11-19T10:32:54 hotpotqa ingest pass 1
+2026-11-19T10:38:46 hotpotqa ingest started (PID 30740)
+2026-11-19T10:38:46 musique QA resume
+2026-11-19T12:40:49 waiting on running hotpotqa ingest (PID 30740)
+2026-11-19T12:40:49 musique QA resume
+2026-11-19T12:53:37 waiting on running hotpotqa ingest (PID 30740)
+2026-11-19T12:53:37 musique QA resume
+2026-11-19T14:25:31 musique QA exit 0
+2026-11-19T14:25:31 2wiki QA resume
+2026-11-19T15:42:37 2wiki QA exit 0
+2026-11-19T15:42:37 hotpotqa ingest finished
+2026-11-19T15:42:37 hotpotqa QA start
+2026-11-19T17:09:03 hotpotqa QA exit 0

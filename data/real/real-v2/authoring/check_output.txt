@@ -1,0 +1,11 @@
+[info] test freshness items published 2026-11-09 .. 2026-11-12
+[info] dev freshness items published 2026-11-10 .. 2026-11-12
+questions: 87  test/single=15  test/multi_hop=20  test/time_sensitive=15  test/freshness=10  dev/single=8  dev/multi_hop=8  dev/time_sensitive=6  dev/freshness=5
+alias bridges: test=6 dev=3
+gold items: test=69 dev=32 shared=0
+routing labels: 80 {'news': 27, 'finance': 27, 'research': 26}; differ from hint: 5
+uniqueness search: 87 questions searched; 51 have answer tokens in non-gold items (see table / notes)
+WARN count dev/multi_hop: 8 (target 10) -> shortfall 2
+WARN count dev/time_sensitive: 6 (target 7) -> shortfall 1
+table written: data/real/real-v2/authoring/selfcheck_table.md
+RESULT: PASS (0 failures, 2 warnings)

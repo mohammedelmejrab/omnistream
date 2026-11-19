@@ -1,0 +1,5 @@
+{
+  "url": "https://ir.amd.com/robots.txt",
+  "status": 200,
+  "body": "User-agent: *\r\nDisallow: /form-submit\r\nSitemap: https://ir.amd.com/sitemap.xml"
+}

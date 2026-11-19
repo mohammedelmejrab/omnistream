@@ -1,0 +1,92 @@
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 28/201 [00:00<00:00, 247.36it/s]Loading weights:  26%|██▋       | 53/201 [00:00<00:00, 238.66it/s]Loading weights:  39%|███▉      | 78/201 [00:00<00:00, 242.88it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 578.81it/s]
+Could not reach the Hub (Cannot reach https://huggingface.co/api/models/BAAI/bge-small-en-v1.5: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'BAAI/bge-small-en-v1.5'.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  43%|████▎     | 85/199 [00:00<00:00, 828.77it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1849.71it/s]
+v2-q01
+v2-q03
+v2-q04
+v2-q05
+v2-q07
+v2-q02
+v2-q06
+v2-q08
+v2-q09
+v2-q10
+v2-q11
+v2-q12
+v2-q13
+v2-q14
+v2-q15
+v2-q16
+v2-q17
+v2-q18
+v2-q19
+v2-q20
+v2-q21
+v2-q22
+v2-q23
+v2-q24
+v2-q25
+v2-q26
+v2-q27
+v2-q28
+v2-q29
+v2-q30
+v2-q31
+v2-q32
+v2-q33
+v2-q34
+v2-q35
+v2-q36
+v2-q37
+v2-q38
+v2-q39
+v2-q40
+v2-q41
+v2-q42
+v2-q43
+v2-q44
+v2-q45
+v2-q46
+v2-q47
+v2-q48
+v2-q49
+v2-q50
+v2-q51
+v2-q52
+v2-q53
+v2-q54
+v2-q55
+v2-q56
+v2-q57
+v2-q58
+v2-q59
+v2-q60
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 633, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\mehme\\AppData\\Local\\Temp\\tmphefeqd2v\\chroma\\chroma.sqlite3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\diagnostics\own_fixes_round5.py", line 317, in <module>
+    main()
+  File "C:\Users\mehme\omnistream-integrated\src\omnistream\eval\diagnostics\own_fixes_round5.py", line 295, in main
+    TemporaryDirectory() as tmp,
+    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 950, in __exit__
+    self.cleanup()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 954, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 635, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 909, in onexc
+    _os.unlink(path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\mehme\\AppData\\Local\\Temp\\tmphefeqd2v\\chroma\\chroma.sqlite3'

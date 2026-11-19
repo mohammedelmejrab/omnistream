@@ -1,0 +1,222 @@
+[
+  {
+    "item": "0-recall",
+    "discriminator": "brake seal",
+    "entities": [],
+    "source_facts": [],
+    "classification": "entity missing"
+  },
+  {
+    "item": "1-recall",
+    "discriminator": "coolant valve",
+    "entities": [
+      {
+        "id": "0f3833a7-e437-49f5-b0d4-83b3484585e0",
+        "name": "defective coolant valve",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "247d4dcd85034ab4bd8afa839545ef2a",
+        "aliases": []
+      }
+    ],
+    "source_facts": [
+      {
+        "reference_time": "2026-09-12 12:00:00+00:00",
+        "fact": "Inspectors identified a defective coolant valve in the recalled vehicle modules.",
+        "item_id": "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+        "source_count": 1,
+        "source_node_uuid": "d7237cf4-704f-4c4b-bdbb-6c6216e27dcf",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:39:45.694661+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "658afecb-6918-418b-88ad-1952be083414",
+        "source_url": "https://fictional-v2.invalid/1/recall?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-1-recall"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060"
+        ],
+        "name": "CONTAINS",
+        "target_node_uuid": "0f3833a7-e437-49f5-b0d4-83b3484585e0",
+        "credibility": 0.92,
+        "published_at": "2026-09-12 12:00:00+00:00",
+        "episodes": [
+          "aff21163-7967-4922-9dde-16f3451f6c22"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-09-12 12:00:00+00:00"
+      }
+    ],
+    "classification": "connected"
+  },
+  {
+    "item": "2-recall",
+    "discriminator": "battery latch",
+    "entities": [],
+    "source_facts": [],
+    "classification": "entity missing"
+  },
+  {
+    "item": "3-recall",
+    "discriminator": "sensor housing",
+    "entities": [],
+    "source_facts": [],
+    "classification": "entity missing"
+  },
+  {
+    "item": "4-recall",
+    "discriminator": "pressure relay",
+    "entities": [
+      {
+        "id": "08bad194-9dfc-42ca-b13f-249688749c7c",
+        "name": "defective pressure relay",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "c78de3b2358542f7aa24af27e75d84dd",
+        "aliases": []
+      }
+    ],
+    "source_facts": [
+      {
+        "reference_time": "2026-09-12 12:00:00+00:00",
+        "fact": "Vespergate Works identified a defective pressure relay in its vehicle modules.",
+        "item_id": "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+        "source_count": 1,
+        "source_node_uuid": "537a6f0f-d4b6-4036-8527-8473db245f7d",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:43:50.239582+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "23d9d803-0326-48cf-b122-9a58e0bd0c0f",
+        "source_url": "https://fictional-v2.invalid/4/recall?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-4-recall"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919"
+        ],
+        "name": "IDENTIFIED",
+        "target_node_uuid": "08bad194-9dfc-42ca-b13f-249688749c7c",
+        "credibility": 0.92,
+        "published_at": "2026-09-12 12:00:00+00:00",
+        "episodes": [
+          "5b18b059-be5b-40f4-9b3b-51896d5cb7de"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-09-12 12:00:00+00:00"
+      }
+    ],
+    "classification": "connected"
+  },
+  {
+    "item": "5-recall",
+    "discriminator": "steering pin",
+    "entities": [
+      {
+        "id": "c690c3e3-cb0c-4361-8853-e511e5ec9d7d",
+        "name": "steering pin",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "76a8ccab1502419f85a1fff788830d92",
+        "aliases": []
+      }
+    ],
+    "source_facts": [],
+    "classification": "fact missing"
+  },
+  {
+    "item": "6-recall",
+    "discriminator": "power connector",
+    "entities": [
+      {
+        "id": "b8e9845f-44c4-41a2-9b56-50005f01a0d9",
+        "name": "power connector",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "869da6ba503644e5a7a8328bc7a7a32a",
+        "aliases": []
+      }
+    ],
+    "source_facts": [],
+    "classification": "fact missing"
+  },
+  {
+    "item": "7-recall",
+    "discriminator": "axle collar",
+    "entities": [
+      {
+        "id": "be0ba39f-452a-4e7d-854b-d2210a9a23eb",
+        "name": "axle collar",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "2b744460046a472d90d09525f905b1d5",
+        "aliases": []
+      }
+    ],
+    "source_facts": [],
+    "classification": "fact missing"
+  },
+  {
+    "item": "8-recall",
+    "discriminator": "motor bearing",
+    "entities": [],
+    "source_facts": [],
+    "classification": "entity missing"
+  },
+  {
+    "item": "9-recall",
+    "discriminator": "control fuse",
+    "entities": [
+      {
+        "id": "d768893b-530e-4f86-b7fc-9b88b296d663",
+        "name": "control fuse",
+        "type": "Product",
+        "bubble": "eval-v2-news",
+        "global_id": "0dc7ae759d09456daab77aab629bb6b7",
+        "aliases": []
+      }
+    ],
+    "source_facts": [
+      {
+        "reference_time": "2026-09-12 12:00:00+00:00",
+        "fact": "The vehicle modules from Ravenspire Instruments contain a defective control fuse.",
+        "item_id": "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f",
+        "source_count": 1,
+        "source_node_uuid": "d7237cf4-704f-4c4b-bdbb-6c6216e27dcf",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:52:18.255137+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "b3ffb464-659d-4962-9c2d-be6bbba1debd",
+        "source_url": "https://fictional-v2.invalid/9/recall?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-9-recall"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f"
+        ],
+        "name": "CONTAINS",
+        "target_node_uuid": "d768893b-530e-4f86-b7fc-9b88b296d663",
+        "credibility": 0.92,
+        "published_at": "2026-09-12 12:00:00+00:00",
+        "episodes": [
+          "e7f43dd8-4044-402f-b418-bcc0d365de97"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-09-12 12:00:00+00:00"
+      }
+    ],
+    "classification": "connected"
+  }
+]

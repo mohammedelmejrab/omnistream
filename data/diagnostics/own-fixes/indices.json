@@ -1,0 +1,458 @@
+[
+  {
+    "name": "community_group_id",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Community"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "community_name",
+    "type": "FULLTEXT",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Community"
+    ],
+    "properties": [
+      "name",
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "community_uuid",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Community"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "created_at_edge_index",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "created_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "created_at_entity_index",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "created_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "created_at_episodic_index",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Episodic"
+    ],
+    "properties": [
+      "created_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "edge_name_and_fact",
+    "type": "FULLTEXT",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "name",
+      "fact",
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "entity_group_id",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "entity_name_embedding",
+    "type": "VECTOR",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "name_embedding"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "entity_name_key",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "name_key"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "entity_uuid",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "episode_content",
+    "type": "FULLTEXT",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Episodic"
+    ],
+    "properties": [
+      "content",
+      "source",
+      "source_description",
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "episode_group_id",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Episodic"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "episode_uuid",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Episodic"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "expired_at_edge_index",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "expired_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "fact_embedding",
+    "type": "VECTOR",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "fact_embedding"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "global_entity_name_embedding",
+    "type": "VECTOR",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "GlobalEntity"
+    ],
+    "properties": [
+      "name_embedding"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "global_entity_uuid",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "GlobalEntity"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "has_episode_group_id",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "HAS_EPISODE"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "has_episode_uuid",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "HAS_EPISODE"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "has_member_uuid",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "HAS_MEMBER"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "index_343aff4e",
+    "type": "LOOKUP",
+    "entityType": "NODE",
+    "labelsOrTypes": null,
+    "properties": null,
+    "state": "ONLINE"
+  },
+  {
+    "name": "index_f7700477",
+    "type": "LOOKUP",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": null,
+    "properties": null,
+    "state": "ONLINE"
+  },
+  {
+    "name": "invalid_at_edge_index",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "invalid_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "mention_group_id",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "MENTIONS"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "mention_uuid",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "MENTIONS"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "name_edge_index",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "name"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "name_entity_index",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "name"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "next_episode_group_id",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "NEXT_EPISODE"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "next_episode_uuid",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "NEXT_EPISODE"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "node_name_and_summary",
+    "type": "FULLTEXT",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Entity"
+    ],
+    "properties": [
+      "name",
+      "summary",
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "relation_group_id",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "relation_uuid",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "saga_group_id",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Saga"
+    ],
+    "properties": [
+      "group_id"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "saga_name",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Saga"
+    ],
+    "properties": [
+      "name"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "saga_uuid",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Saga"
+    ],
+    "properties": [
+      "uuid"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "valid_at_edge_index",
+    "type": "RANGE",
+    "entityType": "RELATIONSHIP",
+    "labelsOrTypes": [
+      "RELATES_TO"
+    ],
+    "properties": [
+      "valid_at"
+    ],
+    "state": "ONLINE"
+  },
+  {
+    "name": "valid_at_episodic_index",
+    "type": "RANGE",
+    "entityType": "NODE",
+    "labelsOrTypes": [
+      "Episodic"
+    ],
+    "properties": [
+      "valid_at"
+    ],
+    "state": "ONLINE"
+  }
+]

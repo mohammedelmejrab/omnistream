@@ -1,0 +1,5 @@
+{
+  "url": "https://research.google/robots.txt",
+  "status": 200,
+  "body": "User-Agent: *\nAllow: /\n\nSitemap: https://research.google/sitemap.xml"
+}

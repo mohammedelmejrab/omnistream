@@ -1,0 +1,5 @@
+{
+  "url": "https://news.samsung.com/robots.txt",
+  "status": 200,
+  "body": "User-agent: *\nAllow: /"
+}

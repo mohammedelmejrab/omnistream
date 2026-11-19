@@ -1,0 +1,5 @@
+{
+  "url": "https://search.cnbc.com/robots.txt",
+  "status": 200,
+  "body": "\n#\n# robots.txt\n#\n# This file is to prevent the crawling and indexing of certain parts\n# of your site by web crawlers and spiders run by sites like Yahoo!\n# and Google. By telling these \"robots\" where not to go on your site,\n# you save bandwidth and server resources.\n\n\nUser-agent: Amazonbot\nDisallow: /\nAllow: /rs/search/news/view.rss?partnerId=amznalx01\n\nUser-agent: *\nDisallow: /\n"
+}

@@ -1,0 +1,12 @@
+{
+  "files_checked": 105,
+  "changed": [
+    "chroma\\chroma.sqlite3"
+  ],
+  "missing": [],
+  "ignored_ephemeral": [
+    "state.db-shm",
+    "state.db-wal"
+  ],
+  "unchanged": false
+}

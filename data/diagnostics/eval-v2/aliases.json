@@ -1,0 +1,1006 @@
+[
+  {
+    "abbreviation": "AVT",
+    "full_name": "Aldervane Transit",
+    "source": "7-funding",
+    "abbreviation_entities": [
+      {
+        "id": "3e691c03-0b34-465a-a20a-6b55cc607521",
+        "name": "AVT",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "ad892e14f76e4e15b8eac457474b1b0a",
+        "aliases": []
+      },
+      {
+        "id": "9699d7b8-f9fc-45eb-a958-c3848d725e41",
+        "name": "AVT",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "ad892e14f76e4e15b8eac457474b1b0a",
+        "aliases": []
+      },
+      {
+        "id": "a7cada0c-5342-4a74-841e-d6686d8c2dea",
+        "name": "AVT",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "ad892e14f76e4e15b8eac457474b1b0a",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "34fbf09d-ccca-41f1-a8ad-e173abbf29bd",
+        "name": "Aldervane Transit",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "5b52d3cd22ad447cab79b17430e1eb05",
+        "aliases": []
+      },
+      {
+        "id": "692902c9-8e34-4dd6-abee-98c61ff6e883",
+        "name": "Aldervane Transit",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "5b52d3cd22ad447cab79b17430e1eb05",
+        "aliases": []
+      },
+      {
+        "id": "f990a473-f1e2-4d86-ba2b-ec8f396667d9",
+        "name": "Aldervane Transit",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "5b52d3cd22ad447cab79b17430e1eb05",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "BDA",
+    "full_name": "Brindle Arc",
+    "source": "2-funding",
+    "abbreviation_entities": [
+      {
+        "id": "9202a2c0-f734-4480-acdc-b6241920c4a0",
+        "name": "BDA",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "4080507746e342a8bfa60a3d1f60f49b",
+        "aliases": []
+      },
+      {
+        "id": "df3c36f5-c870-4200-a1ed-b23dfb87b345",
+        "name": "BDA",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "4080507746e342a8bfa60a3d1f60f49b",
+        "aliases": []
+      },
+      {
+        "id": "fcb9bb06-8a37-4278-95fb-21ef24eae456",
+        "name": "BDA",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "4080507746e342a8bfa60a3d1f60f49b",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "06c86c4f-f311-44e2-8eac-f17150c8f7c2",
+        "name": "Brindle Arc",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "e32f37a96b7940c4b7ec2ffa89200bb3",
+        "aliases": []
+      },
+      {
+        "id": "4c390e2e-b820-4733-92a0-9ff1cd31e1f5",
+        "name": "Brindle Arc",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e32f37a96b7940c4b7ec2ffa89200bb3",
+        "aliases": []
+      },
+      {
+        "id": "ebcd475b-9a86-48b4-b00d-f6ef2f3684ab",
+        "name": "Brindle Arc",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "e32f37a96b7940c4b7ec2ffa89200bb3",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "CFI",
+    "full_name": "Copper Fen Institute",
+    "source": "4-funding",
+    "abbreviation_entities": [
+      {
+        "id": "8bdc1bef-ff1f-49ba-a2d9-a5658fb27ae0",
+        "name": "CFI",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "14776b84a17343268f7fbdc32722f489",
+        "aliases": []
+      },
+      {
+        "id": "b7a6cef1-7519-4263-95ee-faec22365aae",
+        "name": "CFI",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "14776b84a17343268f7fbdc32722f489",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "179d1b96-8136-475a-8bc1-ba2d4d9c3ae3",
+        "name": "Copper Fen Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "ed334280ff0340b6864d03b5d43759c6",
+        "aliases": []
+      },
+      {
+        "id": "34474cba-667d-454c-b531-5a54937f5a79",
+        "name": "Copper Fen Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "ed334280ff0340b6864d03b5d43759c6",
+        "aliases": []
+      },
+      {
+        "id": "4b1af338-0ef1-46cb-b838-222ab9260f90",
+        "name": "Copper Fen Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "ed334280ff0340b6864d03b5d43759c6",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "CRL",
+    "full_name": "Cobalt Reach Laboratory",
+    "source": "0-funding",
+    "abbreviation_entities": [
+      {
+        "id": "ff04a6e7-6f5b-4c55-8896-02df07914d74",
+        "name": "CRL",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "1c449754d2f840b8b7d52330a42a1373",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "1bd55056-2c4e-45d9-a9fe-2be8937912f2",
+        "name": "Cobalt Reach Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "c0fc66150a3e4a60b69c3be4ad53aa21",
+        "aliases": []
+      },
+      {
+        "id": "6d25f2cc-7f5e-47f8-a845-fa9f5cb219a2",
+        "name": "Cobalt Reach Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "c0fc66150a3e4a60b69c3be4ad53aa21",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "HVM",
+    "full_name": "Halvex Mobility",
+    "source": "0-funding",
+    "abbreviation_entities": [
+      {
+        "id": "2db6d60f-2f3c-4a7f-9786-465f2281326f",
+        "name": "HVM",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "2d6a7e6c138e44d0b157bfa2fe07a2f1",
+        "aliases": []
+      },
+      {
+        "id": "f7c806ae-5ea3-4aa4-837c-d0ac1c9ae702",
+        "name": "HVM",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "2d6a7e6c138e44d0b157bfa2fe07a2f1",
+        "aliases": []
+      },
+      {
+        "id": "fcae51c8-533a-4c4c-8e82-94eec8f58205",
+        "name": "HVM",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "2d6a7e6c138e44d0b157bfa2fe07a2f1",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "64940738-5511-47a5-82cc-ecf9ed27e6d7",
+        "name": "Halvex Mobility",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "2cbff3f5273c4ff3a675b7233974cf05",
+        "aliases": []
+      },
+      {
+        "id": "92a5e94c-f32b-4f0a-9320-1d4f6b9dc792",
+        "name": "Halvex Mobility",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "2cbff3f5273c4ff3a675b7233974cf05",
+        "aliases": []
+      },
+      {
+        "id": "c95b4293-c060-46c2-83db-33e291adbfbf",
+        "name": "Halvex Mobility",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "2cbff3f5273c4ff3a675b7233974cf05",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "IDL",
+    "full_name": "Ivory Delta Laboratory",
+    "source": "3-funding",
+    "abbreviation_entities": [
+      {
+        "id": "26e2bcd2-4909-4c08-a71f-08094503e16b",
+        "name": "IDL",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e9f92d6c5d5f4bc9bd32c131646783f4",
+        "aliases": []
+      },
+      {
+        "id": "7bc44786-7462-4ae7-bb06-d37687112860",
+        "name": "IDL",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "e9f92d6c5d5f4bc9bd32c131646783f4",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "89e3a372-285d-4f3d-8569-ed97b925fb97",
+        "name": "Ivory Delta Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "60b1c30ea0e149338c30a1689cb620ea",
+        "aliases": []
+      },
+      {
+        "id": "edc265e8-cc68-46d1-afef-98e02b2241fc",
+        "name": "Ivory Delta Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "60b1c30ea0e149338c30a1689cb620ea",
+        "aliases": []
+      },
+      {
+        "id": "fd87b6c4-f378-4c8e-b4fa-e95da1adc708",
+        "name": "Ivory Delta Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "60b1c30ea0e149338c30a1689cb620ea",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "IVC",
+    "full_name": "Indigo Vale Centre",
+    "source": "5-funding",
+    "abbreviation_entities": [
+      {
+        "id": "2d4adebd-353b-4ffb-8796-0b593763c7bf",
+        "name": "IVC",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "dcb606b1e6f44681bf20d45f96745b1f",
+        "aliases": []
+      },
+      {
+        "id": "ecefb371-f922-4aee-b8cb-98e676717049",
+        "name": "IVC",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "dcb606b1e6f44681bf20d45f96745b1f",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "252c8ad5-6704-400b-a510-2bd1593392f8",
+        "name": "Indigo Vale Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "9b45a4c58310455a995be53379bd2d7d",
+        "aliases": []
+      },
+      {
+        "id": "668cbe46-cb35-41f1-a7ce-121d3d8038f7",
+        "name": "Indigo Vale Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "9b45a4c58310455a995be53379bd2d7d",
+        "aliases": []
+      },
+      {
+        "id": "c88f59ac-5349-4ccb-8dd5-207c453421d2",
+        "name": "Indigo Vale Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "9b45a4c58310455a995be53379bd2d7d",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "JBI",
+    "full_name": "Juniper Basin Institute",
+    "source": "1-funding",
+    "abbreviation_entities": [
+      {
+        "id": "2e6f296d-b389-4365-9f9f-6668267a4222",
+        "name": "JBI",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "850fda56ef5c425f8ab2dc7ce503a243",
+        "aliases": []
+      },
+      {
+        "id": "bd1ea588-6a74-4c5e-86cd-9ba565d2f1f7",
+        "name": "JBI",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "850fda56ef5c425f8ab2dc7ce503a243",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "20dacb29-87a4-402b-be34-8e96ac76b1a5",
+        "name": "Juniper Basin Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "9d3b3436198b4c858619e9b12bab6471",
+        "aliases": []
+      },
+      {
+        "id": "a72afce1-a309-484a-a215-fe4737daedd2",
+        "name": "Juniper Basin Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "9d3b3436198b4c858619e9b12bab6471",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "NLS",
+    "full_name": "Nacreline Systems",
+    "source": "1-funding",
+    "abbreviation_entities": [
+      {
+        "id": "4f3e1ea3-eb44-4d9b-a0f1-acaf5a3fd4e6",
+        "name": "NLS",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "e22d04e021c94a8db64e6d8277eef4a9",
+        "aliases": []
+      },
+      {
+        "id": "8275edc0-3c43-4e02-9419-ee2e2a2d8734",
+        "name": "NLS",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e22d04e021c94a8db64e6d8277eef4a9",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "103e7598-d6da-484c-aaf6-f7ee275ab18e",
+        "name": "Nacreline Systems",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "93f82a1eea024f9a87e042a9b0d177de",
+        "aliases": []
+      },
+      {
+        "id": "4f6f4e56-bc59-497a-8646-fd8ac23465dc",
+        "name": "Nacreline Systems",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "93f82a1eea024f9a87e042a9b0d177de",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "OBR",
+    "full_name": "Oxbriar Robotics",
+    "source": "3-funding",
+    "abbreviation_entities": [
+      {
+        "id": "0aa7e1cf-fe6a-479f-99f6-053ce09740de",
+        "name": "OBR",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "f9a7b2c36a4f4c9995ad180bbeafb5e2",
+        "aliases": []
+      },
+      {
+        "id": "b145caa2-5f13-4578-bd04-d4d74ccf2a83",
+        "name": "OBR",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "f9a7b2c36a4f4c9995ad180bbeafb5e2",
+        "aliases": []
+      },
+      {
+        "id": "bbdc537f-4655-41e9-ab30-8970bf73550d",
+        "name": "OBR",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "f9a7b2c36a4f4c9995ad180bbeafb5e2",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "65c2cb49-6679-4ead-8ff4-6af2e40f6c79",
+        "name": "Oxbriar Robotics",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "312a3437e6b6414e8863cc32f0605ca4",
+        "aliases": []
+      },
+      {
+        "id": "7361856e-2e21-470d-a1f9-fbfda5046064",
+        "name": "Oxbriar Robotics",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "312a3437e6b6414e8863cc32f0605ca4",
+        "aliases": []
+      },
+      {
+        "id": "f67021d0-6f2e-4bd3-985d-024dd3a79c3f",
+        "name": "Oxbriar Robotics",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "312a3437e6b6414e8863cc32f0605ca4",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "OHI",
+    "full_name": "Ochre Hollow Institute",
+    "source": "7-funding",
+    "abbreviation_entities": [
+      {
+        "id": "3b94588a-cf27-4987-9093-0d77a8bf0793",
+        "name": "OHI",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "d42c8ea3d91a46808c0ee418730d02ed",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "90e12a41-84b0-4b6f-9461-eacb20c4722c",
+        "name": "Ochre Hollow Institute (OHI)",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "4cb70390b2b3441db8b1134977007a24",
+        "aliases": []
+      },
+      {
+        "id": "cc9cfb28-7eb6-41de-b0b7-9a8334571db5",
+        "name": "Ochre Hollow Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "4cb70390b2b3441db8b1134977007a24",
+        "aliases": []
+      },
+      {
+        "id": "ffa57ed5-0fb2-4646-b7ff-4ddb2031f5b0",
+        "name": "Ochre Hollow Institute",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "4cb70390b2b3441db8b1134977007a24",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "ORL",
+    "full_name": "Opal Ridge Laboratory",
+    "source": "6-funding",
+    "abbreviation_entities": [
+      {
+        "id": "7f28b665-5487-4d45-af8e-03823f240428",
+        "name": "ORL",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "3a120f2ab00d48de949b5cd8e20d3028",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "1993261c-51b1-4467-b6c0-cd55c051e141",
+        "name": "Opal Ridge Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+        "aliases": []
+      },
+      {
+        "id": "4ad844ba-d852-41e7-8a44-1d413562a370",
+        "name": "Opal Ridge Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+        "aliases": []
+      },
+      {
+        "id": "accec28b-3948-4a2b-a6b0-0058aa2a7a76",
+        "name": "Opal Ridge Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "c0304fb1b9b34cdaa9de7d28320c6e3e",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "PCF",
+    "full_name": "Pellucid Forge",
+    "source": "8-funding",
+    "abbreviation_entities": [
+      {
+        "id": "0bd43f16-8634-40de-8978-71a42c18b68b",
+        "name": "PCF",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "1c5af170b6f643f4af45232e1378f738",
+        "aliases": []
+      },
+      {
+        "id": "85fe9d79-fcd4-4612-977a-1a256ac5a65f",
+        "name": "PCF",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "1c5af170b6f643f4af45232e1378f738",
+        "aliases": []
+      },
+      {
+        "id": "8af68cc1-9f46-4619-8208-39ffa30b71ac",
+        "name": "PCF",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "1c5af170b6f643f4af45232e1378f738",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "8b1c472e-095d-48e6-95b2-7616d8d1c2ee",
+        "name": "Pellucid Forge",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "e40da88bedad4db9b8c13f4b1a68d82f",
+        "aliases": []
+      },
+      {
+        "id": "993821c5-3f4d-4acd-a539-9d32b8524ac4",
+        "name": "Pellucid Forge",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e40da88bedad4db9b8c13f4b1a68d82f",
+        "aliases": []
+      },
+      {
+        "id": "e9c12b9b-c865-4fbe-a99a-969da2028607",
+        "name": "Pellucid Forge",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "e40da88bedad4db9b8c13f4b1a68d82f",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "QND",
+    "full_name": "Quenara Devices",
+    "source": "5-funding",
+    "abbreviation_entities": [
+      {
+        "id": "859849f9-05a8-4f0c-96e0-bc8035b44702",
+        "name": "QND",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "0f435c021eab4b38ad496863752ec813",
+        "aliases": []
+      },
+      {
+        "id": "a5d17354-2265-49bd-af02-bc333638fee5",
+        "name": "QND",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "0f435c021eab4b38ad496863752ec813",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "0faac254-b721-4985-9913-f36be4408763",
+        "name": "Quenara Devices",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "4d39ee4608f0478184268aed75f10927",
+        "aliases": []
+      },
+      {
+        "id": "192bc8f3-3e8e-49ac-a91f-5829a8af8bb6",
+        "name": "Quenara Devices",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "4d39ee4608f0478184268aed75f10927",
+        "aliases": []
+      },
+      {
+        "id": "6a34326e-418b-4b1b-985a-d5e09bd2f5b8",
+        "name": "Quenara Devices",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "4d39ee4608f0478184268aed75f10927",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "RSI",
+    "full_name": "Ravenspire Instruments",
+    "source": "9-funding",
+    "abbreviation_entities": [
+      {
+        "id": "5c7b0dde-5c4d-488f-ae84-04877f7ec43c",
+        "name": "RSI",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "8f1cdcba947f45d3a0cd3a0031c6e345",
+        "aliases": []
+      },
+      {
+        "id": "d7370899-46ef-4a0c-9a2f-164ee73e25f0",
+        "name": "RSI",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "8f1cdcba947f45d3a0cd3a0031c6e345",
+        "aliases": []
+      },
+      {
+        "id": "e81318cf-d9e2-4a87-82c2-5afa79be94b5",
+        "name": "RSI",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "8f1cdcba947f45d3a0cd3a0031c6e345",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "0827e0ee-c180-4815-a4af-3d38bf7df7f2",
+        "name": "Ravenspire Instruments",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e7ff20ba015f46a59d87ec55e9d63657",
+        "aliases": []
+      },
+      {
+        "id": "a5b9ac37-c60d-4dcc-bb10-a6b9edc48bee",
+        "name": "Ravenspire Instruments",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "e7ff20ba015f46a59d87ec55e9d63657",
+        "aliases": []
+      },
+      {
+        "id": "e46b892f-8264-4d09-8aae-742f9688d5ea",
+        "name": "Ravenspire Instruments",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "e7ff20ba015f46a59d87ec55e9d63657",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "SMC",
+    "full_name": "Sable Meridian Centre",
+    "source": "2-funding",
+    "abbreviation_entities": [
+      {
+        "id": "5c5aae14-9714-49fb-9787-42e347c1ac7c",
+        "name": "SMC",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "ab73861509814b36930835bab826e34c",
+        "aliases": []
+      },
+      {
+        "id": "61fb8f1a-869e-4120-8b00-e91fa3fc0e50",
+        "name": "SMC",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "ab73861509814b36930835bab826e34c",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "1797b2cb-297f-4042-96fe-c7c4a486c542",
+        "name": "Sable Meridian Centre",
+        "type": "Concept",
+        "bubble": "eval-v2-news",
+        "global_id": "cf21e0a5af5a4934bcbf2edd0b1cc1af",
+        "aliases": []
+      },
+      {
+        "id": "d7acb653-0cf7-4f84-bdfd-38e4b3102533",
+        "name": "Sable Meridian Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "61eb02b4cde1484484f67fec8a05fccd",
+        "aliases": []
+      },
+      {
+        "id": "fa192f2c-754c-44cf-951f-a481db8d256b",
+        "name": "Sable Meridian Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "61eb02b4cde1484484f67fec8a05fccd",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "SML",
+    "full_name": "Silver Marsh Laboratory",
+    "source": "9-funding",
+    "abbreviation_entities": [
+      {
+        "id": "0a39ea00-6940-46ac-b459-251047bd2c27",
+        "name": "SML",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "5cad6e9c6ee24267a74a5ebff139d2a1",
+        "aliases": []
+      },
+      {
+        "id": "417071a4-ac0c-4808-9b86-c75966de5c0b",
+        "name": "SML",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "5cad6e9c6ee24267a74a5ebff139d2a1",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "e53eddde-c07c-4bae-9600-c1429f53120b",
+        "name": "Silver Marsh Laboratory",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "a02fa6c92dbb463483c6ba0a612e99be",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "TMC",
+    "full_name": "Tesselmere Controls",
+    "source": "6-funding",
+    "abbreviation_entities": [
+      {
+        "id": "07ef0e9c-262e-4f89-93a3-735932aadede",
+        "name": "TMC",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "e24954f51b7f418ebe9dbe1c5ee8298e",
+        "aliases": []
+      },
+      {
+        "id": "2e2fd4d3-99ca-48cd-a595-623e316610d8",
+        "name": "TMC",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "e24954f51b7f418ebe9dbe1c5ee8298e",
+        "aliases": []
+      },
+      {
+        "id": "406afbbd-858b-46df-aa3c-76f4f6f4ede7",
+        "name": "TMC",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "e24954f51b7f418ebe9dbe1c5ee8298e",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "1f01ae54-7698-4457-9bf1-f5a8ea241b76",
+        "name": "Tesselmere Controls",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "7fe0725b0c1c4b98861599dca7a4c678",
+        "aliases": []
+      },
+      {
+        "id": "40ac00f6-a84b-4467-9c6c-67a1d7b6f30f",
+        "name": "Tesselmere Controls",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "7fe0725b0c1c4b98861599dca7a4c678",
+        "aliases": []
+      },
+      {
+        "id": "d5b02979-d52c-4e34-8ee2-1bcf27d4c683",
+        "name": "Tesselmere Controls",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "7fe0725b0c1c4b98861599dca7a4c678",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "VGW",
+    "full_name": "Vespergate Works",
+    "source": "4-funding",
+    "abbreviation_entities": [
+      {
+        "id": "cb8c434c-dabd-40b8-8841-8ea32f1532f7",
+        "name": "VGW",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "01c51e359d1446ac97b20e0833ba8df6",
+        "aliases": []
+      },
+      {
+        "id": "fb12b069-df82-4b77-a37f-fb8f59e17fe3",
+        "name": "VGW",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "01c51e359d1446ac97b20e0833ba8df6",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "537a6f0f-d4b6-4036-8527-8473db245f7d",
+        "name": "Vespergate Works",
+        "type": "Organization",
+        "bubble": "eval-v2-news",
+        "global_id": "59c60d5fbbfd4cb198aa5fb5967684d3",
+        "aliases": []
+      },
+      {
+        "id": "e362129b-8799-4dac-a3d3-33822f6cdab2",
+        "name": "Vespergate Works",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "59c60d5fbbfd4cb198aa5fb5967684d3",
+        "aliases": []
+      },
+      {
+        "id": "f4acd68c-c281-422b-8b9f-fe26951e2a0f",
+        "name": "Vespergate Works",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "59c60d5fbbfd4cb198aa5fb5967684d3",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  },
+  {
+    "abbreviation": "VSC",
+    "full_name": "Violet Strand Centre",
+    "source": "8-funding",
+    "abbreviation_entities": [
+      {
+        "id": "a435b952-6d0c-4d49-97ec-10fd2fd4bb5c",
+        "name": "VSC",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "5ad3c479027e47088eaeefcd8624ed21",
+        "aliases": []
+      },
+      {
+        "id": "b9e0e258-eb2c-4d3f-828b-0470e7373988",
+        "name": "VSC",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "5ad3c479027e47088eaeefcd8624ed21",
+        "aliases": []
+      }
+    ],
+    "full_entities": [
+      {
+        "id": "bea2c5fe-ec77-46d2-9552-a9f117b78e18",
+        "name": "Violet Strand Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-finance",
+        "global_id": "ee3e22dd279f448fb20f5fa24f607197",
+        "aliases": []
+      },
+      {
+        "id": "ebf0618f-41c8-4428-9c14-59720feb99d5",
+        "name": "Violet Strand Centre",
+        "type": "Organization",
+        "bubble": "eval-v2-research",
+        "global_id": "ee3e22dd279f448fb20f5fa24f607197",
+        "aliases": []
+      }
+    ],
+    "split": true,
+    "missing_side": false
+  }
+]

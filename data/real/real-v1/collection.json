@@ -1,0 +1,261 @@
+{
+  "name": "real-v1",
+  "since": "2026-09-18",
+  "until": "2026-11-13",
+  "collected_at": "2026-11-13T00:23:10.684494+00:00",
+  "source_list_sha256": "f4e7dc90351c5c557b6e5851d3f04392bfe6a60112ec622788454afc976ca55f",
+  "counts": {
+    "accepted": 228,
+    "too_short": 1046,
+    "source_cap": 71,
+    "before_window": 72,
+    "duplicate": 61,
+    "non_english": 2,
+    "boilerplate": 1
+  },
+  "sources": [
+    {
+      "source": "nvidia-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 2,
+      "polled": 36
+    },
+    {
+      "source": "microsoft-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 3,
+      "polled": 30
+    },
+    {
+      "source": "google-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 20
+    },
+    {
+      "source": "samsung-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 50
+    },
+    {
+      "source": "aws-blog",
+      "enabled": false,
+      "errors": [
+        "AWS Site Terms prohibit data mining and robots; excluded conservatively, including further feed collection."
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "nvidia-releases",
+      "enabled": true,
+      "errors": [],
+      "pages": 4,
+      "polled": 80
+    },
+    {
+      "source": "ibm-releases",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 5
+    },
+    {
+      "source": "amd-releases",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 10
+    },
+    {
+      "source": "cnbc-tech",
+      "enabled": true,
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "yahoo-finance",
+      "enabled": true,
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NVDA,MSFT,GOOG,AMD,INTC,IBM&region=US&lang=en-US"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "sec-releases",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 25
+    },
+    {
+      "source": "intel-releases",
+      "enabled": false,
+      "errors": [
+        "Intel terms 4.1.14 and 4.1.16 prohibit automated scraping and text mining without written permission."
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "microsoft-research",
+      "enabled": true,
+      "errors": [],
+      "pages": 3,
+      "polled": 30
+    },
+    {
+      "source": "google-research",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 100
+    },
+    {
+      "source": "bair-research",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 10
+    },
+    {
+      "source": "huggingface-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 906
+    },
+    {
+      "source": "arxiv-ai",
+      "enabled": true,
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://export.arxiv.org/api/query?search_query=cat:cs.AI+AND+submittedDate:[202609180000+TO+202611132359]&start=0&max_results=100&sortBy=submittedDate&sortOrder=descending"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "federal-reserve",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 20
+    },
+    {
+      "source": "treasury",
+      "enabled": true,
+      "errors": [
+        "HTTPStatusError: Client error '404 Not Found' for url 'https://home.treasury.gov/news/press-releases/rss'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "fdic",
+      "enabled": true,
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://public.govdelivery.com/topics/USFDIC_26/feed.rss"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "nasa-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 3,
+      "polled": 30
+    },
+    {
+      "source": "nvidia-technical",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 100
+    },
+    {
+      "source": "europe-pmc",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 12
+    },
+    {
+      "source": "arxiv-rss",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 0
+    },
+    {
+      "source": "edgar-nvidia",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 1
+    },
+    {
+      "source": "edgar-microsoft",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 4
+    },
+    {
+      "source": "edgar-amd",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-intel",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 1
+    },
+    {
+      "source": "edgar-alphabet",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-ibm",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-amazon",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 1
+    },
+    {
+      "source": "edgar-meta",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 4
+    }
+  ],
+  "http_events": [],
+  "manifest_count": 228,
+  "no_graph_ingestion": true,
+  "llm_calls": 0,
+  "llm_cost_usd": 0
+}

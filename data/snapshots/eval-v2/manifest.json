@@ -1,0 +1,1740 @@
+{
+  "dataset_sha256": "736b8035ebb4a9ebf1386bf33e76956a11cde470c575671a9fee51b2bb78634a",
+  "construction_started_at": 1794446018.6054657,
+  "items": {
+    "0-leader": {
+      "runtime_id": "1464480111dc64e4936a88672fe6bbe427b64fe9d4a900b704159117f0653dd3",
+      "injected_at": 1794446027.9655676,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 187.38646817207336,
+      "usage": {
+        "tokens": 15020,
+        "cost_usd": 0.0059892606999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "1-leader": {
+      "runtime_id": "d3fba92d24f80ef3b7dc71cf19212a071c60614d83f406539f8a4edc0faddfd3",
+      "injected_at": 1794446215.3590713,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 116.90309405326843,
+      "usage": {
+        "tokens": 25497,
+        "cost_usd": 0.008921736699999998,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "2-leader": {
+      "runtime_id": "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38",
+      "injected_at": 1794446332.2687378,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 217.92550039291382,
+      "usage": {
+        "tokens": 31246,
+        "cost_usd": 0.011325272099999999,
+        "calls": 19,
+        "cost_reported_calls": 19
+      }
+    },
+    "3-leader": {
+      "runtime_id": "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3",
+      "injected_at": 1794446550.1979685,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 125.3775143623352,
+      "usage": {
+        "tokens": 27163,
+        "cost_usd": 0.0093742635,
+        "calls": 15,
+        "cost_reported_calls": 15
+      }
+    },
+    "4-leader": {
+      "runtime_id": "00607bafc0a939b53cda3908fc0d2f1cf7c8aed4f37752deaf807e45a224e0ca",
+      "injected_at": 1794446675.58203,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 393.6347026824951,
+      "usage": {
+        "tokens": 29629,
+        "cost_usd": 0.0151361527,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "5-leader": {
+      "runtime_id": "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+      "injected_at": 1794447069.2286155,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 171.64269065856934,
+      "usage": {
+        "tokens": 34461,
+        "cost_usd": 0.012198417200000002,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "6-leader": {
+      "runtime_id": "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+      "injected_at": 1794447240.8788748,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 145.04402589797974,
+      "usage": {
+        "tokens": 35196,
+        "cost_usd": 0.0116417017,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "7-leader": {
+      "runtime_id": "9ceeeb1c52e899753763a248c384465dcad4068872dcdf4c849e923eafd62ec9",
+      "injected_at": 1794447385.9289298,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 127.35422730445862,
+      "usage": {
+        "tokens": 22321,
+        "cost_usd": 0.0079904907,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "8-leader": {
+      "runtime_id": "804c95c59cd0a237943cf0391d73bbe6d4747b884c12a7bdffb388402c11a427",
+      "injected_at": 1794447513.2931714,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 77.85159659385681,
+      "usage": {
+        "tokens": 20670,
+        "cost_usd": 0.0070086449,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "9-leader": {
+      "runtime_id": "9a5d5d51339534b500f02b414f9edba95247a381253083d2eeb7b4063350fd5a",
+      "injected_at": 1794447591.1518195,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 93.99704623222351,
+      "usage": {
+        "tokens": 31083,
+        "cost_usd": 0.010252543000000001,
+        "calls": 15,
+        "cost_reported_calls": 15
+      }
+    },
+    "0-funding": {
+      "runtime_id": "fecc53e16fd670f1aed3b8a80ec5004c291c3044d730b81ae4fe26190987a6f2",
+      "injected_at": 1794447685.1545134,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 152.64113664627075,
+      "usage": {
+        "tokens": 24394,
+        "cost_usd": 0.008702639499999998,
+        "calls": 13,
+        "cost_reported_calls": 13
+      }
+    },
+    "1-funding": {
+      "runtime_id": "e54dd8cb1055286c3f45b24fe19c5d87995ecc4cf4643624358806b5db3a751e",
+      "injected_at": 1794447837.8028002,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 60.93955636024475,
+      "usage": {
+        "tokens": 18102,
+        "cost_usd": 0.005991695700000001,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "2-funding": {
+      "runtime_id": "8ee495bff6cc4a50a2cee211a51d2f0f6a5b5e55d2bb3ae2c380417b88f6a434",
+      "injected_at": 1794447898.7501028,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 253.17196607589722,
+      "usage": {
+        "tokens": 48125,
+        "cost_usd": 0.0170801582,
+        "calls": 25,
+        "cost_reported_calls": 25
+      }
+    },
+    "3-funding": {
+      "runtime_id": "8721c2681d4084df86a5c9d99d35e8accd60ec46272831d845218eee7d61f37e",
+      "injected_at": 1794448151.926395,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 254.80519318580627,
+      "usage": {
+        "tokens": 53793,
+        "cost_usd": 0.019323630400000003,
+        "calls": 26,
+        "cost_reported_calls": 26
+      }
+    },
+    "4-funding": {
+      "runtime_id": "94a63d136d2dfffb9f8649c0b3f72a976be5dd6576281af3d5441f5f5448069d",
+      "injected_at": 1794448406.739704,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 246.74367690086365,
+      "usage": {
+        "tokens": 49228,
+        "cost_usd": 0.0171308642,
+        "calls": 23,
+        "cost_reported_calls": 23
+      }
+    },
+    "5-funding": {
+      "runtime_id": "f0987f025f874e89d0d16934590d4fafa1bf977d8db75680f268ddfbc0edba2d",
+      "injected_at": 1794448653.4888916,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 185.45046615600586,
+      "usage": {
+        "tokens": 45311,
+        "cost_usd": 0.015120499499999999,
+        "calls": 20,
+        "cost_reported_calls": 20
+      }
+    },
+    "6-funding": {
+      "runtime_id": "f304fc071e2a5b0cc7a8550458749aba591fd10e0d31ed3ce07dcd7b9f21518a",
+      "injected_at": 1794448838.9440732,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 179.52252840995789,
+      "usage": {
+        "tokens": 41650,
+        "cost_usd": 0.014317926299999997,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "7-funding": {
+      "runtime_id": "4e78db005e474e06c06eadc2a56e97cc933a0e8460ea5162b5908ac504dfbb32",
+      "injected_at": 1794449018.470603,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 190.61239767074585,
+      "usage": {
+        "tokens": 59126,
+        "cost_usd": 0.019887685600000003,
+        "calls": 29,
+        "cost_reported_calls": 29
+      }
+    },
+    "8-funding": {
+      "runtime_id": "30a87fd269da48692873961f1b8f99f664951dd56c6be7449b9318a2643a4905",
+      "injected_at": 1794449209.0901184,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 142.66895818710327,
+      "usage": {
+        "tokens": 48203,
+        "cost_usd": 0.0160865774,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "9-funding": {
+      "runtime_id": "68f6d1a1c4024e18e4e9e831c06d7169f1aa50c3ae97e8c939697170224cabb1",
+      "injected_at": 1794449351.7723315,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 185.25866746902466,
+      "usage": {
+        "tokens": 51884,
+        "cost_usd": 0.017581377600000003,
+        "calls": 23,
+        "cost_reported_calls": 23
+      }
+    },
+    "0-study": {
+      "runtime_id": "f17d1c2dd27dc31782d6c3d13e5367f1d0308adb6597fb25b11521a2af6dbf14",
+      "injected_at": 1794449537.0376387,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 64.23579740524292,
+      "usage": {
+        "tokens": 16239,
+        "cost_usd": 0.005269319999999999,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "1-study": {
+      "runtime_id": "8d7b3e41495db3b6c70a07e7361d687d9c1d9b9c0202ea3c18ca5eff8a46cbe5",
+      "injected_at": 1794449601.2799613,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 31.540298223495483,
+      "usage": {
+        "tokens": 16499,
+        "cost_usd": 0.0049859558,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "2-study": {
+      "runtime_id": "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b",
+      "injected_at": 1794449632.82726,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 88.31646275520325,
+      "usage": {
+        "tokens": 20471,
+        "cost_usd": 0.007259124599999999,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "3-study": {
+      "runtime_id": "3e4bd37bc725d044fac8eff6721f8cc6830938f6f2e5edac42e5684507873241",
+      "injected_at": 1794449721.151801,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 75.26356220245361,
+      "usage": {
+        "tokens": 21652,
+        "cost_usd": 0.0075291154,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "4-study": {
+      "runtime_id": "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0",
+      "injected_at": 1794449796.4233634,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 32.6674382686615,
+      "usage": {
+        "tokens": 17315,
+        "cost_usd": 0.0053173394,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "5-study": {
+      "runtime_id": "ebf5c36d9126076a12eb18e82a6959fdc0abdfcb89530d496351f7494f5131b7",
+      "injected_at": 1794449829.0998251,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 50.52586579322815,
+      "usage": {
+        "tokens": 18901,
+        "cost_usd": 0.0058438788,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "6-study": {
+      "runtime_id": "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c",
+      "injected_at": 1794449879.6337547,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 116.07034397125244,
+      "usage": {
+        "tokens": 23799,
+        "cost_usd": 0.0079714881,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "7-study": {
+      "runtime_id": "d6732bbe54ac00a744af86ba81a0cb79d3177859954bf679945873a7351a09e9",
+      "injected_at": 1794449995.7121105,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 75.77272200584412,
+      "usage": {
+        "tokens": 19170,
+        "cost_usd": 0.0061548545,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "8-study": {
+      "runtime_id": "d4370efe5129437613624461467f5fdd4f9748a01679856f7eb69ecafb58869b",
+      "injected_at": 1794450071.4928324,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 67.09000992774963,
+      "usage": {
+        "tokens": 19388,
+        "cost_usd": 0.006294423,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "9-study": {
+      "runtime_id": "80cd1ffaba5056e350e9f2c89236be68334eb0163854d7031f3326ef79719bd5",
+      "injected_at": 1794450138.5912042,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 63.926814556121826,
+      "usage": {
+        "tokens": 20724,
+        "cost_usd": 0.0067480809999999995,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "0-deal": {
+      "runtime_id": "e84cbcf29ee1990f404c029ba1f5fe07ba13ddf07bf8d29709d57846c1955447",
+      "injected_at": 1794450202.5235596,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 122.65648698806763,
+      "usage": {
+        "tokens": 33302,
+        "cost_usd": 0.010762730599999997,
+        "calls": 15,
+        "cost_reported_calls": 15
+      }
+    },
+    "1-deal": {
+      "runtime_id": "2f835f16b5e5ef15e6d73cbe229a59f141017b4487e34c1b4ba829b22a4ead74",
+      "injected_at": 1794450325.1889548,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 55.53093338012695,
+      "usage": {
+        "tokens": 19477,
+        "cost_usd": 0.006395543000000001,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "2-deal": {
+      "runtime_id": "0dafc4b234f3430caa1a8bfb95b9620dc8b3e9e68d58cd3018b1bcb53305c81d",
+      "injected_at": 1794450380.7279706,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 101.61418557167053,
+      "usage": {
+        "tokens": 36473,
+        "cost_usd": 0.011948025700000002,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "3-deal": {
+      "runtime_id": "8cc687d0cee41ab0eab4b0850bde92e0ccd3722495777b701ab51efec26122bd",
+      "injected_at": 1794450482.3488767,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 53.594929933547974,
+      "usage": {
+        "tokens": 18172,
+        "cost_usd": 0.0058107944,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "4-deal": {
+      "runtime_id": "3a89ca832ae60eb2e5763c25322c0cc28b0bd0dcaa02f89886a6202c96a8692f",
+      "injected_at": 1794450535.9513125,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 80.24788546562195,
+      "usage": {
+        "tokens": 29473,
+        "cost_usd": 0.009575703799999998,
+        "calls": 15,
+        "cost_reported_calls": 15
+      }
+    },
+    "5-deal": {
+      "runtime_id": "9217d9746c119ce17b05906a99486263d7533ce21841f2a87ef83462b4f2e82c",
+      "injected_at": 1794450616.205705,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 72.05670547485352,
+      "usage": {
+        "tokens": 21069,
+        "cost_usd": 0.0072231738000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "6-deal": {
+      "runtime_id": "10d889b8adce73e6a1b58b47549752e72c51f86f5f869a04e93302b481494641",
+      "injected_at": 1794450688.2709608,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 59.15894031524658,
+      "usage": {
+        "tokens": 17316,
+        "cost_usd": 0.0057656553,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "7-deal": {
+      "runtime_id": "345de31e863d5b64635df1b1a68c60d98bd2e7398ad6fad9b9bd7beaa0636db3",
+      "injected_at": 1794450747.436407,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 170.20772528648376,
+      "usage": {
+        "tokens": 51742,
+        "cost_usd": 0.016924734099999998,
+        "calls": 22,
+        "cost_reported_calls": 22
+      }
+    },
+    "8-deal": {
+      "runtime_id": "ef5206bac0a28f7f2f5d2e5a01b7ff30b9e00613c38754a9e101b214918589df",
+      "injected_at": 1794450917.6583211,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 60.99324607849121,
+      "usage": {
+        "tokens": 19651,
+        "cost_usd": 0.0066443542,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "9-deal": {
+      "runtime_id": "37e32d8eb7bc813ecfc3869716331c0dfbef9ee5d76d2c234f9843819faacd04",
+      "injected_at": 1794450978.6601398,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 72.95953512191772,
+      "usage": {
+        "tokens": 22233,
+        "cost_usd": 0.007251127700000001,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "0-recall": {
+      "runtime_id": "bf38a14c09abb071ed27bc56826838708bf5b66f0ae5078f4b057f8d1ad8eaeb",
+      "injected_at": 1794451051.6281807,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 99.6301281452179,
+      "usage": {
+        "tokens": 26798,
+        "cost_usd": 0.0091837819,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "1-recall": {
+      "runtime_id": "3161fd3e58c9e40c56a409490e2be95e777e401bebdf06b68a9fff4336347060",
+      "injected_at": 1794451151.265315,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 49.960806131362915,
+      "usage": {
+        "tokens": 19914,
+        "cost_usd": 0.006510576300000001,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "2-recall": {
+      "runtime_id": "a0e60da1f259a9792e6601c13ddaeacf593a137582c47838f4bd9357171e2454",
+      "injected_at": 1794451201.2344224,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 64.87733793258667,
+      "usage": {
+        "tokens": 18810,
+        "cost_usd": 0.0065078304,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "3-recall": {
+      "runtime_id": "24101dca77a2e0368ef51c478d7e44d25f56ddf649e1b58c91eee7e80cad32b7",
+      "injected_at": 1794451266.1178765,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 33.97693753242493,
+      "usage": {
+        "tokens": 18312,
+        "cost_usd": 0.0060522067999999995,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "4-recall": {
+      "runtime_id": "1545502562d5e18a2aa8888f3259d3b7f36d27bc5870133d5e451e8bf19cf919",
+      "injected_at": 1794451300.102106,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 163.60458779335022,
+      "usage": {
+        "tokens": 41206,
+        "cost_usd": 0.014539563000000005,
+        "calls": 19,
+        "cost_reported_calls": 19
+      }
+    },
+    "5-recall": {
+      "runtime_id": "232d5d94c4e716c3db3f7b8cd144f93e9c17b1b88df0a6ace3f683f74f9f44a3",
+      "injected_at": 1794451463.7142396,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 104.06785368919373,
+      "usage": {
+        "tokens": 28634,
+        "cost_usd": 0.0091968768,
+        "calls": 13,
+        "cost_reported_calls": 13
+      }
+    },
+    "6-recall": {
+      "runtime_id": "7eae06481b5ea33cb321be8d7e230ed3f1785dff883bcc1c4a467f4e2ec1cc8e",
+      "injected_at": 1794451567.7886043,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 175.54893231391907,
+      "usage": {
+        "tokens": 37948,
+        "cost_usd": 0.0129371937,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "7-recall": {
+      "runtime_id": "1b6ea7349035a4a02a29c872143cd6a5ceed39c849a4c3cb35ccc9e5530c325a",
+      "injected_at": 1794451743.3450425,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 1.0,
+      "queue_attempts": 1,
+      "write_lag_seconds": 111.03235411643982,
+      "usage": {
+        "tokens": 30076,
+        "cost_usd": 0.0101236336,
+        "calls": 14,
+        "cost_reported_calls": 14
+      }
+    },
+    "8-recall": {
+      "runtime_id": "62f827a6f203cb04a8154654a2dcab73125b9ccf9282ab80ebd596fd96d47ed6",
+      "injected_at": 1794451854.385641,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 29.59519672393799,
+      "usage": {
+        "tokens": 10507,
+        "cost_usd": 0.003722559,
+        "calls": 6,
+        "cost_reported_calls": 6
+      }
+    },
+    "9-recall": {
+      "runtime_id": "14f73be8a64b999b0728d716eea44e296f3d1468e23c56091a138f1cf4d3aa6f",
+      "injected_at": 1794451883.9890096,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 73.01992177963257,
+      "usage": {
+        "tokens": 22658,
+        "cost_usd": 0.007456949,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "0-appointment": {
+      "runtime_id": "9cb0afddbb35dcc56d76c43e7570f6357b0d506afd38d0942a9765915b5c1854",
+      "injected_at": 1794451957.0191333,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 150.7088212966919,
+      "usage": {
+        "tokens": 48442,
+        "cost_usd": 0.0164326498,
+        "calls": 22,
+        "cost_reported_calls": 22
+      }
+    },
+    "1-appointment": {
+      "runtime_id": "3e48839792fb439decbab5628cd04eb8c00d766c0fd7c778bde59e075567d651",
+      "injected_at": 1794452107.736198,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 194.40395975112915,
+      "usage": {
+        "tokens": 43649,
+        "cost_usd": 0.0150838663,
+        "calls": 20,
+        "cost_reported_calls": 20
+      }
+    },
+    "2-appointment": {
+      "runtime_id": "61b63f7f7aeb289da4730ab974be286840cc1e2cb4916409533dca77161bc7e9",
+      "injected_at": 1794452302.149617,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 105.53982663154602,
+      "usage": {
+        "tokens": 27270,
+        "cost_usd": 0.008978112699999999,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "3-appointment": {
+      "runtime_id": "b9c205f643e447a65697d51219c050ea388dd6843bd0a7b10cbe1ca78b634691",
+      "injected_at": 1794452407.7030425,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 246.91358470916748,
+      "usage": {
+        "tokens": 44525,
+        "cost_usd": 0.015181692500000002,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "4-appointment": {
+      "runtime_id": "d59fa8dddd06ec1f2f94a4c1d023ff44cd967d37b8bdd8ee5aa1243fc67a5801",
+      "injected_at": 1794452654.6275856,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 126.82416009902954,
+      "usage": {
+        "tokens": 36418,
+        "cost_usd": 0.012171446999999998,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "5-appointment": {
+      "runtime_id": "f69402d75576d3770ea4140a33d9f7d125ab75eefaa909831e4e46b10f873168",
+      "injected_at": 1794452781.4593892,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 104.9078061580658,
+      "usage": {
+        "tokens": 22039,
+        "cost_usd": 0.0071860707999999995,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "6-appointment": {
+      "runtime_id": "714f462c2a72dcf650c1ae3db9d9847a6a302217cfd96ca1ed6b32d8bf040f69",
+      "injected_at": 1794452886.3727474,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 235.74216628074646,
+      "usage": {
+        "tokens": 49232,
+        "cost_usd": 0.017098794599999998,
+        "calls": 23,
+        "cost_reported_calls": 23
+      }
+    },
+    "7-appointment": {
+      "runtime_id": "e00238913f33390a1a25696a0c232aba82f6b749468f24fd0e81a8981df96835",
+      "injected_at": 1794453122.1224878,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 187.21131348609924,
+      "usage": {
+        "tokens": 46578,
+        "cost_usd": 0.0163017941,
+        "calls": 21,
+        "cost_reported_calls": 21
+      }
+    },
+    "8-appointment": {
+      "runtime_id": "a57fda24c36ed64e1f9a30fa0afc98176007086f2e76dadcd363262ca971eef2",
+      "injected_at": 1794453309.341312,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 170.83811163902283,
+      "usage": {
+        "tokens": 60336,
+        "cost_usd": 0.019672079600000003,
+        "calls": 26,
+        "cost_reported_calls": 26
+      }
+    },
+    "9-appointment": {
+      "runtime_id": "dea74b7d2ed37c6bd54af256ebab09ac5be72f6d5207ad23260d8ef9d666cb67",
+      "injected_at": 1794453480.1859481,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-news",
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 201.23095726966858,
+      "usage": {
+        "tokens": 41892,
+        "cost_usd": 0.014238812200000001,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "0-cancel": {
+      "runtime_id": "b43cca7d7c994ca077ac9de483323d355a4eaefa2c4446334e9b623909c68f99",
+      "injected_at": 1794453681.4270394,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 113.88911008834839,
+      "usage": {
+        "tokens": 26753,
+        "cost_usd": 0.009144722499999999,
+        "calls": 13,
+        "cost_reported_calls": 13
+      }
+    },
+    "1-cancel": {
+      "runtime_id": "5bf39e54b0f722a1446a8da2f787da8c1968f55c0c8516fa23e0216b9cdbdcb5",
+      "injected_at": 1794453795.324655,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 43.53099036216736,
+      "usage": {
+        "tokens": 15920,
+        "cost_usd": 0.005192684800000001,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "2-cancel": {
+      "runtime_id": "4485cb47141eac9f760a18a0402f6d36c160cf888005226f42a258e0f762f373",
+      "injected_at": 1794453838.8657815,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 118.16710710525513,
+      "usage": {
+        "tokens": 31478,
+        "cost_usd": 0.010541054999999999,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "3-cancel": {
+      "runtime_id": "ee596b6310f5b66ab75d66c0bacf4fde72315bd9863e418dc923640340cdecac",
+      "injected_at": 1794453957.0419734,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 61.698660135269165,
+      "usage": {
+        "tokens": 14972,
+        "cost_usd": 0.0051423883,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "4-cancel": {
+      "runtime_id": "412e42fb13bc1e3bc707c311a0ccf16f4ae91eae13103664f8b4c8d89ab9d999",
+      "injected_at": 1794454018.748142,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 58.80609393119812,
+      "usage": {
+        "tokens": 21424,
+        "cost_usd": 0.0073406849,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "5-cancel": {
+      "runtime_id": "0983fb4e921920976c7270f1bc1d23df44bcf13398fc0c29326ec8f4974560fd",
+      "injected_at": 1794454077.5636423,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 73.7324481010437,
+      "usage": {
+        "tokens": 19018,
+        "cost_usd": 0.0065442499,
+        "calls": 7,
+        "cost_reported_calls": 7
+      }
+    },
+    "6-cancel": {
+      "runtime_id": "de7bf54b1f20d6fbd97566606f4e9ac08b3af03beae3ea29d65b2185871fd020",
+      "injected_at": 1794454151.3036017,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 119.093022108078,
+      "usage": {
+        "tokens": 34101,
+        "cost_usd": 0.011590920499999997,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "7-cancel": {
+      "runtime_id": "949d02e9c44479667a9d9894b8854074dcc0b7374dc3ef69ebd62b43d0151dc0",
+      "injected_at": 1794454270.4061377,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 250.13096594810486,
+      "usage": {
+        "tokens": 53540,
+        "cost_usd": 0.0177404651,
+        "calls": 25,
+        "cost_reported_calls": 25
+      }
+    },
+    "8-cancel": {
+      "runtime_id": "5b4ea3aac88f05a8d64e4c7a6b0514fe60381390d2ac5296dd28d7f7e96c3432",
+      "injected_at": 1794454520.5462606,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 76.44866490364075,
+      "usage": {
+        "tokens": 22095,
+        "cost_usd": 0.0070537159,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "9-cancel": {
+      "runtime_id": "f4e1d709f8dee88d79a404e4b472a7fe67c99d34e9c9c7b715ba0318af390571",
+      "injected_at": 1794454597.0024333,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 128.71569991111755,
+      "usage": {
+        "tokens": 23943,
+        "cost_usd": 0.0083471792,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "0-decoy": {
+      "runtime_id": "ae9b40d0f7028fcf93a2d19f250a6d8fba89f5628b0c77b2c873e662b1d14172",
+      "injected_at": 1794454725.7276974,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 104.74734807014465,
+      "usage": {
+        "tokens": 25331,
+        "cost_usd": 0.008754323,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "1-decoy": {
+      "runtime_id": "d514596d2f385f3c7497b55b6b20c2bbcbc1d43eaf5f90b6f87822958a02eb1e",
+      "injected_at": 1794454830.4829028,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 135.4372878074646,
+      "usage": {
+        "tokens": 42728,
+        "cost_usd": 0.013616695599999997,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "2-decoy": {
+      "runtime_id": "ab2ff7e413f705980d631a9cac4001a1bdcd2ab1c2e300b6d2ba439721b99494",
+      "injected_at": 1794454965.9257169,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 179.09362244606018,
+      "usage": {
+        "tokens": 54232,
+        "cost_usd": 0.0184191472,
+        "calls": 24,
+        "cost_reported_calls": 24
+      }
+    },
+    "3-decoy": {
+      "runtime_id": "d8e5eb320c39575edc97ec4f0a43f5d34b8b1874ccf2c18fe65539ac15bfd8aa",
+      "injected_at": 1794455145.0274625,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 139.77243947982788,
+      "usage": {
+        "tokens": 39579,
+        "cost_usd": 0.013032645399999999,
+        "calls": 16,
+        "cost_reported_calls": 16
+      }
+    },
+    "4-decoy": {
+      "runtime_id": "6605566a366d50bc4cb3278dae9b2371ae6a61815aa0c9568a1ae8a8fb39214d",
+      "injected_at": 1794455284.8044538,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 176.03195786476135,
+      "usage": {
+        "tokens": 45257,
+        "cost_usd": 0.015362594100000002,
+        "calls": 19,
+        "cost_reported_calls": 19
+      }
+    },
+    "5-decoy": {
+      "runtime_id": "08ad87f262b7630db0370561f8ee5df87b9e71cb4323bedd54766a6d98ebcb80",
+      "injected_at": 1794455460.8415725,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 98.45886468887329,
+      "usage": {
+        "tokens": 32358,
+        "cost_usd": 0.0107784485,
+        "calls": 14,
+        "cost_reported_calls": 14
+      }
+    },
+    "6-decoy": {
+      "runtime_id": "61cce9a9c7ca35a26cb04def8f8d9d063ed9c5245c05598b27763dd99ba51595",
+      "injected_at": 1794455559.3072026,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 73.11040711402893,
+      "usage": {
+        "tokens": 40356,
+        "cost_usd": 0.0128704122,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "7-decoy": {
+      "runtime_id": "4af63f12d32152ac8f3e4e8879ef381e93cca53586a78cd3a22897916ea51301",
+      "injected_at": 1794455632.424126,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance",
+        "eval-v2-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 119.36705493927002,
+      "usage": {
+        "tokens": 44516,
+        "cost_usd": 0.0147914815,
+        "calls": 17,
+        "cost_reported_calls": 17
+      }
+    },
+    "8-decoy": {
+      "runtime_id": "f417d9fa96a9e34b6db3648df29fa33a11ec222fec3fff87eccfa8ac4c57d934",
+      "injected_at": 1794455751.797563,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 88.62428450584412,
+      "usage": {
+        "tokens": 26666,
+        "cost_usd": 0.0089717008,
+        "calls": 12,
+        "cost_reported_calls": 12
+      }
+    },
+    "9-decoy": {
+      "runtime_id": "2c4c633a4f5ab1a88efc3b32f32c2fad72e73e938e279d454f2122626d1cbf99",
+      "injected_at": 1794455840.4333375,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 84.37150621414185,
+      "usage": {
+        "tokens": 19124,
+        "cost_usd": 0.006460317499999999,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "0-fresh": {
+      "runtime_id": "365915396eb1f9c45e8b67298da769638260f7f9ccefa90e9ccdc7a2c4e6383d",
+      "injected_at": 1794455924.9085321,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 85.55763530731201,
+      "usage": {
+        "tokens": 22167,
+        "cost_usd": 0.0077752907000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "1-fresh": {
+      "runtime_id": "63eff39ff7c2b5c875d01bacab706f7336a7463b45735c0465664d43359f9e23",
+      "injected_at": 1794456087.710496,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 105.7998960018158,
+      "usage": {
+        "tokens": 26684,
+        "cost_usd": 0.009264280599999999,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "2-fresh": {
+      "runtime_id": "7fda660739521ea9154b88f27a11c66c848a5fdab3fc957161f8100d50df0e92",
+      "injected_at": 1794456255.048254,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 54.39514493942261,
+      "usage": {
+        "tokens": 19808,
+        "cost_usd": 0.0065304974,
+        "calls": 8,
+        "cost_reported_calls": 8
+      }
+    },
+    "3-fresh": {
+      "runtime_id": "291df6b5bf56e8768871f6457098d528d1479bbd7f351ae080077d148fba34fc",
+      "injected_at": 1794456359.6432476,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 95.03437066078186,
+      "usage": {
+        "tokens": 40093,
+        "cost_usd": 0.013832027800000002,
+        "calls": 18,
+        "cost_reported_calls": 18
+      }
+    },
+    "4-fresh": {
+      "runtime_id": "7c425d3b79474145618a5776dad48650c0c102a8adb0a8fa731923248529f355",
+      "injected_at": 1794456473.2208288,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 76.70427918434143,
+      "usage": {
+        "tokens": 22494,
+        "cost_usd": 0.007433197999999999,
+        "calls": 11,
+        "cost_reported_calls": 11
+      }
+    },
+    "5-fresh": {
+      "runtime_id": "5e82973268cc70848c506ce1d28507100fcdf5317d40ee2aa2e07a4c0a3301c5",
+      "injected_at": 1794456570.443602,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 123.54164361953735,
+      "usage": {
+        "tokens": 24860,
+        "cost_usd": 0.008727976500000002,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "6-fresh": {
+      "runtime_id": "cb2dbd1fe7bf33dcb8ddca19e462d1075ad71f51fd547669e3c624648234a9ba",
+      "injected_at": 1794456710.286847,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 79.96994113922119,
+      "usage": {
+        "tokens": 20361,
+        "cost_usd": 0.0070805931,
+        "calls": 9,
+        "cost_reported_calls": 9
+      }
+    },
+    "7-fresh": {
+      "runtime_id": "e903cd7ece3e2914e1e97092f8f12e0bbbadb7eec89d23eb57bedf94c8072cc3",
+      "injected_at": 1794456852.049072,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 101.51304984092712,
+      "usage": {
+        "tokens": 23075,
+        "cost_usd": 0.0077808294000000005,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "8-fresh": {
+      "runtime_id": "cd58c2568a2598c10b71a51ab4af7f1c3b12e3fc7eaf57097d3a12a985ab1e44",
+      "injected_at": 1794457031.7120845,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 112.03412389755249,
+      "usage": {
+        "tokens": 25425,
+        "cost_usd": 0.008923729799999999,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    },
+    "9-fresh": {
+      "runtime_id": "efa583b36e516cd08d9625adbd61929afb31a39a1e7d892119ed7f97d23a9403",
+      "injected_at": 1794457255.3522987,
+      "status": "written",
+      "bubbles": [
+        "eval-v2-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 63.6337354183197,
+      "usage": {
+        "tokens": 21711,
+        "cost_usd": 0.0069285525,
+        "calls": 10,
+        "cost_reported_calls": 10
+      }
+    }
+  },
+  "frozen": true,
+  "freshness": {
+    "0-fresh": {
+      "write_lag_seconds": 85.55763530731201,
+      "answerable_lag_seconds": null,
+      "probes": [
+        {
+          "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November date in the provided context.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession as AX-49, which is one of the key facts. However, it fails to confirm the November date, which is part of the required scope. Therefore, the score is 1 for partially correct information."
+        },
+        {
+          "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no mention of a November replication archive in the provided context.",
+          "score": 0,
+          "rationale": "The answer incorrectly states that there is no mention of a November replication archive, which contradicts the reference answer that specifies AX-49 as the identifier for the November replication archive. Therefore, the answer does not meet the required criteria for accuracy."
+        },
+        {
+          "answer": "The replication archive for Wispcoil is identified under accession AX-49 [1]. There is no evidence in the provided context to suggest that this archive is specifically from November, so the month cannot be confirmed.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession number AX-49 for the Wispcoil replication archive, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+        }
+      ]
+    },
+    "1-fresh": {
+      "write_lag_seconds": 105.7998960018158,
+      "answerable_lag_seconds": null,
+      "probes": [
+        {
+          "answer": "Based on the provided context, the accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context shows that:\n- JBI deposited the Morrowcell replication archive under accession QD-18 [1]\n- Morrowcell is an experimental energy membrane developed by JBI [3]\n\nNo other accessions or dates are provided for Morrowcell in the given passages.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession QD-18 for the Morrowcell replication archive, which aligns with the key fact in the reference. However, it fails to address the specific November date mentioned in the question, which is a required detail. Therefore, the answer is partially correct but incomplete."
+        },
+        {
+          "answer": "Based on the provided context, the replication archive for Morrowcell is identified by accession QD-18 [1]. There is no mention of a November date in the context, so the evidence is insufficient to confirm whether QD-18 corresponds to a November archive. \n\nThe only other replication archive mentioned is AX-49 for Wispcoil [2], which is unrelated to Morrowcell.",
+          "score": 0,
+          "rationale": "The answer incorrectly states that there is no mention of a November date in the context, which contradicts the question's explicit request for the November replication archive. The answer also fails to confirm the correct accession QD-18 for the November archive, despite it being the key fact in the reference. Therefore, the answer does not meet the required criteria for correctness."
+        },
+        {
+          "answer": "The accession that identifies the replication archive for Morrowcell is QD-18 [1]. There is no evidence provided to suggest that this accession is specifically for November, so the claim cannot be further supported regarding the month.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession QD-18 but fails to confirm the November scope as required by the question, thus missing a key fact."
+        }
+      ]
+    },
+    "2-fresh": {
+      "write_lag_seconds": 54.39514493942261,
+      "answerable_lag_seconds": 104.58164548873901,
+      "probes": [
+        {
+          "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1]. This is supported by the context stating \"The SMC team deposited the replication archive for Kiteglass under accession VT-73\" and explicitly noting \"VT-73 is the accession identifier for Kiteglass.\" There is no mention of a November date in the provided context.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the Kiteglass replication archive, which is one of the key facts. However, it fails to mention the November date scope as requested in the question, which is a required key fact. Therefore, the answer is partially correct but incomplete."
+        },
+        {
+          "answer": "The accession identifier for the Kiteglass replication archive is VT-73 [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession identifier 'VT-73' for the November replication archive for Kiteglass, matching the reference answer and key facts provided."
+        }
+      ]
+    },
+    "3-fresh": {
+      "write_lag_seconds": 95.03437066078186,
+      "answerable_lag_seconds": 113.57055187225342,
+      "probes": [
+        {
+          "answer": "The replication archive for Thistledrive is identified by accession BK-26 [1]. \n\nThe archive includes:\n- Instrument settings [1]\n- A description of excluded samples [1]\n- Anonymized batch measurements (preferred) [1]\n\nEach file in the archive is accompanied by a checksum, and the archive helps maintain reproducibility of published analyses [1]. The IDL team deposited this archive, with Neri Solvek having supervised the instrument calibration at IDL [2].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession 'BK-26' for the November replication archive for Thistledrive, which matches the key fact provided in the reference answer. The additional details about the archive's contents and the role of the IDL team, while not part of the key facts, do not detract from the correctness of the answer."
+        }
+      ]
+    },
+    "4-fresh": {
+      "write_lag_seconds": 76.70427918434143,
+      "answerable_lag_seconds": 97.20936155319214,
+      "probes": [
+        {
+          "answer": "The November replication archive for Rillmesh is identified by accession SM-91 [1]. \n\n(Note: While [2] provides details about replication archives generally, it specifically refers to Thistledrive under accession BK-26, not Rillmesh. The information about Rillmesh's accession comes solely from [1].)",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession SM-91 as the identifier for the November replication archive for Rillmesh, which matches the reference answer and includes the key fact. The additional note clarifies the source of the information, reinforcing the accuracy of the response."
+        }
+      ]
+    },
+    "5-fresh": {
+      "write_lag_seconds": 123.54164361953735,
+      "answerable_lag_seconds": 139.83367276191711,
+      "probes": [
+        {
+          "answer": "The November replication archive for Emberfoil is identified by accession **ER-35** [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the November replication archive for Emberfoil as ER-35, matching the reference answer and including all key facts."
+        }
+      ]
+    },
+    "6-fresh": {
+      "write_lag_seconds": 79.96994113922119,
+      "answerable_lag_seconds": 141.75370621681213,
+      "probes": [
+        {
+          "answer": "The replication archive for Driftloom is identified by accession **UP-62**, as deposited by the ORL team [2]. \n\n(Note: While the question specifies \"November,\" the context does not provide a deposition date for Driftloom's archive, only for Thistledrive's archive in November [1]. The accession identifier itself is confirmed in [2].)",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession **UP-62** for Driftloom's replication archive, which aligns with the key fact in the reference. However, it fails to confirm the November time scope explicitly, as noted in the answer itself. Since the question specifically asks for the November replication archive, the omission of this detail results in a partial score."
+        },
+        {
+          "answer": "The November replication archive for Driftloom is identified by the accession **UP-62**. This is supported by [2], which states that the replication archive for Driftloom has the accession identifier UP-62.",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession for the November replication archive for Driftloom as UP-62, which matches the reference answer and includes the key fact."
+        }
+      ]
+    },
+    "7-fresh": {
+      "write_lag_seconds": 101.51304984092712,
+      "answerable_lag_seconds": 179.64773964881897,
+      "probes": [
+        {
+          "answer": "Based on the provided context, the replication archive for Glimmerpod is identified under accession CW-14 [1]. There is no mention of a November date associated with this accession in the given passages. \n\nThe context also shows that:\n- Thistledrive's replication archive is under BK-26 [2]\n- Emberfoil's replication archive is under ER-35 [3]\n\nNo other accessions are mentioned for Glimmerpod in the provided passages.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession CW-14 for the Glimmerpod replication archive, which aligns with the reference answer. However, it fails to confirm the November date, which is a key fact in the question. The additional information about Thistledrive and Emberfoil is irrelevant to the question and does not contribute to the score. Therefore, the answer is partially correct but incomplete."
+        },
+        {
+          "answer": "The accession that identifies the replication archive for Glimmerpod is **CW-14** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession as CW-14, which is the key fact required by the reference answer. The mention of the month being unconfirmed does not detract from the correctness of the provided key fact."
+        }
+      ]
+    },
+    "8-fresh": {
+      "write_lag_seconds": 112.03412389755249,
+      "answerable_lag_seconds": 223.63267922401428,
+      "probes": [
+        {
+          "answer": "The replication archive for Frostweave is identified by accession JF-87 [1]. \n\nThere is no evidence in the provided context about when this archive was deposited (e.g., November or any other month), so I cannot confirm the month of deposition. The only information available is the accession number JF-87 for Frostweave's replication archive.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession number JF-87 for Frostweave's replication archive, which is a key fact. However, it fails to confirm the November time scope, which is explicitly requested in the question. Therefore, the answer is partially correct but incomplete."
+        },
+        {
+          "answer": "The replication archive for Frostweave is identified by the accession **JF-87** [1]. There is no mention of a \"November\" replication archive in the provided context, so the specific month cannot be confirmed.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the key fact in the reference. However, it incorrectly states that there is no mention of a \"November\" replication archive, which contradicts the question's explicit request for the November replication archive. Since the answer partially meets the requirements but misses the specific time scope, it scores 1."
+        },
+        {
+          "answer": "The replication archive for Frostweave is identified by accession **JF-87** [1]. \n\nThere is no evidence in the provided context about a \"November\" replication archive specifically; the only mentioned Frostweave replication archive is under accession JF-87. If the question implies there are multiple archives for Frostweave (e.g., one for November), the context does not support this claim. Only one Frostweave replication archive is documented, with no temporal distinctions. \n\nFor completeness:\n- Thistledrive's replication archive is under **BK-26** [2]\n- Emberfoil's replication archive is under **ER-35** [3]",
+          "score": 2,
+          "rationale": "The answer correctly identifies the accession **JF-87** for the Frostweave replication archive, which matches the reference answer. While the answer notes the absence of specific temporal distinctions (e.g., November) in the context, it accurately provides the requested accession, fulfilling the key fact requirement."
+        }
+      ]
+    },
+    "9-fresh": {
+      "write_lag_seconds": 63.6337354183197,
+      "answerable_lag_seconds": null,
+      "probes": [
+        {
+          "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence provided in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession as NZ-53, which is a key fact from the reference. However, it incorrectly states that the month cannot be confirmed, which is part of the required scope in the question. Therefore, the answer is partially correct but misses a required fact."
+        },
+        {
+          "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the context to suggest that this archive is specifically associated with November, so the month cannot be confirmed.",
+          "score": 0,
+          "rationale": "The answer correctly identifies the accession NZ-53 but fails to confirm the November replication archive, which is a key fact in the question. Since the answer does not fully address the requested time scope, it scores 0."
+        },
+        {
+          "answer": "The accession that identifies the replication archive for Pebbleflux is NZ-53 [1]. There is no evidence in the provided context to suggest that this replication archive is specifically for November, as the month is not mentioned in any of the passages.",
+          "score": 1,
+          "rationale": "The answer correctly identifies the accession NZ-53 for the replication archive of Pebbleflux, which matches the key fact in the reference. However, it fails to confirm the November time scope, which is a required detail in the question. Therefore, the answer is partially correct but incomplete."
+        }
+      ]
+    }
+  },
+  "frozen_at": 1794457376.304416,
+  "dataset": "eval-v2",
+  "item_content_sha256": "53c2e8cc0a96a622584986b5d5b7d8884e0042553d8c652d47476b4ac1103e68"
+}

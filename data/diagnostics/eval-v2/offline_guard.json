@@ -1,0 +1,1 @@
+{"sync_model_calls": "blocked by diagnostic guard", "async_model_calls": "blocked by diagnostic guard", "allowed_operations": "local embeddings and read-only graph/Chroma retrieval"}

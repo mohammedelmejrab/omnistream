@@ -1,0 +1,156 @@
+[
+  {
+    "SAME_AS Entity to GlobalEntity": [
+      283,
+      "0.539/1.000/1.000",
+      "227 (80.2%)"
+    ],
+    "SAME_AS with different normalized names": [
+      58,
+      "0.485/0.587/0.873",
+      "2 (3.4%)"
+    ],
+    "Random same-type GlobalEntity, different identity and name": [
+      1415,
+      "0.431/0.515/0.625",
+      "0 (0.0%)"
+    ],
+    "Duplicate audit pairs with different normalized names": [
+      28030,
+      "0.416/0.501/0.600",
+      "10 (0.0%)"
+    ],
+    "Question to named entity mentioned verbatim": [
+      68,
+      "0.602/0.699/0.755",
+      "68 (100.0%)"
+    ],
+    "Question to other named entities in expected bubbles": [
+      5993,
+      "0.363/0.431/0.517",
+      "561 (9.4%)"
+    ],
+    "Question to fact with gold-item provenance": [
+      273,
+      "0.406/0.607/0.819",
+      "273 (100.0%)"
+    ],
+    "Question to other facts in expected bubbles": [
+      10338,
+      "0.345/0.434/0.605",
+      "10338 (100.0%)"
+    ],
+    "Graphiti cosine gate, facts with gold-item provenance": [
+      273,
+      "0.406/0.607/0.819",
+      "273 (100.0%)"
+    ],
+    "Graphiti cosine gate, other facts": [
+      10338,
+      "0.345/0.434/0.605",
+      "10338 (100.0%)"
+    ],
+    "Hybrid dense gate, all question-chunk pairs": [
+      5400,
+      "0.411/0.508/0.658",
+      "5400 (100.0%)"
+    ],
+    "Version candidates eligible for cosine comparison": [
+      1,
+      "0.970/0.970/0.970",
+      "1 (100.0%)"
+    ],
+    "Same family, protected tokens differ": [
+      0,
+      "-",
+      "-"
+    ],
+    "Same endpoints, different normalized relation": [
+      102,
+      "0.620/0.724/0.870",
+      "0 (0.0%)"
+    ],
+    "Item pairs for near-duplicate audit": [
+      4005,
+      "0.593/0.681/0.859",
+      "20 (0.5%)"
+    ]
+  },
+  {
+    "SAME_AS Entity to GlobalEntity": [
+      283,
+      "0.537/1.000/1.000",
+      "228 (80.6%)"
+    ],
+    "SAME_AS with different normalized names": [
+      58,
+      "0.507/0.569/0.877",
+      "3 (5.2%)"
+    ],
+    "Random same-type GlobalEntity, different identity and name": [
+      1415,
+      "0.369/0.474/0.593",
+      "0 (0.0%)"
+    ],
+    "Duplicate audit pairs with different normalized names": [
+      28030,
+      "0.369/0.462/0.566",
+      "7 (0.0%)"
+    ],
+    "Question to named entity mentioned verbatim": [
+      68,
+      "0.577/0.694/0.757",
+      "68 (100.0%)"
+    ],
+    "Question to other named entities in expected bubbles": [
+      5993,
+      "0.334/0.411/0.508",
+      "379 (6.3%)"
+    ],
+    "Question to fact with gold-item provenance": [
+      273,
+      "0.365/0.570/0.813",
+      "273 (100.0%)"
+    ],
+    "Question to other facts in expected bubbles": [
+      10338,
+      "0.309/0.402/0.586",
+      "10338 (100.0%)"
+    ],
+    "Graphiti cosine gate, facts with gold-item provenance": [
+      273,
+      "0.365/0.570/0.813",
+      "273 (100.0%)"
+    ],
+    "Graphiti cosine gate, other facts": [
+      10338,
+      "0.309/0.402/0.586",
+      "10338 (100.0%)"
+    ],
+    "Hybrid dense gate, all question-chunk pairs": [
+      5400,
+      "0.421/0.503/0.659",
+      "5400 (100.0%)"
+    ],
+    "Version candidates eligible for cosine comparison": [
+      1,
+      "0.965/0.965/0.965",
+      "1 (100.0%)"
+    ],
+    "Same family, protected tokens differ": [
+      0,
+      "-",
+      "-"
+    ],
+    "Same endpoints, different normalized relation": [
+      102,
+      "0.574/0.659/0.837",
+      "0 (0.0%)"
+    ],
+    "Item pairs for near-duplicate audit": [
+      4005,
+      "0.528/0.619/0.822",
+      "27 (0.7%)"
+    ]
+  }
+]

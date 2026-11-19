@@ -1,0 +1,345 @@
+{
+  "name": "real-v2",
+  "since": "2026-09-18",
+  "until": "2026-11-13",
+  "collected_at": "2026-11-13T01:08:16.703924+00:00",
+  "source_list_sha256": "3e30bf99aaa51d0b83d7370c79591b56366f86ebe0ef55c672c23b3cb4ab6a72",
+  "counts": {
+    "accepted": 350,
+    "too_short": 2,
+    "bubble_target": 65,
+    "before_window": 31,
+    "event_before_window": 38,
+    "source_cap": 297,
+    "off_theme": 91,
+    "abstract_too_short": 2,
+    "duplicate": 5,
+    "reviewed_source_metadata_mismatch": 1
+  },
+  "sources": [
+    {
+      "source": "nvidia-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 5,
+      "polled": 90
+    },
+    {
+      "source": "microsoft-blog",
+      "enabled": true,
+      "errors": [],
+      "pages": 3,
+      "polled": 30
+    },
+    {
+      "source": "samsung-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 50
+    },
+    {
+      "source": "sec-releases",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 25
+    },
+    {
+      "source": "microsoft-research",
+      "enabled": true,
+      "errors": [],
+      "pages": 3,
+      "polled": 30
+    },
+    {
+      "source": "bair-research",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 10
+    },
+    {
+      "source": "federal-reserve",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 20
+    },
+    {
+      "source": "ftc-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 10
+    },
+    {
+      "source": "doj-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 25
+    },
+    {
+      "source": "nist-news",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 40
+    },
+    {
+      "source": "eff-deeplinks",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 50
+    },
+    {
+      "source": "mozilla-blog",
+      "enabled": true,
+      "errors": [
+        "article https://blog.mozilla.org/en/mozilla/ai/trustworthy-ai-map/: HTTPStatusError: Client error '403 Forbidden' for url 'https://blog.mozilla.org/en/mozilla/ai/trustworthy-ai-map/'\nFor more information check: https://developer.mozill",
+        "article https://blog.mozilla.org/en/mozilla/palaniappan-parry-jones/: HTTPStatusError: Client error '403 Forbidden' for url 'https://blog.mozilla.org/en/mozilla/palaniappan-parry-jones/'\nFor more information check: https://developer.mozi"
+      ],
+      "pages": 1,
+      "polled": 20
+    },
+    {
+      "source": "uk-cma",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 20
+    },
+    {
+      "source": "ec-press",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 10
+    },
+    {
+      "source": "commerce-news",
+      "enabled": false,
+      "errors": [
+        "US federal prose; terms endpoint returned 403; excluded pending verifiable access."
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "wikinews",
+      "enabled": true,
+      "errors": [
+        "PermissionError: robots disallows or unavailable: https://en.wikinews.org/w/index.php?title=Special:NewsFeed&feed=rss&categories=Science_and_technology&notcategories=Disputed&namespace=0&count=100"
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "conversation-tech",
+      "enabled": false,
+      "errors": [
+        "Republishing policy could not be retrieved; no full article access enabled."
+      ],
+      "pages": 0,
+      "polled": 0
+    },
+    {
+      "source": "edgar-nvidia",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-microsoft",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 6
+    },
+    {
+      "source": "edgar-alphabet",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-amazon",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-meta",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 5
+    },
+    {
+      "source": "edgar-apple",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-amd",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 4
+    },
+    {
+      "source": "edgar-intel",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-ibm",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 5
+    },
+    {
+      "source": "edgar-broadcom",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 1
+    },
+    {
+      "source": "edgar-qualcomm",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-micron",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 4
+    },
+    {
+      "source": "edgar-tsmc",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 9
+    },
+    {
+      "source": "edgar-asml",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 4
+    },
+    {
+      "source": "edgar-oracle",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-salesforce",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-cisco",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-dell",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 1
+    },
+    {
+      "source": "edgar-hpe",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "edgar-arm",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 6
+    },
+    {
+      "source": "edgar-marvell",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 9
+    },
+    {
+      "source": "edgar-supermicro",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 6
+    },
+    {
+      "source": "edgar-palantir",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 2
+    },
+    {
+      "source": "edgar-snowflake",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 3
+    },
+    {
+      "source": "arxiv-general",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 180
+    },
+    {
+      "source": "arxiv-entities",
+      "enabled": true,
+      "errors": [],
+      "pages": 1,
+      "polled": 180
+    },
+    {
+      "source": "bis-news",
+      "enabled": false,
+      "errors": [
+        "Policy endpoint inaccessible; no permission-qualified feed established."
+      ],
+      "pages": 0,
+      "polled": 0
+    }
+  ],
+  "http_events": [],
+  "manifest_count": 350,
+  "no_graph_ingestion": true,
+  "llm_calls": 0,
+  "llm_cost_usd": 0
+}

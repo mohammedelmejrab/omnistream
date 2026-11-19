@@ -1,0 +1,5 @@
+{
+  "url": "https://public.govdelivery.com/robots.txt",
+  "status": 200,
+  "body": "User-Agent: *\nAllow: /accounts/\nAllow: /system/images/\nDisallow: /\n"
+}

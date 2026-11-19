@@ -1,0 +1,5 @@
+{
+  "url": "https://data.sec.gov/robots.txt",
+  "status": 404,
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>NoSuchKey</Code><Message>The specified key does not exist.</Message><Key>robots.txt</Key><RequestId>3VFHYGNVQFSCSJNP</RequestId><HostId>RT9jB5vrKVQAv3EKlU34ly59jUu9Bw7C6Y2MKmr3EFRk8e8OkTCV1/ATsLIsw0EqW298waGF9FWXJaZeno8jj9KqE5plTRRr</HostId></Error>"
+}

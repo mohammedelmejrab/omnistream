@@ -1,0 +1,806 @@
+[
+  {
+    "question_id": "v2-q18",
+    "person": "Talia Muren",
+    "required_bridge": "January appointment identifying the chief",
+    "source_item": "2-leader",
+    "source_text": "Document extract / The board of Brindle Arc appointed Talia Muren as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation BDA. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "The board of Brindle Arc appointed Talia Muren as chief executive effective January 12, 2026.",
+        "item_id": "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38",
+        "source_count": 1,
+        "source_node_uuid": "06c86c4f-f311-44e2-8eac-f17150c8f7c2",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:20:14.027759+00:00",
+        "invalid_at": "2026-09-19 12:00:00+00:00",
+        "expired_at": "2026-11-12 03:00:07.267689+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "2aa06339-7051-4162-9944-657d8349d272",
+        "source_url": "https://fictional-v2.invalid/2/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-2-leader"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+        ],
+        "name": "APPOINTED",
+        "target_node_uuid": "4067b333-3fb1-4424-b11f-ce3132620ec0",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "cbde5025-6705-4de6-93f4-427a3f576a50"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      },
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Brindle Arc appointed Talia Muren as chief executive effective January 12",
+        "source_count": 1,
+        "item_id": "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38",
+        "source_node_uuid": "4c390e2e-b820-4733-92a0-9ff1cd31e1f5",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:22:28.270600+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "afd63447-584d-410d-986a-6c2a27b27f4a",
+        "source_url": "https://fictional-v2.invalid/2/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-2-leader"
+        ],
+        "group_id": "eval-v2-finance",
+        "item_ids": [
+          "a6445054db32c7dd240a9e30720ec99213d4e718e3787c179c84090031017f38"
+        ],
+        "name": "APPOINTED",
+        "target_node_uuid": "19f90978-b38d-46db-992a-bc83a3d9b890",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "adb26edc-4aa8-41e6-b73e-7da10f0285dc"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          6
+        ]
+      },
+      "E3history": {
+        "in_expansion": true,
+        "fused_ranks": [
+          13
+        ]
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          6,
+          26
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q18",
+    "person": "Talia Muren",
+    "required_bridge": "visiting fellowship at laboratory",
+    "source_item": "2-study",
+    "source_text": "Document extract / ABSTRACT. Investigators at SMC report development of Kiteglass, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nEditorial context: The report was prepared for an industry newsletter with a focus on supply reliability. Visiting fellow Talia Muren supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-04-17 12:00:00+00:00",
+        "fact": "Talia Muren supervised the instrument calibration at SMC.",
+        "source_count": 1,
+        "item_id": "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b",
+        "source_node_uuid": "e39a1822-0439-4071-bb8f-aa7ca161572b",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:15:01.302193+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "9f4cff42-2a3a-489c-ba13-57946fa09308",
+        "source_url": "https://fictional-v2.invalid/2/study?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-2-study"
+        ],
+        "group_id": "eval-v2-research",
+        "item_ids": [
+          "12cba41f40c37dd46a2a97541c316fef5cae339a2fd869296a81e6347f52b66b"
+        ],
+        "name": "SUPERVISED",
+        "target_node_uuid": "5c5aae14-9714-49fb-9787-42e347c1ac7c",
+        "credibility": 0.92,
+        "published_at": "2026-04-17 12:00:00+00:00",
+        "episodes": [
+          "b3f3572b-cb9e-41c6-a753-67f0602701bc"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-04-17 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          4
+        ]
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          3
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q25",
+    "person": "Neri Solvek",
+    "required_bridge": "January appointment identifying the chief",
+    "source_item": "3-leader",
+    "source_text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: The board of Oxbriar Robotics appointed Neri Solvek as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation OBR. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Oxbriar Robotics appointed Neri Solvek as chief executive effective January 12",
+        "item_id": "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3",
+        "source_count": 1,
+        "source_node_uuid": "65c2cb49-6679-4ead-8ff4-6af2e40f6c79",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:23:25.413098+00:00",
+        "invalid_at": "2026-09-19 12:00:00+00:00",
+        "expired_at": "2026-11-12 03:02:39.028203+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "9c2ed8b8-7039-4674-b34e-6e98c0c4b915",
+        "source_url": "https://fictional-v2.invalid/3/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-3-leader"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+        ],
+        "name": "APPOINTED",
+        "target_node_uuid": "8b5b8e2e-acd0-44a8-9bb4-f22a43ff3a14",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "206a8a90-8308-4f0f-a136-bae58710fbe0"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      },
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Oxbriar Robotics appointed Neri Solvek as chief executive effective January 12, 2026.",
+        "source_count": 1,
+        "item_id": "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3",
+        "source_node_uuid": "7361856e-2e21-470d-a1f9-fbfda5046064",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:24:22.235700+00:00",
+        "invalid_at": "2026-09-19 12:00:00+00:00",
+        "expired_at": "2026-11-12 03:04:14.019106+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "a89d1d4c-8319-4045-b9b7-f75b524d77c1",
+        "source_url": "https://fictional-v2.invalid/3/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-3-leader"
+        ],
+        "group_id": "eval-v2-finance",
+        "item_ids": [
+          "bc546624af32d603cfc12b9d0103dcb3996d1997f88d6e59e1ede01c8a52fba3"
+        ],
+        "name": "APPOINTED_AS_CEO",
+        "target_node_uuid": "bce70073-fecf-4e6f-8f65-4a687f5b055f",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "e5b21aa0-5f49-4e58-ad39-c4a16ce07dd5"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E3history": {
+        "in_expansion": true,
+        "fused_ranks": [
+          14
+        ]
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          18,
+          24
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q25",
+    "person": "Neri Solvek",
+    "required_bridge": "visiting fellowship at laboratory",
+    "source_item": "3-study",
+    "source_text": "Reviewers requested a correction log so that readers can distinguish later amendments.\nRecord summary: ABSTRACT. Investigators at IDL report development of Thistledrive, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Visiting fellow Neri Solvek supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-04-17 12:00:00+00:00",
+        "fact": "Visiting fellow Neri Solvek supervised the instrument calibration at IDL.",
+        "source_count": 1,
+        "item_id": "3e4bd37bc725d044fac8eff6721f8cc6830938f6f2e5edac42e5684507873241",
+        "source_node_uuid": "7bc44786-7462-4ae7-bb06-d37687112860",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:16:34.242441+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "daec2af5-0bb2-4853-bf83-76417838cbe4",
+        "source_url": "https://fictional-v2.invalid/3/study?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-3-study"
+        ],
+        "group_id": "eval-v2-research",
+        "item_ids": [
+          "3e4bd37bc725d044fac8eff6721f8cc6830938f6f2e5edac42e5684507873241"
+        ],
+        "name": "SUPERVISED_BY",
+        "target_node_uuid": "7d65ccbd-7307-42b9-876a-b3f8a3efa22c",
+        "credibility": 0.92,
+        "published_at": "2026-04-17 12:00:00+00:00",
+        "episodes": [
+          "ef514b92-06f9-44de-8fba-ecc686cef887"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-04-17 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          12
+        ]
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          11
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q32",
+    "person": "Arun Kelso",
+    "required_bridge": "January appointment identifying the chief",
+    "source_item": "4-leader",
+    "source_text": "The board of Vespergate Works appointed Arun Kelso as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation VGW. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nA public webcast accompanied the release; its transcript is retained by the publisher.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Vespergate Works appointed Arun Kelso as chief executive effective January 12, 2026",
+        "item_id": "00607bafc0a939b53cda3908fc0d2f1cf7c8aed4f37752deaf807e45a224e0ca",
+        "source_count": 1,
+        "source_node_uuid": "537a6f0f-d4b6-4036-8527-8473db245f7d",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:25:52.555182+00:00",
+        "invalid_at": "2026-09-19 12:00:00+00:00",
+        "expired_at": "2026-11-12 03:06:20.940065+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "e52c954e-c3a2-41db-b135-9e13c36630b3",
+        "source_url": "https://fictional-v2.invalid/4/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-4-leader"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "00607bafc0a939b53cda3908fc0d2f1cf7c8aed4f37752deaf807e45a224e0ca"
+        ],
+        "name": "APPOINTED",
+        "target_node_uuid": "3a7e1b37-aa18-472d-afec-f7f605a48162",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "51b8206b-006e-457e-959c-dc628631277a"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          27
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q32",
+    "person": "Arun Kelso",
+    "required_bridge": "visiting fellowship at laboratory",
+    "source_item": "4-study",
+    "source_text": "ABSTRACT. Investigators at CFI report development of Rillmesh, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nA public webcast accompanied the release; its transcript is retained by the publisher. Visiting fellow Arun Kelso supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-04-17 12:00:00+00:00",
+        "fact": "Arun Kelso supervised the instrument calibration at CFI.",
+        "item_id": "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0",
+        "source_count": 1,
+        "source_node_uuid": "3e9daae8-b61a-4b51-9321-2ef942cbd6cc",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:17:06.788382+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "464a8fb0-6ab7-4c89-b25b-6353cc91251a",
+        "source_url": "https://fictional-v2.invalid/4/study?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-4-study"
+        ],
+        "group_id": "eval-v2-research",
+        "item_ids": [
+          "539605f4b01540c8ffcfd593dada0714a45dea36f8813e93a7a7a16fd72f8cb0"
+        ],
+        "name": "SUPERVISED_INSTRUMENT_CALIBRATION_AT",
+        "target_node_uuid": "8bdc1bef-ff1f-49ba-a2d9-a5658fb27ae0",
+        "credibility": 0.92,
+        "published_at": "2026-04-17 12:00:00+00:00",
+        "episodes": [
+          "2db5241b-9cdc-4d2a-8dc1-74bae3a52b91"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-04-17 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          4
+        ]
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          4
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q38",
+    "person": "Mina Tolvik",
+    "required_bridge": "January appointment identifying the chief",
+    "source_item": "5-leader",
+    "source_text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nThe board of Quenara Devices appointed Mina Tolvik as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation QND. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Quenara Devices appointed Mina Tolvik as chief executive effective January 12, 2026.",
+        "item_id": "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+        "source_count": 1,
+        "source_node_uuid": "6a34326e-418b-4b1b-985a-d5e09bd2f5b8",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:32:05.046203+00:00",
+        "invalid_at": "2026-09-12 12:00:00+00:00",
+        "expired_at": "2026-11-12 02:45:54.090082+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "0422a847-62c5-4a17-9184-f546ac5ddb12",
+        "source_url": "https://fictional-v2.invalid/5/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-5-leader"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d"
+        ],
+        "name": "APPOINTED_AS_CEO",
+        "target_node_uuid": "6a0dec4f-f3af-402c-8db5-f866183d100c",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "d15871b3-a879-4ccd-9b66-7692b27b2606"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      },
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Quenara Devices appointed Mina Tolvik as chief executive effective January 12",
+        "source_count": 1,
+        "item_id": "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d",
+        "source_node_uuid": "192bc8f3-3e8e-49ac-a91f-5829a8af8bb6",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:33:58.579113+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "61fe40d1-c584-4476-b875-4576be8c77fd",
+        "source_url": "https://fictional-v2.invalid/5/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-5-leader"
+        ],
+        "group_id": "eval-v2-finance",
+        "item_ids": [
+          "5a65bedd04575987ca81fca8f01ffa6dc7863b51ec03a160ab390c659670641d"
+        ],
+        "name": "appointed",
+        "target_node_uuid": "e9718209-e227-4a86-af1b-55a8d0bcd796",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "3565641c-15aa-4d57-988c-54b06aa97af7"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          17
+        ]
+      },
+      "E3history": {
+        "in_expansion": true,
+        "fused_ranks": [
+          11
+        ]
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          20,
+          23
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q38",
+    "person": "Mina Tolvik",
+    "required_bridge": "visiting fellowship at laboratory",
+    "source_item": "5-study",
+    "source_text": "From the editor: The publisher included a glossary for readers unfamiliar with the technical terminology.\n\nABSTRACT. Investigators at IVC report development of Emberfoil, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision. Visiting fellow Mina Tolvik supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-04-17 12:00:00+00:00",
+        "fact": "Visiting fellow Mina Tolvik supervised the instrument calibration at IVC.",
+        "item_id": "ebf5c36d9126076a12eb18e82a6959fdc0abdfcb89530d496351f7494f5131b7",
+        "source_count": 1,
+        "source_node_uuid": "c9757c54-28e6-40a0-849b-29e3bb769076",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:17:46.212144+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "6f2e9ac4-0926-4589-bacb-69e5dda06073",
+        "source_url": "https://fictional-v2.invalid/5/study?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-5-study"
+        ],
+        "group_id": "eval-v2-research",
+        "item_ids": [
+          "ebf5c36d9126076a12eb18e82a6959fdc0abdfcb89530d496351f7494f5131b7"
+        ],
+        "name": "SUPERVISED_INSTRUMENT_CALIBRATION",
+        "target_node_uuid": "ecefb371-f922-4aee-b8cb-98e676717049",
+        "credibility": 0.92,
+        "published_at": "2026-04-17 12:00:00+00:00",
+        "episodes": [
+          "a19d6bd4-3bab-4c49-b78f-305e6c63c3f3"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-04-17 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          7
+        ]
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          5
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q43",
+    "person": "Yara Penlo",
+    "required_bridge": "January appointment identifying the chief",
+    "source_item": "6-leader",
+    "source_text": "Document extract / The board of Tesselmere Controls appointed Yara Penlo as chief executive effective January 12. In its corporate register the manufacturer also uses the trading abbreviation TMC. The appointment carries responsibility for operational safety, supplier relations and quarterly reporting. Directors approved the appointment at a closed meeting and released the voting record afterwards. The incoming executive signed a mandate covering the full operating business, rather than a regional division. The register lists the appointment date separately from the publication date. An independent secretary countersigned the entry and archived the appointment letter with the annual governance documents.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Tesselmere Controls appointed Yara Penlo as chief executive effective January 12",
+        "item_id": "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+        "source_count": 1,
+        "source_node_uuid": "1f01ae54-7698-4457-9bf1-f5a8ea241b76",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:35:31.675198+00:00",
+        "invalid_at": "2026-09-12 12:00:00+00:00",
+        "expired_at": "2026-11-12 02:48:45.731439+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "e8d920b4-b1a2-43cb-85b1-892f894a8b5a",
+        "source_url": "https://fictional-v2.invalid/6/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-6-leader"
+        ],
+        "group_id": "eval-v2-news",
+        "item_ids": [
+          "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7"
+        ],
+        "name": "APPOINTS",
+        "target_node_uuid": "30ca6fee-78c1-4929-bc6e-cd9ec9b2cb15",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "7cca23e2-2d9c-4d47-bb24-17deb71649c5"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      },
+      {
+        "reference_time": "2026-01-13 12:00:00+00:00",
+        "fact": "Yara Penlo was appointed as chief executive of Tesselmere Controls effective January 12, 2026.",
+        "source_count": 1,
+        "item_id": "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7",
+        "source_node_uuid": "d5b02979-d52c-4e34-8ee2-1bcf27d4c683",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 01:36:24.234176+00:00",
+        "invalid_at": "2026-09-19 12:00:00+00:00",
+        "expired_at": "2026-11-12 03:12:01.836717+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "eb787f85-421f-46fc-8b31-a83ae72ff672",
+        "source_url": "https://fictional-v2.invalid/6/leader?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-6-leader"
+        ],
+        "group_id": "eval-v2-finance",
+        "item_ids": [
+          "1be0efe9984dea646999a11a052502888fb322953f683d5b552580a9481a0cb7"
+        ],
+        "name": "APPOINTED",
+        "target_node_uuid": "61ff7453-8f41-4427-a79f-55fb4d05296c",
+        "credibility": 0.92,
+        "published_at": "2026-01-13 12:00:00+00:00",
+        "episodes": [
+          "717937a8-e082-4898-86d3-d0e34aea63b0"
+        ],
+        "status": "HISTORICAL",
+        "valid_at": "2026-01-13 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E3history": {
+        "in_expansion": true,
+        "fused_ranks": [
+          10
+        ]
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          9,
+          29
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  },
+  {
+    "question_id": "v2-q43",
+    "person": "Yara Penlo",
+    "required_bridge": "visiting fellowship at laboratory",
+    "source_item": "6-study",
+    "source_text": "Document extract / ABSTRACT. Investigators at ORL report development of Driftloom, an experimental energy membrane. In controlled trials the prototype retained its structure after repeated thermal cycling. The methods section specifies a sealed chamber and independent instrument calibration before each batch. Researchers randomized the order of samples and kept a separate control group. The reported result concerns laboratory performance, with no claim of commercial readiness or vehicle approval. Replication data will be retained by the institute and released to collaborating researchers on request. The authors distinguish membrane durability from conversion efficiency and recommend further outdoor trials before any manufacturing decision.\nEditorial context: The source was circulated to employees before distribution to subscribing analysts. Visiting fellow Yara Penlo supervised the instrument calibration; the fellowship is separate from any corporate board position.",
+    "extracted_facts": [
+      {
+        "reference_time": "2026-04-17 12:00:00+00:00",
+        "fact": "Yara Penlo supervised the instrument calibration at ORL as a visiting fellow.",
+        "source_count": 1,
+        "item_id": "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c",
+        "source_node_uuid": "5e5761be-a52d-4c7b-a13f-63f00e9f74fa",
+        "confidence": 0.92,
+        "created_at": "2026-11-12 02:19:40.612827+00:00",
+        "grounded": true,
+        "credibilities": [
+          0.92
+        ],
+        "uuid": "0661304f-6717-4b80-a2a6-78a2b45e672e",
+        "source_url": "https://fictional-v2.invalid/6/study?snapshot=eval-v2",
+        "source_ids": [
+          "eval-v2-6-study"
+        ],
+        "group_id": "eval-v2-research",
+        "item_ids": [
+          "398dfe75b6c979c9fb5f84f5895795230a37579795d82a02d88780780d53949c"
+        ],
+        "name": "SUPERVISED",
+        "target_node_uuid": "7f28b665-5487-4d45-af8e-03823f240428",
+        "credibility": 0.92,
+        "published_at": "2026-04-17 12:00:00+00:00",
+        "episodes": [
+          "d4317633-50ed-4c8a-a5ea-13bb6f1ce0e2"
+        ],
+        "status": "VERIFIED",
+        "valid_at": "2026-04-17 12:00:00+00:00"
+      }
+    ],
+    "conditions": {
+      "E3": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4trace": {
+        "in_expansion": true,
+        "fused_ranks": [
+          4
+        ]
+      },
+      "E3history": {
+        "in_expansion": false,
+        "fused_ranks": []
+      },
+      "E4tracehistory": {
+        "in_expansion": true,
+        "fused_ranks": [
+          4
+        ]
+      },
+      "E1": {
+        "in_expansion": false,
+        "fused_ranks": []
+      }
+    }
+  }
+]

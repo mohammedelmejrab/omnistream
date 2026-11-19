@@ -1,0 +1,305 @@
+[
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 20,
+    "retrieval_measured": 20,
+    "correct": 4,
+    "correctness": 0.4,
+    "recall_any": 0.6,
+    "recall_at_10": 0.6,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 15,
+    "retrieval_measured": 15,
+    "correct": 11,
+    "correctness": 1.4666666666666666,
+    "recall_any": 1.0,
+    "recall_at_10": 1.0,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 20,
+    "retrieval_measured": 20,
+    "correct": 4,
+    "correctness": 0.45,
+    "recall_any": 0.8333333333333334,
+    "recall_at_10": 0.7916666666666666,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "graphiti",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 15,
+    "retrieval_measured": 15,
+    "correct": 10,
+    "correctness": 1.3333333333333333,
+    "recall_any": 0.9,
+    "recall_at_10": 0.9,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 20,
+    "retrieval_measured": 20,
+    "correct": 1,
+    "correctness": 0.1,
+    "recall_any": 0.30833333333333335,
+    "recall_at_10": 0.30833333333333335,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 15,
+    "retrieval_measured": 15,
+    "correct": 10,
+    "correctness": 1.3333333333333333,
+    "recall_any": 0.7,
+    "recall_at_10": 0.6666666666666666,
+    "errors": []
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 4,
+    "retrieval_measured": 4,
+    "correct": 2,
+    "correctness": 1,
+    "recall_any": 0.8333333333333333,
+    "recall_at_10": 0.08333333333333333,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E0",
+    "configuration": "own+subagents",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 2,
+    "retrieval_measured": 2,
+    "correct": 2,
+    "correctness": 2,
+    "recall_any": 0.75,
+    "recall_at_10": 0.5,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E0",
+    "configuration": "classic+subagents",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 20,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.6,
+    "recall_at_10": 0.6,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 15,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 1.0,
+    "recall_at_10": 1.0,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 20,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.7583333333333333,
+    "recall_at_10": 0.725,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "graphiti",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 15,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.9,
+    "recall_at_10": 0.9,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 20,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.2916666666666667,
+    "recall_at_10": 0.2916666666666667,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 15,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.7,
+    "recall_at_10": 0.7,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "own+subagents",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E1",
+    "configuration": "classic+subagents",
+    "type": "time_sensitive",
+    "n": 15,
+    "scored": 0,
+    "retrieval_measured": 0,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": null,
+    "recall_at_10": null,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  },
+  {
+    "experiment": "E4",
+    "configuration": "own",
+    "type": "multi_hop",
+    "n": 20,
+    "scored": 0,
+    "retrieval_measured": 20,
+    "correct": 0,
+    "correctness": null,
+    "recall_any": 0.8583333333333333,
+    "recall_at_10": 0.8166666666666667,
+    "errors": [
+      "OpenRouter key lifetime capacity exceeded (403)"
+    ]
+  }
+]

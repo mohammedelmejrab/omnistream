@@ -1,0 +1,726 @@
+[
+ {
+  "item_id": "9fcaeedc",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Regulator case page on Google's mobile platform: competition-policy news",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "e1698167",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Vendor announcement about joining an EU science-enablement initiative",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "4e764a47",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Profile of an NVIDIA engineer and open models; feature journalism",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "d02369ad",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "CMA publication notice for technology-transfer guidance",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "36723e8d",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Cloud-gaming release announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "dcfca97c",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Product launch of the new Copilot app",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "8fbda6a1",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Advocacy post on software security and AI-found vulnerabilities",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "a7a73477",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Consumer product/content announcement (Art Store)",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "e8ca2bd5",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Feature on healthcare AI startups",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "d36750f8",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Vendor blog summarising a commissioned IDC survey; marketing news, not peer research",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "60ce7dcd",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "DOJ guilty-plea announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "185889d3",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Advocacy post on state social-media age-gating laws",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "dbc214e3",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Consumer promotion announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "84d945b5",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Newsletter teaser on government data access",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "d4b07883",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Cloud-gaming weekly release announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "d0e52276",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Startup investment announcement without financial figures; corporate news",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "6bbb2a8b",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Commentary on a Supreme Court ruling",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "afc6be23",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Advice post for parents",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "7fb6f8e1",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Marketing campaign announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "af0b17e2",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Advocacy post about a spyware campaign",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "937dcced",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Feature on clean-energy companies using AI",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "5569f5b3",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Advocacy post on censorship in India",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "4f4e68d2",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Vendor technical blog on memory codesign; product news, not a research paper",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "f2ab8644",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Product hands-on review",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "a2830602",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Cloud-gaming release announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "fbadb309",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Sponsorship/event announcement",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "7a85fbb1",
+  "bubble_hint": "news",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "Agency announcement of a finalised migration report",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "81f42a91",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Preferred-stock dividend declaration",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "04993caf",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K director departure disclosure (governance filing)",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "b64c2e06",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance",
+   "News"
+  ],
+  "reason": "Earnings release that also announces products, customer deployments and acquisitions",
+  "differs_from_hint": true
+ },
+ {
+  "item_id": "f22f6cac",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance",
+   "News"
+  ],
+  "reason": "Merger announcement with deal terms; major corporate news as well as a financial event",
+  "differs_from_hint": true
+ },
+ {
+  "item_id": "1f9eb868",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "News"
+  ],
+  "reason": "6-K wrapper around a statement on leaked employee data; no financial content, so News rather than the Finance hint",
+  "differs_from_hint": true
+ },
+ {
+  "item_id": "1b826f5a",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Notes offering 8-K",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "233392c7",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "SEC settled enforcement action against an investment adviser",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "510738e2",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "SEC roundtable announcement on market data policy",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "7c9eebcf",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Financial statements exhibit",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "7f207a76",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "SEC fraud charges",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "3e750a4f",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K cover for earnings release",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "e90047dd",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Board retirement press release (governance)",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "bd102c5f",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K cover for earnings release",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "30589f0e",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance",
+   "News"
+  ],
+  "reason": "Earnings release that also announces the new product line-up",
+  "differs_from_hint": true
+ },
+ {
+  "item_id": "80b4295f",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Quarterly earnings release",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "509b5324",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Quarterly earnings release, almost entirely financial tables",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "7e5af299",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Non-GAAP definitions exhibit",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "2b9dc50b",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "SEC exemptive relief on Treasury clearing",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "830d165f",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K board appointments",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "904be74c",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K off-balance-sheet obligation",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "35329f2e",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "8-K cover for earnings release",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "c8d953a6",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "SEC investor bulletin with other regulators",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "a80f73b9",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Federal Reserve banking enforcement action",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "99de9e9e",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Quarterly earnings release with capital-structure change",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "017deb85",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Convertible notes offering launch",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "b9715cb4",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance"
+  ],
+  "reason": "Quarterly financial report",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "f436d43a",
+  "bubble_hint": "finance",
+  "routing_labels": [
+   "Finance",
+   "News"
+  ],
+  "reason": "Earnings release that also reports model and product milestones",
+  "differs_from_hint": true
+ },
+ {
+  "item_id": "cd9a0000",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: encrypted transformer inference",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "4871ba52",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: LoRA theory",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "37222495",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: game-playing RL",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "9eacbdd9",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: multi-agent review framework",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "a3e4ef07",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: recommendation model",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "d1ccfe31",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: verifiable inference proofs",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "db9ea866",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: agent memory",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "a1da460c",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: coding-agent benchmark",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "358b6cdc",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: proof repair",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "ece95376",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: text encoding for LMs",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "c161a652",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: human evaluation drift",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "95530714",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: AI exam grading study",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "dd3202e0",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: analog circuit optimisation",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "4daf6932",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "Microsoft Research post on a visualisation language",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "bc277f19",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: research-agent benchmark",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "6fe23e4d",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: time-series pretraining",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "4e3f7c1c",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "Microsoft Research post on synthetic enterprise evaluation data",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "f67d2b7f",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: protein inverse folding",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "93a879f7",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "Microsoft Research post on a Nature retrosynthesis paper",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "83b20bfa",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: tokenizer cost disparity",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "09f646c7",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: agent evaluation frameworks",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "759f3904",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: climate equation discovery",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "8e63b58e",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: audio reasoning diagnostic",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "2c5be933",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract on earnings prediction; the topic is finance but the content is a method evaluation, so Research",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "796f85ac",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "Microsoft Research post on an agentic RL framework",
+  "differs_from_hint": false
+ },
+ {
+  "item_id": "64bf15d1",
+  "bubble_hint": "research",
+  "routing_labels": [
+   "Research"
+  ],
+  "reason": "arXiv abstract: bandit algorithm",
+  "differs_from_hint": false
+ }
+]

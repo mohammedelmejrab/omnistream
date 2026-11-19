@@ -1,0 +1,29 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+.....F
+================================== FAILURES ===================================
+__________________ test_chat_sends_openai_compatible_request __________________
+
+settings = Settings(llm_base_url='https://openrouter.ai/api/v1', llm_api_key=SecretStr('**********'), llm_model='deepseek/deepsee...e_news_days=3, half_life_finance_days=30, half_life_research_days=365, record_snapshot=None, max_upload_bytes=20000000)
+mock_openai = <function mock_openai.<locals>.factory at 0x000002AC1628DEE0>
+
+    def test_chat_sends_openai_compatible_request(settings, mock_openai):
+        client, transport = mock_openai(lambda body: "hello")
+        llm = LLMClient(settings, client=client)
+        assert llm.chat([{"role": "user", "content": "hi"}]) == "hello"
+        req = transport.requests[0]
+        assert str(req.url) == "https://openrouter.ai/api/v1/chat/completions"
+        assert req.headers["authorization"] == "Bearer test-key"
+        body = transport.bodies[0]
+        assert body["model"] == "deepseek/deepseek-chat"
+        assert body["messages"] == [{"role": "user", "content": "hi"}]
+        assert body["temperature"] == 0.0
+>       assert body["max_tokens"] == 4096
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert 'max_tokens' not in {'model': 'deepseek/deepseek-chat', 'messages': [{'role': 'user', 'content': 'hi'}], 'max_tokens': 4096, 'temperature': 0.0, ...}
+
+tests\unit\test_c5_llm.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/unit/test_c5_llm.py::test_chat_sends_openai_compatible_request
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 149 passed, 22 deselected in 23.58s

@@ -1,0 +1,11 @@
+{"split_assignment": {
+ "rule": "Decided before writing. Each organisation or research topic belongs to exactly one split; an item belongs to the split of its publisher or primary entity. Items that mention entities of both splits are not used as bridges. Dev and test share no gold item (checked by scripts/realdata/check_questions.py).",
+ "test": {
+  "organisations": ["NVIDIA", "TSMC", "Apple", "Amazon", "Meta", "AMD", "IBM", "Marvell", "Lumentum", "Cisco", "Arm", "Oracle", "Snowflake", "Broadcom", "Palantir", "Anthropic", "OpenAI", "US DOJ", "NIST", "FTC", "UK CMA (Apple mobile platform page)", "SEC (enforcement releases)", "EFF (posts not about Google)", "BAIR / UC Berkeley"],
+  "research_topics": ["GPU architecture and simulation", "agentic coding benchmarks", "quantum computing on IBM hardware", "analog circuit design", "formal proof repair", "encrypted inference", "game-playing RL", "tokenisation", "speech recognition", "human evaluation of LLMs", "combinatorial search"]
+ },
+ "dev": {
+  "organisations": ["Alphabet / Google", "Microsoft (blog, research, filings)", "Samsung", "Qualcomm", "Intel", "Micron", "ASML", "Supermicro", "Salesforce / Braze", "HPE", "Dell", "Mozilla", "Federal Reserve", "SEC (rule-making and roundtable releases)", "UK CMA (Google pages and technology-transfer pages)", "EFF (posts about Google)"],
+  "research_topics": ["Gemini evaluations", "tabular foundation models", "financial-disclosure NLP", "AI security / backdoors", "retrosynthesis", "climate equation discovery", "protein-ligand ranking", "FPGA accelerators"]
+ }
+}}

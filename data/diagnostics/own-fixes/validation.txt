@@ -1,0 +1,7 @@
+Full offline suite: .venv/Scripts/python.exe -m pytest -q
+1080 passed, 1 skipped, 21 deselected in 99.04s (0:01:39)
+Ruff: All checks passed for changed files.
+1200 unique offline cells; 35/35 E0 baseline metric rows reproduced.
+107/107 frozen snapshot file hashes unchanged.
+44/44 captured-seed downstream regression audits reproduce rankings.
+Fresh replay changed 6/44 ranked outputs; cause not isolated.

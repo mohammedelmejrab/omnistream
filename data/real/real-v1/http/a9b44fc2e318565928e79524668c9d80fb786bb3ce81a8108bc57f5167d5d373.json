@@ -1,0 +1,5 @@
+{
+  "url": "https://blog.google/robots.txt",
+  "status": 200,
+  "body": "\n\n\n\nUser-agent: *\nDisallow: /search/?\nDisallow: /intl/*/search/?\nDisallow: /search?\nDisallow: /intl/*/search?\n\nSitemap: https://blog.google/sitemap.xml\n\n"
+}

@@ -1,0 +1,5 @@
+{
+  "url": "https://nvidianews.nvidia.com/robots.txt",
+  "status": 200,
+  "body": "#\r\n# Welcome to NVIDIA \r\n#\r\n# We like people who read our code!\r\n# Check out our careers section while you're here\r\n#\r\n# https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite\r\n#\r\n# Last updated 12 March 2019\r\n#\r\n\r\nUser-agent: *\r\nDisallow: /file\r\n\r\nSitemap: https://nvidianews.nvidia.com/sitemap.xml"
+}

@@ -1,0 +1,33 @@
+Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]Loading weights:   2%|▏         | 6/391 [00:00<00:09, 41.26it/s]Loading weights:   3%|▎         | 11/391 [00:00<00:18, 20.71it/s]Loading weights:   4%|▍         | 16/391 [00:00<00:13, 27.18it/s]Loading weights:   5%|▌         | 20/391 [00:00<00:12, 29.70it/s]Loading weights:   6%|▌         | 24/391 [00:00<00:15, 23.25it/s]Loading weights:   7%|▋         | 27/391 [00:01<00:18, 19.61it/s]Loading weights:   8%|▊         | 30/391 [00:01<00:38,  9.31it/s]Loading weights:   9%|▉         | 35/391 [00:02<00:26, 13.32it/s]Loading weights: 100%|██████████| 391/391 [00:02<00:00, 183.19it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+LLM completion truncated (finish_reason=length); re-sample required
+memory allocation of 128 bytes failed

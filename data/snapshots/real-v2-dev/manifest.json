@@ -1,0 +1,1681 @@
+{
+  "dataset_sha256": "418776bada02ebfbf0815405a7ab37443571ad19b87d3a9dc2848b6a9532bf5c",
+  "dataset": "real-v2",
+  "split": "dev",
+  "background": 40,
+  "selection_seed": 20261113,
+  "selected_item_ids": [
+    "03018bb6e10503e95c6a82ad17c86d0c77c363a8cf10a6f5e303a9c9081b4724",
+    "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171",
+    "054e8d678a39b5e5b399c61e32faeda1ee103fbfaf5ba199dbc7b4aed2488a12",
+    "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f",
+    "097fdf4af9c2d7a65c2cea8a7c1ea2741f0ede3ad371085862ddb2d361047026",
+    "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99",
+    "0c60c54bc96a6464ba50c4bd68395015d7b6bc9cfa17691d54b9d946da70a458",
+    "0eb65778cbbe8c86b037cfec718db242eb57583f287272a043247cf603e2ed72",
+    "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c",
+    "1f9eb8688ffab83a42b7c51bb63ce3f0a7cc967bacb608f02cb32d26077f882a",
+    "1ff30f2fbafc9172867581931c6bd586a774ec345dc01331f06c3110dabbb6e7",
+    "23e20026a4c06e9e316bfbc84039bebae86f1ada98c1fc4549db9382a2c55415",
+    "2ad289c95b532abebb4d28a2c9ebcb8e1feb663de82c4321b5952a269df7d3ff",
+    "2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb",
+    "321561f3ed881e6ce4981b3ece28e394a904037bb5a085db9a4bcd738b0b6e85",
+    "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff",
+    "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b",
+    "4c4dc338ea9a270ad0c6737f6c53aac04e83ce26753850de9ca2469f0a246649",
+    "503b3b4db0f3795c18f047d2e1e6806da393ebea9d2bcf3727790ed2062b0ad0",
+    "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e",
+    "50f9e45bf23a7cb7446aa83d146f1e97cc29640628c41e7adf58b98863907fb4",
+    "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17",
+    "532cf528c4a38417cb72dbffd16869bdbbd330f3ea4b195eac7b51eb7961d162",
+    "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943",
+    "5b0d68ba5fbfcf62570d6c0f77b8d83c446568890edc85525c411cf09a3b9a04",
+    "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f",
+    "62dae3fa9fdbfc1e285d25e8a2311ff6d9cd1063c7adbfeddd900f7f8b695601",
+    "69cf9e2de96e8504cb30e3263c301d07194bf4b4f36dbcbe4b770b7a285d6768",
+    "6b8d9dee5ceca018525f789c7b638826953c05c9c1fef98c40fb3f7b4ace51b0",
+    "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486",
+    "6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19",
+    "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a",
+    "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4",
+    "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22",
+    "759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f",
+    "7a4b80e2e778f3a9ef1aa9d633bab26a50d7425b315d80e1b5ea54780ea276c2",
+    "7fb6f8e1e2f0fede8f8dd96e3264859ac0f568165572f01182924099c2aa077c",
+    "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc",
+    "843c7285d6f8a56638de83a2867e255d2016b3bbba55aee686ba845127647432",
+    "8813ba810174959c6fae37bf17ae4ecb9b6c5c306eaa17d8708cc4fd74bb3834",
+    "8a420c89e39394a457ce9afc154d53cab671514ad6fcf75c7e80561f05e2faa1",
+    "8cde6de9ac503b5c55b786748d3052338dbe65ba6f16695bff16ee2c56f9b053",
+    "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3",
+    "8faa6a570793c3ac0fadfeed24a0aa5b685f16baf40aaa2b6958aa2e9ef81be3",
+    "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549",
+    "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017",
+    "95c4aa817985eb91b67b17003299b3e443dd8efb6c148b123286e05afc3b0f89",
+    "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd",
+    "a0704f24827c00cb63018e0a83125066e67172950ffa154c80756d1bbb639d5c",
+    "a75c05afef889d95334d259cd4d1f2e4cd817fac401ece7179f3b169f7375191",
+    "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703",
+    "abdb6870e58e5fd3d4fe78331b46811327c412ea9304543badc53d26266768c2",
+    "af9cec61b351f14d2aba82c0615d6d585a86364aea640f42993a650daf868f24",
+    "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd",
+    "b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2",
+    "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22",
+    "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae",
+    "cbca4caf7812befeea30708db0c8b051ffca45803a3ee9bbef97893757cf3bc2",
+    "d02369ad64bc04f34a4d2a50cb97c8bcb8de31f300e3b017e4763f406fb1d99b",
+    "d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073",
+    "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354",
+    "d3ebd0012e800aaa6ea8a9fdb1558e474cefb414f58a52ec4640e30aab9e3af8",
+    "db9ea866803b8d8ed413a70159f316e12d7cd5c85dc3ba01debd91d352bc9537",
+    "e1eb2e3747448f44f6939458dea6ed041943e62b6d87b0acfb430221eef69b0e",
+    "e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573",
+    "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428",
+    "ef70a0662c5714d2a0ae1174851dcf7b67bf2d0bf2fde9c4cc36c1c3755c43e6",
+    "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9",
+    "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459",
+    "f51e164a1d7a7af4a6455211e50ca5c4f2c784bf505e98046ee49262941abf62",
+    "f67d2b7fe89fe2bcca2180f6aa1502531b8ed761e01ea624c8a04720b925230d",
+    "f7860b035016f1b681bbacc3f319e27bcea9c3d120cd1318d8ee31f2331ea525",
+    "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18",
+    "f8b9ae043c403e0ffb915e3e4859f7ece21744b70de935c813e074aaa033026b",
+    "fc43365ad835e7d7d715fe5bb6701f3fbbcf7038bbe5ed53b4022627a565861d",
+    "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c"
+  ],
+  "selected_item_ids_sha256": "651a80acb081f34db03ec1a79f0f6df19819874b2b83148fe4057578d94f39c2",
+  "item_content_sha256": "4deebe8edc10b347eba2547cdaba616813449fbee35153a4e5e7f747cb6e5da8",
+  "construction_started_at": 1794573046.408456,
+  "items": {
+    "93a879f75d01bc41426b47b7e286eddae767d7759af728909e412d74bc51c017": {
+      "runtime_id": "4ec86bba44ff1fd565c7a3f90c0e0e162a22c67fe61c5ab6a5bc806c05b8f3d5",
+      "injected_at": 1794573061.1413321,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 9.33386778831482,
+      "usage": {
+        "tokens": 8302,
+        "cost_usd": 0.002524281,
+        "calls": 3,
+        "cost_reported_calls": 3,
+        "prompt_tokens": 7020,
+        "completion_tokens": 1282,
+        "reasoning_tokens": 0
+      }
+    },
+    "abdb6870e58e5fd3d4fe78331b46811327c412ea9304543badc53d26266768c2": {
+      "runtime_id": "609370d365d8dc12ae5e0899f7f10c9f9c19b1161f8ca52b79f6158599a55ebd",
+      "injected_at": 1794573070.4827094,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.75,
+      "queue_attempts": 1,
+      "write_lag_seconds": 53.7260377407074,
+      "usage": {
+        "tokens": 29819,
+        "cost_usd": 0.005893404999999998,
+        "calls": 19,
+        "cost_reported_calls": 19,
+        "prompt_tokens": 25266,
+        "completion_tokens": 4553,
+        "reasoning_tokens": 0
+      }
+    },
+    "e1eb2e3747448f44f6939458dea6ed041943e62b6d87b0acfb430221eef69b0e": {
+      "runtime_id": "794add4a04e1cb249cc25f131eda9818f3646c74d334e70e7250b26b0ef5f521",
+      "injected_at": 1794573124.2159505,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 119.5506386756897,
+      "usage": {
+        "tokens": 148949,
+        "cost_usd": 0.025778005599999987,
+        "calls": 82,
+        "cost_reported_calls": 82,
+        "prompt_tokens": 137532,
+        "completion_tokens": 11417,
+        "reasoning_tokens": 0
+      }
+    },
+    "ef70a0662c5714d2a0ae1174851dcf7b67bf2d0bf2fde9c4cc36c1c3755c43e6": {
+      "runtime_id": "dd426e5152407fef517e58f5e79b5bc651ff025e646cd0c41ad844dc73761133",
+      "injected_at": 1794573243.7771122,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.98379135131836,
+      "usage": {
+        "tokens": 109112,
+        "cost_usd": 0.015821414,
+        "calls": 51,
+        "cost_reported_calls": 51,
+        "prompt_tokens": 101411,
+        "completion_tokens": 7701,
+        "reasoning_tokens": 0
+      }
+    },
+    "7a4b80e2e778f3a9ef1aa9d633bab26a50d7425b315d80e1b5ea54780ea276c2": {
+      "runtime_id": "e28877c91f593a43415b7990351c7dfde2fafd7f683ccd9874a82d77b27bdd19",
+      "injected_at": 1794573284.7735834,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 76.10927844047546,
+      "usage": {
+        "tokens": 179941,
+        "cost_usd": 0.027850494239999985,
+        "calls": 63,
+        "cost_reported_calls": 63,
+        "prompt_tokens": 169052,
+        "completion_tokens": 10889,
+        "reasoning_tokens": 0
+      }
+    },
+    "d3ebd0012e800aaa6ea8a9fdb1558e474cefb414f58a52ec4640e30aab9e3af8": {
+      "runtime_id": "b78b01ca5aedeaf9206b868f8d1b7e6f1344050c99bfca02717aa849cc2cc53b",
+      "injected_at": 1794573360.8932207,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.75,
+      "queue_attempts": 1,
+      "write_lag_seconds": 35.40435075759888,
+      "usage": {
+        "tokens": 88292,
+        "cost_usd": 0.0151851964,
+        "calls": 43,
+        "cost_reported_calls": 43,
+        "prompt_tokens": 82924,
+        "completion_tokens": 5368,
+        "reasoning_tokens": 0
+      }
+    },
+    "90445a7a69984ea7c580a299973b27c95f4334aa720227c68ebb98900c6d9549": {
+      "runtime_id": "23a003dc8819db358ccaf5a22bd0905b1fb9b1dec3bd29cc1e84fa4db0907221",
+      "injected_at": 1794573396.3056307,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 21.180234670639038,
+      "usage": {
+        "tokens": 66949,
+        "cost_usd": 0.0104723126,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 66038,
+        "completion_tokens": 911,
+        "reasoning_tokens": 0
+      }
+    },
+    "321561f3ed881e6ce4981b3ece28e394a904037bb5a085db9a4bcd738b0b6e85": {
+      "runtime_id": "f4ce14e6fb9a87a2c270e2f90f7c3f28a56455b9de0b33b6a589e57d480c29bd",
+      "injected_at": 1794573417.4938867,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 29.482146978378296,
+      "usage": {
+        "tokens": 99081,
+        "cost_usd": 0.013088876600000006,
+        "calls": 28,
+        "cost_reported_calls": 28,
+        "prompt_tokens": 95530,
+        "completion_tokens": 3551,
+        "reasoning_tokens": 0
+      }
+    },
+    "cbca4caf7812befeea30708db0c8b051ffca45803a3ee9bbef97893757cf3bc2": {
+      "runtime_id": "bff9353ee2344c6bae19c577e9096dd951679b48c1a41fae8f2e71295ae507b2",
+      "injected_at": 1794573446.9840343,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 29.63430905342102,
+      "usage": {
+        "tokens": 103315,
+        "cost_usd": 0.014707093240000002,
+        "calls": 25,
+        "cost_reported_calls": 25,
+        "prompt_tokens": 99403,
+        "completion_tokens": 3912,
+        "reasoning_tokens": 0
+      }
+    },
+    "510738e21931d429ea1f6c2c9752255928b85e3a4ce486dfb6e3ef3893bf9a17": {
+      "runtime_id": "f9390960d76da1162a74ef63871f0796704731d11ef21e5187aa70361792be48",
+      "injected_at": 1794573476.6264348,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 35.65229630470276,
+      "usage": {
+        "tokens": 98438,
+        "cost_usd": 0.01048065204,
+        "calls": 22,
+        "cost_reported_calls": 22,
+        "prompt_tokens": 95969,
+        "completion_tokens": 2469,
+        "reasoning_tokens": 0
+      }
+    },
+    "7fb6f8e1e2f0fede8f8dd96e3264859ac0f568165572f01182924099c2aa077c": {
+      "runtime_id": "8a8ac997dbcb8179a8e986affbefebd5d5303d427726e59a9e8255f78fac5b54",
+      "injected_at": 1794573512.2872436,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.809369802474976,
+      "usage": {
+        "tokens": 60189,
+        "cost_usd": 0.009947906000000003,
+        "calls": 18,
+        "cost_reported_calls": 18,
+        "prompt_tokens": 57404,
+        "completion_tokens": 2785,
+        "reasoning_tokens": 0
+      }
+    },
+    "43f3b1ecf57c562d03480b0eb5d4f0b2679e5d972ae8e1c432e41dbe09cb989b": {
+      "runtime_id": "8774061655774577fd0f300f56a13f29c8358481e3051ed25c148c929aaa829d",
+      "injected_at": 1794573540.1051223,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 42.791703939437866,
+      "usage": {
+        "tokens": 97045,
+        "cost_usd": 0.016842963800000003,
+        "calls": 19,
+        "cost_reported_calls": 19,
+        "prompt_tokens": 94331,
+        "completion_tokens": 2714,
+        "reasoning_tokens": 0
+      }
+    },
+    "fe02a290db4386d391730fa9c3403f7f98c877269a493b3f19aa21f6e93f9b8c": {
+      "runtime_id": "b0589a3dd1988131cf06c0fb85d1452cd758dac730a52b6f3c8203ea28e03e8d",
+      "injected_at": 1794573582.9038815,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 47.73566389083862,
+      "usage": {
+        "tokens": 161270,
+        "cost_usd": 0.02364701300000001,
+        "calls": 53,
+        "cost_reported_calls": 53,
+        "prompt_tokens": 153718,
+        "completion_tokens": 7552,
+        "reasoning_tokens": 0
+      }
+    },
+    "b067ffa98e7e26129169b1d868f4ba5babdfd4e0cf750878f6c0af7577c34bfd": {
+      "runtime_id": "11acff17434161badfd6b6b7cbcc6df7aa1bdc13626f4a092d9f2452818a3e93",
+      "injected_at": 1794573630.6468031,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 47.278788566589355,
+      "usage": {
+        "tokens": 100970,
+        "cost_usd": 0.015137349839999996,
+        "calls": 46,
+        "cost_reported_calls": 46,
+        "prompt_tokens": 96138,
+        "completion_tokens": 4832,
+        "reasoning_tokens": 0
+      }
+    },
+    "5b0d68ba5fbfcf62570d6c0f77b8d83c446568890edc85525c411cf09a3b9a04": {
+      "runtime_id": "e1cbf5f7b66acff44fb780f9440f12d410a03c579b764a07f2029c4ca285cf6f",
+      "injected_at": 1794573677.9362183,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.699066638946533,
+      "usage": {
+        "tokens": 121891,
+        "cost_usd": 0.030094173599999996,
+        "calls": 26,
+        "cost_reported_calls": 26,
+        "prompt_tokens": 118210,
+        "completion_tokens": 3681,
+        "reasoning_tokens": 0
+      }
+    },
+    "d0d4e23249b050907087131a0d7f1e8267c1dd4e4b1aa8a269b3398873511073": {
+      "runtime_id": "5ddd7daf311035860f9b51d52524ddb4d427a0b3d59ccd61e5b29e867660f166",
+      "injected_at": 1794573705.6445668,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 61.23686742782593,
+      "usage": {
+        "tokens": 183844,
+        "cost_usd": 0.020848390999999997,
+        "calls": 56,
+        "cost_reported_calls": 56,
+        "prompt_tokens": 177676,
+        "completion_tokens": 6168,
+        "reasoning_tokens": 0
+      }
+    },
+    "054e8d678a39b5e5b399c61e32faeda1ee103fbfaf5ba199dbc7b4aed2488a12": {
+      "runtime_id": "68908872a9acd81a9cf8e52a9a1efc92a3d140f0ca5a88486433ce31a6d88b28",
+      "injected_at": 1794573766.890554,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.5,
+      "queue_attempts": 1,
+      "write_lag_seconds": 28.306623697280884,
+      "usage": {
+        "tokens": 65277,
+        "cost_usd": 0.011079787999999998,
+        "calls": 18,
+        "cost_reported_calls": 18,
+        "prompt_tokens": 63313,
+        "completion_tokens": 1964,
+        "reasoning_tokens": 0
+      }
+    },
+    "0c1f5103614a251ebb81983815a560c5942a95d6fbc23e20f2b12540f47f5b99": {
+      "runtime_id": "f0d7f9b332417d37531ba0bf8fab023c5c9d4020ab6140c568af402bd6a90f14",
+      "injected_at": 1794573795.2076578,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 22.95067024230957,
+      "usage": {
+        "tokens": 67145,
+        "cost_usd": 0.012129336,
+        "calls": 20,
+        "cost_reported_calls": 20,
+        "prompt_tokens": 64340,
+        "completion_tokens": 2805,
+        "reasoning_tokens": 0
+      }
+    },
+    "e36b2ca04daa1afd081dcb7a55c240269c0fce6d3ef918483c789cf696baa573": {
+      "runtime_id": "7e0a8e1302366777a0501c5557241224e6d3919230c6ff2823984c251b0f8019",
+      "injected_at": 1794573818.1683795,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.7,
+      "queue_attempts": 1,
+      "write_lag_seconds": 45.42762756347656,
+      "usage": {
+        "tokens": 116118,
+        "cost_usd": 0.0186127782,
+        "calls": 40,
+        "cost_reported_calls": 40,
+        "prompt_tokens": 110413,
+        "completion_tokens": 5705,
+        "reasoning_tokens": 0
+      }
+    },
+    "c64e11d22be54d42f190426bd3d425a12ab99fb48b227749a5cc304df69aee22": {
+      "runtime_id": "9e40110c31329ea85add31ac9e272cbaf6dac2a143cf2fa16087c110ad2769b1",
+      "injected_at": 1794573863.605065,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.75,
+      "queue_attempts": 1,
+      "write_lag_seconds": 38.294697523117065,
+      "usage": {
+        "tokens": 98760,
+        "cost_usd": 0.017577897999999998,
+        "calls": 42,
+        "cost_reported_calls": 42,
+        "prompt_tokens": 93669,
+        "completion_tokens": 5091,
+        "reasoning_tokens": 0
+      }
+    },
+    "af9cec61b351f14d2aba82c0615d6d585a86364aea640f42993a650daf868f24": {
+      "runtime_id": "c9db3a5067a1b4b633b394dd5e4a223627e8e778bc53855d0da3c1fd7a33de2f",
+      "injected_at": 1794573901.909316,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.6,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.080697059631348,
+      "usage": {
+        "tokens": 60622,
+        "cost_usd": 0.008345900960000001,
+        "calls": 20,
+        "cost_reported_calls": 20,
+        "prompt_tokens": 58555,
+        "completion_tokens": 2067,
+        "reasoning_tokens": 0
+      }
+    },
+    "6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19": {
+      "runtime_id": "996e19abf5d54ffb14a0d7c4ed79fa0ad7c7792c2270a4800efd563195c0c056",
+      "injected_at": 1794573926.99898,
+      "status": "unsorted",
+      "bubbles": [],
+      "route_confidence": 0.1,
+      "queue_attempts": 1,
+      "write_lag_seconds": null,
+      "usage": {
+        "tokens": 715,
+        "cost_usd": 9.12e-05,
+        "calls": 1,
+        "cost_reported_calls": 1,
+        "prompt_tokens": 700,
+        "completion_tokens": 15,
+        "reasoning_tokens": 0
+      }
+    },
+    "35329f2e247db09c0451d9f106f470ddca4024dfb6dd76437907db6ad67787ff": {
+      "runtime_id": "dc0c126bcc50f964ad5143dcd8d2d229f94c61caf496bf1b326d1afed864ba3a",
+      "injected_at": 1794573927.9939017,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.941035985946655,
+      "usage": {
+        "tokens": 78513,
+        "cost_usd": 0.009773964,
+        "calls": 16,
+        "cost_reported_calls": 16,
+        "prompt_tokens": 76566,
+        "completion_tokens": 1947,
+        "reasoning_tokens": 0
+      }
+    },
+    "509b5324b6063966ebd64480734d2a81565b76ec383f526801c5c118508e8e1e": {
+      "runtime_id": "f67329eb835cfffb845452c644af6e657396ed4b8486635d0a9dcb696a253a20",
+      "injected_at": 1794573953.947449,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 37.491018533706665,
+      "usage": {
+        "tokens": 127379,
+        "cost_usd": 0.015354410919999999,
+        "calls": 30,
+        "cost_reported_calls": 30,
+        "prompt_tokens": 123448,
+        "completion_tokens": 3931,
+        "reasoning_tokens": 0
+      }
+    },
+    "57761b2867eb4d4b3bbf2c1fcfb359b65b3bf9866b58bf4fd0ab263de780d943": {
+      "runtime_id": "80027ecd9a7dcb36636937115f36b0c83a42fc49d6386c96795d32b827ef9873",
+      "injected_at": 1794573991.4464965,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 32.98310971260071,
+      "usage": {
+        "tokens": 99799,
+        "cost_usd": 0.012408998840000001,
+        "calls": 23,
+        "cost_reported_calls": 23,
+        "prompt_tokens": 96552,
+        "completion_tokens": 3247,
+        "reasoning_tokens": 0
+      }
+    },
+    "f436d43ada2797c22edf6dfe8f015c35ae0d35b11383cc7a01e992629b3304b9": {
+      "runtime_id": "ba2dca225da4c1fbd51d122d9e683741059e0721bddabe14797783f70210925e",
+      "injected_at": 1794574024.4376965,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 114.59608578681946,
+      "usage": {
+        "tokens": 360407,
+        "cost_usd": 0.05435193028,
+        "calls": 105,
+        "cost_reported_calls": 105,
+        "prompt_tokens": 343651,
+        "completion_tokens": 16756,
+        "reasoning_tokens": 0
+      }
+    },
+    "092ccea5ebc08633f9116b0db24218e74c5b387a9d09331fb1f33593fd6b5a1f": {
+      "runtime_id": "6ba62ad3d11f36406f20ab742e406521592dcc02f4a8bf2d8d1ef79d48331b88",
+      "injected_at": 1794574139.0390415,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.6,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.786258935928345,
+      "usage": {
+        "tokens": 80868,
+        "cost_usd": 0.0181177088,
+        "calls": 23,
+        "cost_reported_calls": 23,
+        "prompt_tokens": 78131,
+        "completion_tokens": 2737,
+        "reasoning_tokens": 0
+      }
+    },
+    "fc43365ad835e7d7d715fe5bb6701f3fbbcf7038bbe5ed53b4022627a565861d": {
+      "runtime_id": "a0a84999adda77469f5dd6af13db9c85820f228765d2b5a77666bc4fb96484ee",
+      "injected_at": 1794574164.8323507,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 69.20668435096741,
+      "usage": {
+        "tokens": 207569,
+        "cost_usd": 0.027375702600000006,
+        "calls": 64,
+        "cost_reported_calls": 64,
+        "prompt_tokens": 199406,
+        "completion_tokens": 8163,
+        "reasoning_tokens": 0
+      }
+    },
+    "5bef2525a9a8bc2b83809a4a1fbb66814e1a0768b5252504eee1e4571ca74d8f": {
+      "runtime_id": "f96ab106375d1302ec73ad8fe01694d447f7a0a581836a69160fe694a43b9fe2",
+      "injected_at": 1794574234.048456,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 83.38386297225952,
+      "usage": {
+        "tokens": 241274,
+        "cost_usd": 0.04163579635999999,
+        "calls": 74,
+        "cost_reported_calls": 74,
+        "prompt_tokens": 230082,
+        "completion_tokens": 11192,
+        "reasoning_tokens": 0
+      }
+    },
+    "8813ba810174959c6fae37bf17ae4ecb9b6c5c306eaa17d8708cc4fd74bb3834": {
+      "runtime_id": "a3df7d529853bf09fb394f0e055eddeb278b068b8e921d2b287a52903f18e1d3",
+      "injected_at": 1794574317.4391327,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.55,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.919536113739014,
+      "usage": {
+        "tokens": 54964,
+        "cost_usd": 0.0086360216,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 53763,
+        "completion_tokens": 1201,
+        "reasoning_tokens": 0
+      }
+    },
+    "e6a19626d1b6c490513f09d90a9af7311c6bdd53dd341daee418a161a0b1a428": {
+      "runtime_id": "cbc5c10e604e3cf4ab9caaa1f59380c6d84e850949de94e5b6293da1ca9560bb",
+      "injected_at": 1794574345.3676922,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 28.301512241363525,
+      "usage": {
+        "tokens": 158171,
+        "cost_usd": 0.027355504359999998,
+        "calls": 28,
+        "cost_reported_calls": 28,
+        "prompt_tokens": 154175,
+        "completion_tokens": 3996,
+        "reasoning_tokens": 0
+      }
+    },
+    "1b826f5a09afcd717137ff6df62389f4b9621701abee8b2fa3aac1104643ad3c": {
+      "runtime_id": "07f08fbcdf3210b4afc2c6c0a649e476efddce4f04918e6a88fdf0997964e670",
+      "injected_at": 1794574373.678718,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 48.37680721282959,
+      "usage": {
+        "tokens": 186266,
+        "cost_usd": 0.032315414599999995,
+        "calls": 44,
+        "cost_reported_calls": 44,
+        "prompt_tokens": 179495,
+        "completion_tokens": 6771,
+        "reasoning_tokens": 0
+      }
+    },
+    "b9715cb4956b68865bf76e3d6c33543ee69785d5d2bd08283d5d3779801c72f2": {
+      "runtime_id": "c1d81eaa1711ddc158c17191695debb1bae919007ea7e46674436601dc16f153",
+      "injected_at": 1794574422.0640259,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 84.05513215065002,
+      "usage": {
+        "tokens": 429811,
+        "cost_usd": 0.08094185532,
+        "calls": 66,
+        "cost_reported_calls": 66,
+        "prompt_tokens": 412923,
+        "completion_tokens": 16888,
+        "reasoning_tokens": 0
+      }
+    },
+    "f876476941539b9c23d2aed3470c7922858d076a31a9bba394e394593d87be18": {
+      "runtime_id": "5f567048b8176358bcf8c04740cfbc38df662fe9a9c53a76fe3b940b07631b14",
+      "injected_at": 1794574506.1299021,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 49.01011252403259,
+      "usage": {
+        "tokens": 290500,
+        "cost_usd": 0.038032266040000005,
+        "calls": 35,
+        "cost_reported_calls": 35,
+        "prompt_tokens": 285627,
+        "completion_tokens": 4873,
+        "reasoning_tokens": 0
+      }
+    },
+    "04993caf723bf947093ffd7cb1701bc7fa06ef093d3f5d995a9f78b6b2ff4171": {
+      "runtime_id": "8879c163c489a01cf12904b2bec617d9de8994ed93ff616a3a9a7dda441bfed1",
+      "injected_at": 1794574555.1500964,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news",
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.75,
+      "queue_attempts": 1,
+      "write_lag_seconds": 48.5684494972229,
+      "usage": {
+        "tokens": 242314,
+        "cost_usd": 0.048752762719999995,
+        "calls": 35,
+        "cost_reported_calls": 35,
+        "prompt_tokens": 237949,
+        "completion_tokens": 4365,
+        "reasoning_tokens": 0
+      }
+    },
+    "839e05d90c26441e88a812ec71c77163c0090c595032ff2e5852ec8fa38092cc": {
+      "runtime_id": "6d546d24998756dd00c15b5e4c8803e438f745a690bb0e5efc0253532819cc8a",
+      "injected_at": 1794574603.724789,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 59.356444358825684,
+      "usage": {
+        "tokens": 291601,
+        "cost_usd": 0.04346318480000001,
+        "calls": 35,
+        "cost_reported_calls": 35,
+        "prompt_tokens": 283043,
+        "completion_tokens": 8558,
+        "reasoning_tokens": 0
+      }
+    },
+    "62dae3fa9fdbfc1e285d25e8a2311ff6d9cd1063c7adbfeddd900f7f8b695601": {
+      "runtime_id": "5109350a8ba34b727283ce332252b5f22875471c527ec42f41bf22099e198eb9",
+      "injected_at": 1794574663.09233,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 42.82499146461487,
+      "usage": {
+        "tokens": 132210,
+        "cost_usd": 0.024761654800000005,
+        "calls": 45,
+        "cost_reported_calls": 45,
+        "prompt_tokens": 125602,
+        "completion_tokens": 6608,
+        "reasoning_tokens": 0
+      }
+    },
+    "532cf528c4a38417cb72dbffd16869bdbbd330f3ea4b195eac7b51eb7961d162": {
+      "runtime_id": "af4d879f17907bd213f265e3c29415ad0bfd20e4433a11eaceeae1d55a33235a",
+      "injected_at": 1794574705.9263341,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.72,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.63479924201965,
+      "usage": {
+        "tokens": 137446,
+        "cost_usd": 0.02667125127999999,
+        "calls": 51,
+        "cost_reported_calls": 51,
+        "prompt_tokens": 131606,
+        "completion_tokens": 5840,
+        "reasoning_tokens": 0
+      }
+    },
+    "8a420c89e39394a457ce9afc154d53cab671514ad6fcf75c7e80561f05e2faa1": {
+      "runtime_id": "e539399e2503eafcf154fb95965148288a818b208a25555376af4204608c2fc4",
+      "injected_at": 1794574746.570766,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 39.86083936691284,
+      "usage": {
+        "tokens": 101497,
+        "cost_usd": 0.012981903040000005,
+        "calls": 44,
+        "cost_reported_calls": 44,
+        "prompt_tokens": 97021,
+        "completion_tokens": 4476,
+        "reasoning_tokens": 0
+      }
+    },
+    "23e20026a4c06e9e316bfbc84039bebae86f1ada98c1fc4549db9382a2c55415": {
+      "runtime_id": "c95f8d397fa7ff00a424d7d83912e06301e34669be76decfb7369d3b2635d4f4",
+      "injected_at": 1794574786.4412897,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.72,
+      "queue_attempts": 1,
+      "write_lag_seconds": 26.661242723464966,
+      "usage": {
+        "tokens": 98151,
+        "cost_usd": 0.016755419960000004,
+        "calls": 24,
+        "cost_reported_calls": 24,
+        "prompt_tokens": 95315,
+        "completion_tokens": 2836,
+        "reasoning_tokens": 0
+      }
+    },
+    "f67d2b7fe89fe2bcca2180f6aa1502531b8ed761e01ea624c8a04720b925230d": {
+      "runtime_id": "c267eaf4588917c66855a129556d8c6ee1b6d5f9b490ef0b0f24a6cd18b20116",
+      "injected_at": 1794574813.113106,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 24.059971809387207,
+      "usage": {
+        "tokens": 49513,
+        "cost_usd": 0.005892277800000001,
+        "calls": 16,
+        "cost_reported_calls": 16,
+        "prompt_tokens": 47563,
+        "completion_tokens": 1950,
+        "reasoning_tokens": 0
+      }
+    },
+    "d0e52276205316d453ba08371616812095c1468add58122ebe65c082356a3354": {
+      "runtime_id": "59fecd573af7ee7b568b0c9462ed0d571bd6cee5e31cd2d44dd794e6d00dbe83",
+      "injected_at": 1794574837.1815836,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 106.63955593109131,
+      "usage": {
+        "tokens": 294950,
+        "cost_usd": 0.03614925580000001,
+        "calls": 58,
+        "cost_reported_calls": 58,
+        "prompt_tokens": 288334,
+        "completion_tokens": 6616,
+        "reasoning_tokens": 0
+      }
+    },
+    "8cde6de9ac503b5c55b786748d3052338dbe65ba6f16695bff16ee2c56f9b053": {
+      "runtime_id": "89f78d6ec068af0186c4859452ebfc8b528fae5d3a97ffd283c10b7f87a3aaf1",
+      "injected_at": 1794574943.8306892,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 9.877541303634644,
+      "usage": {
+        "tokens": 41193,
+        "cost_usd": 0.008747392239999999,
+        "calls": 10,
+        "cost_reported_calls": 10,
+        "prompt_tokens": 40154,
+        "completion_tokens": 1039,
+        "reasoning_tokens": 0
+      }
+    },
+    "8e63b58e407b6cce912aefd1eb66293f9963a2af95108424017ff37f42c110f3": {
+      "runtime_id": "c067cb824337572ee58a761a8c10260ad7802817edbcedfe000bdd9915e33cb2",
+      "injected_at": 1794574953.7162776,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 7.422374486923218,
+      "usage": {
+        "tokens": 36137,
+        "cost_usd": 0.0070921882,
+        "calls": 7,
+        "cost_reported_calls": 7,
+        "prompt_tokens": 35562,
+        "completion_tokens": 575,
+        "reasoning_tokens": 0
+      }
+    },
+    "f51e164a1d7a7af4a6455211e50ca5c4f2c784bf505e98046ee49262941abf62": {
+      "runtime_id": "31e3d9ee50f7ba631578b4442c494c26f35267bff16e53b16a0dbe46972e6e67",
+      "injected_at": 1794574961.147225,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 24.780291080474854,
+      "usage": {
+        "tokens": 160172,
+        "cost_usd": 0.0238801592,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 158598,
+        "completion_tokens": 1574,
+        "reasoning_tokens": 0
+      }
+    },
+    "2ad289c95b532abebb4d28a2c9ebcb8e1feb663de82c4321b5952a269df7d3ff": {
+      "runtime_id": "b836206bce563803235a9403effe680fecdb8883f8a56e6c8c63b55fb6f78e95",
+      "injected_at": 1794574985.9355717,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 8.15759015083313,
+      "usage": {
+        "tokens": 35924,
+        "cost_usd": 0.0031174498,
+        "calls": 6,
+        "cost_reported_calls": 6,
+        "prompt_tokens": 35480,
+        "completion_tokens": 444,
+        "reasoning_tokens": 0
+      }
+    },
+    "2c5be9330e2cbc2a90dbec07a4b9795a1140df3d63478c1e87a7ab50c735cafb": {
+      "runtime_id": "9188f815ff0d7d7d9b0c632d32d4d3375781328e2634c24b1f47cfba46e0c40d",
+      "injected_at": 1794574994.1022038,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research",
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 41.008615016937256,
+      "usage": {
+        "tokens": 188548,
+        "cost_usd": 0.03796841416,
+        "calls": 24,
+        "cost_reported_calls": 24,
+        "prompt_tokens": 186314,
+        "completion_tokens": 2234,
+        "reasoning_tokens": 0
+      }
+    },
+    "1ff30f2fbafc9172867581931c6bd586a774ec345dc01331f06c3110dabbb6e7": {
+      "runtime_id": "0151110879fdeae06a7b6cabceaaef144ad4ed5e7a16eaad94f50123272c5d85",
+      "injected_at": 1794575035.1185222,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 29.899467706680298,
+      "usage": {
+        "tokens": 44750,
+        "cost_usd": 0.005916040399999999,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 43584,
+        "completion_tokens": 1166,
+        "reasoning_tokens": 0
+      }
+    },
+    "8faa6a570793c3ac0fadfeed24a0aa5b685f16baf40aaa2b6958aa2e9ef81be3": {
+      "runtime_id": "ca5bcebb133bd630bb6bfadf4418727d88802b1180771399741789fcec6efce8",
+      "injected_at": 1794575065.0279977,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance",
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 43.51245355606079,
+      "usage": {
+        "tokens": 242823,
+        "cost_usd": 0.034000398759999995,
+        "calls": 28,
+        "cost_reported_calls": 28,
+        "prompt_tokens": 238853,
+        "completion_tokens": 3970,
+        "reasoning_tokens": 0
+      }
+    },
+    "f8b9ae043c403e0ffb915e3e4859f7ece21744b70de935c813e074aaa033026b": {
+      "runtime_id": "feab2d446a0a123f648b820570050d7c281e0815896e644874807728d900b10f",
+      "injected_at": 1794575108.549774,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 13.202598571777344,
+      "usage": {
+        "tokens": 41062,
+        "cost_usd": 0.0100456266,
+        "calls": 8,
+        "cost_reported_calls": 8,
+        "prompt_tokens": 40407,
+        "completion_tokens": 655,
+        "reasoning_tokens": 0
+      }
+    },
+    "03018bb6e10503e95c6a82ad17c86d0c77c363a8cf10a6f5e303a9c9081b4724": {
+      "runtime_id": "ed1c82c2181fa900544010cafea54e4c0cd5fbacedcd028ed152cea4d762b2b7",
+      "injected_at": 1794575121.7622447,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.027172565460205,
+      "usage": {
+        "tokens": 71631,
+        "cost_usd": 0.0103210436,
+        "calls": 19,
+        "cost_reported_calls": 19,
+        "prompt_tokens": 68736,
+        "completion_tokens": 2895,
+        "reasoning_tokens": 0
+      }
+    },
+    "f7860b035016f1b681bbacc3f319e27bcea9c3d120cd1318d8ee31f2331ea525": {
+      "runtime_id": "ead098bae72e610d520cada379b3a1a53705e7f0806a068e8d16fff6497a019a",
+      "injected_at": 1794575148.7991314,
+      "status": "unsorted",
+      "bubbles": [],
+      "route_confidence": 0.45,
+      "queue_attempts": 1,
+      "write_lag_seconds": null,
+      "usage": {
+        "tokens": 469,
+        "cost_usd": 6.464e-05,
+        "calls": 1,
+        "cost_reported_calls": 1,
+        "prompt_tokens": 447,
+        "completion_tokens": 22,
+        "reasoning_tokens": 0
+      }
+    },
+    "d02369ad64bc04f34a4d2a50cb97c8bcb8de31f300e3b017e4763f406fb1d99b": {
+      "runtime_id": "461c1687e8f6b35c35593c08c7de4f2424f431a96bf92d9c910e7db048d8522d",
+      "injected_at": 1794575149.8051727,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.65,
+      "queue_attempts": 1,
+      "write_lag_seconds": 16.967560291290283,
+      "usage": {
+        "tokens": 49735,
+        "cost_usd": 0.0085253966,
+        "calls": 10,
+        "cost_reported_calls": 10,
+        "prompt_tokens": 49130,
+        "completion_tokens": 605,
+        "reasoning_tokens": 0
+      }
+    },
+    "95c4aa817985eb91b67b17003299b3e443dd8efb6c148b123286e05afc3b0f89": {
+      "runtime_id": "7818dd82edc58dd14c0aec18292cf730310626d58ff1443b40f6a03dc7b5d690",
+      "injected_at": 1794575166.781457,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 30.18197274208069,
+      "usage": {
+        "tokens": 54422,
+        "cost_usd": 0.008934216440000003,
+        "calls": 39,
+        "cost_reported_calls": 39,
+        "prompt_tokens": 51786,
+        "completion_tokens": 2636,
+        "reasoning_tokens": 0
+      }
+    },
+    "a0704f24827c00cb63018e0a83125066e67172950ffa154c80756d1bbb639d5c": {
+      "runtime_id": "87b5770cad9cc7bb4c456b01e88dbf84254c4e3a660565ece3404fdfdaeee6e0",
+      "injected_at": 1794575196.9709356,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.93,
+      "queue_attempts": 1,
+      "write_lag_seconds": 14.010796070098877,
+      "usage": {
+        "tokens": 25767,
+        "cost_usd": 0.00465852096,
+        "calls": 10,
+        "cost_reported_calls": 10,
+        "prompt_tokens": 24614,
+        "completion_tokens": 1153,
+        "reasoning_tokens": 0
+      }
+    },
+    "db9ea866803b8d8ed413a70159f316e12d7cd5c85dc3ba01debd91d352bc9537": {
+      "runtime_id": "35e204ca7145a5cc39453947f9f5fe913e9118e3f7b153f85821f9871db388ed",
+      "injected_at": 1794575210.9907668,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 9.82849645614624,
+      "usage": {
+        "tokens": 23852,
+        "cost_usd": 0.004669551439999999,
+        "calls": 9,
+        "cost_reported_calls": 9,
+        "prompt_tokens": 22849,
+        "completion_tokens": 1003,
+        "reasoning_tokens": 0
+      }
+    },
+    "0c60c54bc96a6464ba50c4bd68395015d7b6bc9cfa17691d54b9d946da70a458": {
+      "runtime_id": "bcc2eea407f4d883143d7ce81fa9b4e4f49df53063829995c7939b3b03d7a65c",
+      "injected_at": 1794575220.827331,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 15.072555541992188,
+      "usage": {
+        "tokens": 35787,
+        "cost_usd": 0.004442987359999999,
+        "calls": 14,
+        "cost_reported_calls": 14,
+        "prompt_tokens": 33910,
+        "completion_tokens": 1877,
+        "reasoning_tokens": 0
+      }
+    },
+    "759f3904626735fe696c3678fa5af6f57e44eb9e47aa77438ffda41e42621d1f": {
+      "runtime_id": "c6b37996f7b9a674fe6dd0b5bceb93544566d86540d7aee7db5defc3c8b92327",
+      "injected_at": 1794575235.9104104,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 20.685413122177124,
+      "usage": {
+        "tokens": 32909,
+        "cost_usd": 0.005201572200000001,
+        "calls": 15,
+        "cost_reported_calls": 15,
+        "prompt_tokens": 31317,
+        "completion_tokens": 1592,
+        "reasoning_tokens": 0
+      }
+    },
+    "843c7285d6f8a56638de83a2867e255d2016b3bbba55aee686ba845127647432": {
+      "runtime_id": "4620eae470dfdbdc7c24edc3a6a01e7052abb0c86930d601f03099cf30746ca6",
+      "injected_at": 1794575256.606377,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 31.23505473136902,
+      "usage": {
+        "tokens": 50310,
+        "cost_usd": 0.00646176068,
+        "calls": 24,
+        "cost_reported_calls": 24,
+        "prompt_tokens": 47398,
+        "completion_tokens": 2912,
+        "reasoning_tokens": 0
+      }
+    },
+    "50f9e45bf23a7cb7446aa83d146f1e97cc29640628c41e7adf58b98863907fb4": {
+      "runtime_id": "968db49029cf666abc728ae3f9e0c9b9da7666fe221ec79be5f83f04aa9f9625",
+      "injected_at": 1794575287.851534,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 15.237480163574219,
+      "usage": {
+        "tokens": 27001,
+        "cost_usd": 0.004598181999999999,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 25929,
+        "completion_tokens": 1072,
+        "reasoning_tokens": 0
+      }
+    },
+    "0eb65778cbbe8c86b037cfec718db242eb57583f287272a043247cf603e2ed72": {
+      "runtime_id": "9accfcecd537f16d5f28f23e64db451db295a2d757f3e0e0a794800c138901ee",
+      "injected_at": 1794575303.0975244,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 7.543251276016235,
+      "usage": {
+        "tokens": 18267,
+        "cost_usd": 0.0019434075999999998,
+        "calls": 6,
+        "cost_reported_calls": 6,
+        "prompt_tokens": 17842,
+        "completion_tokens": 425,
+        "reasoning_tokens": 0
+      }
+    },
+    "69cf9e2de96e8504cb30e3263c301d07194bf4b4f36dbcbe4b770b7a285d6768": {
+      "runtime_id": "d8eb7cd4ffd97f93cc02e6d639982aeb748418327db0c0a4da8e1d942c578b4c",
+      "injected_at": 1794575310.65019,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 11.462792158126831,
+      "usage": {
+        "tokens": 28892,
+        "cost_usd": 0.0047544968,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 27563,
+        "completion_tokens": 1329,
+        "reasoning_tokens": 0
+      }
+    },
+    "503b3b4db0f3795c18f047d2e1e6806da393ebea9d2bcf3727790ed2062b0ad0": {
+      "runtime_id": "71b10683276a2b19fb114759bfccfbc0625a3599330cb3a09c940f6ad0c88f2c",
+      "injected_at": 1794575322.1234884,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.95,
+      "queue_attempts": 1,
+      "write_lag_seconds": 19.557472229003906,
+      "usage": {
+        "tokens": 28025,
+        "cost_usd": 0.0033671745599999996,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 26847,
+        "completion_tokens": 1178,
+        "reasoning_tokens": 0
+      }
+    },
+    "4c4dc338ea9a270ad0c6737f6c53aac04e83ce26753850de9ca2469f0a246649": {
+      "runtime_id": "cd5c814fddb89079220c4adc7e96f0ca16473bc5dffefa1996e61108f7d0240d",
+      "injected_at": 1794575341.692001,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.21814727783203,
+      "usage": {
+        "tokens": 32035,
+        "cost_usd": 0.007673628000000001,
+        "calls": 14,
+        "cost_reported_calls": 14,
+        "prompt_tokens": 30348,
+        "completion_tokens": 1687,
+        "reasoning_tokens": 0
+      }
+    },
+    "c95ca17e1526693b55ac7df7682690baa77c8a38f82cc19aee6bd9da7928ccae": {
+      "runtime_id": "db3fa0026068bcf1f0fc83163506f980099be85e378ed20630fc9893bc27cba9",
+      "injected_at": 1794575366.9171624,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research",
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.78,
+      "queue_attempts": 1,
+      "write_lag_seconds": 40.720865964889526,
+      "usage": {
+        "tokens": 111636,
+        "cost_usd": 0.02039238376,
+        "calls": 35,
+        "cost_reported_calls": 35,
+        "prompt_tokens": 106957,
+        "completion_tokens": 4679,
+        "reasoning_tokens": 0
+      }
+    },
+    "097fdf4af9c2d7a65c2cea8a7c1ea2741f0ede3ad371085862ddb2d361047026": {
+      "runtime_id": "53c21bc497b1caa6010dfa4df9b61a153cc25d4cbb2c2854ebfa3bfacdd656a5",
+      "injected_at": 1794575407.6487215,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.7,
+      "queue_attempts": 1,
+      "write_lag_seconds": 13.451780080795288,
+      "usage": {
+        "tokens": 47888,
+        "cost_usd": 0.0062280526,
+        "calls": 13,
+        "cost_reported_calls": 13,
+        "prompt_tokens": 46483,
+        "completion_tokens": 1405,
+        "reasoning_tokens": 0
+      }
+    },
+    "1f9eb8688ffab83a42b7c51bb63ce3f0a7cc967bacb608f02cb32d26077f882a": {
+      "runtime_id": "c9021687e04f6c53c5114b9d615bbca1204207810c6a8eb50208753626a212fe",
+      "injected_at": 1794575421.1095107,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.6,
+      "queue_attempts": 1,
+      "write_lag_seconds": 24.714747428894043,
+      "usage": {
+        "tokens": 60929,
+        "cost_usd": 0.01084109804,
+        "calls": 16,
+        "cost_reported_calls": 16,
+        "prompt_tokens": 58997,
+        "completion_tokens": 1932,
+        "reasoning_tokens": 0
+      }
+    },
+    "a75c05afef889d95334d259cd4d1f2e4cd817fac401ece7179f3b169f7375191": {
+      "runtime_id": "8e3c3db6370eaf67cf6aca9af958d33288430005892d1cbf1ca00db90d47736d",
+      "injected_at": 1794575445.8317654,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.973073959350586,
+      "usage": {
+        "tokens": 143814,
+        "cost_usd": 0.02930936104,
+        "calls": 20,
+        "cost_reported_calls": 20,
+        "prompt_tokens": 141422,
+        "completion_tokens": 2392,
+        "reasoning_tokens": 0
+      }
+    },
+    "6b8d9dee5ceca018525f789c7b638826953c05c9c1fef98c40fb3f7b4ace51b0": {
+      "runtime_id": "5395d713729197a311d4d7b1a5759e5077fc7dc3676d69ce1bb78a9785e12118",
+      "injected_at": 1794575473.8149223,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.55,
+      "queue_attempts": 1,
+      "write_lag_seconds": 35.57547998428345,
+      "usage": {
+        "tokens": 72728,
+        "cost_usd": 0.012280700599999998,
+        "calls": 25,
+        "cost_reported_calls": 25,
+        "prompt_tokens": 69750,
+        "completion_tokens": 2978,
+        "reasoning_tokens": 0
+      }
+    },
+    "f515c1dc73949eee998cef433833031905afd1f729b07f6e26ddcc5ff6769459": {
+      "runtime_id": "c8d90cb1d13d63f0e55fc255eb319327ca27272aaccd0bb6c64c2c965457fea7",
+      "injected_at": 1794575509.402417,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.97,
+      "queue_attempts": 1,
+      "write_lag_seconds": 35.89531111717224,
+      "usage": {
+        "tokens": 59364,
+        "cost_usd": 0.007940667200000001,
+        "calls": 27,
+        "cost_reported_calls": 27,
+        "prompt_tokens": 55812,
+        "completion_tokens": 3552,
+        "reasoning_tokens": 0
+      }
+    },
+    "7174e2bb239c1b56fc3a63fb5d222fe3ddc89ecb8696d45bc97a977d2c648c22": {
+      "runtime_id": "746e998800e5be970b7b780476bb8e83fe7745da3bd16d825ff130e77c5d27e4",
+      "injected_at": 1794575545.3062413,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 59.09833645820618,
+      "usage": {
+        "tokens": 130718,
+        "cost_usd": 0.01779911444,
+        "calls": 56,
+        "cost_reported_calls": 56,
+        "prompt_tokens": 122752,
+        "completion_tokens": 7966,
+        "reasoning_tokens": 0
+      }
+    },
+    "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486": {
+      "runtime_id": "232608e276c6b199477cb2a34e7c0fb9909180a5595694701963ab81c90cee15",
+      "injected_at": 1794575604.4912167,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.85,
+      "queue_attempts": 1,
+      "write_lag_seconds": 15.620417833328247,
+      "usage": {
+        "tokens": 119022,
+        "cost_usd": 0.014294037800000001,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 117842,
+        "completion_tokens": 1180,
+        "reasoning_tokens": 0
+      }
+    },
+    "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a": {
+      "runtime_id": "5005da2f7f7d8d5a23863094e48bbbbb59334a047a859ef4534e0fcc2ee8cca3",
+      "injected_at": 1794575630.1970677,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-finance"
+      ],
+      "route_confidence": 0.72,
+      "queue_attempts": 1,
+      "write_lag_seconds": 8.008841037750244,
+      "usage": {
+        "tokens": 110006,
+        "cost_usd": 0.0316853728,
+        "calls": 8,
+        "cost_reported_calls": 8,
+        "prompt_tokens": 109274,
+        "completion_tokens": 732,
+        "reasoning_tokens": 0
+      }
+    },
+    "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4": {
+      "runtime_id": "a4441acd057a0f480a6f463a414b40f8f5747c31ed0a3d11edc379aa19839403",
+      "injected_at": 1794575656.9811888,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.55,
+      "queue_attempts": 1,
+      "write_lag_seconds": 27.827999591827393,
+      "usage": {
+        "tokens": 86253,
+        "cost_usd": 0.01721207452,
+        "calls": 26,
+        "cost_reported_calls": 26,
+        "prompt_tokens": 82097,
+        "completion_tokens": 4156,
+        "reasoning_tokens": 0
+      }
+    },
+    "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd": {
+      "runtime_id": "8f42b15f3e191419d9f1416aa43758bd070c40febc242b5ea475658f8ee1ef50",
+      "injected_at": 1794576119.491276,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-research"
+      ],
+      "route_confidence": 0.9,
+      "queue_attempts": 1,
+      "write_lag_seconds": 25.370044231414795,
+      "usage": {
+        "tokens": 28310,
+        "cost_usd": 0.0038223062000000006,
+        "calls": 11,
+        "cost_reported_calls": 11,
+        "prompt_tokens": 27137,
+        "completion_tokens": 1173,
+        "reasoning_tokens": 0
+      }
+    },
+    "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703": {
+      "runtime_id": "36494c25f4904646f90ef263a5273b7e2ac0afe41497dd0c3db6f5c56c3be3f5",
+      "injected_at": 1794576153.0053103,
+      "status": "written",
+      "bubbles": [
+        "real-v2-dev-news"
+      ],
+      "route_confidence": 0.8,
+      "queue_attempts": 1,
+      "write_lag_seconds": 18.047151565551758,
+      "usage": {
+        "tokens": 37107,
+        "cost_usd": 0.0060523362,
+        "calls": 12,
+        "cost_reported_calls": 12,
+        "prompt_tokens": 36310,
+        "completion_tokens": 797,
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  "frozen": true,
+  "freshness": {
+    "6c5f9d64995b4f82d3157e94af8ab6249ce5bcb5a8f4ea00b8cb5682072e5486": {
+      "write_lag_seconds": 15.620417833328247,
+      "answerable_lag_seconds": 25.69479513168335,
+      "probes": [
+        {
+          "answer": "The Federal Reserve Board announced that overall price changes for 2027 will result in an estimated **1.4 percent average price increase for established, mature services** [1].",
+          "score": 2,
+          "rationale": "The answer correctly states the estimated 1.4 percent average price increase for the Federal Reserve Banks' established payment services in 2027, matching the reference answer and key facts."
+        }
+      ]
+    },
+    "6f669344430cdbcdf915101529260e127a18d2be23c7a5241853e1ea9c6a5b2a": {
+      "write_lag_seconds": 8.008841037750244,
+      "answerable_lag_seconds": 26.7725031375885,
+      "probes": [
+        {
+          "answer": "The FOMC's October 26-27, 2027 meeting will not end with the usual policy announcement: it \"will be dedicated to the discussion of broad monetary policy strategy issues instead of announcing a policy decision,\" and the FOMC will announce policy decisions on the second day of each meeting \"except the October 26-27 meeting,\" per the revised schedule [1].",
+          "score": 2,
+          "rationale": "The answer correctly identifies the October 26-27, 2027 meeting as the one without the usual policy announcement and accurately states the reason (dedicated to monetary policy strategy issues). All key facts from the reference are included."
+        }
+      ]
+    },
+    "6f93879fd979646b2d3ed6b566f70bf422a447c4c34801804de39199e8a9cff4": {
+      "write_lag_seconds": 27.827999591827393,
+      "answerable_lag_seconds": null,
+      "probes": [],
+      "probe_skipped": "no scored question"
+    },
+    "9b2692ab25854802754db158af72ad426ffef1a7077e74fd680511cda4c058cd": {
+      "write_lag_seconds": 25.370044231414795,
+      "answerable_lag_seconds": 33.50597834587097,
+      "probes": [
+        {
+          "answer": "Six SkipLane engines run at 140 MHz on a PYNQ-Z2 board [1].",
+          "score": 2,
+          "rationale": "The answer correctly states that six SkipLane zero-skipping CNN engines run at 140 MHz on a PYNQ-Z2 board, which matches the reference answer and key facts exactly."
+        }
+      ]
+    },
+    "a80f73b98e4f893eb7b03a8cf7fe78cf373612fdc451692a98520cf025b13703": {
+      "write_lag_seconds": 18.047151565551758,
+      "answerable_lag_seconds": 33.17040276527405,
+      "probes": [
+        {
+          "answer": "The Federal Reserve Board announced a consent prohibition enforcement action against Katilyn M. Robinson on Thursday, November 12, 2026 [3]. Robinson, a former employee of United Community Bank in Greenville, South Carolina, was subject to the action for misappropriation of customer funds [3].",
+          "score": 2,
+          "rationale": "The submitted answer correctly identifies Katilyn M. Robinson as the individual against whom the Federal Reserve Board announced a consent prohibition on 12 November 2026, and accurately states the conduct as misappropriation of customer funds. All key facts from the reference answer are included."
+        }
+      ]
+    }
+  },
+  "unsorted_item_ids": {
+    "6e8793cc9a062cdffa8e4654e31e60b828cf872b37ba873773f7cd36c66e0f19": {
+      "route_confidence": 0.1
+    },
+    "f7860b035016f1b681bbacc3f319e27bcea9c3d120cd1318d8ee31f2331ea525": {
+      "route_confidence": 0.45
+    }
+  },
+  "frozen_at": 1794576500.9985893
+}

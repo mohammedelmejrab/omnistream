@@ -1,0 +1,72 @@
+.venv/Scripts/python.exe : 
+At line:135 char:1
++ .venv/Scripts/python.exe -m omnistream.eval.diagnostics.own_fixes_rou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 2629.14it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits 
+and faster downloads.
+v2-q01 done
+v2-q03 done
+v2-q04 done
+v2-q05 done
+v2-q07 done
+v2-q02 done
+v2-q06 done
+v2-q08 done
+v2-q09 done
+v2-q10 done
+v2-q11 done
+v2-q12 done
+v2-q13 done
+v2-q14 done
+v2-q15 done
+v2-q16 done
+v2-q17 done
+v2-q18 done
+v2-q19 done
+v2-q20 done
+v2-q21 done
+v2-q22 done
+v2-q23 done
+v2-q24 done
+v2-q25 done
+v2-q26 done
+v2-q27 done
+v2-q28 done
+v2-q29 done
+v2-q30 done
+v2-q31 done
+v2-q32 done
+v2-q33 done
+v2-q34 done
+v2-q35 done
+v2-q36 done
+v2-q37 done
+v2-q38 done
+v2-q39 done
+v2-q40 done
+v2-q41 done
+v2-q42 done
+v2-q43 done
+v2-q44 done
+v2-q45 done
+v2-q46 done
+v2-q47 done
+v2-q48 done
+v2-q49 done
+v2-q50 done
+v2-q51 done
+v2-q52 done
+v2-q53 done
+v2-q54 done
+v2-q55 done
+v2-q56 done
+v2-q57 done
+v2-q58 done
+v2-q59 done
+v2-q60 done
+complete 1080 cells; replays 44 changed 0

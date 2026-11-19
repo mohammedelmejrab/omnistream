@@ -1,0 +1,5 @@
+{
+  "url": "https://blogs.microsoft.com/robots.txt",
+  "status": 200,
+  "body": "User-agent: *\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\ncrawl-delay: 10\n"
+}

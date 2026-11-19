@@ -1,0 +1,199 @@
+<figure class="wp-block-image size-full"><img alt="Flint Interactive flowchart | purple gradient background" class="wp-image-1190357" height="788" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/FlintInteractive-BlogHeroFeature-1400x788-1.jpg" width="1400" /></figure>
+
+
+
+<div class="wp-block-msr-immersive-section alignfull row" style="padding-bottom: 0; padding-top: 0;">
+	
+	<div class="container">
+		<div class="wp-block-msr-immersive-section__inner wp-block-msr-immersive-section__inner--narrow">
+			<div class="wp-block-columns mb-10 pb-1 pr-1 is-layout-flex wp-container-core-columns-is-layout-8f761849 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+<h2 class="wp-block-heading h3" id="at-a-glance">At a glance</h2>
+
+
+
+<ul class="wp-block-list">
+<li>Brings rich interactivity to AI-generated charts: Flint-interactive enables agents to create data visualizations that users can explore directly through clicking, filtering, zooming, highlighting, and cross-chart interactions.</li>
+
+
+
+<li>Makes complex interactions easier to build: Instead of requiring low-level visualization code, Flint-interactive lets users and agents define behaviors using high-level semantic events and update operators.</li>
+
+
+
+<li>Improves reliability and reduces development effort: By using Flint&#8217;s compiler to handle interaction logic and visual dependencies, the system helps avoid many of the layout, rendering, and debugging challenges common in custom interactive visualizations.</li>
+
+
+
+<li>Connects charts, text, tables, and applications: Flint-interactive supports interactive data stories, dashboards, and connected experiences where actions in one view can update charts, documents, widgets, or application state in another.</li>
+</ul>
+</div>
+</div>		</div>
+	</div>
+
+	</div>
+
+
+
+<p class="wp-block-paragraph">AI agents make it easy to analyze data and generate reports with data visualizations. They help users examine patterns more efficiently than by reading verbose text. However, when we&#8217;re feeling exploratory, we want to go beyond static visualizations.<s>:</s> We want to interact with charts to zoom in on details, compare data across charts, or even highlight related text in the document from a chart selection, and vice versa. This requires agents to be able to create interactive data visualizations that communicate information while letting readers explore beyond the author&#8217;s chosen view, ideally with the quality of interactive stories in sophisticated data journalism. This leaves us wondering:&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li>(As a user) Can I interact with charts directly in chat to explore the data and ask follow-up questions based on what I select?</li>
+
+
+
+<li>(As a developer) Can I enable the AI agents I build for my customers to generate interactive visualizations that help them explore and understand their data?</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Yes, it&#8217;s possible, but there is a significant practical gap. Even with capable frontier models, we still face:</p>
+
+
+
+<ul class="wp-block-list">
+<li>High generation cost. Agents rarely produce a fully satisfactory interactive visualization in one turn. Repeated rounds of reasoning, coding, and debugging consume tokens and time.</li>
+
+
+
+<li>Reliability. Interactive visualizations are challenging enough that expressive interactive charts introduce poor layouts or broken interactions easily, and we risk introducing new problems when trying to fix them.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">These challenges help explain why consistently generating high-quality interactive visualizations remain difficult in real-world use. Meanwhile, built-in interactions in some visualization libraries are not expressive enough on their own to create bespoke interactive charts. And these challenges are results of the lack of an expressive yet high-level language to specify visual interactions.</p>
+
+
+
+	<div class="border-bottom border-top border-gray-300 mt-5 mb-5 msr-promo text-center text-md-left alignwide">
+		
+
+		<p class="msr-promo__label text-gray-800 text-center text-uppercase">
+		<span class="px-4 bg-white display-inline-block font-weight-semibold small">Microsoft Research StorY</span>
+	</p>
+	
+	<div class="row pt-3 pb-4 align-items-center">
+						<div class="msr-promo__media col-12 col-md-5">
+				<a class="bg-gray-300 display-block" href="https://www.microsoft.com/en-us/research/story/optimind-when-the-system-meets-the-floor/" target="_blank">
+					<img alt="Abstract teal-toned image of aluminum cans viewed from above, overlaid with a network of connected flowchart shapes (rectangles, rounded nodes, and diamonds) linked by thin line." class="w-100 display-block" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/06/OptiMind-TWLIFB-1200x627-1.jpg" />
+				</a>
+			</div>
+			
+			<div class="msr-promo__content p-3 px-5 col-12 col-md">
+
+									<h2 class="h4">OptiMind: When the system meets the floor</h2>
+				
+								<p class="large" id="optimind-when-the-system-meets-the-floor">A three‑month pilot in a Midwestern bottling plant shows what happens when AI moves beyond chat and into decision-making, where constraints shift, stakes are real, and answers must hold.</p>
+				
+								<div class="wp-block-buttons justify-content-center justify-content-md-start">
+					<div class="wp-block-button">
+						<a class="btn btn-brand glyph-append glyph-append-chevron-right" href="https://www.microsoft.com/en-us/research/story/optimind-when-the-system-meets-the-floor/" target="_blank">
+							Learn more						</a>
+					</div>
+				</div>
+							</div><!--/.msr-promo__content-->
+	</div><!--/.msr-promo__inner-wrap-->
+<span class="sr-only" id="label-external-link">Opens in a new tab</span>	</div><!--/.msr-promo-->
+	
+
+
+<h2 class="wp-block-heading" id="flint-interactive">Flint-interactive</h2>
+
+
+
+<p class="wp-block-paragraph"><a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://microsoft.github.io/flint-chart/" rel="noopener noreferrer" target="_blank">Flint-interactive<span class="sr-only"> (opens in new tab)</span></a> is a language for creating interactive data visualizations on top of Flint. It allows users to create dashboards, data stories, and interactive artifacts more easily. The power of Flint-interactive comes from Flint&#8217;s compiler, which translates user interactions into semantic events that capture the meaning behind what users select. It then uses high-level operators to update visualizations in response to those events, making sophisticated interactions far easier to create and maintain. This shifts the heavy burden of resolving complex dependencies between interaction and visual logic to the compiler, so the user (or the agent) can easily describe expressive interactions with high-level specifications.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="Interactive Gapminder visualization showing linked brushing across two scatterplots of countries in 1952 and 2007. Each plot charts GDP per capita on the horizontal axis and life expectancy on the vertical axis, with countries colored by continent. A blue rectangular selection highlights a group of countries in the 1952 chart, and the same countries are simultaneously highlighted in the 2007 chart, demonstrating linked selection across years. A control panel on the right provides interaction options including rectangular selection, lasso selection, and x- or y-axis brushing. The figure illustrates how selecting data points in one view highlights corresponding points in another view for comparative analysis over time." class="wp-image-1190489" height="1070" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/flint-blog-fig-1.png" width="2176" /><figcaption class="wp-element-caption">Example 1: We can enable the user to brush one visual view, and the chart highlights all groups of country selected by the user with a simple preset interaction linked-brush.</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading" id="how-to-use">How to use</h2>
+
+
+
+<p class="wp-block-paragraph" id="1-use-flint-in-your-chat"><strong>1. Use Flint in your chat</strong></p>
+
+
+
+<p class="wp-block-paragraph">Use Flint Interactive directly in your chat or canvas environment through Flint-MCP and MCP Apps, following the MCP setup guide. With the latest release, tell your agent what to chart and which interactions you want; it can generate an interaction_spec alongside the Flint chart spec and render the interactive chart in your conversation.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="graphical user interface, chart" class="wp-image-1190794" height="1458" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/NEW_Flint-Figure.png" width="1706" /><figcaption class="wp-element-caption">Example 2: Using Flint-interactive in the chat environment, allowing the agent to produce interactive charts more reliably with simple Flint specifications. It also enables the user to select and pass context to the follow-up turns.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>2. Build an interactive app with Flint</strong></p>
+
+
+
+<p class="wp-block-paragraph">Build interactive charts in a dashboard, data story, or other application with Flint Interactive Canvas. Your app can use event handlers to process semantic events emitted by Flint Canvas, for example to filter a table, update another chart, or change application state. To let your app&#8217;s widgets control how the chart updates, send update operators to Flint Canvas.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="Interactive Gapminder dashboard for 2007 showing a table of countries alongside a bubble chart comparing GDP per capita and life expectancy. In the table, the row for the United States is selected and highlighted, displaying GDP per person of $42,952 and life expectancy of 78.2 years. The corresponding bubble on the scatterplot is emphasized and labeled with a callout showing the same values. Countries are colored by continent, bubble size represents population, GDP per capita is shown on a logarithmic horizontal axis, and life expectancy is plotted on the vertical axis. The figure demonstrates external selection, where choosing a country in a table highlights and annotates the matching data point in the visualization." class="wp-image-1190499" height="1128" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/flint-blog-fig-2.png" width="2144" /><figcaption class="wp-element-caption">Example 2: Flint-interactive allows developers to define interactions between charts and external elements (e.g., table, paragraph). Here, the user can click the table to highlight points in the chart and verse versa.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph"><strong>3. Create bespoke interactions</strong></p>
+
+
+
+<p class="wp-block-paragraph">To create bespoke interactions beyond Flint&#8217;s presets, define a trigger and a custom handle function with the programming API that maps semantic events to custom chart update sequences. For example, a handler can highlight a clicked country and label it by name. It combines set-style and set-annotation without manipulating renderer-specific marks.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="Interactive climate visualization showing a seasonal phase portrait for five U.S. cities, with temperature (°C) on the horizontal axis and precipitation (mm/day) on the vertical axis. Seattle is selected, and its annual weather cycle is displayed as a connected path labeled by month from January through December. The path shows cool, wet conditions in winter, peaking near 6 mm/day of precipitation, and warmer, drier conditions in summer, with precipitation dropping below 1 mm/day. Colored points represent Chicago, Houston, Los Angeles, New York, and Seattle. A details panel on the right displays the selected month, January, with a temperature of 4.2°C and precipitation of 5.7 mm/day. The figure demonstrates temporal dragging and animation, where moving a city’s position along its seasonal path updates all cities to the corresponding time of year." class="wp-image-1190502" height="1226" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/flint-blog-fig-4.png" width="2120" /><figcaption class="wp-element-caption">Example 4: The agent can create bespoke interactive visualizations with Flint’s programming API. In this DimpVis example, the user can drag the point along the time path to visualize how all cities’ temperature and precipitation changes.</figcaption></figure>
+
+
+
+<h2 class="wp-block-heading" id="how-it-works">How it works</h2>
+
+
+
+<p class="wp-block-paragraph">Flint Canvas is a state machine that tracks user interactions on the canvas and manages visual rendering state. Flint makes interaction specification easy by separating visual logic, managed by the compiler, from interaction logic, specified by the user at the semantic level:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Visual logic: The compiler automatically resolves raw triggers, such as clicks, drags, and key presses, into semantic events that identify chart elements and data. It also translates update operators into rendered canvas changes, handling hit testing, and low-level visual updates.</li>
+
+
+
+<li>Interaction logic: The user specifies interactions by mapping semantic interaction events to chart update operators, such as set style to highlight data, set annotation to label a point, or set viewport to pan or zoom. The user can also use those semantic events to update external tables, widgets, or application states.&nbsp;</li>
+</ul>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img alt="Figure: Flint interactive allows the agent to describe interaction logic by mapping “what semantic event is the user interacting with” to “what updates they want for the canvas surface”. The compiler takes the heavy lifting of resolving visual updates and manages the runtime, which makes interaction authoring more reliable and cost effective." class="wp-image-1190358" height="556" src="https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/FlintInteractive-flowchart-figure.png" width="999" /><figcaption class="wp-element-caption">Figure 1:  Flint interactive allows the agent to describe interaction logic by mapping “what semantic event is the user interacting with” to “what updates they want for the canvas surface”. The compiler takes the heavy lifting of resolving visual updates and manages the runtime, which makes interaction authoring more reliable <s>c</s>and cost effective.</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">This separation means users do not need to reverse-engineer rendering logic or manipulate renderer-specific marks, making interactions easier to specify and maintain. Furthermore, because event generation and visual updates are compositional, the same model also connects Flint with tables, text, other charts, and widgets to build interactive stories and dashboards.</p>
+
+
+
+<h2 class="wp-block-heading" id="try-it-now">Try it now!</h2>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+
+</div></figure>
+
+
+
+<p class="wp-block-paragraph">Chart users: <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://microsoft.github.io/flint-chart/#/documentation/setup-flint-mcp" rel="noopener noreferrer" target="_blank">Set up Flint in your chat<span class="sr-only"> (opens in new tab)</span></a> and ask your agent to create an interactive chart. Find inspiration in the interaction gallery.</p>
+
+
+
+<p class="wp-block-paragraph">App builders: Build interactive dashboards, data stories, and connected views with the <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://microsoft.github.io/flint-chart/#/documentation/interaction-api" rel="noopener noreferrer" target="_blank">programming API<span class="sr-only"> (opens in new tab)</span></a>. Share the interaction-author skill with your coding agent to add presets to your app.</p>
+
+
+
+<p class="wp-block-paragraph">Interaction designers: Explore the <a class="msr-external-link glyph-append glyph-append-open-in-new-tab glyph-append-xsmall" href="https://microsoft.github.io/flint-chart/#/interactions/bespoke" rel="noopener noreferrer" target="_blank">bespoke examples<span class="sr-only"> (opens in new tab)</span></a>, design a new interaction, and turn it into a reusable preset. Propose a preset on GitHub and share your prototype or implementation to help expand Flint&#8217;s interaction vocabulary.</p>
+<span class="sr-only" id="label-external-link">Opens in a new tab</span><p>The post <a href="https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/">Flint-interactive: A language for creating interactive data visualizations</a> appeared first on <a href="https://www.microsoft.com/en-us/research">Microsoft Research</a>.</p>
