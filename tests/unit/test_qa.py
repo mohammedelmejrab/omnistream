@@ -240,7 +240,7 @@ async def test_qa_canonicalizes_cross_bubble_conflicts(
     event_thread = threading.get_ident()
 
     class CanonicalGraph:
-        def entities_in(self, bubbles):
+        def entities_in(self, bubbles, ids=None):
             assert threading.get_ident() != event_thread
             assert tuple(bubbles) == ("news", "finance")
             return [
@@ -433,7 +433,7 @@ async def test_joined_groups_order_evidence_and_section(settings, mock_openai):
         def __init__(self, global_by_bubble):
             self.global_by_bubble = global_by_bubble
 
-        def entities_in(self, bubbles):
+        def entities_in(self, bubbles, ids=None):
             bubble = bubbles[0]
             gid = self.global_by_bubble.get(bubble)
             return (
@@ -498,7 +498,7 @@ async def test_join_identifiers_cannot_inject_citations(settings, mock_openai):
     from omnistream.retrieval.citations import AnswerContext, parse_citations
 
     class JoinGraph:
-        def entities_in(self, bubbles):
+        def entities_in(self, bubbles, ids=None):
             return [
                 Entity("e", "Example", "person", bubble, "global[97]")
                 for bubble in bubbles

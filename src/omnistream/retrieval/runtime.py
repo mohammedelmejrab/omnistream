@@ -22,6 +22,7 @@ from omnistream.retrieval.citations import AnswerStyle
 from omnistream.retrieval.classic import ClassicRetriever, make_chroma_client
 from omnistream.retrieval.graphiti_mode import GraphitiRetriever
 from omnistream.retrieval.modes import RetrievalDispatcher
+from omnistream.retrieval.own_algorithm.passage_nodes import PassageNodes
 from omnistream.retrieval.own_algorithm.passages import PassageSource
 from omnistream.retrieval.own_algorithm.pipeline import OwnRetriever
 from omnistream.retrieval.own_algorithm.rerank import local_encoder
@@ -85,6 +86,12 @@ class QueryRuntime:
                         else None
                     ),
                     specificity_restart=settings.own_seed_mode == "passage_specificity",
+                    passage_nodes=(
+                        PassageNodes(graph)
+                        if settings.own_passage_nodes == "on"
+                        and settings.own_seed_mode != "round3"
+                        else None
+                    ),
                 ),
             },
             "own",

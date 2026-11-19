@@ -158,7 +158,9 @@ class ToolExecutor:
         ids = {id for fact in facts for id in (fact.subject_id, fact.object_id)}
         return [
             asdict(entity)
-            for entity in await _invoke(self.graph_store.entities_in, [self.bubble])
+            for entity in await _invoke(
+                self.graph_store.entities_in, [self.bubble], sorted(ids)
+            )
             if entity.id in ids
         ]
 

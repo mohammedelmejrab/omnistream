@@ -31,10 +31,15 @@ class PassageSource:
         self.classic = classic
         self.graph = graph
 
-    def seeds(self, question, bubbles, time_scope):
-        chunks = self.classic.retrieve(
-            question, bubbles=bubbles, time_scope=time_scope, top_k=PASSAGE_K
+    def dense(self, question, bubbles, time_scope, top_k):
+        return self.classic.retrieve(
+            question, bubbles=bubbles, time_scope=time_scope, top_k=top_k
         ).chunks
+
+    def seeds(self, question, bubbles, time_scope, chunks=None):
+        if chunks is None:
+            chunks = self.dense(question, bubbles, time_scope, PASSAGE_K)
+        chunks = list(chunks)[:PASSAGE_K]
         passages = [
             {"bubble": c.bubble, "item": c.item_id, "rank": i}
             for i, c in enumerate(chunks, 1)

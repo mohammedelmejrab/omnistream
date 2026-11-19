@@ -114,6 +114,7 @@ def load_benchmark(
     n: int | None = None,
     seed: int = 0,
     corpus: str = "full",
+    exclude_sample: tuple[int, int] | None = None,
 ) -> Benchmark:
     """Load a HippoRAG benchmark subset.
 
@@ -122,6 +123,10 @@ def load_benchmark(
     full released corpus (HippoRAG setting) or the slice of passages that the
     sampled questions actually reference (always including every matched gold
     passage).
+
+    ``exclude_sample=(n0, seed0)`` first removes the questions that
+    ``load_benchmark(name, n=n0, seed=seed0)`` would select (a development set),
+    then samples ``n`` from the rest, so test questions never overlap it.
     """
     canonical = DATASET_ALIASES.get(name, name)
     if canonical not in DATASET_FILES:
@@ -164,7 +169,15 @@ def load_benchmark(
 
     parsed = [PARSERS[canonical](item) for item in raw_questions]
     indices = list(range(len(parsed)))
-    if n is not None and n < len(parsed):
+    if exclude_sample is not None:
+        dev_n, dev_seed = exclude_sample
+        dev = (
+            set(random.Random(dev_seed).sample(indices, dev_n))
+            if dev_n < len(indices)
+            else set(indices)
+        )
+        indices = [i for i in indices if i not in dev]
+    if n is not None and n < len(indices):
         indices = sorted(random.Random(seed).sample(indices, n))
 
     questions: list[BenchQuestion] = []

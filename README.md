@@ -96,7 +96,28 @@ Full logs: [`docs/IMPROVEMENT_LOG.md`](docs/IMPROVEMENT_LOG.md); raw reports: [`
 
 Our BM25 reproduces the published BM25 within about 3 points, which validates the harness.
 
-### End-to-end QA: MuSiQue, 50 questions (seed 0), 928-passage slice corpus
+### End-to-end QA: full corpora, 200 questions per dataset (test run)
+
+OpenIE graph over the full released corpus (MuSiQue 11,656, 2Wiki 6,119, HotpotQA 9,811 passages),
+200 questions per dataset (seed 0; the MuSiQue development questions are excluded). Short answers,
+EM / token F1 / passage Recall@5 (%), answering model `deepseek/deepseek-v4.1-flash-1017`.
+Own retrieval uses passage seeding, the local reranker and HippoRAG 2-style passage nodes.
+
+| Configuration | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| Closed book (no retrieval) | 7.5 / 12.8 / - | 30.5 / 33.6 / - | 29.5 / 38.2 / - |
+| External (LlamaIndex) | 14.5 / 16.7 / 40.9 | 35.0 / 37.6 / 64.4 | 44.0 / 54.5 / 74.0 |
+| Classic RAG | not run | 49.5 / 53.7 / 69.9 | not run |
+| Own retrieval | 23.0 / 27.0 / 56.3 | 50.5 / 55.0 / 86.2 | 48.0 / 60.0 / 80.8 |
+| **Own retrieval + subagents** | **37.0 / 47.3** / 45.9 | **71.5 / 77.1** / 71.9 | **62.0 / 75.6** / 71.2 |
+| HippoRAG 1 (paper, EM / F1) | 19.2 / 29.8 | 46.6 / 59.5 | 41.8 / 55.0 |
+| IRCoT + HippoRAG (paper, EM / F1) | 21.9 / 33.3 | 47.7 / 62.7 | 45.7 / 59.2 |
+
+Own retrieval + subagents beats the published HippoRAG 1 QA by 17-20 F1 points on all three
+datasets. Caveats: the papers use different answering models and 1,000 questions; at n=200 the 95%
+bootstrap intervals are about +-6-7 points. Reports: [`docs/eval/bench/`](docs/eval/bench/).
+
+### End-to-end QA: MuSiQue, 50 questions (seed 0), 928-passage slice corpus (development set)
 
 Short answers, SQuAD-normalised EM / token F1, answering model `deepseek/deepseek-v4.1-flash-1017`.
 

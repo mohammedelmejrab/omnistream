@@ -204,6 +204,15 @@ def main(argv: list[str] | None = None) -> int:
     ev.add_argument("--limit-passages", type=int)
     ev.add_argument("--limit-questions", type=int)
     ev.add_argument("--dry-run", action="store_true")
+    ev.add_argument(
+        "--extractor", choices=("graphiti", "openie"), default="graphiti",
+        help="bench-ingest: graphiti (full pipeline) or openie (one LLM call per passage)",
+    )
+    ev.add_argument("--extract-concurrency", type=int, default=16)
+    ev.add_argument(
+        "--exclude-sample",
+        help="bench-qa on a full corpus: N:SEED, skip the questions of that sample (dev set)",
+    )
     args = parser.parse_args(argv)
     if args.command == "realdata":
         # Corpus tooling never reads .env or connects to production stores.

@@ -78,6 +78,8 @@ class Settings(BaseSettings):
     own_rerank: Literal["off", "on"] = "off"
     classic_rerank: Literal["off", "on"] = "off"
     own_seed_mode: Literal["round3", "passage", "passage_specificity"] = "round3"
+    # HippoRAG 2-style passage nodes in the own retriever's PPR (item 3).
+    own_passage_nodes: Literal["off", "on"] = "off"
     rrf_k: int = Field(default=60, ge=1)
     subagent_max_tool_calls: int = Field(default=6, ge=1)
     subagent_timeout_seconds: float = Field(default=60.0, gt=0)

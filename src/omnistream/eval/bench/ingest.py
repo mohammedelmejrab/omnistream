@@ -52,6 +52,8 @@ BENCH_BUBBLE_DESCRIPTION = (
 FIXED_PUBLISHED_AT = "2026-01-01T00:00:00Z"
 FIXED_CREDIBILITY = 0.8
 BENCH_MANIFEST_NAME = "bench_manifest.json"
+OPENIE_CACHE_NAME = "openie.jsonl"
+EXTRACTORS = ("graphiti", "openie")
 
 
 def default_bench_snapshot(dataset: str, n: int | None, seed: int) -> str:
@@ -136,6 +138,24 @@ def plan_ingest(
     )
 
 
+def _add_usage(first: dict | None, second: dict | None) -> dict | None:
+    if not first:
+        return second
+    if not second:
+        return first
+    merged = dict(first)
+    for key, value in second.items():
+        if key == "cost_usd":
+            merged[key] = (
+                None
+                if value is None or first.get(key) is None
+                else first[key] + value
+            )
+        elif isinstance(value, (int, float)):
+            merged[key] = merged.get(key, 0) + value
+    return merged
+
+
 def passage_text(passage) -> str:
     """Corpus doc form used by the gold mapping: title + newline + text."""
     return passage.title + "\n" + passage.text
@@ -167,12 +187,21 @@ class BenchIngestor:
         published_at: str = FIXED_PUBLISHED_AT,
         credibility: float = FIXED_CREDIBILITY,
         progress=None,
+        extractor: str = "graphiti",
+        extract_concurrency: int = 16,
     ) -> None:
         from omnistream.eval.snapshot import snapshot_path
 
         self.settings, self.repo = settings, repo
         self.benchmark, self.name = benchmark, snapshot
         self.n, self.seed, self.corpus = n, seed, corpus
+        if extractor not in EXTRACTORS:
+            raise ValueError(f"unknown extractor {extractor!r}")
+        self.extractor = extractor
+        self.extract_concurrency = max(1, extract_concurrency)
+        self.extraction_cache_path = None
+        self.extractions: dict = {}
+        self.extracted_here: set[str] = set()
         self.progress = progress or _print_progress
         self.path = snapshot_path(settings, snapshot)
         self.path.mkdir(parents=True, exist_ok=True)
@@ -189,7 +218,10 @@ class BenchIngestor:
             # Persist the binding immediately so an interrupted first run still
             # leaves a resumable, verifiable manifest behind.
             save_bench_manifest(self.manifest_path, self.manifest)
+        # Manifests written before the bulk mode existed were Graphiti-built.
+        self.manifest.setdefault("extractor", "graphiti")
         for key, expected in (
+            ("extractor", extractor),
             ("dataset", benchmark.name),
             ("n", n),
             ("seed", seed),
@@ -202,9 +234,11 @@ class BenchIngestor:
                     f"manifest={self.manifest.get(key)!r} requested={expected!r}; "
                     "use a new --snapshot name"
                 )
+        self.extraction_cache_path = self.path / OPENIE_CACHE_NAME
         self.meter = None
         self.writer = None
         self.llm = None
+        self.extract_llm = None
         self.embedder = SentenceTransformerEmbedder(settings)
 
     def _fresh_manifest(self) -> dict:
@@ -219,6 +253,7 @@ class BenchIngestor:
             "unmatched_gold": self.benchmark.unmatched_gold,
             "passage_count": len(self.benchmark.passages),
             "group_id": self.group_id,
+            "extractor": self.extractor,
             "bubble_name": BENCH_BUBBLE_NAME,
             "published_at": FIXED_PUBLISHED_AT,
             "credibility": self.credibility,
@@ -242,6 +277,20 @@ class BenchIngestor:
         self.writer = await build_graph_writer(
             self.local_settings, self.repo, self.embedder, self.llm
         )
+        if self.extractor == "openie":
+            from omnistream.graph.openie import OpenIEEpisodeBuilder
+
+            self.writer.episode_builder = OpenIEEpisodeBuilder(
+                self.writer._graphiti.driver, self.embedder, self.extractions
+            )
+            self.extract_llm = build_llm_client(
+                self.settings.model_copy(
+                    update={
+                        "llm_max_concurrency": self.extract_concurrency,
+                        "llm_tokens_per_minute": max(60, self.extract_concurrency * 30),
+                    }
+                )
+            )
         # The router is never used: bench items always carry bubble_ids_override.
         processor = ItemProcessor(self.repo, None, self.writer)
         self.pool = WorkerPool(
@@ -294,6 +343,13 @@ class BenchIngestor:
             if not candidates:
                 raise RuntimeError("deduplicated item has no record")
             row = candidates[0]
+        if self.extractor == "openie":
+            from omnistream.graph.openie import OpenIEResult
+
+            cached = self._cache.get(passage.id)
+            if cached is None:
+                raise RuntimeError(f"no OpenIE extraction for passage {passage.id}")
+            self.extractions[row.id] = OpenIEResult.model_validate(cached["result"])
         self.manifest["passages"][passage.id] = {
             "runtime_id": row.id,
             "source_id": source.id,
@@ -319,6 +375,16 @@ class BenchIngestor:
         )
         if getattr(self, "meter", None):
             entry["usage"] = self.meter.summary().get("bench_ingestion:" + passage.id)
+        if (
+            self.extractor == "openie"
+            and passage.id in self._cache
+            and passage.id not in self.extracted_here
+        ):
+            # Extracted by an earlier process: this meter saw only the write,
+            # so add the extraction usage cached with the result.
+            entry["usage"] = _add_usage(
+                entry.get("usage"), self._cache[passage.id].get("usage")
+            )
         save_bench_manifest(self.manifest_path, self.manifest)
         stage.reset(stage_token)
         return entry
@@ -338,14 +404,92 @@ class BenchIngestor:
             "calls": sum(v["calls"] for v in values),
         }
 
+    @property
+    def _cache(self) -> dict:
+        if not hasattr(self, "_cache_rows"):
+            from omnistream.graph.openie import load_extraction_cache
+
+            self._cache_rows = (
+                load_extraction_cache(self.extraction_cache_path)
+                if self.extraction_cache_path is not None
+                else {}
+            )
+        return self._cache_rows
+
+    async def extract_all(self, passage_ids: list[str]) -> dict:
+        """Phase 1 of the openie mode: one LLM call per passage, in parallel,
+        appended to a resumable JSONL cache. Failed passages are reported and
+        retried on the next run; they are never written with an empty graph."""
+        from omnistream.graph.openie import extract_openie
+
+        from ..resources import stage
+
+        todo = [pid for pid in passage_ids if pid not in self._cache]
+        failures: dict[str, str] = {}
+        if not todo:
+            return failures
+        await self.progress(
+            f"OpenIE extraction: {len(todo)} passage(s), "
+            f"concurrency {self.extract_concurrency}"
+        )
+        lock = asyncio.Lock()
+        done = 0
+
+        async def one(passage_id: str) -> None:
+            nonlocal done
+            token = stage.set("bench_ingestion:" + passage_id)
+            try:
+                text = passage_text(self.passage_by_id[passage_id])
+                result = await extract_openie(
+                    self.extract_llm, self.settings.llm_model, text
+                )
+            except Exception as error:  # noqa: BLE001 - reported, retried next run
+                failures[passage_id] = f"{type(error).__name__}: {error}"
+                return
+            finally:
+                stage.reset(token)
+            usage = (
+                self.meter.summary().get("bench_ingestion:" + passage_id)
+                if getattr(self, "meter", None)
+                else None
+            )
+            row = {"key": passage_id, "result": result.model_dump(), "usage": usage}
+            async with lock:
+                with self.extraction_cache_path.open("a", encoding="utf-8") as stream:
+                    stream.write(json.dumps(row) + "\n")
+                self._cache[passage_id] = row
+                self.extracted_here.add(passage_id)
+                done += 1
+                if done % 50 == 0 or done == len(todo):
+                    usage_now = self.running_usage()
+                    cost = usage_now["cost_usd"]
+                    await self.progress(
+                        f"extracted {done}/{len(todo)} | "
+                        + (f"${cost:.4f}" if cost is not None else "cost n/a")
+                    )
+
+        await asyncio.gather(*(one(pid) for pid in todo))
+        if failures:
+            await self.progress(
+                f"OpenIE extraction failed for {len(failures)} passage(s); "
+                "rerun to retry: " + ", ".join(sorted(failures)[:10])
+            )
+        return failures
+
     async def run(self, limit_passages: int | None = None) -> dict:
         plan = plan_ingest(self.benchmark, self.manifest, limit_passages)
         total = len(plan.selected)
         await self.progress(
-            f"Bench ingest {self.name}: {plan.written} already written, "
-            f"{plan.skipped} skipped, ingesting {total} of {len(plan.pending)} pending"
+            f"Bench ingest {self.name} ({self.extractor}): {plan.written} already "
+            f"written, {plan.skipped} skipped, ingesting {total} of "
+            f"{len(plan.pending)} pending"
         )
-        for index, passage_id in enumerate(plan.selected, 1):
+        selected = list(plan.selected)
+        if self.extractor == "openie":
+            failures = await self.extract_all(selected)
+            selected = [pid for pid in selected if pid not in failures]
+            total = len(selected)
+        for index, passage_id in enumerate(selected, 1):
             passage = self.passage_by_id[passage_id]
             entry = await self.ingest_passage(passage)
             usage = self.running_usage()
@@ -382,8 +526,11 @@ class BenchIngestor:
         if self.writer is not None:
             await self.writer._graphiti.close()
             await asyncio.to_thread(self.writer.chunks._client.close)
-        if self.llm is not None:
-            await self.llm._client.close()
+        for client in (self.llm, self.extract_llm):
+            if client is not None:
+                closed = client._client.close()
+                if hasattr(closed, "__await__"):
+                    await closed
 
 
 async def run_bench_ingest_cli(settings, args) -> int:
@@ -438,6 +585,8 @@ async def run_bench_ingest_cli(settings, args) -> int:
         n=args.n,
         seed=args.seed,
         corpus=corpus,
+        extractor=getattr(args, "extractor", None) or "graphiti",
+        extract_concurrency=getattr(args, "extract_concurrency", None) or 16,
     )
     from ..resources import UsageMeter
 

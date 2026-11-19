@@ -34,6 +34,7 @@ class OwnRetriever:
         reranker=None,
         passage_source=None,
         specificity_restart: bool = False,
+        passage_nodes=None,
     ) -> None:
         self._validate_top_k(top_k)
         if isinstance(k, bool) or not isinstance(k, int) or k < 0:
@@ -44,6 +45,9 @@ class OwnRetriever:
         self.reranker = reranker
         self.passage_source = passage_source
         self.specificity_restart = specificity_restart
+        if passage_nodes is not None and passage_source is None:
+            raise ValueError("passage_nodes requires a passage_source")
+        self.passage_nodes = passage_nodes
         self.top_k, self.k = top_k, k
 
     @staticmethod
@@ -68,9 +72,25 @@ class OwnRetriever:
         query = self.embedder.embed_query(question)
         allowed = [b for b in bubbles if b not in excluded_bubbles]
         options = {}
+        dense_chunks: tuple = ()
+        if self.passage_nodes is not None:
+            from omnistream.retrieval.own_algorithm.passage_nodes import (
+                DENSE_K,
+                PASSAGE_TOP,
+            )
+
+            dense_chunks = tuple(
+                self.passage_source.dense(question, allowed, time_scope, DENSE_K)
+            )
+            fallback = RetrievalResult(
+                mode="own", chunks=dense_chunks[:PASSAGE_TOP], chunks_first=True
+            )
+        else:
+            fallback = RetrievalResult(mode="own")
         if self.passage_source is not None:
             options["passage_seeds"] = self.passage_source.seeds(
-                question, allowed, time_scope
+                question, allowed, time_scope,
+                **({"chunks": dense_chunks} if dense_chunks else {}),
             )
         seeds = seed_entities(
             question,
@@ -81,7 +101,7 @@ class OwnRetriever:
             time_scope=time_scope,
         )
         if not seeds:
-            return RetrievalResult(mode="own")
+            return fallback
         ids = [s.entity.id for s in seeds]
         graph = self.store.expand(
             ids,
@@ -90,7 +110,12 @@ class OwnRetriever:
             **({"excluded_bubbles": excluded_bubbles} if excluded_bubbles else {}),
         )
         if not graph.facts:
-            return RetrievalResult(mode="own", seeds=tuple(s.entity for s in seeds))
+            return RetrievalResult(
+                mode="own",
+                seeds=tuple(s.entity for s in seeds),
+                chunks=fallback.chunks,
+                chunks_first=fallback.chunks_first,
+            )
         weights = {s.entity.id: max(0.0, s.score) for s in seeds}
         if self.specificity_restart and self.passage_source is not None:
             weights = self.passage_source.restart_weights(seeds)
@@ -128,6 +153,11 @@ class OwnRetriever:
             fused = rerank(
                 question, fused, lambda f: facts[f.fact.id].text, self.reranker
             )[:limit]
+        passages: tuple = ()
+        if self.passage_nodes is not None:
+            passages = self.passage_nodes.rank(graph, weights, dense_chunks, allowed)
+            if not passages:
+                passages = fallback.chunks
         return RetrievalResult(
             mode="own",
             seeds=tuple(s.entity for s in seeds),
@@ -135,4 +165,6 @@ class OwnRetriever:
                 ScoredFact(facts[f.fact.id], f.score, f.fact.path, f.ranks)
                 for f in fused
             ),
+            chunks=passages,
+            chunks_first=self.passage_nodes is not None,
         )

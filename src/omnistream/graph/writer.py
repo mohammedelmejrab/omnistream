@@ -87,6 +87,9 @@ class GraphWriter:
         self._llm = llm
         # Graphiti's dedup/invalidation is not safe under concurrent episodes.
         self._lock = asyncio.Lock()
+        # Optional replacement for Graphiti.add_episode (bulk benchmark ingest,
+        # graph/openie.py). Must return an object with episode/nodes/edges.
+        self.episode_builder = None
 
     @property
     def ops(self) -> GraphOps:
@@ -122,19 +125,29 @@ class GraphWriter:
         started = utc_now()
         # 1. Graphiti episode, tagged with item provenance.
         res = await self._ops.recover_episode(item.id, bubble_id)
-        if res is None:
+        source_description = json.dumps(
+            {
+                "item_id": item.id,
+                "url": item.url,
+                "credibility": source.credibility,
+                "source_id": source.id,
+            }
+        )
+        if res is None and self.episode_builder is not None:
+            res = await self.episode_builder(
+                item_id=item.id,
+                name=item.title or item.url or item.id,
+                text=text,
+                group_id=bubble_id,
+                reference_time=ref_time,
+                source_description=source_description,
+            )
+        elif res is None:
             res = await self._graphiti.add_episode(
                 name=item.title or item.url or item.id,
                 episode_body=text,
                 source=EpisodeType.text,
-                source_description=json.dumps(
-                    {
-                        "item_id": item.id,
-                        "url": item.url,
-                        "credibility": source.credibility,
-                        "source_id": source.id,
-                    }
-                ),
+                source_description=source_description,
                 reference_time=ref_time,
                 group_id=bubble_id,
                 entity_types=ENTITY_TYPES,

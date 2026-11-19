@@ -67,9 +67,16 @@ class InMemoryGraphStore:
             k: np.asarray(v).copy() for k, v in (fact_embeddings or {}).items()
         }
 
-    def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
+    def entities_in(
+        self, bubbles: Sequence[str], ids: Sequence[str] | None = None
+    ) -> list[Entity]:
+        wanted = None if ids is None else set(ids)
         return sorted(
-            (e for e in self._entities.values() if e.bubble in bubbles),
+            (
+                e
+                for e in self._entities.values()
+                if e.bubble in bubbles and (wanted is None or e.id in wanted)
+            ),
             key=lambda e: e.id,
         )
 

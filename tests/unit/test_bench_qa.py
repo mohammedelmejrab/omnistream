@@ -543,15 +543,15 @@ async def test_run_bench_qa_resume_retries_unmeasured_cells(tmp_path, monkeypatc
     assert output["aggregates"]["own"]["status"] == "valid"
     assert output["aggregates"]["own"]["recall_at_2"]["mean"] == pytest.approx(0.75)
 
-    # A resume with different rows/questions is rejected.
+    # A resume with a different question sample is rejected (rows may change).
     with pytest.raises(ValueError):
         await run_bench_qa(
             settings,
             dataset_name="musique",
             n=None,
-            seed=0,
+            seed=1,
             snapshot="bench-demo",
-            rows="own,classic",
+            rows="own",
             resume=True,
             bench_root=tmp_path,
             out=tmp_path / "out",

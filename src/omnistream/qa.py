@@ -216,12 +216,17 @@ async def answer_question(
     canonical_ids = None
     entities = []
     if graph_store is not None:
+        # Only fact endpoints are looked up (conflict canonicalisation and
+        # citation endpoints), so read just those entities.
         entities = await asyncio.to_thread(
             graph_store.entities_in,
             tuple(
                 dict.fromkeys(
                     [*routing.bubbles, *(f.fact.bubble for f in result.facts)]
                 )
+            ),
+            sorted(
+                {i for f in result.facts for i in (f.fact.subject_id, f.fact.object_id)}
             ),
         )
         canonical_ids = {

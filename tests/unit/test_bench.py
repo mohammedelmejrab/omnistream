@@ -229,6 +229,11 @@ def test_sampling_determinism_and_slice_corpus(tmp_path):
         qid for qid in all_ids if qid in {q.id for q in first.questions}
     ]  # sampled subset kept in original file order
     assert len(load_benchmark("musique", root=tmp_path, n=50).questions) == 5
+    # A test sample never overlaps the excluded development sample.
+    dev = {q.id for q in load_benchmark("musique", root=tmp_path, n=2, seed=0).questions}
+    test = load_benchmark("musique", root=tmp_path, n=3, seed=1, exclude_sample=(2, 0))
+    assert len(test.questions) == 3
+    assert not dev & {q.id for q in test.questions}
     assert [
         q.id for q in load_benchmark("musique", root=tmp_path, n=None).questions
     ] == all_ids

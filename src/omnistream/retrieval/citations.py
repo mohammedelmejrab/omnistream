@@ -329,7 +329,12 @@ def build_context(
         raise ValueError("max_item_tokens must be a non-negative integer")
     texts: dict[str, list[str]] = {item: [] for item in result.item_ids}
     urls: dict[str, str | None] = {}
-    evidence = [entry.fact for entry in result.facts] + list(result.chunks)
+    facts = [entry.fact for entry in result.facts]
+    evidence = (
+        list(result.chunks) + facts
+        if getattr(result, "chunks_first", False)
+        else facts + list(result.chunks)
+    )
     for entry in evidence:
         if not entry.item_id:
             raise ValueError("evidence must have item provenance")

@@ -100,9 +100,12 @@ def evidence_ids(result):
             ids.extend(i for i in row if i is not None)
     else:
         if result.retrieval:
+            chunk_ids = [c.item_id for c in result.retrieval.chunks]
+            if getattr(result.retrieval, "chunks_first", False):
+                ids.extend(chunk_ids)
             for entry in result.retrieval.facts:
                 ids.extend([entry.fact.item_id, *entry.fact.item_ids])
-            ids.extend(c.item_id for c in result.retrieval.chunks)
+            ids.extend(chunk_ids)
         if result.multi_hop:
             for finding in result.multi_hop.findings:
                 ids.extend(finding.item_ids)

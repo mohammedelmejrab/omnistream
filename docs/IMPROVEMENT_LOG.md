@@ -911,3 +911,105 @@ probe's estimate). QA run: $0.37 in total. Report:
   reader. The closed-book row (10.0 vs 12.5) suggests the reader alone is not the source of the gap.
 - Setbacks fixed: `bench-qa` crashed on exit awaiting a synchronous `close()`; `--resume` refused to
   extend a `--limit-questions 10` run to 50. Both fixed in `eval/bench/qa.py` with a unit test.
+
+### Fast bulk ingest (OpenIE) and its validation gate
+
+Cause of the cost: Graphiti's `add_episode` makes many LLM calls per passage (extraction, dedup,
+edge resolution, invalidation, summaries): 26.6M tokens for 928 passages. The full HippoRAG corpora
+(27,586 passages) would cost about $110 that way.
+
+- `graph/openie.py`: one structured LLM call per passage returns typed entities and
+  subject-predicate-object triples with a fact sentence (HippoRAG-style OpenIE). The result is
+  written as ordinary Graphiti nodes and edges (`Episodic`, `Entity`, `MENTIONS`, `RELATES_TO`,
+  name and fact embeddings) in one transaction, through a new `GraphWriter.episode_builder` hook,
+  so grounding, global linking, alias pairs, corroboration and chunks run unchanged. Entities are
+  merged within a group by exact normalised name (as HippoRAG does).
+- `omni eval bench-ingest --extractor openie [--extract-concurrency 16]`: extraction runs in
+  parallel into a resumable `openie.jsonl` cache, then the writes run in order. The manifest
+  records the extractor, and resuming with a different one is refused.
+- Speed: the CPU venv embeds too slowly (about 2 s per passage); the GPU venv
+  (`~/.omnistream/venv-gpu`) writes about 0.5 s per passage after start-up.
+- Same 928-passage MuSiQue slice: $0.46 and about 25 minutes, against $3.69 and about 5.5 hours
+  through Graphiti (8x cheaper).
+
+Validation gate, same 50 questions and pre-declared settings, paired by question (OpenIE graph
+minus Graphiti graph, 95% bootstrap CI):
+
+| Configuration | EM | F1 | R@5 |
+|---|---|---|---|
+| own | -4.0 [-16, +8] | -4.3 [-16, +7] | +4.7 [-4, +13] |
+| own+subagents | -2.0 [-14, +10] | -6.4 [-16, +2] | +3.0 [-5, +11] |
+| graphiti | **-16.0 [-28, -4]** | **-12.4 [-24, -1]** | -3.8 [-11, +3] |
+| classic (does not use the graph) | 0.0 | 0.0 | 0.0 |
+
+- Our method: no significant change; retrieval slightly up, answer F1 slightly down. Gate passed.
+- The Graphiti baseline depends on Graphiti's own extraction (entity summaries, resolved edges), so
+  on an OpenIE graph it is no longer the Graphiti system. It is left out of the full-corpus run
+  rather than reported under a misleading name.
+- Classic is identical, as it should be (it reads Chroma chunks, not the graph).
+
+### Item 3: passage nodes (HippoRAG 2 style)
+
+Cause found first: on the MuSiQue slice, own answered from short fact sentences while classic gave
+the reader whole passages; own's F1 (38.6) trailed classic's (44.0) despite better passage recall.
+
+- `retrieval/own_algorithm/passage_nodes.py`: passages (`Episodic` nodes, already linked to their
+  entities by `MENTIONS`) join the entity subgraph in the Personalized PageRank. The walk restarts at
+  the seed entities (sum 1) and at the top 20 dense passages (sum 0.05, HippoRAG 2's weight); passages
+  are ranked by PPR and the top 5 go to the reader as text. Per-entity cap of 100 linked passages.
+  Constants are HippoRAG 2's published values, not tuned here.
+- `RetrievalResult.chunks_first` makes evidence order (recall and citations) follow that passage
+  ranking. Flag `OMNI_OWN_PASSAGE_NODES=on` (default off; needs a passage seed mode).
+- Dev/test split: 49 of the 50 slice questions were also in `load_benchmark(n=200, seed=0)`. The slice
+  is now the development set, and the full-corpus test samples exclude it
+  (`omni eval bench-qa --exclude-sample 50:0`; a full-corpus snapshot accepts any question sample).
+
+Development set (MuSiQue slice, 50 questions, OpenIE graph), paired, passage nodes on minus off:
+
+| Configuration | EM | F1 | R@2 | R@5 |
+|---|---|---|---|---|
+| own | +6.0 [-2, +16] (4 better / 1 worse) | +6.0 [-2, +16] | -3.0 [-11, +6] | -2.0 [-9, +5] |
+| own+subagents | +4.0 [-6, +14] | +4.6 [-7, +15] (10 / 4) | +0.7 | +1.5 |
+
+Answers improve in both rows (not significant at n=50); passage recall is about unchanged. Decision,
+declared before the test run: passage nodes on for own and own+subagents.
+
+Test-run settings (declared before any test question is run): OpenIE graph over the full released
+corpus; 200 questions per dataset, `--seed 0`; MuSiQue excludes the development sample
+(`--exclude-sample 50:0`); rows closed_book, external, classic, own, own+subagents (Graphiti left out,
+see the gate above); own uses `OMNI_OWN_SEED_MODE=passage_specificity`, `OMNI_OWN_RERANK=on`,
+`OMNI_OWN_PASSAGE_NODES=on`; classic at its default.
+
+## Test run: full corpora, 200 questions per dataset (2026-11-19)
+
+Run notes (no setting changed between datasets; all fixes are result-neutral):
+- OpenIE output budget raised from 4096 to 16384 tokens (`graph/openie.py`): two 2Wiki passages with
+  long filmographies (Frank Sinatra, Kenneth Branagh) truncated on every retry. All three graphs are
+  complete: MuSiQue 11,656, 2Wiki 6,119, HotpotQA 9,811 passages.
+- Running two QA processes plus an ingest exhausted RAM (62 of 66 GB committed, heavy paging); the
+  HotpotQA ingest crashed once (resumed). QA now runs one process at a time (`scripts/bench_queue.ps1`).
+- Neo4j `MemoryPoolOutOfMemoryError` on 51 of the first 68 MuSiQue own+subagents cells. Cause, found
+  with `SHOW TRANSACTIONS`: `entities_in` loaded every entity of the group (~650 MB per call on a
+  full corpus) only to look up fact endpoints. It now takes `ids` and reads just those
+  (`graph/neo4j_store.py`, `agents/tools.py`, `qa.py`); entity/fact projections also drop the unused
+  embedding vectors. The failed cells were re-run on resume; no errors after the fix.
+- `bench-qa --resume` now accepts reordered or narrowed rows (answers are keyed by configuration and
+  question). At the user's request classic was skipped on MuSiQue and HotpotQA (it had finished on
+  2Wiki) and own+subagents ran before own.
+
+Results (EM / F1 / passage R@5, %; n=200 each; reader `deepseek/deepseek-v4.1-flash-1017`):
+
+| Configuration | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| closed_book | 7.5 / 12.8 / – | 30.5 / 33.6 / – | 29.5 / 38.2 / – |
+| external | 14.5 / 16.7 / 40.9 | 35.0 / 37.6 / 64.4 | 44.0 / 54.5 / 74.0 |
+| classic | not run | 49.5 / 53.7 / 69.9 | not run |
+| own | 23.0 / 27.0 / 56.3 | 50.5 / 55.0 / 86.2 | 48.0 / 60.0 / 80.8 |
+| own+subagents | **37.0 / 47.3** / 45.9 | **71.5 / 77.1** / 71.9 | **62.0 / 75.6** / 71.2 |
+| HippoRAG 1 (paper, QA Table 4) | 19.2 / 29.8 | 46.6 / 59.5 | 41.8 / 55.0 |
+| IRCoT + HippoRAG (paper) | 21.9 / 33.3 | 47.7 / 62.7 | 45.7 / 59.2 |
+
+Published HippoRAG 2 F1 (Llama-3.3-70B reader, NV-Embed-v2): MuSiQue about 48.6, 2Wiki about 71.0,
+HotpotQA about 75.5; R@5 74.7 / 90.4 / 96.3. Caveats: the reader models differ from both papers, and
+the papers use 1,000 questions; these are 200-question samples, so treat differences of a few points
+as noise.

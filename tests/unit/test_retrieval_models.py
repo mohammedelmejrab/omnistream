@@ -166,7 +166,7 @@ class OfflineGraphStore:
     ) -> list[Entity]:
         return []
 
-    def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
+    def entities_in(self, bubbles: Sequence[str], ids=None) -> list[Entity]:
         return []
 
     def expand(

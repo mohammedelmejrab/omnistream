@@ -120,6 +120,14 @@ def closed_book_answer(llm, question: str) -> str:
     return extract_short_answer(text)
 
 
+def _parse_exclude(value: str | None) -> tuple[int, int] | None:
+    """``"50:0"`` -> (50, 0): exclude load_benchmark(n=50, seed=0)'s questions."""
+    if not value:
+        return None
+    n, _, seed = value.partition(":")
+    return int(n), int(seed or 0)
+
+
 def passage_ids(item_ids, mapping: dict) -> list[str]:
     """Item ids -> bench passage ids, deduplicated in first-retrieval order.
 
@@ -332,6 +340,7 @@ async def run_bench_qa(
     snapshot: str | None = None,
     rows: list[str] | None = None,
     limit_questions: int | None = None,
+    exclude_sample: tuple[int, int] | None = None,
     resume: bool = False,
     out: str | Path = "docs/eval/bench",
     bench_root: str | Path = "data/bench/hipporag",
@@ -356,11 +365,17 @@ async def run_bench_qa(
             f"no bench manifest in snapshot {snapshot!r}; run "
             "`omni eval bench-ingest` first"
         )
-    for key, expected in (
+    full_corpus = manifest.get("corpus") == "full"
+    # A full-corpus snapshot holds every passage of every question, so any
+    # question sample is valid on it; a slice is bound to its own sample.
+    binding = (("dataset", dataset),) if full_corpus else (
         ("dataset", dataset),
         ("n", n),
         ("seed", seed),
-    ):
+    )
+    if exclude_sample is not None and not full_corpus:
+        raise ValueError("--exclude-sample needs a full-corpus snapshot")
+    for key, expected in binding:
         if manifest.get(key) != expected:
             raise ValueError(
                 f"bench snapshot binding mismatch for {key}: "
@@ -372,8 +387,11 @@ async def run_bench_qa(
         n=n,
         seed=seed,
         corpus=manifest.get("corpus", "slice"),
+        exclude_sample=exclude_sample,
     )
-    if [q.id for q in benchmark.questions] != manifest.get("question_ids"):
+    if not full_corpus and [q.id for q in benchmark.questions] != manifest.get(
+        "question_ids"
+    ):
         raise ValueError("bench snapshot question selection does not match")
     names = parse_bench_rows(rows)
     questions = (
@@ -422,17 +440,25 @@ async def run_bench_qa(
         "corpus": manifest.get("corpus"),
         "rows": names,
         "question_ids": [q.id for q in questions],
+        "exclude_sample": list(exclude_sample) if exclude_sample else None,
     }
     metadata_path = chosen / "metadata.json"
     if resume:
         previous = json.loads(metadata_path.read_text(encoding="utf-8"))
-        for key in ("snapshot", "dataset", "n", "seed", "rows"):
+        for key in ("snapshot", "dataset", "n", "seed", "exclude_sample"):
             if previous.get(key) != metadata[key]:
                 raise ValueError(f"resume {key} does not match this invocation")
         old_ids = previous.get("question_ids") or []
         if metadata["question_ids"][: len(old_ids)] != old_ids:
             raise ValueError("resume question_ids does not match this invocation")
-        if len(metadata["question_ids"]) > len(old_ids):
+        # Rows may be reordered or narrowed on resume: answers are keyed by
+        # (configuration, question), so stored cells stay valid; the run
+        # records every row it has ever been asked for.
+        rows_changed = previous.get("rows") != metadata["rows"]
+        metadata["rows"] = list(
+            dict.fromkeys([*(previous.get("rows") or []), *metadata["rows"]])
+        )
+        if rows_changed or len(metadata["question_ids"]) > len(old_ids):
             # A --limit-questions run extended to more questions of the same
             # deterministic sample: keep old answers, record the wider set.
             metadata_path.write_text(json.dumps(metadata), encoding="utf-8")
@@ -669,6 +695,7 @@ async def run_bench_qa_cli(settings, args) -> int:
         snapshot=args.snapshot,
         rows=args.rows,
         limit_questions=args.limit_questions,
+        exclude_sample=_parse_exclude(getattr(args, "exclude_sample", None)),
         resume=bool(args.resume),
         out=args.out,
         bench_root=Path(args.bench_root),

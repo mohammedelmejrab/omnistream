@@ -58,11 +58,11 @@ CALL (edges) {
   ORDER BY r.uuid LIMIT $max_edges
   OPTIONAL MATCH (ep:Episodic) WHERE ep.uuid IN coalesce(r.episodes, [])
   WITH r, min(ep.valid_at) AS episode_valid_at ORDER BY r.uuid
-  RETURN collect({fact: r{.*, episode_valid_at: episode_valid_at},
+  RETURN collect({fact: r{.*, fact_embedding: null, episode_valid_at: episode_valid_at},
                   subject: startNode(r).uuid, object: endNode(r).uuid}) AS facts
 }
 RETURN facts, links AS same_as,
- [n IN nodes | n{.*, labels: labels(n),
+ [n IN nodes | n{.*, name_embedding: null, labels: labels(n),
  global_id: head([(n)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])}] AS entities
 """
 )
@@ -215,9 +215,21 @@ class Neo4jGraphStore:
                 f"Neo4j index {self.entity_index_name!r} dimension is {actual}; expected {embed_dim}"
             )
 
-    def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
+    def entities_in(
+        self, bubbles: Sequence[str], ids: Sequence[str] | None = None
+    ) -> list[Entity]:
+        # ``ids`` keeps the read bounded: a full-corpus group has ~10^5
+        # entities, and loading all of them per question exhausts Neo4j's
+        # transaction memory when queries run concurrently.
+        if ids is not None:
+            records = self._run(
+                "MATCH (e:Entity) WHERE e.uuid IN $ids AND e.group_id IN $bubbles RETURN e{.*, name_embedding: null, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
+                ids=sorted(set(ids)),
+                bubbles=list(bubbles),
+            )
+            return [_entity(r["e"]) for r in records]
         records = self._run(
-            "MATCH (e:Entity) WHERE e.group_id IN $bubbles RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
+            "MATCH (e:Entity) WHERE e.group_id IN $bubbles RETURN e{.*, name_embedding: null, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
             bubbles=list(bubbles),
         )
         return [_entity(r["e"]) for r in records]
@@ -240,7 +252,7 @@ class Neo4jGraphStore:
             rows = self._run(
                 "CALL db.index.fulltext.queryNodes($index_name, $lexical_query) YIELD node AS e, score "
                 "WHERE e.group_id IN $bubbles "
-                "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e "
+                "RETURN e{.*, name_embedding: null, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e "
                 "ORDER BY score DESC, e.name, e.uuid LIMIT $limit",
                 index_name=indexes[0]["name"],
                 lexical_query=query,
@@ -301,7 +313,7 @@ class Neo4jGraphStore:
         if not top_k or not bubbles:
             return []
         started = perf_counter()
-        projection = "node{.*, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e"
+        projection = "node{.*, name_embedding: null, labels: labels(node), global_id: head([(node)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e"
         if self.exact_search or not self._cosine_index(self.entity_index_name, "NODE"):
             rows = self._run(
                 "MATCH (node:Entity) WHERE node.group_id IN $bubbles AND node.name_embedding IS NOT NULL "
@@ -422,7 +434,7 @@ class Neo4jGraphStore:
         nodes = (
             self._run(
                 "MATCH (e:Entity) WHERE e.uuid IN $ids AND e.group_id IN $bubbles "
-                "RETURN e{.*, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
+                "RETURN e{.*, name_embedding: null, labels: labels(e), global_id: head([(e)-[:SAME_AS]->(g:GlobalEntity) | g.uuid])} AS e ORDER BY e.uuid",
                 ids=ids,
                 bubbles=list(bubbles),
             )
@@ -510,7 +522,7 @@ AND NOT coalesce(r.group_id, '') IN $excluded_bubbles AND """
             + """
 OPTIONAL MATCH (ep:Episodic) WHERE ep.uuid IN coalesce(r.episodes, [])
 WITH r, s, o, min(ep.valid_at) AS episode_valid_at
-RETURN r{.*, episode_valid_at: episode_valid_at} AS r, s.uuid AS subject, o.uuid AS object ORDER BY r.uuid""",
+RETURN r{.*, fact_embedding: null, episode_valid_at: episode_valid_at} AS r, s.uuid AS subject, o.uuid AS object ORDER BY r.uuid""",
             entity_id=entity_id,
             excluded_bubbles=list(excluded_bubbles),
             **_scope_parameters(scope, self.now),

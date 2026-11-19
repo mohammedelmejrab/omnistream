@@ -340,3 +340,30 @@ async def test_retry_resumes_committed_episode_and_reprocesses_original_new_node
     assert {entity for entity, _ in store.links} == {a.uuid, b.uuid}
     assert await writer.chunks.count("news") > 0
     await repo.close()
+
+
+async def test_episode_builder_replaces_graphiti_and_keeps_postprocessing(tmp_path):
+    alice, acme = node("Alice Smith"), node("Acme Corp", ("Entity", "Organization"))
+    old = node("Berlin", ("Entity", "Location"), new=False)
+    g = FakeGraphiti([], [])
+    w, ops, _gstore, _ = await build(tmp_path, g)
+    calls = []
+
+    async def builder(**kw):
+        calls.append(kw)
+        return SimpleNamespace(
+            episode=SimpleNamespace(uuid="ep-oie", created_at=datetime.now(UTC)),
+            nodes=[alice, acme, old],
+            edges=[edge("e1", alice.uuid, acme.uuid, ["ep-oie"])],
+        )
+
+    w.episode_builder = builder
+    result = await w.write(make_item(), TEXT, ["news"], make_source())
+    assert g.calls == []  # Graphiti's multi-call pipeline is bypassed
+    assert calls[0]["item_id"] == "item1" and calls[0]["group_id"] == "news"
+    assert calls[0]["reference_time"] == NOW
+    # Only nodes this episode created are counted/linked; reused ones are not.
+    assert result.entities_new == 2
+    assert result.edges == 1
+    assert ops.edges["e1"]["item_ids"] == ["item1"]
+    assert ops.episodes["ep-oie"][0] == "item1"

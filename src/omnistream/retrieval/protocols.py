@@ -60,8 +60,10 @@ class GraphStore(Protocol):
         """Return a bounded lexical candidate pool for fuzzy name matching."""
         ...
 
-    def entities_in(self, bubbles: Sequence[str]) -> list[Entity]:
-        """Return candidates for fuzzy entity-name matching."""
+    def entities_in(
+        self, bubbles: Sequence[str], ids: Sequence[str] | None = None
+    ) -> list[Entity]:
+        """Entities of ``bubbles`` (only those in ``ids`` when given)."""
         ...
 
     def expand(

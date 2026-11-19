@@ -42,7 +42,7 @@ ENTITY = Entity("e", "Example", "person", "news", "global")
 
 
 class Graph:
-    def entities_in(self, bubbles):
+    def entities_in(self, bubbles, ids=None):
         return [ENTITY]
 
     def neighbors(self, entity_id, depth=1):

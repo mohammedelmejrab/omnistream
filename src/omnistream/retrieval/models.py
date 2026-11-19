@@ -158,14 +158,18 @@ class RetrievalResult:
     facts: tuple[ScoredFact, ...] = ()
     chunks: tuple[Chunk, ...] = ()
     seeds: tuple[Entity, ...] = ()
+    # Set by retrievers whose primary ranking is over passages (own retrieval
+    # with passage nodes): chunks then lead the evidence order.
+    chunks_first: bool = False
 
     @property
     def item_ids(self) -> tuple[str, ...]:
-        """Distinct evidence item ids, preserving facts-first rank order."""
+        """Distinct evidence item ids in rank order (facts first by default)."""
+        facts = [entry.fact.item_id for entry in self.facts]
+        chunks = [chunk.item_id for chunk in self.chunks]
         return tuple(
             dict.fromkeys(
-                [entry.fact.item_id for entry in self.facts]
-                + [chunk.item_id for chunk in self.chunks]
+                chunks + facts if self.chunks_first else facts + chunks
             )
         )
 
