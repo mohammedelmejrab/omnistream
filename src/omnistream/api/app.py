@@ -9,9 +9,15 @@ from typing import Annotated, Literal
 
 import httpx
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
+from omnistream.api.ui_api import (
+    DEFAULT_WEB_DIST,
+    UIServices,
+    build_ui_router,
+    install_web_app,
+)
 from omnistream.config import Settings
 from omnistream.db import Repository
 from omnistream.db.repository import bubble_half_life
@@ -23,9 +29,11 @@ from omnistream.ingest.scheduler import IngestScheduler
 from omnistream.models import ApiMapping, Bubble, IngestResult, Source
 from omnistream.router.bubbles import BubbleLifecycle
 from omnistream.router.router import Router
-from omnistream.sources import UnsupportedDocumentError
+from omnistream.sources import SourceFetchError, UnsupportedDocumentError
+from omnistream.sources.api import fetch_api
 from omnistream.sources.documents import document_ext, load_document
 from omnistream.sources.replay import SnapshotRecorder
+from omnistream.sources.rss import apply_backfill, fetch_rss
 from omnistream.ui.routes import build_router, static_files
 
 
@@ -54,6 +62,24 @@ class SourceIn(BaseModel):
     max_items_per_hour: int = 30
     store_full_text: bool = True
     enabled: bool = True
+    backfill_days: int | None = Field(default=None, ge=1, le=3650)
+
+
+class SourceTestItem(BaseModel):
+    title: str
+    url: str | None
+
+
+class SourceTestOut(BaseModel):
+    items: list[SourceTestItem]
+
+
+# How many items the "test" button shows (spec 8: "the first items it would ingest").
+SOURCE_TEST_LIMIT = 5
+
+
+def _same_url(a: str | None, b: str | None) -> bool:
+    return bool(a and b) and a.strip().rstrip("/") == b.strip().rstrip("/")
 
 
 class SourcePatch(BaseModel):
@@ -92,6 +118,7 @@ def create_app(
     lifespan=None,
     runtime_factory=None,
     evaluator=None,
+    web_dist=None,
 ) -> FastAPI:
     settings = settings or Settings(_env_file=None)
     from omnistream.api.c6 import Services, install
@@ -99,21 +126,25 @@ def create_app(
     services = Services(
         repo, lifecycle, scheduler, settings, runtime_factory, evaluator
     )
+    ui = UIServices(repo, services, scheduler, web_dist=web_dist or DEFAULT_WEB_DIST)
 
     @asynccontextmanager
     async def full_lifespan(app):
         await services.load()
+        await ui.startup()  # saved provider key, stale-run sweep, retention
         await services.get_runtime()
         if lifespan:
             async with lifespan(app):
                 try:
                     yield
                 finally:
+                    await ui.shutdown()
                     await services.close()
         else:
             try:
                 yield
             finally:
+                await ui.shutdown()
                 await services.close()
 
     app = FastAPI(title="OmniStream", lifespan=full_lifespan)
@@ -296,6 +327,70 @@ def create_app(
             )
         return results
 
+    # React app API: same handlers as the existing source endpoints, under /api.
+    app.add_api_route(
+        "/api/sources", list_sources, methods=["GET"],
+        response_model=list[Source], operation_id="api_list_sources",
+    )
+    async def api_create_source(body: SourceIn) -> Source | JSONResponse:
+        # Spec 8: a URL that is already a source is refused, and the response names it.
+        for existing in await repo.list_sources():
+            if _same_url(existing.url, body.url):
+                return JSONResponse(
+                    status_code=409,
+                    content={"detail": "Already added", "source_id": existing.id},
+                )
+        return await create_source(body)
+
+    app.add_api_route(
+        "/api/sources", api_create_source, methods=["POST"], status_code=201,
+        response_model=Source, operation_id="api_create_source",
+    )
+
+    async def api_test_source(body: SourceIn) -> SourceTestOut:
+        """Fetch once and return the first items the source would ingest. Stores nothing."""
+        try:
+            source = Source(id="preview", **body.model_dump())
+        except ValidationError as exc:
+            raise HTTPException(
+                422, exc.errors(include_url=False, include_context=False)
+            ) from exc
+        if source.type not in ("rss", "api") or source.url is None:
+            raise HTTPException(422, "Only feed and API sources can be tested")
+        try:
+            async with httpx.AsyncClient(timeout=20.0) as http:
+                if source.type == "rss":
+                    items = await fetch_rss(source, http)
+                else:
+                    items = await fetch_api(source, http)
+        except SourceFetchError as exc:
+            raise HTTPException(422, str(exc)[:500]) from exc
+        except httpx.HTTPError as exc:
+            raise HTTPException(422, f"Could not fetch the source: {type(exc).__name__}") from exc
+        items = apply_backfill(items, source.backfill_days)[:SOURCE_TEST_LIMIT]
+        return SourceTestOut(
+            items=[SourceTestItem(title=i.title, url=i.url) for i in items]
+        )
+
+    app.add_api_route(
+        "/api/sources/test", api_test_source, methods=["POST"],
+        response_model=SourceTestOut, operation_id="api_test_source",
+    )
+    app.add_api_route(
+        "/api/bubbles", list_bubbles, methods=["GET"],
+        response_model=list[Bubble], operation_id="api_list_bubbles",
+    )
+    app.add_api_route(
+        "/api/documents", upload_document, methods=["POST"],
+        response_model=list[IngestResult], operation_id="api_upload_document",
+    )
+    app.add_api_route(
+        "/api/sources/{source_id}", patch_source, methods=["PATCH"],
+        response_model=Source, operation_id="api_patch_source",
+    )
+    app.state.ui = ui
+    app.include_router(build_ui_router(ui))
+    install_web_app(app, ui.web_dist)
     app.mount("/ui/static", static_files(), name="ui-static")
     app.include_router(build_router(repo, scheduler))
     from omnistream.ui.c6 import build_pages

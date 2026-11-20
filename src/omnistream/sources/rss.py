@@ -1,5 +1,5 @@
 import hashlib
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 
 import feedparser
 import httpx
@@ -7,6 +7,22 @@ from bs4 import BeautifulSoup
 
 from omnistream.models import RawItem, Source
 from omnistream.sources import SourceFetchError
+
+
+def apply_backfill(
+    items: list[RawItem], backfill_days: int | None, now: datetime | None = None
+) -> list[RawItem]:
+    """Keep items published within ``backfill_days``; undated items are kept.
+
+    Used on a source's first poll and by the "test" button, which previews the same set.
+    """
+    if not backfill_days:
+        return items
+    cutoff = (now or datetime.now(UTC)) - timedelta(days=backfill_days)
+    return [
+        item for item in items
+        if item.published_at is None or item.published_at >= cutoff
+    ]
 
 
 def _strip_html(html: str) -> str:

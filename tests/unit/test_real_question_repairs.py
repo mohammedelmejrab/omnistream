@@ -12,6 +12,11 @@ from omnistream.eval.metrics import retrieval_metrics
 from tests.unit import test_eval_real
 
 ROOT = Path(__file__).resolve().parents[2]
+# The real-v2 raw texts live in the gitignored data/ tree and are absent from a fresh checkout.
+requires_real_corpus = pytest.mark.skipif(
+    not (ROOT / "data/real/real-v2/raw").is_dir(),
+    reason="local gitignored real-v2 corpus not present (data/real/real-v2/raw)",
+)
 
 
 @pytest.fixture
@@ -74,6 +79,7 @@ def test_loader_rejects_invalid_repair_annotations(corpus, change, match):
         load_dataset("real-v2", split="dev", background=0, root=root)
 
 
+@requires_real_corpus
 def test_actual_repaired_corpus_scored_counts_and_exclusions():
     from collections import Counter
 
@@ -93,6 +99,7 @@ def test_actual_repaired_corpus_scored_counts_and_exclusions():
     ("reason", "excluded question needs exclusion_reason"),
     ("overlap", "split_overlap organisation not found"),
 ])
+@requires_real_corpus
 def test_validator_rejects_invalid_new_fields(tmp_path, monkeypatch, capsys, change, error):
     module = runpy.run_path(str(ROOT / "scripts/realdata/check_questions.py"))
     data = json.loads((ROOT / "src/omnistream/eval/corpus/real-v2-questions.json").read_text(encoding="utf-8"))

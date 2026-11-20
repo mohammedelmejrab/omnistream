@@ -70,6 +70,7 @@ class SourceRow(SQLModel, table=True):
     last_polled_at: datetime | None = Field(default=None, sa_column=dt_col())
     status: str = "pending"
     last_error: str | None = None
+    backfill_days: int | None = None
 
 
 class SeenItemRow(SQLModel, table=True):
@@ -154,3 +155,70 @@ class EvalRunRow(SQLModel, table=True):
     results: list[dict[str, Any]] = Field(default_factory=list, sa_column=json_col())
     report_path: str | None = None
     csv_path: str | None = None
+
+
+def _started_col() -> Any:
+    """Indexed UTC timestamp used by the 30-day retention sweep."""
+    return Column(UTCDateTime, nullable=False, index=True)
+
+
+class ChatRow(SQLModel, table=True):
+    """A user conversation (spec 10.6). Deleting a chat keeps its runs as orphan traces."""
+
+    __tablename__ = "chats"
+
+    id: str = Field(primary_key=True)
+    title: str = "New chat"
+    mode: str = "normal"  # normal | agentic: the last mode used in this chat
+    created_at: datetime = Field(default_factory=_utcnow, sa_column=dt_col(False))
+    updated_at: datetime = Field(default_factory=_utcnow, sa_column=dt_col(False))
+
+
+class MessageRow(SQLModel, table=True):
+    __tablename__ = "messages"
+
+    id: str = Field(primary_key=True)
+    chat_id: str = Field(index=True)
+    role: str  # user | assistant
+    content: str = ""
+    run_id: str | None = Field(default=None, index=True)
+    mode: str | None = None
+    created_at: datetime = Field(default_factory=_utcnow, sa_column=dt_col(False))
+
+
+class RunRow(SQLModel, table=True):
+    """One answer attempt (spec 10.1). Kept 30 days, then purged with its steps."""
+
+    __tablename__ = "runs"
+
+    id: str = Field(primary_key=True)
+    chat_id: str = Field(index=True)  # no foreign key: traces outlive their chat
+    mode: str  # normal | agentic
+    question: str = ""
+    # running | ok | failed | cancelled | interrupted
+    status: str = Field(default="running", index=True)
+    answer: str | None = None
+    error: str | None = None
+    started_at: datetime = Field(default_factory=_utcnow, sa_column=_started_col())
+    finished_at: datetime | None = Field(default=None, sa_column=dt_col())
+
+
+class RunStepRow(SQLModel, table=True):
+    """A finished step (spec 10.1). Written when the step finishes; ``seq`` is the start order."""
+
+    __tablename__ = "run_steps"
+
+    id: str = Field(primary_key=True)
+    run_id: str = Field(index=True)
+    seq: int = 0
+    parent_step_id: str | None = None
+    kind: str  # route | seed | retrieve | score | subagent | join | merge | answer
+    bubble: str | None = None
+    started_at: datetime = Field(default_factory=_utcnow, sa_column=_started_col())
+    duration_ms: float = 0.0
+    status: str = "ok"  # ok | error | cancelled (running steps are never stored)
+    summary: dict[str, Any] = Field(default_factory=dict, sa_column=json_col())
+    node_ids: list[str] = Field(default_factory=list, sa_column=json_col())
+    edge_ids: list[str] = Field(default_factory=list, sa_column=json_col())
+    citations: list[dict[str, Any]] = Field(default_factory=list, sa_column=json_col())
+    error: str | None = None

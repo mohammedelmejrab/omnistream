@@ -311,7 +311,7 @@ def install(app, services):
             content_type = request.headers.get("content-type", "").split(";")[0].lower()
             if (
                 not request.url.path.startswith("/ui/")
-                and request.url.path != "/documents"
+                and request.url.path not in {"/documents", "/api/documents"}
                 and (
                     content_type
                     or request.headers.get("transfer-encoding")

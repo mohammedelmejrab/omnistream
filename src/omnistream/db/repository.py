@@ -25,6 +25,7 @@ from omnistream.db.tables import (
     SettingRow,
     SourceRow,
 )
+from omnistream.db.ui_store import UIStoreMixin
 from omnistream.models import ApiMapping, Bubble, Source
 
 T = TypeVar("T")
@@ -50,7 +51,7 @@ def _source_row(s: Source) -> SourceRow:
     return SourceRow(**data)
 
 
-class Repository:
+class Repository(UIStoreMixin):
     def __init__(
         self, url: str = "sqlite://", *, settings: Settings | None = None
     ) -> None:
@@ -71,6 +72,12 @@ class Repository:
                 conn.exec_driver_sql(
                     "ALTER TABLE items ADD COLUMN written_bubble_ids JSON DEFAULT '[]'"
                 )
+
+        # Additive migration for C7 evaluation records in existing databases.
+        with self._engine.begin() as conn:
+            cols = {r[1] for r in conn.exec_driver_sql("PRAGMA table_info(sources)")}
+            if cols and "backfill_days" not in cols:
+                conn.exec_driver_sql("ALTER TABLE sources ADD COLUMN backfill_days INTEGER")
 
         # Additive migration for C7 evaluation records in existing databases.
         with self._engine.begin() as conn:

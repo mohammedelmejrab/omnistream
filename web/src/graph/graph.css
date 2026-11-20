@@ -1,0 +1,399 @@
+/* Graph viewer and Advanced trace graph. Mocha values, scoped to the graph surfaces. */
+
+.graph-page,
+.advanced-trace {
+  --g-base: var(--ctp-base);
+  --g-mantle: var(--ctp-mantle);
+  --g-surface0: var(--ctp-surface0);
+  --g-surface1: var(--ctp-surface1);
+  --g-overlay1: var(--ctp-overlay1);
+  --g-subtext0: var(--ctp-subtext0);
+  --g-text: var(--ctp-text);
+  --g-lavender: var(--ctp-lavender);
+  --g-crust: var(--ctp-crust);
+}
+
+.graph-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* The canvas needs a real height to fit the graph; a stage with no height shrinks it to 320px. */
+.graph-page .graph-body {
+  height: max(420px, calc(100vh - 260px));
+}
+
+.graph-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  background: var(--g-mantle);
+  border-radius: 12px;
+}
+
+.graph-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 320px;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.graph-stage > .graph-canvas {
+  flex: 1 1 auto;
+}
+
+.graph-stage:focus-visible,
+.graph-page button:focus-visible,
+.graph-page select:focus-visible,
+.graph-page input:focus-visible,
+.advanced-trace button:focus-visible,
+.advanced-trace [role='option']:focus-visible,
+.detail-panel:focus-visible,
+.detail-panel a:focus-visible {
+  outline: 2px solid var(--g-lavender);
+  outline-offset: 2px;
+}
+
+.graph-toolbar,
+.advanced-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.field-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--g-subtext0);
+}
+
+.field-inline select,
+.field-inline input {
+  min-height: 36px;
+  min-width: 160px;
+  border-radius: 8px;
+  border: 1px solid var(--g-overlay1);
+  background: var(--g-surface0);
+  color: var(--g-text);
+  padding: 4px 8px;
+}
+
+.zoom-controls {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.graph-page button,
+.advanced-trace button {
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--g-overlay1);
+  background: var(--g-surface0);
+  color: var(--g-text);
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.graph-page button:disabled,
+.advanced-trace button:disabled {
+  background: var(--g-surface1);
+  color: var(--g-subtext0);
+  cursor: not-allowed;
+}
+
+.graph-body,
+.advanced-body {
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+  align-items: stretch;
+}
+
+.graph-side,
+.advanced-list {
+  flex: 0 0 280px;
+  min-width: 0;
+  max-height: 70vh;
+  overflow: auto;
+  color: var(--g-text);
+}
+
+.graph-side-title,
+.advanced-list-title {
+  font-size: 0.875rem;
+  color: var(--g-subtext0);
+  margin: 8px 0;
+}
+
+.node-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.node-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--g-surface0);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.node-list-item[aria-selected='true'] {
+  background: var(--g-surface1);
+}
+
+/* On the selected row (surface1) subtext0 is 4.1:1, so meta text steps up to subtext1 (5.15:1). */
+.node-list-item[aria-selected='true'] .node-list-meta {
+  color: var(--ctp-subtext1);
+}
+
+.node-list-meta {
+  font-size: 0.75rem;
+  color: var(--g-subtext0);
+}
+
+.bubble-counts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  color: var(--g-subtext0);
+}
+
+.graph-error {
+  color: var(--ctp-red);
+}
+
+.graph-loading {
+  padding: 16px;
+  color: var(--g-subtext0);
+}
+
+.graph-title {
+  font-size: 1.5rem;
+  color: var(--g-text);
+}
+
+.graph-count {
+  color: var(--g-subtext0);
+  font-size: 0.875rem;
+}
+
+.empty-state {
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--g-surface0);
+  color: var(--g-text);
+}
+
+/* Advanced trace: the detail panel overlays on narrow windows (spec 10.3, 11.1). */
+.advanced-trace {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.advanced-trace .graph-stage {
+  min-height: 420px;
+}
+
+.advanced-trace .advanced-body {
+  flex-wrap: nowrap;
+}
+
+/* Detail panel: 360px, r-md, overlays the graph on the right. */
+.detail-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 100%;
+  overflow: auto;
+  background: var(--g-base);
+  color: var(--g-text);
+  border: 1px solid var(--g-overlay1);
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.detail-kind {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--g-subtext0);
+}
+
+.detail-title {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  overflow-wrap: anywhere;
+}
+
+.detail-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.detail-rows {
+  margin: 12px 0;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--g-surface0);
+}
+
+.detail-row dt {
+  color: var(--g-subtext0);
+}
+
+.detail-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.detail-source {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--g-overlay1);
+  background: var(--g-surface0);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.citation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.citation-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.citation-title {
+  overflow-wrap: anywhere;
+}
+
+.pill-button {
+  border-radius: 999px;
+}
+
+/* 1280px and up: the detail panel sits beside the graph and takes its own column. */
+@media (min-width: 1280px) {
+  .graph-stage > .graph-canvas {
+    min-width: 0;
+  }
+  .graph-stage > .detail-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    flex: 0 0 360px;
+    width: 360px;
+  }
+  /* With the panel open the list moves under the graph, so the graph keeps its width and its
+     labels stay at about 12px or more at fit (spec 10.3). The list keeps every item. */
+  .advanced-trace .advanced-body:has(.detail-panel) {
+    flex-direction: column;
+  }
+  .advanced-trace .advanced-body:has(.detail-panel) .advanced-list {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .advanced-trace .advanced-body {
+    flex-wrap: wrap;
+  }
+  /* The overlay panel fills the stage's height, so the stage needs its own height. Without it
+     the stage grows with the list stacked under it and the panel runs down the whole page. */
+  .advanced-trace .graph-stage {
+    flex: 0 0 auto;
+    width: 100%;
+    height: max(420px, 62vh);
+  }
+  .advanced-trace .advanced-list {
+    flex: 1 1 100%;
+    max-height: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .detail-panel {
+    width: min(360px, calc(100% - 16px));
+  }
+}
+
+@media (max-width: 767px) {
+  .graph-body,
+  .advanced-body {
+    flex-direction: column;
+  }
+  /* A column with wrapping would flow the list into a second column once the stage has a height. */
+  .advanced-trace .advanced-body {
+    flex-wrap: nowrap;
+  }
+  .graph-side,
+  .advanced-list {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .graph-page {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .graph-page .graph-body {
+    height: auto;
+  }
+  .graph-page .graph-stage {
+    min-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-page *,
+  .advanced-trace * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

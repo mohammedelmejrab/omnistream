@@ -47,6 +47,8 @@ class Source(BaseModel):
     last_polled_at: datetime | None = None
     status: Literal["ok", "error", "pending"] = "pending"
     last_error: str | None = None
+    # First poll only: keep items published within this many days (spec 8, backfill days).
+    backfill_days: int | None = Field(default=None, ge=1)
 
     @model_validator(mode="after")
     def _api_requires_mapping(self) -> Self:

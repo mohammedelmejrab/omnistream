@@ -10,7 +10,7 @@ from omnistream.ingest.intake import Intake
 from omnistream.models import IngestResult, RawItem, Source
 from omnistream.sources.api import fetch_api
 from omnistream.sources.replay import SnapshotRecorder
-from omnistream.sources.rss import fetch_rss
+from omnistream.sources.rss import apply_backfill, fetch_rss
 
 logger = logging.getLogger(__name__)
 
@@ -122,10 +122,14 @@ class IngestScheduler:
 
     async def _fetch(self, source: Source) -> list[RawItem]:
         if source.type == "rss":
-            return await fetch_rss(source, self._http)
-        if source.type == "api":
-            return await fetch_api(source, self._http)
-        return []
+            items = await fetch_rss(source, self._http)
+        elif source.type == "api":
+            items = await fetch_api(source, self._http)
+        else:
+            return []
+        if source.last_polled_at is None:  # first successful poll honours backfill days
+            items = apply_backfill(items, source.backfill_days)
+        return items
 
     async def _record(self, source: Source) -> None:
         try:
