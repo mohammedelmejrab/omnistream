@@ -12,9 +12,11 @@ def local_encoder():
     global _encoder
     with _encoder_lock:
         if _encoder is None:
+            import torch
             from sentence_transformers import CrossEncoder
 
-            _encoder = CrossEncoder(MODEL, device="cpu", local_files_only=True)
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            _encoder = CrossEncoder(MODEL, device=device, local_files_only=True)
         return _encoder
 
 

@@ -19,6 +19,26 @@ from omnistream.retrieval.own_algorithm.versions import fact_versions
 from omnistream.retrieval.protocols import GraphStore
 
 
+def edge_weights(query, embeddings, power: float) -> dict[str, float] | None:
+    """Question-aware fact-edge weights: max(cos, 0) ** power, mean-normalised.
+
+    ``power`` 0 disables weighting (all fact edges count 1).
+    """
+    if not power or not embeddings:
+        return None
+    import numpy as np
+
+    q = np.asarray(query, dtype=float)
+    q = q / (np.linalg.norm(q) or 1.0)
+    raw = {}
+    for fact_id, vector in embeddings.items():
+        v = np.asarray(vector, dtype=float)
+        cos = float(q @ v / (np.linalg.norm(v) or 1.0))
+        raw[fact_id] = max(cos, 0.0) ** power + 1e-6
+    mean = sum(raw.values()) / len(raw)
+    return {fact_id: w / mean for fact_id, w in raw.items()}
+
+
 class OwnRetriever:
     """Bounded graph retrieval with injectable clock and local embeddings."""
 
@@ -80,7 +100,10 @@ class OwnRetriever:
             )
 
             dense_chunks = tuple(
-                self.passage_source.dense(question, allowed, time_scope, DENSE_K)
+                self.passage_source.dense(
+                    question, allowed, time_scope,
+                    getattr(self.passage_nodes, "dense_k", DENSE_K),
+                )
             )
             fallback = RetrievalResult(
                 mode="own", chunks=dense_chunks[:PASSAGE_TOP], chunks_first=True
@@ -155,7 +178,26 @@ class OwnRetriever:
             )[:limit]
         passages: tuple = ()
         if self.passage_nodes is not None:
-            passages = self.passage_nodes.rank(graph, weights, dense_chunks, allowed)
+            top_facts = getattr(self.passage_nodes, "fact_seeds", 0)
+            if top_facts:
+                # HippoRAG 2-style query-to-triple seeding: endpoints of the
+                # best (reranked) facts join the restart set, rank-weighted,
+                # with total mass equal to the entity seeds'.
+                weights = dict(weights)
+                total = sum(max(0.0, w) for w in weights.values()) or 1.0
+                chosen = fused[:top_facts]
+                norm = sum(1 / (r + 1) for r in range(len(chosen))) or 1.0
+                for r, entry in enumerate(chosen):
+                    fact = facts[entry.fact.id]
+                    share = total * (1 / (r + 1)) / norm / 2
+                    for entity in (fact.subject_id, fact.object_id):
+                        weights[entity] = weights.get(entity, 0.0) + share
+            passages = self.passage_nodes.rank(
+                graph, weights, dense_chunks, allowed, question=question,
+                fact_weight=edge_weights(
+                    query, embeddings, getattr(self.passage_nodes, "edge_power", 0)
+                ),
+            )
             if not passages:
                 passages = fallback.chunks
         return RetrievalResult(

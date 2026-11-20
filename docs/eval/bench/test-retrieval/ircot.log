@@ -1,0 +1,4 @@
+2wiki ircot {'R@2': 80.8, 'R@5': 97.9, 'AR@2': 63.5, 'AR@5': 92.0} 12.9s/q ircot_failures=0 steps=458
+musique ircot {'R@2': 54.2, 'R@5': 73.2, 'AR@2': 25.5, 'AR@5': 49.5} 15.79s/q ircot_failures=0 steps=486
+hotpotqa ircot {'R@2': 75.0, 'R@5': 94.8, 'AR@2': 54.5, 'AR@5': 90.0} 11.78s/q ircot_failures=0 steps=351
+done

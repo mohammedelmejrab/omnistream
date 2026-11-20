@@ -1,0 +1,198 @@
+{
+  "kind": "bench-qa",
+  "dataset": "hotpotqa",
+  "n": 200,
+  "seed": 0,
+  "corpus": "full",
+  "snapshot": "bench-hotpotqa-n200-full-oie",
+  "group_id": "bench-hotpotqa-n200-full-oie",
+  "rows": [
+    "closed_book",
+    "external",
+    "own",
+    "own+subagents"
+  ],
+  "question_count": 200,
+  "passage_count": 9811,
+  "unmatched_gold": 0,
+  "run_directory": "C:\\Users\\mehme\\omnistream-integrated\\data\\snapshots\\bench-hotpotqa-n200-full-oie\\bench_runs\\20261120T072832907551Z",
+  "settings": {
+    "llm_model": "deepseek/deepseek-v4.1-flash-1017",
+    "embedding_model": "BAAI/bge-large-en-v1.5",
+    "own_seed_mode": "passage_specificity",
+    "own_rerank": "on",
+    "classic_rerank": "off"
+  },
+  "reference": {
+    "None": [
+      30.4,
+      42.8
+    ],
+    "ColBERTv2": [
+      43.4,
+      57.9
+    ],
+    "HippoRAG (ColBERTv2)": [
+      41.8,
+      55.0
+    ],
+    "IRCoT (ColBERTv2)": [
+      45.5,
+      58.4
+    ],
+    "IRCoT + HippoRAG": [
+      45.7,
+      59.2
+    ]
+  },
+  "aggregates": {
+    "closed_book": {
+      "questions": 200,
+      "measured": 200,
+      "unmeasured": 0,
+      "unmeasured_share": 0.0,
+      "error_types": {},
+      "status": "valid",
+      "exact_match": {
+        "mean": 0.33,
+        "ci_low": 0.265,
+        "ci_high": 0.395
+      },
+      "token_f1": {
+        "mean": 0.4295985958485959,
+        "ci_low": 0.36586324786324786,
+        "ci_high": 0.4927970085470086
+      },
+      "recall_at_2": {
+        "mean": null,
+        "ci_low": null,
+        "ci_high": null
+      },
+      "recall_at_5": {
+        "mean": null,
+        "ci_low": null,
+        "ci_high": null
+      },
+      "recall_at_10": {
+        "mean": null,
+        "ci_low": null,
+        "ci_high": null
+      },
+      "mean_latency_seconds": 0.832823083504336,
+      "total_tokens": 20872,
+      "total_cost_usd": 0.00323666292
+    },
+    "external": {
+      "questions": 200,
+      "measured": 200,
+      "unmeasured": 0,
+      "unmeasured_share": 0.0,
+      "error_types": {},
+      "status": "valid",
+      "exact_match": {
+        "mean": 0.505,
+        "ci_low": 0.435,
+        "ci_high": 0.575
+      },
+      "token_f1": {
+        "mean": 0.6253240648240648,
+        "ci_low": 0.565964035964036,
+        "ci_high": 0.6843493173493174
+      },
+      "recall_at_2": {
+        "mean": 0.74,
+        "ci_low": 0.7,
+        "ci_high": 0.78
+      },
+      "recall_at_5": {
+        "mean": 0.74,
+        "ci_low": 0.7,
+        "ci_high": 0.78
+      },
+      "recall_at_10": {
+        "mean": 0.74,
+        "ci_low": 0.7,
+        "ci_high": 0.78
+      },
+      "mean_latency_seconds": 1.6541086084983545,
+      "total_tokens": 67384,
+      "total_cost_usd": 0.00882197412
+    },
+    "own": {
+      "questions": 200,
+      "measured": 200,
+      "unmeasured": 0,
+      "unmeasured_share": 0.0,
+      "error_types": {},
+      "status": "valid",
+      "exact_match": {
+        "mean": 0.585,
+        "ci_low": 0.515,
+        "ci_high": 0.655
+      },
+      "token_f1": {
+        "mean": 0.7411786824286825,
+        "ci_low": 0.6875835553335553,
+        "ci_high": 0.7912435064935065
+      },
+      "recall_at_2": {
+        "mean": 0.69,
+        "ci_low": 0.65,
+        "ci_high": 0.73
+      },
+      "recall_at_5": {
+        "mean": 0.9,
+        "ci_low": 0.8675,
+        "ci_high": 0.9275
+      },
+      "recall_at_10": {
+        "mean": 0.93,
+        "ci_low": 0.9025,
+        "ci_high": 0.955
+      },
+      "mean_latency_seconds": 14.662813890499528,
+      "total_tokens": 730841,
+      "total_cost_usd": 0.10350306744
+    },
+    "own+subagents": {
+      "questions": 200,
+      "measured": 200,
+      "unmeasured": 0,
+      "unmeasured_share": 0.0,
+      "error_types": {},
+      "status": "valid",
+      "exact_match": {
+        "mean": 0.65,
+        "ci_low": 0.58,
+        "ci_high": 0.715
+      },
+      "token_f1": {
+        "mean": 0.7979491480741481,
+        "ci_low": 0.7510792402042402,
+        "ci_high": 0.8429229104229105
+      },
+      "recall_at_2": {
+        "mean": 0.64,
+        "ci_low": 0.5975,
+        "ci_high": 0.68
+      },
+      "recall_at_5": {
+        "mean": 0.9175,
+        "ci_low": 0.8875,
+        "ci_high": 0.945
+      },
+      "recall_at_10": {
+        "mean": 0.9725,
+        "ci_low": 0.955,
+        "ci_high": 0.9875
+      },
+      "mean_latency_seconds": 28.04870143549866,
+      "total_tokens": 7832840,
+      "total_cost_usd": 0.76293850172
+    }
+  },
+  "validity": {
+    "unmeasured_limit": 0.1,
+    "invalid_configurations": []
+  }
+}

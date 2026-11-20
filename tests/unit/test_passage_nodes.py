@@ -99,3 +99,24 @@ def test_chunks_first_changes_item_order():
     assert RetrievalResult(
         "own", facts=scored, chunks=(chunk,), chunks_first=True
     ).item_ids == ("chunk-item", "fact-item")
+
+
+def test_hop_expansion_puts_best_neighbour_after_heads():
+    class Graph:
+        def _run(self, query, **params):
+            return [
+                {"head": "h1", "item": "n_bad", "bubble": "b", "text": "unrelated"},
+                {"head": "h1", "item": "n_good", "bubble": "b", "text": "director bio"},
+                {"head": "h2", "item": "n2", "bubble": "b", "text": "second director"},
+            ]
+
+    class Encoder:
+        def predict(self, pairs, **_):
+            return [2.0 if "director" in text else 0.0 for _, text in pairs]
+
+    nodes = PassageNodes(Graph(), reranker=lambda: Encoder(), rerank_mode="rrf", hop_expand=True)
+    ranked = [("b", "h1", 0.5), ("b", "h2", 0.4), ("b", "x", 0.3), ("b", "y", 0.2)]
+    texts = {}
+    out = nodes._hop("who directed", ranked, texts)
+    assert [item for _, item, _ in out] == ["h1", "h2", "n_good", "n2", "x", "y"]
+    assert texts[("b", "n_good")] == "director bio"

@@ -16,7 +16,57 @@ Full logs: [`docs/IMPROVEMENT_LOG.md`](IMPROVEMENT_LOG.md); raw reports: [`docs/
 
 Our BM25 reproduces the published BM25 within about 3 points, which validates the harness.
 
-## End-to-end QA: full corpora, 200 questions per dataset (test run)
+## Final results vs HippoRAG 1 (full corpora, 200 test questions per dataset)
+
+OpenIE graph over the full released corpus (MuSiQue 11,656, 2Wiki 6,119, HotpotQA 9,811 passages),
+200 questions per dataset (seed 0; MuSiQue development questions excluded). Answering model
+`deepseek/deepseek-v4.1-flash-1017`. All settings were chosen on a separate 100-question
+development set per dataset (no shared questions); the test set was run once with the chosen
+setting. ✅ = ahead of HippoRAG 1 (ColBERTv2, paper), ❌ = behind.
+
+**Table 2: single-step retrieval, R@2 / R@5**
+
+| | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| Own retrieval | **49.1 / 64.1** ✅ | **72.0 / 90.4** ✅ | **69.0 / 90.0** ✅ |
+| HippoRAG 1 | 40.9 / 51.9 | 70.7 / 89.1 | 60.5 / 77.7 |
+
+**Table 3: multi-step retrieval, R@2 / R@5**
+
+| | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| IRCoT + own retrieval | **54.2 / 73.2** ✅ | **80.8 / 97.9** ✅ | **75.0 / 94.8** ✅ |
+| IRCoT + HippoRAG 1 | 45.3 / 57.6 | 75.8 / 93.9 | 67.0 / 83.0 |
+
+**Table 4: QA, EM / F1**
+
+| | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| Closed book (no retrieval) | 11.0 / 22.8 | 38.5 / 42.2 | 33.0 / 43.0 |
+| External (LlamaIndex) | 19.0 / 25.3 | 41.5 / 48.0 | 50.5 / 62.5 |
+| **Own retrieval (single-step)** | **36.0 / 44.2** ✅ | **60.5 / 68.1** ✅ | **58.5 / 74.1** ✅ |
+| HippoRAG 1 | 19.2 / 29.8 | 46.6 / 59.5 | 41.8 / 55.0 |
+| **Own retrieval + subagents (multi-step)** | **38.0 / 49.0** ✅ | **75.0 / 82.7** ✅ | **65.0 / 79.8** ✅ |
+| IRCoT + HippoRAG 1 | 21.9 / 33.3 | 47.7 / 62.7 | 45.7 / 59.2 |
+
+**All-recall (all gold passages retrieved), AR@2 / AR@5, single-step**
+
+| | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|
+| Own retrieval | **18.0 / 38.0** ✅ | 45.5 ✅ / 72.0 ❌ | **42.5 / 81.0** ✅ |
+| HippoRAG 1 | 10.2 / 22.4 | 45.4 / 75.7 | 33.8 / 57.9 |
+| IRCoT + own retrieval (multi-step) | 25.5 / 49.5 | 63.5 / 92.0 | 54.5 / 90.0 |
+
+One number is behind: single-step 2Wiki AR@5 (72.0 vs 75.7). 2Wiki AR@2 and single-step 2Wiki
+R@2 / R@5 are within noise. Caveats: the paper uses a different reader and 1,000 questions; at n=200
+the 95% bootstrap intervals are about +-6-7 points for EM/F1 and +-3-4 for recall.
+
+Against HippoRAG 2 (paper: F1 about 48.6 / 71.0 / 75.5, R@5 74.7 / 90.4 / 96.3): own + subagents F1
+is ahead on all three; single-step F1 and R@5 are behind or tied; IRCoT + own R@5 is ahead on 2Wiki
+only.
+
+## Earlier test run (before the final setting)
+
 
 OpenIE graph over the full released corpus (MuSiQue 11,656, 2Wiki 6,119, HotpotQA 9,811 passages),
 200 questions per dataset (seed 0; the MuSiQue development questions are excluded). Short answers,

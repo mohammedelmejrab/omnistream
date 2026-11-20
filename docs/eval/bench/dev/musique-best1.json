@@ -1,0 +1,1878 @@
+{
+ "dataset": "musique",
+ "tag": "best1",
+ "n": 100,
+ "seed": 1,
+ "excluded_test_questions": 200,
+ "summary": {
+  "R@2": 42.8,
+  "R@5": 60.9,
+  "AR@2": 11.0,
+  "AR@5": 35.0
+ },
+ "seconds_per_question": 5.45,
+ "rows": [
+  {
+   "id": "2hop__88632_67668",
+   "top5": [
+    "musique-2870",
+    "musique-10148",
+    "musique-8812",
+    "musique-1374",
+    "musique-9280"
+   ],
+   "gold": [
+    "musique-2859",
+    "musique-2870"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__90327_73181_68042",
+   "top5": [
+    "musique-7469",
+    "musique-7464",
+    "musique-1615",
+    "musique-1473",
+    "musique-1614"
+   ],
+   "gold": [
+    "musique-2675",
+    "musique-680",
+    "musique-813"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__823336_228453_10972",
+   "top5": [
+    "musique-2664",
+    "musique-2658",
+    "musique-7706",
+    "musique-3757",
+    "musique-5532"
+   ],
+   "gold": [
+    "musique-2659",
+    "musique-2664",
+    "musique-2671"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__56851_343058",
+   "top5": [
+    "musique-1378",
+    "musique-1375",
+    "musique-1383",
+    "musique-1381",
+    "musique-1377"
+   ],
+   "gold": [
+    "musique-1378",
+    "musique-1380"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__635185_141338",
+   "top5": [
+    "musique-4922",
+    "musique-146",
+    "musique-6541",
+    "musique-4925",
+    "musique-5758"
+   ],
+   "gold": [
+    "musique-4922",
+    "musique-4925"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__835710_7298",
+   "top5": [
+    "musique-2565",
+    "musique-2570",
+    "musique-7610",
+    "musique-3155",
+    "musique-8918"
+   ],
+   "gold": [
+    "musique-2565",
+    "musique-2570"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop2__161602_426860_88460_21074",
+   "top5": [
+    "musique-3728",
+    "musique-1952",
+    "musique-11564",
+    "musique-1327",
+    "musique-3738"
+   ],
+   "gold": [
+    "musique-1951",
+    "musique-1952",
+    "musique-235",
+    "musique-8344"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.25,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__507528_139339",
+   "top5": [
+    "musique-11491",
+    "musique-11492",
+    "musique-2056",
+    "musique-6189",
+    "musique-6631"
+   ],
+   "gold": [
+    "musique-11491",
+    "musique-11492"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__390673_228453_10972",
+   "top5": [
+    "musique-7706",
+    "musique-2663",
+    "musique-5532",
+    "musique-4501",
+    "musique-3757"
+   ],
+   "gold": [
+    "musique-2659",
+    "musique-2671",
+    "musique-7706"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__472486_97805",
+   "top5": [
+    "musique-8009",
+    "musique-8005",
+    "musique-6748",
+    "musique-8003",
+    "musique-11224"
+   ],
+   "gold": [
+    "musique-8003",
+    "musique-8009"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__131818_161450",
+   "top5": [
+    "musique-10056",
+    "musique-7474",
+    "musique-362",
+    "musique-3080",
+    "musique-7473"
+   ],
+   "gold": [
+    "musique-10056",
+    "musique-7477"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__141138_2053_52946",
+   "top5": [
+    "musique-4265",
+    "musique-1447",
+    "musique-4266",
+    "musique-4260",
+    "musique-6343"
+   ],
+   "gold": [
+    "musique-1877",
+    "musique-4265",
+    "musique-5742"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__254856_400692_51423",
+   "top5": [
+    "musique-4168",
+    "musique-8502",
+    "musique-3675",
+    "musique-10866",
+    "musique-3982"
+   ],
+   "gold": [
+    "musique-2075",
+    "musique-3982",
+    "musique-4168"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__337705_132457_51423",
+   "top5": [
+    "musique-2064",
+    "musique-6523",
+    "musique-2071",
+    "musique-9423",
+    "musique-5400"
+   ],
+   "gold": [
+    "musique-2064",
+    "musique-2071",
+    "musique-2075"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__781079_9237",
+   "top5": [
+    "musique-8226",
+    "musique-8531",
+    "musique-8227",
+    "musique-11466",
+    "musique-8524"
+   ],
+   "gold": [
+    "musique-8226",
+    "musique-8227"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__84847_148696",
+   "top5": [
+    "musique-632",
+    "musique-643",
+    "musique-633",
+    "musique-640",
+    "musique-4219"
+   ],
+   "gold": [
+    "musique-633",
+    "musique-664"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__58323_375563_161848_83118",
+   "top5": [
+    "musique-4204",
+    "musique-1538",
+    "musique-6338",
+    "musique-6341",
+    "musique-6931"
+   ],
+   "gold": [
+    "musique-1531",
+    "musique-1534",
+    "musique-1538",
+    "musique-6928"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.25,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop2__92991_72083_76291",
+   "top5": [
+    "musique-7469",
+    "musique-1473",
+    "musique-9419",
+    "musique-3904",
+    "musique-1621"
+   ],
+   "gold": [
+    "musique-1625",
+    "musique-7469",
+    "musique-911"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop3__373573_132409_146285_35031",
+   "top5": [
+    "musique-4195",
+    "musique-4188",
+    "musique-943",
+    "musique-11563",
+    "musique-3888"
+   ],
+   "gold": [
+    "musique-3882",
+    "musique-3888",
+    "musique-3891",
+    "musique-4195"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__79039_131926_90707",
+   "top5": [
+    "musique-11499",
+    "musique-4755",
+    "musique-11498",
+    "musique-1058",
+    "musique-5286"
+   ],
+   "gold": [
+    "musique-124",
+    "musique-4755",
+    "musique-9085"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__170823_120171",
+   "top5": [
+    "musique-79",
+    "musique-67",
+    "musique-3278",
+    "musique-11294",
+    "musique-2227"
+   ],
+   "gold": [
+    "musique-62",
+    "musique-67"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__47071_162399",
+   "top5": [
+    "musique-882",
+    "musique-3079",
+    "musique-3308",
+    "musique-10007",
+    "musique-8845"
+   ],
+   "gold": [
+    "musique-3079",
+    "musique-882"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__242938_18803",
+   "top5": [
+    "musique-7626",
+    "musique-7847",
+    "musique-10019",
+    "musique-2621",
+    "musique-8203"
+   ],
+   "gold": [
+    "musique-7626",
+    "musique-7635"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__857_846_7798",
+   "top5": [
+    "musique-1304",
+    "musique-1314",
+    "musique-1305",
+    "musique-1302",
+    "musique-6714"
+   ],
+   "gold": [
+    "musique-1304",
+    "musique-1312",
+    "musique-5120"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__810884_22402",
+   "top5": [
+    "musique-11001",
+    "musique-11000",
+    "musique-4421",
+    "musique-2352",
+    "musique-3713"
+   ],
+   "gold": [
+    "musique-11000",
+    "musique-2352"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__765180_123956",
+   "top5": [
+    "musique-4482",
+    "musique-9199",
+    "musique-4478",
+    "musique-8502",
+    "musique-603"
+   ],
+   "gold": [
+    "musique-4478",
+    "musique-4482"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop3__668721_132409_146285_35031",
+   "top5": [
+    "musique-4188",
+    "musique-9376",
+    "musique-943",
+    "musique-3888",
+    "musique-10505"
+   ],
+   "gold": [
+    "musique-3882",
+    "musique-3888",
+    "musique-3891",
+    "musique-9376"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__811015_3300",
+   "top5": [
+    "musique-2252",
+    "musique-11343",
+    "musique-3162",
+    "musique-2324",
+    "musique-3166"
+   ],
+   "gold": [
+    "musique-2252",
+    "musique-2259"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__635099_131926_13165",
+   "top5": [
+    "musique-1322",
+    "musique-3231",
+    "musique-8193",
+    "musique-9419",
+    "musique-5055"
+   ],
+   "gold": [
+    "musique-124",
+    "musique-1322",
+    "musique-5064"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__81659_52835",
+   "top5": [
+    "musique-724",
+    "musique-6739",
+    "musique-722",
+    "musique-5264",
+    "musique-2254"
+   ],
+   "gold": [
+    "musique-722",
+    "musique-724"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__108833_720914_41132",
+   "top5": [
+    "musique-267",
+    "musique-504",
+    "musique-271",
+    "musique-11571",
+    "musique-10984"
+   ],
+   "gold": [
+    "musique-267",
+    "musique-273",
+    "musique-504"
+   ],
+   "R@2": 0.6666666666666666,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__734582_71302",
+   "top5": [
+    "musique-598",
+    "musique-604",
+    "musique-599",
+    "musique-597",
+    "musique-588"
+   ],
+   "gold": [
+    "musique-598",
+    "musique-599"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__79039_131926_89261",
+   "top5": [
+    "musique-128",
+    "musique-122",
+    "musique-121",
+    "musique-10031",
+    "musique-138"
+   ],
+   "gold": [
+    "musique-120",
+    "musique-124",
+    "musique-9085"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__525129_315334_131926_87157",
+   "top5": [
+    "musique-4752",
+    "musique-120",
+    "musique-4277",
+    "musique-124",
+    "musique-4761"
+   ],
+   "gold": [
+    "musique-120",
+    "musique-124",
+    "musique-4752",
+    "musique-4761"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__619265_45326",
+   "top5": [
+    "musique-200",
+    "musique-9922",
+    "musique-6347",
+    "musique-216",
+    "musique-213"
+   ],
+   "gold": [
+    "musique-200",
+    "musique-213"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__96411_159054",
+   "top5": [
+    "musique-3600",
+    "musique-7132",
+    "musique-3609",
+    "musique-3602",
+    "musique-6789"
+   ],
+   "gold": [
+    "musique-3600",
+    "musique-3602"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop2__90098_156850_10557",
+   "top5": [
+    "musique-1214",
+    "musique-10498",
+    "musique-5071",
+    "musique-3257",
+    "musique-11573"
+   ],
+   "gold": [
+    "musique-10498",
+    "musique-1214",
+    "musique-801"
+   ],
+   "R@2": 0.6666666666666666,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__475351_160713_77246",
+   "top5": [
+    "musique-870",
+    "musique-7724",
+    "musique-4625",
+    "musique-5617",
+    "musique-6627"
+   ],
+   "gold": [
+    "musique-4269",
+    "musique-869",
+    "musique-876"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__227791_75487",
+   "top5": [
+    "musique-7321",
+    "musique-9453",
+    "musique-8955",
+    "musique-3923",
+    "musique-1847"
+   ],
+   "gold": [
+    "musique-3923",
+    "musique-7321"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__665660_135481",
+   "top5": [
+    "musique-11055",
+    "musique-2650",
+    "musique-2793",
+    "musique-8278",
+    "musique-3376"
+   ],
+   "gold": [
+    "musique-11055",
+    "musique-2650"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__536283_67465",
+   "top5": [
+    "musique-1761",
+    "musique-1759",
+    "musique-11528",
+    "musique-6565",
+    "musique-9496"
+   ],
+   "gold": [
+    "musique-11528",
+    "musique-1761"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__186307_503371_21711",
+   "top5": [
+    "musique-318",
+    "musique-330",
+    "musique-8779",
+    "musique-6675",
+    "musique-7125"
+   ],
+   "gold": [
+    "musique-318",
+    "musique-330",
+    "musique-8779"
+   ],
+   "R@2": 0.6666666666666666,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__29339_40482",
+   "top5": [
+    "musique-4358",
+    "musique-4347",
+    "musique-10101",
+    "musique-7679",
+    "musique-1059"
+   ],
+   "gold": [
+    "musique-1780",
+    "musique-4358"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__28527_42197_18397",
+   "top5": [
+    "musique-7547",
+    "musique-3193",
+    "musique-7540",
+    "musique-7541",
+    "musique-10196"
+   ],
+   "gold": [
+    "musique-537",
+    "musique-550",
+    "musique-7541"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__95687_577502",
+   "top5": [
+    "musique-11614",
+    "musique-604",
+    "musique-599",
+    "musique-4678",
+    "musique-933"
+   ],
+   "gold": [
+    "musique-11614",
+    "musique-354"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__358582_189042",
+   "top5": [
+    "musique-9028",
+    "musique-9031",
+    "musique-9033",
+    "musique-9030",
+    "musique-4799"
+   ],
+   "gold": [
+    "musique-9031",
+    "musique-9033"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__347652_47134",
+   "top5": [
+    "musique-4591",
+    "musique-373",
+    "musique-10547",
+    "musique-10238",
+    "musique-4400"
+   ],
+   "gold": [
+    "musique-378",
+    "musique-4591"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__645367_68633",
+   "top5": [
+    "musique-6303",
+    "musique-8463",
+    "musique-1352",
+    "musique-10818",
+    "musique-64"
+   ],
+   "gold": [
+    "musique-6301",
+    "musique-6303"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__24441_36630",
+   "top5": [
+    "musique-6668",
+    "musique-4518",
+    "musique-4508",
+    "musique-4512",
+    "musique-3022"
+   ],
+   "gold": [
+    "musique-2140",
+    "musique-4508"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop2__230_89048_66294",
+   "top5": [
+    "musique-5631",
+    "musique-1021",
+    "musique-5342",
+    "musique-6496",
+    "musique-10365"
+   ],
+   "gold": [
+    "musique-5627",
+    "musique-5631",
+    "musique-5858"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__398344_85513",
+   "top5": [
+    "musique-4318",
+    "musique-8440",
+    "musique-5961",
+    "musique-10185",
+    "musique-8429"
+   ],
+   "gold": [
+    "musique-4318",
+    "musique-4326"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__796649_720914_27537",
+   "top5": [
+    "musique-7820",
+    "musique-4779",
+    "musique-7817",
+    "musique-5802",
+    "musique-7799"
+   ],
+   "gold": [
+    "musique-273",
+    "musique-4779",
+    "musique-7820"
+   ],
+   "R@2": 0.6666666666666666,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__786067_228453_10972",
+   "top5": [
+    "musique-5532",
+    "musique-7104",
+    "musique-2658",
+    "musique-3757",
+    "musique-7706"
+   ],
+   "gold": [
+    "musique-2659",
+    "musique-2671",
+    "musique-5532"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__256553_617289",
+   "top5": [
+    "musique-11324",
+    "musique-8701",
+    "musique-11317",
+    "musique-8702",
+    "musique-11321"
+   ],
+   "gold": [
+    "musique-11319",
+    "musique-11324"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__833841_378185_282674_759393",
+   "top5": [
+    "musique-7209",
+    "musique-5770",
+    "musique-3902",
+    "musique-4696",
+    "musique-10566"
+   ],
+   "gold": [
+    "musique-6374",
+    "musique-6378",
+    "musique-6379",
+    "musique-7209"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.25,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__159737_27110",
+   "top5": [
+    "musique-9063",
+    "musique-10690",
+    "musique-882",
+    "musique-7711",
+    "musique-3219"
+   ],
+   "gold": [
+    "musique-9051",
+    "musique-9063"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__463353_66723",
+   "top5": [
+    "musique-9968",
+    "musique-9962",
+    "musique-4138",
+    "musique-4134",
+    "musique-7974"
+   ],
+   "gold": [
+    "musique-4134",
+    "musique-9968"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__622637_120171",
+   "top5": [
+    "musique-2227",
+    "musique-6918",
+    "musique-62",
+    "musique-67",
+    "musique-2028"
+   ],
+   "gold": [
+    "musique-2227",
+    "musique-62"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop2__161602_426860_88460_126088",
+   "top5": [
+    "musique-3728",
+    "musique-1952",
+    "musique-1327",
+    "musique-5792",
+    "musique-1951"
+   ],
+   "gold": [
+    "musique-1951",
+    "musique-1952",
+    "musique-235",
+    "musique-3783"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__503085_110222",
+   "top5": [
+    "musique-9806",
+    "musique-5705",
+    "musique-8502",
+    "musique-5704",
+    "musique-9620"
+   ],
+   "gold": [
+    "musique-5705",
+    "musique-9806"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__62369_84616",
+   "top5": [
+    "musique-4672",
+    "musique-4680",
+    "musique-4674",
+    "musique-9763",
+    "musique-4667"
+   ],
+   "gold": [
+    "musique-4680",
+    "musique-5585"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__151750_141308",
+   "top5": [
+    "musique-2629",
+    "musique-2626",
+    "musique-141",
+    "musique-2625",
+    "musique-8309"
+   ],
+   "gold": [
+    "musique-2625",
+    "musique-2629"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop1__159467_725495_49925_267352",
+   "top5": [
+    "musique-6078",
+    "musique-6082",
+    "musique-6119",
+    "musique-4743",
+    "musique-2722"
+   ],
+   "gold": [
+    "musique-1099",
+    "musique-6078",
+    "musique-6079",
+    "musique-6082"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__9223_9237",
+   "top5": [
+    "musique-10922",
+    "musique-10920",
+    "musique-8227",
+    "musique-8516",
+    "musique-5666"
+   ],
+   "gold": [
+    "musique-10922",
+    "musique-8227"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__5658_25002",
+   "top5": [
+    "musique-4962",
+    "musique-8423",
+    "musique-5252",
+    "musique-8413",
+    "musique-4965"
+   ],
+   "gold": [
+    "musique-4962",
+    "musique-8423"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__49236_89752_54221",
+   "top5": [
+    "musique-11214",
+    "musique-11211",
+    "musique-11204",
+    "musique-11209",
+    "musique-11213"
+   ],
+   "gold": [
+    "musique-11213",
+    "musique-4374",
+    "musique-5774"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__107905_110222",
+   "top5": [
+    "musique-8502",
+    "musique-5705",
+    "musique-2776",
+    "musique-4392",
+    "musique-8504"
+   ],
+   "gold": [
+    "musique-5705",
+    "musique-8502"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop2__326964_7707_7713",
+   "top5": [
+    "musique-5693",
+    "musique-1300",
+    "musique-10286",
+    "musique-1125",
+    "musique-6278"
+   ],
+   "gold": [
+    "musique-10286",
+    "musique-1125",
+    "musique-5693"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__464479_70131",
+   "top5": [
+    "musique-3839",
+    "musique-3835",
+    "musique-10883",
+    "musique-8379",
+    "musique-879"
+   ],
+   "gold": [
+    "musique-3835",
+    "musique-3839"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__107601_110222",
+   "top5": [
+    "musique-5704",
+    "musique-1066",
+    "musique-5705",
+    "musique-8502",
+    "musique-3662"
+   ],
+   "gold": [
+    "musique-5704",
+    "musique-5705"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__7906_78851",
+   "top5": [
+    "musique-5447",
+    "musique-5450",
+    "musique-4178",
+    "musique-5440",
+    "musique-5444"
+   ],
+   "gold": [
+    "musique-5444",
+    "musique-5447"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop1__88342_75218_128008_80487",
+   "top5": [
+    "musique-1660",
+    "musique-1659",
+    "musique-10546",
+    "musique-10373",
+    "musique-8597"
+   ],
+   "gold": [
+    "musique-734",
+    "musique-737",
+    "musique-745",
+    "musique-9327"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__476927_31270",
+   "top5": [
+    "musique-8394",
+    "musique-11185",
+    "musique-1285",
+    "musique-7559",
+    "musique-11121"
+   ],
+   "gold": [
+    "musique-1045",
+    "musique-8394"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop3__160230_470287_345497_72134",
+   "top5": [
+    "musique-8479",
+    "musique-9419",
+    "musique-6079",
+    "musique-3956",
+    "musique-4480"
+   ],
+   "gold": [
+    "musique-584",
+    "musique-6072",
+    "musique-6074",
+    "musique-8479"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.25,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__617062_127905_80286",
+   "top5": [
+    "musique-3553",
+    "musique-4426",
+    "musique-3650",
+    "musique-3539",
+    "musique-2077"
+   ],
+   "gold": [
+    "musique-2081",
+    "musique-3539",
+    "musique-3553"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__178435_547811_80702",
+   "top5": [
+    "musique-9345",
+    "musique-766",
+    "musique-8502",
+    "musique-9913",
+    "musique-2850"
+   ],
+   "gold": [
+    "musique-1060",
+    "musique-1061",
+    "musique-9345"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__78401_158262",
+   "top5": [
+    "musique-832",
+    "musique-3413",
+    "musique-828",
+    "musique-833",
+    "musique-2432"
+   ],
+   "gold": [
+    "musique-827",
+    "musique-843"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__145087_32392_823060_610794",
+   "top5": [
+    "musique-8123",
+    "musique-4188",
+    "musique-3126",
+    "musique-4463",
+    "musique-8638"
+   ],
+   "gold": [
+    "musique-1595",
+    "musique-1598",
+    "musique-1601",
+    "musique-8123"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.25,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__700093_455653",
+   "top5": [
+    "musique-4740",
+    "musique-4737",
+    "musique-6529",
+    "musique-5006",
+    "musique-11641"
+   ],
+   "gold": [
+    "musique-4737",
+    "musique-4740"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__21103_16254",
+   "top5": [
+    "musique-2413",
+    "musique-7057",
+    "musique-2412",
+    "musique-5797",
+    "musique-7062"
+   ],
+   "gold": [
+    "musique-2412",
+    "musique-2413"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__705035_152093",
+   "top5": [
+    "musique-7195",
+    "musique-7197",
+    "musique-7204",
+    "musique-7203",
+    "musique-5342"
+   ],
+   "gold": [
+    "musique-2285",
+    "musique-7204"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__726561_132457_51423",
+   "top5": [
+    "musique-2070",
+    "musique-7733",
+    "musique-10204",
+    "musique-2073",
+    "musique-6974"
+   ],
+   "gold": [
+    "musique-10204",
+    "musique-2071",
+    "musique-2075"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__846600_153080_159767_81096",
+   "top5": [
+    "musique-952",
+    "musique-962",
+    "musique-1134",
+    "musique-2328",
+    "musique-90"
+   ],
+   "gold": [
+    "musique-1036",
+    "musique-952",
+    "musique-959",
+    "musique-962"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__58323_375563_161848_28750",
+   "top5": [
+    "musique-6577",
+    "musique-4204",
+    "musique-3295",
+    "musique-1538",
+    "musique-11480"
+   ],
+   "gold": [
+    "musique-1531",
+    "musique-1534",
+    "musique-1538",
+    "musique-6577"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop2__9988_158279_70784_79935",
+   "top5": [
+    "musique-9460",
+    "musique-9166",
+    "musique-10384",
+    "musique-9425",
+    "musique-10378"
+   ],
+   "gold": [
+    "musique-102",
+    "musique-112",
+    "musique-3022",
+    "musique-629"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__140514_2053_5289",
+   "top5": [
+    "musique-5741",
+    "musique-10317",
+    "musique-5744",
+    "musique-2325",
+    "musique-11130"
+   ],
+   "gold": [
+    "musique-10317",
+    "musique-1875",
+    "musique-1877"
+   ],
+   "R@2": 0.3333333333333333,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop3__862_846_613770_7713",
+   "top5": [
+    "musique-1118",
+    "musique-1304",
+    "musique-6278",
+    "musique-10891",
+    "musique-5693"
+   ],
+   "gold": [
+    "musique-1118",
+    "musique-1125",
+    "musique-1304",
+    "musique-6709"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "4hop1__842143_153080_159767_81096",
+   "top5": [
+    "musique-4188",
+    "musique-948",
+    "musique-3013",
+    "musique-943",
+    "musique-962"
+   ],
+   "gold": [
+    "musique-1036",
+    "musique-948",
+    "musique-959",
+    "musique-962"
+   ],
+   "R@2": 0.25,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__170914_152093",
+   "top5": [
+    "musique-7552",
+    "musique-9423",
+    "musique-8927",
+    "musique-6545",
+    "musique-7204"
+   ],
+   "gold": [
+    "musique-2285",
+    "musique-7552"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__194532_57594",
+   "top5": [
+    "musique-10195",
+    "musique-10179",
+    "musique-9096",
+    "musique-10187",
+    "musique-10185"
+   ],
+   "gold": [
+    "musique-10187",
+    "musique-10192"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__556426_9237",
+   "top5": [
+    "musique-8227",
+    "musique-8531",
+    "musique-11466",
+    "musique-10922",
+    "musique-2860"
+   ],
+   "gold": [
+    "musique-8227",
+    "musique-8531"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__136214_483189",
+   "top5": [
+    "musique-2388",
+    "musique-2378",
+    "musique-3907",
+    "musique-6071",
+    "musique-3873"
+   ],
+   "gold": [
+    "musique-2378",
+    "musique-2388"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "2hop__158010_58067",
+   "top5": [
+    "musique-3299",
+    "musique-3309",
+    "musique-3306",
+    "musique-3297",
+    "musique-3355"
+   ],
+   "gold": [
+    "musique-3306",
+    "musique-3351"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__789565_416401",
+   "top5": [
+    "musique-8698",
+    "musique-7264",
+    "musique-1345",
+    "musique-8699",
+    "musique-8447"
+   ],
+   "gold": [
+    "musique-8698",
+    "musique-8699"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "3hop1__92251_34179_23375",
+   "top5": [
+    "musique-10948",
+    "musique-4964",
+    "musique-8421",
+    "musique-10833",
+    "musique-2305"
+   ],
+   "gold": [
+    "musique-10875",
+    "musique-10880",
+    "musique-10884"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__77518_548781",
+   "top5": [
+    "musique-2323",
+    "musique-760",
+    "musique-9960",
+    "musique-6651",
+    "musique-5891"
+   ],
+   "gold": [
+    "musique-5891",
+    "musique-760"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "4hop1__73810_32392_823060_610794",
+   "top5": [
+    "musique-4188",
+    "musique-943",
+    "musique-11563",
+    "musique-8269",
+    "musique-6093"
+   ],
+   "gold": [
+    "musique-1595",
+    "musique-1598",
+    "musique-1601",
+    "musique-8265"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__90327_83076_319330",
+   "top5": [
+    "musique-3936",
+    "musique-3928",
+    "musique-5891",
+    "musique-680",
+    "musique-686"
+   ],
+   "gold": [
+    "musique-673",
+    "musique-679",
+    "musique-680"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.3333333333333333,
+   "AR@5": 0.0
+  },
+  {
+   "id": "3hop1__389069_132457_51423",
+   "top5": [
+    "musique-7971",
+    "musique-2071",
+    "musique-844",
+    "musique-7579",
+    "musique-6175"
+   ],
+   "gold": [
+    "musique-2071",
+    "musique-2075",
+    "musique-7971"
+   ],
+   "R@2": 0.6666666666666666,
+   "AR@2": 0.0,
+   "R@5": 0.6666666666666666,
+   "AR@5": 0.0
+  },
+  {
+   "id": "2hop__14_59409",
+   "top5": [
+    "musique-1003",
+    "musique-1011",
+    "musique-1004",
+    "musique-5342",
+    "musique-6545"
+   ],
+   "gold": [
+    "musique-1003",
+    "musique-1018"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  }
+ ]
+}

@@ -87,7 +87,18 @@ class QueryRuntime:
                     ),
                     specificity_restart=settings.own_seed_mode == "passage_specificity",
                     passage_nodes=(
-                        PassageNodes(graph)
+                        PassageNodes(
+                            graph,
+                            reranker=local_encoder,
+                            rerank_mode=settings.own_passage_rerank,
+                            dense_k=settings.own_dense_k,
+                            reseed=settings.own_reseed == "on",
+                            damping=settings.own_ppr_damping,
+                            ppr_weight=settings.own_rrf_ppr_weight,
+                            edge_power=settings.own_edge_power,
+                            fact_seeds=settings.own_fact_seeds,
+                            hop_expand=settings.own_hop_expand == "on",
+                        )
                         if settings.own_passage_nodes == "on"
                         and settings.own_seed_mode != "round3"
                         else None
@@ -96,6 +107,20 @@ class QueryRuntime:
             },
             "own",
         )
+        if settings.own_ircot == "on":
+            from omnistream.retrieval.own_algorithm.ircot import IRCoTRetriever
+
+            self.dispatcher.retrievers["own"] = IRCoTRetriever(
+                self.dispatcher.retrievers["own"], llm
+            )
+        if settings.own_decompose == "on":
+            from omnistream.retrieval.own_algorithm.decompose import (
+                DecomposingRetriever,
+            )
+
+            self.dispatcher.retrievers["own"] = DecomposingRetriever(
+                self.dispatcher.retrievers["own"], llm
+            )
         self._schema_lock = asyncio.Lock()
         self._schema_checked = False
         self._closed = False

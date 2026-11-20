@@ -90,9 +90,11 @@ def evidence_ids(result):
         buckets = {}
         for finding in result.multi_hop.findings:
             bucket = buckets.setdefault(finding.bubble, [])
+            # Passages the subagent retrieved lead (ranked round-robin across
+            # its searches), as in single-step retrieval with passage nodes.
+            bucket.extend(c.item_id for c in finding.chunks)
             for fact in finding.facts:
                 bucket.extend([fact.item_id, *fact.item_ids])
-            bucket.extend(c.item_id for c in finding.chunks)
             bucket.extend(finding.item_ids)
         # Dedupe inside each bubble before assigning its per-bubble rank.
         ranked = [list(dict.fromkeys(b)) for b in buckets.values()]

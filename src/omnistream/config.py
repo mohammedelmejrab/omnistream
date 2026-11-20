@@ -80,6 +80,23 @@ class Settings(BaseSettings):
     own_seed_mode: Literal["round3", "passage", "passage_specificity"] = "round3"
     # HippoRAG 2-style passage nodes in the own retriever's PPR (item 3).
     own_passage_nodes: Literal["off", "on"] = "off"
+    # Cross-encoder rerank of the passage-node pool: off, ce, or rrf (fused).
+    own_passage_rerank: Literal["off", "ce", "rrf"] = "off"
+    # Exploration flags: dense passages joining the walk, a second walk
+    # re-seeded from the first walk's top passages, LLM question decomposition.
+    own_dense_k: int = 20
+    own_reseed: Literal["off", "on"] = "off"
+    own_decompose: Literal["off", "on"] = "off"
+    own_ppr_damping: float = 0.85
+    own_rrf_ppr_weight: float = 1.0
+    # Question-aware PPR edges: fact edge weight = max(cos, 0) ** power (0 = off).
+    own_edge_power: float = 0.0
+    # Endpoints of the top-N reranked facts seed the passage walk (0 = off).
+    own_fact_seeds: int = 0
+    # Second-hop passage expansion after the heads (cross-encoder picks).
+    own_hop_expand: Literal["off", "on"] = "off"
+    # IRCoT-style multi-step retrieval over the own retriever (Table 3 row).
+    own_ircot: Literal["off", "on"] = "off"
     rrf_k: int = Field(default=60, ge=1)
     subagent_max_tool_calls: int = Field(default=6, ge=1)
     subagent_timeout_seconds: float = Field(default=60.0, gt=0)

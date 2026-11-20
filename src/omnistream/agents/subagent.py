@@ -72,6 +72,9 @@ class Subagent:
 
     async def run(self, question: str) -> SubagentFindings:
         evidence = {key: {} for key in ("facts", "chunks", "items", "globals")}
+        # (rank within its tool call, call number) per chunk: findings list
+        # passages round-robin across searches, best-ranked first.
+        chunk_rank: dict[str, tuple[int, int]] = {}
         used, answer, reason = 0, "", "answered"
         error = None
         messages = [
@@ -112,6 +115,8 @@ class Subagent:
                             used += 1
                             result = await self.executor.execute(call)
                             data = json.loads(result)
+                            for position, entry in enumerate(data.get("chunks", [])):
+                                chunk_rank.setdefault(entry["id"], (position, used))
                             for key in ("facts", "chunks"):
                                 for entry in data.get(key, []):
                                     values = dict(entry)
@@ -169,7 +174,12 @@ class Subagent:
             reason,
             error,
             tuple(evidence["facts"].values()),
-            tuple(evidence["chunks"].values()),
+            tuple(
+                sorted(
+                    evidence["chunks"].values(),
+                    key=lambda c: chunk_rank.get(c.id, (10**6, 10**6)),
+                )
+            ),
             tuple(self.executor.scored_facts.values()),
             tuple(self.executor.seeds.values()),
         )

@@ -1,0 +1,1816 @@
+{
+ "dataset": "hotpotqa",
+ "tag": "best1",
+ "n": 100,
+ "seed": 1,
+ "excluded_test_questions": 200,
+ "summary": {
+  "R@2": 72.0,
+  "R@5": 86.5,
+  "AR@2": 47.0,
+  "AR@5": 74.0
+ },
+ "seconds_per_question": 4.64,
+ "rows": [
+  {
+   "id": "5a7183575542994082a3e85e",
+   "top5": [
+    "hotpotqa-1664",
+    "hotpotqa-1658",
+    "hotpotqa-1667",
+    "hotpotqa-1663",
+    "hotpotqa-1659"
+   ],
+   "gold": [
+    "hotpotqa-1658",
+    "hotpotqa-1663"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5adde99b5542992200553ba1",
+   "top5": [
+    "hotpotqa-7103",
+    "hotpotqa-2856",
+    "hotpotqa-3762",
+    "hotpotqa-7102",
+    "hotpotqa-7107"
+   ],
+   "gold": [
+    "hotpotqa-7103",
+    "hotpotqa-7105"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a89e28f5542992e4fca843e",
+   "top5": [
+    "hotpotqa-6748",
+    "hotpotqa-9603",
+    "hotpotqa-4733",
+    "hotpotqa-5878",
+    "hotpotqa-6744"
+   ],
+   "gold": [
+    "hotpotqa-9601",
+    "hotpotqa-9603"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a86b13f55429960ec39b6c3",
+   "top5": [
+    "hotpotqa-742",
+    "hotpotqa-736",
+    "hotpotqa-737",
+    "hotpotqa-740",
+    "hotpotqa-735"
+   ],
+   "gold": [
+    "hotpotqa-737",
+    "hotpotqa-742"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5aba7e2c55429955dce3ee5a",
+   "top5": [
+    "hotpotqa-3198",
+    "hotpotqa-1732",
+    "hotpotqa-3193",
+    "hotpotqa-3191",
+    "hotpotqa-6506"
+   ],
+   "gold": [
+    "hotpotqa-3191",
+    "hotpotqa-3193"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab3eb1955429969a97a81f6",
+   "top5": [
+    "hotpotqa-1459",
+    "hotpotqa-1460",
+    "hotpotqa-1465",
+    "hotpotqa-1467",
+    "hotpotqa-1461"
+   ],
+   "gold": [
+    "hotpotqa-1459",
+    "hotpotqa-1462"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a777fd655429949eeb29e93",
+   "top5": [
+    "hotpotqa-6198",
+    "hotpotqa-6205",
+    "hotpotqa-1724",
+    "hotpotqa-1718",
+    "hotpotqa-5694"
+   ],
+   "gold": [
+    "hotpotqa-6198",
+    "hotpotqa-6205"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae3c0245542990afbd1e1c3",
+   "top5": [
+    "hotpotqa-9575",
+    "hotpotqa-437",
+    "hotpotqa-9574",
+    "hotpotqa-4472",
+    "hotpotqa-9604"
+   ],
+   "gold": [
+    "hotpotqa-9570",
+    "hotpotqa-9575"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ab7268b5542992aa3b8c7b1",
+   "top5": [
+    "hotpotqa-5600",
+    "hotpotqa-5606",
+    "hotpotqa-5608",
+    "hotpotqa-5603",
+    "hotpotqa-5602"
+   ],
+   "gold": [
+    "hotpotqa-5600",
+    "hotpotqa-5606"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5aded04755429975fa854fa7",
+   "top5": [
+    "hotpotqa-5876",
+    "hotpotqa-5875",
+    "hotpotqa-5877",
+    "hotpotqa-5874",
+    "hotpotqa-5873"
+   ],
+   "gold": [
+    "hotpotqa-5876",
+    "hotpotqa-5879"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a8e0d04554299068b959e3a",
+   "top5": [
+    "hotpotqa-8088",
+    "hotpotqa-8087",
+    "hotpotqa-8081",
+    "hotpotqa-8090",
+    "hotpotqa-8082"
+   ],
+   "gold": [
+    "hotpotqa-8081",
+    "hotpotqa-8088"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a903b7255429933b8a204ae",
+   "top5": [
+    "hotpotqa-4701",
+    "hotpotqa-4699",
+    "hotpotqa-4698",
+    "hotpotqa-4695",
+    "hotpotqa-4696"
+   ],
+   "gold": [
+    "hotpotqa-4699",
+    "hotpotqa-4701"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8b987f5542997f31a41d7a",
+   "top5": [
+    "hotpotqa-2599",
+    "hotpotqa-2602",
+    "hotpotqa-2607",
+    "hotpotqa-2608",
+    "hotpotqa-2605"
+   ],
+   "gold": [
+    "hotpotqa-2599",
+    "hotpotqa-2602"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7b24fe55429931da12c9f7",
+   "top5": [
+    "hotpotqa-1157",
+    "hotpotqa-1150",
+    "hotpotqa-1570",
+    "hotpotqa-1153",
+    "hotpotqa-1861"
+   ],
+   "gold": [
+    "hotpotqa-1157",
+    "hotpotqa-1158"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5abce1fa5542993a06baf993",
+   "top5": [
+    "hotpotqa-2945",
+    "hotpotqa-5326",
+    "hotpotqa-7806",
+    "hotpotqa-4972",
+    "hotpotqa-9473"
+   ],
+   "gold": [
+    "hotpotqa-6090",
+    "hotpotqa-6095"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.0,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a7558425542992db9473647",
+   "top5": [
+    "hotpotqa-319",
+    "hotpotqa-318",
+    "hotpotqa-321",
+    "hotpotqa-1326",
+    "hotpotqa-5116"
+   ],
+   "gold": [
+    "hotpotqa-319",
+    "hotpotqa-321"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a87ab9b5542996e4f3088c2",
+   "top5": [
+    "hotpotqa-4816",
+    "hotpotqa-4811",
+    "hotpotqa-4814",
+    "hotpotqa-4812",
+    "hotpotqa-7121"
+   ],
+   "gold": [
+    "hotpotqa-4811",
+    "hotpotqa-4813"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ae39fb85542990afbd1e197",
+   "top5": [
+    "hotpotqa-5359",
+    "hotpotqa-5362",
+    "hotpotqa-5363",
+    "hotpotqa-7354",
+    "hotpotqa-5360"
+   ],
+   "gold": [
+    "hotpotqa-5359",
+    "hotpotqa-5362"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7a68d25542996c55b2dd98",
+   "top5": [
+    "hotpotqa-7550",
+    "hotpotqa-7551",
+    "hotpotqa-4978",
+    "hotpotqa-4972",
+    "hotpotqa-7544"
+   ],
+   "gold": [
+    "hotpotqa-7550",
+    "hotpotqa-7551"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7cefcf55429909bec768af",
+   "top5": [
+    "hotpotqa-9583",
+    "hotpotqa-9582",
+    "hotpotqa-9581",
+    "hotpotqa-9577",
+    "hotpotqa-7915"
+   ],
+   "gold": [
+    "hotpotqa-9582",
+    "hotpotqa-9583"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae6c2285542995703ce8b9a",
+   "top5": [
+    "hotpotqa-32",
+    "hotpotqa-39",
+    "hotpotqa-31",
+    "hotpotqa-37",
+    "hotpotqa-38"
+   ],
+   "gold": [
+    "hotpotqa-35",
+    "hotpotqa-39"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ae71d87554299572ea546fa",
+   "top5": [
+    "hotpotqa-8673",
+    "hotpotqa-8665",
+    "hotpotqa-8669",
+    "hotpotqa-3075",
+    "hotpotqa-9387"
+   ],
+   "gold": [
+    "hotpotqa-8665",
+    "hotpotqa-8673"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abdf12255429976d4830a2f",
+   "top5": [
+    "hotpotqa-5549",
+    "hotpotqa-5548",
+    "hotpotqa-5554",
+    "hotpotqa-5550",
+    "hotpotqa-5546"
+   ],
+   "gold": [
+    "hotpotqa-5548",
+    "hotpotqa-5549"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8d77525542994ba4e3dc90",
+   "top5": [
+    "hotpotqa-3359",
+    "hotpotqa-3362",
+    "hotpotqa-3364",
+    "hotpotqa-9387",
+    "hotpotqa-6800"
+   ],
+   "gold": [
+    "hotpotqa-3359",
+    "hotpotqa-3365"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a7a3edd5542990783324ed9",
+   "top5": [
+    "hotpotqa-9063",
+    "hotpotqa-9058",
+    "hotpotqa-9064",
+    "hotpotqa-8361",
+    "hotpotqa-6256"
+   ],
+   "gold": [
+    "hotpotqa-9058",
+    "hotpotqa-9063"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a88fa145542997e5c09a6e1",
+   "top5": [
+    "hotpotqa-2859",
+    "hotpotqa-2865",
+    "hotpotqa-2862",
+    "hotpotqa-2864",
+    "hotpotqa-2860"
+   ],
+   "gold": [
+    "hotpotqa-2859",
+    "hotpotqa-2865"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abea7c25542990832d3a068",
+   "top5": [
+    "hotpotqa-7377",
+    "hotpotqa-7386",
+    "hotpotqa-5601",
+    "hotpotqa-8363",
+    "hotpotqa-9058"
+   ],
+   "gold": [
+    "hotpotqa-7377",
+    "hotpotqa-7386"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab504865542991779162d52",
+   "top5": [
+    "hotpotqa-1257",
+    "hotpotqa-1255",
+    "hotpotqa-1251",
+    "hotpotqa-1253",
+    "hotpotqa-1258"
+   ],
+   "gold": [
+    "hotpotqa-1255",
+    "hotpotqa-1257"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a77c8905542995d831812ce",
+   "top5": [
+    "hotpotqa-3974",
+    "hotpotqa-3969",
+    "hotpotqa-3967",
+    "hotpotqa-9312",
+    "hotpotqa-1029"
+   ],
+   "gold": [
+    "hotpotqa-3969",
+    "hotpotqa-3974"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a77aa095542995d83181260",
+   "top5": [
+    "hotpotqa-347",
+    "hotpotqa-351",
+    "hotpotqa-346",
+    "hotpotqa-4359",
+    "hotpotqa-348"
+   ],
+   "gold": [
+    "hotpotqa-346",
+    "hotpotqa-347"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae40b2b55429970de88d8b3",
+   "top5": [
+    "hotpotqa-251",
+    "hotpotqa-249",
+    "hotpotqa-250",
+    "hotpotqa-252",
+    "hotpotqa-253"
+   ],
+   "gold": [
+    "hotpotqa-249",
+    "hotpotqa-251"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5adecc7755429975fa854f9d",
+   "top5": [
+    "hotpotqa-292",
+    "hotpotqa-291",
+    "hotpotqa-293",
+    "hotpotqa-288",
+    "hotpotqa-285"
+   ],
+   "gold": [
+    "hotpotqa-291",
+    "hotpotqa-292"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7b8f66554299294a54a9f7",
+   "top5": [
+    "hotpotqa-8065",
+    "hotpotqa-5911",
+    "hotpotqa-8064",
+    "hotpotqa-8091",
+    "hotpotqa-1539"
+   ],
+   "gold": [
+    "hotpotqa-8064",
+    "hotpotqa-8065"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7e14a65542995ed0d16686",
+   "top5": [
+    "hotpotqa-6760",
+    "hotpotqa-6752",
+    "hotpotqa-495",
+    "hotpotqa-6758",
+    "hotpotqa-6761"
+   ],
+   "gold": [
+    "hotpotqa-6760",
+    "hotpotqa-6761"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab94bc2554299743d22eacf",
+   "top5": [
+    "hotpotqa-95",
+    "hotpotqa-96",
+    "hotpotqa-94",
+    "hotpotqa-101",
+    "hotpotqa-296"
+   ],
+   "gold": [
+    "hotpotqa-101",
+    "hotpotqa-95"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7ca33f5542990527d554ee",
+   "top5": [
+    "hotpotqa-4721",
+    "hotpotqa-4720",
+    "hotpotqa-7167",
+    "hotpotqa-983",
+    "hotpotqa-8982"
+   ],
+   "gold": [
+    "hotpotqa-4720",
+    "hotpotqa-4721"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ade653f55429975fa854ebb",
+   "top5": [
+    "hotpotqa-8568",
+    "hotpotqa-9678",
+    "hotpotqa-8577",
+    "hotpotqa-8570",
+    "hotpotqa-4392"
+   ],
+   "gold": [
+    "hotpotqa-8568",
+    "hotpotqa-8577"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a72224755429971e9dc92be",
+   "top5": [
+    "hotpotqa-2695",
+    "hotpotqa-2696",
+    "hotpotqa-2697",
+    "hotpotqa-2692",
+    "hotpotqa-2698"
+   ],
+   "gold": [
+    "hotpotqa-2693",
+    "hotpotqa-2695"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5adbf44355429944faac23ce",
+   "top5": [
+    "hotpotqa-5232",
+    "hotpotqa-5231",
+    "hotpotqa-8614",
+    "hotpotqa-333",
+    "hotpotqa-3204"
+   ],
+   "gold": [
+    "hotpotqa-5231",
+    "hotpotqa-5232"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abde4595542991f66106095",
+   "top5": [
+    "hotpotqa-9119",
+    "hotpotqa-6837",
+    "hotpotqa-9122",
+    "hotpotqa-9124",
+    "hotpotqa-9121"
+   ],
+   "gold": [
+    "hotpotqa-9117",
+    "hotpotqa-9119"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ac01e77554299012d1db5ac",
+   "top5": [
+    "hotpotqa-9622",
+    "hotpotqa-9616",
+    "hotpotqa-9615",
+    "hotpotqa-9614",
+    "hotpotqa-7090"
+   ],
+   "gold": [
+    "hotpotqa-9616",
+    "hotpotqa-9622"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a80a587554299485f598676",
+   "top5": [
+    "hotpotqa-6587",
+    "hotpotqa-6584",
+    "hotpotqa-6591",
+    "hotpotqa-6593",
+    "hotpotqa-469"
+   ],
+   "gold": [
+    "hotpotqa-6587",
+    "hotpotqa-6591"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae28f43554299492dc91c2f",
+   "top5": [
+    "hotpotqa-2760",
+    "hotpotqa-2767",
+    "hotpotqa-2761",
+    "hotpotqa-2068",
+    "hotpotqa-2768"
+   ],
+   "gold": [
+    "hotpotqa-2760",
+    "hotpotqa-2761"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8ec7cc5542995a26add518",
+   "top5": [
+    "hotpotqa-5434",
+    "hotpotqa-6353",
+    "hotpotqa-876",
+    "hotpotqa-6349",
+    "hotpotqa-4092"
+   ],
+   "gold": [
+    "hotpotqa-5434",
+    "hotpotqa-5435"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a790e69554299148911f9d7",
+   "top5": [
+    "hotpotqa-9738",
+    "hotpotqa-9734",
+    "hotpotqa-9736",
+    "hotpotqa-2787",
+    "hotpotqa-52"
+   ],
+   "gold": [
+    "hotpotqa-9737",
+    "hotpotqa-9738"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a7747e15542994aec3b7266",
+   "top5": [
+    "hotpotqa-2934",
+    "hotpotqa-6908",
+    "hotpotqa-4253",
+    "hotpotqa-6334",
+    "hotpotqa-6910"
+   ],
+   "gold": [
+    "hotpotqa-4253",
+    "hotpotqa-6908"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abd96fe5542992ac4f382d9",
+   "top5": [
+    "hotpotqa-2903",
+    "hotpotqa-2906",
+    "hotpotqa-2902",
+    "hotpotqa-2901",
+    "hotpotqa-2904"
+   ],
+   "gold": [
+    "hotpotqa-2903",
+    "hotpotqa-2906"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7543d555429916b01642ce",
+   "top5": [
+    "hotpotqa-4285",
+    "hotpotqa-4289",
+    "hotpotqa-4288",
+    "hotpotqa-4286",
+    "hotpotqa-4292"
+   ],
+   "gold": [
+    "hotpotqa-4285",
+    "hotpotqa-4289"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8c7623554299653c1aa07a",
+   "top5": [
+    "hotpotqa-2881",
+    "hotpotqa-2884",
+    "hotpotqa-2887",
+    "hotpotqa-2882",
+    "hotpotqa-2886"
+   ],
+   "gold": [
+    "hotpotqa-2881",
+    "hotpotqa-2886"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae4a3265542995ad6573de5",
+   "top5": [
+    "hotpotqa-8430",
+    "hotpotqa-8434",
+    "hotpotqa-8438",
+    "hotpotqa-8432",
+    "hotpotqa-3880"
+   ],
+   "gold": [
+    "hotpotqa-8430",
+    "hotpotqa-8434"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5add114a5542994734353826",
+   "top5": [
+    "hotpotqa-2725",
+    "hotpotqa-2721",
+    "hotpotqa-2723",
+    "hotpotqa-4438",
+    "hotpotqa-9172"
+   ],
+   "gold": [
+    "hotpotqa-2721",
+    "hotpotqa-2725"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5adf24155542992d7e9f92af",
+   "top5": [
+    "hotpotqa-5714",
+    "hotpotqa-5710",
+    "hotpotqa-5713",
+    "hotpotqa-5715",
+    "hotpotqa-1344"
+   ],
+   "gold": [
+    "hotpotqa-5713",
+    "hotpotqa-5714"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae26af3554299492dc91c1c",
+   "top5": [
+    "hotpotqa-3659",
+    "hotpotqa-3666",
+    "hotpotqa-3661",
+    "hotpotqa-2527",
+    "hotpotqa-3665"
+   ],
+   "gold": [
+    "hotpotqa-3659",
+    "hotpotqa-3666"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab54056554299488d4d9923",
+   "top5": [
+    "hotpotqa-9441",
+    "hotpotqa-9443",
+    "hotpotqa-2208",
+    "hotpotqa-9438",
+    "hotpotqa-4629"
+   ],
+   "gold": [
+    "hotpotqa-9441",
+    "hotpotqa-9443"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ac0c5805542992a796ded80",
+   "top5": [
+    "hotpotqa-5164",
+    "hotpotqa-5165",
+    "hotpotqa-1457",
+    "hotpotqa-5166",
+    "hotpotqa-5159"
+   ],
+   "gold": [
+    "hotpotqa-5159",
+    "hotpotqa-5167"
+   ],
+   "R@2": 0.0,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5abbc4d255429931dba144fe",
+   "top5": [
+    "hotpotqa-6943",
+    "hotpotqa-6938",
+    "hotpotqa-2483",
+    "hotpotqa-4870",
+    "hotpotqa-2873"
+   ],
+   "gold": [
+    "hotpotqa-6938",
+    "hotpotqa-6943"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8a764555429930ff3c0de1",
+   "top5": [
+    "hotpotqa-7939",
+    "hotpotqa-7942",
+    "hotpotqa-7944",
+    "hotpotqa-7947",
+    "hotpotqa-8489"
+   ],
+   "gold": [
+    "hotpotqa-7939",
+    "hotpotqa-7942"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae1d1995542997283cd226c",
+   "top5": [
+    "hotpotqa-1237",
+    "hotpotqa-1232",
+    "hotpotqa-1236",
+    "hotpotqa-1229",
+    "hotpotqa-8400"
+   ],
+   "gold": [
+    "hotpotqa-1229",
+    "hotpotqa-1237"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a90206155429933b8a20481",
+   "top5": [
+    "hotpotqa-2304",
+    "hotpotqa-2306",
+    "hotpotqa-271",
+    "hotpotqa-2308",
+    "hotpotqa-8949"
+   ],
+   "gold": [
+    "hotpotqa-2304",
+    "hotpotqa-2306"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abc184a5542993a06baf863",
+   "top5": [
+    "hotpotqa-7791",
+    "hotpotqa-7795",
+    "hotpotqa-7792",
+    "hotpotqa-7787",
+    "hotpotqa-7789"
+   ],
+   "gold": [
+    "hotpotqa-7790",
+    "hotpotqa-7791"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ae71f06554299572ea54708",
+   "top5": [
+    "hotpotqa-3729",
+    "hotpotqa-3730",
+    "hotpotqa-3733",
+    "hotpotqa-3732",
+    "hotpotqa-89"
+   ],
+   "gold": [
+    "hotpotqa-3729",
+    "hotpotqa-3733"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abd882f55429924427fd045",
+   "top5": [
+    "hotpotqa-1510",
+    "hotpotqa-1518",
+    "hotpotqa-1515",
+    "hotpotqa-1514",
+    "hotpotqa-1512"
+   ],
+   "gold": [
+    "hotpotqa-1510",
+    "hotpotqa-1513"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ae236da5542994d89d5b397",
+   "top5": [
+    "hotpotqa-9787",
+    "hotpotqa-4141",
+    "hotpotqa-4144",
+    "hotpotqa-6000",
+    "hotpotqa-4143"
+   ],
+   "gold": [
+    "hotpotqa-4141",
+    "hotpotqa-4143"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a89e95c5542992e4fca8474",
+   "top5": [
+    "hotpotqa-8909",
+    "hotpotqa-8916",
+    "hotpotqa-9368",
+    "hotpotqa-8912",
+    "hotpotqa-8914"
+   ],
+   "gold": [
+    "hotpotqa-8909",
+    "hotpotqa-8916"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a839f985542996488c2e47d",
+   "top5": [
+    "hotpotqa-6263",
+    "hotpotqa-6259",
+    "hotpotqa-1939",
+    "hotpotqa-6265",
+    "hotpotqa-8266"
+   ],
+   "gold": [
+    "hotpotqa-6259",
+    "hotpotqa-6263"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8a203c55429970aeb7026d",
+   "top5": [
+    "hotpotqa-9359",
+    "hotpotqa-9355",
+    "hotpotqa-4402",
+    "hotpotqa-5035",
+    "hotpotqa-5031"
+   ],
+   "gold": [
+    "hotpotqa-5031",
+    "hotpotqa-9359"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab642845542995eadeeff8e",
+   "top5": [
+    "hotpotqa-6341",
+    "hotpotqa-6337",
+    "hotpotqa-6335",
+    "hotpotqa-6344",
+    "hotpotqa-6343"
+   ],
+   "gold": [
+    "hotpotqa-6339",
+    "hotpotqa-6341"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5abb342055429966062416e8",
+   "top5": [
+    "hotpotqa-8357",
+    "hotpotqa-8351",
+    "hotpotqa-8618",
+    "hotpotqa-8350",
+    "hotpotqa-3870"
+   ],
+   "gold": [
+    "hotpotqa-8351",
+    "hotpotqa-8357"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7cc58f554299452d57ba45",
+   "top5": [
+    "hotpotqa-2340",
+    "hotpotqa-2343",
+    "hotpotqa-8155",
+    "hotpotqa-9219",
+    "hotpotqa-6789"
+   ],
+   "gold": [
+    "hotpotqa-2340",
+    "hotpotqa-2343"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a810221554299260e20a1f9",
+   "top5": [
+    "hotpotqa-1692",
+    "hotpotqa-3810",
+    "hotpotqa-1686",
+    "hotpotqa-3811",
+    "hotpotqa-3813"
+   ],
+   "gold": [
+    "hotpotqa-1692",
+    "hotpotqa-3806"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5abbc96755429931dba1452c",
+   "top5": [
+    "hotpotqa-231",
+    "hotpotqa-3571",
+    "hotpotqa-3569",
+    "hotpotqa-2353",
+    "hotpotqa-6888"
+   ],
+   "gold": [
+    "hotpotqa-3569",
+    "hotpotqa-3571"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abdcaea55429965af743e4e",
+   "top5": [
+    "hotpotqa-7326",
+    "hotpotqa-7325",
+    "hotpotqa-7324",
+    "hotpotqa-7320",
+    "hotpotqa-7321"
+   ],
+   "gold": [
+    "hotpotqa-7325",
+    "hotpotqa-7326"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a74d7685542996c70cfae0a",
+   "top5": [
+    "hotpotqa-6250",
+    "hotpotqa-6247",
+    "hotpotqa-4376",
+    "hotpotqa-6256",
+    "hotpotqa-7631"
+   ],
+   "gold": [
+    "hotpotqa-6247",
+    "hotpotqa-6250"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abba664554299642a094b02",
+   "top5": [
+    "hotpotqa-6321",
+    "hotpotqa-6322",
+    "hotpotqa-4193",
+    "hotpotqa-4194",
+    "hotpotqa-6663"
+   ],
+   "gold": [
+    "hotpotqa-6321",
+    "hotpotqa-6322"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a85f98e5542996432c57152",
+   "top5": [
+    "hotpotqa-4863",
+    "hotpotqa-4861",
+    "hotpotqa-4868",
+    "hotpotqa-4867",
+    "hotpotqa-4862"
+   ],
+   "gold": [
+    "hotpotqa-4863",
+    "hotpotqa-4867"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae1e4095542997283cd22bf",
+   "top5": [
+    "hotpotqa-7339",
+    "hotpotqa-7341",
+    "hotpotqa-5801",
+    "hotpotqa-7345",
+    "hotpotqa-7780"
+   ],
+   "gold": [
+    "hotpotqa-7341",
+    "hotpotqa-7343"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a77322055429972597f1494",
+   "top5": [
+    "hotpotqa-397",
+    "hotpotqa-395",
+    "hotpotqa-8280",
+    "hotpotqa-400",
+    "hotpotqa-2576"
+   ],
+   "gold": [
+    "hotpotqa-395",
+    "hotpotqa-400"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abd02605542992ac4f381a2",
+   "top5": [
+    "hotpotqa-5988",
+    "hotpotqa-5981",
+    "hotpotqa-5983",
+    "hotpotqa-5985",
+    "hotpotqa-5986"
+   ],
+   "gold": [
+    "hotpotqa-5981",
+    "hotpotqa-5988"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae4f3c455429960a22e0221",
+   "top5": [
+    "hotpotqa-3037",
+    "hotpotqa-3031",
+    "hotpotqa-3030",
+    "hotpotqa-3038",
+    "hotpotqa-3696"
+   ],
+   "gold": [
+    "hotpotqa-3035",
+    "hotpotqa-3037"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5add292b5542990d50227e0a",
+   "top5": [
+    "hotpotqa-5014",
+    "hotpotqa-5012",
+    "hotpotqa-162",
+    "hotpotqa-7174",
+    "hotpotqa-8837"
+   ],
+   "gold": [
+    "hotpotqa-5012",
+    "hotpotqa-5014"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae375955542990afbd1e15d",
+   "top5": [
+    "hotpotqa-5131",
+    "hotpotqa-5130",
+    "hotpotqa-5137",
+    "hotpotqa-7707",
+    "hotpotqa-7708"
+   ],
+   "gold": [
+    "hotpotqa-5130",
+    "hotpotqa-5131"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abcf17655429959677d6b5c",
+   "top5": [
+    "hotpotqa-8250",
+    "hotpotqa-8259",
+    "hotpotqa-8258",
+    "hotpotqa-8257",
+    "hotpotqa-4360"
+   ],
+   "gold": [
+    "hotpotqa-8250",
+    "hotpotqa-8253"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a7c960655429935c91b5244",
+   "top5": [
+    "hotpotqa-2128",
+    "hotpotqa-2129",
+    "hotpotqa-6733",
+    "hotpotqa-2131",
+    "hotpotqa-2130"
+   ],
+   "gold": [
+    "hotpotqa-2128",
+    "hotpotqa-2129"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a83aaeb5542996488c2e483",
+   "top5": [
+    "hotpotqa-4560",
+    "hotpotqa-4558",
+    "hotpotqa-4556",
+    "hotpotqa-4564",
+    "hotpotqa-4835"
+   ],
+   "gold": [
+    "hotpotqa-4558",
+    "hotpotqa-4564"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8e8f6f5542995085b37451",
+   "top5": [
+    "hotpotqa-6826",
+    "hotpotqa-6824",
+    "hotpotqa-6821",
+    "hotpotqa-7350",
+    "hotpotqa-7135"
+   ],
+   "gold": [
+    "hotpotqa-6824",
+    "hotpotqa-6826"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ab6fcf55542991d32223718",
+   "top5": [
+    "hotpotqa-8406",
+    "hotpotqa-8403",
+    "hotpotqa-583",
+    "hotpotqa-7760",
+    "hotpotqa-9228"
+   ],
+   "gold": [
+    "hotpotqa-8403",
+    "hotpotqa-8406"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8763475542996e4f3087c0",
+   "top5": [
+    "hotpotqa-4652",
+    "hotpotqa-4651",
+    "hotpotqa-4653",
+    "hotpotqa-7325",
+    "hotpotqa-4647"
+   ],
+   "gold": [
+    "hotpotqa-4650",
+    "hotpotqa-4651"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5ac3ac8255429939154138ad",
+   "top5": [
+    "hotpotqa-1063",
+    "hotpotqa-1066",
+    "hotpotqa-6666",
+    "hotpotqa-233",
+    "hotpotqa-2992"
+   ],
+   "gold": [
+    "hotpotqa-1063",
+    "hotpotqa-1066"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a794f8155429970f5fffe95",
+   "top5": [
+    "hotpotqa-5445",
+    "hotpotqa-5443",
+    "hotpotqa-9678",
+    "hotpotqa-4551",
+    "hotpotqa-3943"
+   ],
+   "gold": [
+    "hotpotqa-5443",
+    "hotpotqa-5447"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a85b2d95542997b5ce40028",
+   "top5": [
+    "hotpotqa-8244",
+    "hotpotqa-4779",
+    "hotpotqa-8248",
+    "hotpotqa-8246",
+    "hotpotqa-4780"
+   ],
+   "gold": [
+    "hotpotqa-8244",
+    "hotpotqa-8248"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5ae650fb55429929b0807b2e",
+   "top5": [
+    "hotpotqa-6347",
+    "hotpotqa-6354",
+    "hotpotqa-2954",
+    "hotpotqa-6771",
+    "hotpotqa-3289"
+   ],
+   "gold": [
+    "hotpotqa-6347",
+    "hotpotqa-6348"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a9068f85542990a98493623",
+   "top5": [
+    "hotpotqa-1334",
+    "hotpotqa-1330",
+    "hotpotqa-155",
+    "hotpotqa-6082",
+    "hotpotqa-5471"
+   ],
+   "gold": [
+    "hotpotqa-1330",
+    "hotpotqa-1334"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8e92b55542995085b37458",
+   "top5": [
+    "hotpotqa-2023",
+    "hotpotqa-2015",
+    "hotpotqa-2021",
+    "hotpotqa-4383",
+    "hotpotqa-8423"
+   ],
+   "gold": [
+    "hotpotqa-2015",
+    "hotpotqa-2023"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a72125055429971e9dc9241",
+   "top5": [
+    "hotpotqa-6518",
+    "hotpotqa-6523",
+    "hotpotqa-6522",
+    "hotpotqa-6521",
+    "hotpotqa-6517"
+   ],
+   "gold": [
+    "hotpotqa-6518",
+    "hotpotqa-6519"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 0.5,
+   "AR@5": 0.0
+  },
+  {
+   "id": "5a8b97485542995d1e6f140f",
+   "top5": [
+    "hotpotqa-8862",
+    "hotpotqa-8866",
+    "hotpotqa-8869",
+    "hotpotqa-8861",
+    "hotpotqa-6075"
+   ],
+   "gold": [
+    "hotpotqa-8862",
+    "hotpotqa-8869"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7a030c5542996a35c17077",
+   "top5": [
+    "hotpotqa-4606",
+    "hotpotqa-4609",
+    "hotpotqa-4613",
+    "hotpotqa-4611",
+    "hotpotqa-76"
+   ],
+   "gold": [
+    "hotpotqa-4606",
+    "hotpotqa-4609"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a7b3ec95542995eb53be8d3",
+   "top5": [
+    "hotpotqa-6107",
+    "hotpotqa-6114",
+    "hotpotqa-8064",
+    "hotpotqa-763",
+    "hotpotqa-9722"
+   ],
+   "gold": [
+    "hotpotqa-6107",
+    "hotpotqa-6114"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a83411655429966c78a6b5d",
+   "top5": [
+    "hotpotqa-343",
+    "hotpotqa-334",
+    "hotpotqa-336",
+    "hotpotqa-1448",
+    "hotpotqa-342"
+   ],
+   "gold": [
+    "hotpotqa-334",
+    "hotpotqa-336"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5abe67ae5542991f6610616b",
+   "top5": [
+    "hotpotqa-5833",
+    "hotpotqa-5835",
+    "hotpotqa-5836",
+    "hotpotqa-5837",
+    "hotpotqa-5838"
+   ],
+   "gold": [
+    "hotpotqa-5833",
+    "hotpotqa-5835"
+   ],
+   "R@2": 1.0,
+   "AR@2": 1.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  },
+  {
+   "id": "5a8a2a5555429930ff3c0ccc",
+   "top5": [
+    "hotpotqa-505",
+    "hotpotqa-506",
+    "hotpotqa-3428",
+    "hotpotqa-513",
+    "hotpotqa-3434"
+   ],
+   "gold": [
+    "hotpotqa-505",
+    "hotpotqa-513"
+   ],
+   "R@2": 0.5,
+   "AR@2": 0.0,
+   "R@5": 1.0,
+   "AR@5": 1.0
+  }
+ ]
+}

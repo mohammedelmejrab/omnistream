@@ -1009,7 +1009,87 @@ Results (EM / F1 / passage R@5, %; n=200 each; reader `deepseek/deepseek-v4.1-fl
 | HippoRAG 1 (paper, QA Table 4) | 19.2 / 29.8 | 46.6 / 59.5 | 41.8 / 55.0 |
 | IRCoT + HippoRAG (paper) | 21.9 / 33.3 | 47.7 / 62.7 | 45.7 / 59.2 |
 
-Published HippoRAG 2 F1 (Llama-3.3-70B reader, NV-Embed-v2): MuSiQue about 48.6, 2Wiki about 71.0,
-HotpotQA about 75.5; R@5 74.7 / 90.4 / 96.3. Caveats: the reader models differ from both papers, and
+HippoRAG 2 paper (arXiv 2502.14802, local copy in `eval papers/`, checked against the PDF), Llama-3.3-70B
+reader and NV-Embed-v2 retriever: HippoRAG 2 F1 48.6 / 71.0 / 75.5 (Table 2), R@5 74.7 / 90.4 / 96.3
+(Table 4). The same table re-runs HippoRAG 1 with that strong reader: F1 35.1 / 71.8 / 63.5. Against
+that stronger HippoRAG 1, own+subagents is still ahead on all three, but own alone is behind on all
+three. Caveats: the reader models differ from both papers, and
 the papers use 1,000 questions; these are 200-question samples, so treat differences of a few points
 as noise.
+
+## Closing the retrieval gap to HippoRAG 1 (2026-11-20)
+
+Honest re-check against every HippoRAG 1 table (2, 3, 4 and the all-recall table): the test run
+beat HippoRAG 1 on QA with subagents, but own retrieval was behind on R@2 (all three datasets), on
+2Wiki R@5, and own+subagents was behind on multi-step recall (Table 3). Work below uses a
+development set only: 100 questions per dataset sampled (seed 1) from the released questions minus
+every question of the test run (`scripts/dev_retrieval.py`, retrieval-only, no LLM calls).
+
+Causes found first:
+- Own answered "Unknown" on 22 of 50 MuSiQue dev questions (F1 0). HippoRAG's reader always answers.
+  The benchmark short-answer prompt (all rows, including baselines) now asks for a best guess.
+- own+subagents recall ranked fact items before the passages the subagents retrieved, and appended
+  later searches' passages after earlier ones. Findings now list passages first, round-robin by rank
+  across the subagent's searches (`agents/subagent.py`, `eval/__init__.py`).
+- On 2Wiki the passage walk spread evenly over a film's 14 links, so the director's passage got
+  little mass (checked in the graph for "Two for Texas").
+
+Development results, R@2 / R@5 (HippoRAG 1: MuSiQue 40.9 / 51.9, 2Wiki 70.7 / 89.1, HotpotQA
+60.5 / 77.7):
+
+| Variant | MuSiQue | 2Wiki | HotpotQA | Kept |
+|---|---|---|---|---|
+| passage nodes (test-run setting) | 36.9 / 56.2 | 63.5 / 86.0 | 62.5 / 81.0 | base |
+| + cross-encoder rerank of the passage pool (ce) | 44.0 / 56.6 | 62.5 / 69.2 | 83.5 / 92.5 | no |
+| + fused PPR and cross-encoder ranks (rrf) | 45.6 / 62.5 | 67.0 / 85.0 | 77.5 / 93.0 | yes |
+| rrf + 50 dense passages (was 20) | 44.8 / 62.7 | 67.0 / 80.0 | 77.0 / 91.5 | no |
+| rrf + LLM question decomposition | 44.8 / 62.5 | 67.5 / 84.0 | 74.5 / 92.5 | no (3x slower) |
+| rrf + re-seeding (second walk) | 46.2 / 63.5 | 68.0 / 86.0 | 77.5 / 92.5 | yes |
+| ... + PPR damping 0.5 | | 65.5 / 81.0 | | no |
+| ... + question-aware edge weights (cos^2/4/8) | | 66.8 / 85.2 at best | | no |
+| ... + PPR weight 3 in the fusion | 42.8 / 60.9 | 68.2 / 88.5 | 72.0 / 86.5 | no |
+| ... + fact seeds (top 3 reranked facts) | 47.1 / 66.1 | 68.5 / 87.8 | 77.5 / 94.0 | yes |
+| ... + fact seeds + PPR weight 2 (chosen) | **46.4 / 66.9** | **71.5 / 90.5** | **76.0 / 90.5** | **final** |
+
+Chosen setting (one setting for all datasets): `OMNI_OWN_PASSAGE_RERANK=rrf OMNI_OWN_RESEED=on
+OMNI_OWN_FACT_SEEDS=3 OMNI_OWN_RRF_PPR_WEIGHT=2` on top of the test-run flags. All new flags default
+to off. The 2Wiki margin on dev is about 1 point (within noise at n=100). The reranker now runs on the
+GPU when available (same model).
+
+### Final test run with the chosen setting (2026-11-20)
+
+The chosen setting was run once on the 200 test questions per dataset (seed 0, same questions as
+the earlier test run). No setting was changed after seeing a test number. QA reports:
+`docs/eval/bench/qa-*-n200-s0-20261120T*.md`; retrieval-only and IRCoT reports:
+`docs/eval/bench/test-retrieval/`.
+
+IRCoT row (Table 3): `OMNI_OWN_IRCOT=on` wraps the own retriever in IRCoT-style retrieval (up to 3
+chain-of-thought steps, each sentence becomes the next query, rankings merged round-robin). It was
+checked on 2Wiki dev only (79.8 / 97.0) before the single test run. LLM step failures: 0 on all
+three datasets (steps 458 / 486 / 351).
+
+Against HippoRAG 1 (ColBERTv2), all numbers in %:
+
+| Table | Metric | MuSiQue | 2Wiki | HotpotQA |
+|---|---|---|---|---|
+| 2 single-step | R@2 / R@5 ours | 49.1 / 64.1 | 72.0 / 90.4 | 69.0 / 90.0 |
+| | HippoRAG 1 | 40.9 / 51.9 | 70.7 / 89.1 | 60.5 / 77.7 |
+| 3 multi-step | R@2 / R@5 ours (IRCoT + own) | 54.2 / 73.2 | 80.8 / 97.9 | 75.0 / 94.8 |
+| | IRCoT + HippoRAG 1 | 45.3 / 57.6 | 75.8 / 93.9 | 67.0 / 83.0 |
+| 4 single-step | EM / F1 ours (own) | 36.0 / 44.2 | 60.5 / 68.1 | 58.5 / 74.1 |
+| | HippoRAG 1 | 19.2 / 29.8 | 46.6 / 59.5 | 41.8 / 55.0 |
+| 4 multi-step | EM / F1 ours (own + subagents) | 38.0 / 49.0 | 75.0 / 82.7 | 65.0 / 79.8 |
+| | IRCoT + HippoRAG 1 | 21.9 / 33.3 | 47.7 / 62.7 | 45.7 / 59.2 |
+| AR single-step | AR@2 / AR@5 ours | 18.0 / 38.0 | 45.5 / **72.0** | 42.5 / 81.0 |
+| | HippoRAG 1 | 10.2 / 22.4 | 45.4 / 75.7 | 33.8 / 57.9 |
+| AR multi-step | AR@2 / AR@5 ours (IRCoT + own) | 25.5 / 49.5 | 63.5 / 92.0 | 54.5 / 90.0 |
+
+Every number is ahead of HippoRAG 1 except single-step 2Wiki AR@5 (72.0 vs 75.7); 2Wiki AR@2 and
+2Wiki R@2 / R@5 are within noise (n=200, 95% intervals about +-3-4 points for recall). Not tuned
+further, since only the test set shows it.
+
+Against HippoRAG 2 (NV-Embed-v2, Llama-3.3-70B reader; R@5 74.7 / 90.4 / 96.3; F1 about 48.6 /
+71.0 / 75.5): own + subagents F1 is ahead on all three (49.0 / 82.7 / 79.8); own single-step F1
+(44.2 / 68.1 / 74.1) and R@5 (64.1 / 90.4 / 90.0) are behind or tied; IRCoT + own R@5 (73.2 / 97.9
+/ 94.8) is ahead on 2Wiki only. Different readers, embedders and question samples, so this is
+context.
